@@ -1,0 +1,203 @@
+name: Daily Issue
+
+# Opens a pull request each morning with the day's issue.
+# Nothing reaches the live site until you merge it.
+#
+# To go fully automatic later, see README.md ("Switching to auto-publish").
+
+on:
+  schedule:
+    # 11:17 UTC = 4:17am US Pacific. Deliberately off the hour: scheduled jobs
+    # queued at :00 across GitHub contend for runners and start late.
+    - cron: "17 11 * * *"
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "Issue date (YYYY-MM-DD). Defaults to today (UTC)."
+        required: false
+        type: string
+
+permissions:
+  contents: write
+  pull-requests: write
+  id-token: write
+
+concurrency:
+  group: daily-issue
+  cancel-in-progress: false
+
+jobs:
+  compose:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Work out the date and issue number
+        id: meta
+        run: |
+          set -euo pipefail
+          DATE="${{ inputs.date }}"
+          if [ -z "$DATE" ]; then DATE="$(date -u +%F)"; fi
+          if ! printf '%s' "$DATE" | grep -Eq '^[0-9]{4}-[0-9]{2}-[0-9]{2}$'; then
+            echo "::error::Invalid date: $DATE"; exit 1
+          fi
+          if [ -f "issues/${DATE}.json" ]; then
+            echo "::error::issues/${DATE}.json already exists. Nothing to do."; exit 1
+          fi
+          COUNT=$(find issues -name '*.json' -type f 2>/dev/null | wc -l | tr -d ' ')
+          echo "date=$DATE"             >> "$GITHUB_OUTPUT"
+          echo "issue=$((COUNT + 1))"   >> "$GITHUB_OUTPUT"
+          echo "branch=issue/$DATE"     >> "$GITHUB_OUTPUT"
+          echo "Composing issue #$((COUNT + 1)) for $DATE"
+
+      # Claude's ONLY job is to write one JSON file. It does not touch HTML,
+      # git, or the PR — those are deterministic steps below. That keeps the
+      # design stable and the blast radius small.
+      - name: Research and compose the issue
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          claude_args: |
+            --allowedTools "WebSearch,WebFetch,Read,Write,Glob,Grep"
+            --max-turns 120
+          prompt: |
+            Compose today's issue of Algorithm, a daily culture newsletter.
+
+            Write exactly ONE file: `issues/${{ steps.meta.outputs.date }}.json`
+            Do not create, edit, or delete any other file. Do not run git.
+
+            ## Before you start, read these
+
+            1. `sources.md` — the curated source list. Check these publications
+               FIRST. They are the spine of the newsletter.
+            2. `assets/search-index.json` — every article ever featured. You must
+               not repeat any of them. If the file does not exist, this is issue 1.
+
+            ## What to find
+
+            Two pieces in each of seven categories, in this order:
+            art, film, tech, lit, music, design, fashion.
+
+            - art — fine art, leaning contemporary
+            - film — critical essays, not consumer reviews
+            - tech — general tech and AI coverage, not just entertainment
+            - lit — literary reviews, leaning sci-fi/fantasy
+            - music — album/artist analysis, not chart news
+            - design — graphic, interior, or industrial design
+            - fashion — men's fashion, critical/analytical, not shopping guides
+
+            Published within the last 3 weeks. Favour depth: no listicles, no
+            press releases, no breaking-news wires. Prefer independent and
+            specialist publications over major aggregators unless a piece is
+            genuinely exceptional.
+
+            ## Rules that will fail the build if broken
+
+            1. ENGLISH ONLY. The article must be published in English by the
+               outlet itself. Never translate. Skip anything not in English.
+            2. FETCH EVERY ARTICLE BEFORE WRITING ABOUT IT. Use WebFetch on the
+               article's own URL and read it. Summaries must describe the actual
+               argument, never what a headline implies. Set `"verified": true`
+               only for articles you actually fetched and read. This is checked.
+            3. EVERY URL MUST COME FROM A REAL SEARCH OR FETCH RESULT. Never
+               construct a URL from a site's naming pattern. If you cannot get a
+               working URL, set `"url": null` and cite the source by name.
+            4. NO REPEATS. Nothing already in assets/search-index.json.
+            5. AT MOST 2 ENTRIES PER PUBLICATION across the whole issue. Prefer
+               two different publications within a category.
+            6. AIM FOR GEOGRAPHIC SPREAD across the issue as a whole — sources
+               from different continents, not seven UK outlets. Balance across
+               the issue, not within every category.
+
+            If you genuinely cannot fill a category to standard, still write the
+            two best entries you verified rather than inventing anything.
+
+            ## The Pulse
+
+            Also write a 2-3 sentence prose summation of what was actually
+            driving conversation and attention online over the past day or two —
+            the underlying mood or shift, not a list of viral moments.
+
+            Be honest here. If you cannot reach real evidence of what people are
+            discussing, write what you can support from what you actually found
+            and keep it modest. Do not dress up a marketing blog's trend roundup
+            as observation.
+
+            ## File format
+
+            {
+              "issue": ${{ steps.meta.outputs.issue }},
+              "date": "${{ steps.meta.outputs.date }}",
+              "headline": "Three to six *words*",
+              "intro": "2-3 sentence editorial intro to this issue.",
+              "byline": "Issue No. N — short descriptor",
+              "pulse": "2-3 sentences.",
+              "categories": [
+                {
+                  "key": "art",
+                  "entries": [
+                    {
+                      "title": "Exact article title",
+                      "author": "Author name",
+                      "source": "Publication name",
+                      "summary": "Two sentences on the actual argument.",
+                      "why": "One sentence on why it is worth reading.",
+                      "url": "https://...",
+                      "verified": true
+                    }
+                  ]
+                }
+              ]
+            }
+
+            Notes on the format:
+            - `headline` is a punchy 3-6 word tabloid-style cover line. Text
+              wrapped in *asterisks* renders in red. Include one such phrase.
+            - All seven category keys must be present, each with exactly 2 entries.
+            - `url` may be null, but the key must exist.
+
+      - name: Validate
+        run: node scripts/validate.js "${{ steps.meta.outputs.date }}.json"
+
+      - name: Build the site
+        run: node scripts/build.js
+
+      - name: Open a pull request
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DATE: ${{ steps.meta.outputs.date }}
+          ISSUE: ${{ steps.meta.outputs.issue }}
+          BRANCH: ${{ steps.meta.outputs.branch }}
+        run: |
+          set -euo pipefail
+          git config user.name  "algorithm-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git checkout -b "$BRANCH"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "::error::Nothing was generated."; exit 1
+          fi
+          git commit -m "Issue No. $ISSUE — $DATE"
+          git push -u origin "$BRANCH" --force-with-lease
+
+          # Summarise the picks in the PR body so they can be skimmed without
+          # opening the diff.
+          node scripts/pr-body.js "$DATE" > /tmp/pr-body.md
+          {
+            echo ""
+            echo "---"
+            echo "Generated automatically. Every article was fetched and read before"
+            echo "summarising, and validation confirmed no repeats against the archive."
+            echo "Still worth a skim — merging publishes to the live site."
+            echo ""
+            echo "<sub>Run: [\`$GITHUB_RUN_ID\`]($GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID)</sub>"
+          } >> /tmp/pr-body.md
+
+          gh pr create \
+            --title "Issue No. $ISSUE — $DATE" \
+            --body-file /tmp/pr-body.md \
+            --head "$BRANCH" \
+            --base main
