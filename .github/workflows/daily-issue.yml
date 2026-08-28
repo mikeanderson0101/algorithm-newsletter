@@ -1,9 +1,10 @@
 name: Daily Issue
 
-# Opens a pull request each morning with the day's issue.
-# Nothing reaches the live site until you merge it.
+# Composes the day's issue each morning and publishes it straight to main.
+# Validation runs first, so a bad issue fails the job instead of going live.
 #
-# To go fully automatic later, see README.md ("Switching to auto-publish").
+# To go back to review-before-publish, see README.md ("Switching to auto-publish")
+# and restore the `gh pr create` step from git history.
 
 on:
   schedule:
@@ -167,40 +168,14 @@ jobs:
       - name: Build the site
         run: node scripts/build.js
 
-      - name: Open a pull request
-        env:
-          GH_TOKEN: ${{ github.token }}
-          DATE: ${{ steps.meta.outputs.date }}
-          ISSUE: ${{ steps.meta.outputs.issue }}
-          BRANCH: ${{ steps.meta.outputs.branch }}
+      - name: Publish
         run: |
           set -euo pipefail
           git config user.name  "algorithm-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-          git checkout -b "$BRANCH"
           git add -A
           if git diff --cached --quiet; then
             echo "::error::Nothing was generated."; exit 1
           fi
-          git commit -m "Issue No. $ISSUE — $DATE"
-          git push -u origin "$BRANCH" --force-with-lease
-
-          # Summarise the picks in the PR body so they can be skimmed without
-          # opening the diff.
-          node scripts/pr-body.js "$DATE" > /tmp/pr-body.md
-          {
-            echo ""
-            echo "---"
-            echo "Generated automatically. Every article was fetched and read before"
-            echo "summarising, and validation confirmed no repeats against the archive."
-            echo "Still worth a skim — merging publishes to the live site."
-            echo ""
-            echo "<sub>Run: [\`$GITHUB_RUN_ID\`]($GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID)</sub>"
-          } >> /tmp/pr-body.md
-
-          gh pr create \
-            --title "Issue No. $ISSUE — $DATE" \
-            --body-file /tmp/pr-body.md \
-            --head "$BRANCH" \
-            --base main
+          git commit -m "Issue No. ${{ steps.meta.outputs.issue }} — ${{ steps.meta.outputs.date }}"
+          git push origin HEAD:main
