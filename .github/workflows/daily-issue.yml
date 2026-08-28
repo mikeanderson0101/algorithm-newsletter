@@ -46,7 +46,10 @@ jobs:
           if [ -f "issues/${DATE}.json" ]; then
             echo "::error::issues/${DATE}.json already exists. Nothing to do."; exit 1
           fi
-          COUNT=$(find issues -name '*.json' -type f 2>/dev/null | wc -l | tr -d ' ')
+          # mkdir -p is required, not defensive: on a fresh repo issues/ may not
+          # exist yet, and under `set -euo pipefail` a failing find kills the step.
+          mkdir -p issues
+          COUNT=$(find issues -name '*.json' -type f | wc -l | tr -d ' ')
           echo "date=$DATE"             >> "$GITHUB_OUTPUT"
           echo "issue=$((COUNT + 1))"   >> "$GITHUB_OUTPUT"
           echo "branch=issue/$DATE"     >> "$GITHUB_OUTPUT"
