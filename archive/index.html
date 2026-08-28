@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0A0A0A">
+<title>Algorithm — Archive</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Source+Serif+4:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  html, body{ margin:0; padding:0; height:100%; background-color:#0A0A0A; }
+  *{box-sizing:border-box;}
+  body{
+    min-height:100dvh;
+    color:#FAFAF7;
+    font-family:'Source Serif 4', Georgia, serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .page{ background-color:#0A0A0A; min-height:100dvh; }
+  a{ color:inherit; }
+  .wrap{max-width:720px; margin:0 auto; padding:44px 24px 90px; position:relative;}
+  .masthead{
+    display:flex; justify-content:space-between; align-items:flex-end;
+    border-bottom:4px solid #FAFAF7;
+    padding-bottom:14px; margin-bottom:24px;
+  }
+  .mast-title{
+    font-family:'Archivo Black', sans-serif;
+    font-size:clamp(26px,6vw,34px);
+    letter-spacing:-0.01em;
+    text-transform:uppercase;
+    color:#FAFAF7;
+    text-decoration:none;
+  }
+  .stamp{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px; letter-spacing:0.1em; text-transform:uppercase;
+    color:#0A0A0A; background:#FF1F3D;
+    padding:5px 10px; border-radius:2px;
+    transform:rotate(-3deg); display:inline-block; font-weight:600;
+    white-space:nowrap;
+  }
+  .nav{display:flex; justify-content:space-between; align-items:center; gap:16px; margin-bottom:40px; flex-wrap:wrap;}
+  .nav-link{font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:#FAFAF7; text-decoration:none; border:1px solid rgba(250,250,247,0.35); padding:9px 14px; border-radius:2px; white-space:nowrap;}
+  .nav-link:hover{border-color:#FF1F3D; color:#FF1F3D;}
+  .search-wrap{position:relative; flex:1; min-width:220px;}
+  .search-input{width:100%; background:#151513; border:1px solid rgba(250,250,247,0.3); color:#FAFAF7; font-family:'IBM Plex Mono', monospace; font-size:13px; padding:10px 12px; border-radius:2px; outline:none;}
+  .search-input::placeholder{color:#6B6860;}
+  .search-input:focus{border-color:#FF1F3D;}
+  .search-results{position:absolute; top:calc(100% + 6px); left:0; right:0; background:#111110; border:1px solid rgba(250,250,247,0.25); border-radius:4px; max-height:380px; overflow-y:auto; z-index:20; display:none;}
+  .search-results.active{display:block;}
+  .search-result{display:block; padding:10px 12px; border-bottom:1px solid rgba(250,250,247,0.12); text-decoration:none;}
+  .search-result:last-child{border-bottom:none;}
+  .search-result:hover{background:rgba(255,31,61,0.08);}
+  .sr-tag{font-family:'IBM Plex Mono', monospace; font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:#A6A29A;}
+  .sr-title{display:block; font-style:italic; color:#FAFAF7; margin:2px 0; font-size:14px;}
+  .sr-meta{font-family:'IBM Plex Mono', monospace; font-size:10.5px; color:#A6A29A;}
+  .search-empty{padding:14px 12px; font-family:'IBM Plex Mono', monospace; font-size:12.5px; color:#A6A29A;}
+  h1.hero{
+    font-family:'Anton', sans-serif;
+    font-weight:400;
+    font-size:clamp(42px,10vw,72px);
+    line-height:0.94;
+    text-transform:uppercase;
+    margin:0 0 22px;
+    color:#FAFAF7;
+  }
+  h1.hero .pop{color:#FF1F3D;}
+  .intro{font-size:17px; color:#EDEAE2; max-width:56ch; margin-bottom:10px;}
+  .intro-byline{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px; letter-spacing:0.08em; text-transform:uppercase;
+    color:#A6A29A;
+    margin-top:16px; margin-bottom:54px; display:block;
+    border-left:2px solid #FF1F3D; padding-left:10px;
+  }
+  .section{position:relative; margin-bottom:50px; padding-left:56px;}
+  .section:last-of-type{margin-bottom:0;}
+  .stampnum{
+    position:absolute; left:0; top:0;
+    width:42px; height:42px;
+    border:2px solid #FAFAF7;
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Archivo Black', sans-serif;
+    font-size:15px; color:#FAFAF7;
+    transform:rotate(-6deg);
+  }
+  .art .stampnum{border-color:#C9A24B; color:#C9A24B;}
+  .film .stampnum{border-color:#FF5B4A; color:#FF5B4A;}
+  .tech .stampnum{border-color:#3FE0D0; color:#3FE0D0;}
+  .lit .stampnum{border-color:#B39DFF; color:#B39DFF;}
+  .music .stampnum{border-color:#FF5FA8; color:#FF5FA8;}
+  .design .stampnum{border-color:#FFD23F; color:#FFD23F;}
+  .fashion .stampnum{border-color:#FAFAF7; color:#FAFAF7;}
+  .section-head{display:flex; align-items:center; gap:12px; margin-bottom:18px; flex-wrap:wrap;}
+  .section-tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase;
+    color:#0A0A0A;
+    padding:6px 11px; border-radius:2px;
+  }
+  .art .section-tag{background:#C9A24B;}
+  .film .section-tag{background:#FF5B4A;}
+  .tech .section-tag{background:#3FE0D0;}
+  .lit .section-tag{background:#B39DFF;}
+  .music .section-tag{background:#FF5FA8;}
+  .design .section-tag{background:#FFD23F;}
+  .fashion .section-tag{background:#FAFAF7;}
+  .section-title{
+    font-family:'Archivo Black', sans-serif;
+    font-size:24px; text-transform:uppercase; letter-spacing:0.01em;
+    color:#FAFAF7;
+  }
+  .entry{margin-bottom:24px; padding-bottom:24px; border-bottom:1px solid rgba(250,250,247,0.16); scroll-margin-top:24px;}
+  .entry:last-child{border-bottom:none; margin-bottom:0; padding-bottom:0;}
+  .entry-byline{font-family:'IBM Plex Mono', monospace; font-size:12px; color:#A6A29A; margin-bottom:8px;}
+  .entry-title{font-weight:500; font-style:italic; color:#FAFAF7; text-decoration:underline; text-decoration-color:rgba(250,250,247,0.35); text-underline-offset:3px;}
+  .entry-title:hover{text-decoration-color:#FF1F3D;}
+  .entry p{margin:0 0 10px; font-size:16px; color:#EDEAE2;}
+  .entry .why{font-size:14.5px; color:#A6A29A; font-style:italic;}
+  .entry .why::before{content:"— ";}
+  .pulse{ margin-top:60px; border:2px solid #FF1F3D; border-radius:4px; padding:28px 24px; }
+  .pulse-label{
+    font-family:'Archivo Black', sans-serif;
+    font-size:13px; letter-spacing:0.1em; text-transform:uppercase;
+    color:#FF1F3D; margin-bottom:14px;
+  }
+  .pulse p{ font-size:16px; color:#EDEAE2; margin:0 0 10px; }
+  .pulse p:last-child{margin-bottom:0;}
+  .issue-list{list-style:none; margin:0; padding:0;}
+  .issue-card{display:block; text-decoration:none; padding:22px 0; border-bottom:1px solid rgba(250,250,247,0.16);}
+  .issue-card:first-child{padding-top:0;}
+  .issue-card:hover .issue-headline{ text-decoration-color:#FF1F3D; }
+  .issue-meta{font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:#A6A29A; margin-bottom:8px;}
+  .issue-meta .num{color:#FF1F3D;}
+  .issue-headline{font-family:'Archivo Black', sans-serif; font-size:22px; text-transform:uppercase; letter-spacing:0.01em; color:#FAFAF7; text-decoration:underline; text-decoration-color:rgba(250,250,247,0.35); text-underline-offset:4px; display:inline-block; margin-bottom:8px;}
+  .issue-desc{font-size:15px; color:#A6A29A; max-width:60ch; margin:0;}
+  footer{
+    margin-top:64px; padding-top:20px; border-top:1px solid rgba(250,250,247,0.16);
+    display:flex; justify-content:space-between; gap:12px;
+    font-family:'IBM Plex Mono', monospace; font-size:10.5px;
+    letter-spacing:0.06em; color:#A6A29A; text-transform:uppercase;
+  }
+  @media (max-width:520px){
+    .wrap{padding:30px 16px 70px;}
+    .section{padding-left:48px;}
+    .stampnum{width:36px; height:36px; font-size:13px;}
+    .section-title{font-size:20px;}
+    .nav{flex-direction:column; align-items:stretch;}
+  }
+</style>
+</head>
+<body data-root="../">
+<div class="page">
+<div class="wrap">
+  <div class="masthead">
+    <a class="mast-title" href="../index.html">Algorithm</a>
+    <span class="stamp">Archive</span>
+  </div>
+  <div class="nav">
+    <div class="search-wrap">
+      <input type="text" id="searchInput" class="search-input" placeholder="Search past entries…" autocomplete="off">
+      <div id="searchResults" class="search-results"></div>
+    </div>
+    <a class="nav-link" href="../index.html">Latest Issue</a>
+  </div>
+  <h1 class="hero">Every <span class="pop">issue.</span></h1>
+  <p class="intro">Every past edition, newest first. Search above to find a specific piece, or browse the full run below.</p>
+  <span class="intro-byline">1 issue archived</span>
+  <ul class="issue-list">
+    <li>
+      <a class="issue-card" href="2026-08-28.html">
+        <div class="issue-meta"><span class="num">Issue No. 1</span> — 28 Aug 2026</div>
+        <span class="issue-headline">The Great Creative Offload</span>
+        <p class="issue-desc">Fourteen pieces, seven fields, first time out. What surfaced without being looked for is how many critics are arguing about the same thing from different rooms — authorship, and who or what is actually doing the work. The rest is Persian manhole covers, Algerian reed flutes, and a confession about badly hemmed jeans.</p>
+      </a>
+    </li>
+  </ul>
+  <footer>
+    <span>Algorithm</span>
+    <span>Archive</span>
+  </footer>
+</div>
+</div>
+<script>
+(function(){
+  var root = document.body.getAttribute('data-root') || '';
+  var input = document.getElementById('searchInput');
+  var results = document.getElementById('searchResults');
+  if(!input) return;
+  var indexData = null;
+  function loadIndex(){
+    if(indexData) return Promise.resolve(indexData);
+    return fetch(root + 'assets/search-index.json')
+      .then(function(r){ return r.json(); })
+      .then(function(d){ indexData = d; return d; })
+      .catch(function(){ return []; });
+  }
+  function escapeHtml(s){
+    return String(s).replace(/[&<>"']/g, function(c){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+    });
+  }
+  function render(matches, q){
+    if(!q){ results.classList.remove('active'); results.innerHTML=''; return; }
+    if(matches.length===0){
+      results.innerHTML = '<div class="search-empty">No entries match &ldquo;'+escapeHtml(q)+'&rdquo;.</div>';
+      results.classList.add('active');
+      return;
+    }
+    results.innerHTML = matches.slice(0,20).map(function(m){
+      return '<a class="search-result" href="'+root+m.page+'#'+m.anchor+'">'+
+        '<span class="sr-tag">'+escapeHtml(m.category)+' — '+escapeHtml(m.date)+'</span>'+
+        '<span class="sr-title">'+escapeHtml(m.title)+'</span>'+
+        '<span class="sr-meta">'+escapeHtml(m.author)+' &middot; '+escapeHtml(m.source)+'</span>'+
+      '</a>';
+    }).join('');
+    results.classList.add('active');
+  }
+  input.addEventListener('input', function(){
+    var q = input.value.trim().toLowerCase();
+    if(!q){ render([], ''); return; }
+    loadIndex().then(function(data){
+      render(data.filter(function(e){
+        return (e.title+' '+e.author+' '+e.source+' '+e.category+' '+e.summary)
+          .toLowerCase().indexOf(q) !== -1;
+      }), q);
+    });
+  });
+  document.addEventListener('click', function(e){
+    if(!e.target.closest('.search-wrap')){ results.classList.remove('active'); }
+  });
+})();</script>
+</body>
+</html>
