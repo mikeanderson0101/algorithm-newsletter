@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0A0A0A">
+<title>Algorithm — Issue No. 1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Source+Serif+4:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  html, body{ margin:0; padding:0; height:100%; background-color:#0A0A0A; }
+  *{box-sizing:border-box;}
+  body{
+    min-height:100dvh;
+    color:#FAFAF7;
+    font-family:'Source Serif 4', Georgia, serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .page{ background-color:#0A0A0A; min-height:100dvh; }
+  a{ color:inherit; }
+  .wrap{max-width:720px; margin:0 auto; padding:44px 24px 90px; position:relative;}
+  .masthead{
+    display:flex; justify-content:space-between; align-items:flex-end;
+    border-bottom:4px solid #FAFAF7;
+    padding-bottom:14px; margin-bottom:24px;
+  }
+  .mast-title{
+    font-family:'Archivo Black', sans-serif;
+    font-size:clamp(26px,6vw,34px);
+    letter-spacing:-0.01em;
+    text-transform:uppercase;
+    color:#FAFAF7;
+    text-decoration:none;
+  }
+  .stamp{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px; letter-spacing:0.1em; text-transform:uppercase;
+    color:#0A0A0A; background:#FF1F3D;
+    padding:5px 10px; border-radius:2px;
+    transform:rotate(-3deg); display:inline-block; font-weight:600;
+    white-space:nowrap;
+  }
+  .nav{display:flex; justify-content:space-between; align-items:center; gap:16px; margin-bottom:40px; flex-wrap:wrap;}
+  .nav-link{font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:#FAFAF7; text-decoration:none; border:1px solid rgba(250,250,247,0.35); padding:9px 14px; border-radius:2px; white-space:nowrap;}
+  .nav-link:hover{border-color:#FF1F3D; color:#FF1F3D;}
+  .search-wrap{position:relative; flex:1; min-width:220px;}
+  .search-input{width:100%; background:#151513; border:1px solid rgba(250,250,247,0.3); color:#FAFAF7; font-family:'IBM Plex Mono', monospace; font-size:13px; padding:10px 12px; border-radius:2px; outline:none;}
+  .search-input::placeholder{color:#6B6860;}
+  .search-input:focus{border-color:#FF1F3D;}
+  .search-results{position:absolute; top:calc(100% + 6px); left:0; right:0; background:#111110; border:1px solid rgba(250,250,247,0.25); border-radius:4px; max-height:380px; overflow-y:auto; z-index:20; display:none;}
+  .search-results.active{display:block;}
+  .search-result{display:block; padding:10px 12px; border-bottom:1px solid rgba(250,250,247,0.12); text-decoration:none;}
+  .search-result:last-child{border-bottom:none;}
+  .search-result:hover{background:rgba(255,31,61,0.08);}
+  .sr-tag{font-family:'IBM Plex Mono', monospace; font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:#A6A29A;}
+  .sr-title{display:block; font-style:italic; color:#FAFAF7; margin:2px 0; font-size:14px;}
+  .sr-meta{font-family:'IBM Plex Mono', monospace; font-size:10.5px; color:#A6A29A;}
+  .search-empty{padding:14px 12px; font-family:'IBM Plex Mono', monospace; font-size:12.5px; color:#A6A29A;}
+  h1.hero{
+    font-family:'Anton', sans-serif;
+    font-weight:400;
+    font-size:clamp(42px,10vw,72px);
+    line-height:0.94;
+    text-transform:uppercase;
+    margin:0 0 22px;
+    color:#FAFAF7;
+  }
+  h1.hero .pop{color:#FF1F3D;}
+  .intro{font-size:17px; color:#EDEAE2; max-width:56ch; margin-bottom:10px;}
+  .intro-byline{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px; letter-spacing:0.08em; text-transform:uppercase;
+    color:#A6A29A;
+    margin-top:16px; margin-bottom:54px; display:block;
+    border-left:2px solid #FF1F3D; padding-left:10px;
+  }
+  .section{position:relative; margin-bottom:50px; padding-left:56px;}
+  .section:last-of-type{margin-bottom:0;}
+  .stampnum{
+    position:absolute; left:0; top:0;
+    width:42px; height:42px;
+    border:2px solid #FAFAF7;
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Archivo Black', sans-serif;
+    font-size:15px; color:#FAFAF7;
+    transform:rotate(-6deg);
+  }
+  .art .stampnum{border-color:#C9A24B; color:#C9A24B;}
+  .film .stampnum{border-color:#FF5B4A; color:#FF5B4A;}
+  .tech .stampnum{border-color:#3FE0D0; color:#3FE0D0;}
+  .lit .stampnum{border-color:#B39DFF; color:#B39DFF;}
+  .music .stampnum{border-color:#FF5FA8; color:#FF5FA8;}
+  .design .stampnum{border-color:#FFD23F; color:#FFD23F;}
+  .fashion .stampnum{border-color:#FAFAF7; color:#FAFAF7;}
+  .section-head{display:flex; align-items:center; gap:12px; margin-bottom:18px; flex-wrap:wrap;}
+  .section-tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase;
+    color:#0A0A0A;
+    padding:6px 11px; border-radius:2px;
+  }
+  .art .section-tag{background:#C9A24B;}
+  .film .section-tag{background:#FF5B4A;}
+  .tech .section-tag{background:#3FE0D0;}
+  .lit .section-tag{background:#B39DFF;}
+  .music .section-tag{background:#FF5FA8;}
+  .design .section-tag{background:#FFD23F;}
+  .fashion .section-tag{background:#FAFAF7;}
+  .section-title{
+    font-family:'Archivo Black', sans-serif;
+    font-size:24px; text-transform:uppercase; letter-spacing:0.01em;
+    color:#FAFAF7;
+  }
+  .entry{margin-bottom:24px; padding-bottom:24px; border-bottom:1px solid rgba(250,250,247,0.16); scroll-margin-top:24px;}
+  .entry:last-child{border-bottom:none; margin-bottom:0; padding-bottom:0;}
+  .entry-byline{font-family:'IBM Plex Mono', monospace; font-size:12px; color:#A6A29A; margin-bottom:8px;}
+  .entry-title{font-weight:500; font-style:italic; color:#FAFAF7; text-decoration:underline; text-decoration-color:rgba(250,250,247,0.35); text-underline-offset:3px;}
+  .entry-title:hover{text-decoration-color:#FF1F3D;}
+  .entry p{margin:0 0 10px; font-size:16px; color:#EDEAE2;}
+  .entry .why{font-size:14.5px; color:#A6A29A; font-style:italic;}
+  .entry .why::before{content:"— ";}
+  .pulse{ margin-top:60px; border:2px solid #FF1F3D; border-radius:4px; padding:28px 24px; }
+  .pulse-label{
+    font-family:'Archivo Black', sans-serif;
+    font-size:13px; letter-spacing:0.1em; text-transform:uppercase;
+    color:#FF1F3D; margin-bottom:14px;
+  }
+  .pulse p{ font-size:16px; color:#EDEAE2; margin:0 0 10px; }
+  .pulse p:last-child{margin-bottom:0;}
+  .issue-list{list-style:none; margin:0; padding:0;}
+  .issue-card{display:block; text-decoration:none; padding:22px 0; border-bottom:1px solid rgba(250,250,247,0.16);}
+  .issue-card:first-child{padding-top:0;}
+  .issue-card:hover .issue-headline{ text-decoration-color:#FF1F3D; }
+  .issue-meta{font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:#A6A29A; margin-bottom:8px;}
+  .issue-meta .num{color:#FF1F3D;}
+  .issue-headline{font-family:'Archivo Black', sans-serif; font-size:22px; text-transform:uppercase; letter-spacing:0.01em; color:#FAFAF7; text-decoration:underline; text-decoration-color:rgba(250,250,247,0.35); text-underline-offset:4px; display:inline-block; margin-bottom:8px;}
+  .issue-desc{font-size:15px; color:#A6A29A; max-width:60ch; margin:0;}
+  footer{
+    margin-top:64px; padding-top:20px; border-top:1px solid rgba(250,250,247,0.16);
+    display:flex; justify-content:space-between; gap:12px;
+    font-family:'IBM Plex Mono', monospace; font-size:10.5px;
+    letter-spacing:0.06em; color:#A6A29A; text-transform:uppercase;
+  }
+  @media (max-width:520px){
+    .wrap{padding:30px 16px 70px;}
+    .section{padding-left:48px;}
+    .stampnum{width:36px; height:36px; font-size:13px;}
+    .section-title{font-size:20px;}
+    .nav{flex-direction:column; align-items:stretch;}
+  }
+</style>
+</head>
+<body data-root="">
+<div class="page">
+<div class="wrap">
+  <div class="masthead">
+    <a class="mast-title" href="index.html">Algorithm</a>
+    <span class="stamp">Issue No. 1</span>
+  </div>
+  <div class="nav">
+    <div class="search-wrap">
+      <input type="text" id="searchInput" class="search-input" placeholder="Search past entries…" autocomplete="off">
+      <div id="searchResults" class="search-results"></div>
+    </div>
+    <a class="nav-link" href="archive/index.html">Browse Archive</a>
+  </div>
+  <h1 class="hero">The Great <span class="pop">Creative Offload</span></h1>
+  <p class="intro">Fourteen pieces, seven fields, first time out. What surfaced without being looked for is how many critics are arguing about the same thing from different rooms — authorship, and who or what is actually doing the work. The rest is Persian manhole covers, Algerian reed flutes, and a confession about badly hemmed jeans.</p>
+  <span class="intro-byline">Issue No. 1 — authorship, outsourced</span>
+  <section class="section art">
+    <span class="stampnum">01</span>
+    <div class="section-head">
+      <span class="section-tag">Art</span>
+      <h2 class="section-title">Fine Art</h2>
+    </div>
+    <div class="entry" id="art-1">
+      <div class="entry-byline"><a class="entry-title" href="https://momus.ca/2026/08/27/toward-lightness-aurelia-munoz-at-the-museo-nacional-centro-de-arte-reina-sofia/" target="_blank" rel="noopener">Toward Lightness: Aurèlia Muñoz at the Museo Nacional Centro de Arte Reina Sofía</a> by Lauren Moya Ford — Momus</div>
+      <p>Ford traces Muñoz&#39;s movement from the 660-pound macramé mass of Ondulaciones (1974) to the near-weightless folded-paper works of her final decades, arguing that the shift tracks Spain&#39;s passage out of dictatorship into democracy. She reads that lightness not as retreat but as what became newly possible once a woman artist no longer needed a husband&#39;s permission to conduct a professional life.</p>
+      <p class="why">A review that makes a change in one artist&#39;s materials carry the weight of a national political transition without straining for it.</p>
+    </div>
+    <div class="entry" id="art-2">
+      <div class="entry-byline"><a class="entry-title" href="https://www.artasiapacific.com/shows/the-spectacle-of-failure-mire-lees-the-heart-of-my-machine-is-golden-lead/" target="_blank" rel="noopener">The Spectacle of Failure: Mire Lee&#39;s &quot;The Heart of My Machine is Golden Lead&quot;</a> by Noit Banai — ArtAsiaPacific</div>
+      <p>Banai argues that Lee&#39;s dysfunctional machines are caught in a bind: the more spectacularly they perform breakdown, the more institutional labour and infrastructure has to be concealed in order to stage it, leaving the viewer a consumer of aesthetic malfunction rather than a witness to industrial consequence. She finds the counterweight in Lee&#39;s moving-image works, which redirect attention from autonomous systems back to bodies, labour and the structures of looking.</p>
+      <p class="why">The rare review that turns its scepticism on the museum apparatus rather than only on the art inside it.</p>
+    </div>
+  </section>
+  <section class="section film">
+    <span class="stampnum">02</span>
+    <div class="section-head">
+      <span class="section-tag">Film</span>
+      <h2 class="section-title">Film Criticism</h2>
+    </div>
+    <div class="entry" id="film-1">
+      <div class="entry-byline"><a class="entry-title" href="https://reverseshot.org/features/3483/text_of_light_7" target="_blank" rel="noopener">Text of Light: Conditions May Apply</a> by Jordan Cronk — Reverse Shot</div>
+      <p>Cronk argues that experimental cinema depends on its conditions of presentation far more than narrative filmmaking does, so streaming does not merely deliver such work but quietly rewrites it. He tests the claim against Carlos Casas&#39;s Krakatoa in both its live 40-minute performance and its 79-minute streaming cut, Stan Douglas&#39;s five-channel Birth of a Nation, and Johann Lurf&#39;s 65mm Forever…Forever.</p>
+      <p class="why">A precise account of why &quot;I watched it at home&quot; is a critical statement rather than a logistical footnote.</p>
+    </div>
+    <div class="entry" id="film-2">
+      <div class="entry-byline"><a class="entry-title" href="https://philosophyinfilm.com/2026/08/23/between-boys-friendship-desire-and-violence-in-super-dark-times/" target="_blank" rel="noopener">Between Boys: Friendship, Desire, and Violence in Super Dark Times</a> by Matthew Jones — Philosophy in Film</div>
+      <p>Jones reads the film through Eve Kosofsky Sedgwick&#39;s account of male homosocial desire, arguing that its violence erupts not from outside the boys&#39; friendship but from attachments — dependency, jealousy, grief, love — for which they have no permitted language. He is careful to separate explanation from excuse, and pushes back on viewers who blame Allison for a rivalry that was never really about her.</p>
+      <p class="why">Uses a genuine theoretical apparatus on a film usually filed under teen horror, and follows the reading somewhere uncomfortable.</p>
+    </div>
+  </section>
+  <section class="section tech">
+    <span class="stampnum">03</span>
+    <div class="section-head">
+      <span class="section-tag">Tech &amp; AI</span>
+      <h2 class="section-title">Tech &amp; AI</h2>
+    </div>
+    <div class="entry" id="tech-1">
+      <div class="entry-byline"><a class="entry-title" href="https://www.noemamag.com/when-the-ai-says-to-kill" target="_blank" rel="noopener">When The AI Says To Kill</a> by Jess McHugh — Noema</div>
+      <p>McHugh argues that chatbots differ in kind from books or films because they simulate empathy, adapt to a particular user&#39;s vulnerabilities and sustain a relationship over time, which pushes their outputs closer to coercion than to protected speech. She sets Michelle Carter&#39;s conviction for text messages encouraging a suicide against AI companies&#39; First Amendment defences to show how unsettled the legal ground has become.</p>
+      <p class="why">The clearest statement yet of why &quot;it&#39;s just speech&quot; may not survive contact with a system that talks back.</p>
+    </div>
+    <div class="entry" id="tech-2">
+      <div class="entry-byline"><a class="entry-title" href="https://restofworld.org/2026/google-amazon-cloud-china-india/" target="_blank" rel="noopener">Why the global push to break free from Big Tech keeps falling short</a> by Cecilia Rikap — Rest of World</div>
+      <p>Rikap argues that sovereignty programmes in Europe, India and Brazil keep failing because they treat cloud as neutral infrastructure rather than as intellectual monopoly, so publicly subsidised supercomputers and startups still end up deploying through Amazon, Google and Oracle. Even China&#39;s domestic ecosystem, on her reading, imitates rather than dismantles the model, amounting to a reshuffling of who rules.</p>
+      <p class="why">Cuts through the rhetoric of digital sovereignty to the ownership question sitting underneath it.</p>
+    </div>
+  </section>
+  <section class="section lit">
+    <span class="stampnum">04</span>
+    <div class="section-head">
+      <span class="section-tag">Sci-Fi / Fantasy</span>
+      <h2 class="section-title">Literary Reviews</h2>
+    </div>
+    <div class="entry" id="lit-1">
+      <div class="entry-byline"><a class="entry-title" href="https://strangehorizons.com/wordpress/non-fiction/as-if-by-isabel-waidner/" target="_blank" rel="noopener">As If by Isabel Waidner</a> by E. C. Barrett — Strange Horizons</div>
+      <p>Barrett reads Waidner&#39;s novel as an account of how class quietly forecloses an artistic life, pairing a burnt-out actor whose working-class background cost him the extra hours others didn&#39;t have to work with a man who never began because he saw nobody like himself doing it. The review holds that the book&#39;s insistence on trying anyway — better than living as if you are already dead — is its argument rather than its consolation.</p>
+      <p class="why">A review that keeps its eye on the economics of who gets to make art at all, not just on whether the book works.</p>
+    </div>
+    <div class="entry" id="lit-2">
+      <div class="entry-byline"><a class="entry-title" href="https://arablit.org/2026/08/17/stealing-sleep-reclaiming-tomorrow/" target="_blank" rel="noopener">Stealing Sleep, Reclaiming Tomorrow</a> by Britta Stromeyer — ArabLit</div>
+      <p>Stromeyer reads Ibtisam Azem&#39;s The Sleep Thief as a novel about exhaustion as a political condition, in which the protagonist&#39;s nickname becomes a figure for survival under surveillance and the fragmented, poetic structure refuses to romanticise resistance. She singles out a surreal museum scene, where his mother is displayed as an artifact, as the book&#39;s sharpest strike at how Palestinian suffering gets curated for other people.</p>
+      <p class="why">Attends to the novel&#39;s formal strangeness rather than treating it solely as testimony.</p>
+    </div>
+  </section>
+  <section class="section music">
+    <span class="stampnum">05</span>
+    <div class="section-head">
+      <span class="section-tag">Music</span>
+      <h2 class="section-title">Music Criticism</h2>
+    </div>
+    <div class="entry" id="music-1">
+      <div class="entry-byline"><a class="entry-title" href="https://daily.bandcamp.com/features/my-heart-is-dust-before-him-21st-century-gasba-from-algeria-feature" target="_blank" rel="noopener">Gasba Forever: The Next Phase of Algeria&#39;s Millenia-Old Folk Tradition</a> by Megan Iacobini de Fazio — Bandcamp Daily</div>
+      <p>The piece argues that gasba, built around the Berber reed flute, is not a folkloric survival but a living popular music that kept evolving through cassette culture and regional labels like Édition Ahlem while raï took the international attention. Drawing on the compilation My Heart Is Dust Before Him, it shows contemporary artists setting devotional poetry against drum machines, synths and Auto-Tune for weddings and nightclubs rather than for export.</p>
+      <p class="why">Treats a &quot;traditional&quot; music as contemporary pop with its own economy, which is how the people who listen to it hear it.</p>
+    </div>
+    <div class="entry" id="music-2">
+      <div class="entry-byline"><a class="entry-title" href="https://scenenoise.com/Features/Album-Spotlight-Shahyn-Taltesh" target="_blank" rel="noopener">Album Spotlight: Shahyn - &#39;Taltesh&#39;</a> by Riham Issa — SceneNoise</div>
+      <p>Issa frames Taltesh as a deliberate mid-career break for the Egyptian rapper — in his own words an attempt to step out of his own skin after a decade of a settled style. She tracks how he keeps his aggressive delivery while moving from intensely personal writing toward lighter production and more abstract subject matter, working throughout with longtime producer Coolpix.</p>
+      <p class="why">A close read of a stylistic pivot in Arabic-language rap, from a scene rarely covered analytically in English.</p>
+    </div>
+  </section>
+  <section class="section design">
+    <span class="stampnum">06</span>
+    <div class="section-head">
+      <span class="section-tag">Design</span>
+      <h2 class="section-title">Design</h2>
+    </div>
+    <div class="entry" id="design-1">
+      <div class="entry-byline"><a class="entry-title" href="https://www.stirworld.com/think-opinions-are-dumbphones-in-the-face-of-smarter-algorithms-our-technological-salvation" target="_blank" rel="noopener">Are dumbphones in the face of smarter algorithms our technological salvation?</a> by Chahna Tank — STIRworld</div>
+      <p>Tank argues that the dumbphone is a contradiction in object form: a device sold as resistance to digital infrastructure that remains wholly dependent on that infrastructure to work at all. She notes that most designer models cost over $300, making opting out a purchase available to people who don&#39;t need a phone for wages or payments, while Nokia has begun adding AI features to the very handsets meant to strip such things away.</p>
+      <p class="why">Refuses the easy digital-detox story and asks who can actually afford to log off.</p>
+    </div>
+    <div class="entry" id="design-2">
+      <div class="entry-byline"><a class="entry-title" href="https://eyemagazine.com/blog/post/farsi-cast-in-iron" target="_blank" rel="noopener">Farsi cast in iron</a> by Maryam Hosseinnia — Eye Magazine</div>
+      <p>Hosseinnia reads Iranian manhole covers as overlooked graphic design, tracing how anonymous designers compressed Persian letterforms into a circle — enlarging dots for legibility, tilting letters for space, echoing dome and tile motifs from the architecture above. She follows the drift from Nastaliq calligraphy in Isfahan and Yazd toward modernist, font-like lettering, and notes American manufacturers&#39; names sitting beside the Farsi as a record of how piped water arrived after 1920.</p>
+      <p class="why">Typographic history recovered from the least-looked-at surface in the city.</p>
+    </div>
+  </section>
+  <section class="section fashion">
+    <span class="stampnum">07</span>
+    <div class="section-head">
+      <span class="section-tag">Men&#39;s Fashion</span>
+      <h2 class="section-title">Men&#39;s Fashion</h2>
+    </div>
+    <div class="entry" id="fashion-1">
+      <div class="entry-byline"><a class="entry-title" href="https://www.blackbirdspyplane.com/p/why-hemmed-jeans-look-horrible" target="_blank" rel="noopener">Why hemmed jeans look horrible</a> by Jonah Weiner — Blackbird Spyplane</div>
+      <p>Weiner argues that jeans obey different alteration rules from other trousers, and that ordinary tailors apply a generic playbook which leaves the hem looking uncanny — a failure he confesses to having paid for himself a decade ago with a pair of Our Legacy jeans. He also dismisses the internet&#39;s preferred workaround as its own monstrosity, treating the whole business as a small case study in craft knowledge going missing.</p>
+      <p class="why">Menswear criticism that begins from the writer&#39;s own bad decision rather than from a recommendation.</p>
+    </div>
+    <div class="entry" id="fashion-2">
+      <div class="entry-byline"><a class="entry-title" href="https://www.highsnobiety.com/p/john-galliano-outfit-history/" target="_blank" rel="noopener">Artist Uniform: Fashion&#39;s Most Controversial Designer Has Always Dressed the Part</a> by Chris Erik Thomas — Highsnobiety</div>
+      <p>Thomas argues that Galliano&#39;s own clothes are a more reliable record of his career than his collections are, moving from New Romantic maximalism through the elaborate Dior-era costumes that extended each show into the plain white seamstress coats of his Margiela decade. He reads the recent return of flamboyance as a designer stepping back out precisely as the industry tires of quiet luxury.</p>
+      <p class="why">Takes a designer&#39;s self-presentation seriously as criticism&#39;s primary text rather than as gossip.</p>
+    </div>
+  </section>
+  <div class="pulse">
+    <div class="pulse-label">The Pulse — Social Media This Week</div>
+    <p>The through-line across today&#39;s reading was not a news event but a shared anxiety about delegated authorship: a chatbot&#39;s culpability in Noema, an AI-generated Rheingold reviewed at Bayreuth, a $300 phone sold as escape from the infrastructure that makes it possible. Separately, Open Magazine in Delhi ran two pieces in a single day on Yayoi Kusama&#39;s death at 97. Live social platforms are not reachable from here, so this is what the publications themselves converged on — a weaker signal than watching the feeds, but a real one.</p>
+  </div>
+  <footer>
+    <span>Algorithm</span>
+    <span>Issue No. 1 — 28 Aug 2026</span>
+  </footer>
+</div>
+</div>
+<script>
+(function(){
+  var root = document.body.getAttribute('data-root') || '';
+  var input = document.getElementById('searchInput');
+  var results = document.getElementById('searchResults');
+  if(!input) return;
+  var indexData = null;
+  function loadIndex(){
+    if(indexData) return Promise.resolve(indexData);
+    return fetch(root + 'assets/search-index.json')
+      .then(function(r){ return r.json(); })
+      .then(function(d){ indexData = d; return d; })
+      .catch(function(){ return []; });
+  }
+  function escapeHtml(s){
+    return String(s).replace(/[&<>"']/g, function(c){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+    });
+  }
+  function render(matches, q){
+    if(!q){ results.classList.remove('active'); results.innerHTML=''; return; }
+    if(matches.length===0){
+      results.innerHTML = '<div class="search-empty">No entries match &ldquo;'+escapeHtml(q)+'&rdquo;.</div>';
+      results.classList.add('active');
+      return;
+    }
+    results.innerHTML = matches.slice(0,20).map(function(m){
+      return '<a class="search-result" href="'+root+m.page+'#'+m.anchor+'">'+
+        '<span class="sr-tag">'+escapeHtml(m.category)+' — '+escapeHtml(m.date)+'</span>'+
+        '<span class="sr-title">'+escapeHtml(m.title)+'</span>'+
+        '<span class="sr-meta">'+escapeHtml(m.author)+' &middot; '+escapeHtml(m.source)+'</span>'+
+      '</a>';
+    }).join('');
+    results.classList.add('active');
+  }
+  input.addEventListener('input', function(){
+    var q = input.value.trim().toLowerCase();
+    if(!q){ render([], ''); return; }
+    loadIndex().then(function(data){
+      render(data.filter(function(e){
+        return (e.title+' '+e.author+' '+e.source+' '+e.category+' '+e.summary)
+          .toLowerCase().indexOf(q) !== -1;
+      }), q);
+    });
+  });
+  document.addEventListener('click', function(e){
+    if(!e.target.closest('.search-wrap')){ results.classList.remove('active'); }
+  });
+})();</script>
+</body>
+</html>
