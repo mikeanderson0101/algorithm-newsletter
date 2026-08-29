@@ -65,7 +65,7 @@ jobs:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           claude_args: |
             --allowedTools "WebSearch,WebFetch,Read,Write,Glob,Grep"
-            --max-turns 120
+            --max-turns 220
           prompt: |
             Compose today's issue of Algorithm, a daily culture newsletter.
 
