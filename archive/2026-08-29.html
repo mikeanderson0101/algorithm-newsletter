@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#0A0A0A">
-<title>Algorithm — Issue No. 2</title>
+<title>Algorithm — Issue No. 2 — 29 Aug 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Source+Serif+4:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -154,19 +154,16 @@
   }
 </style>
 </head>
-<body data-root="">
+<body data-root="../">
 <div class="page">
 <div class="wrap">
   <div class="masthead">
-    <a class="mast-title" href="index.html">Algorithm</a>
+    <a class="mast-title" href="../index.html">Algorithm</a>
     <span class="stamp">Issue No. 2</span>
   </div>
   <div class="nav">
-    <div class="search-wrap">
-      <input type="text" id="searchInput" class="search-input" placeholder="Search past entries…" autocomplete="off">
-      <div id="searchResults" class="search-results"></div>
-    </div>
-    <a class="nav-link" href="archive/index.html">Browse Archive</a>
+    <a class="nav-link" href="../index.html">&larr; Latest Issue</a>
+    <a class="nav-link" href="../archive/index.html">Full Archive</a>
   </div>
   <h1 class="hero">The Future Files Its <span class="pop">Receipts</span></h1>
   <p class="intro">Today&#39;s issue is full of people auditing promises — memorials built to survive the terrorists who might attack them, techno-utopias that turn out to have an underclass baked in, nostalgia that hides what it was nostalgic for. The counterweight, running quietly underneath, is craft: a record label founded on instinct, a debut Afropop album that rewired a genre, a room designed for the people usually asked to adapt to it.</p>
@@ -300,54 +297,6 @@
   </footer>
 </div>
 </div>
-<script>
-(function(){
-  var root = document.body.getAttribute('data-root') || '';
-  var input = document.getElementById('searchInput');
-  var results = document.getElementById('searchResults');
-  if(!input) return;
-  var indexData = null;
-  function loadIndex(){
-    if(indexData) return Promise.resolve(indexData);
-    return fetch(root + 'assets/search-index.json')
-      .then(function(r){ return r.json(); })
-      .then(function(d){ indexData = d; return d; })
-      .catch(function(){ return []; });
-  }
-  function escapeHtml(s){
-    return String(s).replace(/[&<>"']/g, function(c){
-      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
-    });
-  }
-  function render(matches, q){
-    if(!q){ results.classList.remove('active'); results.innerHTML=''; return; }
-    if(matches.length===0){
-      results.innerHTML = '<div class="search-empty">No entries match &ldquo;'+escapeHtml(q)+'&rdquo;.</div>';
-      results.classList.add('active');
-      return;
-    }
-    results.innerHTML = matches.slice(0,20).map(function(m){
-      return '<a class="search-result" href="'+root+m.page+'#'+m.anchor+'">'+
-        '<span class="sr-tag">'+escapeHtml(m.category)+' — '+escapeHtml(m.date)+'</span>'+
-        '<span class="sr-title">'+escapeHtml(m.title)+'</span>'+
-        '<span class="sr-meta">'+escapeHtml(m.author)+' &middot; '+escapeHtml(m.source)+'</span>'+
-      '</a>';
-    }).join('');
-    results.classList.add('active');
-  }
-  input.addEventListener('input', function(){
-    var q = input.value.trim().toLowerCase();
-    if(!q){ render([], ''); return; }
-    loadIndex().then(function(data){
-      render(data.filter(function(e){
-        return (e.title+' '+e.author+' '+e.source+' '+e.category+' '+e.summary)
-          .toLowerCase().indexOf(q) !== -1;
-      }), q);
-    });
-  });
-  document.addEventListener('click', function(e){
-    if(!e.target.closest('.search-wrap')){ results.classList.remove('active'); }
-  });
-})();</script>
+
 </body>
 </html>

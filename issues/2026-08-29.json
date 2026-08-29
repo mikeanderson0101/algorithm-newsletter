@@ -1,0 +1,171 @@
+{
+  "issue": 2,
+  "date": "2026-08-29",
+  "headline": "The Future Files Its *Receipts*",
+  "intro": "Today's issue is full of people auditing promises — memorials built to survive the terrorists who might attack them, techno-utopias that turn out to have an underclass baked in, nostalgia that hides what it was nostalgic for. The counterweight, running quietly underneath, is craft: a record label founded on instinct, a debut Afropop album that rewired a genre, a room designed for the people usually asked to adapt to it.",
+  "byline": "Issue No. 2 — the reckoning after the promise",
+  "pulse": "The clearest through-line across this week's criticism was not a single event but a shared exhaustion with technological optimism as a governing story: The Baffler working through Silicon Valley's open turn against democratic accountability, Rest of World's own publisher returning from China to report that the two rival AI futures look uncomfortably alike, and Strange Horizons going back to a 1920 robot play to explain why the shortcut past politics never arrives. Against that, several of the week's best pieces were about slowness — archives, apprenticeship, small labels, hand-cut objects. We can't see live platform trends from here, so treat this as an honest reading of what critics were arguing about, not a measurement of what was trending.",
+  "categories": [
+    {
+      "key": "art",
+      "entries": [
+        {
+          "title": "The Land Remembers: Rodney McMillian on History, Power and the Neighbours We Think We Know",
+          "author": "Suzette Bell-Roberts",
+          "source": "ART AFRICA",
+          "summary": "McMillian argues that landscape is never neutral ground but a record of possession, labour and exclusion, and that his exhibition Neighbors uses abstraction and found material precisely because the histories involved were difficult to say or deliberately left unsaid. The interview's sharpest turn is his reading of the neighbour as a figure of contradiction — the ordinary person who is simultaneously welcoming and complicit — with performance used to let Jim Crow rhetoric surface audibly in the present.",
+          "why": "A working artist explaining, without abstraction-as-evasion, why he refuses direct representation of racial violence.",
+          "url": "https://artafricamagazine.org/the-land-remembers-rodney-mcmillian-on-history-power-and-the-neighbours-we-think-we-know/",
+          "verified": true
+        },
+        {
+          "title": "The Misanthrope Who Came in from the Cold",
+          "author": "Susanne Christensen",
+          "source": "Kunstkritikk",
+          "summary": "Christensen defends Matias Faldbakken's Upholding, the new memorial to Norway's 2011 attacks, on the unsentimental ground that a steel-and-stone structure cannot easily be vandalised or repurposed as a stage for extremist messaging, where the competing garden proposals could. She reads the choice as the endpoint of Faldbakken's own trajectory — an artist who built a career on ironic negation arriving at the recognition that such provocation helped clear a path for the far right.",
+          "why": "Rare criticism that treats security as an aesthetic argument rather than an intrusion on one.",
+          "url": "https://kunstkritikk.com/the-misanthrope-who-came-in-from-the-cold/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "film",
+      "entries": [
+        {
+          "title": "The End of Oak Street",
+          "author": "Justin Stewart",
+          "source": "Reverse Shot",
+          "summary": "Stewart argues that David Robert Mitchell's film only looks like sun-dappled Spielbergian pastiche, and that its dinosaur invasion is a device for exposing the paper-thin veneer of civility over suburban American life — the Platts' marriage, built on shame and secrecy, running in parallel to the town's collapse. He rates Mitchell's funhouse economy above Spielberg's own concurrent Disclosure Day, and reads the film as a critique of nostalgia itself: what cruelty does the rose tint exist to obscure?",
+          "why": "A convincing case that the summer's dinosaur movie is doing more thinking than the prestige release beside it.",
+          "url": "https://reverseshot.org/reviews/entry/3484/Oak_Street",
+          "verified": true
+        },
+        {
+          "title": "The ASBOwave and the Cultural Politics of Broken Britain",
+          "author": "Luke Charnley",
+          "source": "Little White Lies",
+          "summary": "Charnley names a 2000s cycle of British vigilante and estate films — Harry Brown, Eden Lake — the ASBOwave, and argues they converted anxiety about the Anti-Social Behaviour Order into a portable visual grammar of national collapse that has since been picked up wholesale to scapegoat migrants. He separates this from Alan Clarke's genuinely critical 1970s work, blaming a later Gangster Light mode that glamorised or demonised working-class violence without analysing it, in a period when working-class filmmakers were being squeezed out.",
+          "why": "It follows a set of genre films all the way through to the rhetoric now circulating around them, without pretending cinema caused the politics.",
+          "url": "https://lwlies.com/long-read/the-asbowave-and-the-cultural-politics-of-broken-britain",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "tech",
+      "entries": [
+        {
+          "title": "Revenge of the Nerds",
+          "author": "Ali Winston",
+          "source": "The Baffler",
+          "summary": "Reviewing Gil Durán's The Nerd Reich, Winston traces the ideological line from Barlow-era cyberlibertarianism through California's eugenics history to a present in which tech capital has stopped bothering with democratic pretence, and shows how network cities, crypto and AI all function as exits from public accountability. The bite is in the contradiction he documents: an anti-government movement whose firms live on federal contracts, with Meta executives commissioned as Army colonels and Palantir software running immigration enforcement.",
+          "why": "It ends on the countervailing evidence — data-centre opposition, a wobbling AI investment case — rather than on doom, which makes the argument harder to dismiss.",
+          "url": "https://thebaffler.com/latest/revenge-of-the-nerds-winston",
+          "verified": true
+        },
+        {
+          "title": "I went to China to see a different AI future. It looked familiar",
+          "author": "Gordon Saft",
+          "source": "Rest of World",
+          "summary": "Saft went to China expecting a fundamentally different model of AI development and came back arguing that the two powers are racing toward much the same place, differing in emphasis rather than kind. China's push into robotics, manufacturing and vehicles is partly a consequence of American chip export controls, which one analyst he speaks to thinks may be aimed at the wrong bottleneck anyway, since data rather than compute is the binding constraint.",
+          "why": "A first-hand corrective to the innovation-versus-regulation framing that most AI geopolitics coverage still runs on.",
+          "url": "https://restofworld.org/2026/china-us-ai-future/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "lit",
+      "entries": [
+        {
+          "title": "The Robber Time: Joanna Russ in the Archives",
+          "author": "Cameron Kunzelman",
+          "source": "Ancillary Review of Books",
+          "summary": "Kunzelman spent a week with Russ's papers at Bowling Green and reports the opposite of what he expected: her drafts show mostly minor corrections, suggesting she arrived at the page more or less formed, while the revelations sit in the disposable material — lecture notes, résumés and departmental memos on the reverse of manuscripts, which document her precarity as clearly as the letters document her depression and chronic pain. He argues that tracing her to peripheral figures like Susan Koppelman is essential to any real history of the field, and warns that digital correspondence will leave future researchers with nothing equivalent.",
+          "why": "An argument about what archives are for, made from inside one, with a genuine worry about what the next generation of scholars will lose.",
+          "url": "https://ancillaryreviewofbooks.org/2026/08/18/the-robber-time/",
+          "verified": true
+        },
+        {
+          "title": "Move Fast and Don't Ask Permission: Techno-Optimism in R.U.R. and Arcane",
+          "author": "Claire Jia-Wen",
+          "source": "Strange Horizons",
+          "summary": "Jia-Wen reads Čapek's 1920 R.U.R. against the 2021 series Arcane to show a century-old pattern: Domin and Viktor both reach for invention because politics is slow and technology speaks the language of efficiency, and in both cases the invention is absorbed by the power structure it was meant to escape — Hextech ends up harming the Undercity, the robots become a new underclass. She also notes how little the treatment of women changes across the hundred years, and locates the alternative in Ekko, whose technology only works because it is attached to a community.",
+          "why": "It uses a 1920s play to explain why the shortcut past politics has never once worked, which is more useful than another op-ed about accelerationism.",
+          "url": "https://strangehorizons.com/wordpress/non-fiction/move-fast-and-dont-ask-permission-techno-optimism-in-r-u-r-and-arcane/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "music",
+      "entries": [
+        {
+          "title": "Review: 'Mushin 2 Mo'Hits' by Wande Coal",
+          "author": "Dami Ajayi",
+          "source": "The NATIVE",
+          "summary": "Ajayi returns to Wande Coal's debut as the record where an R&B singer deliberately became a pop writer, pairing Don Jazzy's production with wordplay and falsetto that grafted American pop sensibility onto Nigerian material without flattening either. He tracks the title's geography — Mushin to Mo'Hits — as the album's actual subject, and argues its influence is audible in explicit homages from Wizkid, Fireboy DML and Ayra Starr, even as Coal's own later career failed to hold the line.",
+          "why": "Retrospective criticism that makes the case for influence by pointing at the specific records that borrowed, not by asserting importance.",
+          "url": "https://thenativemag.com/featured/review-mushin-2-mohits-by-wande-coal/",
+          "verified": true
+        },
+        {
+          "title": "Label of Love: Night School Records",
+          "author": "Michael Kasparis",
+          "source": "The Skinny",
+          "summary": "Kasparis, who founded Night School in 2011 by selling half his record collection, writes its fifteen-year history around a single working criterion — he had to feel an almost mystical frenzy for the music before signing it — and argues that the absence of business acumen was what made the artist relationships possible. The evidence he offers is specific: The Space Lady playing her first-ever concert at sixty-seven, Molly Nilsson touring internationally, the Welsh-language group Tristwch Y Fenywod, all of them sitting in the gap between pop and the experimental scene.",
+          "why": "A label founder being honest about how much of it was instinct and how little was strategy.",
+          "url": "https://www.theskinny.co.uk/music/opinion/label-of-love-night-school-records",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "design",
+      "entries": [
+        {
+          "title": "What Is and Is Not Design for Neurodiversity",
+          "author": "Jaxson Stone",
+          "source": "Metropolis",
+          "summary": "Reporting from Metropolis's first Neuro Inclusive Design Summit, Stone sets out five positions that push back on how the subject is usually handled: that this is mainstream practice rather than a specialist category, that it is a civil-rights question rather than an accommodation, and that neuroinclusive space does not have to be austere — people are owed universal delight, not just a room that doesn't hurt. The last and sharpest point is that no single autism-friendly template exists, so the work has to be participatory, treating lived experience as expertise instead of applying a checklist.",
+          "why": "It draws a hard line between designing with neurodivergent people and designing a sensory-reduction room and calling it done.",
+          "url": "https://metropolismag.com/viewpoints/what-is-and-is-not-design-for-neurodiversity/",
+          "verified": true
+        },
+        {
+          "title": "Table Manners: What happens when cutlery stops behaving?",
+          "author": "Jincy Iype",
+          "source": "STIRworld",
+          "summary": "Iype covers Georgia Smedley's Melbourne Design Week show, in which eleven designers made bespoke utensil sets, and takes its premise seriously: industrial standardisation has made cutlery invisible, so we handle designed objects daily without registering the social conditioning they carry. Smedley's own framing — the fork as a violent little deferral between her fingers and her body — sets up the exhibition's real target, which is less the object than the inherited etiquette around eating, and by extension whatever else in daily life has been accepted as simply given.",
+          "why": "Industrial design criticism about the most ignored object in the house, which turns out to be an argument about manners.",
+          "url": "https://www.stirworld.com/see-lifestyle-table-manners-what-happens-when-cutlery-stops-behaving",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "fashion",
+      "entries": [
+        {
+          "title": "The dream of the '90s vintage store",
+          "author": "Erin Wylie",
+          "source": "Blackbird Spyplane",
+          "summary": "Wylie starts from the assumption that the cheap, well-edited vintage shop of the 1990s and 2000s has been killed off by rising rents and depleted supply, then finds one operating in her own neighbourhood with no online presence at all and European linens, fisherman smocks and radio-station tees priced far below their resale equivalents. The piece turns into a question about retail economics rather than taste: whether staying deliberately offline is now a viable model, in an era when even Goodwill runs an e-commerce operation.",
+          "why": "Menswear writing that goes after the supply chain and the rent instead of the rack.",
+          "url": "https://www.blackbirdspyplane.com/p/the-dream-of-the-90s-vintage-store",
+          "verified": true
+        },
+        {
+          "title": "A Good Shirt Is Ordinary. A Great Shirt Is Art",
+          "author": "Jake Silbert",
+          "source": "Highsnobiety",
+          "summary": "Silbert argues that menswear's obsession with silhouette is misplaced and that material is what actually distinguishes a shirt — it doesn't matter how big or slim or long it is, it matters what it's made of — which is why painted and handwoven cloth reads as wearable where a dramatic cut does not. He then inverts the conservative rule outright: plain shirts are the ones that should be reserved for special occasions, while the genuinely interesting piece deserves the regular rotation.",
+          "why": "A small, contrarian thesis about texture that undoes several decades of received tailoring advice; note that shopping links are embedded, though the argument comes first.",
+          "url": "https://www.highsnobiety.com/p/casey-casey-shirt/",
+          "verified": true
+        }
+      ]
+    }
+  ]
+}
