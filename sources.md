@@ -1,6 +1,6 @@
 # Algorithm — Source List
 
-Last verified: 25 August 2026. ~110 publications, 7 categories, 6 continents.
+Last verified: 30 August 2026. ~110 publications, 7 categories, 6 continents.
 
 ## Rules
 
@@ -13,7 +13,13 @@ Last verified: 25 August 2026. ~110 publications, 7 categories, 6 continents.
 3. **This list is the spine, not a cage.** Check these feeds first. If an
    exceptional piece surfaces elsewhere, it can be used — subject to the same
    verification discipline.
-4. **Balance regionally across the whole issue**, not within every category.
+4. **Rotate.** A publication may hold a category in at most **2 of any 4
+   consecutive issues**. Enforced by `scripts/validate.js`; the composing prompt
+   is handed the recent list by `scripts/recent-sources.js`. Reaching for the
+   same obvious outlet every issue is the exact failure this list exists to
+   prevent, and across issues 1-3 it happened anyway — Highsnobiety took four of
+   six menswear slots, Bandcamp Daily two of six music slots.
+5. **Balance regionally across the whole issue**, not within every category.
    Some categories are structurally Western-heavy (design, menswear); others are
    strong in the Global South (music, literary).
 
@@ -91,7 +97,9 @@ The Bangalore Review, Cha (HK).
 
 ## 5. Music Criticism
 
-**Americas** — Aquarium Drunkard (US) · Bandcamp Daily (US, FILTER) ·
+**Americas** — Aquarium Drunkard (US) · Bandcamp Daily (US, FILTER — the
+easiest music result to find, which is why it took two of the first six slots;
+reach past it before using it) ·
 Musicworks (CA, experimental/sound art) · Sounds and Colours (LatAm focus, EN) ·
 Pitchfork (US) `UNVERIFIED` — blocks fetch · Exclaim! (CA) `UNVERIFIED`
 
@@ -127,6 +135,25 @@ Highsnobiety (DE, FILTER — hybrid essay/shopping) · 032c (DE) ·
 Open Magazine (IN, /art-culture, FILTER — fashion appears irregularly) ·
 Esquire India (IN, FILTER — roughly 70-80% shopping content)
 
+**Added 30 Aug 2026**, after the section drew four of its first six slots from
+Highsnobiety and the other two from Blackbird Spyplane. Each fetched and
+confirmed carrying 2026-dated criticism:
+
+- **Vestoj** (vestoj.com) — fashion theory and long-form criticism, no
+  commercial content whatsoever. The strongest addition here. Publishes roughly
+  monthly, so treat it as a quality reserve, not a weekly feed.
+- **SSENSE Editorial** (CA, ssense.com/en-us/editorial, FILTER) — a retailer's
+  editorial arm, but the writing is real cultural criticism and it publishes
+  weekly. Skip anything that reads as product placement.
+- **Diary of a Wimpy Critic** (Ashley Ogawa Clarke, Substack, FILTER) — sharp
+  menswear criticism written from Tokyo, and one of the few non-Western-based
+  voices in the field publishing in English. Mixes in shopping guides.
+- **Dazed Fashion** (UK, dazeddigital.com/fashion, FILTER) — mostly trend
+  coverage, but carries genuine critical features. Never take a piece unchecked.
+
+That takes the usable menswear pool from six outlets to ten, which is what makes
+the rotation rule survivable in the thinnest category on the list.
+
 **Blocked by technology, not quality — check manually if possible:**
 Die Workwear (US, Derek Guy) — blocks automated fetching, probably the best
 menswear criticism in English · Business of Fashion — menswear opinion strand,
@@ -141,9 +168,10 @@ local English-language *criticism*. Expect to lean on filtered general feeds.
 
 ## Known limitations
 
-1. **The Pulse has no reliable source.** Live social platform trends are not
-   reachable from research tools. Be honest and modest in that section rather
-   than dressing up a marketing blog's trend roundup as observation.
+1. **The Pulse was retired on 30 Aug 2026.** It never had a real data source —
+   live social platform trends are not reachable from the research tools — so it
+   was inference presented as observation. Removed from the prompt, the builder,
+   the validator and the archive.
 2. **Design and menswear are Western-weighted** after three passes. That is the
    media landscape, not a search failure.
 3. **Never source from generic web search alone.** The first hand-made draft did,
