@@ -45,11 +45,6 @@ for (const cat of issue.categories || []) {
   out.push('');
 }
 
-out.push('### The Pulse');
-out.push('');
-out.push(issue.pulse || '_No pulse section this issue._');
-out.push('');
-
 out.push('### At a glance');
 out.push('');
 out.push(`- ${sources.size} publications across ${(issue.categories || []).length} categories`);

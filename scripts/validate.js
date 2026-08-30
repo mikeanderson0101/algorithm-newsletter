@@ -20,6 +20,14 @@ const ISSUES_DIR = path.join(ROOT, 'issues');
 const REQUIRED_CATEGORIES = ['art', 'film', 'tech', 'lit', 'music', 'design', 'fashion'];
 const ENTRIES_PER_CATEGORY = 2;
 
+/**
+ * Rotation: a publication may hold a given category in at most
+ * MAX_PER_ROLLING_WINDOW of any ROLLING_WINDOW consecutive issues.
+ * At four issues a week that is roughly "no more than every other issue".
+ */
+const ROLLING_WINDOW = 4;
+const MAX_PER_ROLLING_WINDOW = 2;
+
 const errors = [];
 const warnings = [];
 
@@ -30,7 +38,7 @@ function countSentences(text) {
   return (String(text).match(/[.!?](\s|$)/g) || []).length;
 }
 
-function validateIssue(issue, filename, priorUrls, priorTitles) {
+function validateIssue(issue, filename, priorUrls, priorTitles, recentHistory) {
   const where = `issues/${filename}`;
 
   if (typeof issue.issue !== 'number' || issue.issue < 1) {
@@ -58,14 +66,10 @@ function validateIssue(issue, filename, priorUrls, priorTitles) {
     err(`${where}: "intro" must be 2-3 sentences.`);
   }
 
-  if (issue.pulse) {
-    const n = countSentences(issue.pulse);
-    if (n < 2 || n > 4) {
-      warn(`${where}: "pulse" is ${n} sentences; the format calls for 2-3.`);
-    }
-  } else {
-    warn(`${where}: no "pulse" section — omitted deliberately?`);
-  }
+  // The Pulse was retired on 30 Aug 2026. It never had a real data source —
+  // live social trends are not reachable from the research tools — so it was
+  // either hedged prose or dressed-up guesswork. A stray `pulse` key in an old
+  // issue file is harmless history; the builder simply ignores it.
 
   const cats = issue.categories || [];
   const seenKeys = new Set();
@@ -153,8 +157,12 @@ function validateIssue(issue, filename, priorUrls, priorTitles) {
     }
   }
 
-  // Source concentration — the first draft drew both picks in five of seven
-  // categories from a single publication, which reads as thin curation.
+  // ---- Source concentration ----
+  //
+  // Three rules, each traceable to something that actually shipped.
+
+  // (a) Whole-issue cap. The first hand-made draft drew both picks in five of
+  //     seven categories from one publication.
   const sourceCounts = {};
   for (const e of allEntries) {
     const s = String(e.source || '').trim().toLowerCase();
@@ -163,8 +171,51 @@ function validateIssue(issue, filename, priorUrls, priorTitles) {
   for (const [source, n] of Object.entries(sourceCounts)) {
     if (n > 2) {
       err(`${where}: ${n} entries come from the same publication ("${source}"). Maximum is 2 per issue.`);
-    } else if (n === 2) {
-      warn(`${where}: both picks in one category share a source ("${source}"). Prefer two publications.`);
+    }
+  }
+
+  // (b) Both picks in ONE category from one outlet. This was only a warning
+  //     until 30 Aug 2026, which is precisely how that issue shipped a men's
+  //     fashion section where both entries were Highsnobiety. Now it fails.
+  for (const block of cats) {
+    const counts = {};
+    for (const e of block.entries || []) {
+      const s = String(e.source || '').trim().toLowerCase();
+      if (s) counts[s] = (counts[s] || 0) + 1;
+    }
+    for (const [source, n] of Object.entries(counts)) {
+      if (n > 1) {
+        err(`${where}: category "${block.key}" takes both picks from "${source}". The two entries must come from different publications.`);
+      }
+    }
+  }
+
+  // (c) Rolling-window rotation. Nothing above can see yesterday, so across
+  //     issues 1-3 Highsnobiety took four of six fashion slots and Bandcamp
+  //     Daily two of six music slots while every per-issue rule passed. A
+  //     publication may now hold a category in at most 2 of any 4 consecutive
+  //     issues.
+  const historyCounts = {};
+  for (const past of recentHistory) {
+    for (const [key, sources] of Object.entries(past.byCategory)) {
+      for (const source of new Set(sources)) {
+        const id = `${key}::${source}`;
+        historyCounts[id] = (historyCounts[id] || 0) + 1;
+      }
+    }
+  }
+  for (const block of cats) {
+    for (const source of new Set((block.entries || []).map((e) => String(e.source || '').trim().toLowerCase()).filter(Boolean))) {
+      const id = `${block.key}::${source}`;
+      const priorAppearances = historyCounts[id] || 0;
+      if (priorAppearances + 1 > MAX_PER_ROLLING_WINDOW) {
+        err(
+          `${where}: "${source}" would appear in ${priorAppearances + 1} of the last ${ROLLING_WINDOW} issues under "${block.key}". ` +
+          `Maximum is ${MAX_PER_ROLLING_WINDOW}. Rest it and use another publication from sources.md.`
+        );
+      } else if (priorAppearances + 1 === MAX_PER_ROLLING_WINDOW) {
+        warn(`${where}: "${source}" is now at the rotation limit for "${block.key}" (${MAX_PER_ROLLING_WINDOW} of ${ROLLING_WINDOW} issues). It must sit out the next one.`);
+      }
     }
   }
 }
@@ -190,19 +241,28 @@ function main() {
   const priorUrls = new Map();
   const priorTitles = new Map();
 
+  // Per-issue record of which publication covered which category, in date
+  // order. The rotation rule reads the tail of this.
+  const history = [];
+
   for (const f of files) {
     const issue = JSON.parse(fs.readFileSync(path.join(ISSUES_DIR, f), 'utf8'));
 
     if (!target || f === target) {
-      validateIssue(issue, f, priorUrls, priorTitles);
+      validateIssue(issue, f, priorUrls, priorTitles, history.slice(-(ROLLING_WINDOW - 1)));
     }
 
+    const byCategory = {};
     for (const c of issue.categories || []) {
+      byCategory[c.key] = (c.entries || [])
+        .map((e) => String(e.source || '').trim().toLowerCase())
+        .filter(Boolean);
       for (const e of c.entries || []) {
         if (e.url) priorUrls.set(e.url.replace(/\/+$/, '').toLowerCase(), f);
         if (e.title) priorTitles.set(String(e.title).trim().toLowerCase(), f);
       }
     }
+    history.push({ file: f, byCategory });
   }
 
   for (const w of warnings) console.warn(`  warning  ${w}`);

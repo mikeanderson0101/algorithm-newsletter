@@ -167,14 +167,6 @@ const STYLES = `
   .entry p{margin:0 0 10px; font-size:16px; color:#EDEAE2;}
   .entry .why{font-size:14.5px; color:#A6A29A; font-style:italic;}
   .entry .why::before{content:"— ";}
-  .pulse{ margin-top:60px; border:2px solid #FF1F3D; border-radius:4px; padding:28px 24px; }
-  .pulse-label{
-    font-family:'Archivo Black', sans-serif;
-    font-size:13px; letter-spacing:0.1em; text-transform:uppercase;
-    color:#FF1F3D; margin-bottom:14px;
-  }
-  .pulse p{ font-size:16px; color:#EDEAE2; margin:0 0 10px; }
-  .pulse p:last-child{margin-bottom:0;}
   .issue-list{list-style:none; margin:0; padding:0;}
   .issue-card{display:block; text-decoration:none; padding:22px 0; border-bottom:1px solid rgba(250,250,247,0.16);}
   .issue-card:first-child{padding-top:0;}
@@ -312,12 +304,10 @@ ${entries}
     <a class="nav-link" href="${root}archive/index.html">Full Archive</a>
   </div>`;
 
-  const pulse = issue.pulse
-    ? `  <div class="pulse">
-    <div class="pulse-label">The Pulse — Social Media This Week</div>
-    <p>${esc(issue.pulse)}</p>
-  </div>`
-    : '';
+  // The Pulse was retired on 30 Aug 2026 — it never had a real data source, so
+  // it was inference presented as observation. Old issue files may still carry
+  // a `pulse` key; it is deliberately not rendered, which retires the section
+  // from the archive as well as the front page on the next build.
 
   return `${head(`Algorithm — Issue No. ${issue.issue}${isLatest ? '' : ` — ${formatDate(issue.date)}`}`)}
 <body data-root="${root}">
@@ -332,7 +322,6 @@ ${nav}
   <p class="intro">${esc(issue.intro)}</p>
   <span class="intro-byline">${esc(issue.byline || `Issue No. ${issue.issue} — ${formatDate(issue.date)}`)}</span>
 ${sections}
-${pulse}
   <footer>
     <span>Algorithm</span>
     <span>Issue No. ${esc(issue.issue)} — ${formatDate(issue.date)}</span>
