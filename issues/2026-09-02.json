@@ -1,0 +1,171 @@
+{
+  "issue": 4,
+  "date": "2026-09-02",
+  "headline": "The Machine Wants Your *Imagination*",
+  "intro": "Three of today's picks circle the same question from different rooms: what happens to a craft once a machine can approximate it, and who ends up owning the approximation. The rest are about materials — airdropped leaflets, glass beads, a rectangle of cotton, a zoom lens used fifty times in one film — and what they record about the people who handled them.",
+  "byline": "Issue No. 4 — propaganda, punk cinema and the lungi",
+  "pulse": "Across the publications we read today the same anxiety kept surfacing from different directions: a filmmaker at Locarno drawing a hard line between AI you declare and AI you conceal, a policy writer picking apart the idea of the public taking equity in companies that have no AI profits to share yet, a music trade desk reporting AI spam uploaded to the profiles of dead jazz musicians. We have no access to live social platform data and will not pretend otherwise — this is what critics and reporters were arguing about in print over the past fortnight, not a reading of what was trending.",
+  "categories": [
+    {
+      "key": "art",
+      "entries": [
+        {
+          "title": "Working for War: Khajistan at Pioneer Works",
+          "author": "Aaron Boehmer",
+          "source": "Momus",
+          "summary": "Boehmer reads Khajistan's Pioneer Works show — a recreated Office of War Information field office stocked with a searchable database of leaflets airdropped over Afghanistan, Iraq, Kuwait and Libya — as evidence that propaganda is not an emergency measure but a standing bureaucratic routine. He tracks the escalation in the paper itself, from cartoonish caricature to the flat photographic threat that coalition forces will find you wherever you hide, and argues that hanging it all beside American sitcoms and consumer goods makes the case: war is a product, the leaflets are its advertising, and the viewer is equal parts marketer and consumer.",
+          "why": "It turns an archive of disposable paper into an argument about how completely war has been folded into ordinary domestic media.",
+          "url": "https://momus.ca/2026/08/13/working-for-war-khajistan-at-pioneer-works/",
+          "verified": true
+        },
+        {
+          "title": "Strangers, Aliens and the Possibility of Other Futures",
+          "author": "Brendon Bell-Roberts",
+          "source": "ART AFRICA",
+          "summary": "Harold Offeh separates two words usually used interchangeably — the alien, which belongs to science fiction and immigration law, and the stranger, who is already close enough to be on your street — and argues that the fear attached to the second is culturally manufactured rather than instinctive. Talking through his Showroom exhibition, he describes moving from solo performance to participatory work in which the terms of engagement, including the right to refuse, are stated up front, and treats humour and camp not as comic relief but as the mechanism that gets an audience close to difficult history.",
+          "why": "A rare interview in which an artist is precise about the ethics of participatory work instead of gesturing vaguely at community.",
+          "url": "https://artafricamagazine.org/strangers-aliens-and-the-possibility-of-other-futures/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "film",
+      "entries": [
+        {
+          "title": "Locarno 2026. Interview with Edgar Pêra: 'We Do Not Want to Produce Another Algorithm of Art'",
+          "author": "Martin Kudlác",
+          "source": "desistfilm",
+          "summary": "Pêra draws a line through the AI argument that most film criticism has not managed: the problem is not the tool but the concealment, since obvious AI is openly created with while non-obvious AI is simply a lie told to the spectator. Discussing Asphalt Guerrilla, his account of an FP-25 bank robbery assembled from staged scenes, archive and generated imagery, he and producer Rodrigo Areias describe abandoning the fundable version mid-shoot to make a punk film instead, with Terence McKenna and Robert Anton Wilson standing in for a 1990s counterculture whose ideas fed straight into the present.",
+          "why": "The clearest statement yet from a working filmmaker on where the ethical line in AI-assisted cinema actually falls.",
+          "url": "https://desistfilm.com/locarno-2026-interview-with-edgar-pera-we-do-not-want-to-produce-another-algorithm-of-art/",
+          "verified": true
+        },
+        {
+          "title": "Playful Provocation: Hypermediacy in Mario Bava's Danger: Diabolik",
+          "author": "Kyle Sossamon",
+          "source": "Senses of Cinema",
+          "summary": "Sossamon argues that Bava adapted comics into cinema without importing a single panel or caption, building hypermediacy into the shooting instead — frames nested inside frames, as when Eva and Diabolik are visible only in a rear-view mirror set against a windshield and a matte painting. The fifty-odd zooms carry the other half of the case: by refusing to dolly, Bava flattens depth into surface the way a comic page does, and the Identikit montage assembling Eva's face folds Warhol and Galton's composite photography into the film's own history of image-making.",
+          "why": "Precise formal analysis that rescues a pop-art curio from being filed away as camp.",
+          "url": "https://www.sensesofcinema.com/2026/cteq/playful-provocation-hypermediacy-in-mario-bavas-danger-diabolik/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "tech",
+      "entries": [
+        {
+          "title": "How Russia Broke Its Internet",
+          "author": "Vladimir Konchayev",
+          "source": "Berlin Review",
+          "summary": "Writing under a pseudonym, Konchayev describes what censorship looks like once it stops targeting dissidents and starts inconveniencing everybody: he has become his family's systems manager, maintaining several VPNs and proxies so relatives can reach ordinary services. His figures show how little the bans achieve and how much they cost — Telegram facing renewed blocking in April 2026 despite 95.7 million Russian monthly users, roughly 64 million people still reaching Instagram through workarounds, and a state-issued Telegram clone, MAX, shipping with spyware built in.",
+          "why": "First-hand reporting on the daily texture of a fragmenting internet rather than another view from the policy desk.",
+          "url": "https://www.blnreview.de/en/ausgaben/2026-10/konchayev-russian-internet-2026",
+          "verified": true
+        },
+        {
+          "title": "Should Trump create an AI sovereign wealth fund?",
+          "author": "Ethan Zuckerman",
+          "source": "Prospect",
+          "summary": "Zuckerman takes a proposal shared, oddly, by Bernie Sanders and Donald Trump — the state taking an equity stake in AI companies — and finds the hole at its centre, which is that there are no AI profits to socialise, only enormous sums circulating between balance sheets, as when Nvidia invests $100 billion in OpenAI which commits much of it back to Nvidia. His second objection is sharper: Sam Altman's offered five per cent functions as insurance against regulation, on the Norwegian precedent of a state that keeps expanding Arctic drilling because its pension fund depends on the returns.",
+          "why": "It reframes a popular-sounding redistribution scheme as a lobbying instrument, and brings the arithmetic to prove it.",
+          "url": "https://www.prospectmagazine.co.uk/ideas/technology/ai/74484/trump-ai-sovereign-wealth-fund-anthropic-openai",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "lit",
+      "entries": [
+        {
+          "title": "Small Press Dispatch: Tears of Blood and Mediocrity",
+          "author": "Roseanna Pendlebury",
+          "source": "Ancillary Review of Books",
+          "summary": "Pendlebury reviews Jordan Stump's translation of Marie NDiaye's La sorcière and uses it to argue for a speculative fiction in which the magic is deliberately incidental — Lucie is a genuine witch, and it does her no good whatsoever. Weaker than both her mother and her daughters, she finds her power isolates rather than protects her, which is exactly the design: the witchcraft is there to amplify the disempowerment of a wife and mother, not to drive a plot.",
+          "why": "A good case for the books where the fantastic element is the least interesting thing on the page.",
+          "url": "https://ancillaryreviewofbooks.org/2026/08/19/spd-tears-of-blood-and-mediocrity/",
+          "verified": true
+        },
+        {
+          "title": "U. M. Agoawike's Black as Diamond Brings Queer Magic and Epic Fantasy Together",
+          "author": "Praise Okeoghene Vandeh",
+          "source": "Brittle Paper",
+          "summary": "Vandeh reads Agoawike's debut as epic fantasy that puts its scale to work on something other than quest mechanics, tracing how the inherited consequences of an earlier generation bear down on Asaru, a cursed warrior, and Wren, a healer carrying his own damage. Her claim is that the worldbuilding and the magic system are load-bearing rather than decorative, because they are what let the book hold queer identity, history and power in a single frame.",
+          "why": "A useful marker of where African queer fantasy has got to, from the continent's most consistent literary desk.",
+          "url": "https://brittlepaper.com/2026/09/u-m-agoawikes-black-as-diamond-brings-queer-magic-and-epic-fantasy-together/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "music",
+      "entries": [
+        {
+          "title": "On The Margins",
+          "author": "Andy Cumming",
+          "source": "Sounds and Colours",
+          "summary": "Cumming maps a wave of Brazilian DIY noise that he reads as a direct reaction against the nepotistic neo-MPB holding the national stages, and finds it running through black metal, breakcore, technobrega and psychedelic country folk at once. The specifics carry the argument: Antropoceno and Kaatayra setting indigenous folk traditions and Ailton Krenak's decolonial thinking against black metal, others folding Candomblé rhythms, capoeira and Amazon field recordings into distorted electronics.",
+          "why": "A survey of a scene that is theoretically literate and genuinely strange, written by someone who has clearly listened to all of it.",
+          "url": "https://soundsandcolours.com/articles/brazil/on-the-margins-17-239265/",
+          "verified": true
+        },
+        {
+          "title": "Behind the Making of 'Comfortably Numb, Reimagined'",
+          "author": "Riham Issa",
+          "source": "SceneNoise",
+          "summary": "Issa documents how Mona Miari's Arabic demo, built on Levantine vocal traditions and gesturing toward the late Rim Banna, turned Pink Floyd's song about withdrawal into its opposite once Roger Waters wrote back to her testimony rather than simply covering himself. The reversal sits in one line — I will never become comfortably numb — and in the lullaby Miari added afterwards for the children killed in Gaza and their mothers, with both artists framing the result as one unbroken 77-year reality rather than a recurring crisis.",
+          "why": "A rare account of how a political song is actually built, from the singer whose material it started as.",
+          "url": "https://scenenoise.com/Features/Behind-the-Making-of-Comfortably-Numb-Reimagined",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "design",
+      "entries": [
+        {
+          "title": "Architecture's Kinships: An Architecture of Interdependencies and Coexistence",
+          "author": "Francisco Brown",
+          "source": "Metropolis",
+          "summary": "Ignacio G. Galán argues to Francisco Brown that buildings are always entangled in relationships, and that the useful move is to treat design as a mode of inquiry capable of producing knowledge rather than a service that materialises someone else's finished idea. His guard against the obvious sentimentality is firm — kinship is not inherently emancipatory, and he points to fascist architecture's part in consolidating exclusionary nationalism — so the projects he describes, from Fragments of Disability Fictions to Another Seedbed, arrive as contingent and unresolved rather than as models to copy.",
+          "why": "An interview that takes the word relational seriously enough to admit it describes exclusion as readily as care.",
+          "url": "https://metropolismag.com/viewpoints/architectures-kinships-an-architecture-of-interdependencies-and-coexistence/",
+          "verified": true
+        },
+        {
+          "title": "The tyranny of architectural literalism",
+          "author": "Elizabeth Farrelly",
+          "source": "ArchitectureAU",
+          "summary": "Farrelly's complaint is that architecture keeps grabbing whatever idea presents itself, however daft, and then builds the idea as a picture of itself — Terry Farrell's giant egg cups on the TV-am breakfast studio in 1983, MVRDV's Rotterdam Rocks straining to resemble mossy boulders. Her sharper point is that the habit now launders performance claims into imagery, since putting plants on a building doesn't make it sustainable, and the marketing language that follows, columns as yacht masts and balconies as sails, insults the public it is written for.",
+          "why": "A properly bad-tempered case against buildings that explain themselves in pictograms.",
+          "url": "https://architectureau.com/articles/the-tyranny-of-architectural-literalism/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "fashion",
+      "entries": [
+        {
+          "title": "Hello, Welcome. I'm John.",
+          "author": "Anja Aronowsky Cronberg",
+          "source": "Vestoj",
+          "summary": "John Ololubo Ketitai talks Cronberg through seventeen years of a Maasai village at Kolong deliberately building itself an economy out of tourism, with guides selected by the elders and warrior dances performed to a schedule — staged authenticity described plainly, by the people doing the staging. On dress he is equally unromantic about origins: the glass beads arrived with the colonisers, the cloth patterns descend from Scottish and English textiles, the sandals are cut from Land Rover tyres, and red is chosen because it stands for protection and blood.",
+          "why": "It lets a wearer rather than a critic explain what a traditional garment is really made of, materially and economically.",
+          "url": "https://vestoj.com/hello-welcome-im-john-2/",
+          "verified": true
+        },
+        {
+          "title": "In Praise of the Lungi: And in defence of being called a lungiwala",
+          "author": "Madhavankutty Pillai",
+          "source": "Open Magazine",
+          "summary": "After a BJP MP used lungi wala against a CPM MP in parliament and the insult was met with privilege notices, Pillai argues that taking offence was the wrong move, because the lungi is what most Kerala men actually wear at home whatever they present in public. Calling an Englishman a trouserwala would be nonsense, he notes, and a communist in particular ought to have accepted a garment requiring nothing but a rectangle of cloth and a knot as the compliment it plainly is.",
+          "why": "The rare menswear column in which the politics of a garment is a literal parliamentary matter.",
+          "url": "https://openthemagazine.com/art-culture/in-praise-of-the-lungi-and-in-defence-of-being-called-a-lungiwala",
+          "verified": true
+        }
+      ]
+    }
+  ]
+}
