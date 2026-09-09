@@ -131,19 +131,35 @@ jobs:
             specialist publications over major aggregators unless a piece is
             genuinely exceptional.
 
-            ## Publications to rest this issue
+            ## Publications to rest — and publications to prefer
 
-            These have run recently. Treat them as unavailable today and go
-            further down the source list instead. Only reach for one of these if
-            you have genuinely exhausted the alternatives in `sources.md` for
-            that category — and never for both entries in a category.
+            The first list below has run recently. Treat those as unavailable
+            today and go further down the source list instead. Only reach for
+            one of these if you have genuinely exhausted the alternatives in
+            `sources.md` for that category — and never for both entries in a
+            category.
+
+            The second list, where present, names verified outlets that have
+            NEVER been used in any issue published so far. This is not a
+            rejected or unreliable list — every name in it passed the same
+            fetch-and-confirm check as everything else in `sources.md`. Being
+            below the rotation limit is not the same as being a good pick:
+            issues 1-4 show a category can stay technically compliant while
+            still drawing from only 3-5 outlets out of 15-20 available, simply
+            because the same familiar few get reached for every time. When a
+            category has a non-empty second list, treat it as the FIRST place
+            to look, ahead of any outlet already used this issue-window, even
+            one still below its limit.
 
             ${{ steps.rest.outputs.list }}
 
             Rotation is a real editorial requirement, not a preference. A reader
-            who sees the same three mastheads every issue has no reason to trust
-            that anything was actually curated. `sources.md` lists roughly 110
-            publications; a healthy issue reaches past the obvious five.
+            who sees the same three or four mastheads every issue has no reason
+            to trust that anything was actually curated. `sources.md` lists
+            roughly 110 publications; a healthy issue reaches well past the
+            obvious five — and an outlet sitting at zero uses after several
+            issues is a stronger signal to reach for it than an outlet merely
+            not yet at its limit.
 
             ## Rules that will fail the build if broken
 
