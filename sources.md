@@ -32,11 +32,19 @@ piece from them without checking it is actually criticism.
 
 **Americas** — Hyperallergic (US) · e-flux Criticism (US/DE, e-flux.com/criticism) ·
 Artforum (US, PAYWALLED) · Momus (CA, momus.ca) · Border Crossings (CA) ·
-Artishock (CL, artishockrevista.com/category/english/ — English category only)
+Artishock (CL, artishockrevista.com/category/english/ — English category only) ·
+Burnaway (US, burnaway.org, American South & Caribbean — non-profit, publishes
+weekly; confirmed active through Sept 2026)
 
 **UK & Europe** — ArtReview (UK) · Burlington Contemporary (UK) · Frieze (UK) ·
 Studio International (UK) · Flash Art International (IT, flash---art.com/category/reviews) ·
-Mousse (IT) · Spike (AT/DE) · Kunstkritikk (Nordic, English-primary)
+Mousse (IT) · Spike (AT/DE) · Kunstkritikk (Nordic, English-primary) ·
+Art Monthly (UK, artmonthly.co.uk — full articles free to read despite the
+subscription upsell; confirmed active with May, June and Jul-Aug 2026 pieces) ·
+Trebuchet (UK, trebuchet-magazine.com, FILTER — near-daily, mixes news and
+event listings with genuine long-form criticism; confirmed active Sept 2026) ·
+Berlin Art Link (DE, berlinartlink.com — confirmed active with pieces dated
+through early Sept 2026)
 
 **Africa, Asia, Oceania** — ART AFRICA (ZA) · Contemporary And (Africa/diaspora) ·
 Bidoun (SWANA) · ArtAsiaPacific (HK, /shows) · TAKE on Art (IN) ·
@@ -44,6 +52,14 @@ Ocula (SG/HK, FILTER — gallery-platform model) · Artlink (AU)
 
 Dead, do not retry: Randian (dormant 2022), ARC Magazine (domain hijacked),
 BLOK (stalled 2024), Terremoto (English long-form ended 2022).
+
+**Added 2 Sept 2026.** Momus, ART AFRICA and ArtAsiaPacific had all sat at the
+rotation ceiling simultaneously across issues 1-4 while nine other verified
+outlets — including ArtReview, Frieze, Burlington Contemporary and Hyperallergic
+— went untouched. The four names above widen the pool and specifically add
+regional range the Americas and UK/Europe lists lacked (American South and
+Caribbean; a second independent Berlin voice). See recent-sources.js's "never
+used" output for which of these, and which existing outlets, still haven't run.
 
 ## 2. Film Criticism
 
