@@ -7,8 +7,8 @@
  * sample template and one summary written from a headline without reading the
  * article. These checks make both of those failures impossible to merge.
  *
- * Usage: node scripts/validate.js [issues/YYYY-MM-DD.json]
- *        (with no argument, validates every issue file)
+ * Usage: node scripts/validate.js [path/to/issue-or-draft.json]
+ *        (with no argument, validates every published issue)
  */
 
 const fs = require('fs');
@@ -46,8 +46,6 @@ function validateIssue(issue, filename, priorUrls, priorTitles, recentHistory) {
   }
   if (!/^\d{4}-\d{2}-\d{2}$/.test(issue.date || '')) {
     err(`${where}: "date" must be YYYY-MM-DD.`);
-  } else if (`${issue.date}.json` !== filename) {
-    err(`${where}: filename must match the "date" field (expected ${issue.date}.json).`);
   }
 
   if (!issue.headline || String(issue.headline).trim().length < 3) {
@@ -223,17 +221,26 @@ function validateIssue(issue, filename, priorUrls, priorTitles, recentHistory) {
 function main() {
   const arg = process.argv[2];
   const files = fs.readdirSync(ISSUES_DIR)
-    .filter((f) => /^\d{4}-\d{2}-\d{2}\.json$/.test(f))
+    .filter((f) => /^\d{4}\.json$/.test(f))
     .sort();
 
-  if (!files.length) {
-    console.error('No issue files found in issues/.');
+  // The target is either an already-published numbered issue (its basename
+  // is one of `files`) or a draft sitting elsewhere — e.g. issues/_draft.json
+  // before Publish has assigned its real number. A draft is validated
+  // against the full history below without needing to be one of `files`
+  // itself; a published issue is validated in its normal place in the loop.
+  const targetLabel = arg ? path.basename(arg) : null;
+  const targetIsDraft = Boolean(targetLabel) && !files.includes(targetLabel);
+  const targetPath = targetIsDraft
+    ? (path.isAbsolute(arg) ? arg : path.join(ROOT, arg))
+    : null;
+
+  if (targetIsDraft && !fs.existsSync(targetPath)) {
+    console.error(`Issue file not found: ${arg}`);
     process.exit(1);
   }
-
-  const target = arg ? path.basename(arg) : null;
-  if (target && !files.includes(target)) {
-    console.error(`Issue file not found: issues/${target}`);
+  if (!files.length && !targetIsDraft) {
+    console.error('No issue files found in issues/.');
     process.exit(1);
   }
 
@@ -241,14 +248,14 @@ function main() {
   const priorUrls = new Map();
   const priorTitles = new Map();
 
-  // Per-issue record of which publication covered which category, in date
-  // order. The rotation rule reads the tail of this.
+  // Per-issue record of which publication covered which category, in
+  // publication order. The rotation rule reads the tail of this.
   const history = [];
 
   for (const f of files) {
     const issue = JSON.parse(fs.readFileSync(path.join(ISSUES_DIR, f), 'utf8'));
 
-    if (!target || f === target) {
+    if (!targetIsDraft && (!targetLabel || f === targetLabel)) {
       validateIssue(issue, f, priorUrls, priorTitles, history.slice(-(ROLLING_WINDOW - 1)));
     }
 
@@ -263,6 +270,11 @@ function main() {
       }
     }
     history.push({ file: f, byCategory });
+  }
+
+  if (targetIsDraft) {
+    const issue = JSON.parse(fs.readFileSync(targetPath, 'utf8'));
+    validateIssue(issue, targetLabel, priorUrls, priorTitles, history.slice(-(ROLLING_WINDOW - 1)));
   }
 
   for (const w of warnings) console.warn(`  warning  ${w}`);
