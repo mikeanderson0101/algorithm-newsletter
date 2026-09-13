@@ -136,7 +136,7 @@ function main() {
 
   const allFiles = fs
     .readdirSync(ISSUES_DIR)
-    .filter((f) => /^\d{4}-\d{2}-\d{2}\.json$/.test(f))
+    .filter((f) => /^\d{4}\.json$/.test(f))
     .sort();
 
   if (!allFiles.length) {
