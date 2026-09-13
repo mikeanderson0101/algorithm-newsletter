@@ -31,7 +31,7 @@ piece from them without checking it is actually criticism.
 ## 1. Fine Art
 
 **Americas** — Hyperallergic (US) · e-flux Criticism (US/DE, e-flux.com/criticism) ·
-Artforum (US, PAYWALLED) · Momus (CA, momus.ca) · Border Crossings (CA) ·
+Momus (CA, momus.ca) · Border Crossings (CA) ·
 Artishock (CL, artishockrevista.com/category/english/ — English category only) ·
 Burnaway (US, burnaway.org, American South & Caribbean — non-profit, publishes
 weekly; confirmed active through Sept 2026)
@@ -51,7 +51,8 @@ Bidoun (SWANA) · ArtAsiaPacific (HK, /shows) · TAKE on Art (IN) ·
 Ocula (SG/HK, FILTER — gallery-platform model) · Artlink (AU)
 
 Dead, do not retry: Randian (dormant 2022), ARC Magazine (domain hijacked),
-BLOK (stalled 2024), Terremoto (English long-form ended 2022).
+BLOK (stalled 2024), Terremoto (English long-form ended 2022),
+Artforum (paywalled — removed 13 Sept 2026).
 
 **Added 2 Sept 2026.** Momus, ART AFRICA and ArtAsiaPacific had all sat at the
 rotation ceiling simultaneously across issues 1-4 while nine other verified
@@ -63,7 +64,7 @@ used" output for which of these, and which existing outlets, still haven't run.
 
 ## 2. Film Criticism
 
-**Americas** — Reverse Shot (US) · Film Comment (US) · Film Quarterly (US, PAYWALLED) ·
+**Americas** — Reverse Shot (US) · Film Comment (US) ·
 Philosophy in Film (US) · POV Magazine (CA) · desistfilm (PE, /eng) ·
 Cinema Scope (CA) `UNVERIFIED` — JS-gated
 
@@ -100,7 +101,7 @@ Locus (US) · Strange Horizons (US) · Ancillary Review of Books (US, SFF) ·
 Literary Review of Canada (CA) · Latin American Literature Today (bilingual,
 genuine EN) · PREE (JM) · sx salon (Caribbean) · Brick (CA) `UNVERIFIED`
 
-**UK & Europe** — SFBook.com (UK) · London Review of Books (UK, PAYWALLED) ·
+**UK & Europe** — SFBook.com (UK) ·
 Dublin Review of Books (IE) · Vector/BSFA (UK, membership-gated) ·
 Eurozine (pan-EU) · European Review of Books (pan-EU) · B O D Y (CZ) · Literalab (CEE)
 
