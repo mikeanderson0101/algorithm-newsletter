@@ -2,9 +2,10 @@
 /**
  * Algorithm — static site builder.
  *
- * Reads every issues/YYYY-MM-DD.json and deterministically renders:
+ * Reads every issues/NNNN.json (a zero-padded issue number, not a date —
+ * multiple issues can share a calendar date) and deterministically renders:
  *   index.html                 (most recent issue)
- *   archive/YYYY-MM-DD.html    (one permanent page per issue)
+ *   archive/NNNN.html          (one permanent page per issue)
  *   archive/index.html         (browsable list, newest first)
  *   assets/search-index.json   (search data across all issues)
  *
@@ -336,7 +337,7 @@ ${isLatest ? `<script>${SEARCH_SCRIPT}</script>` : ''}
 
 function renderArchiveIndex(issues) {
   const cards = issues.map((iss) => `    <li>
-      <a class="issue-card" href="${iss.date}.html">
+      <a class="issue-card" href="${String(iss.issue).padStart(4, '0')}.html">
         <div class="issue-meta"><span class="num">Issue No. ${esc(iss.issue)}</span> — ${formatDate(iss.date)}</div>
         <span class="issue-headline">${esc(String(iss.headline).replace(/\*/g, '').replace(/\n/g, ' '))}</span>
         <p class="issue-desc">${esc(iss.intro)}</p>
@@ -393,7 +394,7 @@ function buildSearchIndex(issues) {
           source: e.source || '',
           summary: e.summary || '',
           url: e.url || null,
-          page: `archive/${issue.date}.html`,
+          page: `archive/${String(issue.issue).padStart(4, '0')}.html`,
           anchor: `${cat.key}-${j + 1}`,
         });
       });
@@ -408,7 +409,7 @@ function main() {
     process.exit(1);
   }
   const files = fs.readdirSync(ISSUES_DIR)
-    .filter((f) => /^\d{4}-\d{2}-\d{2}\.json$/.test(f))
+    .filter((f) => /^\d{4}\.json$/.test(f))
     .sort();
 
   if (!files.length) {
@@ -426,15 +427,19 @@ function main() {
     }
   });
 
-  // Newest first.
-  issues.sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0));
+  // Newest first. Two issues can share a date now, so date alone is not a
+  // total order — break ties by issue number (higher = more recent).
+  issues.sort((a, b) => {
+    if (a.date !== b.date) return a.date < b.date ? 1 : -1;
+    return b.issue - a.issue;
+  });
 
   fs.mkdirSync(ARCHIVE_DIR, { recursive: true });
   fs.mkdirSync(ASSETS_DIR, { recursive: true });
 
   for (const issue of issues) {
     fs.writeFileSync(
-      path.join(ARCHIVE_DIR, `${issue.date}.html`),
+      path.join(ARCHIVE_DIR, `${String(issue.issue).padStart(4, '0')}.html`),
       renderIssue(issue, { root: '../', isLatest: false }),
     );
   }
