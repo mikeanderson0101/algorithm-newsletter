@@ -217,15 +217,7 @@ jobs:
             - `url` may be null, but the key must exist.
             - There is no `pulse` field. The section was retired.
 
-        - name: Show what was written
-        if: success()
-        run: |
-          echo "--- repo root ---"
-          ls -la
-          echo "--- issues/ ---"
-          ls -la issues/ || echo "(no issues dir)"
-          
-        - name: Validate
+      - name: Validate
         if: success()
         run: node scripts/validate.js issues/_draft.json
 
