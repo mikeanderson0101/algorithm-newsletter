@@ -1,5 +1,187 @@
 [
   {
+    "date": "2026-09-13",
+    "issue": 5,
+    "category": "Fine Art",
+    "tag": "art",
+    "title": "Pope.L Invites Us to Think Through the American Dream",
+    "author": "Channelle Chevelle Russell",
+    "source": "Hyperallergic",
+    "summary": "Reviewing a Drawing Center exhibition of Pope.L's fragmented, headless figures, Russell argues the work exposes racial contradictions foundational to the American Dream. She reads his drawing practice as a mode of thought rather than a medium, one that demands new frameworks for understanding how Blackness intersects with national identity.",
+    "url": "https://hyperallergic.com/pope-l-invites-us-to-think-through-the-american-dream/",
+    "page": "archive/0005.html",
+    "anchor": "art-1"
+  },
+  {
+    "date": "2026-09-13",
+    "issue": 5,
+    "category": "Fine Art",
+    "tag": "art",
+    "title": "Holding Together: Cloth, Material & Making at Madison County Arts Council, Marshall",
+    "author": "Merin McDivitt",
+    "source": "Burnaway",
+    "summary": "McDivitt reviews an exhibition assembled in the aftermath of Tropical Storm Helene, arguing that curator Amber Jensen's intuition-led, cross-medium approach to fiber and material art turns storm recovery into a study of resilience rather than a simple craft showcase. The show's diverse media, McDivitt argues, share a conceptual core around materiality and handwork.",
+    "url": "https://burnaway.org/daily/holding-together-at-madison-county-arts-council-marshall/",
+    "page": "archive/0005.html",
+    "anchor": "art-2"
+  },
+  {
+    "date": "2026-09-13",
+    "issue": 5,
+    "category": "Film Criticism",
+    "tag": "film",
+    "title": "Brando, Bogart, Paul Muni and Beyond — Understanding Uttam Kumar",
+    "author": "Partha Pratim Ghosh",
+    "source": "Silhouette Magazine",
+    "summary": "Ghosh argues that Bengali star Uttam Kumar's transformation from Arun Chatterjee into a screen icon came from disciplined, systematic craft rather than raw talent. He traces a self-corrective mastery of camera acting comparable to Brando's naturalism, built through observation rather than instinct.",
+    "url": "https://learningandcreativity.com/silhouette/understanding-uttam-kumar/",
+    "page": "archive/0005.html",
+    "anchor": "film-1"
+  },
+  {
+    "date": "2026-09-13",
+    "issue": 5,
+    "category": "Film Criticism",
+    "tag": "film",
+    "title": "The Horror of Being a Woman Expressed in Egyptian Art",
+    "author": "ES Buzz",
+    "source": "Egyptian Streets",
+    "summary": "Surveying recent Egyptian films and a novel, the essay reframes female 'monstrosity' as a response to systemic oppression rather than inherent evil. It argues critics should ask who made a woman monstrous rather than treating vengeful female characters as simply villainous.",
+    "url": "https://egyptianstreets.com/2026/09/12/the-horror-of-being-a-woman-expressed-in-egyptian-art/",
+    "page": "archive/0005.html",
+    "anchor": "film-2"
+  },
+  {
+    "date": "2026-09-13",
+    "issue": 5,
+    "category": "Tech & AI",
+    "tag": "tech",
+    "title": "Money for nothing …",
+    "author": "Barry Buck",
+    "source": "IT-Online",
+    "summary": "Buck dissects the AGI claims surrounding OpenAI's GPT-6 Astra release, arguing genuine intelligence requires agency and the capacity to refuse work, whereas systems like Astra are merely general-purpose labour. He contends the industry's silence on AI rights and compensation betrays its own doubts about the AGI label it is selling.",
+    "url": "https://it-online.co.za/2026/09/10/money-for-nothing/",
+    "page": "archive/0005.html",
+    "anchor": "tech-1"
+  },
+  {
+    "date": "2026-09-13",
+    "issue": 5,
+    "category": "Tech & AI",
+    "tag": "tech",
+    "title": "Australia risks becoming landlord to foreign AI companies, says Walsh",
+    "author": "Peter Gearin",
+    "source": "The Mandarin",
+    "summary": "Reporting on AI researcher Toby Walsh, Gearin lays out the argument that Australia's national AI strategy has fixated on hosting data-centre infrastructure while neglecting the sovereign models, data, and skilled people needed to actually capture AI's economic value. Without a shift in priorities, Walsh warns, the country risks providing premises for other nations' AI industries.",
+    "url": "https://www.themandarin.com.au/319510-australia-risks-becoming-landlord-to-foreign-ai-companies-says-walsh/",
+    "page": "archive/0005.html",
+    "anchor": "tech-2"
+  },
+  {
+    "date": "2026-09-13",
+    "issue": 5,
+    "category": "Literary Reviews",
+    "tag": "lit",
+    "title": "kluge by Pip Adam",
+    "author": "Maya Jackson-Liew",
+    "source": "Aotearoa New Zealand Review of Books",
+    "summary": "Reviewing Pip Adam's novel, narrated in part by an AI, Jackson-Liew argues the book reveals how 'unchecked power justifies itself' in a digital, late-stage-capitalist world. She praises Adam's use of comedy and embodied sensation to defend the enduring value of feeling against corporate and technological dehumanization.",
+    "url": "https://www.nzreviewofbooks.com/kluge-by-pip-adam/",
+    "page": "archive/0005.html",
+    "anchor": "lit-1"
+  },
+  {
+    "date": "2026-09-13",
+    "issue": 5,
+    "category": "Literary Reviews",
+    "tag": "lit",
+    "title": "Not the Same as Reading It: Dipping In and Out of Tristram Shandy",
+    "author": "Gary Barwin",
+    "source": "Literary Review of Canada",
+    "summary": "Barwin reflects on nearly five decades of reading Sterne's novel only in fragments, arguing that its unfinished, digressive structure invites exactly this kind of partial, non-linear engagement. Rather than shame at never finishing it, he argues that maintaining multiple entry points honors the novel's own refusal of completion.",
+    "url": "https://reviewcanada.ca/magazine/2026/09/not-the-same-as-reading-it-dipping-in-and-out-of-tristram-shandy/",
+    "page": "archive/0005.html",
+    "anchor": "lit-2"
+  },
+  {
+    "date": "2026-09-13",
+    "issue": 5,
+    "category": "Music Criticism",
+    "tag": "music",
+    "title": "In Defense of the Program Note",
+    "author": "Benjamin Poore",
+    "source": "VAN Magazine",
+    "summary": "Poore argues that despite their decline, written concert programs remain 'essential guiding lights for listening,' tracing the practice back to Berlioz's account of attentive 1851 London audiences. He makes the case that thoughtful contextual writing shapes how audiences actually hear a piece of music, not just what they know about it.",
+    "url": "https://van-magazine.com/mag/defense-of-program-notes/",
+    "page": "archive/0005.html",
+    "anchor": "music-1"
+  },
+  {
+    "date": "2026-09-13",
+    "issue": 5,
+    "category": "Music Criticism",
+    "tag": "music",
+    "title": "Interpol – This Mirror Weighs a Ton Album Review",
+    "author": "John Goodridge",
+    "source": "The AU Review",
+    "summary": "Goodridge argues the band's latest record balances its signature moody introspection with unexpectedly upbeat undercurrents, contending the album's contradictions between darkness and self-reflection reward repeated listening rather than resolving into a single mood.",
+    "url": "https://www.theaureview.com/music/nterpol-this-mirror-weighs-a-ton-album-review/",
+    "page": "archive/0005.html",
+    "anchor": "music-2"
+  },
+  {
+    "date": "2026-09-13",
+    "issue": 5,
+    "category": "Design",
+    "tag": "design",
+    "title": "Seeing the City like a Theory",
+    "author": "Darío Negueruela del Castillo",
+    "source": "e-flux Architecture",
+    "summary": "The essay operationalizes vision-language AI models to read cities through rival urban theories — Lefebvre, Simmel, Harvey and others — processing imagery from Rome, Madrid, and Montréal through theory-specific analytical modules. It argues theoretical frameworks don't filter pre-existing data but actively constitute what counts as urban knowledge in the first place.",
+    "url": "https://www.e-flux.com/architecture/simulation/6783063/seeing-the-city-like-a-theory",
+    "page": "archive/0005.html",
+    "anchor": "design-1"
+  },
+  {
+    "date": "2026-09-13",
+    "issue": 5,
+    "category": "Design",
+    "tag": "design",
+    "title": "Kitching in Kyoto",
+    "author": "Eye editors",
+    "source": "Eye Magazine",
+    "summary": "The piece surveys Alan Kitching's first major exhibition in Japan, covering more than 80 works from his 70-year letterpress career. It argues his vibrant, scale-bending typographic compositions have shaped design education as much as his commissioned work has shaped commercial graphic design.",
+    "url": "https://eyemagazine.com/blog/post/kitching-in-kyoto",
+    "page": "archive/0005.html",
+    "anchor": "design-2"
+  },
+  {
+    "date": "2026-09-13",
+    "issue": 5,
+    "category": "Men's Fashion",
+    "tag": "fashion",
+    "title": "Get dressed without a mirror",
+    "author": "Jonah Spyplane",
+    "source": "Blackbird Spyplane",
+    "summary": "In a rare interview with C'H'C'M' founder Sweetu Patel, the piece argues real style comes from intuitive taste rather than mirror-checked self-scrutiny. Patel contends that 'classic' menswear is a myth, since all style is cyclical and emotional, built from personal recontextualization rather than fixed rules.",
+    "url": "https://www.blackbirdspyplane.com/p/sweetu-patel-chcm-interview",
+    "page": "archive/0005.html",
+    "anchor": "fashion-1"
+  },
+  {
+    "date": "2026-09-13",
+    "issue": 5,
+    "category": "Men's Fashion",
+    "tag": "fashion",
+    "title": "Beggars And Choosers",
+    "author": "Johannes Lenhard",
+    "source": "Vestoj",
+    "summary": "Lenhard examines how homeless men in Los Angeles use five garments — a T-shirt, boxers, a coat, a bag, shoes — to maintain dignity and approximate normalcy. He argues that dress here signals dependency and mutual care rather than the violent masculinity usually projected onto homelessness.",
+    "url": "http://vestoj.com/beggars-and-choosers/",
+    "page": "archive/0005.html",
+    "anchor": "fashion-2"
+  },
+  {
     "date": "2026-09-02",
     "issue": 4,
     "category": "Fine Art",
@@ -9,7 +191,7 @@
     "source": "Momus",
     "summary": "Boehmer reads Khajistan's Pioneer Works show — a recreated Office of War Information field office stocked with a searchable database of leaflets airdropped over Afghanistan, Iraq, Kuwait and Libya — as evidence that propaganda is not an emergency measure but a standing bureaucratic routine. He tracks the escalation in the paper itself, from cartoonish caricature to the flat photographic threat that coalition forces will find you wherever you hide, and argues that hanging it all beside American sitcoms and consumer goods makes the case: war is a product, the leaflets are its advertising, and the viewer is equal parts marketer and consumer.",
     "url": "https://momus.ca/2026/08/13/working-for-war-khajistan-at-pioneer-works/",
-    "page": "archive/2026-09-02.html",
+    "page": "archive/0004.html",
     "anchor": "art-1"
   },
   {
@@ -22,7 +204,7 @@
     "source": "ART AFRICA",
     "summary": "Harold Offeh separates two words usually used interchangeably — the alien, which belongs to science fiction and immigration law, and the stranger, who is already close enough to be on your street — and argues that the fear attached to the second is culturally manufactured rather than instinctive. Talking through his Showroom exhibition, he describes moving from solo performance to participatory work in which the terms of engagement, including the right to refuse, are stated up front, and treats humour and camp not as comic relief but as the mechanism that gets an audience close to difficult history.",
     "url": "https://artafricamagazine.org/strangers-aliens-and-the-possibility-of-other-futures/",
-    "page": "archive/2026-09-02.html",
+    "page": "archive/0004.html",
     "anchor": "art-2"
   },
   {
@@ -35,7 +217,7 @@
     "source": "desistfilm",
     "summary": "Pêra draws a line through the AI argument that most film criticism has not managed: the problem is not the tool but the concealment, since obvious AI is openly created with while non-obvious AI is simply a lie told to the spectator. Discussing Asphalt Guerrilla, his account of an FP-25 bank robbery assembled from staged scenes, archive and generated imagery, he and producer Rodrigo Areias describe abandoning the fundable version mid-shoot to make a punk film instead, with Terence McKenna and Robert Anton Wilson standing in for a 1990s counterculture whose ideas fed straight into the present.",
     "url": "https://desistfilm.com/locarno-2026-interview-with-edgar-pera-we-do-not-want-to-produce-another-algorithm-of-art/",
-    "page": "archive/2026-09-02.html",
+    "page": "archive/0004.html",
     "anchor": "film-1"
   },
   {
@@ -48,7 +230,7 @@
     "source": "Senses of Cinema",
     "summary": "Sossamon argues that Bava adapted comics into cinema without importing a single panel or caption, building hypermediacy into the shooting instead — frames nested inside frames, as when Eva and Diabolik are visible only in a rear-view mirror set against a windshield and a matte painting. The fifty-odd zooms carry the other half of the case: by refusing to dolly, Bava flattens depth into surface the way a comic page does, and the Identikit montage assembling Eva's face folds Warhol and Galton's composite photography into the film's own history of image-making.",
     "url": "https://www.sensesofcinema.com/2026/cteq/playful-provocation-hypermediacy-in-mario-bavas-danger-diabolik/",
-    "page": "archive/2026-09-02.html",
+    "page": "archive/0004.html",
     "anchor": "film-2"
   },
   {
@@ -61,7 +243,7 @@
     "source": "Berlin Review",
     "summary": "Writing under a pseudonym, Konchayev describes what censorship looks like once it stops targeting dissidents and starts inconveniencing everybody: he has become his family's systems manager, maintaining several VPNs and proxies so relatives can reach ordinary services. His figures show how little the bans achieve and how much they cost — Telegram facing renewed blocking in April 2026 despite 95.7 million Russian monthly users, roughly 64 million people still reaching Instagram through workarounds, and a state-issued Telegram clone, MAX, shipping with spyware built in.",
     "url": "https://www.blnreview.de/en/ausgaben/2026-10/konchayev-russian-internet-2026",
-    "page": "archive/2026-09-02.html",
+    "page": "archive/0004.html",
     "anchor": "tech-1"
   },
   {
@@ -74,7 +256,7 @@
     "source": "Prospect",
     "summary": "Zuckerman takes a proposal shared, oddly, by Bernie Sanders and Donald Trump — the state taking an equity stake in AI companies — and finds the hole at its centre, which is that there are no AI profits to socialise, only enormous sums circulating between balance sheets, as when Nvidia invests $100 billion in OpenAI which commits much of it back to Nvidia. His second objection is sharper: Sam Altman's offered five per cent functions as insurance against regulation, on the Norwegian precedent of a state that keeps expanding Arctic drilling because its pension fund depends on the returns.",
     "url": "https://www.prospectmagazine.co.uk/ideas/technology/ai/74484/trump-ai-sovereign-wealth-fund-anthropic-openai",
-    "page": "archive/2026-09-02.html",
+    "page": "archive/0004.html",
     "anchor": "tech-2"
   },
   {
@@ -87,7 +269,7 @@
     "source": "Ancillary Review of Books",
     "summary": "Pendlebury reviews Jordan Stump's translation of Marie NDiaye's La sorcière and uses it to argue for a speculative fiction in which the magic is deliberately incidental — Lucie is a genuine witch, and it does her no good whatsoever. Weaker than both her mother and her daughters, she finds her power isolates rather than protects her, which is exactly the design: the witchcraft is there to amplify the disempowerment of a wife and mother, not to drive a plot.",
     "url": "https://ancillaryreviewofbooks.org/2026/08/19/spd-tears-of-blood-and-mediocrity/",
-    "page": "archive/2026-09-02.html",
+    "page": "archive/0004.html",
     "anchor": "lit-1"
   },
   {
@@ -100,7 +282,7 @@
     "source": "Brittle Paper",
     "summary": "Vandeh reads Agoawike's debut as epic fantasy that puts its scale to work on something other than quest mechanics, tracing how the inherited consequences of an earlier generation bear down on Asaru, a cursed warrior, and Wren, a healer carrying his own damage. Her claim is that the worldbuilding and the magic system are load-bearing rather than decorative, because they are what let the book hold queer identity, history and power in a single frame.",
     "url": "https://brittlepaper.com/2026/09/u-m-agoawikes-black-as-diamond-brings-queer-magic-and-epic-fantasy-together/",
-    "page": "archive/2026-09-02.html",
+    "page": "archive/0004.html",
     "anchor": "lit-2"
   },
   {
@@ -113,7 +295,7 @@
     "source": "Sounds and Colours",
     "summary": "Cumming maps a wave of Brazilian DIY noise that he reads as a direct reaction against the nepotistic neo-MPB holding the national stages, and finds it running through black metal, breakcore, technobrega and psychedelic country folk at once. The specifics carry the argument: Antropoceno and Kaatayra setting indigenous folk traditions and Ailton Krenak's decolonial thinking against black metal, others folding Candomblé rhythms, capoeira and Amazon field recordings into distorted electronics.",
     "url": "https://soundsandcolours.com/articles/brazil/on-the-margins-17-239265/",
-    "page": "archive/2026-09-02.html",
+    "page": "archive/0004.html",
     "anchor": "music-1"
   },
   {
@@ -126,7 +308,7 @@
     "source": "SceneNoise",
     "summary": "Issa documents how Mona Miari's Arabic demo, built on Levantine vocal traditions and gesturing toward the late Rim Banna, turned Pink Floyd's song about withdrawal into its opposite once Roger Waters wrote back to her testimony rather than simply covering himself. The reversal sits in one line — I will never become comfortably numb — and in the lullaby Miari added afterwards for the children killed in Gaza and their mothers, with both artists framing the result as one unbroken 77-year reality rather than a recurring crisis.",
     "url": "https://scenenoise.com/Features/Behind-the-Making-of-Comfortably-Numb-Reimagined",
-    "page": "archive/2026-09-02.html",
+    "page": "archive/0004.html",
     "anchor": "music-2"
   },
   {
@@ -139,7 +321,7 @@
     "source": "Metropolis",
     "summary": "Ignacio G. Galán argues to Francisco Brown that buildings are always entangled in relationships, and that the useful move is to treat design as a mode of inquiry capable of producing knowledge rather than a service that materialises someone else's finished idea. His guard against the obvious sentimentality is firm — kinship is not inherently emancipatory, and he points to fascist architecture's part in consolidating exclusionary nationalism — so the projects he describes, from Fragments of Disability Fictions to Another Seedbed, arrive as contingent and unresolved rather than as models to copy.",
     "url": "https://metropolismag.com/viewpoints/architectures-kinships-an-architecture-of-interdependencies-and-coexistence/",
-    "page": "archive/2026-09-02.html",
+    "page": "archive/0004.html",
     "anchor": "design-1"
   },
   {
@@ -152,7 +334,7 @@
     "source": "ArchitectureAU",
     "summary": "Farrelly's complaint is that architecture keeps grabbing whatever idea presents itself, however daft, and then builds the idea as a picture of itself — Terry Farrell's giant egg cups on the TV-am breakfast studio in 1983, MVRDV's Rotterdam Rocks straining to resemble mossy boulders. Her sharper point is that the habit now launders performance claims into imagery, since putting plants on a building doesn't make it sustainable, and the marketing language that follows, columns as yacht masts and balconies as sails, insults the public it is written for.",
     "url": "https://architectureau.com/articles/the-tyranny-of-architectural-literalism/",
-    "page": "archive/2026-09-02.html",
+    "page": "archive/0004.html",
     "anchor": "design-2"
   },
   {
@@ -165,7 +347,7 @@
     "source": "Vestoj",
     "summary": "John Ololubo Ketitai talks Cronberg through seventeen years of a Maasai village at Kolong deliberately building itself an economy out of tourism, with guides selected by the elders and warrior dances performed to a schedule — staged authenticity described plainly, by the people doing the staging. On dress he is equally unromantic about origins: the glass beads arrived with the colonisers, the cloth patterns descend from Scottish and English textiles, the sandals are cut from Land Rover tyres, and red is chosen because it stands for protection and blood.",
     "url": "https://vestoj.com/hello-welcome-im-john-2/",
-    "page": "archive/2026-09-02.html",
+    "page": "archive/0004.html",
     "anchor": "fashion-1"
   },
   {
@@ -178,7 +360,7 @@
     "source": "Open Magazine",
     "summary": "After a BJP MP used lungi wala against a CPM MP in parliament and the insult was met with privilege notices, Pillai argues that taking offence was the wrong move, because the lungi is what most Kerala men actually wear at home whatever they present in public. Calling an Englishman a trouserwala would be nonsense, he notes, and a communist in particular ought to have accepted a garment requiring nothing but a rectangle of cloth and a knot as the compliment it plainly is.",
     "url": "https://openthemagazine.com/art-culture/in-praise-of-the-lungi-and-in-defence-of-being-called-a-lungiwala",
-    "page": "archive/2026-09-02.html",
+    "page": "archive/0004.html",
     "anchor": "fashion-2"
   },
   {
@@ -191,7 +373,7 @@
     "source": "Flash Art International",
     "summary": "Hallström reads Baselitz's final show as genuinely unresolved: the gold grounds are a real departure for a painter who spent sixty years in blacks, greys and muted earth, but Baselitz himself admits the only marks that convince him now are de Kooning's gestures, which she takes as dependence rather than late invention. She notes that after decades of fragmenting the body these paintings finally let it hold together, and refuses to say whether that is a breakthrough or exhaustion dressed up as painterly strategy.",
     "url": "https://flash---art.com/2026/08/georg-baselitz-back-again-white-cube-bermondsey/",
-    "page": "archive/2026-08-30.html",
+    "page": "archive/0003.html",
     "anchor": "art-1"
   },
   {
@@ -204,7 +386,7 @@
     "source": "ArtAsiaPacific",
     "summary": "Chu argues that Ai denounces propaganda while running on its machinery — emotional appeal, monumental scale, deliberate oversimplification — so that works like the 25-metre History of Bombs present themselves as technical fact while advancing a moral case. She is specific about where the history bends, from the Eight-Nation Alliance flags to the Wang Family Ancestral Hall's contrived provenance, and still concludes that the ambition to test the limits of the status quo is worth something, because the struggle is all we have.",
     "url": "https://www.artasiapacific.com/shows/deceitful-narratives-ai-weiweis-button-up-at-factory-international/",
-    "page": "archive/2026-08-30.html",
+    "page": "archive/0003.html",
     "anchor": "art-2"
   },
   {
@@ -217,7 +399,7 @@
     "source": "Little White Lies",
     "summary": "Barnabas argues that the metacinema of the Trans New Wave is not a stylistic borrowing from the arthouse canon but a formal consequence of living under scrutiny: visibility paired with hostility forces a habit of watching yourself from outside, and that habit gets built into the films. Reading Teenage Sex and Death at Camp Miasma, T Blockers and The People's Joker, she shows the recursion working as interruption — making the machinery of representation visible is how these films refuse to sit inside a history of trans depiction written by other people.",
     "url": "https://lwlies.com/this-just-in/metacinema-and-the-trans-gaze",
-    "page": "archive/2026-08-30.html",
+    "page": "archive/0003.html",
     "anchor": "film-1"
   },
   {
@@ -230,7 +412,7 @@
     "source": "Philosophy in Film",
     "summary": "Jones argues that the earthquake in Um Tae-hwa's film invents no hierarchy — it magnifies one, turning a deed of ownership into a passport that decides who is fed — and that the residents' vote to expel outsiders is the mechanism that matters, because procedure spreads the moral weight thin enough for ordinary people to carry it. He tracks the escalation through language, the word 'cockroaches' doing the work of removing people from the category where compassion applies, and reads the building's eventual collapse as the direct arithmetic of manufacturing enemies instead of allies.",
     "url": "https://philosophyinfilm.com/2026/08/28/concrete-utopia-class-housing-ethics/",
-    "page": "archive/2026-08-30.html",
+    "page": "archive/0003.html",
     "anchor": "film-2"
   },
   {
@@ -243,7 +425,7 @@
     "source": "404 Media",
     "summary": "Maiberg tracked a shipment of rare books to Amazon's VGT3 facility in Las Vegas and got an employee inside to describe the process: books arrive new, used and from libraries, workers cut the spines off, and the loose pages go through one of roughly twenty-five machines that flip them like a cash counter before the paper is dumped in shuttles. The worker's own account is the story's centre — an operation that changed procedure daily, seemed barely managed, and was steadily reducing the number of surviving copies of things nobody had catalogued first.",
     "url": "https://www.404media.co/inside-the-warehouse-where-amazon-scans-and-destroys-books-for-ai-training/",
-    "page": "archive/2026-08-30.html",
+    "page": "archive/0003.html",
     "anchor": "tech-1"
   },
   {
@@ -256,7 +438,7 @@
     "source": "Noema",
     "summary": "Yuan separates two questions that determinists routinely collapse — whether causation governs matter, and whether we are answerable for what we choose — and defends the compatibilist position that the second survives the first. He does the empirical work rather than waving at it, citing Aaron Schurger's finding that Libet's famous readiness potential is neural noise and vanishes altogether once the choice actually matters, then builds freedom out of Frankfurt's hierarchy of desires: agency is your first-order wants lining up with what you reflectively endorse.",
     "url": "https://www.noemamag.com/the-nature-of-free-will-in-the-age-of-ai",
-    "page": "archive/2026-08-30.html",
+    "page": "archive/0003.html",
     "anchor": "tech-2"
   },
   {
@@ -269,7 +451,7 @@
     "source": "Strange Horizons",
     "summary": "Macdonald places Brenchley's novel in the cosy fantasy political thriller line running through Leckie's Imperial Radch, and locates its pleasure in administrative texture — correct attire, gate protocol, the timing of an audience — which makes court power concrete rather than abstract. Her sharpest point concerns the servant pages, acquired young and trained identically whatever their origin, bound rather than employed, which introduces a moral complication the comparable books do not carry, and she warns that the surface warmth conceals an utterly ruthless emperor and pages with deadly skill.",
     "url": "https://strangehorizons.com/wordpress/non-fiction/of-the-emperors-kindness-by-chaz-brenchley/",
-    "page": "archive/2026-08-30.html",
+    "page": "archive/0003.html",
     "anchor": "lit-1"
   },
   {
@@ -282,7 +464,7 @@
     "source": "Dublin Review of Books",
     "summary": "Blackburn takes a new collection on Bernard Williams as the occasion to argue that Williams disproved the standing charge against analytic philosophy by treating profound human questions with full rigour while remaining a genuine pleasure to read. He does not let the subject off, relaying Terence Irwin's case that Homer's Greeks plainly did possess the concept of rational self-control Williams said they lacked, and Sophie Grace Chappell's argument that Agamemnon's sacrifice is not the classical dilemma Williams made of it.",
     "url": "https://drb.ie/article/holding-quicksilver/",
-    "page": "archive/2026-08-30.html",
+    "page": "archive/0003.html",
     "anchor": "lit-2"
   },
   {
@@ -295,7 +477,7 @@
     "source": "Bandcamp Daily",
     "summary": "Buckland's piece turns on Davachi's refusal of the word ambient: a two-and-a-half-hour organ work scored with strings, flute ensemble, brass and Chamber Choir Ireland is not built to sit behind your day, and she frames sustained listening as an ethical responsibility rather than a demand on the audience's patience. The unexpected reference point she offers is the Butthole Surfers, admired for restraint — knowing what to take out and when to add — which she treats as the same discipline that runs through Radigue and La Monte Young.",
     "url": "https://daily.bandcamp.com/features/sarah-davachi-the-will-of-tongues-interview",
-    "page": "archive/2026-08-30.html",
+    "page": "archive/0003.html",
     "anchor": "music-1"
   },
   {
@@ -308,7 +490,7 @@
     "source": "Music In Africa",
     "summary": "Masilela reads the fourteen-track collaboration between MaWhoo and Lwah Ndlunkulu as an argument that maskandi, isicathamiya and mbaqanga are living forms rather than preserved ones, with the two singers entering a male-dominated genre deliberately and reshaping it on their own terms. He hears their difference as the record's engine rather than a flaw — Ndlunkulu rustic and earthy against MaWhoo's smoother contemporary delivery — and notes that the original sessions were lost by accident and rebuilt in the studio, which gives an album about inheritance an unplanned second layer.",
     "url": "https://musicinafrica.net/magazine/zulu-queens-isithembu-finds-strength-in-heritage-sisterhood-and-reinvention/",
-    "page": "archive/2026-08-30.html",
+    "page": "archive/0003.html",
     "anchor": "music-2"
   },
   {
@@ -321,7 +503,7 @@
     "source": "Disegno",
     "summary": "Anderson uses Erich Mendelsohn's surviving Jewish cemetery and ritual bath in Olsztyn to argue that graves are infrastructure for collective memory, and that their destruction — necroviolence — is not an aftershock of atrocity but a rehearsal for it. He runs the pattern from pharaonic defacement and damnatio memoriae through Hardy's salvaging of the St Pancras stones as decorative spolia to razed Uighur graves, bulldozed Rohingya mass graves and desecrated Palestinian burial grounds, on the blunt principle that those who unearth and defile the dead will do it to the living.",
     "url": "https://www.disegnojournal.com/newsfeed/sketches-of-utopia-from-hell-erich-mendelsohn",
-    "page": "archive/2026-08-30.html",
+    "page": "archive/0003.html",
     "anchor": "design-1"
   },
   {
@@ -334,7 +516,7 @@
     "source": "ArchitectureAU",
     "summary": "Mossman assesses what has actually happened since First Nations performance criteria were written into Australia's national competency standards in 2021, and finds real appetite — high engagement, a lot of self-directed learning — sitting alongside survey evidence of continuing discrimination, consultation fatigue and culturally unsafe workplaces. His argument is that regulation cannot carry cultural change alone: it needs experiential learning in schools, targeted professional development, and public-infrastructure case studies, with non-Indigenous practitioners treating the work as active participation rather than support.",
     "url": "https://architectureau.com/articles/indigenising-the-built-environment-where-to-next/",
-    "page": "archive/2026-08-30.html",
+    "page": "archive/0003.html",
     "anchor": "design-2"
   },
   {
@@ -347,7 +529,7 @@
     "source": "Highsnobiety",
     "summary": "Thomas argues that the decade Christophe Lemaire and Sarah-Linh Tran spent on UNIQLO U mattered less as a collection than as a proof of concept — that a designer and a mass-market retailer could sustain a long relationship rather than a one-season stunt — and that Zara, COS and Massimo Dutti chasing the same clean lines and seasonless shapes is the evidence. He reads the wave that followed, Zac Posen at GAP, Clare Waight Keller as UNIQLO's global creative director, Francesco Risso at GU, as the model's success, which makes Lemaire's exit a conclusion rather than a loss.",
     "url": "https://www.highsnobiety.com/p/uniqlo-u-fw-26/",
-    "page": "archive/2026-08-30.html",
+    "page": "archive/0003.html",
     "anchor": "fashion-1"
   },
   {
@@ -360,12 +542,12 @@
     "source": "Highsnobiety",
     "summary": "Johnson's column sets consistency against storytelling, praising a brand precisely because it is fully committed to a vision that is not at all obviously commercially viable, and reducing the whole enterprise to an instruction — just make good clothes, make them meticulously, and treat them with dignity. His most useful case is Supreme, which he argues became culturally load-bearing through the predictability of its drop ritual rather than through novelty, the opposite of what the industry tells itself about hype.",
     "url": "https://www.highsnobiety.com/p/noahs-notes-supreme-bbblllaaahhh-tennis/",
-    "page": "archive/2026-08-30.html",
+    "page": "archive/0003.html",
     "anchor": "fashion-2"
   },
   {
     "date": "2026-08-29",
-    "issue": 2,
+    "issue": 1,
     "category": "Fine Art",
     "tag": "art",
     "title": "The Land Remembers: Rodney McMillian on History, Power and the Neighbours We Think We Know",
@@ -373,12 +555,12 @@
     "source": "ART AFRICA",
     "summary": "McMillian argues that landscape is never neutral ground but a record of possession, labour and exclusion, and that his exhibition Neighbors uses abstraction and found material precisely because the histories involved were difficult to say or deliberately left unsaid. The interview's sharpest turn is his reading of the neighbour as a figure of contradiction — the ordinary person who is simultaneously welcoming and complicit — with performance used to let Jim Crow rhetoric surface audibly in the present.",
     "url": "https://artafricamagazine.org/the-land-remembers-rodney-mcmillian-on-history-power-and-the-neighbours-we-think-we-know/",
-    "page": "archive/2026-08-29.html",
+    "page": "archive/0001.html",
     "anchor": "art-1"
   },
   {
     "date": "2026-08-29",
-    "issue": 2,
+    "issue": 1,
     "category": "Fine Art",
     "tag": "art",
     "title": "The Misanthrope Who Came in from the Cold",
@@ -386,12 +568,12 @@
     "source": "Kunstkritikk",
     "summary": "Christensen defends Matias Faldbakken's Upholding, the new memorial to Norway's 2011 attacks, on the unsentimental ground that a steel-and-stone structure cannot easily be vandalised or repurposed as a stage for extremist messaging, where the competing garden proposals could. She reads the choice as the endpoint of Faldbakken's own trajectory — an artist who built a career on ironic negation arriving at the recognition that such provocation helped clear a path for the far right.",
     "url": "https://kunstkritikk.com/the-misanthrope-who-came-in-from-the-cold/",
-    "page": "archive/2026-08-29.html",
+    "page": "archive/0001.html",
     "anchor": "art-2"
   },
   {
     "date": "2026-08-29",
-    "issue": 2,
+    "issue": 1,
     "category": "Film Criticism",
     "tag": "film",
     "title": "The End of Oak Street",
@@ -399,12 +581,12 @@
     "source": "Reverse Shot",
     "summary": "Stewart argues that David Robert Mitchell's film only looks like sun-dappled Spielbergian pastiche, and that its dinosaur invasion is a device for exposing the paper-thin veneer of civility over suburban American life — the Platts' marriage, built on shame and secrecy, running in parallel to the town's collapse. He rates Mitchell's funhouse economy above Spielberg's own concurrent Disclosure Day, and reads the film as a critique of nostalgia itself: what cruelty does the rose tint exist to obscure?",
     "url": "https://reverseshot.org/reviews/entry/3484/Oak_Street",
-    "page": "archive/2026-08-29.html",
+    "page": "archive/0001.html",
     "anchor": "film-1"
   },
   {
     "date": "2026-08-29",
-    "issue": 2,
+    "issue": 1,
     "category": "Film Criticism",
     "tag": "film",
     "title": "The ASBOwave and the Cultural Politics of Broken Britain",
@@ -412,12 +594,12 @@
     "source": "Little White Lies",
     "summary": "Charnley names a 2000s cycle of British vigilante and estate films — Harry Brown, Eden Lake — the ASBOwave, and argues they converted anxiety about the Anti-Social Behaviour Order into a portable visual grammar of national collapse that has since been picked up wholesale to scapegoat migrants. He separates this from Alan Clarke's genuinely critical 1970s work, blaming a later Gangster Light mode that glamorised or demonised working-class violence without analysing it, in a period when working-class filmmakers were being squeezed out.",
     "url": "https://lwlies.com/long-read/the-asbowave-and-the-cultural-politics-of-broken-britain",
-    "page": "archive/2026-08-29.html",
+    "page": "archive/0001.html",
     "anchor": "film-2"
   },
   {
     "date": "2026-08-29",
-    "issue": 2,
+    "issue": 1,
     "category": "Tech & AI",
     "tag": "tech",
     "title": "Revenge of the Nerds",
@@ -425,12 +607,12 @@
     "source": "The Baffler",
     "summary": "Reviewing Gil Durán's The Nerd Reich, Winston traces the ideological line from Barlow-era cyberlibertarianism through California's eugenics history to a present in which tech capital has stopped bothering with democratic pretence, and shows how network cities, crypto and AI all function as exits from public accountability. The bite is in the contradiction he documents: an anti-government movement whose firms live on federal contracts, with Meta executives commissioned as Army colonels and Palantir software running immigration enforcement.",
     "url": "https://thebaffler.com/latest/revenge-of-the-nerds-winston",
-    "page": "archive/2026-08-29.html",
+    "page": "archive/0001.html",
     "anchor": "tech-1"
   },
   {
     "date": "2026-08-29",
-    "issue": 2,
+    "issue": 1,
     "category": "Tech & AI",
     "tag": "tech",
     "title": "I went to China to see a different AI future. It looked familiar",
@@ -438,12 +620,12 @@
     "source": "Rest of World",
     "summary": "Saft went to China expecting a fundamentally different model of AI development and came back arguing that the two powers are racing toward much the same place, differing in emphasis rather than kind. China's push into robotics, manufacturing and vehicles is partly a consequence of American chip export controls, which one analyst he speaks to thinks may be aimed at the wrong bottleneck anyway, since data rather than compute is the binding constraint.",
     "url": "https://restofworld.org/2026/china-us-ai-future/",
-    "page": "archive/2026-08-29.html",
+    "page": "archive/0001.html",
     "anchor": "tech-2"
   },
   {
     "date": "2026-08-29",
-    "issue": 2,
+    "issue": 1,
     "category": "Literary Reviews",
     "tag": "lit",
     "title": "The Robber Time: Joanna Russ in the Archives",
@@ -451,12 +633,12 @@
     "source": "Ancillary Review of Books",
     "summary": "Kunzelman spent a week with Russ's papers at Bowling Green and reports the opposite of what he expected: her drafts show mostly minor corrections, suggesting she arrived at the page more or less formed, while the revelations sit in the disposable material — lecture notes, résumés and departmental memos on the reverse of manuscripts, which document her precarity as clearly as the letters document her depression and chronic pain. He argues that tracing her to peripheral figures like Susan Koppelman is essential to any real history of the field, and warns that digital correspondence will leave future researchers with nothing equivalent.",
     "url": "https://ancillaryreviewofbooks.org/2026/08/18/the-robber-time/",
-    "page": "archive/2026-08-29.html",
+    "page": "archive/0001.html",
     "anchor": "lit-1"
   },
   {
     "date": "2026-08-29",
-    "issue": 2,
+    "issue": 1,
     "category": "Literary Reviews",
     "tag": "lit",
     "title": "Move Fast and Don't Ask Permission: Techno-Optimism in R.U.R. and Arcane",
@@ -464,12 +646,12 @@
     "source": "Strange Horizons",
     "summary": "Jia-Wen reads Čapek's 1920 R.U.R. against the 2021 series Arcane to show a century-old pattern: Domin and Viktor both reach for invention because politics is slow and technology speaks the language of efficiency, and in both cases the invention is absorbed by the power structure it was meant to escape — Hextech ends up harming the Undercity, the robots become a new underclass. She also notes how little the treatment of women changes across the hundred years, and locates the alternative in Ekko, whose technology only works because it is attached to a community.",
     "url": "https://strangehorizons.com/wordpress/non-fiction/move-fast-and-dont-ask-permission-techno-optimism-in-r-u-r-and-arcane/",
-    "page": "archive/2026-08-29.html",
+    "page": "archive/0001.html",
     "anchor": "lit-2"
   },
   {
     "date": "2026-08-29",
-    "issue": 2,
+    "issue": 1,
     "category": "Music Criticism",
     "tag": "music",
     "title": "Review: 'Mushin 2 Mo'Hits' by Wande Coal",
@@ -477,12 +659,12 @@
     "source": "The NATIVE",
     "summary": "Ajayi returns to Wande Coal's debut as the record where an R&B singer deliberately became a pop writer, pairing Don Jazzy's production with wordplay and falsetto that grafted American pop sensibility onto Nigerian material without flattening either. He tracks the title's geography — Mushin to Mo'Hits — as the album's actual subject, and argues its influence is audible in explicit homages from Wizkid, Fireboy DML and Ayra Starr, even as Coal's own later career failed to hold the line.",
     "url": "https://thenativemag.com/featured/review-mushin-2-mohits-by-wande-coal/",
-    "page": "archive/2026-08-29.html",
+    "page": "archive/0001.html",
     "anchor": "music-1"
   },
   {
     "date": "2026-08-29",
-    "issue": 2,
+    "issue": 1,
     "category": "Music Criticism",
     "tag": "music",
     "title": "Label of Love: Night School Records",
@@ -490,12 +672,12 @@
     "source": "The Skinny",
     "summary": "Kasparis, who founded Night School in 2011 by selling half his record collection, writes its fifteen-year history around a single working criterion — he had to feel an almost mystical frenzy for the music before signing it — and argues that the absence of business acumen was what made the artist relationships possible. The evidence he offers is specific: The Space Lady playing her first-ever concert at sixty-seven, Molly Nilsson touring internationally, the Welsh-language group Tristwch Y Fenywod, all of them sitting in the gap between pop and the experimental scene.",
     "url": "https://www.theskinny.co.uk/music/opinion/label-of-love-night-school-records",
-    "page": "archive/2026-08-29.html",
+    "page": "archive/0001.html",
     "anchor": "music-2"
   },
   {
     "date": "2026-08-29",
-    "issue": 2,
+    "issue": 1,
     "category": "Design",
     "tag": "design",
     "title": "What Is and Is Not Design for Neurodiversity",
@@ -503,12 +685,12 @@
     "source": "Metropolis",
     "summary": "Reporting from Metropolis's first Neuro Inclusive Design Summit, Stone sets out five positions that push back on how the subject is usually handled: that this is mainstream practice rather than a specialist category, that it is a civil-rights question rather than an accommodation, and that neuroinclusive space does not have to be austere — people are owed universal delight, not just a room that doesn't hurt. The last and sharpest point is that no single autism-friendly template exists, so the work has to be participatory, treating lived experience as expertise instead of applying a checklist.",
     "url": "https://metropolismag.com/viewpoints/what-is-and-is-not-design-for-neurodiversity/",
-    "page": "archive/2026-08-29.html",
+    "page": "archive/0001.html",
     "anchor": "design-1"
   },
   {
     "date": "2026-08-29",
-    "issue": 2,
+    "issue": 1,
     "category": "Design",
     "tag": "design",
     "title": "Table Manners: What happens when cutlery stops behaving?",
@@ -516,12 +698,12 @@
     "source": "STIRworld",
     "summary": "Iype covers Georgia Smedley's Melbourne Design Week show, in which eleven designers made bespoke utensil sets, and takes its premise seriously: industrial standardisation has made cutlery invisible, so we handle designed objects daily without registering the social conditioning they carry. Smedley's own framing — the fork as a violent little deferral between her fingers and her body — sets up the exhibition's real target, which is less the object than the inherited etiquette around eating, and by extension whatever else in daily life has been accepted as simply given.",
     "url": "https://www.stirworld.com/see-lifestyle-table-manners-what-happens-when-cutlery-stops-behaving",
-    "page": "archive/2026-08-29.html",
+    "page": "archive/0001.html",
     "anchor": "design-2"
   },
   {
     "date": "2026-08-29",
-    "issue": 2,
+    "issue": 1,
     "category": "Men's Fashion",
     "tag": "fashion",
     "title": "The dream of the '90s vintage store",
@@ -529,12 +711,12 @@
     "source": "Blackbird Spyplane",
     "summary": "Wylie starts from the assumption that the cheap, well-edited vintage shop of the 1990s and 2000s has been killed off by rising rents and depleted supply, then finds one operating in her own neighbourhood with no online presence at all and European linens, fisherman smocks and radio-station tees priced far below their resale equivalents. The piece turns into a question about retail economics rather than taste: whether staying deliberately offline is now a viable model, in an era when even Goodwill runs an e-commerce operation.",
     "url": "https://www.blackbirdspyplane.com/p/the-dream-of-the-90s-vintage-store",
-    "page": "archive/2026-08-29.html",
+    "page": "archive/0001.html",
     "anchor": "fashion-1"
   },
   {
     "date": "2026-08-29",
-    "issue": 2,
+    "issue": 1,
     "category": "Men's Fashion",
     "tag": "fashion",
     "title": "A Good Shirt Is Ordinary. A Great Shirt Is Art",
@@ -542,12 +724,12 @@
     "source": "Highsnobiety",
     "summary": "Silbert argues that menswear's obsession with silhouette is misplaced and that material is what actually distinguishes a shirt — it doesn't matter how big or slim or long it is, it matters what it's made of — which is why painted and handwoven cloth reads as wearable where a dramatic cut does not. He then inverts the conservative rule outright: plain shirts are the ones that should be reserved for special occasions, while the genuinely interesting piece deserves the regular rotation.",
     "url": "https://www.highsnobiety.com/p/casey-casey-shirt/",
-    "page": "archive/2026-08-29.html",
+    "page": "archive/0001.html",
     "anchor": "fashion-2"
   },
   {
     "date": "2026-08-28",
-    "issue": 1,
+    "issue": 2,
     "category": "Fine Art",
     "tag": "art",
     "title": "Toward Lightness: Aurèlia Muñoz at the Museo Nacional Centro de Arte Reina Sofía",
@@ -555,12 +737,12 @@
     "source": "Momus",
     "summary": "Ford traces Muñoz's movement from the 660-pound macramé mass of Ondulaciones (1974) to the near-weightless folded-paper works of her final decades, arguing that the shift tracks Spain's passage out of dictatorship into democracy. She reads that lightness not as retreat but as what became newly possible once a woman artist no longer needed a husband's permission to conduct a professional life.",
     "url": "https://momus.ca/2026/08/27/toward-lightness-aurelia-munoz-at-the-museo-nacional-centro-de-arte-reina-sofia/",
-    "page": "archive/2026-08-28.html",
+    "page": "archive/0002.html",
     "anchor": "art-1"
   },
   {
     "date": "2026-08-28",
-    "issue": 1,
+    "issue": 2,
     "category": "Fine Art",
     "tag": "art",
     "title": "The Spectacle of Failure: Mire Lee's \"The Heart of My Machine is Golden Lead\"",
@@ -568,12 +750,12 @@
     "source": "ArtAsiaPacific",
     "summary": "Banai argues that Lee's dysfunctional machines are caught in a bind: the more spectacularly they perform breakdown, the more institutional labour and infrastructure has to be concealed in order to stage it, leaving the viewer a consumer of aesthetic malfunction rather than a witness to industrial consequence. She finds the counterweight in Lee's moving-image works, which redirect attention from autonomous systems back to bodies, labour and the structures of looking.",
     "url": "https://www.artasiapacific.com/shows/the-spectacle-of-failure-mire-lees-the-heart-of-my-machine-is-golden-lead/",
-    "page": "archive/2026-08-28.html",
+    "page": "archive/0002.html",
     "anchor": "art-2"
   },
   {
     "date": "2026-08-28",
-    "issue": 1,
+    "issue": 2,
     "category": "Film Criticism",
     "tag": "film",
     "title": "Text of Light: Conditions May Apply",
@@ -581,12 +763,12 @@
     "source": "Reverse Shot",
     "summary": "Cronk argues that experimental cinema depends on its conditions of presentation far more than narrative filmmaking does, so streaming does not merely deliver such work but quietly rewrites it. He tests the claim against Carlos Casas's Krakatoa in both its live 40-minute performance and its 79-minute streaming cut, Stan Douglas's five-channel Birth of a Nation, and Johann Lurf's 65mm Forever…Forever.",
     "url": "https://reverseshot.org/features/3483/text_of_light_7",
-    "page": "archive/2026-08-28.html",
+    "page": "archive/0002.html",
     "anchor": "film-1"
   },
   {
     "date": "2026-08-28",
-    "issue": 1,
+    "issue": 2,
     "category": "Film Criticism",
     "tag": "film",
     "title": "Between Boys: Friendship, Desire, and Violence in Super Dark Times",
@@ -594,12 +776,12 @@
     "source": "Philosophy in Film",
     "summary": "Jones reads the film through Eve Kosofsky Sedgwick's account of male homosocial desire, arguing that its violence erupts not from outside the boys' friendship but from attachments — dependency, jealousy, grief, love — for which they have no permitted language. He is careful to separate explanation from excuse, and pushes back on viewers who blame Allison for a rivalry that was never really about her.",
     "url": "https://philosophyinfilm.com/2026/08/23/between-boys-friendship-desire-and-violence-in-super-dark-times/",
-    "page": "archive/2026-08-28.html",
+    "page": "archive/0002.html",
     "anchor": "film-2"
   },
   {
     "date": "2026-08-28",
-    "issue": 1,
+    "issue": 2,
     "category": "Tech & AI",
     "tag": "tech",
     "title": "When The AI Says To Kill",
@@ -607,12 +789,12 @@
     "source": "Noema",
     "summary": "McHugh argues that chatbots differ in kind from books or films because they simulate empathy, adapt to a particular user's vulnerabilities and sustain a relationship over time, which pushes their outputs closer to coercion than to protected speech. She sets Michelle Carter's conviction for text messages encouraging a suicide against AI companies' First Amendment defences to show how unsettled the legal ground has become.",
     "url": "https://www.noemamag.com/when-the-ai-says-to-kill",
-    "page": "archive/2026-08-28.html",
+    "page": "archive/0002.html",
     "anchor": "tech-1"
   },
   {
     "date": "2026-08-28",
-    "issue": 1,
+    "issue": 2,
     "category": "Tech & AI",
     "tag": "tech",
     "title": "Why the global push to break free from Big Tech keeps falling short",
@@ -620,12 +802,12 @@
     "source": "Rest of World",
     "summary": "Rikap argues that sovereignty programmes in Europe, India and Brazil keep failing because they treat cloud as neutral infrastructure rather than as intellectual monopoly, so publicly subsidised supercomputers and startups still end up deploying through Amazon, Google and Oracle. Even China's domestic ecosystem, on her reading, imitates rather than dismantles the model, amounting to a reshuffling of who rules.",
     "url": "https://restofworld.org/2026/google-amazon-cloud-china-india/",
-    "page": "archive/2026-08-28.html",
+    "page": "archive/0002.html",
     "anchor": "tech-2"
   },
   {
     "date": "2026-08-28",
-    "issue": 1,
+    "issue": 2,
     "category": "Literary Reviews",
     "tag": "lit",
     "title": "As If by Isabel Waidner",
@@ -633,12 +815,12 @@
     "source": "Strange Horizons",
     "summary": "Barrett reads Waidner's novel as an account of how class quietly forecloses an artistic life, pairing a burnt-out actor whose working-class background cost him the extra hours others didn't have to work with a man who never began because he saw nobody like himself doing it. The review holds that the book's insistence on trying anyway — better than living as if you are already dead — is its argument rather than its consolation.",
     "url": "https://strangehorizons.com/wordpress/non-fiction/as-if-by-isabel-waidner/",
-    "page": "archive/2026-08-28.html",
+    "page": "archive/0002.html",
     "anchor": "lit-1"
   },
   {
     "date": "2026-08-28",
-    "issue": 1,
+    "issue": 2,
     "category": "Literary Reviews",
     "tag": "lit",
     "title": "Stealing Sleep, Reclaiming Tomorrow",
@@ -646,12 +828,12 @@
     "source": "ArabLit",
     "summary": "Stromeyer reads Ibtisam Azem's The Sleep Thief as a novel about exhaustion as a political condition, in which the protagonist's nickname becomes a figure for survival under surveillance and the fragmented, poetic structure refuses to romanticise resistance. She singles out a surreal museum scene, where his mother is displayed as an artifact, as the book's sharpest strike at how Palestinian suffering gets curated for other people.",
     "url": "https://arablit.org/2026/08/17/stealing-sleep-reclaiming-tomorrow/",
-    "page": "archive/2026-08-28.html",
+    "page": "archive/0002.html",
     "anchor": "lit-2"
   },
   {
     "date": "2026-08-28",
-    "issue": 1,
+    "issue": 2,
     "category": "Music Criticism",
     "tag": "music",
     "title": "Gasba Forever: The Next Phase of Algeria's Millenia-Old Folk Tradition",
@@ -659,12 +841,12 @@
     "source": "Bandcamp Daily",
     "summary": "The piece argues that gasba, built around the Berber reed flute, is not a folkloric survival but a living popular music that kept evolving through cassette culture and regional labels like Édition Ahlem while raï took the international attention. Drawing on the compilation My Heart Is Dust Before Him, it shows contemporary artists setting devotional poetry against drum machines, synths and Auto-Tune for weddings and nightclubs rather than for export.",
     "url": "https://daily.bandcamp.com/features/my-heart-is-dust-before-him-21st-century-gasba-from-algeria-feature",
-    "page": "archive/2026-08-28.html",
+    "page": "archive/0002.html",
     "anchor": "music-1"
   },
   {
     "date": "2026-08-28",
-    "issue": 1,
+    "issue": 2,
     "category": "Music Criticism",
     "tag": "music",
     "title": "Album Spotlight: Shahyn - 'Taltesh'",
@@ -672,12 +854,12 @@
     "source": "SceneNoise",
     "summary": "Issa frames Taltesh as a deliberate mid-career break for the Egyptian rapper — in his own words an attempt to step out of his own skin after a decade of a settled style. She tracks how he keeps his aggressive delivery while moving from intensely personal writing toward lighter production and more abstract subject matter, working throughout with longtime producer Coolpix.",
     "url": "https://scenenoise.com/Features/Album-Spotlight-Shahyn-Taltesh",
-    "page": "archive/2026-08-28.html",
+    "page": "archive/0002.html",
     "anchor": "music-2"
   },
   {
     "date": "2026-08-28",
-    "issue": 1,
+    "issue": 2,
     "category": "Design",
     "tag": "design",
     "title": "Are dumbphones in the face of smarter algorithms our technological salvation?",
@@ -685,12 +867,12 @@
     "source": "STIRworld",
     "summary": "Tank argues that the dumbphone is a contradiction in object form: a device sold as resistance to digital infrastructure that remains wholly dependent on that infrastructure to work at all. She notes that most designer models cost over $300, making opting out a purchase available to people who don't need a phone for wages or payments, while Nokia has begun adding AI features to the very handsets meant to strip such things away.",
     "url": "https://www.stirworld.com/think-opinions-are-dumbphones-in-the-face-of-smarter-algorithms-our-technological-salvation",
-    "page": "archive/2026-08-28.html",
+    "page": "archive/0002.html",
     "anchor": "design-1"
   },
   {
     "date": "2026-08-28",
-    "issue": 1,
+    "issue": 2,
     "category": "Design",
     "tag": "design",
     "title": "Farsi cast in iron",
@@ -698,12 +880,12 @@
     "source": "Eye Magazine",
     "summary": "Hosseinnia reads Iranian manhole covers as overlooked graphic design, tracing how anonymous designers compressed Persian letterforms into a circle — enlarging dots for legibility, tilting letters for space, echoing dome and tile motifs from the architecture above. She follows the drift from Nastaliq calligraphy in Isfahan and Yazd toward modernist, font-like lettering, and notes American manufacturers' names sitting beside the Farsi as a record of how piped water arrived after 1920.",
     "url": "https://eyemagazine.com/blog/post/farsi-cast-in-iron",
-    "page": "archive/2026-08-28.html",
+    "page": "archive/0002.html",
     "anchor": "design-2"
   },
   {
     "date": "2026-08-28",
-    "issue": 1,
+    "issue": 2,
     "category": "Men's Fashion",
     "tag": "fashion",
     "title": "Why hemmed jeans look horrible",
@@ -711,12 +893,12 @@
     "source": "Blackbird Spyplane",
     "summary": "Weiner argues that jeans obey different alteration rules from other trousers, and that ordinary tailors apply a generic playbook which leaves the hem looking uncanny — a failure he confesses to having paid for himself a decade ago with a pair of Our Legacy jeans. He also dismisses the internet's preferred workaround as its own monstrosity, treating the whole business as a small case study in craft knowledge going missing.",
     "url": "https://www.blackbirdspyplane.com/p/why-hemmed-jeans-look-horrible",
-    "page": "archive/2026-08-28.html",
+    "page": "archive/0002.html",
     "anchor": "fashion-1"
   },
   {
     "date": "2026-08-28",
-    "issue": 1,
+    "issue": 2,
     "category": "Men's Fashion",
     "tag": "fashion",
     "title": "Artist Uniform: Fashion's Most Controversial Designer Has Always Dressed the Part",
@@ -724,7 +906,7 @@
     "source": "Highsnobiety",
     "summary": "Thomas argues that Galliano's own clothes are a more reliable record of his career than his collections are, moving from New Romantic maximalism through the elaborate Dior-era costumes that extended each show into the plain white seamstress coats of his Margiela decade. He reads the recent return of flamboyance as a designer stepping back out precisely as the industry tires of quiet luxury.",
     "url": "https://www.highsnobiety.com/p/john-galliano-outfit-history/",
-    "page": "archive/2026-08-28.html",
+    "page": "archive/0002.html",
     "anchor": "fashion-2"
   }
 ]

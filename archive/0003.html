@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0A0A0A">
+<title>Algorithm — Issue No. 3 — 30 Aug 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Source+Serif+4:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  html, body{ margin:0; padding:0; height:100%; background-color:#0A0A0A; }
+  *{box-sizing:border-box;}
+  body{
+    min-height:100dvh;
+    color:#FAFAF7;
+    font-family:'Source Serif 4', Georgia, serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .page{ background-color:#0A0A0A; min-height:100dvh; }
+  a{ color:inherit; }
+  .wrap{max-width:720px; margin:0 auto; padding:44px 24px 90px; position:relative;}
+  .masthead{
+    display:flex; justify-content:space-between; align-items:flex-end;
+    border-bottom:4px solid #FAFAF7;
+    padding-bottom:14px; margin-bottom:24px;
+  }
+  .mast-title{
+    font-family:'Archivo Black', sans-serif;
+    font-size:clamp(26px,6vw,34px);
+    letter-spacing:-0.01em;
+    text-transform:uppercase;
+    color:#FAFAF7;
+    text-decoration:none;
+  }
+  .stamp{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px; letter-spacing:0.1em; text-transform:uppercase;
+    color:#0A0A0A; background:#FF1F3D;
+    padding:5px 10px; border-radius:2px;
+    transform:rotate(-3deg); display:inline-block; font-weight:600;
+    white-space:nowrap;
+  }
+  .nav{display:flex; justify-content:space-between; align-items:center; gap:16px; margin-bottom:40px; flex-wrap:wrap;}
+  .nav-link{font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:#FAFAF7; text-decoration:none; border:1px solid rgba(250,250,247,0.35); padding:9px 14px; border-radius:2px; white-space:nowrap;}
+  .nav-link:hover{border-color:#FF1F3D; color:#FF1F3D;}
+  .search-wrap{position:relative; flex:1; min-width:220px;}
+  .search-input{width:100%; background:#151513; border:1px solid rgba(250,250,247,0.3); color:#FAFAF7; font-family:'IBM Plex Mono', monospace; font-size:13px; padding:10px 12px; border-radius:2px; outline:none;}
+  .search-input::placeholder{color:#6B6860;}
+  .search-input:focus{border-color:#FF1F3D;}
+  .search-results{position:absolute; top:calc(100% + 6px); left:0; right:0; background:#111110; border:1px solid rgba(250,250,247,0.25); border-radius:4px; max-height:380px; overflow-y:auto; z-index:20; display:none;}
+  .search-results.active{display:block;}
+  .search-result{display:block; padding:10px 12px; border-bottom:1px solid rgba(250,250,247,0.12); text-decoration:none;}
+  .search-result:last-child{border-bottom:none;}
+  .search-result:hover{background:rgba(255,31,61,0.08);}
+  .sr-tag{font-family:'IBM Plex Mono', monospace; font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:#A6A29A;}
+  .sr-title{display:block; font-style:italic; color:#FAFAF7; margin:2px 0; font-size:14px;}
+  .sr-meta{font-family:'IBM Plex Mono', monospace; font-size:10.5px; color:#A6A29A;}
+  .search-empty{padding:14px 12px; font-family:'IBM Plex Mono', monospace; font-size:12.5px; color:#A6A29A;}
+  h1.hero{
+    font-family:'Anton', sans-serif;
+    font-weight:400;
+    font-size:clamp(42px,10vw,72px);
+    line-height:0.94;
+    text-transform:uppercase;
+    margin:0 0 22px;
+    color:#FAFAF7;
+  }
+  h1.hero .pop{color:#FF1F3D;}
+  .intro{font-size:17px; color:#EDEAE2; max-width:56ch; margin-bottom:10px;}
+  .intro-byline{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px; letter-spacing:0.08em; text-transform:uppercase;
+    color:#A6A29A;
+    margin-top:16px; margin-bottom:54px; display:block;
+    border-left:2px solid #FF1F3D; padding-left:10px;
+  }
+  .section{position:relative; margin-bottom:50px; padding-left:56px;}
+  .section:last-of-type{margin-bottom:0;}
+  .stampnum{
+    position:absolute; left:0; top:0;
+    width:42px; height:42px;
+    border:2px solid #FAFAF7;
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Archivo Black', sans-serif;
+    font-size:15px; color:#FAFAF7;
+    transform:rotate(-6deg);
+  }
+  .art .stampnum{border-color:#C9A24B; color:#C9A24B;}
+  .film .stampnum{border-color:#FF5B4A; color:#FF5B4A;}
+  .tech .stampnum{border-color:#3FE0D0; color:#3FE0D0;}
+  .lit .stampnum{border-color:#B39DFF; color:#B39DFF;}
+  .music .stampnum{border-color:#FF5FA8; color:#FF5FA8;}
+  .design .stampnum{border-color:#FFD23F; color:#FFD23F;}
+  .fashion .stampnum{border-color:#FAFAF7; color:#FAFAF7;}
+  .section-head{display:flex; align-items:center; gap:12px; margin-bottom:18px; flex-wrap:wrap;}
+  .section-tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase;
+    color:#0A0A0A;
+    padding:6px 11px; border-radius:2px;
+  }
+  .art .section-tag{background:#C9A24B;}
+  .film .section-tag{background:#FF5B4A;}
+  .tech .section-tag{background:#3FE0D0;}
+  .lit .section-tag{background:#B39DFF;}
+  .music .section-tag{background:#FF5FA8;}
+  .design .section-tag{background:#FFD23F;}
+  .fashion .section-tag{background:#FAFAF7;}
+  .section-title{
+    font-family:'Archivo Black', sans-serif;
+    font-size:24px; text-transform:uppercase; letter-spacing:0.01em;
+    color:#FAFAF7;
+  }
+  .entry{margin-bottom:24px; padding-bottom:24px; border-bottom:1px solid rgba(250,250,247,0.16); scroll-margin-top:24px;}
+  .entry:last-child{border-bottom:none; margin-bottom:0; padding-bottom:0;}
+  .entry-byline{font-family:'IBM Plex Mono', monospace; font-size:12px; color:#A6A29A; margin-bottom:8px;}
+  .entry-title{font-weight:500; font-style:italic; color:#FAFAF7; text-decoration:underline; text-decoration-color:rgba(250,250,247,0.35); text-underline-offset:3px;}
+  .entry-title:hover{text-decoration-color:#FF1F3D;}
+  .entry p{margin:0 0 10px; font-size:16px; color:#EDEAE2;}
+  .entry .why{font-size:14.5px; color:#A6A29A; font-style:italic;}
+  .entry .why::before{content:"— ";}
+  .issue-list{list-style:none; margin:0; padding:0;}
+  .issue-card{display:block; text-decoration:none; padding:22px 0; border-bottom:1px solid rgba(250,250,247,0.16);}
+  .issue-card:first-child{padding-top:0;}
+  .issue-card:hover .issue-headline{ text-decoration-color:#FF1F3D; }
+  .issue-meta{font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:#A6A29A; margin-bottom:8px;}
+  .issue-meta .num{color:#FF1F3D;}
+  .issue-headline{font-family:'Archivo Black', sans-serif; font-size:22px; text-transform:uppercase; letter-spacing:0.01em; color:#FAFAF7; text-decoration:underline; text-decoration-color:rgba(250,250,247,0.35); text-underline-offset:4px; display:inline-block; margin-bottom:8px;}
+  .issue-desc{font-size:15px; color:#A6A29A; max-width:60ch; margin:0;}
+  footer{
+    margin-top:64px; padding-top:20px; border-top:1px solid rgba(250,250,247,0.16);
+    display:flex; justify-content:space-between; gap:12px;
+    font-family:'IBM Plex Mono', monospace; font-size:10.5px;
+    letter-spacing:0.06em; color:#A6A29A; text-transform:uppercase;
+  }
+  @media (max-width:520px){
+    .wrap{padding:30px 16px 70px;}
+    .section{padding-left:48px;}
+    .stampnum{width:36px; height:36px; font-size:13px;}
+    .section-title{font-size:20px;}
+    .nav{flex-direction:column; align-items:stretch;}
+  }
+</style>
+</head>
+<body data-root="../">
+<div class="page">
+<div class="wrap">
+  <div class="masthead">
+    <a class="mast-title" href="../index.html">Algorithm</a>
+    <span class="stamp">Issue No. 3</span>
+  </div>
+  <div class="nav">
+    <a class="nav-link" href="../index.html">&larr; Latest Issue</a>
+    <a class="nav-link" href="../archive/index.html">Full Archive</a>
+  </div>
+  <h1 class="hero">The Machine Eats the <span class="pop">Archive</span></h1>
+  <p class="intro">Today&#39;s issue circles the question of what gets kept and who is allowed to decide — books guillotined and scanned into training data, graves bulldozed before the killing starts, a national building code rewritten to admit knowledge it spent two centuries ignoring. The counter-argument runs through the criticism too: an organist asking for two and a half hours of your attention, two singers rebuilding a lost record from memory, a painter finally letting the body hold together.</p>
+  <span class="intro-byline">Issue No. 3 — what survives the scan</span>
+  <section class="section art">
+    <span class="stampnum">01</span>
+    <div class="section-head">
+      <span class="section-tag">Art</span>
+      <h2 class="section-title">Fine Art</h2>
+    </div>
+    <div class="entry" id="art-1">
+      <div class="entry-byline"><a class="entry-title" href="https://flash---art.com/2026/08/georg-baselitz-back-again-white-cube-bermondsey/" target="_blank" rel="noopener">Georg Baselitz &quot;Back Again&quot; White Cube / Bermondsey</a> by Sofia Hallström — Flash Art International</div>
+      <p>Hallström reads Baselitz&#39;s final show as genuinely unresolved: the gold grounds are a real departure for a painter who spent sixty years in blacks, greys and muted earth, but Baselitz himself admits the only marks that convince him now are de Kooning&#39;s gestures, which she takes as dependence rather than late invention. She notes that after decades of fragmenting the body these paintings finally let it hold together, and refuses to say whether that is a breakthrough or exhaustion dressed up as painterly strategy.</p>
+      <p class="why">A review that declines the obituary-in-advance mode and leaves the verdict genuinely open.</p>
+    </div>
+    <div class="entry" id="art-2">
+      <div class="entry-byline"><a class="entry-title" href="https://www.artasiapacific.com/shows/deceitful-narratives-ai-weiweis-button-up-at-factory-international/" target="_blank" rel="noopener">Deceitful Narratives: Ai Weiwei&#39;s &quot;Button Up!&quot; at Factory International</a> by Chloe Chu — ArtAsiaPacific</div>
+      <p>Chu argues that Ai denounces propaganda while running on its machinery — emotional appeal, monumental scale, deliberate oversimplification — so that works like the 25-metre History of Bombs present themselves as technical fact while advancing a moral case. She is specific about where the history bends, from the Eight-Nation Alliance flags to the Wang Family Ancestral Hall&#39;s contrived provenance, and still concludes that the ambition to test the limits of the status quo is worth something, because the struggle is all we have.</p>
+      <p class="why">It holds a canonised dissident to the standard of accuracy he demands of states.</p>
+    </div>
+  </section>
+  <section class="section film">
+    <span class="stampnum">02</span>
+    <div class="section-head">
+      <span class="section-tag">Film</span>
+      <h2 class="section-title">Film Criticism</h2>
+    </div>
+    <div class="entry" id="film-1">
+      <div class="entry-byline"><a class="entry-title" href="https://lwlies.com/this-just-in/metacinema-and-the-trans-gaze" target="_blank" rel="noopener">The Dead Screen as a Mirror: Metacinema and the Trans Gaze</a> by Edie Barnabas — Little White Lies</div>
+      <p>Barnabas argues that the metacinema of the Trans New Wave is not a stylistic borrowing from the arthouse canon but a formal consequence of living under scrutiny: visibility paired with hostility forces a habit of watching yourself from outside, and that habit gets built into the films. Reading Teenage Sex and Death at Camp Miasma, T Blockers and The People&#39;s Joker, she shows the recursion working as interruption — making the machinery of representation visible is how these films refuse to sit inside a history of trans depiction written by other people.</p>
+      <p class="why">It explains a formal tic as a condition of production rather than a genre convention.</p>
+    </div>
+    <div class="entry" id="film-2">
+      <div class="entry-byline"><a class="entry-title" href="https://philosophyinfilm.com/2026/08/28/concrete-utopia-class-housing-ethics/" target="_blank" rel="noopener">Concrete Utopia (2023): Housing, Class, and the Ethics of Exclusion</a> by Matthew Jones — Philosophy in Film</div>
+      <p>Jones argues that the earthquake in Um Tae-hwa&#39;s film invents no hierarchy — it magnifies one, turning a deed of ownership into a passport that decides who is fed — and that the residents&#39; vote to expel outsiders is the mechanism that matters, because procedure spreads the moral weight thin enough for ordinary people to carry it. He tracks the escalation through language, the word &#39;cockroaches&#39; doing the work of removing people from the category where compassion applies, and reads the building&#39;s eventual collapse as the direct arithmetic of manufacturing enemies instead of allies.</p>
+      <p class="why">A clean account of how decent people arrive at atrocity by following a fair-seeming process.</p>
+    </div>
+  </section>
+  <section class="section tech">
+    <span class="stampnum">03</span>
+    <div class="section-head">
+      <span class="section-tag">Tech &amp; AI</span>
+      <h2 class="section-title">Tech &amp; AI</h2>
+    </div>
+    <div class="entry" id="tech-1">
+      <div class="entry-byline"><a class="entry-title" href="https://www.404media.co/inside-the-warehouse-where-amazon-scans-and-destroys-books-for-ai-training/" target="_blank" rel="noopener">Inside the Warehouse Where Amazon Scans and Destroys Books for AI Training</a> by Emanuel Maiberg — 404 Media</div>
+      <p>Maiberg tracked a shipment of rare books to Amazon&#39;s VGT3 facility in Las Vegas and got an employee inside to describe the process: books arrive new, used and from libraries, workers cut the spines off, and the loose pages go through one of roughly twenty-five machines that flip them like a cash counter before the paper is dumped in shuttles. The worker&#39;s own account is the story&#39;s centre — an operation that changed procedure daily, seemed barely managed, and was steadily reducing the number of surviving copies of things nobody had catalogued first.</p>
+      <p class="why">The physical mechanics of turning the printed record into training data, reported from inside the room.</p>
+    </div>
+    <div class="entry" id="tech-2">
+      <div class="entry-byline"><a class="entry-title" href="https://www.noemamag.com/the-nature-of-free-will-in-the-age-of-ai" target="_blank" rel="noopener">The Nature Of Free Will In The Age Of AI</a> by Albert Yuan — Noema</div>
+      <p>Yuan separates two questions that determinists routinely collapse — whether causation governs matter, and whether we are answerable for what we choose — and defends the compatibilist position that the second survives the first. He does the empirical work rather than waving at it, citing Aaron Schurger&#39;s finding that Libet&#39;s famous readiness potential is neural noise and vanishes altogether once the choice actually matters, then builds freedom out of Frankfurt&#39;s hierarchy of desires: agency is your first-order wants lining up with what you reflectively endorse.</p>
+      <p class="why">It rescues a philosophical argument that machine-decision talk has been quietly borrowing without examining.</p>
+    </div>
+  </section>
+  <section class="section lit">
+    <span class="stampnum">04</span>
+    <div class="section-head">
+      <span class="section-tag">Sci-Fi / Fantasy</span>
+      <h2 class="section-title">Literary Reviews</h2>
+    </div>
+    <div class="entry" id="lit-1">
+      <div class="entry-byline"><a class="entry-title" href="https://strangehorizons.com/wordpress/non-fiction/of-the-emperors-kindness-by-chaz-brenchley/" target="_blank" rel="noopener">Of the Emperor&#39;s Kindness by Chaz Brenchley</a> by Kate Macdonald — Strange Horizons</div>
+      <p>Macdonald places Brenchley&#39;s novel in the cosy fantasy political thriller line running through Leckie&#39;s Imperial Radch, and locates its pleasure in administrative texture — correct attire, gate protocol, the timing of an audience — which makes court power concrete rather than abstract. Her sharpest point concerns the servant pages, acquired young and trained identically whatever their origin, bound rather than employed, which introduces a moral complication the comparable books do not carry, and she warns that the surface warmth conceals an utterly ruthless emperor and pages with deadly skill.</p>
+      <p class="why">A review that identifies exactly where a comfortable book stops being comfortable.</p>
+    </div>
+    <div class="entry" id="lit-2">
+      <div class="entry-byline"><a class="entry-title" href="https://drb.ie/article/holding-quicksilver/" target="_blank" rel="noopener">Holding Quicksilver</a> by Simon Blackburn — Dublin Review of Books</div>
+      <p>Blackburn takes a new collection on Bernard Williams as the occasion to argue that Williams disproved the standing charge against analytic philosophy by treating profound human questions with full rigour while remaining a genuine pleasure to read. He does not let the subject off, relaying Terence Irwin&#39;s case that Homer&#39;s Greeks plainly did possess the concept of rational self-control Williams said they lacked, and Sophie Grace Chappell&#39;s argument that Agamemnon&#39;s sacrifice is not the classical dilemma Williams made of it.</p>
+      <p class="why">Blackburn is honest enough to publish the objections that dent his own affection for the man.</p>
+    </div>
+  </section>
+  <section class="section music">
+    <span class="stampnum">05</span>
+    <div class="section-head">
+      <span class="section-tag">Music</span>
+      <h2 class="section-title">Music Criticism</h2>
+    </div>
+    <div class="entry" id="music-1">
+      <div class="entry-byline"><a class="entry-title" href="https://daily.bandcamp.com/features/sarah-davachi-the-will-of-tongues-interview" target="_blank" rel="noopener">Inside &quot;The Will of Tongues,&quot; Sarah Davachi&#39;s Organ Music Masterpiece</a> by Jon Buckland — Bandcamp Daily</div>
+      <p>Buckland&#39;s piece turns on Davachi&#39;s refusal of the word ambient: a two-and-a-half-hour organ work scored with strings, flute ensemble, brass and Chamber Choir Ireland is not built to sit behind your day, and she frames sustained listening as an ethical responsibility rather than a demand on the audience&#39;s patience. The unexpected reference point she offers is the Butthole Surfers, admired for restraint — knowing what to take out and when to add — which she treats as the same discipline that runs through Radigue and La Monte Young.</p>
+      <p class="why">An artist making the case for duration in a format that penalises it, in her own terms.</p>
+    </div>
+    <div class="entry" id="music-2">
+      <div class="entry-byline"><a class="entry-title" href="https://musicinafrica.net/magazine/zulu-queens-isithembu-finds-strength-in-heritage-sisterhood-and-reinvention/" target="_blank" rel="noopener">Zulu Queens&#39; Isithembu finds strength in heritage, sisterhood and reinvention</a> by Khotso Masilela — Music In Africa</div>
+      <p>Masilela reads the fourteen-track collaboration between MaWhoo and Lwah Ndlunkulu as an argument that maskandi, isicathamiya and mbaqanga are living forms rather than preserved ones, with the two singers entering a male-dominated genre deliberately and reshaping it on their own terms. He hears their difference as the record&#39;s engine rather than a flaw — Ndlunkulu rustic and earthy against MaWhoo&#39;s smoother contemporary delivery — and notes that the original sessions were lost by accident and rebuilt in the studio, which gives an album about inheritance an unplanned second layer.</p>
+      <p class="why">Traditional-form criticism that treats reinterpretation as fidelity rather than dilution.</p>
+    </div>
+  </section>
+  <section class="section design">
+    <span class="stampnum">06</span>
+    <div class="section-head">
+      <span class="section-tag">Design</span>
+      <h2 class="section-title">Design</h2>
+    </div>
+    <div class="entry" id="design-1">
+      <div class="entry-byline"><a class="entry-title" href="https://www.disegnojournal.com/newsfeed/sketches-of-utopia-from-hell-erich-mendelsohn" target="_blank" rel="noopener">Sketches of Utopia From Hell</a> by Darran Anderson — Disegno</div>
+      <p>Anderson uses Erich Mendelsohn&#39;s surviving Jewish cemetery and ritual bath in Olsztyn to argue that graves are infrastructure for collective memory, and that their destruction — necroviolence — is not an aftershock of atrocity but a rehearsal for it. He runs the pattern from pharaonic defacement and damnatio memoriae through Hardy&#39;s salvaging of the St Pancras stones as decorative spolia to razed Uighur graves, bulldozed Rohingya mass graves and desecrated Palestinian burial grounds, on the blunt principle that those who unearth and defile the dead will do it to the living.</p>
+      <p class="why">It reads a building type nobody thinks of as design as the most consequential kind there is.</p>
+    </div>
+    <div class="entry" id="design-2">
+      <div class="entry-byline"><a class="entry-title" href="https://architectureau.com/articles/indigenising-the-built-environment-where-to-next/" target="_blank" rel="noopener">Indigenising the built environment: Where to next?</a> by Michael Mossman — ArchitectureAU</div>
+      <p>Mossman assesses what has actually happened since First Nations performance criteria were written into Australia&#39;s national competency standards in 2021, and finds real appetite — high engagement, a lot of self-directed learning — sitting alongside survey evidence of continuing discrimination, consultation fatigue and culturally unsafe workplaces. His argument is that regulation cannot carry cultural change alone: it needs experiential learning in schools, targeted professional development, and public-infrastructure case studies, with non-Indigenous practitioners treating the work as active participation rather than support.</p>
+      <p class="why">A rare progress report that measures a professional standard against what it has changed in practice.</p>
+    </div>
+  </section>
+  <section class="section fashion">
+    <span class="stampnum">07</span>
+    <div class="section-head">
+      <span class="section-tag">Men&#39;s Fashion</span>
+      <h2 class="section-title">Men&#39;s Fashion</h2>
+    </div>
+    <div class="entry" id="fashion-1">
+      <div class="entry-byline"><a class="entry-title" href="https://www.highsnobiety.com/p/uniqlo-u-fw-26/" target="_blank" rel="noopener">With UNIQLO U, Lemaire Taught Fast Fashion to Grow Up</a> by Chris Erik Thomas — Highsnobiety</div>
+      <p>Thomas argues that the decade Christophe Lemaire and Sarah-Linh Tran spent on UNIQLO U mattered less as a collection than as a proof of concept — that a designer and a mass-market retailer could sustain a long relationship rather than a one-season stunt — and that Zara, COS and Massimo Dutti chasing the same clean lines and seasonless shapes is the evidence. He reads the wave that followed, Zac Posen at GAP, Clare Waight Keller as UNIQLO&#39;s global creative director, Francesco Risso at GU, as the model&#39;s success, which makes Lemaire&#39;s exit a conclusion rather than a loss.</p>
+      <p class="why">It treats a ten-year retail arrangement as the design decision it actually was.</p>
+    </div>
+    <div class="entry" id="fashion-2">
+      <div class="entry-byline"><a class="entry-title" href="https://www.highsnobiety.com/p/noahs-notes-supreme-bbblllaaahhh-tennis/" target="_blank" rel="noopener">Noah&#39;s Notes: Black T-Shirts Are for Weirdos</a> by Noah Johnson — Highsnobiety</div>
+      <p>Johnson&#39;s column sets consistency against storytelling, praising a brand precisely because it is fully committed to a vision that is not at all obviously commercially viable, and reducing the whole enterprise to an instruction — just make good clothes, make them meticulously, and treat them with dignity. His most useful case is Supreme, which he argues became culturally load-bearing through the predictability of its drop ritual rather than through novelty, the opposite of what the industry tells itself about hype.</p>
+      <p class="why">Short, opinionated menswear writing that argues from product rather than from narrative.</p>
+    </div>
+  </section>
+  <footer>
+    <span>Algorithm</span>
+    <span>Issue No. 3 — 30 Aug 2026</span>
+  </footer>
+</div>
+</div>
+
+</body>
+</html>

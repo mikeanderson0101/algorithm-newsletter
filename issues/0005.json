@@ -1,0 +1,170 @@
+{
+  "issue": 5,
+  "date": "2026-09-13",
+  "headline": "Nobody Believes The *Hype*",
+  "intro": "This issue keeps running into the same argument from different directions: that claims of intelligence, classicism, or authenticity dissolve under scrutiny, and what's left is craft, dependency, and the people who actually do the work. From a South African tech columnist picking apart AGI marketing to a menswear tastemaker who dresses without checking a mirror, the throughline is a distrust of anyone selling certainty. Elsewhere, an AI reads cities through rival theories, a novelist lets a machine narrate late capitalism, and a critic defends the humble concert program note against its own extinction.",
+  "byline": "Issue No. 5 — On Hype and Its Discontents",
+  "categories": [
+    {
+      "key": "art",
+      "entries": [
+        {
+          "title": "Pope.L Invites Us to Think Through the American Dream",
+          "author": "Channelle Chevelle Russell",
+          "source": "Hyperallergic",
+          "summary": "Reviewing a Drawing Center exhibition of Pope.L's fragmented, headless figures, Russell argues the work exposes racial contradictions foundational to the American Dream. She reads his drawing practice as a mode of thought rather than a medium, one that demands new frameworks for understanding how Blackness intersects with national identity.",
+          "why": "A sharp reading of how an artist uses formal fragmentation to interrogate national mythology.",
+          "url": "https://hyperallergic.com/pope-l-invites-us-to-think-through-the-american-dream/",
+          "verified": true
+        },
+        {
+          "title": "Holding Together: Cloth, Material & Making at Madison County Arts Council, Marshall",
+          "author": "Merin McDivitt",
+          "source": "Burnaway",
+          "summary": "McDivitt reviews an exhibition assembled in the aftermath of Tropical Storm Helene, arguing that curator Amber Jensen's intuition-led, cross-medium approach to fiber and material art turns storm recovery into a study of resilience rather than a simple craft showcase. The show's diverse media, McDivitt argues, share a conceptual core around materiality and handwork.",
+          "why": "A grounded account of how a regional craft show became a document of communal recovery.",
+          "url": "https://burnaway.org/daily/holding-together-at-madison-county-arts-council-marshall/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "film",
+      "entries": [
+        {
+          "title": "Brando, Bogart, Paul Muni and Beyond — Understanding Uttam Kumar",
+          "author": "Partha Pratim Ghosh",
+          "source": "Silhouette Magazine",
+          "summary": "Ghosh argues that Bengali star Uttam Kumar's transformation from Arun Chatterjee into a screen icon came from disciplined, systematic craft rather than raw talent. He traces a self-corrective mastery of camera acting comparable to Brando's naturalism, built through observation rather than instinct.",
+          "why": "A craft-focused reappraisal of a non-Western star system rarely analyzed on these terms in English.",
+          "url": "https://learningandcreativity.com/silhouette/understanding-uttam-kumar/",
+          "verified": true
+        },
+        {
+          "title": "The Horror of Being a Woman Expressed in Egyptian Art",
+          "author": "ES Buzz",
+          "source": "Egyptian Streets",
+          "summary": "Surveying recent Egyptian films and a novel, the essay reframes female 'monstrosity' as a response to systemic oppression rather than inherent evil. It argues critics should ask who made a woman monstrous rather than treating vengeful female characters as simply villainous.",
+          "why": "Turns genre horror tropes into a lens on patriarchal violence across several new Egyptian works at once.",
+          "url": "https://egyptianstreets.com/2026/09/12/the-horror-of-being-a-woman-expressed-in-egyptian-art/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "tech",
+      "entries": [
+        {
+          "title": "Money for nothing …",
+          "author": "Barry Buck",
+          "source": "IT-Online",
+          "summary": "Buck dissects the AGI claims surrounding OpenAI's GPT-6 Astra release, arguing genuine intelligence requires agency and the capacity to refuse work, whereas systems like Astra are merely general-purpose labour. He contends the industry's silence on AI rights and compensation betrays its own doubts about the AGI label it is selling.",
+          "why": "A rare skeptical, definitional take on AGI hype from outside the usual Silicon Valley commentary circuit.",
+          "url": "https://it-online.co.za/2026/09/10/money-for-nothing/",
+          "verified": true
+        },
+        {
+          "title": "Australia risks becoming landlord to foreign AI companies, says Walsh",
+          "author": "Peter Gearin",
+          "source": "The Mandarin",
+          "summary": "Reporting on AI researcher Toby Walsh, Gearin lays out the argument that Australia's national AI strategy has fixated on hosting data-centre infrastructure while neglecting the sovereign models, data, and skilled people needed to actually capture AI's economic value. Without a shift in priorities, Walsh warns, the country risks providing premises for other nations' AI industries.",
+          "why": "A pointed critique of infrastructure-first AI policy that applies well beyond Australia.",
+          "url": "https://www.themandarin.com.au/319510-australia-risks-becoming-landlord-to-foreign-ai-companies-says-walsh/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "lit",
+      "entries": [
+        {
+          "title": "kluge by Pip Adam",
+          "author": "Maya Jackson-Liew",
+          "source": "Aotearoa New Zealand Review of Books",
+          "summary": "Reviewing Pip Adam's novel, narrated in part by an AI, Jackson-Liew argues the book reveals how 'unchecked power justifies itself' in a digital, late-stage-capitalist world. She praises Adam's use of comedy and embodied sensation to defend the enduring value of feeling against corporate and technological dehumanization.",
+          "why": "A sharp regional take on AI-narrated fiction that avoids the genre's usual dystopian shortcuts.",
+          "url": "https://www.nzreviewofbooks.com/kluge-by-pip-adam/",
+          "verified": true
+        },
+        {
+          "title": "Not the Same as Reading It: Dipping In and Out of Tristram Shandy",
+          "author": "Gary Barwin",
+          "source": "Literary Review of Canada",
+          "summary": "Barwin reflects on nearly five decades of reading Sterne's novel only in fragments, arguing that its unfinished, digressive structure invites exactly this kind of partial, non-linear engagement. Rather than shame at never finishing it, he argues that maintaining multiple entry points honors the novel's own refusal of completion.",
+          "why": "A playful defense of incomplete reading that doubles as sharp formal criticism of one of literature's strangest novels.",
+          "url": "https://reviewcanada.ca/magazine/2026/09/not-the-same-as-reading-it-dipping-in-and-out-of-tristram-shandy/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "music",
+      "entries": [
+        {
+          "title": "In Defense of the Program Note",
+          "author": "Benjamin Poore",
+          "source": "VAN Magazine",
+          "summary": "Poore argues that despite their decline, written concert programs remain 'essential guiding lights for listening,' tracing the practice back to Berlioz's account of attentive 1851 London audiences. He makes the case that thoughtful contextual writing shapes how audiences actually hear a piece of music, not just what they know about it.",
+          "why": "A defense of a disappearing critical form that doubles as an argument for how audiences should listen.",
+          "url": "https://van-magazine.com/mag/defense-of-program-notes/",
+          "verified": true
+        },
+        {
+          "title": "Interpol – This Mirror Weighs a Ton Album Review",
+          "author": "John Goodridge",
+          "source": "The AU Review",
+          "summary": "Goodridge argues the band's latest record balances its signature moody introspection with unexpectedly upbeat undercurrents, contending the album's contradictions between darkness and self-reflection reward repeated listening rather than resolving into a single mood.",
+          "why": "A measured assessment of how a long-running band still finds tension worth exploring two decades in.",
+          "url": "https://www.theaureview.com/music/nterpol-this-mirror-weighs-a-ton-album-review/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "design",
+      "entries": [
+        {
+          "title": "Seeing the City like a Theory",
+          "author": "Darío Negueruela del Castillo",
+          "source": "e-flux Architecture",
+          "summary": "The essay operationalizes vision-language AI models to read cities through rival urban theories — Lefebvre, Simmel, Harvey and others — processing imagery from Rome, Madrid, and Montréal through theory-specific analytical modules. It argues theoretical frameworks don't filter pre-existing data but actively constitute what counts as urban knowledge in the first place.",
+          "why": "A genuinely novel use of AI as a probe for exposing the hidden assumptions inside urban design theory.",
+          "url": "https://www.e-flux.com/architecture/simulation/6783063/seeing-the-city-like-a-theory",
+          "verified": true
+        },
+        {
+          "title": "Kitching in Kyoto",
+          "author": "Eye editors",
+          "source": "Eye Magazine",
+          "summary": "The piece surveys Alan Kitching's first major exhibition in Japan, covering more than 80 works from his 70-year letterpress career. It argues his vibrant, scale-bending typographic compositions have shaped design education as much as his commissioned work has shaped commercial graphic design.",
+          "why": "A concise career survey of a foundational letterpress designer getting overdue international recognition.",
+          "url": "https://eyemagazine.com/blog/post/kitching-in-kyoto",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "fashion",
+      "entries": [
+        {
+          "title": "Get dressed without a mirror",
+          "author": "Jonah Spyplane",
+          "source": "Blackbird Spyplane",
+          "summary": "In a rare interview with C'H'C'M' founder Sweetu Patel, the piece argues real style comes from intuitive taste rather than mirror-checked self-scrutiny. Patel contends that 'classic' menswear is a myth, since all style is cyclical and emotional, built from personal recontextualization rather than fixed rules.",
+          "why": "A rare, unfiltered interview with one of menswear retail's most private tastemakers.",
+          "url": "https://www.blackbirdspyplane.com/p/sweetu-patel-chcm-interview",
+          "verified": true
+        },
+        {
+          "title": "Beggars And Choosers",
+          "author": "Johannes Lenhard",
+          "source": "Vestoj",
+          "summary": "Lenhard examines how homeless men in Los Angeles use five garments — a T-shirt, boxers, a coat, a bag, shoes — to maintain dignity and approximate normalcy. He argues that dress here signals dependency and mutual care rather than the violent masculinity usually projected onto homelessness.",
+          "why": "An unusual, humane look at how clothing operates at the furthest edge of the menswear world.",
+          "url": "http://vestoj.com/beggars-and-choosers/",
+          "verified": true
+        }
+      ]
+    }
+  ]
+}
