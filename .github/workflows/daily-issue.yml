@@ -95,6 +95,7 @@ jobs:
           claude_args: |
             --model claude-sonnet-5
             --allowedTools "WebSearch,WebFetch,Read,Write,Glob,Grep"
+            --disallowedTools "Task"
             --max-turns 600
           prompt: |
             Compose today's issue of Algorithm, a culture newsletter.
@@ -180,6 +181,27 @@ jobs:
 
             If you genuinely cannot fill a category to standard, still write the
             two best entries you verified rather than inventing anything.
+
+            ## Work efficiently — this run is metered
+
+            Every search and fetch costs money. These are not style preferences:
+
+            - NEVER retry a URL that failed, timed out, or returned a paywall,
+              login wall, or cookie wall. Abandon that candidate immediately and
+              move to a different outlet. A second attempt at the same URL has
+              never once succeeded and only burns budget.
+            - Do not delegate to subagents or spawn parallel tasks. Do all the
+              work yourself, in sequence. A previous run fanned out into seven
+              subagents, six of which failed, and cost nearly $6 while producing
+              nothing.
+            - One search per category is usually enough. Read the results list
+              before fetching — reject anything obviously too old, off-brief, or
+              from a rested outlet WITHOUT fetching it. Fetching is the expensive
+              step; use the search snippet to filter first.
+            - Once you have two verified entries for a category, stop looking and
+              move on. Do not keep hunting for something marginally better.
+            - Write `issues/_draft.json` as soon as all seven categories are
+              filled. Do not re-read or re-verify what you have already confirmed.
 
             ## File format
 
