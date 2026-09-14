@@ -1,0 +1,170 @@
+{
+  "issue": 6,
+  "date": "2026-09-14",
+  "headline": "Teaching The Machine *Your Judgment*",
+  "intro": "This issue keeps circling back to a single unglamorous question: who does the work of thinking, and who gets credit for it. A sociologist trains the AI that could replace him, a critic finds a biennale insisting on solidarity as method, and a novelist's quietest characters fail not from hubris but from the slow accumulation of insufficiency. Elsewhere: silk mills, predictive policing, and a hymn-singing krautrock quartet.",
+  "byline": "Issue No. 6 — the labour behind the ledger",
+  "categories": [
+    {
+      "key": "art",
+      "entries": [
+        {
+          "title": "Necessary Wishes: Biennale Matter of Art in Prague",
+          "author": "Adela Lovric",
+          "source": "Berlin Art Link",
+          "summary": "Lovric argues that the fourth Biennale Matter of Art succeeds by treating art as embedded social practice rather than a detached aesthetic object, pointing to Prague-based collectives and commissioned works on Palestinian perspectives and queer life. She reads the curatorial vision as an assertion that cultural institutions have both the capacity and the responsibility to host politically urgent artistic demands.",
+          "why": "A biennale review that takes its own political claims seriously instead of treating them as backdrop.",
+          "url": "https://www.berlinartlink.com/2026/09/04/4th-biennale-matter-of-art-exhibition-review/",
+          "verified": true
+        },
+        {
+          "title": "Stubborn Hope: Reflections on the 2026 Sydney and Venice Biennales",
+          "author": "Pat Hoffie",
+          "source": "Artlink",
+          "summary": "Hoffie argues that despite real controversies, the Sydney and Venice biennales remain valuable as necessary pilgrimages that force audiences to confront uncomfortable truths rather than simply consume spectacle. She holds this position while fully acknowledging art's entanglement with wealth, power and corporate interest, rather than in spite of it.",
+          "why": "A defence of the biennale format that doesn't flinch from the case against it.",
+          "url": "https://www.artlink.com.au/articles/6228/stubborn-hope-reflections-on-the-2026-sydney-and-venice-biennales/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "film",
+      "entries": [
+        {
+          "title": "Chronovisor",
+          "author": "Jeff Reichert",
+          "source": "Reverse Shot",
+          "summary": "Reichert argues that Chronovisor achieves real intellectual force through unconventional restraint, built almost entirely from static shots of a woman researching a purportedly real lost-text device. He contends the film earns its late leap into metaphysical speculation by grounding the idea of memory palaces in patient, specific research work rather than genre spectacle.",
+          "why": "A review that respects a film's formal patience instead of grading it against thriller conventions.",
+          "url": "https://reverseshot.org/reviews/entry/3488/chronovisor",
+          "verified": true
+        },
+        {
+          "title": "Possible Love review: Lee Chang-Dong's marriage story",
+          "author": "Jonathan Romney",
+          "source": "Sight and Sound",
+          "summary": "Romney argues that Lee Chang-dong's sober, detached treatment of factory layoffs and private-equity takeover sets his film apart from contemporaries like Bong Joon-ho, who render similar material as black farce. He contends the film traces how the trauma of corporate abuse spreads through two intersecting families, even while occasionally leaning on heavy-handed symbolism.",
+          "why": "A close reading of how formal restraint, not incident, carries a film's political charge.",
+          "url": "https://www.bfi.org.uk/sight-and-sound/reviews/possible-love-lee-chang-dongs-sober-exploration-economic-disparity-filled-with-quiet-revelations",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "tech",
+      "entries": [
+        {
+          "title": "I refused to train the AI that could replace me",
+          "author": "James Maisiri",
+          "source": "Rest of World",
+          "summary": "Maisiri, newly graduated with a PhD on AI's reshaping of agricultural work, recounts being recruited to train an AI system to design assessments and teach students the judgment he spent a decade acquiring. He argues that AI companies are specifically targeting highly educated workers in economically disadvantaged regions to extract specialist knowledge cheaply, turning expertise into its own replacement.",
+          "why": "A first-person account that makes the AI-labour question concrete instead of abstract.",
+          "url": "https://restofworld.org/2026/ai-training-jobs-expert-replacement/",
+          "verified": true
+        },
+        {
+          "title": "A Secretive DHS 'Predictive Policing' Unit is Analyzing Americans' Financial Habits and Pulling Them Over",
+          "author": "Joseph Cox",
+          "source": "404 Media",
+          "summary": "Cox reveals that Border Patrol's Predictive Intelligence Targeting Teams analyze Americans' financial activity and other data to generate tips for local police stops, absent any specific criminal suspicion. He documents a case in Montana where financial-activity analysis led to a pretextual traffic stop and a DUI charge, showing how the intelligence flows from federal database to local pretext.",
+          "why": "Investigative reporting that traces exactly how algorithmic suspicion becomes a roadside stop.",
+          "url": "https://www.404media.co/a-secretive-dhs-predictive-policing-unit-is-analyzing-americans-financial-habits-and-pulling-them-over/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "lit",
+      "entries": [
+        {
+          "title": "A Life Worth Living",
+          "author": "Kevin Stevens",
+          "source": "Dublin Review of Books",
+          "summary": "Stevens argues that Benjamin Markovits excels at using sport to examine ordinary failure and mediocrity rather than grand tragic flaws, locating his characters' setbacks in incremental insufficiency rather than hubris. He credits Markovits's technical control of dialogue and shifting perspective with making this quiet, unglamorous theory of failure resonate as contemporary fiction.",
+          "why": "A review that takes a novelist's unfashionable subject, failure, as seriously as its craft.",
+          "url": "https://drb.ie/articles/a-life-worth-living/",
+          "verified": true
+        },
+        {
+          "title": "On Music, Memory, and Damascus",
+          "author": "Alaa Rashidi, interviewed by Fifi Bat-hef",
+          "source": "ArabLit",
+          "summary": "Rashidi discusses his short story 'Marvellous Music Memory,' from the anthology The Book of Damascus, built around a protagonist who reconciles opposing musical worlds — Western and Eastern classics, spirituality and sensuality — as a way of processing war trauma. He frames memory and formal invention as tools for capturing the texture of Syrian experience rather than as instruments of resistance.",
+          "why": "A writer explaining how formal structure, not just subject matter, carries the weight of war.",
+          "url": "https://arablit.org/2026/09/08/on-music-memory-and-damascus/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "music",
+      "entries": [
+        {
+          "title": "Jake Xerxes Fussell :: The Old Beloved Path",
+          "author": "Aquarium Drunkard",
+          "source": "Aquarium Drunkard",
+          "summary": "The review argues that Fussell's musicologist-level command of pre-war folk and blues serves reinterpretation rather than replication, letting centuries-old songs breathe in new arrangements instead of merely preserving them. It frames his sixth album as evidence that scholarly rigor and living artistic expression are not in tension.",
+          "why": "A short, exact statement of what separates folk revivalism from folk reinterpretation.",
+          "url": "https://aquariumdrunkard.com/2026/09/08/jake-xerxes-fussell-the-old-beloved-path/",
+          "verified": true
+        },
+        {
+          "title": "Kiko Dinucci – Medusa: A Sounds and Colours interview",
+          "author": "Andy Cumming",
+          "source": "Sounds and Colours",
+          "summary": "Cumming covers Dinucci's Medusa, which blends shoegaze aesthetics with samba and brega into what the artist calls 'Exugaze,' built after a failed 2024 project and drawing on My Bloody Valentine and Sonic Youth alongside Noel Rosa. The piece details how collaborator Juçara Marçal treats her own vocals as instrumental texture rather than conventional song, an unusual move within Brazilian music.",
+          "why": "A genre collision explained through the specific technical choices that make it work.",
+          "url": "https://soundsandcolours.com/articles/brazil/kiko-dinucci-medusa-a-sounds-and-colours-interview-262011/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "design",
+      "entries": [
+        {
+          "title": "A Canvas for Life",
+          "author": "Disegno",
+          "source": "Disegno",
+          "summary": "The piece argues that Chybík + Krištof's Jihlava Municipal Arena functions as democratic public infrastructure, its barrier-free circulation and multifunctional programming prioritizing community use over architectural spectacle. It situates the project within a generational opportunity to rebuild Czechia's public spaces in the decades since the Velvet Revolution.",
+          "why": "A building assessed by who gets to use it, not by its silhouette.",
+          "url": "https://disegnojournal.com/newsfeed/chybik-kristof-jihlava-municipal-arena",
+          "verified": true
+        },
+        {
+          "title": "For Omar Gandhi, the Practice Is the Project",
+          "author": "Hannah Feniak",
+          "source": "Metropolis",
+          "summary": "Feniak profiles Omar Gandhi's decision to build a multi-city practice around happiness as an explicit design objective rather than a signature style, tracing this through his attention to materials, lighting and user experience. She argues Gandhi treats the studio itself, as a collaborative structure, as his most significant design project.",
+          "why": "A profile that locates an architect's real achievement in how his office works, not just what it builds.",
+          "url": "https://metropolismag.com/profiles/for-omar-gandhi-the-practice-is-the-project/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "fashion",
+      "entries": [
+        {
+          "title": "Cool but not \"cool cool\"",
+          "author": "Jonah & Erin",
+          "source": "Blackbird Spyplane",
+          "summary": "In a VIP interview, actor and musician Kiko Mizuhara points to the '80s-2000s Japanese magazine CUTiE as the definitive record of club fashion and music culture that was cool without straining for it. She also highlights the late queer performer Akihiro Miwa as embodying an intensity of lived style across decades of performance and activism.",
+          "why": "A reminder that style criticism can be genealogy — tracing where an aesthetic actually came from.",
+          "url": "https://www.blackbirdspyplane.com/p/cool-but-not-cool-cool-kiko-mizuhara-interview",
+          "verified": true
+        },
+        {
+          "title": "Masculinity Remixed: Menswear ruled the runway at Lakmé Fashion Week in partnership with FDCI",
+          "author": "Sohini Dey",
+          "source": "Open Magazine",
+          "summary": "Dey argues that Indian menswear has moved from dressing correctly to dressing with intent, tracking designer Sushant Abrol's shift from a cenotaph-inspired collection to one translating foundry processes into textile. The piece frames this as evidence that the modern Indian man now wants a point of view rather than a uniform.",
+          "why": "A runway report that treats a designer's stated logic as worth examining, not just his silhouettes.",
+          "url": "https://openthemagazine.com/art-culture/masculinity-remixed-menswear-ruled-the-runway-at-lakm%C3%A9-fashion-week-in-partnership-with-fdci",
+          "verified": true
+        }
+      ]
+    }
+  ]
+}
