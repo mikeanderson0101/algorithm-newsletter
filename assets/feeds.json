@@ -1,0 +1,422 @@
+{
+  "ArtAsiaPacific": {
+    "feed": "https://www.artasiapacific.com/rss/",
+    "categories": [
+      "art"
+    ],
+    "confidence": "stated"
+  },
+  "Artishock": {
+    "feed": "https://artishockrevista.com/feed/",
+    "categories": [
+      "art"
+    ],
+    "confidence": "stated"
+  },
+  "Berlin Art Link": {
+    "feed": "https://www.berlinartlink.com/feed/",
+    "categories": [
+      "art"
+    ],
+    "confidence": "stated"
+  },
+  "Burnaway": {
+    "feed": "https://burnaway.org/feed/",
+    "categories": [
+      "art"
+    ],
+    "confidence": "stated"
+  },
+  "Flash Art International": {
+    "feed": "https://flash---art.com/feed/podcast",
+    "categories": [
+      "art"
+    ],
+    "confidence": "stated"
+  },
+  "Hyperallergic": {
+    "feed": "https://hyperallergic.com/rss/",
+    "categories": [
+      "art"
+    ],
+    "confidence": "stated"
+  },
+  "Kunstkritikk": {
+    "feed": "https://kunstkritikk.com/feed/",
+    "categories": [
+      "art"
+    ],
+    "confidence": "stated"
+  },
+  "Momus": {
+    "feed": "https://momus.ca/feed/",
+    "categories": [
+      "art"
+    ],
+    "confidence": "stated"
+  },
+  "Mousse": {
+    "feed": "https://moussemagazine.it/feed/",
+    "categories": [
+      "art"
+    ],
+    "confidence": "stated"
+  },
+  "TAKE on Art": {
+    "feed": "https://takeonartmagazine.com/feed/",
+    "categories": [
+      "art"
+    ],
+    "confidence": "stated"
+  },
+  "Trebuchet": {
+    "feed": "https://www.trebuchet-magazine.com/feed/",
+    "categories": [
+      "art"
+    ],
+    "confidence": "stated"
+  },
+  "ArchitectureAU Discussion": {
+    "feed": "https://architectureau.com/rss.xml",
+    "categories": [
+      "design"
+    ],
+    "confidence": "stated"
+  },
+  "Azure": {
+    "feed": "https://azuremagazine.com/feed/",
+    "categories": [
+      "design"
+    ],
+    "confidence": "stated"
+  },
+  "Metropolis": {
+    "feed": "https://metropolismag.com/feed/",
+    "categories": [
+      "design"
+    ],
+    "confidence": "stated"
+  },
+  "The Architectural Review": {
+    "feed": "https://www.architectural-review.com/feed",
+    "categories": [
+      "design"
+    ],
+    "confidence": "stated"
+  },
+  "thinkMATTER": {
+    "feed": "https://thinkmatter.in/feed/",
+    "categories": [
+      "design"
+    ],
+    "confidence": "stated"
+  },
+  "Blackbird Spyplane": {
+    "feed": "https://www.blackbirdspyplane.com/feed",
+    "categories": [
+      "fashion"
+    ],
+    "confidence": "stated"
+  },
+  "Esquire India": {
+    "feed": "https://esquireindia.co.in/feed/",
+    "categories": [
+      "fashion"
+    ],
+    "confidence": "stated"
+  },
+  "Highsnobiety": {
+    "feed": "https://www.highsnobiety.com/feed/",
+    "categories": [
+      "fashion"
+    ],
+    "confidence": "stated"
+  },
+  "Open Magazine": {
+    "feed": "https://openthemagazine.com/feed/",
+    "categories": [
+      "fashion"
+    ],
+    "confidence": "stated"
+  },
+  "desistfilm": {
+    "feed": "https://desistfilm.com/feed/",
+    "categories": [
+      "film"
+    ],
+    "confidence": "stated"
+  },
+  "East European Film Bulletin": {
+    "feed": "https://eefb.org/feed/",
+    "categories": [
+      "film"
+    ],
+    "confidence": "stated"
+  },
+  "Egyptian Streets": {
+    "feed": "https://egyptianstreets.com/feed/",
+    "categories": [
+      "film"
+    ],
+    "confidence": "stated"
+  },
+  "Film Comment": {
+    "feed": "https://filmcomment.com/feed/",
+    "categories": [
+      "film"
+    ],
+    "confidence": "guessed"
+  },
+  "Little White Lies": {
+    "feed": "https://lwlies.com/feed.rss",
+    "categories": [
+      "film"
+    ],
+    "confidence": "stated"
+  },
+  "MUBI Notebook": {
+    "feed": "https://mubi.com/notebook/posts.rss",
+    "categories": [
+      "film"
+    ],
+    "confidence": "stated"
+  },
+  "Philosophy in Film": {
+    "feed": "https://philosophyinfilm.com/feed/",
+    "categories": [
+      "film"
+    ],
+    "confidence": "stated"
+  },
+  "POV Magazine": {
+    "feed": "https://povmagazine.com/feed/",
+    "categories": [
+      "film"
+    ],
+    "confidence": "guessed"
+  },
+  "Rough Cut": {
+    "feed": "https://roughcutfilm.com/feed/",
+    "categories": [
+      "film"
+    ],
+    "confidence": "stated"
+  },
+  "Silhouette": {
+    "feed": "https://silhouette.co.in/feed/",
+    "categories": [
+      "film"
+    ],
+    "confidence": "stated"
+  },
+  "Ancillary Review of Books": {
+    "feed": "https://ancillaryreviewofbooks.org/feed/",
+    "categories": [
+      "lit"
+    ],
+    "confidence": "stated"
+  },
+  "Aotearoa NZ Review of Books": {
+    "feed": "https://wordpress.com/blog/feed/",
+    "categories": [
+      "lit"
+    ],
+    "confidence": "stated"
+  },
+  "ArabLit": {
+    "feed": "https://arablit.org/feed/",
+    "categories": [
+      "lit"
+    ],
+    "confidence": "stated"
+  },
+  "B O D Y": {
+    "feed": "https://www.bodyliterature.com/feed/",
+    "categories": [
+      "lit"
+    ],
+    "confidence": "stated"
+  },
+  "Dublin Review of Books": {
+    "feed": "https://drb.ie/feed/",
+    "categories": [
+      "lit"
+    ],
+    "confidence": "stated"
+  },
+  "European Review of Books": {
+    "feed": "https://europeanreviewofbooks.com/feed/",
+    "categories": [
+      "lit"
+    ],
+    "confidence": "guessed"
+  },
+  "Eurozine": {
+    "feed": "https://eurozine.com/feed/",
+    "categories": [
+      "lit"
+    ],
+    "confidence": "stated"
+  },
+  "Latin American Literature Today": {
+    "feed": "https://latinamericanliteraturetoday.org/feed/",
+    "categories": [
+      "lit"
+    ],
+    "confidence": "stated"
+  },
+  "Literalab": {
+    "feed": "https://literalab.com/feed/",
+    "categories": [
+      "lit"
+    ],
+    "confidence": "guessed"
+  },
+  "Literary Review of Canada": {
+    "feed": "https://reviewcanada.ca/feed/",
+    "categories": [
+      "lit"
+    ],
+    "confidence": "stated"
+  },
+  "Locus": {
+    "feed": "https://locusmag.com/feed/",
+    "categories": [
+      "lit"
+    ],
+    "confidence": "stated"
+  },
+  "PREE": {
+    "feed": "https://preelit.com/feed/",
+    "categories": [
+      "lit"
+    ],
+    "confidence": "stated"
+  },
+  "Strange Horizons": {
+    "feed": "https://strangehorizons.com/feed/",
+    "categories": [
+      "lit"
+    ],
+    "confidence": "stated"
+  },
+  "sx salon": {
+    "feed": "https://smallaxe.net/rss.xml",
+    "categories": [
+      "lit"
+    ],
+    "confidence": "stated"
+  },
+  "Vector/BSFA": {
+    "feed": "https://vector-bsfa.com/feed/",
+    "categories": [
+      "lit"
+    ],
+    "confidence": "stated"
+  },
+  "Aquarium Drunkard": {
+    "feed": "https://aquariumdrunkard.com/feed/",
+    "categories": [
+      "music"
+    ],
+    "confidence": "guessed"
+  },
+  "Bandcamp Daily": {
+    "feed": "https://daily.bandcamp.com/feed/",
+    "categories": [
+      "music"
+    ],
+    "confidence": "stated"
+  },
+  "Rolling Stone India": {
+    "feed": "https://rollingstoneindia.com/feed/",
+    "categories": [
+      "music"
+    ],
+    "confidence": "guessed"
+  },
+  "Rolling Stone MENA": {
+    "feed": "https://mena.rollingstone.com/feed/",
+    "categories": [
+      "music"
+    ],
+    "confidence": "guessed"
+  },
+  "Sounds and Colours": {
+    "feed": "https://soundsandcolours.com/feed/",
+    "categories": [
+      "music"
+    ],
+    "confidence": "stated"
+  },
+  "The AU Review": {
+    "feed": "https://www.theaureview.com/feed/",
+    "categories": [
+      "music"
+    ],
+    "confidence": "stated"
+  },
+  "The NATIVE": {
+    "feed": "https://thenativemag.com/feed/",
+    "categories": [
+      "music"
+    ],
+    "confidence": "stated"
+  },
+  "Unorthodox Reviews": {
+    "feed": "https://unorthodoxreviews.com/feed",
+    "categories": [
+      "music"
+    ],
+    "confidence": "stated"
+  },
+  "VAN Magazine": {
+    "feed": "https://van-magazine.com/feed/",
+    "categories": [
+      "music"
+    ],
+    "confidence": "stated"
+  },
+  "404 Media": {
+    "feed": "https://www.404media.co/rss/",
+    "categories": [
+      "tech"
+    ],
+    "confidence": "stated"
+  },
+  "AGBI": {
+    "feed": "https://www.agbi.com/feed/",
+    "categories": [
+      "tech"
+    ],
+    "confidence": "guessed"
+  },
+  "IT-Online": {
+    "feed": "https://it-online.co.za/feed/",
+    "categories": [
+      "tech"
+    ],
+    "confidence": "stated"
+  },
+  "Noema": {
+    "feed": "https://www.noemamag.com/feed/",
+    "categories": [
+      "tech"
+    ],
+    "confidence": "stated"
+  },
+  "Rest of World": {
+    "feed": "https://restofworld.org/feed/latest",
+    "categories": [
+      "tech"
+    ],
+    "confidence": "stated"
+  },
+  "The Mandarin": {
+    "feed": "https://www.themandarin.com.au/feed/",
+    "categories": [
+      "tech"
+    ],
+    "confidence": "stated"
+  }
+}
