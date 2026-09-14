@@ -197,6 +197,60 @@ check('resolve: empty pool yields zero entries',
 ok('resolve: warns about shortfall',
   thinRes.warnings.some((w) => w.includes('only 1 of 2')));
 
+// --- one entry per publication per category ------------------------------
+// validate.js rejects two entries from the same publication in one
+// category as a hard ERROR. The first live run died here: the model chose
+// both design picks from The Architectural Review. Pinned so it cannot
+// regress.
+{
+  const dupSrc = {};
+  for (const cat of C.CATEGORIES) dupSrc[cat] = [];
+  // Three candidates in art, two sharing a publication.
+  dupSrc.art = [
+    { ...cand('art', 1), source: 'Same Press' },
+    { ...cand('art', 2), source: 'Same Press' },
+    { ...cand('art', 3), source: 'Other Press' },
+  ];
+  const { withIds: dIds, index: dIdx } = C.assignIds(dupSrc);
+
+  // Model explicitly asks for both from the same publication.
+  const res = C.resolvePicks(
+    { picks: { art: [dIds.art[0].id, dIds.art[1].id] } },
+    dIds, dIdx, { perCategory: 2 },
+  );
+  const artSources = res.categories.find((c) => c.key === 'art').entries.map((e) => e.source);
+  check('one-per-pub: model duplicate publication rejected',
+    new Set(artSources).size, artSources.length);
+  check('one-per-pub: still returns two entries', artSources.length, 2);
+  ok('one-per-pub: second entry came from the other publication',
+    artSources.includes('Other Press'), artSources.join(', '));
+  ok('one-per-pub: warns when skipping',
+    res.warnings.some((w) => w.includes('already used in this category')),
+    res.warnings.join(' | '));
+
+  // Backfill must respect the rule too.
+  const bf = C.resolvePicks(null, dIds, dIdx, { perCategory: 2 });
+  const bfSources = bf.categories.find((c) => c.key === 'art').entries.map((e) => e.source);
+  check('one-per-pub: backfill does not duplicate a publication',
+    new Set(bfSources).size, bfSources.length);
+
+  // Only one publication available: yield one entry, never an invalid two.
+  const single = { };
+  for (const cat of C.CATEGORIES) single[cat] = [];
+  single.art = [
+    { ...cand('art', 1), source: 'Only Press' },
+    { ...cand('art', 2), source: 'Only Press' },
+  ];
+  const { withIds: sIds, index: sIdx } = C.assignIds(single);
+  const sRes = C.resolvePicks(null, sIds, sIdx, { perCategory: 2 });
+  check('one-per-pub: single-publication category yields one entry',
+    sRes.categories.find((c) => c.key === 'art').entries.length, 1);
+}
+
+const promptRule = C.buildPrompt(withIds, { date: '2026-09-14', perCategory: 2 });
+ok('prompt: states the one-publication-per-category rule',
+  /different publications/i.test(promptRule));
+
 // --- buildIssue ----------------------------------------------------------
 
 const issue = C.buildIssue({ date: '2026-09-14', parsed: good, categories: goodRes.categories });

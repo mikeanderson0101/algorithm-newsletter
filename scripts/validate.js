@@ -80,8 +80,18 @@ function validateIssue(issue, filename, priorUrls, priorTitles, recentHistory) {
     }
     seenKeys.add(key);
     const entries = block.entries || [];
-    if (entries.length !== ENTRIES_PER_CATEGORY) {
-      err(`${where}: category "${key}" has ${entries.length} entries; must have exactly ${ENTRIES_PER_CATEGORY}.`);
+    // A short category is a warning, not an error. Under the feed pipeline
+    // a category can legitimately run out of eligible publications — fashion
+    // has only four working feeds, and rotation can leave one distinct
+    // publication standing. Publishing one entry there is better than
+    // failing the whole issue, and the one-entry-per-publication rule below
+    // is the constraint that actually protects quality.
+    if (entries.length > ENTRIES_PER_CATEGORY) {
+      err(`${where}: category "${key}" has ${entries.length} entries; the maximum is ${ENTRIES_PER_CATEGORY}.`);
+    } else if (entries.length === 0) {
+      err(`${where}: category "${key}" has no entries.`);
+    } else if (entries.length < ENTRIES_PER_CATEGORY) {
+      warn(`${where}: category "${key}" has only ${entries.length} of ${ENTRIES_PER_CATEGORY} entries (too few eligible publications).`);
     }
 
     entries.forEach((e, i) => {

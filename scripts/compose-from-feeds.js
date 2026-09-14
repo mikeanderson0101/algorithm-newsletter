@@ -116,7 +116,8 @@ function buildPrompt(byCategory, { date, perCategory }) {
     'How to choose:',
     '- Prefer pieces with an argument or a point of view over news, listicles,',
     '  press releases, product launches and awards round-ups.',
-    '- Prefer variety of publication and subject within each category.',
+    '- The picks within a category MUST come from different publications.',
+    '- Prefer variety of subject within each category.',
     '- Do not agonise. A reasonable pick now beats a perfect pick later; the',
     '  reader skims and chooses for themselves.',
     '- You have not read these articles and must not pretend otherwise. Do not',
@@ -207,6 +208,15 @@ function resolvePicks(parsed, withIds, index, { perCategory }) {
 
     const chosen = [];
     const used = new Set();
+    // Two entries in one category may not come from the same publication.
+    // validate.js treats that as a hard error, so enforcing it here is not
+    // cosmetic: without it a run composes fine, costs its money, and then
+    // dies at the validation step with the draft thrown away. That is
+    // exactly what happened on the first live run — design took both picks
+    // from The Architectural Review and fashion both from Highsnobiety.
+    const usedSources = new Set();
+    const srcKey = (item) => String(item.source || '').trim().toLowerCase();
+
     for (const raw of requested) {
       const id = Number(raw);
       const item = index.get(id);
@@ -222,15 +232,25 @@ function resolvePicks(parsed, withIds, index, { perCategory }) {
         warnings.push(`${cat}: id ${id} repeated`);
         continue;
       }
+      if (usedSources.has(srcKey(item))) {
+        warnings.push(`${cat}: "${item.source}" already used in this category; skipping`);
+        continue;
+      }
       used.add(id);
+      usedSources.add(srcKey(item));
       chosen.push(item);
       if (chosen.length >= perCategory) break;
     }
 
+    // Backfill, still respecting one-entry-per-publication. A category with
+    // too few distinct publications yields fewer entries rather than an
+    // invalid issue — thin is acceptable, broken is not.
     for (const item of pool) {
       if (chosen.length >= perCategory) break;
       if (used.has(item.id)) continue;
+      if (usedSources.has(srcKey(item))) continue;
       used.add(item.id);
+      usedSources.add(srcKey(item));
       chosen.push(item);
       warnings.push(`${cat}: backfilled "${L.truncate(item.title, 40)}"`);
     }

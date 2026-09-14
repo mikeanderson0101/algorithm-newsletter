@@ -51,7 +51,12 @@ for (const f of ['feed-lib.js', 'compose-from-feeds.js', 'validate.js']) {
 const CATS = ['art', 'film', 'tech', 'lit', 'music', 'design', 'fashion'];
 const SOURCES = {};
 for (const cat of CATS) {
-  for (const n of [1, 2, 3]) SOURCES[`${cat}Src${n}`] = cat;
+  // fashion deliberately gets a single publication, mirroring the real
+  // source list where fashion has only four working feeds. A category with
+  // one publication must yield ONE entry, not two from the same masthead —
+  // validate.js rejects the latter, which is how the first live run died.
+  const count = cat === 'fashion' ? 1 : 3;
+  for (let n = 1; n <= count; n++) SOURCES[`${cat}Src${n}`] = cat;
 }
 
 const feedsJson = {};
@@ -158,6 +163,20 @@ async function run(argv, responder) {
   return fs.existsSync(DRAFT) ? JSON.parse(fs.readFileSync(DRAFT, 'utf8')) : null;
 }
 
+/** Asks for two picks from the SAME publication in every category. */
+function greedyResponder(prompt) {
+  const picks = {};
+  for (const cat of CATS) {
+    const section = prompt.split(`## ${cat} `)[1] || '';
+    const lines = [...section.matchAll(/^\s*\[(\d+)\]\s+(.+?) — (.+?)(?: \(|$)/gm)];
+    const bySrc = {};
+    for (const m of lines) (bySrc[m[3]] = bySrc[m[3]] || []).push(Number(m[1]));
+    const biggest = Object.values(bySrc).sort((a, b) => b.length - a.length)[0] || [];
+    picks[cat] = biggest.slice(0, 2);
+  }
+  return JSON.stringify({ headline: 'Greedy *Picks*', intro: 'a. b.', picks });
+}
+
 /** A well-behaved model: picks the first two valid ids per category. */
 function goodResponder(prompt) {
   const picks = {};
@@ -226,6 +245,16 @@ function goodResponder(prompt) {
   ok('hallucinated ids: draft still valid', liar !== null);
   ok('hallucinated ids: every url is real',
     liar.categories.flatMap((c) => c.entries).every((e) => e.url.startsWith('https://articles.test/')));
+
+  // === 3b. model insists on one publication per category ===============
+  const greedy = await run(['--date', '2026-09-14'], greedyResponder);
+  for (const c of greedy.categories) {
+    const srcs = c.entries.map((e) => e.source);
+    ok(`one-per-pub: ${c.key} has no repeated publication`,
+      new Set(srcs).size === srcs.length, srcs.join(', '));
+  }
+  check('one-per-pub: single-publication category yields one entry',
+    greedy.categories.find((c) => c.key === 'fashion').entries.length, 1);
 
   // === 4. validate.js accepts the draft ================================
   console.log = origLog;
