@@ -1,0 +1,161 @@
+{
+  "issue": 8,
+  "date": "2026-09-14",
+  "headline": "Ghosts, Beaches, and *Beige Pop*",
+  "intro": "This week's picks wander from Tate retrospectives and Venice premieres to AI anxieties and vanishing linguistic diversity in pop music. Also: libraries under siege, opera's data brokers, and the fight for public shoreline in Puerto Rico.",
+  "byline": "2026-09-14 — selected links",
+  "categories": [
+    {
+      "key": "art",
+      "entries": [
+        {
+          "title": "James McNeill Whistler’s Music for the Eyes",
+          "author": "Olivia McEwan",
+          "source": "Hyperallergic",
+          "summary": "A long-awaited Whistler retrospective at Tate Britain makes the case that every brushstroke, color, and omission serves the pursuit of harmony.",
+          "why": "",
+          "url": "https://hyperallergic.com/james-mcneill-whistlers-music-for-the-eyes/",
+          "verified": true
+        },
+        {
+          "title": "Indispensable Presence: Ana Mendieta at Tate Modern",
+          "author": "Alison Hugill",
+          "source": "Berlin Art Link",
+          "summary": "by William Kherbek // Sept. 11, 2026 \"Where is Ana Mendieta?\" It is a question that has become familiar over the last decade. Jane Blocker’s 1999 book by that title is regarded as a critical point in the reassessment of Mendieta’s artistic legacy and subsequent understandings…[read on]",
+          "why": "",
+          "url": "https://www.berlinartlink.com/2026/09/11/ana-mendieta-tate-modern-exhibition-review-performativity/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "film",
+      "entries": [
+        {
+          "title": "Queen at Sea review – a harrowing vision of the future",
+          "author": "David Jenkins",
+          "source": "Little White Lies",
+          "summary": "Lance Hammer's long-awaited follow-up to Ballast is a harrowing yet vital tale of dementia, family and the limits of consent.",
+          "why": "",
+          "url": "https://lwlies.com/reviews/queen-at-sea",
+          "verified": true
+        },
+        {
+          "title": "VENECIA 2026. ‘BIOGRAFÍA DE JORGE LUIS BORGES’ DE MARIANO LLINÁS: LOS SENDEROS DE LA PALABRA",
+          "author": "Staff",
+          "source": "desistfilm",
+          "summary": "Por Arnau Martín Un literato es su biblioteca; un autor, sus objetos. En Biografía de Jorge Luis Borges, una de las contribuciones más originales que han aterrizado este año en la Mostra de Venecia, Mariano Llinás convierte esta intuición en principio metodológico. Busca el espíritu del escritor no sólo en sus libros, sino también en sus cuadernos de apuntes, en sus fotografías y en aquellos…",
+          "why": "",
+          "url": "https://desistfilm.com/venecia-2026-biografia-de-jorge-luis-borges-de-mariano-llinas-los-senderos-de-la-palabra/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "tech",
+      "entries": [
+        {
+          "title": "Conceding AI Danger Raises, Not Reduces, Public Anxiety",
+          "author": "Nathan Gardels",
+          "source": "Noema",
+          "summary": "The post Conceding AI Danger Raises, Not Reduces, Public Anxiety appeared first on NOEMA.",
+          "why": "",
+          "url": "https://www.noemamag.com/conceding-ai-danger-raises-not-reduces-public-anxiety",
+          "verified": true
+        },
+        {
+          "title": "Fighting for the Future of Libraries (With Jennie Rose Halperin)",
+          "author": "Emanuel Maiberg",
+          "source": "404 Media",
+          "summary": "Censorship, AI, and the role of librarians in a country with crumbling public institutions.",
+          "why": "",
+          "url": "https://www.404media.co/fighting-for-the-future-of-libraries-with-jennie-rose-halperin/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "lit",
+      "entries": [
+        {
+          "title": "The End of Everything by M. John Harrison",
+          "author": "Ryan Elliott",
+          "source": "Strange Horizons",
+          "summary": "When asked in a 2012 interview how he feels about being called a “writer’s writer,” M. John Harrison “describes the ‘practice crag’ found in almost every Peak District town or village”: “It may not be much higher than this room,” he says, “but … there will always be some last great problem that nobody’s solved. […]",
+          "why": "",
+          "url": "https://strangehorizons.com/wordpress/non-fiction/the-end-of-everything-by-m-john-harrison/",
+          "verified": true
+        },
+        {
+          "title": "Pushkin and Putin",
+          "author": "Simon Garnett",
+          "source": "Eurozine",
+          "summary": "The controversial reopening of the Russian Pavilion at the Venice Biennale, justified under the pretext of dialogue, legitimised the Russian state's weaponisation of culture – a practice rooted in Tsarist imperialism.",
+          "why": "",
+          "url": "https://www.eurozine.com/pushkin-and-putin/?utm_source=rss&utm_medium=rss&utm_campaign=pushkin-and-putin",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "music",
+      "entries": [
+        {
+          "title": "Modern Pop and the Beigeification of Arabic Dialects",
+          "author": "Salma Awad",
+          "source": "Rolling Stone MENA",
+          "summary": "As Arabic pop returns to Arabic, Salma Mousa takes note of a new hybrid dialect emerging - one that risks flattening linguistic diversity. The post Modern Pop and the Beigeification of Arabic Dialects appeared first on Rolling Stone MENA.",
+          "why": "",
+          "url": "https://mena.rollingstone.com/music/modern-pop-beigeification-arabic-dialects/",
+          "verified": true
+        },
+        {
+          "title": "Opera’s Siren Servers",
+          "author": "Ema Katrovas",
+          "source": "VAN Magazine",
+          "summary": "In 2018, a little-known Danish tech startup called Truelinked bought the website Operabase, at the time the largest database of classical music and opera performances, theaters, festivals and artists. It served as a kind of IMDb for opera, with performance listings, casting tools, and a deep archive of past events, and was used widely by […] The post Opera’s Siren Servers appeared first on VAN…",
+          "why": "",
+          "url": "https://van-magazine.com/mag/operabase-future-siren-servers/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "design",
+      "entries": [
+        {
+          "title": "The right to the beach",
+          "author": "Jyotsni Bhattacharyya",
+          "source": "The Architectural Review",
+          "summary": "The Architectural Review The right to the beach In Puerto Rico, luxury developments and US tax incentives are restricting access to the archipelago’s most fundamental public space The post The right to the beach appeared first on The Architectural Review. Jyotsni Bhattacharyya",
+          "why": "",
+          "url": "https://www.architectural-review.com/essays/the-right-to-the-beach",
+          "verified": true
+        },
+        {
+          "title": "Toronto’s TigerBaby Celebrates Emerging Local Creatives of All Stripes",
+          "author": "Eric Mutrie",
+          "source": "Azure",
+          "summary": "The owners of the hybrid coffee shop and ceramics studio talk through their many thoughtful collaborations with young local designers. The post Toronto’s TigerBaby Celebrates Emerging Local Creatives of All Stripes appeared first on Azure Magazine.",
+          "why": "",
+          "url": "https://www.azuremagazine.com/article/tiger-baby-toronto-coffee-ceramics/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "fashion",
+      "entries": [
+        {
+          "title": "New York’s Coolest Designer Skipped The Runway — And Threw a Rager at the Arcade Instead",
+          "author": null,
+          "source": "Highsnobiety",
+          "summary": "Emily Dawn Long — famous for her playful clothes — got the NYFW set to let their hair down for a night.",
+          "why": "",
+          "url": "https://www.highsnobiety.com/p/new-yorks-coolest-designer-skipped-the-runway-and-threw-a-rager-at-the-arcade-ins/",
+          "verified": true
+        }
+      ]
+    }
+  ]
+}
