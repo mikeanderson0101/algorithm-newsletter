@@ -71,7 +71,9 @@ jobs:
       # Publications used recently, so the prompt can steer away from them.
       # Without this the model only ever sees today's rules and happily picks
       # Highsnobiety for the fourth issue running.
-      - name: Work out which publications to rest
+      # Kept for the log only: the composer enforces rotation itself, in
+      # code, before the model ever sees a candidate.
+      - name: Show which publications are rested
         id: rest
         if: success()
         run: |
@@ -86,158 +88,25 @@ jobs:
       # Claude's ONLY job is to write one JSON file. It does not touch HTML,
       # git, or the push — those are deterministic steps below. That keeps the
       # design stable and the blast radius small.
-      - name: Research and compose the issue
+      # Tests gate the run. They are pure and offline — a few seconds — and
+      # they have already caught two real defects that would otherwise have
+      # surfaced as a failed or wrong issue: escaped HTML surviving into
+      # summaries, and validate.js rejecting the composer's own output.
+      - name: Test
         if: success()
-        uses: anthropics/claude-code-action@v1
-        with:
-          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
-          show_full_output: true
-          claude_args: |
-            --model claude-sonnet-5
-            --allowedTools "WebSearch,WebFetch,Read,Write,Glob,Grep"
-            --disallowedTools "Task"
-            --max-turns 600
-          prompt: |
-            Compose today's issue of Algorithm, a culture newsletter.
+        run: |
+          node scripts/test-feed-lib.js
+          node scripts/test-compose.js
+          node scripts/test-integration.js
 
-            Write exactly ONE file: `issues/_draft.json`
-            Do not create, edit, or delete any other file. Do not run git.
-
-            ## Before you start, read these
-
-            1. `sources.md` — the curated source list. Check these publications
-               FIRST. They are the spine of the newsletter.
-            2. `assets/search-index.json` — every article ever featured. You must
-               not repeat any of them. If the file does not exist, this is issue 1.
-
-            ## What to find
-
-            Two pieces in each of seven categories, in this order:
-            art, film, tech, lit, music, design, fashion.
-
-            - art — fine art, leaning contemporary
-            - film — critical essays, not consumer reviews
-            - tech — general tech and AI coverage, not just entertainment
-            - lit — literary reviews, leaning sci-fi/fantasy
-            - music — album/artist analysis, not chart news
-            - design — graphic, interior, or industrial design
-            - fashion — men's fashion, critical/analytical, not shopping guides
-
-            Published within the last 3 weeks. Favour depth: no listicles, no
-            press releases, no breaking-news wires. Prefer independent and
-            specialist publications over major aggregators unless a piece is
-            genuinely exceptional.
-
-            ## Publications to rest — and publications to prefer
-
-            The first list below has run recently. Treat those as unavailable
-            today and go further down the source list instead. Only reach for
-            one of these if you have genuinely exhausted the alternatives in
-            `sources.md` for that category — and never for both entries in a
-            category.
-
-            The second list, where present, names verified outlets that have
-            NEVER been used in any issue published so far. This is not a
-            rejected or unreliable list — every name in it passed the same
-            fetch-and-confirm check as everything else in `sources.md`. Being
-            below the rotation limit is not the same as being a good pick:
-            issues 1-4 show a category can stay technically compliant while
-            still drawing from only 3-5 outlets out of 15-20 available, simply
-            because the same familiar few get reached for every time. When a
-            category has a non-empty second list, treat it as the FIRST place
-            to look, ahead of any outlet already used this issue-window, even
-            one still below its limit.
-
-            ${{ steps.rest.outputs.list }}
-
-            Rotation is a real editorial requirement, not a preference. A reader
-            who sees the same three or four mastheads every issue has no reason
-            to trust that anything was actually curated. `sources.md` lists
-            roughly 110 publications; a healthy issue reaches well past the
-            obvious five — and an outlet sitting at zero uses after several
-            issues is a stronger signal to reach for it than an outlet merely
-            not yet at its limit.
-
-            ## Rules that will fail the build if broken
-
-            1. ENGLISH ONLY. The article must be published in English by the
-               outlet itself. Never translate. Skip anything not in English.
-            2. FETCH EVERY ARTICLE BEFORE WRITING ABOUT IT. Use WebFetch on the
-               article's own URL and read it. Summaries must describe the actual
-               argument, never what a headline implies. Set `"verified": true`
-               only for articles you actually fetched and read. This is checked.
-            3. EVERY URL MUST COME FROM A REAL SEARCH OR FETCH RESULT. Never
-               construct a URL from a site's naming pattern. If you cannot get a
-               working URL, set `"url": null` and cite the source by name.
-            4. NO REPEATS. Nothing already in assets/search-index.json.
-            5. NEVER TWO ENTRIES FROM THE SAME PUBLICATION IN ONE CATEGORY.
-               The two picks in a category must come from two different outlets.
-            6. AT MOST 2 ENTRIES PER PUBLICATION across the whole issue.
-            7. NO PUBLICATION MAY APPEAR IN THREE OF ANY FOUR CONSECUTIVE ISSUES
-               in the same category. The list above tells you which are at risk.
-            8. AIM FOR GEOGRAPHIC SPREAD across the issue as a whole — sources
-               from different continents, not seven UK outlets. Balance across
-               the issue, not within every category.
-
-            If you genuinely cannot fill a category to standard, still write the
-            two best entries you verified rather than inventing anything.
-
-            ## Work efficiently — this run is metered
-
-            Every search and fetch costs money. These are not style preferences:
-
-            - NEVER retry a URL that failed, timed out, or returned a paywall,
-              login wall, or cookie wall. Abandon that candidate immediately and
-              move to a different outlet. A second attempt at the same URL has
-              never once succeeded and only burns budget.
-            - Do not delegate to subagents or spawn parallel tasks. Do all the
-              work yourself, in sequence. A previous run fanned out into seven
-              subagents, six of which failed, and cost nearly $6 while producing
-              nothing.
-            - One search per category is usually enough. Read the results list
-              before fetching — reject anything obviously too old, off-brief, or
-              from a rested outlet WITHOUT fetching it. Fetching is the expensive
-              step; use the search snippet to filter first.
-            - Once you have two verified entries for a category, stop looking and
-              move on. Do not keep hunting for something marginally better.
-            - Write `issues/_draft.json` as soon as all seven categories are
-              filled. Do not re-read or re-verify what you have already confirmed.
-
-            ## File format
-
-            {
-              "issue": 1,
-              "date": "${{ steps.meta.outputs.date }}",
-              "headline": "Three to six *words*",
-              "intro": "2-3 sentence editorial intro to this issue.",
-              "byline": "Issue No. N — short descriptor",
-              "categories": [
-                {
-                  "key": "art",
-                  "entries": [
-                    {
-                      "title": "Exact article title",
-                      "author": "Author name",
-                      "source": "Publication name",
-                      "summary": "Two sentences on the actual argument.",
-                      "why": "One sentence on why it is worth reading.",
-                      "url": "https://...",
-                      "verified": true
-                    }
-                  ]
-                }
-              ]
-            }
-
-            Notes on the format:
-            - `issue` is a placeholder — write any positive integer. The real
-              number is assigned automatically after this file is written, and
-              whatever you put here is overwritten. Don't spend effort on it.
-            - `headline` is a punchy 3-6 word tabloid-style cover line. Text
-              wrapped in *asterisks* renders in red. Include one such phrase.
-            - All seven category keys must be present, each with exactly 2 entries.
-            - `url` may be null, but the key must exist.
-            - There is no `pulse` field. The section was retired.
+      # Composes from RSS/Atom feeds. One API call over titles and excerpts
+      # only; no article is fetched, so nothing accumulates in context. The
+      # agentic loop this replaced cost $9.53 and 231 turns per issue.
+      - name: Compose the issue
+        if: success()
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node scripts/compose-from-feeds.js --date "${{ steps.meta.outputs.date }}"
 
       - name: Show what was written
         if: always()
