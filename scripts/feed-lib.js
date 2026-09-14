@@ -251,6 +251,7 @@ function selectCandidates({
   rotationMax = 2,
   requireDate = true,
   maxPerSource = 3,
+  relaxRotationWhenEmpty = true,
 }) {
   const nowMs = typeof now === 'number' ? now : new Date(now).getTime();
   const cutoff = nowMs - windowDays * 86400000;
@@ -310,6 +311,41 @@ function selectCandidates({
         published: it.published,
         summary: it.summary,
       });
+    }
+  }
+
+  // Rotation must never empty a category. Resting a publication is a
+  // preference — a section with nothing in it is a broken issue. Where the
+  // first pass left a category with no candidates, run it again for that
+  // category alone with the rotation cap lifted, keeping every other rule
+  // (freshness, dedup) intact.
+  //
+  // This is not hypothetical: fashion is down to two working feeds, both hit
+  // the cap on 14 Sept 2026, the category came out empty and the whole run
+  // failed validation after the model had already been paid for.
+  if (relaxRotationWhenEmpty) {
+    const haveByCat = new Set(out.map((c) => c.category));
+    const emptyCats = new Set(
+      bySource.map((e) => e.category).filter((c) => !haveByCat.has(c)),
+    );
+
+    for (const cat of emptyCats) {
+      const relaxed = selectCandidates({
+        bySource: bySource.filter((e) => e.category === cat),
+        now,
+        windowDays,
+        seenUrls,
+        seenTitles,
+        rotationCounts: {},        // the one rule we lift
+        rotationMax,
+        requireDate,
+        maxPerSource: 1,           // spread what little there is
+        relaxRotationWhenEmpty: false,
+      });
+      if (relaxed.candidates.length) {
+        dropped.rotationRelaxed = (dropped.rotationRelaxed || 0) + 1;
+        out.push(...relaxed.candidates);
+      }
     }
   }
 

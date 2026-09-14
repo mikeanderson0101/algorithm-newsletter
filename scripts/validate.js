@@ -89,7 +89,11 @@ function validateIssue(issue, filename, priorUrls, priorTitles, recentHistory) {
     if (entries.length > ENTRIES_PER_CATEGORY) {
       err(`${where}: category "${key}" has ${entries.length} entries; the maximum is ${ENTRIES_PER_CATEGORY}.`);
     } else if (entries.length === 0) {
-      err(`${where}: category "${key}" has no entries.`);
+      // A warning, not an error. The composer already lifts the rotation cap
+      // rather than leave a category empty, and refuses to write a draft if
+      // every category is empty. If one still comes out bare, the honest
+      // outcome is an issue with six sections rather than no issue at all.
+      warn(`${where}: category "${key}" has no entries.`);
     } else if (entries.length < ENTRIES_PER_CATEGORY) {
       warn(`${where}: category "${key}" has only ${entries.length} of ${ENTRIES_PER_CATEGORY} entries (too few eligible publications).`);
     }

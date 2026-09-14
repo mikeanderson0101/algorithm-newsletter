@@ -316,6 +316,51 @@ const atBoundary = L.selectCandidates({
 });
 check('select: source below cap still eligible', atBoundary.candidates.length, 1);
 
+// Rotation must never empty a category -------------------------------------
+// fashion hit exactly this on 14 Sept 2026: two feeds, both at the cap, the
+// category came out empty and the run failed validation post-payment.
+{
+  const rested = L.selectCandidates({
+    bySource: [
+      { source: 'Only A', category: 'fashion', items: [
+        { title: 'A1', link: 'https://a.example/1', published: iso(1), summary: 's', author: null }] },
+      { source: 'Only B', category: 'fashion', items: [
+        { title: 'B1', link: 'https://b.example/1', published: iso(2), summary: 's', author: null }] },
+    ],
+    now: NOW,
+    rotationCounts: { fashion: { 'only a': 2, 'only b': 2 } },
+    rotationMax: 2,
+  });
+  ok('rotation: lifted rather than leaving a category empty',
+    rested.candidates.length > 0, JSON.stringify(rested.dropped));
+  check('rotation: relaxation recorded', rested.dropped.rotationRelaxed, 1);
+
+  const off = L.selectCandidates({
+    bySource: [{ source: 'Only A', category: 'fashion', items: [
+      { title: 'A1', link: 'https://a.example/1', published: iso(1), summary: 's', author: null }] }],
+    now: NOW,
+    rotationCounts: { fashion: { 'only a': 2 } },
+    rotationMax: 2,
+    relaxRotationWhenEmpty: false,
+  });
+  check('rotation: still enforced when relaxation is disabled', off.candidates.length, 0);
+
+  // A category that still has options must NOT get relaxed entries.
+  const healthy = L.selectCandidates({
+    bySource: [
+      { source: 'Rested', category: 'art', items: [
+        { title: 'R1', link: 'https://r.example/1', published: iso(1), summary: 's', author: null }] },
+      { source: 'Fresh', category: 'art', items: [
+        { title: 'F1', link: 'https://f.example/1', published: iso(1), summary: 's', author: null }] },
+    ],
+    now: NOW,
+    rotationCounts: { art: { rested: 2 } },
+    rotationMax: 2,
+  });
+  check('rotation: healthy category keeps its cap',
+    healthy.candidates.map((c) => c.source), ['Fresh']);
+}
+
 // ===========================================================================
 // Prompt grouping
 // ===========================================================================
