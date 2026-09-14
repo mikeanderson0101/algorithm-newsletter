@@ -27,13 +27,6 @@
     ],
     "confidence": "stated"
   },
-  "Flash Art International": {
-    "feed": "https://flash---art.com/feed/podcast",
-    "categories": [
-      "art"
-    ],
-    "confidence": "stated"
-  },
   "Hyperallergic": {
     "feed": "https://hyperallergic.com/rss/",
     "categories": [
@@ -90,13 +83,6 @@
     ],
     "confidence": "stated"
   },
-  "Metropolis": {
-    "feed": "https://metropolismag.com/feed/",
-    "categories": [
-      "design"
-    ],
-    "confidence": "stated"
-  },
   "The Architectural Review": {
     "feed": "https://www.architectural-review.com/feed",
     "categories": [
@@ -118,22 +104,8 @@
     ],
     "confidence": "stated"
   },
-  "Esquire India": {
-    "feed": "https://esquireindia.co.in/feed/",
-    "categories": [
-      "fashion"
-    ],
-    "confidence": "stated"
-  },
   "Highsnobiety": {
     "feed": "https://www.highsnobiety.com/feed/",
-    "categories": [
-      "fashion"
-    ],
-    "confidence": "stated"
-  },
-  "Open Magazine": {
-    "feed": "https://openthemagazine.com/feed/",
     "categories": [
       "fashion"
     ],
@@ -232,13 +204,6 @@
   },
   "B O D Y": {
     "feed": "https://www.bodyliterature.com/feed/",
-    "categories": [
-      "lit"
-    ],
-    "confidence": "stated"
-  },
-  "Dublin Review of Books": {
-    "feed": "https://drb.ie/feed/",
     "categories": [
       "lit"
     ],
