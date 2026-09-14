@@ -43,13 +43,15 @@ const UA =
   'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 ' +
   '(KHTML, like Gecko) Chrome/124.0 Safari/537.36';
 
-const TIMEOUT_MS = 12000;
-const CONCURRENCY = 6;
+const TIMEOUT_MS = 6000;
+const CONCURRENCY = 16;
 
-const CANDIDATE_PATHS = [
-  '/feed/', '/feed', '/rss', '/rss.xml', '/feed.xml',
-  '/atom.xml', '/index.xml', '/rss/index.xml', '/blog/feed/',
-];
+// Trimmed from nine paths to four. The first run took 40+ minutes because
+// every wrong guessed domain burned the full sequence before giving up.
+// These four cover the overwhelming majority of real-world feeds; anything
+// exotic is found via the homepage's declared <link> tag anyway, which is
+// tried first and is the more reliable route regardless.
+const CANDIDATE_PATHS = ['/feed/', '/rss.xml', '/feed.xml', '/atom.xml'];
 
 const HEADER_TO_KEY = {
   'Fine Art': 'art',
@@ -222,7 +224,14 @@ async function findFeed(domain) {
     }
   }
 
-  // 2. Try the usual paths.
+  // 2. Try the usual paths — but only if something is actually served at
+  //     this domain. If the homepage didn't resolve, guessing paths on a
+  //     nonexistent host just burns one timeout per path for nothing. This
+  //     is what made the first run take 40 minutes.
+  if (!home.status) {
+    return { feed: null, via: null, blocked: false, note: home.error || 'unreachable' };
+  }
+
   const origin = (() => {
     try {
       return new URL(base).origin;
