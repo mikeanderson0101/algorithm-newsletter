@@ -43,7 +43,7 @@ const UA =
   'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 ' +
   '(KHTML, like Gecko) Chrome/124.0 Safari/537.36';
 
-const TIMEOUT_MS = 6000;
+const TIMEOUT_MS = 12000;
 const CONCURRENCY = 16;
 
 // Trimmed from nine paths to four. The first run took 40+ minutes because
