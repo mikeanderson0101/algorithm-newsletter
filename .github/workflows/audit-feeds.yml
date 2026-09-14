@@ -11,12 +11,6 @@ name: Audit Feeds
 
 on:
   workflow_dispatch:
-    inputs:
-      write:
-        description: "Also commit assets/feeds.json"
-        required: false
-        type: boolean
-        default: false
 
 permissions:
   contents: write
@@ -27,20 +21,14 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
+      # Always writes. The opt-in checkbox lived inside the "Run workflow"
+      # dropdown, was easy to miss, and a run that discovers feeds but does
+      # not save them is just a run you have to do twice.
       - name: Audit
-        run: |
-          if [ "${{ inputs.write }}" = "true" ]; then
-            node scripts/audit-feeds.js --write
-          else
-            node scripts/audit-feeds.js
-          fi
+        run: node scripts/audit-feeds.js --write
 
       - name: Commit the feed map
-        if: success() && inputs.write
+        if: success()
         run: |
           set -euo pipefail
           git config user.name  "algorithm-bot"
