@@ -1,0 +1,170 @@
+{
+  "issue": 9,
+  "date": "2026-09-14",
+  "headline": "Retrospectives, *Resistance*, and Reinvention",
+  "intro": "This week's picks trace how culture wrestles with its own history — from Sweden's cultural policy fights to Talk Talk's final shows, Mark Fisher's afterlife, and AI's uncertain future. A reminder that looking backward and forward often happens in the same breath.",
+  "byline": "2026-09-14 — selected links",
+  "categories": [
+    {
+      "key": "art",
+      "entries": [
+        {
+          "title": "Kulturpolitisk reträtt",
+          "author": "Frans Josef Petersson",
+          "source": "Kunstkritikk",
+          "summary": "Marknadens grepp om kulturen hårdnar, samtidigt som motståndet mot kommersialismen försvagas. På söndag är det val i Sverige. The post Kulturpolitisk reträtt appeared first on Kunstkritikk.",
+          "why": "",
+          "url": "https://kunstkritikk.com/kulturpolitisk-retratt/",
+          "verified": true
+        },
+        {
+          "title": "Eileen Cooper: The Body Speaks",
+          "author": "Ruth O'Sullivan",
+          "source": "Trebuchet",
+          "summary": "The Royal Academician on symbols, myth and painting womanhood",
+          "why": "",
+          "url": "https://www.trebuchet-magazine.com/eileen-cooper-the-body-speaks/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "film",
+      "entries": [
+        {
+          "title": "Pulp: What Do You Do for an Encore? review – a joyous time machine for the faithful",
+          "author": "Emma Fraser",
+          "source": "Little White Lies",
+          "summary": "Garth Jennings mines a treasure trove of archive footage in this joyous concert film, proving Pulp’s magic can’t be replicated.",
+          "why": "",
+          "url": "https://lwlies.com/reviews/pulp",
+          "verified": true
+        },
+        {
+          "title": "VENECIA 2026. ‘NAZA’ DE YUVAL ABRAHAM Y RACHEL SZOR: “DEFINA TERRORISMO, MINISTRO”",
+          "author": "Staff",
+          "source": "desistfilm",
+          "summary": "Por Arnau Martín Naza se anunció como parte de la programación de la 83° Biennale de cine de Venecia en los últimos días antes del arranque, y hay que aclarar, de entrada, que el título hace alusión a una palabra clave que utilizan los servicios secretos israelíes para denominar los “daños colaterales” que causan los bombardeos en la Franja de Gaza, es decir, los millares de víctimas que no…",
+          "why": "",
+          "url": "https://desistfilm.com/venecia-2026-naza-de-yuval-abraham-y-rachel-szor-defina-terrorismo-ministro/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "tech",
+      "entries": [
+        {
+          "title": "The bombarding of childhood",
+          "author": "Natalia Kucirkova",
+          "source": "Aeon",
+          "summary": "It’s not just screen time: the problem with children’s media is that it has become relentlessly hectic, loud and bright - by Natalia Kucirkova Read on Aeon",
+          "why": "",
+          "url": "https://aeon.co/essays/its-not-just-screen-time-kids-are-bombarded-by-hectic-media",
+          "verified": true
+        },
+        {
+          "title": "Whose AI Will Rule The World?",
+          "author": "Jacob Dreyer",
+          "source": "Noema",
+          "summary": "The post Whose AI Will Rule The World? appeared first on NOEMA.",
+          "why": "",
+          "url": "https://www.noemamag.com/whose-ai-will-rule-the-world",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "lit",
+      "entries": [
+        {
+          "title": "Tales from the Interregnum: Review of Monster Capital",
+          "author": "Aran",
+          "source": "Ancillary Review of Books",
+          "summary": "Aran Ward Sell Under Review:Monster Capital: Tales of Modern Unease. Edited by Ra Page & David Sue. Comma Press, June 2026. The late Mark Fisher is increasingly revered as a modern prophet. He stands at the crowded intersection of leftist zeal, theoretical critique and pop culture, shaking his fist at the moribundity—and deadening mediocrity—of late … Continue reading Tales from the Interregnum:…",
+          "why": "",
+          "url": "https://ancillaryreviewofbooks.org/2026/09/09/tales-from-the-interregnum/",
+          "verified": true
+        },
+        {
+          "title": "Who’s your neighbor now?",
+          "author": "Frances Butler",
+          "source": "European Review of Books",
+          "summary": "A Peruvian farmer sued German energy company RWE claiming damages for flood risk to his home in the Andes. The post Who’s your neighbor now? appeared first on The European Review of Books.",
+          "why": "",
+          "url": "https://europeanreviewofbooks.com/whos-your-neighbor-now/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "music",
+      "entries": [
+        {
+          "title": "Heavy Blessings: A Church Road Records Primer",
+          "author": "Brad Sanders",
+          "source": "Bandcamp Daily",
+          "summary": "How the sudden demise of Holy Roar Records kickstarted one of the most venerable indie labels in the UK. Read full story on the Bandcamp Daily.",
+          "why": "",
+          "url": "https://daily.bandcamp.com/label-profile/heavy-blessings-a-church-road-records-primer",
+          "verified": true
+        },
+        {
+          "title": "Well Travelled :: Talk Talk’s Final Live Performances 40 Years On",
+          "author": "Jason Woodbury",
+          "source": "Aquarium Drunkard",
+          "summary": "With In Another World: The Four Seasons of Talk Talk, music writer Graeme Thomson charts one of the most mystical trajectories ever undertaken by a one-time pop band. Today marks the 40th anniversary of the band's final live performance in Spain. To commemorate, we're pleased to share an edited extract from In Another World. The post Well Travelled :: Talk Talk’s Final Live Performances 40 Years…",
+          "why": "",
+          "url": "https://aquariumdrunkard.com/2026/09/13/well-travelled-talk-talks-final-live-performances-40-years-on/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "design",
+      "entries": [
+        {
+          "title": "An Urban Designer Wants to Civilize AI the Way Cities Create Citizens",
+          "author": "Martin Pedersen",
+          "source": "Common Edge",
+          "summary": "The Hugging Face fiasco is a serious warning that more rules will not make it safer. Alexandros Washburn thinks cities offer a better model.",
+          "why": "",
+          "url": "https://commonedge.org/an-urban-designer-wants-to-civilize-ai-the-way-cities-create-citizens/",
+          "verified": true
+        },
+        {
+          "title": "Brands cannot afford to speak in the same voice as countless others right now. Typeface designers can help.",
+          "author": "Rachel Paese",
+          "source": "Design Observer",
+          "summary": "It has never made sense to me, why a brand wouldn’t opt for custom type. Working in branding agencies all over London for a lot of my career, I used to sit on the London Tube browsing the series of ads above commuters’ heads. All ads had the same formula: tiny logo in the corner, … Continued The post Brands cannot afford to speak in the same voice as countless others right now. Typeface designers…",
+          "why": "",
+          "url": "https://designobserver.com/brands-cannot-afford-to-speak-in-the-same-voice-as-countless-others-right-now-typeface-designers-can-help/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "fashion",
+      "entries": [
+        {
+          "title": "J. Press Fall/Winter ’26 Collection",
+          "author": "Matthew Longcore",
+          "source": "Ivy Style",
+          "summary": "By Matthew Longcore On Wednesday, September 9, J. Press launched the Fall/Winter ’26 collection with the third runway show since present and creative director Jack Carlson took the helm at the 124-year-old menswear house. The new collection focuses on American tailoring and British mills. It includes a Barbour collaboration and the brand’s first women’s capsule ... The post J. Press Fall/Winter…",
+          "why": "",
+          "url": "https://www.ivy-style.com/j-press-fall-winter-26-collection.html",
+          "verified": true
+        },
+        {
+          "title": "The case for wearing your clothes the ‘wrong’ way",
+          "author": "Daisy Henry",
+          "source": "Fashion Journal",
+          "summary": "Getting dressed every day can feel like hard work. Some mornings it can feel like I’ve already cycled through every combination under the sun. Through trial and error, I’ve realised that the solution rarely lies in panic-buying. Instead, getting a little more creative with your approach is far more fruitful. For more on the circular economy, […] This article The case for wearing your clothes the…",
+          "why": "",
+          "url": "https://fashionjournal.com.au/pre-loved/wearing-clothes-wrong-way/",
+          "verified": true
+        }
+      ]
+    }
+  ]
+}
