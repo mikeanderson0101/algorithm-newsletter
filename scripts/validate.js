@@ -90,7 +90,13 @@ function validateIssue(issue, filename, priorUrls, priorTitles, recentHistory) {
       if (!e.title || !String(e.title).trim()) err(`${at}: missing "title".`);
       if (!e.source || !String(e.source).trim()) err(`${at}: missing "source".`);
       if (!e.summary || !String(e.summary).trim()) err(`${at}: missing "summary".`);
-      if (!e.why || !String(e.why).trim()) err(`${at}: missing "why".`);
+      // "why" is optional. Under the feed-based pipeline nothing is read
+      // before publication, so a claim about why a piece is worth reading
+      // would be invented. An empty "why" is the honest state, not a defect;
+      // build.js omits the element entirely when it is blank.
+      if (e.why !== undefined && typeof e.why !== 'string') {
+        err(`${at}: "why" must be a string when present.`);
+      }
 
       // Link integrity: a URL is optional (cite by name if unverified) but if
       // present it must be a real absolute http(s) URL.

@@ -269,8 +269,11 @@ function renderEntry(entry, anchor) {
   ].join('');
   return `    <div class="entry" id="${esc(anchor)}">
       <div class="entry-byline">${byline}</div>
-      <p>${esc(entry.summary)}</p>
-      <p class="why">${esc(entry.why)}</p>
+      <p>${esc(entry.summary)}</p>${
+        entry.why && String(entry.why).trim()
+          ? `\n      <p class="why">${esc(entry.why)}</p>`
+          : ''
+      }
     </div>`;
 }
 
