@@ -31,14 +31,14 @@ piece from them without checking it is actually criticism.
 ## 1. Fine Art
 
 **Americas** — Hyperallergic (US) · e-flux Criticism (US/DE, e-flux.com/criticism) ·
-Momus (CA, momus.ca) · Border Crossings (CA) ·
+Momus (CA, momus.ca) · Border Crossings (CA, bordercrossingsmag.com) ·
 Artishock (CL, artishockrevista.com/category/english/ — English category only) ·
 Burnaway (US, burnaway.org, American South & Caribbean — non-profit, publishes
 weekly; confirmed active through Sept 2026)
 
-**UK & Europe** — ArtReview (UK) · Burlington Contemporary (UK) · Frieze (UK) ·
-Studio International (UK) · Flash Art International (IT, flash---art.com/category/reviews) ·
-Mousse (IT) · Spike (AT/DE) · Kunstkritikk (Nordic, English-primary) ·
+**UK & Europe** — ArtReview (UK) · Burlington Contemporary (UK, contemporary.burlington.org.uk) · Frieze (UK, frieze.com) ·
+Studio International (UK, studiointernational.com) · Flash Art International (IT, flash---art.com/category/reviews) ·
+Mousse (IT, moussemagazine.it) · Spike (AT/DE, spikeartmagazine.com) · Kunstkritikk (Nordic, English-primary) ·
 Art Monthly (UK, artmonthly.co.uk — full articles free to read despite the
 subscription upsell; confirmed active with May, June and Jul-Aug 2026 pieces) ·
 Trebuchet (UK, trebuchet-magazine.com, FILTER — near-daily, mixes news and
@@ -46,9 +46,9 @@ event listings with genuine long-form criticism; confirmed active Sept 2026) ·
 Berlin Art Link (DE, berlinartlink.com — confirmed active with pieces dated
 through early Sept 2026)
 
-**Africa, Asia, Oceania** — ART AFRICA (ZA) · Contemporary And (Africa/diaspora) ·
-Bidoun (SWANA) · ArtAsiaPacific (HK, /shows) · TAKE on Art (IN) ·
-Ocula (SG/HK, FILTER — gallery-platform model) · Artlink (AU)
+**Africa, Asia, Oceania** — ART AFRICA (ZA) · Contemporary And (Africa/diaspora, contemporaryand.com) ·
+Bidoun (SWANA, bidoun.org) · ArtAsiaPacific (HK, /shows) · TAKE on Art (IN, takeonartmagazine.com) ·
+Ocula (SG/HK, FILTER — gallery-platform model, ocula.com) · Artlink (AU, artlink.com.au)
 
 Dead, do not retry: Randian (dormant 2022), ARC Magazine (domain hijacked),
 BLOK (stalled 2024), Terremoto (English long-form ended 2022),
@@ -64,29 +64,29 @@ used" output for which of these, and which existing outlets, still haven't run.
 
 ## 2. Film Criticism
 
-**Americas** — Reverse Shot (US) · Film Comment (US) ·
+**Americas** — Reverse Shot (US, reverseshot.org) · Film Comment (US) ·
 Philosophy in Film (US) · POV Magazine (CA) · desistfilm (PE, /eng) ·
 Cinema Scope (CA) `UNVERIFIED` — JS-gated
 
 **UK & Europe** — Sight and Sound (UK, BFI) · Little White Lies (UK) ·
-Another Gaze (UK) · Sabzian (BE — trilingual, confirm an EN version exists) ·
-Cineuropa (pan-EU, skews capsule-length) · East European Film Bulletin (eefb.org)
+Another Gaze (UK, anothergaze.com) · Sabzian (BE — trilingual, confirm an EN version exists, sabzian.be) ·
+Cineuropa (pan-EU, skews capsule-length, cineuropa.org) · East European Film Bulletin (eefb.org)
 
-**Africa, Asia, Oceania** — Senses of Cinema (AU) · MUBI Notebook (intl) ·
-Silhouette (IN) · Afrocritik (NG) · Egyptian Streets (EG, FILTER) · Rough Cut (AU)
+**Africa, Asia, Oceania** — Senses of Cinema (AU) · MUBI Notebook (intl, mubi.com/en/notebook) ·
+Silhouette (IN, silhouette.co.in) · Afrocritik (NG, afrocritik.com) · Egyptian Streets (EG, FILTER) · Rough Cut (AU, roughcutfilm.com)
 
 Dead: Asian Movie Pulse (star ratings), Cinema Poetica (2024), Pantograph Punch (2023).
 
 ## 3. Tech & AI
 
-**Americas** — Noema (US) · The Baffler (US) · 404 Media (US, FILTER — mostly
-investigative) · The Walrus (CA) · Rest of World (Global South focus)
+**Americas** — Noema (US) · The Baffler (US, thebaffler.com) · 404 Media (US, FILTER — mostly
+investigative) · The Walrus (CA, thewalrus.ca) · Rest of World (Global South focus)
 
-**UK & Europe** — New Statesman (UK) · Prospect (UK) ·
+**UK & Europe** — New Statesman (UK) · Prospect (UK, prospectmagazine.co.uk) ·
 Berlin Review (DE, blnreview.de/en — parallel English edition)
 
 **Africa, Asia, Oceania** — East Asia Forum (AU/Asia) · IT-Online (ZA) ·
-MediaNama (IN) · TechCabal (NG) · AGBI (Gulf) · e27 (SG, anti-bot measures) ·
+MediaNama (IN, medianama.com) · TechCabal (NG, techcabal.com) · AGBI (Gulf) · e27 (SG, anti-bot measures, e27.co) ·
 The Mandarin (AU)
 
 ⚠️ **This category attracts the worst SEO spam** ("best AI tools 2026", "where AI
@@ -96,18 +96,18 @@ Dead or wire-only: Wamda, Contxto, KrASIA, Tech in Asia, LatamList (funding wire
 
 ## 4. Literary Reviews (SFF-leaning)
 
-**Americas** — Los Angeles Review of Books (US) · Bookforum (US) · n+1 (US) ·
-Locus (US) · Strange Horizons (US) · Ancillary Review of Books (US, SFF) ·
+**Americas** — Los Angeles Review of Books (US, lareviewofbooks.org) · Bookforum (US, bookforum.com) · n+1 (US, nplusonemag.com) ·
+Locus (US, locusmag.com) · Strange Horizons (US, strangehorizons.com) · Ancillary Review of Books (US, SFF) ·
 Literary Review of Canada (CA) · Latin American Literature Today (bilingual,
-genuine EN) · PREE (JM) · sx salon (Caribbean) · Brick (CA) `UNVERIFIED`
+genuine EN, latinamericanliteraturetoday.org) · PREE (JM, preelit.com) · sx salon (Caribbean, smallaxe.net/sxsalon) · Brick (CA) `UNVERIFIED`
 
 **UK & Europe** — SFBook.com (UK) ·
-Dublin Review of Books (IE) · Vector/BSFA (UK, membership-gated) ·
-Eurozine (pan-EU) · European Review of Books (pan-EU) · B O D Y (CZ) · Literalab (CEE)
+Dublin Review of Books (IE) · Vector/BSFA (UK, membership-gated, vector-bsfa.com) ·
+Eurozine (pan-EU, eurozine.com) · European Review of Books (pan-EU) · B O D Y (CZ, bodyliterature.com) · Literalab (CEE)
 
-**Africa, Asia, Oceania** — Brittle Paper (NG) · Afrocritik books (NG) ·
+**Africa, Asia, Oceania** — Brittle Paper (NG) · Afrocritik books (NG, afrocritik.com/category/books) ·
 ArabLit (EG, reviews written in English) · Aotearoa NZ Review of Books (NZ,
-tags SF/speculative) · Kete Books (NZ)
+tags SF/speculative, anzlreviewofbooks.wordpress.com) · Kete Books (NZ, ketebooks.co.nz)
 
 Gap: South/Southeast Asia. Candidates to try: Usawa Literary Review,
 The Bangalore Review, Cha (HK).
@@ -117,29 +117,29 @@ The Bangalore Review, Cha (HK).
 **Americas** — Aquarium Drunkard (US) · Bandcamp Daily (US, FILTER — the
 easiest music result to find, which is why it took two of the first six slots;
 reach past it before using it) ·
-Musicworks (CA, experimental/sound art) · Sounds and Colours (LatAm focus, EN) ·
+Musicworks (CA, experimental/sound art, musicworks.ca) · Sounds and Colours (LatAm focus, EN) ·
 Pitchfork (US) `UNVERIFIED` — blocks fetch · Exclaim! (CA) `UNVERIFIED`
 
-**UK & Europe** — The Quietus (UK) · The Wire (UK) · The Skinny (UK) ·
-VAN Magazine (DE, classical, English-native) · 032c (DE)
+**UK & Europe** — The Quietus (UK) · The Wire (UK, thewire.co.uk) · The Skinny (UK, theskinny.co.uk) ·
+VAN Magazine (DE, classical, English-native) · 032c (DE, 032c.com)
 
 **Africa, Asia, Oceania** — Music In Africa (ZA) · The NATIVE (NG) ·
-Unorthodox Reviews (GH) · SceneNoise (EG) · Rolling Stone MENA (AE) ·
-Rolling Stone India (IN) · The AU Review (AU) · Elsewhere (NZ)
+Unorthodox Reviews (GH, unorthodoxreviews.com) · SceneNoise (EG, scenenoise.com) · Rolling Stone MENA (AE) ·
+Rolling Stone India (IN) · The AU Review (AU) · Elsewhere (NZ, elsewhere.co.nz)
 
 Dead or non-English: Bandwagon, IZM (Korean), Groove (German), Electronic Beats.
 
 ## 6. Design
 
-**Americas** — Places Journal (US) · Metropolis (US) · Azure (CA) · Canadian Architect (CA)
+**Americas** — Places Journal (US, placesjournal.org) · Metropolis (US) · Azure (CA, azuremagazine.com) · Canadian Architect (CA, canadianarchitect.com)
 
-**UK & Europe** — Design Week (UK) · The Architectural Review (UK, /essays) ·
-Dezeen Opinion (UK — the opinion vertical only, not the main feed) · Disegno (UK) ·
-Eye Magazine (UK) · Domus (IT, domusweb.it/en/opinion.html) · 032c (DE) ·
-Norwegian Crafts / The Vessel (NO, craft-theory leaning)
+**UK & Europe** — Design Week (UK) · The Architectural Review (UK, /essays, architectural-review.com) ·
+Dezeen Opinion (UK — the opinion vertical only, not the main feed, dezeen.com/opinion) · Disegno (UK, disegnojournal.com) ·
+Eye Magazine (UK, eyemagazine.com) · Domus (IT, domusweb.it/en/opinion.html) · 032c (DE) ·
+Norwegian Crafts / The Vessel (NO, craft-theory leaning, norwegiancrafts.no)
 
-**Asia, Oceania** — STIRworld (IN, /think-opinions) · ArchitectureAU Discussion (AU) ·
-thinkMATTER (IN, CAVEAT — uneven, spot-check)
+**Asia, Oceania** — STIRworld (IN, /think-opinions) · ArchitectureAU Discussion (AU, architectureau.com/discussion) ·
+thinkMATTER (IN, CAVEAT — uneven, spot-check, thinkmatter.in)
 
 Checked and genuinely empty: identity.ae and Middle East Architect have no
 opinion vertical. Cobo Social and Design Anthology publish listicles. Design
@@ -147,10 +147,10 @@ Indaba (ZA) inactive. No Latin American English-language design criticism found.
 
 ## 7. Menswear ⚠️ STRUCTURALLY THIN
 
-**Verified** — Permanent Style (UK) · Blackbird Spyplane (US) ·
+**Verified** — Permanent Style (UK, permanentstyle.com) · Blackbird Spyplane (US) ·
 Highsnobiety (DE, FILTER — hybrid essay/shopping) · 032c (DE) ·
 Open Magazine (IN, /art-culture, FILTER — fashion appears irregularly) ·
-Esquire India (IN, FILTER — roughly 70-80% shopping content)
+Esquire India (IN, FILTER — roughly 70-80% shopping content, esquireindia.co.in)
 
 **Added 30 Aug 2026**, after the section drew four of its first six slots from
 Highsnobiety and the other two from Blackbird Spyplane. Each fetched and
@@ -174,7 +174,7 @@ the rotation rule survivable in the thinnest category on the list.
 **Blocked by technology, not quality — check manually if possible:**
 Die Workwear (US, Derek Guy) — blocks automated fetching, probably the best
 menswear criticism in English · Business of Fashion — menswear opinion strand,
-403s without a login · Bubblegum Club (ZA, /fashion) — JS-gated, best African lead.
+403s without a login · Bubblegum Club (ZA, /fashion, bubblegumclub.co.za) — JS-gated, best African lead.
 
 Confirmed across three research passes: dedicated menswear-criticism outlets
 barely exist anywhere. What exists sits inside general-culture magazines rather
