@@ -1,0 +1,54 @@
+name: Audit Feeds
+
+# One-off diagnostic, run by hand. Costs nothing — no model is called.
+#
+# Answers: how many of the publications in sources.md expose an RSS/Atom
+# feed? That number decides whether the newsletter can be rebuilt around
+# feeds (cheap, deterministic) instead of the agentic research loop.
+#
+# Read the output in the run log. Nothing is committed unless you tick
+# "write" below, which saves assets/feeds.json for a later build to use.
+
+on:
+  workflow_dispatch:
+    inputs:
+      write:
+        description: "Also commit assets/feeds.json"
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Audit
+        run: |
+          if [ "${{ inputs.write }}" = "true" ]; then
+            node scripts/audit-feeds.js --write
+          else
+            node scripts/audit-feeds.js
+          fi
+
+      - name: Commit the feed map
+        if: success() && inputs.write
+        run: |
+          set -euo pipefail
+          git config user.name  "algorithm-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/feeds.json
+          if git diff --cached --quiet; then
+            echo "No change to assets/feeds.json."
+            exit 0
+          fi
+          git commit -m "Feed audit: update assets/feeds.json"
+          git push origin HEAD:main
