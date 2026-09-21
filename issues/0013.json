@@ -1,0 +1,287 @@
+{
+  "issue": 13,
+  "date": "2026-09-21",
+  "headline": "The *Feed*",
+  "intro": "A selection of recent writing from across the culture press.",
+  "byline": "2026-09-21 — selected links",
+  "categories": [
+    {
+      "key": "art",
+      "entries": [
+        {
+          "title": "In Chicago, Mexican-American Altars Reimagine Home",
+          "author": "Crystal Vance Guerra",
+          "source": "Hyperallergic",
+          "summary": "As ICE increasingly targets migrant neighborhoods, carefully crafted altars to La Virgen de Guadalupe outside homes transform sidewalks into sites of community and protection.",
+          "why": "",
+          "url": "https://hyperallergic.com/in-chicago-mexican-american-altars-reimagine-home/",
+          "verified": true
+        },
+        {
+          "title": "Catherine Liu’s Early Reviews",
+          "author": "Theo Belci",
+          "source": "Artforum",
+          "summary": "In the early ’90s, Catherine Liu contributed regular dispatches from the downtown New York gallery scene for Artforum",
+          "why": "",
+          "url": "https://www.artforum.com/columns/catherine-liu-early-reviews-1234759472/",
+          "verified": true
+        },
+        {
+          "title": "Mariko Mori’s Exploration of Posthumanism at Mori Art Museum",
+          "author": "abby",
+          "source": "Art & Object",
+          "summary": "Mariko Mori’s Exploration of Posthumanism at Mori Art Museum Photo: Richard Learoyd Mariko Mori, Wave UFO, 1999-2002, Brainwave interface, vision dome, projector, computer system, fiberglass, Technogel, acrylic, carbon fiber, aluminum, and magnesium, 528 x 1134 x 493 cm. Installation view: Mariko Mori: Wave UFO, Kunsthaus Bregenz, Austria, 2003. abby Mon, 09/21/2026 - 09:04 When Irish poet…",
+          "why": "",
+          "url": "https://www.artandobject.com/news/mariko-moris-exploration-posthumanism-mori-art-museum",
+          "verified": true
+        },
+        {
+          "title": "Liang Shaoji, 1945–2026",
+          "author": "The Editors",
+          "source": "ArtAsiaPacific",
+          "summary": "The boundary-breaking artist has passed away, aged 81. Harison Butler",
+          "why": "",
+          "url": "https://www.artasiapacific.com/news/liang-shaoji-1945-2026/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "film",
+      "entries": [
+        {
+          "title": "From Ad Agency to Sacred Geometry: Looking Back at My First Year at Cairo’s Jameel House",
+          "author": "Youmna Hazzaa",
+          "source": "Egyptian Streets",
+          "summary": "In 2009, Jameel House of Traditional Arts opened its doors in Cairo. A two-year programme delivered by The King’s Foundation, School of Traditional Arts in London, it teaches “sacred geometry, observational drawing, colour harmony and decorative floral patterns,” alongside specialised training in ceramics, glass, gypsum, metalwork and woodwork: disciplines that, in most of the world, are treated…",
+          "why": "",
+          "url": "https://egyptianstreets.com/2026/09/21/from-ad-agency-to-sacred-geometry-looking-back-at-my-first-year-at-cairos-jameel-house/",
+          "verified": true
+        },
+        {
+          "title": "TIFF Dispatch: Of Actors and Alzheimer’s",
+          "author": "Jason Bailey",
+          "source": "Crooked Marquee",
+          "summary": "Our TIFF coverage concludes with reviews of “Elsinore,” “Babies,” “Misty Green,” “Closing Night,” “Tangles,” “Love of Your Life,” “All That She Wants,” and more. The post TIFF Dispatch: Of Actors and Alzheimer’s appeared first on Crooked Marquee.",
+          "why": "",
+          "url": "https://crookedmarquee.com/tiff-dispatch-of-actors-and-alzheimers/",
+          "verified": true
+        },
+        {
+          "title": "Hope review – a rip-snorting creature feature",
+          "author": "Iana Murray",
+          "source": "Little White Lies",
+          "summary": "Na Hong-jin returns with the most expensive Korean film ever made, a rip-snorting creature feature with eccentricity and action to burn.",
+          "why": "",
+          "url": "https://lwlies.com/reviews/hope",
+          "verified": true
+        },
+        {
+          "title": "Jan Těšitel’s David (2015)",
+          "author": "Jaroslav Cibulka",
+          "source": "East European Film Bulletin",
+          "summary": "Returning to Jan Těšitel’s debut and the creative developments it did and did not anticipate.",
+          "why": "",
+          "url": "https://eefb.org/retrospectives/jan-tesitels-david-2015/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "tech",
+      "entries": [
+        {
+          "title": "Saudi Arabia’s Ceer launches flagship electric vehicles",
+          "author": "Pramod Kumar",
+          "source": "AGBI",
+          "summary": "Ceer Motors, backed by Saudi Arabia’s Public Investment Fund (PIF), has introduced its first electric vehicles. The Exobot sedan and SUV were launched by Crown Prince Mohammed bin Salman, the state-run SPA news agency reported on Monday. “The launch of Ceer’s first vehicles represents another step forward in Saudi Arabia’s progression to build a sustainable […]",
+          "why": "",
+          "url": "https://www.agbi.com/manufacturing/2026/09/saudi-arabias-ceer-launches-flagship-electric-vehicles/",
+          "verified": true
+        },
+        {
+          "title": "Is Your City Using Axon License Plate Cameras? We Need Your Help",
+          "author": "Joseph Cox",
+          "source": "404 Media",
+          "summary": "404 Media is filing public records requests around the country to find out how cops are using Axon's ALPRs. Here is how you can do that too.",
+          "why": "",
+          "url": "https://www.404media.co/is-your-city-using-axon-license-plate-cameras-we-need-your-help/",
+          "verified": true
+        },
+        {
+          "title": "Nigeria’s new phone registry threatens rising smartphone prices",
+          "author": "Frank Eleanya",
+          "source": "TechCabal",
+          "summary": "Nigeria wants to make every phone traceable. But as the NCC moves to tighten control over the device market, the harder question is whether the system can stop illegal imports without making legitimate phones harder to buy, sell and repair.",
+          "why": "",
+          "url": "https://techcabal.com/2026/09/21/nigerias-new-phone-tracking-policy-could-price-millions-offline/",
+          "verified": true
+        },
+        {
+          "title": "Pluralistic: The Claude Delusion (21 Sep 2026)",
+          "author": "Cory Doctorow",
+          "source": "Pluralistic",
+          "summary": "Today's links The Claude Delusion: What if we're the ones having hallucinations? Hey look at this: Delights to delectate. Object permanence: 9/11 v sex; 9/11 v flags; US customs v diplomatic Vegemite; CIA torture survivors speak; HP's inky timebomb; \"The Raven\" pop-up; Forex v Zimbabwe's internet; Shirky v \"expert Wikipedia\": McSweeney's v RIAA; Italy's internet disconnection law; Facehugger…",
+          "why": "",
+          "url": "https://pluralistic.net/2026/09/21/sunsetting/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "lit",
+      "entries": [
+        {
+          "title": "Narrative High Jinks Have Always Been a Part of Star Trek",
+          "author": "Emmet Asher-Perrin",
+          "source": "Reactor",
+          "summary": "The shenanigans will continue until morale... does something The post Narrative High Jinks Have Always Been a Part of Star Trek appeared first on Reactor.",
+          "why": "",
+          "url": "https://reactormag.com/narrative-hijinks-have-always-been-a-part-of-star-trek/",
+          "verified": true
+        },
+        {
+          "title": "World Kid Lit Month 2026: 9 New Books to Read Now",
+          "author": "Nina Perrotta",
+          "source": "Words Without Borders",
+          "summary": "For the 10th anniversary of World Kid Lit Month, we have a spectacularly illustrated range of new translations for young readers. Our picture book selection includes playful poetry, journeys up into space and down into the depths of the oceans, and a dive into the nitty-gritty of how our groceries reach us. Our middle-grade pick The post World Kid Lit Month 2026: 9 New Books to Read Now appeared…",
+          "why": "",
+          "url": "https://wordswithoutborders.org/read/article/2026-09/world-kid-lit-month-2026-9-new-books-to-read-now/",
+          "verified": true
+        },
+        {
+          "title": "And So I Open My Fists by Rachel Sobel (audio)",
+          "author": "Rachel Sobel",
+          "source": "Clarkesworld",
+          "summary": "This episode features \"And So I Open My Fists\" written by Rachel Sobel. Published in the September 2026 issue of Clarkesworld Magazine and read by Kate Baker. The text version of this story can be found at: https://clarkesworldmagazine.com/sobel_09_26 Support us on Patreon at https://www.patreon.com/clarkesworld/membership",
+          "why": "",
+          "url": "https://clarkesworldmagazine.com/audio_09_26c/",
+          "verified": true
+        },
+        {
+          "title": "Wars of vulnerability",
+          "author": "Sarah Waring",
+          "source": "Eurozine",
+          "summary": "As the development of military weapons advances apace so does the need for interception and disabling technology. How can Cold War strategies of jamming radio signals inform contemporary approaches to counter warfare?",
+          "why": "",
+          "url": "https://www.eurozine.com/wars-of-vulnerability/?utm_source=rss&utm_medium=rss&utm_campaign=wars-of-vulnerability",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "music",
+      "entries": [
+        {
+          "title": "The 10 Best Pop Music Books of the 2000s So Far",
+          "author": "Josh Friedberg",
+          "source": "PopMatters",
+          "summary": "These ten books are not a poptimist syllabus, but they represent some of the best music writing of the 21st century on pop music.",
+          "why": "",
+          "url": "https://www.popmatters.com/10-best-pop-music-books",
+          "verified": true
+        },
+        {
+          "title": "CHUNG HA Traces the Roots of an Escape in ‘México’",
+          "author": "Debashree Dutta",
+          "source": "Rolling Stone India",
+          "summary": "The K-pop star opens up about the long road to her Latin-pop single, embracing a softer sound, and how her childhood in Texas inspired her to break free. The post CHUNG HA Traces the Roots of an Escape in ‘México’ appeared first on Rolling Stone India.",
+          "why": "",
+          "url": "https://rollingstoneindia.com/chung-ha-on-mexico-the-story-behind-her-new-single-interview/",
+          "verified": true
+        },
+        {
+          "title": "La Bola Negra is a sweeping queer epic: Toronto International Film Festival Review",
+          "author": "Peter Gray",
+          "source": "The AU Review",
+          "summary": "At 155 minutes, and unfolding across three timelines that initially appear to have only the faintest connective tissue, La Bola Negra asks its audience to place an enormous amount of trust in directors Javier Calvo and Javier Ambrossi. For much of its first two hours, their sweeping queer epic can feel deliberately elusive, moving between...",
+          "why": "",
+          "url": "https://www.theaureview.com/watch/la-bola-negra-tiff-review/",
+          "verified": true
+        },
+        {
+          "title": "Rappers Never Retire",
+          "author": "Anthony Seaman",
+          "source": "Passion of the Weiss",
+          "summary": "The Rap-Up considers the most notable singles of the past week. Today, Anthony Seaman reviews new work from Ghostface, Kool G Rap, Scarface, and more.",
+          "why": "",
+          "url": "https://www.powmag.net/p/rappers-never-retire",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "design",
+      "entries": [
+        {
+          "title": "Who cares? On creating a common ground in times of disruptive change",
+          "author": "Liz Brogden",
+          "source": "ArchitectureAU Discussion",
+          "summary": "Facing an urgent climate crisis and increasing professional demands, the profession can no longer afford the divide between classroom theory and real-world practice, Liz Brogden argues.",
+          "why": "",
+          "url": "https://architectureau.com/articles/who-cares-on-creating-a-common-ground-in-times-of-disruptive-change/",
+          "verified": true
+        },
+        {
+          "title": "“Leading With Landscape” Charts 25 City-Shaping Years of Waterfront Toronto",
+          "author": "Elizabeth Pagliacolo",
+          "source": "Azure",
+          "summary": "We chat with Fadi Masoud about the University of Toronto symposium and exhibition, which celebrates (and debates) Waterfront Toronto’s major successes over its first quarter century — and anticipates what comes next. The post “Leading With Landscape” Charts 25 City-Shaping Years of Waterfront Toronto appeared first on Azure Magazine.",
+          "why": "",
+          "url": "https://www.azuremagazine.com/article/leading-with-landscape-charts-25-city-shaping-years-of-waterfront-toronto/",
+          "verified": true
+        },
+        {
+          "title": "Nook Stack Is the Floor Lamp That Moonlights as a Bookshelf",
+          "author": "JC Torres",
+          "source": "Yanko Design",
+          "summary": "Nook Stack Is the Floor Lamp That Moonlights as a BookshelfMost homes treat lighting and shelving as two separate purchases, bought on different days from different stores, then arranged next to each other and hoped...",
+          "why": "",
+          "url": "https://www.yankodesign.com/2026/09/21/nook-stack-is-the-floor-lamp-that-moonlights-as-a-bookshelf/?utm_source=rss&utm_medium=rss&utm_campaign=nook-stack-is-the-floor-lamp-that-moonlights-as-a-bookshelf",
+          "verified": true
+        },
+        {
+          "title": "Four rural timber homes by North House Architects: Your Next Employer?",
+          "author": "Niall Patrick Walsh",
+          "source": "Archinect",
+          "summary": "Following our previous visit to ParkFowler Plus, we are moving our Meet Your Next Employer series to Grand Haven, MI, this week to explore the work of North House Architects. Founded by Joe Filippelli, the studio specializes in modern residences in the Great Lakes region. “Our work is guided by a belief that architecture should balance the rational and the poetic, resulting in homes that perform…",
+          "why": "",
+          "url": "https://archinect.com/news/article/150566650/four-rural-timber-homes-by-north-house-architects-your-next-employer",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "fashion",
+      "entries": [
+        {
+          "title": "Keralam Is Not What It Makes. It Is What It Makes Possible",
+          "author": "Dr Vijayakumar Parameswaran Unnithan/api/author/2400896",
+          "source": "Open Magazine",
+          "summary": "Comparative advantage has traditionally been understood as producing a good more efficiently than someone else. But what if it can also arise from producing conditions, environments in which people develop capacities, judgment, health, and wisdom, that other societies find increasingly difficult to create? That question reframes what follows. Keralam's greatest comparative advantage may not be…",
+          "why": "",
+          "url": "https://openthemagazine.com/india/keralam-is-not-what-it-makes-it-is-what-it-makes-possible",
+          "verified": true
+        },
+        {
+          "title": "The North Face Takes a Walk on the Wild Side",
+          "author": null,
+          "source": "Highsnobiety",
+          "summary": "The North Face has debuted their new Clyffe Trek hiking shoe, enticing the modern explorer to go beyond their limits.",
+          "why": "",
+          "url": "https://www.highsnobiety.com/p/the-north-face-takes-a-walk-on-the-wild-side/",
+          "verified": true
+        },
+        {
+          "title": "PlayStation and LISA Team Up on Limited Edition DualSense Controller",
+          "author": "info@hypebeast.com (Hypebeast)",
+          "source": "Hypebeast",
+          "summary": "Summary PlayStation unveils a collaborative limited edition DualSense wireless controller with LISA available for pre-order starting October 2Designed with the singer, the controller features illustrative details, \"LL\" lettering, and her signature stars, all in a Chroma Pearl colorwayA LISA x PlayStation merch collection will also release, including apparel, hats, totes, stickers, keychains, a…",
+          "why": "",
+          "url": "https://hypebeast.com/2026/9/lisa-playstation-dualsense-wireless-controller-collaboration-2026-info",
+          "verified": true
+        }
+      ]
+    }
+  ]
+}
