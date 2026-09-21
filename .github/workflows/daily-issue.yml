@@ -106,7 +106,7 @@ jobs:
         if: success()
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: node scripts/compose-from-feeds.js --date "${{ steps.meta.outputs.date }}"
+        run: node scripts/compose-from-feeds.js --date "${{ steps.meta.outputs.date }}" --per-category 4
 
       - name: Show what was written
         if: always()
