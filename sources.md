@@ -50,6 +50,13 @@ through early Sept 2026)
 Bidoun (SWANA) · ArtAsiaPacific (HK, /shows, artasiapacific.com) · TAKE on Art (IN, takeonartmagazine.com) ·
 Ocula (SG/HK, FILTER — gallery-platform model) · Artlink (AU)
 
+**Wider pool 19 Sept 2026, feeds unverified** — Artnet News (US, news.artnet.com, NEWS) ·
+ARTnews (US, artnews.com, NEWS) · The Art Newspaper (UK, theartnewspaper.com, NEWS) ·
+Apollo Magazine (UK, apollo-magazine.com) · Colossal (US, thisiscolossal.com, NEWS) ·
+Juxtapoz (US, juxtapoz.com, NEWS) · Elephant (UK, elephant.art) ·
+Two Coats of Paint (US, twocoatsofpaint.com) · Art & Object (US, artandobject.com) ·
+Aesthetica (UK, aestheticamagazine.com) · Artdaily (US, artdaily.com, NEWS)
+
 Dead, do not retry: Randian (dormant 2022), ARC Magazine (domain hijacked),
 BLOK (stalled 2024), Terremoto (English long-form ended 2022).
 
@@ -76,6 +83,14 @@ Silhouette (IN, silhouette.co.in) · Afrocritik (NG) · Egyptian Streets (EG, FI
 
 Dead: Asian Movie Pulse (star ratings), Cinema Poetica (2024), Pantograph Punch (2023).
 
+**Wider pool 19 Sept 2026, feeds unverified** — IndieWire (US, indiewire.com, NEWS) ·
+Screen Slate (US, screenslate.com) · Bright Wall/Dark Room (US, brightwalldarkroom.com) ·
+Vague Visages (US, vaguevisages.com) · Filmmaker Magazine (US, filmmakermagazine.com) ·
+The Film Stage (US, thefilmstage.com, NEWS) · Crooked Marquee (US, crookedmarquee.com) ·
+Talkhouse (US, talkhouse.com) · Seventh Row (CA, seventh-row.com) ·
+Screen Anarchy (US, screenanarchy.com, NEWS)
+
+
 ## 3. Tech & AI
 
 **Americas** — Noema (US, noemamag.com) · The Baffler (US) · 404 Media (US, FILTER — mostly
@@ -92,6 +107,12 @@ The Mandarin (AU, themandarin.com.au)
 is headed"). Never take a tech pick from a generic web search result.
 
 Dead or wire-only: Wamda, Contxto, KrASIA, Tech in Asia, LatamList (funding wires).
+
+**Wider pool 19 Sept 2026, feeds unverified** — Ars Technica (US, arstechnica.com, NEWS) ·
+Techdirt (US, techdirt.com) · Simon Willison (UK, simonwillison.net) ·
+Platformer (US, platformer.news) · Garbage Day (US, garbageday.email) ·
+MIT Technology Review (US, technologyreview.com, NEWS) · The Verge (US, theverge.com, NEWS) ·
+Wired (US, wired.com, NEWS) · Pluralistic (CA, pluralistic.net)
 
 **Candidates 14 Sept 2026, feeds unverified** — Rest of World (US, restofworld.org) ·
 The Markup (US, themarkup.org) · Tedium (US, tedium.co) · Aeon (AU, aeon.co)
@@ -115,6 +136,16 @@ tags SF/speculative, wordpress.com) · Kete Books (NZ)
 Gap: South/Southeast Asia. Candidates to try: Usawa Literary Review,
 The Bangalore Review, Cha (HK).
 
+**Wider pool 19 Sept 2026, feeds unverified** — Literary Hub (US, lithub.com) ·
+The Millions (US, themillions.com) · Electric Literature (US, electricliterature.com) ·
+Public Books (US, publicbooks.org) · Full Stop (US, full-stop.net) ·
+Asymptote (TW, asymptotejournal.com) · Words Without Borders (US, wordswithoutborders.org) ·
+The Rumpus (US, therumpus.net) · Reactor (US, reactormag.com) ·
+Clarkesworld (US, clarkesworldmagazine.com) ·
+Cleveland Review of Books (US, clereviewofbooks.com) ·
+The Paris Review Daily (US, theparisreview.org)
+
+
 ## 5. Music Criticism
 
 **Americas** — Aquarium Drunkard (US, aquariumdrunkard.com) · Bandcamp Daily (US, FILTER — the
@@ -132,6 +163,13 @@ Rolling Stone India (IN, rollingstoneindia.com) · The AU Review (AU, theaurevie
 
 Dead or non-English: Bandwagon, IZM (Korean), Groove (German), Electronic Beats.
 
+**Wider pool 19 Sept 2026, feeds unverified** — The Quietus (UK, thequietus.com) ·
+Passion of the Weiss (US, passionweiss.com) · Resident Advisor (UK, ra.co, NEWS) ·
+Stereogum (US, stereogum.com, NEWS) · PopMatters (US, popmatters.com) ·
+Louder Than War (UK, louderthanwar.com) · The Line of Best Fit (UK, thelineofbestfit.com, NEWS) ·
+Consequence (US, consequence.net, NEWS) · Fact Magazine (UK, factmag.com, NEWS)
+
+
 ## 6. Design
 
 **Americas** — Places Journal (US) · Metropolis (US, metropolismag.com) · Azure (CA, azuremagazine.com) · Canadian Architect (CA)
@@ -148,6 +186,12 @@ Checked and genuinely empty: identity.ae and Middle East Architect have no
 opinion vertical. Cobo Social and Design Anthology publish listicles. Design
 Indaba (ZA) inactive. No Latin American English-language design criticism found.
 
+**Wider pool 19 Sept 2026, feeds unverified** — Designboom (IT, designboom.com, NEWS) ·
+ArchDaily (US, archdaily.com, NEWS) · Eye on Design (US, eyeondesign.aiga.org) ·
+Print Magazine (US, printmag.com, NEWS) · The Architect's Newspaper (US, archpaper.com, NEWS) ·
+Archinect (US, archinect.com, NEWS) · Design Milk (US, design-milk.com, NEWS) ·
+Yanko Design (SG, yankodesign.com, NEWS) · Dezeen (UK, dezeen.com, NEWS)
+
 **Candidates 14 Sept 2026, feeds unverified** — Core77 (US, core77.com) ·
 Design Observer (US, designobserver.com) · It's Nice That (UK, itsnicethat.com) ·
 Common Edge (US, commonedge.org) · Failed Architecture (NL, failedarchitecture.com) ·
@@ -157,9 +201,16 @@ Architizer (US, architizer.com)
 ## 7. Menswear ⚠️ STRUCTURALLY THIN
 
 **Verified** — Permanent Style (UK) · Blackbird Spyplane (US, blackbirdspyplane.com) ·
-Highsnobiety (DE, FILTER — hybrid essay/shopping, highsnobiety.com) · 032c (DE) ·
+Highsnobiety (DE, FILTER — hybrid essay/shopping, highsnobiety.com, NEWS) · 032c (DE) ·
 Open Magazine (IN, /art-culture, FILTER — fashion appears irregularly, openthemagazine.com) ·
 Esquire India (IN, FILTER — roughly 70-80% shopping content, esquireindia.co.in)
+
+**Wider pool 19 Sept 2026, feeds unverified** — Fashionista (US, fashionista.com, NEWS) ·
+The Fashion Law (US, thefashionlaw.com) · A Continuous Lean (US, acontinuouslean.com) ·
+Valet (US, valet.com, NEWS) · He Spoke Style (US, hespokestyle.com) ·
+The Rake (UK, therake.com, NEWS) · Hypebeast (HK, hypebeast.com, NEWS) ·
+Vogue Business (UK, voguebusiness.com, NEWS) · Grailed Dispatch (US, grailed.com, NEWS) ·
+StyleForum (US, styleforum.net) · Clothes on Film (UK, clothesonfilm.com)
 
 **Candidates 14 Sept 2026, feeds unverified** — Esque (US, esque.us) ·
 Throwing Fits (US, throwingfits.substack.com) ·
