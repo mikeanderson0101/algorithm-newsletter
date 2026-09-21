@@ -55,7 +55,7 @@ for (const cat of CATS) {
   // source list where fashion has only four working feeds. A category with
   // one publication must yield ONE entry, not two from the same masthead —
   // validate.js rejects the latter, which is how the first live run died.
-  const count = cat === 'fashion' ? 1 : 3;
+  const count = cat === 'fashion' ? 1 : 6;
   for (let n = 1; n <= count; n++) SOURCES[`${cat}Src${n}`] = cat;
 }
 
@@ -95,14 +95,17 @@ const rfc822 = (daysAgo) => new Date(nowMs - daysAgo * 86400000).toUTCString();
 
 function feedXml(name) {
   const items = [
-    { t: `${name} fresh one`, d: 1, i: 0 },
-    { t: `${name} fresh two`, d: 2, i: 1 },
-    { t: `${name} fresh three`, d: 4, i: 2 },
-    { t: `${name} ancient`, d: 400, i: 3 },
+    // Deliberately hostile, mirroring real feeds: item 0 has NO description
+    // at all (this is what broke the 19 Sept run), item 1 has no author,
+    // item 2 is normal, item 3 is too old.
+    { t: `${name} fresh one`, d: 1, i: 0, desc: false, author: true },
+    { t: `${name} fresh two`, d: 2, i: 1, desc: true, author: false },
+    { t: `${name} fresh three`, d: 4, i: 2, desc: true, author: true },
+    { t: `${name} ancient`, d: 400, i: 3, desc: true, author: true },
   ];
   return `<?xml version="1.0"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel>
 <title>${name}</title>
-${items.map((it) => `<item><title>${it.t} &amp; co</title><link>https://articles.test/${name}/${it.i}</link><pubDate>${rfc822(it.d)}</pubDate><dc:creator>Writer ${it.i}</dc:creator><description><![CDATA[<p>Excerpt for ${it.t}.</p>]]></description></item>`).join('\n')}
+${items.map((it) => `<item><title>${it.t} &amp; co</title><link>https://articles.test/${name}/${it.i}</link><pubDate>${rfc822(it.d)}</pubDate>${it.author ? `<dc:creator>Writer ${it.i}</dc:creator>` : ''}${it.desc ? `<description><![CDATA[<p>Excerpt for ${it.t}.</p>]]></description>` : '<description></description>'}</item>`).join('\n')}
 </channel></rss>`;
 }
 
@@ -213,8 +216,12 @@ function goodResponder(prompt) {
   ok('e2e: entities decoded in titles',
     allEntries.every((e) => !e.title.includes('&amp;')),
     allEntries.map((e) => e.title).find((t) => t.includes('&amp;')) || '');
-  ok('e2e: summaries carry publisher excerpt, tags stripped',
-    allEntries.every((e) => e.summary && !e.summary.includes('<p>')));
+  // A summary may legitimately be empty — some feeds ship no <description>.
+  // What matters is that it is always a string and never contains markup.
+  ok('e2e: summaries are strings with no markup',
+    allEntries.every((e) => typeof e.summary === 'string' && !e.summary.includes('<p>')));
+  ok('e2e: at least some summaries carry a publisher excerpt',
+    allEntries.some((e) => e.summary.length > 0));
   ok('e2e: previously published URL not reused',
     !allEntries.some((e) => e.url === priorUrl), priorUrl);
   ok('e2e: dead link dropped by link check',
@@ -255,6 +262,31 @@ function goodResponder(prompt) {
   }
   check('one-per-pub: single-publication category yields one entry',
     greedy.categories.find((c) => c.key === 'fashion').entries.length, 1);
+
+  // === 3c. hostile feeds: empty descriptions must not fail the run =====
+  const hostile = await run(['--date', '2026-09-14'], goodResponder);
+  ok('hostile: draft still written', hostile !== null);
+  ok('hostile: every entry has a string summary',
+    hostile.categories.flatMap((c) => c.entries).every((e) => typeof e.summary === 'string'));
+  ok('hostile: every entry has a real URL',
+    hostile.categories.flatMap((c) => c.entries).every((e) => /^https:\/\//.test(e.url)));
+  {
+    const urls = hostile.categories.flatMap((c) => c.entries.map((e) => e.url));
+    check('hostile: no duplicate URLs across the issue', new Set(urls).size, urls.length);
+  }
+
+  // === 3d. four entries per category, end to end =======================
+  const four = await run(['--date', '2026-09-14', '--per-category', '4'], goodResponder);
+  ok('four: draft written', four !== null);
+  for (const c of four.categories) {
+    const srcs = c.entries.map((e) => e.source);
+    ok(`four: ${c.key} publications are distinct`,
+      new Set(srcs).size === srcs.length, srcs.join(', '));
+    ok(`four: ${c.key} has at most four entries`, c.entries.length <= 4, String(c.entries.length));
+  }
+  ok('four: a healthy category actually reaches four',
+    four.categories.find((c) => c.key === 'art').entries.length === 4,
+    String(four.categories.find((c) => c.key === 'art').entries.length));
 
   // === 4. validate.js accepts the draft ================================
   console.log = origLog;

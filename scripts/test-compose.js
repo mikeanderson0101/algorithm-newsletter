@@ -272,6 +272,113 @@ const junkHeadline = C.buildIssue({
 ok('buildIssue: ignores non-string headline', typeof junkHeadline.headline === 'string');
 ok('buildIssue: ignores non-string intro', typeof junkHeadline.intro === 'string');
 
+// --- sanitizer: the draft must always survive validate.js ----------------
+// Four consecutive live runs died at validation over data the composer had
+// in hand. The sanitizer now guarantees the fatal checks pass; these pin it.
+{
+  const mk = (over = {}) => ({
+    title: 'A Title', author: 'A', source: 'Some Source',
+    summary: 'Text.', why: '', url: 'https://real.example/a', verified: true, ...over,
+  });
+  const cats = () => C.CATEGORIES.map((k) => ({ key: k, entries: [mk(), mk({ url: 'https://real.example/b', title: 'B Title' })] }));
+
+  // empty summary survives (publisher shipped none) but is normalised
+  {
+    const c = cats(); c[0].entries[0].summary = undefined;
+    const r = C.sanitizeIssue(c, {});
+    check('sanitize: missing summary kept as empty string',
+      r.categories[0].entries[0].summary, '');
+    check('sanitize: entry not dropped for missing summary',
+      r.categories[0].entries.length, 2);
+  }
+  // bad URL dropped
+  {
+    const c = cats(); c[0].entries[0].url = 'not-a-url';
+    const r = C.sanitizeIssue(c, {});
+    check('sanitize: invalid URL dropped', r.categories[0].entries.length, 1);
+    ok('sanitize: reports the drop', r.dropped.some((d) => d.includes('no usable URL')));
+  }
+  // placeholder URL dropped
+  {
+    const c = cats(); c[0].entries[0].url = 'https://example.com/x';
+    const r = C.sanitizeIssue(c, {});
+    check('sanitize: placeholder URL dropped', r.categories[0].entries.length, 1);
+  }
+  // cross-category duplicate URL dropped (a publication mapped to 2 categories)
+  {
+    const c = cats(); c[1].entries[0].url = c[0].entries[0].url;
+    const r = C.sanitizeIssue(c, {});
+    const urls = r.categories.flatMap((x) => x.entries.map((e) => e.url));
+    check('sanitize: no duplicate URL across the issue',
+      new Set(urls).size, urls.length);
+  }
+  // duplicate title across categories dropped
+  {
+    const c = cats(); c[1].entries[0].title = c[0].entries[0].title;
+    const r = C.sanitizeIssue(c, {});
+    const ts = r.categories.flatMap((x) => x.entries.map((e) => e.title.toLowerCase()));
+    check('sanitize: no duplicate title across the issue', new Set(ts).size, ts.length);
+  }
+  // already-published URL dropped
+  {
+    const c = cats();
+    const r = C.sanitizeIssue(c, { seenUrls: new Set(['https://real.example/a']) });
+    ok('sanitize: previously published URL dropped',
+      !r.categories.flatMap((x) => x.entries).some((e) => e.url === 'https://real.example/a'));
+  }
+  // missing title / source dropped
+  {
+    const c = cats(); c[0].entries[0].title = '   '; c[0].entries[1].source = '';
+    const r = C.sanitizeIssue(c, {});
+    check('sanitize: untitled and sourceless entries dropped',
+      r.categories[0].entries.length, 0);
+  }
+  // verified is forced true
+  {
+    const c = cats(); c[0].entries[0].verified = false;
+    const r = C.sanitizeIssue(c, {});
+    check('sanitize: verified normalised to true',
+      r.categories[0].entries[0].verified, true);
+  }
+}
+
+// --- four entries per category -------------------------------------------
+// The newsletter moved to 4 per category on 19 Sept 2026. The
+// one-publication-per-category rule must still hold at the higher count,
+// and a category with too few distinct publications must degrade rather
+// than repeat a masthead.
+{
+  const wide = {};
+  for (const cat of C.CATEGORIES) {
+    wide[cat] = [1, 2, 3, 4, 5, 6].map((n) => ({ ...cand(cat, n), source: `${cat} Pub ${n}` }));
+  }
+  const { withIds: wIds, index: wIdx } = C.assignIds(wide);
+  const res = C.resolvePicks(
+    { picks: Object.fromEntries(C.CATEGORIES.map((c) => [c, wIds[c].slice(0, 4).map((x) => x.id)])) },
+    wIds, wIdx, { perCategory: 4 },
+  );
+  check('four: every category has four entries',
+    res.categories.map((c) => c.entries.length), [4, 4, 4, 4, 4, 4, 4]);
+  for (const c of res.categories) {
+    const srcs = c.entries.map((e) => e.source);
+    ok(`four: ${c.key} has four distinct publications`,
+      new Set(srcs).size === 4, srcs.join(', '));
+  }
+
+  // Only three distinct publications available -> three entries, not a repeat.
+  const thin3 = {};
+  for (const cat of C.CATEGORIES) thin3[cat] = [];
+  thin3.art = [1, 2, 3, 4].map((n) => ({ ...cand('art', n), source: `Pub ${Math.min(n, 3)}` }));
+  const { withIds: tIds, index: tIdx } = C.assignIds(thin3);
+  const tRes = C.resolvePicks(null, tIds, tIdx, { perCategory: 4 });
+  const tSrc = tRes.categories.find((c) => c.key === 'art').entries.map((e) => e.source);
+  check('four: thin category yields distinct publications only', new Set(tSrc).size, tSrc.length);
+  check('four: thin category yields three, not four', tSrc.length, 3);
+
+  const p4 = C.buildPrompt(wIds, { date: '2026-09-20', perCategory: 4 });
+  ok('four: prompt asks for four', p4.includes('exactly 4 id(s) per'));
+}
+
 // --- report --------------------------------------------------------------
 
 console.log('');

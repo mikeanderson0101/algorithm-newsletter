@@ -361,6 +361,76 @@ check('select: source below cap still eligible', atBoundary.candidates.length, 1
     healthy.candidates.map((c) => c.source), ['Fresh']);
 }
 
+// Junk-title filter ---------------------------------------------------------
+// Every "drop" case below is a title that was actually selected into a
+// published issue or a live run. Every "keep" case is a title that shipped
+// and was good — false positives silently delete real writing, so they
+// matter more than misses.
+{
+  const drops = [
+    'S13E2 DB|BD at Aspen: Judy Samuelson is Still Thinking About the Purpose',
+    'Nicer Tuesdays London: Get tickets for our September event',
+    'The Hayley Williams Show is coming to a stage near you',
+    'New Book Releases Video: September 15, 2026',
+    "If you like Sandy Liang, you'll love these local labels",
+    '10 Things You Missed At Milan Design Week',
+    'Watch: the new trailer for Dune 3',
+    'Call for Submissions: 2027 Prize',
+    'Episode 42: talking shop',
+    'Shop the collection now',
+  ];
+  const keeps = [
+    'The meaning of fake marble',
+    'Chandigarh at 73: How a City Outgrew Its Utopia',
+    'The Secret Life of the Hardanger Fiddle',
+    'Nigeria 80: The Explosive Sound World of 1980s Nigeria',
+    'Shoplifters (2018) Review: A Family Made From Stolen Time',
+    'A country between being and nothing',
+    'South Africa joins the global resistance against American data centers',
+    'Sculptures that Bewitch: Unbound Forms at the Hepworth Wakefield',
+    'Songs You Can See: How Latin American Artists Build a Visual World',
+    'The Vivisectors by Missouri Williams',
+    'The video art of Nam June Paik reconsidered',
+    'A Video Essay on Chantal Akerman',
+    'Rehearsals for a Revolution Offers a Personal Act of Resistance',
+  ];
+  for (const t of drops) ok(`junk: drops "${t.slice(0, 34)}"`, L.isJunkTitle(t), t);
+  for (const t of keeps) ok(`junk: keeps "${t.slice(0, 34)}"`, !L.isJunkTitle(t), t);
+  ok('junk: empty title is junk', L.isJunkTitle(''));
+
+  // The filter must be active inside selectCandidates, and countable.
+  const r = L.selectCandidates({
+    bySource: [{ source: 'S', category: 'art', items: [
+      { title: 'Watch: a trailer drops today', link: 'https://a.example/1', published: iso(1), summary: 's', author: null },
+      { title: 'A real essay about something', link: 'https://a.example/2', published: iso(1), summary: 's', author: null },
+    ] }],
+    now: NOW,
+  });
+  check('junk: filtered inside selectCandidates', r.candidates.length, 1);
+  check('junk: counted in the drop tally', r.dropped.junk, 1);
+
+  const off = L.selectCandidates({
+    bySource: [{ source: 'S', category: 'art', items: [
+      { title: 'Watch: a trailer drops today', link: 'https://a.example/1', published: iso(1), summary: 's', author: null },
+    ] }],
+    now: NOW,
+    dropJunk: false,
+  });
+  check('junk: can be disabled', off.candidates.length, 1);
+}
+
+// Tier ordering -------------------------------------------------------------
+// Essay sources must sort above news wires, because both the model and the
+// backfill read from the top of the list.
+{
+  const g = L.groupForPrompt([
+    { title: 'news item', url: 'https://n.example/1', source: 'Wire', category: 'art', tier: 'news', published: iso(0) },
+    { title: 'essay item', url: 'https://e.example/1', source: 'Journal', category: 'art', tier: 'essay', published: iso(5) },
+  ]);
+  check('tier: essay sorts above a newer news item',
+    g.art.map((x) => x.source), ['Journal', 'Wire']);
+}
+
 // ===========================================================================
 // Prompt grouping
 // ===========================================================================

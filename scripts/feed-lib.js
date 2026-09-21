@@ -205,6 +205,53 @@ function normaliseDate(raw) {
 // Candidate selection
 // ---------------------------------------------------------------------------
 
+/**
+ * Titles that are not articles.
+ *
+ * Every pattern here is drawn from something that actually shipped or was
+ * selected: a podcast episode in design ("S13E2 DB|BD at Aspen"), an event
+ * ticket ad ("Nicer Tuesdays London: Get tickets for..."), a tour
+ * announcement ("The Hayley Williams Show is coming to..."), an airline
+ * news item, a video roundup ("New Book Releases Video"), and a shopping
+ * listicle ("If you like Sandy Liang, you'll love these local labels").
+ *
+ * Filtering here rather than in the prompt matters twice over: it is free
+ * and deterministic, and every candidate removed is one the model never
+ * pays to read.
+ *
+ * Deliberately conservative. A false negative is a dull entry; a false
+ * positive silently removes good writing, which is worse and harder to
+ * notice. Patterns must match the SHAPE of non-articles, never a subject.
+ */
+const JUNK_TITLE_PATTERNS = [
+  /^s\d+\s*e\d+\b/i,                    // S13E2 ... podcast episode numbering
+  /\bep(isode)?\.?\s*\d+\b/i,           // Episode 42, Ep. 7
+  /\b(podcast|livestream|webinar)\b/i,
+  /\bget tickets\b|\btickets? (are |now )?(on sale|available)\b/i,
+  /\b(announces?|announcing|announced)\b.*\b(tour|dates?|lineup|line-up|winners?|shortlist|longlist)\b/i,
+  /\b(tour|festival) (dates?|lineup|line-up)\b/i,
+  /\bis coming to\b.*\b(tour|stage|theatre|theater|arena)\b/i,
+  /\b(release date|out now|pre-?order|now available|drops? (today|friday))\b/i,
+  /\b(trailer|teaser|first look|clip)\b.*\b(released?|debuts?|drops?)\b/i,
+  /^watch\b|^listen\b|^stream\b/i,
+  /\bvideo\s*:/i,                         // "New Book Releases Video: Sept 15"
+  /\bvideo\s*$/i,
+  /\b(giveaway|sweepstakes|discount|sale|deal of|% off)\b/i,
+  /\b(job|jobs|hiring|call for (entries|submissions|papers))\b/i,
+  /\b(newsletter|roundup|round-up|digest|briefing)\b\s*[:—-]/i,
+  /^(this|last) (week|month) in\b/i,
+  /^\d+\s+(things|ways|reasons|of the best)\b/i,  // listicles
+  /\byou'?ll love\b|\bif you like\b/i,    // shopping recommendation shape
+  /\bshop (the|our)\b|\bbuy now\b/i,
+];
+
+/** True when a title reads as an announcement, listing or product post. */
+function isJunkTitle(title) {
+  const t = String(title || '').trim();
+  if (!t) return true;
+  return JUNK_TITLE_PATTERNS.some((re) => re.test(t));
+}
+
 /** Normalises a URL for comparison: no trailing slash, no tracking params. */
 function canonicalUrl(url) {
   if (!url) return '';
@@ -252,14 +299,15 @@ function selectCandidates({
   requireDate = true,
   maxPerSource = 3,
   relaxRotationWhenEmpty = true,
+  dropJunk = true,
 }) {
   const nowMs = typeof now === 'number' ? now : new Date(now).getTime();
   const cutoff = nowMs - windowDays * 86400000;
-  const dropped = { undated: 0, stale: 0, future: 0, duplicate: 0, rested: 0, capped: 0 };
+  const dropped = { undated: 0, stale: 0, future: 0, duplicate: 0, rested: 0, capped: 0, junk: 0 };
   const out = [];
 
   for (const entry of bySource) {
-    const { source, category, items } = entry;
+    const { source, category, items, tier = 'essay' } = entry;
 
     const used = rotationCounts[category]?.[source.toLowerCase()] || 0;
     if (used >= rotationMax) {
@@ -296,6 +344,11 @@ function selectCandidates({
         continue;
       }
 
+      if (dropJunk && isJunkTitle(it.title)) {
+        dropped.junk++;
+        continue;
+      }
+
       if (takenFromSource >= maxPerSource) {
         dropped.capped++;
         continue;
@@ -307,6 +360,7 @@ function selectCandidates({
         url: it.link,
         source,
         category,
+        tier,
         author: it.author,
         published: it.published,
         summary: it.summary,
@@ -341,6 +395,7 @@ function selectCandidates({
         requireDate,
         maxPerSource: 1,           // spread what little there is
         relaxRotationWhenEmpty: false,
+        dropJunk,
       });
       if (relaxed.candidates.length) {
         dropped.rotationRelaxed = (dropped.rotationRelaxed || 0) + 1;
@@ -359,7 +414,17 @@ function groupForPrompt(candidates, { maxPerCategory = 40 } = {}) {
     (byCat[c.category] = byCat[c.category] || []).push(c);
   }
   for (const k of Object.keys(byCat)) {
-    byCat[k].sort((a, b) => (b.published || '').localeCompare(a.published || ''));
+    // Essay sources first, then by recency. Two reasons this ordering is
+    // the whole mechanism: the model reads the list top-down, and backfill
+    // takes from the top — so when the model fails or a category is thin,
+    // the fallback is still an essay rather than a news wire. That is what
+    // put a tour announcement and a ticket ad into a published issue.
+    byCat[k].sort((a, b) => {
+      const at = a.tier === 'news' ? 1 : 0;
+      const bt = b.tier === 'news' ? 1 : 0;
+      if (at !== bt) return at - bt;
+      return (b.published || '').localeCompare(a.published || '');
+    });
     byCat[k] = byCat[k].slice(0, maxPerCategory);
   }
   return byCat;
@@ -397,6 +462,7 @@ function historyFromIssues(issues, { rotationWindow = 4 } = {}) {
 }
 
 module.exports = {
+  isJunkTitle,
   decodeEntities,
   stripHtml,
   truncate,

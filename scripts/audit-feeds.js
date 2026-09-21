@@ -103,7 +103,10 @@ function parseSources() {
         const d = paren[1].match(/([a-z0-9-]+(?:\.[a-z0-9-]+)+)(\/[^\s,]*)?/i);
         if (d) domainHint = d[0];
       }
-      out.push({ name, category, domainHint });
+      // A NEWS marker in the parentheses means the feed is a news wire:
+      // usable to fill a thin category, never preferred over essay sources.
+      const isNews = /\bNEWS\b/.test(raw);
+      out.push({ name, category, domainHint, tier: isNews ? 'news' : 'essay' });
     }
   });
 
@@ -115,11 +118,13 @@ function parseSources() {
     if (existing) {
       existing.categories.add(s.category);
       if (!existing.domainHint && s.domainHint) existing.domainHint = s.domainHint;
+      if (s.tier === 'essay') existing.tier = 'essay';
     } else {
       byName.set(s.name, {
         name: s.name,
         categories: new Set([s.category]),
         domainHint: s.domainHint,
+        tier: s.tier,
       });
     }
   }
@@ -373,10 +378,15 @@ async function main() {
     const map = {};
     for (const r of results) {
       if (!r.feed) continue;
+      // tier drives editorial preference: 'essay' feeds are preferred and
+      // 'news' feeds are used only to fill a category that would otherwise
+      // be thin. A feed's existence was never a good selection criterion;
+      // what it publishes is.
       map[r.name] = {
         feed: r.feed,
         categories: [...r.categories],
         confidence: r.confidence,
+        tier: r.tier || 'essay',
       };
     }
     const outPath = path.join(ROOT, 'assets', 'feeds.json');
