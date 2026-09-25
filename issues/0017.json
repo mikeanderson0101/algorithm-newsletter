@@ -1,0 +1,287 @@
+{
+  "issue": 17,
+  "date": "2026-09-25",
+  "headline": "Depth Over *Noise*, Everywhere",
+  "intro": "This issue wanders from Bogotá's museum walls to a Toronto psychiatric ward on screen, from Lagos interviews to Canadian election essays. We favored the long read and the close look over the press release, wherever we could find it.",
+  "byline": "2026-09-25 — selected links",
+  "categories": [
+    {
+      "key": "art",
+      "entries": [
+        {
+          "title": "Selena Kimball and the art of mincing words",
+          "author": "twocoatsstaff",
+          "source": "Two Coats of Paint",
+          "summary": "Contributed by Sharon Garbe / Gathering Moss, the title of a work in Selena Kimball's exhibition “Ice-blink” at Ulterior Gallery, describes both literal activity and metaphorical non-activity. It’s also the title of a book by the bryologist and Native American author Robin Wall Kimmerer. I learned from that book that moss and lichens grow on every continent and in all climates, from scorching…",
+          "why": "",
+          "url": "https://twocoatsofpaint.com/2026/09/selena-kimball-and-the-art-of-mincing-words.html?utm_source=rss&utm_medium=rss&utm_campaign=selena-kimball-and-the-art-of-mincing-words",
+          "verified": true
+        },
+        {
+          "title": "“I Want to Beat My Previous Show”: Suleman Aqeel Khilji on Painting What He Sees",
+          "author": "Elephant Magazine",
+          "source": "Elephant",
+          "summary": "Jaya Gataaura speaks with Suleman Aqeel Khilji about memory, place and the hazy landscapes in his paintings, currently on view in Thaddaeus Ropac’s Like Music in the Blood. I interviewed Suleman at his studio in Angel, though not for long; I had caught him in the middle of a move. He welcomed me into the space, The post “I Want to Beat My Previous Show”: Suleman Aqeel Khilji on Painting What He…",
+          "why": "",
+          "url": "https://elephant.art/i-want-to-beat-my-previous-show-suleman-aqeel-khilji-on-painting-what-he-sees/",
+          "verified": true
+        },
+        {
+          "title": "¡ESTO ES TAN DIDÁCTICO!",
+          "author": "Pablo Helguera",
+          "source": "Artishock",
+          "summary": "En este ensayo, Pablo Helguera examina el adjetivo «didáctico», uno de los reproches más usados y menos definidos del arte contemporáneo, y lo lee como una disputa sobre quién autoriza el significado. Distingue la obra que se explica en exceso de la que se cifra para iniciados, y sostiene que ambas le niegan agencia al espectador. Su alternativa es una obra que piense en el público y confíe en…",
+          "why": "",
+          "url": "https://artishockrevista.com/2026/09/24/esto-es-tan-didactico/",
+          "verified": true
+        },
+        {
+          "title": "belonging to place: The Creative Community & Artistic Legacy of bell hooks at the Turchin Center for the Visual Arts, Boone",
+          "author": "Robert Grand",
+          "source": "Burnaway",
+          "summary": "Topher Lineberry profiles belonging to place, an exhibition looking at the creative community and artistic legacy of the influential Black feminist writer, activist, and cultural critic bell hooks at Turchin Center for the Visual Arts, Boone.",
+          "why": "",
+          "url": "https://burnaway.org/daily/belonging-to-place-bell-hooks-boone/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "film",
+      "entries": [
+        {
+          "title": "Fast Forward",
+          "author": "Louis Paxton",
+          "source": "Talkhouse",
+          "summary": "Writer-director Louis Paxton charts the stepping stones from childhood onward that led him to make his Sundance favorite The Incomer, which hits theaters today.",
+          "why": "",
+          "url": "https://talkhouse.com/fast-forward/",
+          "verified": true
+        },
+        {
+          "title": "Aldo Ray: From “The Luckiest Guy in Movies” to “The Patron Saint of The Fallen Star”",
+          "author": "Chloe Walker",
+          "source": "Crooked Marquee",
+          "summary": "To mark his centenary, a look at the dramatic career highs and lows of gravel-voiced '50s movie star. The post Aldo Ray: From “The Luckiest Guy in Movies” to “The Patron Saint of The Fallen Star” appeared first on Crooked Marquee.",
+          "why": "",
+          "url": "https://crookedmarquee.com/aldo-ray-from-the-luckiest-guy-in-movies-to-the-patron-saint-of-the-fallen-star/",
+          "verified": true
+        },
+        {
+          "title": "An Interview with ‘Babita Singh Reporting’ Director Ambiecka Pandit",
+          "author": "Dipankar Sarkar",
+          "source": "Vague Visages",
+          "summary": "'Babita Singh Reporting' Interview: Dipankar Sarkar discusses the 2026 Amazon movie with director Ambiecka Pandit. The post An Interview with ‘Babita Singh Reporting’ Director Ambiecka Pandit appeared first on Vague Visages (Vawg-Vee-Sawj).",
+          "why": "",
+          "url": "https://vaguevisages.com/2026/09/22/babita-singh-reporting-interview-amazon-movie-film-ambiecka-pandit/",
+          "verified": true
+        },
+        {
+          "title": "Toronto 2026 Review: WOMAN UNKNOWN, Provocative Drama of Survival and Retribution",
+          "author": null,
+          "source": "Screen Anarchy",
+          "summary": "May el-Toukhy's film, by virtue of winning the Golden Lion, is an automatic entrant into the Best International Film Oscar race. [Read the whole post on screenanarchy.com...]",
+          "why": "",
+          "url": "https://screenanarchy.com/2026/09/toronto-2026-review-woman-unknown-provocative-drama-of-survival-and-retribution.html",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "tech",
+      "entries": [
+        {
+          "title": "Note on 24th September 2026",
+          "author": null,
+          "source": "Simon Willison",
+          "summary": "The more time I spend working with coding agents, the more convinced I am that they make software engineering even harder. We can do amazing things with them, but unlocking their full potential requires extraordinary discipline and knowledge. Tags: coding-agents, ai, llms",
+          "why": "",
+          "url": "https://simonwillison.net/2026/Sep/24/harder/",
+          "verified": true
+        },
+        {
+          "title": "Can Muse make us forget the metaverse?",
+          "author": "Casey Newton",
+          "source": "Platformer",
+          "summary": "Meta has a new vision to sell, but it may be getting ahead of itself. (The VR Glasses are amazing, though)",
+          "why": "",
+          "url": "https://www.platformer.news/meta-connect-2026-muse-vr-glasses/",
+          "verified": true
+        },
+        {
+          "title": "Larry Yon: Why Africa’s tech ecosystem should be building the next NVIDIA",
+          "author": "Phathisani Moyo",
+          "source": "TechCabal",
+          "summary": "From a failed venture in South Africa to co-founding an AI cybersecurity powerhouse, CyberAlliance president Larry Yon II sits down with PHATHISANI MOYO for Coffee With… to explain why digital trust and diaspora capital are key to unlocking Africa’s true tech potential. The first time Larry Yon II flew out of South Africa, he sat […]",
+          "why": "",
+          "url": "https://techcabal.com/2026/09/25/larry-yon-africa-digital-trust-diaspora-investment/",
+          "verified": true
+        },
+        {
+          "title": "Today’s data centre build-out dwarfs previous infrastructure investments",
+          "author": "Kathy Gibson",
+          "source": "IT-Online",
+          "summary": "Kathy Gibson reports from Vertiv Week in Zagreb – Artificial intelligence (AI) is driving the biggest infrastructure build-out in human history – bigger than the railroads or the Industrial Revolution. “People assume AI is a bubble, but it is showing no signs of slowing,” says Rod Evans, vice-president: AI, cloud and infrastructure at Nvidia. He […] The post Today’s data centre build-out dwarfs…",
+          "why": "",
+          "url": "https://it-online.co.za/2026/09/23/todays-data-centre-build-out-dwarfs-previous-infrastructure-investments/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "lit",
+      "entries": [
+        {
+          "title": "A Ruin, Great and Free by Cadwell Turnbull",
+          "author": "Helena Ramsaroop",
+          "source": "Strange Horizons",
+          "summary": "The Convergence Saga as a whole grapples with existential questions for which even the gods don’t have answers.",
+          "why": "",
+          "url": "https://strangehorizons.com/wordpress/non-fiction/a-ruin-great-and-free-by-cadwell-turnbull/",
+          "verified": true
+        },
+        {
+          "title": "Do Europe and the United States still need each other?",
+          "author": "Sarah Waring",
+          "source": "Eurozine",
+          "summary": "With the gradual disappearance of the USA's European heritage, the connection to the Old World becomes increasingly irrelevant. The war in Europe and the threat it poses seems abstract to most Americans. A personal reflection.",
+          "why": "",
+          "url": "https://www.eurozine.com/do-europe-and-the-united-states-still-need-each-other/?utm_source=rss&utm_medium=rss&utm_campaign=do-europe-and-the-united-states-still-need-each-other",
+          "verified": true
+        },
+        {
+          "title": "Bret Stephens Is Big Mad at the Best Writers He Hasn’t Read",
+          "author": "Electric Literature",
+          "source": "Electric Literature",
+          "summary": "By now you might’ve seen the mystifying, callous, and yes—quite racist—opinion essay published two days ago in The New York Times by Bret Stephens. In it, he refers to the National Book Awards as the “literary world’s DEI checklist.” Electric Literature doesn’t link directly to foolishness—if you want to read the essay, you can find […] The post Bret Stephens Is Big Mad at the Best Writers He…",
+          "why": "",
+          "url": "https://electricliterature.com/bret-stephens-is-big-mad-at-the-best-writers-he-hasnt-read/",
+          "verified": true
+        },
+        {
+          "title": "Votez ici",
+          "author": "Christina Apa",
+          "source": "Literary Review of Canada",
+          "summary": "When Theodore H. White wrote The Making of the President 1960, he set a template for election books in the English-speaking world that has lasted for decades. The form involves a narrative constructed around the public campaigns and the backroom dramas, the personalities of the leaders and other major figures in the parties, the debate… The post Votez ici appeared first on Literary Review of…",
+          "why": "",
+          "url": "https://reviewcanada.ca/magazine/2026/10/votez-ici-review-une-decennie-de-turbulences-electorales-au-quebec/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "music",
+      "entries": [
+        {
+          "title": "Boosts and Bruises",
+          "author": "Hannah Edgar",
+          "source": "VAN Magazine",
+          "summary": "In 2020, violist Wilfred Farquharson was preparing to move to California for The Los Angeles Orchestra Fellowship, a three-year fellowship “for musicians from underrepresented communities” co-organized by the Los Angeles Chamber Orchestra (LACO), Inner City Youth Orchestra of Los Angeles (ICYOLA), and the University of Southern California. Then, a former participant called him out of […] The post…",
+          "why": "",
+          "url": "https://van-magazine.com/mag/do-orchestral-fellowships-help-black-musicians/",
+          "verified": true
+        },
+        {
+          "title": "Black Bordello: Midheaven Tempest – EP Review",
+          "author": "Simon Lucas-Hughes",
+          "source": "Louder Than War",
+          "summary": "Black Bordello have always sounded like a band interested in what happens when the theatrical tips over into the unsettling. On Midheaven Tempest, the London five-piece push that instinct further, assembling a challenging, textural and richly creative EP that draws as much from gothic rock, prog and psychedelia as it does from trip-hop, industrial textures […] The post Black Bordello: Midheaven…",
+          "why": "",
+          "url": "https://louderthanwar.com/black-bordello-midheaven-tempest-ep-review/",
+          "verified": true
+        },
+        {
+          "title": "Interview: Jabulile Majola’s ‘Ipasi’ Will Find You Where You’re At",
+          "author": "The Native",
+          "source": "The NATIVE",
+          "summary": "If you look past the soul-searching tenderness of Jabulile Majola’s ‘Ipasi,’ it’s clear that he is writing towards the heart of uncertainty. The post Interview: Jabulile Majola’s ‘Ipasi’ Will Find You Where You’re At appeared first on The NATIVE.",
+          "why": "",
+          "url": "https://thenativemag.com/interview-jabulile-majolas-ipasi-will-find-you-where-youre-at/",
+          "verified": true
+        },
+        {
+          "title": "Saint Levant’s “Afandi” Closes Arab Pop’s Generation Gap",
+          "author": "Ahmed Amin",
+          "source": "Rolling Stone MENA",
+          "summary": "On Afandi, Saint Levant blends Arab pop's past and present into a cohesive, hit-driven record that revisits without imitation. The post Saint Levant’s “Afandi” Closes Arab Pop’s Generation Gap appeared first on Rolling Stone MENA.",
+          "why": "",
+          "url": "https://mena.rollingstone.com/music/music-album-reviews/saint-levant-afandi-review/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "design",
+      "entries": [
+        {
+          "title": "Bea Korsch’s Intrusive Thots is an explosive zine about depression, treatment and recovery",
+          "author": "Paul Moore",
+          "source": "It's Nice That",
+          "summary": "Made during a year-long outpatient programme, the experimental comic combines drawings, journals, ephemera and text messages to document the artist’s turbulent inner world.",
+          "why": "",
+          "url": "https://www.itsnicethat.com/articles/bea-korsch-intrusive-thots-art-project-240926",
+          "verified": true
+        },
+        {
+          "title": "Detroit Month of Design 2026: Witnessing a Major Renaissance in Motor City",
+          "author": null,
+          "source": "Azure",
+          "summary": "From downtown to Michigan Central, from Little Village to the Motown Museum, Detroit is building a vibrant future while keeping its soul. The post Detroit Month of Design 2026: Witnessing a Major Renaissance in Motor City appeared first on Azure Magazine.",
+          "why": "",
+          "url": "https://www.azuremagazine.com/article/detroit-month-of-design-witnessing-a-major-renaissance-in-motor-city/",
+          "verified": true
+        },
+        {
+          "title": "House Freddie by Studio Bright",
+          "author": "Alex Brown",
+          "source": "ArchitectureAU Discussion",
+          "summary": "This adaptation of a midcentury suburban residence strikes a balance between retention and refinement, resulting in a contemporary home that is seriously joyful.",
+          "why": "",
+          "url": "https://architectureau.com/articles/house-freddie-by-studio-bright/",
+          "verified": true
+        },
+        {
+          "title": "Morii Dero by Morii Darshan",
+          "author": "Matter",
+          "source": "thinkMATTER",
+          "summary": "MORII DERO by MORII DARSHAN is one of six projects that emerged from the mentorship of the Godrej Design Lab Fellowship in 2025. The fellows exhibited their projects and processes at the Concious Collective in December 2025. A portable textile tent, Morii Dero extends the craft-led practice into an interpretive process blending field-led research, designer-artisan … Continue reading Morii Dero by…",
+          "why": "",
+          "url": "https://thinkmatter.in/2026/09/15/morii-dero-by-morii-darshan/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "fashion",
+      "entries": [
+        {
+          "title": "The Supplementary Question",
+          "author": "Ullekh NP/api/author/2341313",
+          "source": "Open Magazine",
+          "summary": "Australian-American lifestyle guru David Sinclair is one of the most influential figures in the field of dietary supplements, an industrial segment growing globally at a compound annual rate of 9.5 per cent and is valued at $230 billion. A highly televised and photographed biologist known for work in longevity, he is famous for prescribing berberine for a long and healthy life as an alternative…",
+          "why": "",
+          "url": "https://openthemagazine.com/india/the-supplementary-question",
+          "verified": true
+        },
+        {
+          "title": "LINDBERG Decodes an ‘Enigma of Vision’ With Artist Fabrizio Corneli",
+          "author": "info@hypebeast.com (Hypebeast)",
+          "source": "Hypebeast",
+          "summary": "Danish eyewear brand LINDBERG returns to The Armory Show in New York with new site-specific installations crafted by Fabrizio Corneli. Landing in its Enigma of Vision exhibition, the experiential works are molded by light and shadows to question changing perspectives. The exhibition comprises two core installations, which are designed to interact with each other to transform the surrounding…",
+          "why": "",
+          "url": "https://hypebeast.com/2026/9/lindberg-armory-show-enigma-of-vision-exhibition-info",
+          "verified": true
+        },
+        {
+          "title": "Inside Track: September 6th – September 12th Edition",
+          "author": "Derek Guy",
+          "source": "Put This On",
+          "summary": "Here are our hand-selected favorites from eBay for this week, plus a heads-up on recommended sales. If you’re a member... The post Inside Track: September 6th – September 12th Edition appeared first on Put This On.",
+          "why": "",
+          "url": "https://putthison.com/inside-track-september-6th-september-12th-edition-2/",
+          "verified": true
+        }
+      ]
+    }
+  ]
+}
