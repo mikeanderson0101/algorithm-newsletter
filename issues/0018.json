@@ -1,0 +1,287 @@
+{
+  "issue": 18,
+  "date": "2026-09-25",
+  "headline": "The *Feed*",
+  "intro": "A selection of recent writing from across the culture press.",
+  "byline": "2026-09-25 — selected links",
+  "categories": [
+    {
+      "key": "art",
+      "entries": [
+        {
+          "title": "Arthur Jafa, King of Pop",
+          "author": "Stephanie Wambugu",
+          "source": "Hyperallergic",
+          "summary": "His eclectic references and intuitive grasp of memes and virality set him apart as an artist taking assemblage and collage to new heights.",
+          "why": "",
+          "url": "https://hyperallergic.com/arthur-jafa-king-of-pop/",
+          "verified": true
+        },
+        {
+          "title": "National Gallery of Victoria Staffer Accused of Siphoning $8 Million from Museum",
+          "author": "Polly Watson",
+          "source": "Artforum",
+          "summary": "A former senior employee at the National Gallery of Victoria (NGV) in Australia is said to have drained $8 million from the institution’s coffers over a six-year span, The Guardian reports. The staffer, who has not been publicly named, is said to have spent the money on mobile phones, which he purchased through a museum […]",
+          "why": "",
+          "url": "https://www.artforum.com/news/national-gallery-of-victoria-staffer-stole-8-million-1234759803/",
+          "verified": true
+        },
+        {
+          "title": "The Smiley Face's History: Exploring a Joyful Symbol",
+          "author": "chandra",
+          "source": "Art & Object",
+          "summary": "The Smiley Face's History: Exploring a Joyful Symbol Photo by Nick Fewings on Unsplash chandra Fri, 09/25/2026 - 09:45 For a design so simple, the history of the smiley face is surprisingly long and contentious. Historians note that humans have created symbols featuring two dots for eyes and an upturned line for a mouth as far back as 3,700 years, as evidenced by a Hittite jug sporting what is…",
+          "why": "",
+          "url": "https://www.artandobject.com/news/surprising-history-smiley-face",
+          "verified": true
+        },
+        {
+          "title": "Home Is a Fleeting Embrace: India at the 61st Venice Biennale",
+          "author": "The Editors",
+          "source": "ArtAsiaPacific",
+          "summary": "The exhibition does not elegize what was once home so much as locate its remnants in unlikely, often overlooked places. Shreya Ajmani",
+          "why": "",
+          "url": "https://www.artasiapacific.com/shows/home-is-a-fleeting-embrace-india-at-the-61st-venice-biennale/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "film",
+      "entries": [
+        {
+          "title": "Crooked Marquee’s New York Film Festival 2026 Preview",
+          "author": "Jason Bailey",
+          "source": "Crooked Marquee",
+          "summary": "The 64th New York Film Festival kicks off tonight, and we’ve got some recommendations, including “Fjord,” “NAZA,” “Making Marie Antoinette,” “Tender Loving Care,” and the restored “The Devils.” The post Crooked Marquee’s New York Film Festival 2026 Preview appeared first on Crooked Marquee.",
+          "why": "",
+          "url": "https://crookedmarquee.com/crooked-marquees-new-york-film-festival-2026-preview/",
+          "verified": true
+        },
+        {
+          "title": "Egypt’s First Local Industrial Robot Is Here",
+          "author": "Egyptian Streets",
+          "source": "Egyptian Streets",
+          "summary": "Egypt has launched its first industrial robot developed locally by Egyptian engineers and technology company RaedBots on Wednesday, 23 September, marking a new push to build not just products in Egypt, but the technology and machinery behind them. The robot was unveiled through a collaboration between RaedBots, the Industrial Modernization Center (IMC), and Egyptian manufacturing company CUBII…",
+          "why": "",
+          "url": "https://egyptianstreets.com/2026/09/24/egypts-first-local-industrial-robot-is-here/",
+          "verified": true
+        },
+        {
+          "title": "Charles Melton: ‘It was like a waking dream’",
+          "author": "David Jenkins",
+          "source": "Little White Lies",
+          "summary": "Charles Melton on getting jacked up and fighting fit for his enigmatic role in Her Private Hell.",
+          "why": "",
+          "url": "https://lwlies.com/in-conversation/charles-melton-her-private-hell",
+          "verified": true
+        },
+        {
+          "title": "Editorial",
+          "author": "Editors",
+          "source": "East European Film Bulletin",
+          "summary": "Hollywood’s recent return to the eighties has become a genre of its own. Top Gun: Maverick (2022) proved that audiences...",
+          "why": "",
+          "url": "https://eefb.org/volumes/vol-167-september-2026/editorial-167/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "tech",
+      "entries": [
+        {
+          "title": "Pluralistic: Itch scratching (25 Sep 2026)",
+          "author": "Cory Doctorow",
+          "source": "Pluralistic",
+          "summary": "Today's links Itch scratching: Love, care and self-actualization. Hey look at this: Delights to delectate. Object permanence: 9/11 x Viridians; Announcing Wikipedia; Infinite Copyright Mickey; Floppy shoulder bag; Wells Fargo's long sleaze; Corbyn wins Labour leadership; Interop v internet monopolies; The billionaires aren't all right; RIP Mike Ford; PGP didn't cause 9/11; Flying Solaris boxen;…",
+          "why": "",
+          "url": "https://pluralistic.net/2026/09/25/other-people/",
+          "verified": true
+        },
+        {
+          "title": "Behind the Blog: Did you notice?",
+          "author": "Samantha Cole",
+          "source": "404 Media",
+          "summary": "This week, we discuss some small changes, an AI song, and internet soup.",
+          "why": "",
+          "url": "https://www.404media.co/behind-the-blog-did-you-notice/",
+          "verified": true
+        },
+        {
+          "title": "The vacuum Lisk’s exit leaves in Africa’s Web3 funding",
+          "author": "Emmanuel Nwosu",
+          "source": "TechCabal",
+          "summary": "By May, the restructuring had also made several roles redundant; it affected Lisk blockchain’s regional leads and business development teams as the company pulled back from blockchain expansion.",
+          "why": "",
+          "url": "https://techcabal.com/2026/09/25/the-vacuum-lisks-exit-leaves-in-africas-web3-funding/",
+          "verified": true
+        },
+        {
+          "title": "Egypt says 90% of state bank’s debt is settled",
+          "author": "Nadim Kawach",
+          "source": "AGBI",
+          "summary": "Egypt has settled nearly 90 percent of the debt owed to its ailing state investment bank, allowing it to recover and return to profit after years of heavy losses. The settlements cover nearly EGP299 billion ($6 billion) owed largely by state-controlled entities, including the General Authority for Reconstruction Projects and Agricultural Development and the National […]",
+          "why": "",
+          "url": "https://www.agbi.com/banking-finance/2026/09/egypt-says-90-of-state-banks-debt-settled/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "lit",
+      "entries": [
+        {
+          "title": "Did Strange New Worlds Just Bring M’Ress Into Live-Action Star Trek?",
+          "author": "Matthew Byrd",
+          "source": "Reactor",
+          "summary": "A striking background character in Strange New Worlds raises a lot of questions The post Did Strange New Worlds Just Bring M’Ress Into Live-Action Star Trek? appeared first on Reactor.",
+          "why": "",
+          "url": "https://reactormag.com/strange-new-worlds-mress-cameo/",
+          "verified": true
+        },
+        {
+          "title": "The siege on justice",
+          "author": "Simon Garnett",
+          "source": "Eurozine",
+          "summary": "The delegitimization of the Spanish judiciary; democratic death by a thousand bites; Trump and the new geometry of power; privatising the body of Franco.",
+          "why": "",
+          "url": "https://www.eurozine.com/the-siege-on-justice/?utm_source=rss&utm_medium=rss&utm_campaign=the-siege-on-justice",
+          "verified": true
+        },
+        {
+          "title": "New & Notable, July 2026",
+          "author": "locusmag",
+          "source": "Locus",
+          "summary": "S.C. Bandreddi, The Game of Oaths (Candlewick 6/26) Bandreddi's debut outing is a young-adult historical dark fantasy novel about a magical circus in 1896 Paris. Performers trapped by contracts are forced to compete in a deadly tournament to entertain the elite while promising freedom for the winner – but one competitor is more interested in revenge. Full of magic and brutal action, with a…",
+          "why": "",
+          "url": "https://locusmag.com/2026/09/new-notable-july-2026-2/",
+          "verified": true
+        },
+        {
+          "title": "Fire Strike",
+          "author": "WWB EDU",
+          "source": "Words Without Borders",
+          "summary": "At the threshold of melancholy is a voice barely heard a light wrapped in fog and a piece of steel longing for flint. Strike it. The post Fire Strike appeared first on Words Without Borders.",
+          "why": "",
+          "url": "https://wordswithoutborders.org/read/article/2026-09/fire-strike-noodin/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "music",
+      "entries": [
+        {
+          "title": "Outkast, Ovrkast., and the History of Other People’s Names",
+          "author": "Paul Thompson",
+          "source": "Passion of the Weiss",
+          "summary": "Big Boi and Andre 3000 are suing an up-and-coming rapper over a practice that predates all parties involved.",
+          "why": "",
+          "url": "https://www.powmag.net/p/outkast-ovrkast-lawsuit",
+          "verified": true
+        },
+        {
+          "title": "Noah Kahan’s The Great Divide Australian tour is colourful and ridiculously fun",
+          "author": "Sarah Duggan",
+          "source": "The AU Review",
+          "summary": "There’s something so special about watching an artist you’ve seen in a smaller, stripped-back setting suddenly take over a venue the size of Rod Laver Arena. The last time Noah Kahan came to Australia, his band didn’t make it, so he took to stage completely alone, with nothing but his acoustic guitar and a microphone....",
+          "why": "",
+          "url": "https://www.theaureview.com/music/noah-kahan-the-great-divide-australian-tour/",
+          "verified": true
+        },
+        {
+          "title": "Jonita Is Still In Her ‘Baddie Era’",
+          "author": "Anurag Tagat",
+          "source": "Rolling Stone India",
+          "summary": "The pop artist talks about touring with Anirudh Ravichander, teaming up with fellow Toronto artist JP Saxe for ‘Broken Parts’ and making her acting debut The post Jonita Is Still In Her ‘Baddie Era’ appeared first on Rolling Stone India.",
+          "why": "",
+          "url": "https://rollingstoneindia.com/jonita-interview-acting-jp-saxe-song/",
+          "verified": true
+        },
+        {
+          "title": "Get Rid of All the Pesky Humans: An AI Fantasy",
+          "author": "Chris Barsanti",
+          "source": "PopMatters",
+          "summary": "Echoing Hannah Arendt’s postwar warnings about the authoritarian impulse, Jill Lepore shows that an anti-humanist strain was threaded into the acceleration of technological advancements.",
+          "why": "",
+          "url": "https://www.popmatters.com/an-ai-fantasy-jill-lepore",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "design",
+      "entries": [
+        {
+          "title": "Gaggenau’s Latest Launch Spotlights the Art of Temperature",
+          "author": "Azure",
+          "source": "Azure",
+          "summary": "The Vario cooling Expressive series made its Canadian debut at a theatrical dinner hosted in collaboration with Menu Extra at Montreal’s Biodome. The post Gaggenau’s Latest Launch Spotlights the Art of Temperature appeared first on Azure Magazine.",
+          "why": "",
+          "url": "https://www.azuremagazine.com/article/gaggenau-vario-cooling-expressive-series/",
+          "verified": true
+        },
+        {
+          "title": "Program for Fremantle Design Week 2026 released",
+          "author": "Madison McGuinness",
+          "source": "ArchitectureAU Discussion",
+          "summary": "The third biennial Fremantle Design Week program has launched, with over 60 events set for 16–25 October.",
+          "why": "",
+          "url": "https://architectureau.com/articles/program-for-fremantle-design-week-2026-released/",
+          "verified": true
+        },
+        {
+          "title": "This $249 Clip-on Device Shines ‘Invisible’ Infrared Sunlight On You To Boost Your Mood",
+          "author": "Sarang Sheth",
+          "source": "Yanko Design",
+          "summary": "This $249 Clip-on Device Shines ‘Invisible’ Infrared Sunlight On You To Boost Your MoodAmsterdam gets around 1,600 hours of sunshine a year. Los Angeles gets close to 2,500. Anne Berends spent years feeling that difference, which is a...",
+          "why": "",
+          "url": "https://www.yankodesign.com/2026/09/25/this-249-clip-on-device-shines-invisible-infrared-sunlight-on-you-to-boost-your-mood/?utm_source=rss&utm_medium=rss&utm_campaign=this-249-clip-on-device-shines-invisible-infrared-sunlight-on-you-to-boost-your-mood",
+          "verified": true
+        },
+        {
+          "title": "A bridge within the neighborhood by HEMAA Architectes",
+          "author": "Leclercq Associés",
+          "source": "Archinect",
+          "summary": "In évry-Courcouronnes, HEMAA designed the Jacques Prévert Public Services Center (MSP), a unifying facility embodying public policy and local community services. Open to all city residents, it constitutes a new unifying hub bridging two districts: Les Pyramides and Le Bois Sauvage. Under one roof, the building houses a rich, multifunctional, and inclusive program bringing together a range of…",
+          "why": "",
+          "url": "https://archinect.com/firms/project/150323101/a-bridge-within-the-neighborhood/150567392",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "fashion",
+      "entries": [
+        {
+          "title": "Soma Sutra: Milind Soman opens up about his Pinkathon initiative",
+          "author": "Lhendup G Bhutia/api/author/2341332",
+          "source": "Open Magazine",
+          "summary": "Milind Soman has worn many hats through his life. A swimmer who was Indian national champion in the men’s 100m breaststroke for several years, a supermodel who became almost every straight Indian woman’s crush when he appeared in the music video Made in India, and later a successful actor in television shows and films. Yet, over the last two decades, it is as a fitness icon that Soman is best…",
+          "why": "",
+          "url": "https://openthemagazine.com/sports/soma-sutra-milind-soman-opens-up-about-his-pinkathon-initiative",
+          "verified": true
+        },
+        {
+          "title": "Hennessy Very Special Cocktails Presents: The Art of Hosting, According to Sierra Rena",
+          "author": null,
+          "source": "Highsnobiety",
+          "summary": "In a career as hectic and demanding as SIV founder, Sierra Rena, having time to wind down with your inner circle is not only wanted but needed.",
+          "why": "",
+          "url": "https://www.highsnobiety.com/p/sierra-rena-hennessy-kickback/",
+          "verified": true
+        },
+        {
+          "title": "Toyota Prepares Us for Moon Festival With Its Curated Starter Packs",
+          "author": "info@hypebeast.com (Hypebeast)",
+          "source": "Hypebeast",
+          "summary": "Mid-Autumn calls for good company under a full moon, so we've teamed up with Toyota to curate three ways to celebrate – each paired with the vehicle built to get you there. Whether the plan is an intimate dinner at home, a rooftop gathering with friends, or a drive out to the water for moonrise, these Starter Packs make sure you arrive ready.Toyota bZ – “The Urbanite” Moon Festival Starter…",
+          "why": "",
+          "url": "https://hypebeast.com/2026/9/toyota-bev-moon-festival-starter-packs-essentials",
+          "verified": true
+        }
+      ]
+    }
+  ]
+}
