@@ -7,12 +7,20 @@
     "confidence": "stated",
     "tier": "essay"
   },
+  "e-flux Criticism": {
+    "feed": "https://e-flux.com/feed.xml",
+    "categories": [
+      "art"
+    ],
+    "confidence": "stated",
+    "tier": "essay"
+  },
   "Artforum": {
     "feed": "https://www.artforum.com/feed/rss/",
     "categories": [
       "art"
     ],
-    "confidence": "guessed",
+    "confidence": "observed",
     "tier": "essay"
   },
   "Momus": {
@@ -65,6 +73,14 @@
   },
   "Trebuchet": {
     "feed": "https://www.trebuchet-magazine.com/feed/",
+    "categories": [
+      "art"
+    ],
+    "confidence": "stated",
+    "tier": "essay"
+  },
+  "Berlin Art Link": {
+    "feed": "https://www.berlinartlink.com/feed/",
     "categories": [
       "art"
     ],
@@ -156,7 +172,7 @@
     "categories": [
       "film"
     ],
-    "confidence": "guessed",
+    "confidence": "observed",
     "tier": "essay"
   },
   "Philosophy in Film": {
@@ -308,7 +324,7 @@
     "categories": [
       "tech"
     ],
-    "confidence": "guessed",
+    "confidence": "observed",
     "tier": "essay"
   },
   "Simon Willison": {
@@ -401,6 +417,14 @@
   },
   "Literary Review of Canada": {
     "feed": "https://reviewcanada.ca/feed/",
+    "categories": [
+      "lit"
+    ],
+    "confidence": "stated",
+    "tier": "essay"
+  },
+  "Latin American Literature Today": {
+    "feed": "https://latinamericanliteraturetoday.org/feed/",
     "categories": [
       "lit"
     ],
@@ -599,14 +623,6 @@
     "confidence": "stated",
     "tier": "news"
   },
-  "Rolling Stone India": {
-    "feed": "https://rollingstoneindia.com/feed/",
-    "categories": [
-      "music"
-    ],
-    "confidence": "stated",
-    "tier": "news"
-  },
   "The AU Review": {
     "feed": "https://www.theaureview.com/feed/",
     "categories": [
@@ -639,14 +655,6 @@
     "confidence": "stated",
     "tier": "essay"
   },
-  "Louder Than War": {
-    "feed": "https://louderthanwar.com/feed/",
-    "categories": [
-      "music"
-    ],
-    "confidence": "stated",
-    "tier": "essay"
-  },
   "The Line of Best Fit": {
     "feed": "https://thelineofbestfit.com/feed/",
     "categories": [
@@ -663,14 +671,6 @@
     "confidence": "stated",
     "tier": "news"
   },
-  "Fact Magazine": {
-    "feed": "https://www.factmag.com/feed/",
-    "categories": [
-      "music"
-    ],
-    "confidence": "stated",
-    "tier": "news"
-  },
   "Metropolis": {
     "feed": "https://metropolismag.com/feed/",
     "categories": [
@@ -681,6 +681,14 @@
   },
   "Azure": {
     "feed": "https://azuremagazine.com/feed/",
+    "categories": [
+      "design"
+    ],
+    "confidence": "stated",
+    "tier": "essay"
+  },
+  "The Architectural Review": {
+    "feed": "https://www.architectural-review.com/feed",
     "categories": [
       "design"
     ],
@@ -705,14 +713,6 @@
   },
   "ArchDaily": {
     "feed": "https://www.archdaily.com/feed",
-    "categories": [
-      "design"
-    ],
-    "confidence": "stated",
-    "tier": "news"
-  },
-  "Print Magazine": {
-    "feed": "https://www.printmag.com/feed/",
     "categories": [
       "design"
     ],
@@ -774,6 +774,78 @@
     ],
     "confidence": "stated",
     "tier": "essay"
+  },
+  "Vestoj": {
+    "feed": "https://vestoj.com/feed/",
+    "categories": [
+      "fashion"
+    ],
+    "confidence": "stated",
+    "tier": "essay"
+  },
+  "System Magazine": {
+    "feed": "https://system-magazine.com/feeds/atom",
+    "categories": [
+      "fashion"
+    ],
+    "confidence": "stated",
+    "tier": "essay"
+  },
+  "AnOther": {
+    "feed": "https://www.anothermag.com/Feed",
+    "categories": [
+      "fashion"
+    ],
+    "confidence": "stated",
+    "tier": "essay"
+  },
+  "Dazed Fashion": {
+    "feed": "https://www.dazeddigital.com/rss",
+    "categories": [
+      "fashion"
+    ],
+    "confidence": "stated",
+    "tier": "essay"
+  },
+  "i-D": {
+    "feed": "https://i-d.co/feed/",
+    "categories": [
+      "fashion"
+    ],
+    "confidence": "stated",
+    "tier": "essay"
+  },
+  "Menswear Musings": {
+    "feed": "https://www.menswearmusings.com/feed/",
+    "categories": [
+      "fashion"
+    ],
+    "confidence": "stated",
+    "tier": "essay"
+  },
+  "From Squalor to Baller": {
+    "feed": "https://fromsqualortoballer.com/feed/",
+    "categories": [
+      "fashion"
+    ],
+    "confidence": "stated",
+    "tier": "essay"
+  },
+  "Well Dressed Dad": {
+    "feed": "https://welldresseddad.com/feed/",
+    "categories": [
+      "fashion"
+    ],
+    "confidence": "stated",
+    "tier": "essay"
+  },
+  "Drapers": {
+    "feed": "https://www.drapersonline.com/feed",
+    "categories": [
+      "fashion"
+    ],
+    "confidence": "stated",
+    "tier": "news"
   },
   "Highsnobiety": {
     "feed": "https://highsnobiety.com/feed/",
