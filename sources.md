@@ -87,7 +87,7 @@ Dead: Asian Movie Pulse (star ratings), Cinema Poetica (2024), Pantograph Punch 
 Screen Slate (US, screenslate.com) · Bright Wall/Dark Room (US, brightwalldarkroom.com) ·
 Vague Visages (US, vaguevisages.com) · Filmmaker Magazine (US, filmmakermagazine.com) ·
 The Film Stage (US, thefilmstage.com, NEWS) · Crooked Marquee (US, crookedmarquee.com) ·
-Talkhouse (US, talkhouse.com) · Seventh Row (CA, seventh-row.com) ·
+Talkhouse (US, talkhouse.com, NEWS) · Seventh Row (CA, seventh-row.com) ·
 Screen Anarchy (US, screenanarchy.com, NEWS)
 
 
@@ -99,9 +99,9 @@ investigative, 404media.co) · The Walrus (CA) · Rest of World (Global South fo
 **UK & Europe** — New Statesman (UK) · Prospect (UK) ·
 Berlin Review (DE, blnreview.de/en — parallel English edition)
 
-**Africa, Asia, Oceania** — East Asia Forum (AU/Asia) · IT-Online (ZA, it-online.co.za) ·
-MediaNama (IN) · TechCabal (NG) · AGBI (Gulf, agbi.com) · e27 (SG, anti-bot measures) ·
-The Mandarin (AU, themandarin.com.au)
+**Africa, Asia, Oceania** — East Asia Forum (AU/Asia) · IT-Online (ZA, it-online.co.za, SKIP) ·
+MediaNama (IN) · TechCabal (NG) · AGBI (Gulf, agbi.com, SKIP) · e27 (SG, anti-bot measures) ·
+The Mandarin (AU, themandarin.com.au, SKIP)
 
 ⚠️ **This category attracts the worst SEO spam** ("best AI tools 2026", "where AI
 is headed"). Never take a tech pick from a generic web search result.
@@ -109,7 +109,7 @@ is headed"). Never take a tech pick from a generic web search result.
 Dead or wire-only: Wamda, Contxto, KrASIA, Tech in Asia, LatamList (funding wires).
 
 **Wider pool 19 Sept 2026, feeds unverified** — Ars Technica (US, arstechnica.com, NEWS) ·
-Techdirt (US, techdirt.com) · Simon Willison (UK, simonwillison.net) ·
+Techdirt (US, techdirt.com) · Simon Willison (UK, simonwillison.net, NEWS) ·
 Platformer (US, platformer.news) · Garbage Day (US, garbageday.email) ·
 MIT Technology Review (US, technologyreview.com, NEWS) · The Verge (US, theverge.com, NEWS) ·
 Wired (US, wired.com, NEWS) · Pluralistic (CA, pluralistic.net)
@@ -121,7 +121,7 @@ The Markup (US, themarkup.org) · Tedium (US, tedium.co) · Aeon (AU, aeon.co)
 ## 4. Literary Reviews (SFF-leaning)
 
 **Americas** — Los Angeles Review of Books (US) · Bookforum (US) · n+1 (US) ·
-Locus (US, locusmag.com) · Strange Horizons (US, strangehorizons.com) · Ancillary Review of Books (US, SFF, ancillaryreviewofbooks.org) ·
+Locus (US, locusmag.com, NEWS) · Strange Horizons (US, strangehorizons.com) · Ancillary Review of Books (US, SFF, ancillaryreviewofbooks.org) ·
 Literary Review of Canada (CA, reviewcanada.ca) · Latin American Literature Today (bilingual,
 genuine EN, latinamericanliteraturetoday.org) · PREE (JM, preelit.com) · sx salon (Caribbean, smallaxe.net) · Brick (CA) `UNVERIFIED`
 
@@ -158,8 +158,8 @@ Pitchfork (US) `UNVERIFIED` — blocks fetch · Exclaim! (CA) `UNVERIFIED`
 VAN Magazine (DE, classical, English-native, van-magazine.com) · 032c (DE)
 
 **Africa, Asia, Oceania** — Music In Africa (ZA) · The NATIVE (NG, thenativemag.com) ·
-Unorthodox Reviews (GH, unorthodoxreviews.com) · SceneNoise (EG) · Rolling Stone MENA (AE, mena.rollingstone.com) ·
-Rolling Stone India (IN, rollingstoneindia.com) · The AU Review (AU, theaureview.com) · Elsewhere (NZ)
+Unorthodox Reviews (GH, unorthodoxreviews.com, NEWS) · SceneNoise (EG) · Rolling Stone MENA (AE, mena.rollingstone.com, NEWS) ·
+Rolling Stone India (IN, rollingstoneindia.com, NEWS) · The AU Review (AU, theaureview.com, NEWS) · Elsewhere (NZ)
 
 Dead or non-English: Bandwagon, IZM (Korean), Groove (German), Electronic Beats.
 
@@ -193,7 +193,7 @@ Archinect (US, archinect.com, NEWS) · Design Milk (US, design-milk.com, NEWS) �
 Yanko Design (SG, yankodesign.com, NEWS) · Dezeen (UK, dezeen.com, NEWS)
 
 **Candidates 14 Sept 2026, feeds unverified** — Core77 (US, core77.com) ·
-Design Observer (US, designobserver.com) · It's Nice That (UK, itsnicethat.com) ·
+Design Observer (US, designobserver.com) · It's Nice That (UK, itsnicethat.com, NEWS) ·
 Common Edge (US, commonedge.org) · Failed Architecture (NL, failedarchitecture.com) ·
 Architizer (US, architizer.com)
 
@@ -216,7 +216,7 @@ StyleForum (US, styleforum.net) · Clothes on Film (UK, clothesonfilm.com)
 Throwing Fits (US, throwingfits.substack.com) ·
 Snake America (US, snakeamerica.substack.com) ·
 Die Workwear (US, dieworkwear.com) · Heddels (US, heddels.com) ·
-Put This On (US, putthison.com) · Ivy Style (US, ivy-style.com) ·
+Put This On (US, putthison.com) · Ivy Style (US, ivy-style.com, NEWS) ·
 The Cutting Class (AU, thecuttingclass.com) · Well Spent (US, well-spent.com) ·
 Fashion Journal (AU, fashionjournal.com.au)
 
