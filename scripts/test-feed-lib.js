@@ -419,6 +419,39 @@ check('select: source below cap still eligible', atBoundary.candidates.length, 1
   check('junk: can be disabled', off.candidates.length, 1);
 }
 
+// Junk patterns added 28 Sept, after auditing issue 20 ---------------------
+// Every "drop" below shipped in issue 20. Every "keep" is prose that must
+// survive — the announce/program patterns in particular are easy to write
+// too broadly ("the Apollo program", "a prize-winning novel").
+{
+  const drops = [
+    'Union Square Announces Novella Program',
+    'Announcing our new imprint',
+    'Skeete Unveils Sultry VIRGO Visuals for His Latest Chapter',
+    'Three Great Things: Jay Baruchel',
+    'The Weekend With Claire Marie Healy',
+    'Fistful of Antimatter by Rich Larson (audio)',
+    'Quoting John Gruber',
+    'Cartier Looks Into The Wild With Tilda Swinton As Its New Ambassador',
+    'Happy 130th Birthday To F. Scott Fitzgerald',
+    'Announcing the winners of our photography prize',
+  ];
+  const keeps = [
+    'The Apollo program and the architecture of ambition',
+    'A television program that changed Brazilian pop',
+    'A prize-winning novel reconsidered',
+    'The imprint that shaped postwar publishing',
+    'Still Supreme: John Coltrane at 100',
+    'Undoing the Devastation of Urban Renewal in New Haven',
+    'Sara Soskolne is a typeface designer who thinks of herself as a reader',
+    'Hip-Hop That Streaming Forgot',
+    'The forgotten hybrids of Japan Y2K horror boom',
+    'Thanks, I am Just Looking',
+  ];
+  for (const t of drops) ok(`junk28: drops "${t.slice(0, 34)}"`, L.isJunkTitle(t), t);
+  for (const t of keeps) ok(`junk28: keeps "${t.slice(0, 34)}"`, !L.isJunkTitle(t), t);
+}
+
 // Tier ordering -------------------------------------------------------------
 // Essay sources must sort above news wires, because both the model and the
 // backfill read from the top of the list.

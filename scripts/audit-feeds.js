@@ -91,6 +91,12 @@ function parseSources() {
       const raw = part.replace(/\s+/g, ' ').trim();
       if (!raw) continue;
       if (/UNVERIFIED/i.test(raw)) continue; // known-unfetchable, skip
+      // SKIP marks a publication that resolves and publishes fine but is
+      // off-brief — trade press, business wires, sector news. No prompt or
+      // title filter can rescue those; they simply do not belong in a
+      // culture newsletter's pool. AGBI and IT-Online put Gulf investment
+      // and South African IT news into issue 20.
+      if (/\bSKIP\b/.test(raw)) continue;
 
       const nameMatch = raw.match(/^([^(]+?)\s*\(/);
       const name = (nameMatch ? nameMatch[1] : raw).replace(/`/g, '').trim();

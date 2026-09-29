@@ -243,6 +243,17 @@ const JUNK_TITLE_PATTERNS = [
   /^\d+\s+(things|ways|reasons|of the best)\b/i,  // listicles
   /\byou'?ll love\b|\bif you like\b/i,    // shopping recommendation shape
   /\bshop (the|our)\b|\bbuy now\b/i,
+
+  // Added 28 Sept after auditing issue 20, where each of these shipped.
+  /\b(announce[sd]?|announcing)\b.*\b(program(me)?|imprint|series|prize|fellowship|residency)\b/i,
+  /\bunveils?\b/i,                        // "Skeete Unveils Sultry VIRGO Visuals"
+  /^three great things\b/i,                // Talkhouse's recurring listicle
+  /^the weekend with\b/i,                  // It's Nice That's roundup
+  /\(audio\)\s*$/i,                       // audio fiction, not criticism
+  /^quoting\b/i,                           // link-blog quote posts
+  /\bas its new\b.*\b(ambassador|face|director|muse)\b/i,
+  /\bhappy \d+(st|nd|rd|th) birthday\b/i,
+  /\bvisuals?\b\s*$/i,                     // music video premieres
 ];
 
 /** True when a title reads as an announcement, listing or product post. */
