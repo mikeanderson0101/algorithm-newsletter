@@ -379,6 +379,29 @@ ok('buildIssue: ignores non-string intro', typeof junkHeadline.intro === 'string
   ok('four: prompt asks for four', p4.includes('exactly 4 id(s) per'));
 }
 
+// --- category briefs ------------------------------------------------------
+// These were lost in the move from the agentic pipeline to feeds, and for
+// twenty issues the model saw a bare "## fashion" heading. Womenswear,
+// shopping posts and chart news drifted in as a direct result.
+{
+  const g = {};
+  for (const cat of C.CATEGORIES) g[cat] = [];
+  const p = C.buildPrompt(C.assignIds(g).withIds, { date: '2026-09-29', perCategory: 4 });
+
+  for (const cat of C.CATEGORIES) {
+    ok(`briefs: ${cat} has a brief in the prompt`,
+      p.includes(`## ${cat} — `) && (C.CATEGORY_BRIEFS[cat] || '').length > 20,
+      `missing or too short for ${cat}`);
+  }
+  ok('briefs: fashion states it is not a shopping guide',
+    /shopping guides/i.test(C.CATEGORY_BRIEFS.fashion));
+  ok('briefs: fashion leans menswear without excluding womenswear',
+    /menswear/i.test(C.CATEGORY_BRIEFS.fashion) && /not limited to it/i.test(C.CATEGORY_BRIEFS.fashion));
+  ok('briefs: music excludes chart news', /chart news/i.test(C.CATEGORY_BRIEFS.music));
+  ok('briefs: every category is covered',
+    C.CATEGORIES.every((c) => typeof C.CATEGORY_BRIEFS[c] === 'string'));
+}
+
 // --- report --------------------------------------------------------------
 
 console.log('');

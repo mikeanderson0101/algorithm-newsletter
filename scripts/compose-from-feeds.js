@@ -38,6 +38,21 @@ const DRAFT = path.join(ISSUES_DIR, '_draft.json');
 
 const CATEGORIES = ['art', 'film', 'tech', 'lit', 'music', 'design', 'fashion'];
 
+// What each section is for. These existed in the original agentic prompt
+// and were lost when the pipeline moved to feeds — for twenty issues the
+// model saw a bare "## fashion" heading and inferred the brief itself,
+// which is why womenswear, shopping posts and chart news drifted in.
+// Restoring them costs about 120 tokens.
+const CATEGORY_BRIEFS = {
+  art: 'fine art, leaning contemporary — criticism and reviews, not market or auction news',
+  film: 'film criticism and essays — not consumer reviews, box office or casting news',
+  tech: 'technology and AI writing with an argument — not product launches, funding rounds or trade news',
+  lit: 'book reviews and literary criticism, leaning science fiction and fantasy — not publishing-industry news',
+  music: 'album and artist analysis — not chart news, tour dates or release announcements',
+  design: 'graphic, interior, industrial and architectural design — criticism and ideas, not project listings or product showcases',
+  fashion: 'fashion criticism and analysis, leaning menswear but not limited to it — writing about clothing as culture, history and craft. Never shopping guides, brand campaigns, collection round-ups or celebrity styling.',
+};
+
 const UA =
   'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 ' +
   '(KHTML, like Gecko) Chrome/124.0 Safari/537.36';
@@ -153,7 +168,8 @@ function buildPrompt(byCategory, { date, perCategory }) {
 
   for (const cat of CATEGORIES) {
     const items = byCategory[cat] || [];
-    lines.push(`## ${cat} (${items.length} candidates)`);
+    lines.push(`## ${cat} — ${CATEGORY_BRIEFS[cat]}`);
+    lines.push(`(${items.length} candidates)`);
     if (!items.length) {
       lines.push('  (none available)');
     }
@@ -662,6 +678,7 @@ if (require.main === module) {
 }
 
 module.exports = {
+  CATEGORY_BRIEFS,
   buildPrompt, assignIds, parseModelJson, resolvePicks, buildIssue, sanitizeIssue, CATEGORIES,
   // exported for the integration test, which stubs global.fetch and runs
   // the real code path end to end rather than re-implementing it
