@@ -261,7 +261,7 @@
       "film"
     ],
     "confidence": "stated",
-    "tier": "essay"
+    "tier": "news"
   },
   "Seventh Row": {
     "feed": "https://seventh-row.com/feed/",
@@ -303,14 +303,6 @@
     "confidence": "stated",
     "tier": "essay"
   },
-  "IT-Online": {
-    "feed": "https://it-online.co.za/feed/",
-    "categories": [
-      "tech"
-    ],
-    "confidence": "stated",
-    "tier": "essay"
-  },
   "TechCabal": {
     "feed": "https://techcabal.com/feed/",
     "categories": [
@@ -319,29 +311,13 @@
     "confidence": "guessed",
     "tier": "essay"
   },
-  "AGBI": {
-    "feed": "https://www.agbi.com/feed/",
-    "categories": [
-      "tech"
-    ],
-    "confidence": "stated",
-    "tier": "essay"
-  },
-  "The Mandarin": {
-    "feed": "https://www.themandarin.com.au/feed/",
-    "categories": [
-      "tech"
-    ],
-    "confidence": "stated",
-    "tier": "news"
-  },
   "Simon Willison": {
     "feed": "https://simonwillison.net/atom/everything/",
     "categories": [
       "tech"
     ],
     "confidence": "stated",
-    "tier": "essay"
+    "tier": "news"
   },
   "Platformer": {
     "feed": "https://www.platformer.news/rss/",
@@ -405,7 +381,7 @@
       "lit"
     ],
     "confidence": "stated",
-    "tier": "essay"
+    "tier": "news"
   },
   "Strange Horizons": {
     "feed": "https://strangehorizons.com/feed/",
@@ -613,7 +589,7 @@
       "music"
     ],
     "confidence": "stated",
-    "tier": "essay"
+    "tier": "news"
   },
   "Rolling Stone MENA": {
     "feed": "https://mena.rollingstone.com/feed/",
@@ -621,7 +597,7 @@
       "music"
     ],
     "confidence": "stated",
-    "tier": "essay"
+    "tier": "news"
   },
   "Rolling Stone India": {
     "feed": "https://rollingstoneindia.com/feed/",
@@ -629,7 +605,7 @@
       "music"
     ],
     "confidence": "stated",
-    "tier": "essay"
+    "tier": "news"
   },
   "The AU Review": {
     "feed": "https://www.theaureview.com/feed/",
@@ -637,7 +613,7 @@
       "music"
     ],
     "confidence": "stated",
-    "tier": "essay"
+    "tier": "news"
   },
   "Passion of the Weiss": {
     "feed": "https://www.powmag.net/feed",
@@ -781,7 +757,7 @@
       "design"
     ],
     "confidence": "stated",
-    "tier": "essay"
+    "tier": "news"
   },
   "Common Edge": {
     "feed": "https://commonedge.org/feed/",
@@ -869,7 +845,7 @@
       "fashion"
     ],
     "confidence": "stated",
-    "tier": "essay"
+    "tier": "news"
   },
   "Fashion Journal": {
     "feed": "https://fashionjournal.com.au/feed/",
