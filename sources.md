@@ -199,6 +199,15 @@ Architizer (US, architizer.com)
 
 
 ## 7. Menswear ⚠️ STRUCTURALLY THIN
+**US/UK/EU widening 29 Sept 2026, feeds unverified** — Vestoj (UK/NL, vestoj.com) ·
+System Magazine (UK, system-magazine.com) · SHOWstudio (UK, showstudio.com) ·
+AnOther (UK, anothermag.com) · Dazed Fashion (UK, dazeddigital.com/fashion) ·
+i-D (UK, i-d.co) · Document Journal (US, documentjournal.com) ·
+Magasin (US, magasin.substack.com) · Menswear Musings (US, menswearmusings.com) ·
+From Squalor to Baller (US, fromsqualortoballer.com) ·
+Parisian Gentleman (FR, parisiangentleman.com) · Well Dressed Dad (NO, welldresseddad.com) ·
+Clothes on Film (UK, clothesonfilm.com) · Drapers (UK, drapersonline.com, NEWS) ·
+Mr Porter Journal (UK, mrporter.com/en-us/journal, NEWS)
 
 **Verified** — Permanent Style (UK) · Blackbird Spyplane (US, blackbirdspyplane.com) ·
 Highsnobiety (DE, FILTER — hybrid essay/shopping, highsnobiety.com, NEWS) · 032c (DE) ·
