@@ -1,0 +1,278 @@
+{
+  "issue": 21,
+  "date": "2026-09-29",
+  "headline": "Deep Cuts, *Global Reach*",
+  "intro": "This week's Algorithm ranges from Nordic sculpture and Kolkata curators to AI chip wars and calypso elegies. We favor the essay over the announcement, the profile over the press release. Twenty minutes, well spent, across seven fields of culture.",
+  "byline": "2026-09-29 — selected links",
+  "categories": [
+    {
+      "key": "art",
+      "entries": [
+        {
+          "title": "Stein som bærer stein",
+          "author": "Stian Gabrielsen",
+          "source": "Kunstkritikk",
+          "summary": "Kristian Blystads monumentale form er også en beholder for det skjøre og forgjengelige. The post Stein som bærer stein appeared first on Kunstkritikk.",
+          "why": "",
+          "url": "https://kunstkritikk.com/stein-som-baerer-stein/",
+          "verified": true
+        },
+        {
+          "title": "“If There Is Tension” at Salon am Moritzplatz, Berlin",
+          "author": "Mousse Magazine",
+          "source": "Mousse",
+          "summary": "How are we living within the fracture? Where does it reside, and how does it become visible? This question has guided a half-year process of research, exchange, and collaboration, culminating in the upcoming exhibition If There Is Tension, curated by Silvia Russo and hosted at Salon am Moritzplatz, a former bank and site of custody",
+          "why": "",
+          "url": "https://www.moussemagazine.it/magazine/if-there-is-tension-salon-am-moritzplatz-berlin-2026",
+          "verified": true
+        },
+        {
+          "title": "Sharp Objects: The Last Rust by Archana Hande",
+          "author": "Take on Art",
+          "source": "TAKE on Art",
+          "summary": "ONE DOES NOT have to look too far to find the defining images of today’s India. They stare back at us in public, like the arresting, belligerent face of a saffron Hanuman, popularised in 2018 and pasted on the windscreens of cars. Or they crawl their way into our social media feeds, like the suited-up, … Continue reading \"Sharp Objects: The Last Rust by Archana Hande\" The post Sharp Objects: The…",
+          "why": "",
+          "url": "https://takeonartmagazine.com/uncategorized/sharp-objects-the-last-rust-by-archana-hande/",
+          "verified": true
+        },
+        {
+          "title": "A Slow Unfolding",
+          "author": "Foster Neville",
+          "source": "Trebuchet",
+          "summary": "SHHE's THALASSA turns vocal dissolution into rebirth (review)",
+          "why": "",
+          "url": "https://www.trebuchet-magazine.com/a-slow-unfolding/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "film",
+      "entries": [
+        {
+          "title": "The History of Concrete Review: Or, the Joys of Dry Humour",
+          "author": "Pat Mullen",
+          "source": "POV Magazine",
+          "summary": "The History of Concrete offers a warmly funny consideration of life's big questions as John Wilson interrogates the role of concrete in urban living. The post The History of Concrete Review: Or, the Joys of Dry Humour appeared first on POV Magazine.",
+          "why": "",
+          "url": "https://povmagazine.com/the-history-of-concrete-review-or-the-joys-of-dry-humour/",
+          "verified": true
+        },
+        {
+          "title": "VENECIA 2026: METEORITO DE SEBASTIÁN MÚNERA",
+          "author": "Staff",
+          "source": "desistfilm",
+          "summary": "Por Mónica Delgado Múnera ubica a sus dos protagonistas, dos amigas que viven juntas cuidando a un niño que no es de ninguna de ellas, en un territorio cercano a la Hacienda Nápoles, antiguo refugio de lujo del narco Pablo Escobar, en el municipio de Puerto Triunfo, Antioquia, hoy convertido en un parque temático que imita una selva llena de animales y flora surreal.",
+          "why": "",
+          "url": "https://desistfilm.com/venecia-2026-meteorito-de-sebastian-munera/",
+          "verified": true
+        },
+        {
+          "title": "Resident Evil (2026) Review: When the Player Gets Stuck in the Game",
+          "author": "Matthew Jones",
+          "source": "Philosophy in Film",
+          "summary": "Zach Cregger’s Resident Evil puts an ordinary courier through the games’ most frightening—and frustrating—survival rules. It’s the best adaptation yet, though the final act goes too big. The post Resident Evil (2026) Review: When the Player Gets Stuck in the Game appeared first on Philosophy in Film.",
+          "why": "",
+          "url": "https://philosophyinfilm.com/2026/09/23/resident-evil-2026-review/",
+          "verified": true
+        },
+        {
+          "title": "New York 2026 Review: A LONG WINTER, Hauntingly Beautiful Drama of Longing for a Change",
+          "author": null,
+          "source": "Screen Anarchy",
+          "summary": "Director Andrew Haigh's new drama stars Fred Hechinger, Ebon Moss-Bachrach, and Caitríona Balfe. [Read the whole post on screenanarchy.com...]",
+          "why": "",
+          "url": "https://screenanarchy.com/2026/09/new-york-2026-review-a-long-winter-hauntingly-beautiful-drama-of-longing-for-a-change.html",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "tech",
+      "entries": [
+        {
+          "title": "Following: OpenAI taps the brakes",
+          "author": "Ella Markianos",
+          "source": "Platformer",
+          "summary": "On the eve of the company's developer conference, it cancels a new model over safety fears",
+          "why": "",
+          "url": "https://www.platformer.news/open-ai-model-release-canceled/",
+          "verified": true
+        },
+        {
+          "title": "The End of Privacy Is Here (with Kashmir Hill)",
+          "author": "Joseph Cox",
+          "source": "404 Media",
+          "summary": "Facial recognition is everywhere now. Soon it's going to be right in your face, too.",
+          "why": "",
+          "url": "https://www.404media.co/the-end-of-privacy-is-here-with-kashmir-hill/",
+          "verified": true
+        },
+        {
+          "title": "Paternity is poetical",
+          "author": "Daniel Swift",
+          "source": "Aeon",
+          "summary": "The notion that fatherhood and creativity are at odds is plain wrong, as both poetry and neuroscience are showing us - by Daniel Swift Read on Aeon",
+          "why": "",
+          "url": "https://aeon.co/essays/when-a-man-becomes-a-father-and-a-poetic-revolution-follows",
+          "verified": true
+        },
+        {
+          "title": "South Korea’s AI chip giants are fighting for a bigger role in America’s AI boom",
+          "author": "Ananya Bhattacharya",
+          "source": "Rest of World",
+          "summary": "Samsung and SK Hynix dominate the high-bandwidth memory market. Now they are competing to become indispensable to Nvidia, OpenAI, and other U.S. AI companies.",
+          "why": "",
+          "url": "https://restofworld.org/2026/samsung-sk-hynix-ai-memory-chip-war-nvidia-openai/?utm_source=rss&utm_medium=rss&utm_campaign=feeds",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "lit",
+      "entries": [
+        {
+          "title": "“I Must Put Things in My Mouth”: Loving Trans Children in Octavia Butler’s Adulthood Rites",
+          "author": "Franklin Mitchell",
+          "source": "Strange Horizons",
+          "summary": "The childhood that Butler depicts [in Adulthood Rites] can serve as a blueprint for how we might better love and respect trans children.[...] Like the resisters who think they are saving Akin by pulling things out of his mouth, or the Oankali who insist that the contradiction in humanity means allowing the resisters to reproduce would be a form of cruelty, when we place children on pre-determined…",
+          "why": "",
+          "url": "https://strangehorizons.com/wordpress/non-fiction/articles/i-must-put-things-in-my-mouth-loving-trans-children-in-octavia-butlers-adulthood-rites/",
+          "verified": true
+        },
+        {
+          "title": "The National Book Award Interviews: Karim Kattan and Jeffrey Zuckerman",
+          "author": "Alex Tan",
+          "source": "Words Without Borders",
+          "summary": "Can the two of you talk about how this book came into the world—first, the germ in the original language, and then the translation? Karim Kattan (KK): Eden had many beginnings. I find it tricky to pinpoint one moment of it coming into being. Maybe, if I had to mention one of its starting points, The post The National Book Award Interviews: Karim Kattan and Jeffrey Zuckerman appeared first on…",
+          "why": "",
+          "url": "https://wordswithoutborders.org/read/article/2026-09/the-national-book-award-interviews-karim-kattan-and-jeffrey-zuckerman-eden-at-dawn/",
+          "verified": true
+        },
+        {
+          "title": "Book Review: Ansam Abu Sitta’s ‘Bench of the Reserves’",
+          "author": "I. Rida Mahmood",
+          "source": "ArabLit",
+          "summary": "Book Review: Ansam Abu Sitta’s ‘Bench of the Reserves’ Reviewed by Nada Hodali Live in the present moment, do not miss out on what is happening there in front […]",
+          "why": "",
+          "url": "https://arablit.org/2026/09/28/book-review-ansam-abu-sittas-bench-of-the-reserves/",
+          "verified": true
+        },
+        {
+          "title": "The Price of Obsession: On Mark Haber’s “Ada”",
+          "author": "Theodore Sovinski",
+          "source": "Cleveland Review of Books",
+          "summary": "Obsession is by one turn the way that these characters achieve their meager success, but it is also, by another, the fatal flaw in their efforts to reach the perfection they seek. The post The Price of Obsession: On Mark Haber’s “Ada” appeared first on Cleveland Review of Books.",
+          "why": "",
+          "url": "https://clereviewofbooks.com/on-mark-habers-ada/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "music",
+      "entries": [
+        {
+          "title": "Big Flowers & shemar, “i love nature!”",
+          "author": "Dash Lewis",
+          "source": "Bandcamp Daily",
+          "summary": "The New York City rapper and producer's collaboration contains a single directive: Go touch grass. Read full story on the Bandcamp Daily.",
+          "why": "",
+          "url": "https://daily.bandcamp.com/album-of-the-day/big-flowers-shemar-i-love-nature-review",
+          "verified": true
+        },
+        {
+          "title": "The Mighty Sparrow flaps his last",
+          "author": "Mark Sampson",
+          "source": "Sounds and Colours",
+          "summary": "I was saddened to read the news that Mighty Sparrow checked out on Sunday, 27th September after a short illness. Arguably the mightiest of all calypsonians died peacefully in New York aged 91 and surrounded by his family, always a “consummation devoutly to be wished”. Born in Grenada, Slinger Francisco fled the nest with his... Read Article",
+          "why": "",
+          "url": "https://soundsandcolours.com/articles/caribbean/the-mighty-sparrow-flaps-his-last-301713/",
+          "verified": true
+        },
+        {
+          "title": "Adey Still Has His Fingers On The Pulse Of Popular Music",
+          "author": "Michelle Ejiro",
+          "source": "The NATIVE",
+          "summary": "People might be more familiar with Adey’s production work but his range is unmissable whether as a producer or an artist. The post Adey Still Has His Fingers On The Pulse Of Popular Music appeared first on The NATIVE.",
+          "why": "",
+          "url": "https://thenativemag.com/adey-still-has-his-fingers-on-the-pulse-of-popular-music/",
+          "verified": true
+        },
+        {
+          "title": "Lee Ranaldo :: Guitar-Centric Film Soundtracks",
+          "author": "Jason Woodbury",
+          "source": "Aquarium Drunkard",
+          "summary": "As a member of Sonic Youth, Drift, and his many other musical detours, Lee Ranaldo has treated the guitar as a pure sound source, creating dynamic new expressions in rock & roll and the avant-garde alike. But Ranaldo's new project, a soundtrack to director Joris Postema’s \"eco-doc\" The System, presents a new side of Lee, that of a filmic composer. To commemorate the album's release, Ranaldo sent…",
+          "why": "",
+          "url": "https://aquariumdrunkard.com/2026/09/28/lee-ranaldo-guitar-centric-film-soundtracks/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "design",
+      "entries": [
+        {
+          "title": "If Emmett Till Lived",
+          "author": "Rachel Paese",
+          "source": "Design Observer",
+          "summary": "A new exhibition at the Museum of Contemporary Photography in Chicago The post If Emmett Till Lived appeared first on DesignObserver.",
+          "why": "",
+          "url": "https://designobserver.com/if-emmett-till-lived/",
+          "verified": true
+        },
+        {
+          "title": "Finch Bay Hotel / Alfredo Ribadeneira Arquitectos",
+          "author": "Valentina Díaz",
+          "source": "ArchDaily",
+          "summary": "The Galápagos Islands are inseparable from the history of evolution. Charles Darwin's observations of their extraordinary biodiversity helped shape the ideas that would later contribute to his theory of evolution. In much the same way, these islands remain a place of constant adaptation: an environment where life, landscape, and human experience exist in a uniquely close relationship. Over the…",
+          "why": "",
+          "url": "https://www.archdaily.com/1185929/finch-bay-hotel-alfredo-ribadeneira-arquitectos",
+          "verified": true
+        },
+        {
+          "title": "Hannah Buechler Finds Inspiration in Music, Fashion + Experimentation",
+          "author": "Anna Zappia",
+          "source": "Design Milk",
+          "summary": "The Los Angeles-based textile artist shares the influences behind her tactile practice, from heavy metal and collecting to material experimentation and her Boston Terrier, Stevie",
+          "why": "",
+          "url": "https://design-milk.com/friday-five-hannah-buechler/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "fashion",
+      "entries": [
+        {
+          "title": "Women’s workwear has changed radically over the last 60 years, Cue couldn’t keep up",
+          "author": "Daisy Henry",
+          "source": "Fashion Journal",
+          "summary": "Australian fashion brand Cue and its sister label Veronika Maine have entered receivership. At first glance, it looks like another chapter in Australia’s difficult retail economy and the merciless churn of global fashion. But Cue was never just another retailer. Founded in Sydney in 1968, it dressed Australian women through almost six decades of change […] This article Women’s workwear has…",
+          "why": "",
+          "url": "https://fashionjournal.com.au/fashion/womens-workwear-cue/",
+          "verified": true
+        },
+        {
+          "title": "Inside Track: September 20th – September 26th Edition",
+          "author": "Derek Guy",
+          "source": "Put This On",
+          "summary": "Here are our hand-selected favorites from eBay for this week, plus a heads-up on recommended sales. If you’re a member... The post Inside Track: September 20th – September 26th Edition appeared first on Put This On.",
+          "why": "",
+          "url": "https://putthison.com/inside-track-september-20th-september-26th-edition-2/",
+          "verified": true
+        },
+        {
+          "title": "Esquire India's First Weekly Newsletter Is Here",
+          "author": "Rahul Gangwani/api/author/2449059",
+          "source": "Esquire India",
+          "summary": "Editor's LetterIt will soon be two years since the launch of Esquire in India. Our aim was to create a unique and rich world of style, culture, ideas and phenomenal people, and to take that world to our readers wherever they are. That ambition has since grown across print, digital, events and experiences. And now, because we’re all in our inboxes all the time, we’re bringing Esquire there too.…",
+          "why": "",
+          "url": "https://www.esquireindia.co.in/newsletters/esquire-indias-first-weekly-newsletter-is-here",
+          "verified": true
+        }
+      ]
+    }
+  ]
+}
