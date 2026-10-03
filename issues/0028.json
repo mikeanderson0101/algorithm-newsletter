@@ -1,0 +1,278 @@
+{
+  "issue": 28,
+  "date": "2026-10-03",
+  "headline": "The *Feed*",
+  "intro": "A selection of recent writing from across the culture press.",
+  "byline": "2026-10-03 — selected links",
+  "categories": [
+    {
+      "key": "art",
+      "entries": [
+        {
+          "title": "Between Worlds",
+          "author": "Hakim Bishara",
+          "source": "Hyperallergic",
+          "summary": "Arthur Jafa at the New Museum, Teresa Margolles at MoMA PS1, the story of an unsung Black architect, and our art tarotscope for the fall.",
+          "why": "",
+          "url": "https://hyperallergic.com/between-worlds/",
+          "verified": true
+        },
+        {
+          "title": "Luhring Augustine Reportedly Shuttering TriBeCa Outpost",
+          "author": "Polly Watson",
+          "source": "Artforum",
+          "summary": "New York gallery Luhring Augustine is closing its TriBeCa branch, Artnet News reports. The space, at 17 White Street, last hosted the group exhibition “In a Free State,” curated by painters Salman Toor and Doron Langberg. That show closed on July 31, and the gallery has not announced further programming there. It has also modified […]",
+          "why": "",
+          "url": "https://www.artforum.com/news/luhring-augustine-reportedly-closing-tribeca-outpost-1234760803/",
+          "verified": true
+        },
+        {
+          "title": "Brook Hsu Sends A Letter",
+          "author": "Elephant Magazine",
+          "source": "Elephant",
+          "summary": "Letters, according to the poet Emily Dickinson, are “a joy of Earth –/ It is denied the Gods–.” They keenly express our very human need for connection, embracing distance as a form to express our preternatural need for longing. With that incentive, I write letters. Some of my compositional choices, such as dashes and how The post Brook Hsu Sends A Letter appeared first on ELEPHANT.",
+          "why": "",
+          "url": "https://elephant.art/brook-hsu-sends-a-letter/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "film",
+      "entries": [
+        {
+          "title": "Amira Adib Warns of Legal Action Over Claims Surrounding ‘Viral Friendship Wedding’",
+          "author": "Farah Samir",
+          "source": "Egyptian Streets",
+          "summary": "Egyptian actress and singer Amira Adib said she may pursue legal action over what she described as false and misleading claims surrounding a video of a wedding-themed celebration she attended with friends in Berlin. In a statement posted to Instagram on Saturday, 3 October, Adib said she had already addressed the “misunderstanding” surrounding the gathering and would not tolerate the continued…",
+          "why": "",
+          "url": "https://egyptianstreets.com/2026/10/03/amira-adib-warns-of-legal-action-over-claims-surrounding-viral-friendship-wedding/",
+          "verified": true
+        },
+        {
+          "title": "Classic Corner: The Town That Dreaded Sundown",
+          "author": "Craig J. Clark",
+          "source": "Crooked Marquee",
+          "summary": "Made 50 years ago, Charles B. Pierce’s proto-slasher straddles the line between docudrama and horror. The post Classic Corner: The Town That Dreaded Sundown appeared first on Crooked Marquee.",
+          "why": "",
+          "url": "https://crookedmarquee.com/classic-corner-the-town-that-dreaded-sundown/",
+          "verified": true
+        },
+        {
+          "title": "Digger review – a satire with no meaningful target",
+          "author": "Hannah Strong",
+          "source": "Little White Lies",
+          "summary": "Tom Cruise hams it up as an oil-drilling oligarch in Alejandro González Iñárritu’s overstuffed satire.",
+          "why": "",
+          "url": "https://lwlies.com/reviews/digger",
+          "verified": true
+        },
+        {
+          "title": "Atonement Review: An Ambitious But Misguided War on Terror Story",
+          "author": "C.J. Prince",
+          "source": "The Film Stage",
+          "summary": "Note: This review was originally published as part of our 2026 TIFF coverage. The film opens in theaters on October 2. Dexter Filkins’ 2012 New Yorker article “Atonement After Iraq” tells the incredible story of the Kachadoorian family, whose lives were ripped apart during the US invasion of Iraq in 2003, and Lu Lobello, one […] The post Atonement Review: An Ambitious But Misguided War on Terror…",
+          "why": "",
+          "url": "https://thefilmstage.com/tiff-review-atonement-is-an-ambitious-but-misguided-war-on-terror-story/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "tech",
+      "entries": [
+        {
+          "title": "Pluralistic: Economic probabilities for our grandchildren (03 Oct 2026)",
+          "author": "Cory Doctorow",
+          "source": "Pluralistic",
+          "summary": "Today's links Economic probabilities for our grandchildren: If only data centers would stop hogging all the copper. Hey look at this: Delights to delectate. Object permanence: RIAA v P2P; Infoseek's anti-terror brain-scanner; Copyrighting every phone number; Carving pumpkins with cookie-cutters; Polish women go on strike; Latent labor in material world; Hitler's meth; \"Flying Saucers Are Real!\";…",
+          "why": "",
+          "url": "https://pluralistic.net/2026/10/03/full-employment/",
+          "verified": true
+        },
+        {
+          "title": "Our Solar System Is Terminally Unstable and Will Be Completely Destroyed, Study Finds",
+          "author": "Becky Ferreira",
+          "source": "404 Media",
+          "summary": "The estimated lifespan of the outer solar system has been downgraded from 100 billion years to just a few billion years, according to a study that probed “terminal instability” during the Sun’s death.",
+          "why": "",
+          "url": "https://www.404media.co/our-solar-system-is-terminally-unstable-and-will-be-completely-destroyed-study-finds/",
+          "verified": true
+        },
+        {
+          "title": "Yoco started with card machines. Survival made it grow.",
+          "author": "Phathisani Moyo",
+          "source": "TechCabal",
+          "summary": "It started with a small card machine and has since grown into a technology platform serving 200,000 small businesses.",
+          "why": "",
+          "url": "https://techcabal.com/2026/10/02/yoco-class-of-2016/",
+          "verified": true
+        },
+        {
+          "title": "Capcom is preparing for a ‘future where we create games together with AI’",
+          "author": "Terrence O’Brien",
+          "source": "The Verge",
+          "summary": "Capcom's Pragmata might be all about the horrors of AI, but in practice the studio doesn't seem so down on the tech. During the Capcom Open Conference RE: 2026 programmer Satoshi Ishida gave a presentation with the mouthful of a title: \"The Outlook and Future of the REX Project, Further Evolving the RE Engine for […]",
+          "why": "",
+          "url": "https://www.theverge.com/games/1004418/capcom-ai-game-development",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "lit",
+      "entries": [
+        {
+          "title": "Middle Grade SFF for Young Readers — And the Young at Heart",
+          "author": "Sarah",
+          "source": "Reactor",
+          "summary": "Stories featuring mysterious spellbooks, dysfunctional robots, and so much more... The post Middle Grade SFF for Young Readers — And the Young at Heart appeared first on Reactor.",
+          "why": "",
+          "url": "https://reactormag.com/middle-grade-sff-for-young-readers-and-the-young-at-heart/",
+          "verified": true
+        },
+        {
+          "title": "The National Book Award Interviews: Maria Stepanova and Sasha Dugdale",
+          "author": "Alex Tan",
+          "source": "Words Without Borders",
+          "summary": "Can the two of you talk about how this book came into the world—first, the germ in the original language, and then the translation? Maria Stepanova (MS): I like the term—if I am not mistaken, this “germ” thing was invented by Patricia Highsmith, and she was happy to share some of the (mostly visual) experiences The post The National Book Award Interviews: Maria Stepanova and Sasha Dugdale…",
+          "why": "",
+          "url": "https://wordswithoutborders.org/read/article/2026-10/the-national-book-award-interviews-maria-stepanova-and-sasha-dugdale-the-disappearing-act/",
+          "verified": true
+        },
+        {
+          "title": "Backtracking Is Never the Move: On Sean Thor Conroe’s “The Walk Book”",
+          "author": "Martin Dolan",
+          "source": "Cleveland Review of Books",
+          "summary": "Is he writing it for the wrong reasons? The post Backtracking Is Never the Move: On Sean Thor Conroe’s “The Walk Book” appeared first on Cleveland Review of Books.",
+          "why": "",
+          "url": "https://clereviewofbooks.com/on-sean-thor-conroes-the-walk-book/",
+          "verified": true
+        },
+        {
+          "title": "Coming Oct 2026: An IPAF Winner, a Classic & More",
+          "author": "mlynxqualey",
+          "source": "ArabLit",
+          "summary": "This is an unofficial list and we may have missed some titles; if we have, please let us know at info@arablit.org.",
+          "why": "",
+          "url": "https://arablit.org/2026/10/01/coming-oct-2026-an-ipaf-winner-a-classic-more/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "music",
+      "entries": [
+        {
+          "title": "Everyday Betrayals",
+          "author": "Donald Morrison",
+          "source": "Passion of the Weiss",
+          "summary": "The Rap-Up considers the most notable singles of the past week. Today, Donald Morrison reviews new work from Kodak Black, Cash Cobain, Rio Da Yung Og, and more.",
+          "why": "",
+          "url": "https://www.powmag.net/p/everyday-betrayals-the-rap-up",
+          "verified": true
+        },
+        {
+          "title": "Slayyyter, Recession Indicator",
+          "author": "Dawn Tefft",
+          "source": "PopMatters",
+          "summary": "Slayyyter is the queen of dilapidation, and partying is her defiance against a socio-political structure designed to keep the majority down.",
+          "why": "",
+          "url": "https://www.popmatters.com/slayyyter-recession-indicator",
+          "verified": true
+        },
+        {
+          "title": "From YouTube to the Guitar: How Online Music Discovery Can Become Real Playing",
+          "author": "Sounds and Colours",
+          "source": "Sounds and Colours",
+          "summary": "YouTube has turned out to be the platform for many guitar players when it comes to finding songs, while a lot of practice time is also wasted there, surprisingly. The connection between these factors is quite significant, and the difference between both of them is key to learning the guitar today. A guitarist can hear... Read Article",
+          "why": "",
+          "url": "https://soundsandcolours.com/subjects/travel/from-youtube-to-the-guitar-how-online-music-discovery-can-become-real-playing-307352/",
+          "verified": true
+        },
+        {
+          "title": "AC/DC and Foo Fighters Deliver Epic Night of Rock ‘n’ Roll at MetLife Stadium: Review, Photos, Video + Setlists",
+          "author": "Spencer Kaufman",
+          "source": "Consequence",
+          "summary": "The two Rock & Roll Hall of Fame acts joined forces for an unforgettable show in New Jersey. AC/DC and Foo Fighters Deliver Epic Night of Rock ‘n’ Roll at MetLife Stadium: Review, Photos, Video + Setlists Spencer Kaufman",
+          "why": "",
+          "url": "https://consequence.net/2026/10/ac-dc-and-foo-fighters-metlife-stadium-review-photos-video-setlists/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "design",
+      "entries": [
+        {
+          "title": "Hanslope House by Olaver Architecture",
+          "author": "Elizabeth Kaye Campbell",
+          "source": "ArchitectureAU Discussion",
+          "summary": "Offering a subtle rather than a subversive evolution of the suburban home, this flexible family residence arranges two brick pavilions around generous private gardens.",
+          "why": "",
+          "url": "https://architectureau.com/articles/hanslope-house-by-olaver-architecture/",
+          "verified": true
+        },
+        {
+          "title": "MRDK Layers Strategic Updates Into a Historic Montreal Home",
+          "author": "Eric Mutrie",
+          "source": "Azure",
+          "summary": "Original character coexists with contemporary, object-like inserts in a home that treats old and new with equal care. The post MRDK Layers Strategic Updates Into a Historic Montreal Home appeared first on Azure Magazine.",
+          "why": "",
+          "url": "https://www.azuremagazine.com/article/mrdk-montreal-house-kitchen-reno/",
+          "verified": true
+        },
+        {
+          "title": "Sandy Christ crafts fuzzy, out-of-focus illustrations that make you embrace ambiguity",
+          "author": "Ellis Tree",
+          "source": "It's Nice That",
+          "summary": "The London-based creative tells us how sitting with things “beyond comprehension”, embracing surrealism and making self-published zines helped her bring a dreamy, introspective visual world to life.",
+          "why": "",
+          "url": "https://www.itsnicethat.com/articles/sandy-christ-illustration-discover-011026",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "fashion",
+      "entries": [
+        {
+          "title": "Rick Owens’ Couture State of Mind",
+          "author": "Harry Millerhttps://www.anothermag.com/rssfeed@dazedmedia.com",
+          "source": "AnOther",
+          "summary": "Rick Owens’ Spring/Summer 2027 collection was grand, ragged, airy and occasionally terrifying – a couture-tinged exercise in pushing an already unmistakable aesthetic somewhere new",
+          "why": "",
+          "url": "https://www.anothermag.com/fashion-beauty/17539/rick-owens-spring-summer-2027-ss27-womenswear-review?utm_source=Link&utm_medium=Link&utm_campaign=RSSFeed&utm_term=rick-owens-couture-state-of-mind",
+          "verified": true
+        },
+        {
+          "title": "Paris Fashion Week is burning at Celine SS27",
+          "author": "Isobel Van Dykehttps://www.dazeddigital.com/rssfeed@dazedmedia.com",
+          "source": "Dazed Fashion",
+          "summary": "SZA made a rare appearance at Michael Rider’s simple but sublime show, partially inspired by the groundbreaking 1990 documentary Paris Is Burning",
+          "why": "",
+          "url": "https://www.dazeddigital.com/fashion/article/71108/1/paris-fashion-week-is-burning-at-celine-ss27?utm_source=Link&utm_medium=Link&utm_campaign=RSSFeed&utm_term=paris-fashion-week-is-burning-at-celine-ss27",
+          "verified": true
+        },
+        {
+          "title": "The Unsung Legend of New York Gay Photography",
+          "author": "douglasgreenwood",
+          "source": "i-D",
+          "summary": "Stanley Stellar wandered the streets of downtown, capturing gay men in moments of ecstasy and liberation. A new book, ‘Don’t Worry Boys,’ honors his iconic work.",
+          "why": "",
+          "url": "https://i-d.co/article/stanley-stellar-dont-worry-boys-gay-photography-book/",
+          "verified": true
+        },
+        {
+          "title": "Ivy Style In Forbes",
+          "author": "Matthew Longcore",
+          "source": "Ivy Style",
+          "summary": "An article in Forbes suggests that the resurgence of Ivy style signals a cultural romanticization of the classic college experience. The article by Liz Doe Stone includes excerpts from her interview with Matthew Longcore. According to the article: Loafers and rugby shirts, cable-knit sweaters, and collegiate stripes are back. This fall, the resurgence of Ivy ... The post Ivy Style In Forbes…",
+          "why": "",
+          "url": "https://www.ivy-style.com/ivy-style-in-forbes.html",
+          "verified": true
+        }
+      ]
+    }
+  ]
+}
