@@ -1,0 +1,287 @@
+{
+  "issue": 29,
+  "date": "2026-10-05",
+  "headline": "Stories Worth *Twenty Minutes*",
+  "intro": "This issue gathers criticism and reportage built for lingering, from gallery reviews in Bogotá and Warsaw to essays on AI's cultural anxieties. Expect deep dives into music history, speculative fiction, and the quiet politics of design and dress. Depth, not haste, is the point.",
+  "byline": "2026-10-05 — selected links",
+  "categories": [
+    {
+      "key": "art",
+      "entries": [
+        {
+          "title": "Hanging your Coat on Saint Sebastian",
+          "author": "Arthur Tonnerre",
+          "source": "Trebuchet",
+          "summary": "Saki's installations test the gap between the physical and the symbolic",
+          "why": "",
+          "url": "https://www.trebuchet-magazine.com/hanging-your-coat-on-saint-sebastian/",
+          "verified": true
+        },
+        {
+          "title": "Highlights From Warsaw Gallery Weekend",
+          "author": "Alison Hugill",
+          "source": "Berlin Art Link",
+          "summary": "by Nadia Egan // Oct. 1, 2026 We have been sleeping on Warsaw's art scene. It's not like I went in with low expectations, but I have been well and truly surprised by the quality of what I have seen here: the content, the production…[read on]",
+          "why": "",
+          "url": "https://www.berlinartlink.com/2026/10/01/warsaw-gallery-weekend-exhibition-highlights/",
+          "verified": true
+        },
+        {
+          "title": "Alison Knowles, Maker of Multiples",
+          "author": "Elephant Magazine",
+          "source": "Elephant",
+          "summary": "Bella Butler visited the Alison Knowles retrospective at Grey Art Museum in New York. Here, she thinks through why the exhibit had such a profound, personal effect on her, and argues for its significance within the context of the art (and the wider) world today. By the time I arrive at the exhibition by Alison The post Alison Knowles, Maker of Multiples appeared first on ELEPHANT.",
+          "why": "",
+          "url": "https://elephant.art/alison-knowles-maker-of-multiples/",
+          "verified": true
+        },
+        {
+          "title": "DIGNA RABIA",
+          "author": "Érika Martínez Cuervo",
+          "source": "Artishock",
+          "summary": "Esta exposición en el Museo de Arte Miguel Urrutia (MAMU) quiere poner en evidencia un impulso universal y atemporal para hacer arte: la rabia como fuego creador de los individuos y de las colectividades, que no es vengativa ni destructiva y, además, permite la creación y la acción transformadora. A partir de obras y documentos pertenecientes a las colecciones patrimoniales del Banco de la…",
+          "why": "",
+          "url": "https://artishockrevista.com/2026/09/26/digna-rabia/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "film",
+      "entries": [
+        {
+          "title": "The Lost Children Of Tuam review – a sombre retelling of Ireland’s buried past",
+          "author": "David Jenkins",
+          "source": "Little White Lies",
+          "summary": "Monica Dolan excels as an amateur historian investigating mass child abuse at a former mother and baby home in Tuam.",
+          "why": "",
+          "url": "https://lwlies.com/reviews/the-lost-children-of-tuam",
+          "verified": true
+        },
+        {
+          "title": "Sisi Hosts Four-Way Summit in Alamein to Coordinate Regional Strategy Across the Red Sea",
+          "author": "Belal Nawar",
+          "source": "Egyptian Streets",
+          "summary": "President Abdel Fattah el-Sisi hosted on Sunday, 4 October, a four-way consultative summit in New Alamein, bringing together Eritrea’s President, Somalia’s President, and Sudan’s First Vice President and Head of the Transitional Sovereignty Council. Egypt’s presidency said the meeting was convened to strengthen coordination and cooperation among the four countries, and to address developments…",
+          "why": "",
+          "url": "https://egyptianstreets.com/2026/10/05/sisi-hosts-four-way-summit-in-alamein-to-coordinate-regional-strategy-across-the-red-sea/",
+          "verified": true
+        },
+        {
+          "title": "848: Kendal Mitchell Turns Eggshells Into Servingware: A Design Intervention for Food Waste",
+          "author": "This Is TASTE",
+          "source": "Talkhouse",
+          "summary": "Kendal Mitchell is a chef and biomaterials designer based in Brooklyn. Her Instagram series Bringing Food Waste Back to the Table turns often-wasted ingredients like eggshells and oyster shells into stunning tableware, and she’s constantly exploring new ways to create circularity with organic materials. Today on the show, she talks about training in sushi, her…",
+          "why": "",
+          "url": "https://talkhouse.com/848-kendal-mitchell-turns-eggshells-into-servingware-a-design-intervention-for-food-waste/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "tech",
+      "entries": [
+        {
+          "title": "Pluralistic: Scrutinized (05 Oct 2026)",
+          "author": "Cory Doctorow",
+          "source": "Pluralistic",
+          "summary": "Today's links Scrutinized: Pervert glasses vs the authentic self. Hey look at this: Delights to delectate. Object permanence: DRM-free in the UK; Maple-leaf roses; Italian Wikipedia shuts down; Vancouver's property speculator tax works; Ex-Soviet leftists launch \"September\"; \"The Every\"; Nielsen x Chinese internet; Get-a-cluevog; Cat EULA; Heart carafe; Millennials screwed; Apple's unlawful evil.…",
+          "why": "",
+          "url": "https://pluralistic.net/2026/10/05/pervert-glasses/",
+          "verified": true
+        },
+        {
+          "title": "The AI boom is making the world’s cheapest smartphones disappear",
+          "author": "Kinling Lo",
+          "source": "Rest of World",
+          "summary": "AI data centers are driving demand for memory chips, pushing phone makers to raise prices and abandon some of their most affordable models.",
+          "why": "",
+          "url": "https://restofworld.org/2026/ai-data-center-memory-chip-shortage-cheap-smartphones-digital-divide/?utm_source=rss&utm_medium=rss&utm_campaign=feeds",
+          "verified": true
+        },
+        {
+          "title": "The AIs Are Not Going Rogue",
+          "author": "Ken Archer",
+          "source": "Noema",
+          "summary": "The post The AIs Are Not Going Rogue appeared first on NOEMA.",
+          "why": "",
+          "url": "https://www.noemamag.com/the-ais-are-not-going-rogue",
+          "verified": true
+        },
+        {
+          "title": "A life in episodes",
+          "author": "Thomas Söderqvist",
+          "source": "Aeon",
+          "summary": "For a decade, I’ve posted episodes of my memoir to Facebook. My readers correct my understanding of my past - by Thomas Söderqvist Read on Aeon",
+          "why": "",
+          "url": "https://aeon.co/essays/what-i-have-learned-from-posting-episodes-of-my-life-on-facebook",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "lit",
+      "entries": [
+        {
+          "title": "The National Book Award Interviews: Vicente Luis Mora and Rahul Bery",
+          "author": "Alex Tan",
+          "source": "Words Without Borders",
+          "summary": "Can the two of you talk about how this book came into the world—first, the germ in the original language, and then the translation? Vicente Luis Mora (VLM): A few years ago, I was reading a text about the history of Prussia and suddenly, out of nowhere, I clearly saw in my imagination a bunch The post The National Book Award Interviews: Vicente Luis Mora and Rahul Bery appeared first on Words…",
+          "why": "",
+          "url": "https://wordswithoutborders.org/read/article/2026-10/the-national-book-award-interviews-vicente-luis-mora-and-rahul-bery-centroeuropa/",
+          "verified": true
+        },
+        {
+          "title": "The Truth Really Will Set You Free in Deesha Philyaw’s Sexy Debut Novel",
+          "author": "Flávia Monteiro",
+          "source": "Electric Literature",
+          "summary": "The moment I stepped into Deesha Philyaw’s apartment, she pressed four gorgeous golden bracelets into my hand. A gift. Then, we spread plates and napkins on the table and shared a meal punctuated by neck-bending laughter. Deesha went from being a mentor to a friend I look up to. She sure knows a few things […] The post The Truth Really Will Set You Free in Deesha Philyaw’s Sexy Debut Novel…",
+          "why": "",
+          "url": "https://electricliterature.com/the-truth-really-will-set-you-free-in-deesha-philyaws-sexy-debut-novel/",
+          "verified": true
+        },
+        {
+          "title": "Dreams, Entrapment, Liberation: Review of Liza Losada’s Ink Honey Blossom",
+          "author": "sdoubinsky",
+          "source": "Ancillary Review of Books",
+          "summary": "Sébastien Doubinsky Under Review:Ink Honey Blossom. Liza Losada. Sibylline Press, September 2026. Liza Losada’s Ink Honey Blossom is a fantasy novel set in a futuristic world where the male population is the victim of a lethal disease called the Blight. Only specially trained women can cure them, using a telepathic drug called “Sona”, which enables … Continue reading Dreams, Entrapment,…",
+          "why": "",
+          "url": "https://ancillaryreviewofbooks.org/2026/09/29/dreams-entrapment-liberation/",
+          "verified": true
+        },
+        {
+          "title": "May 16th: On Bashō’s “The Narrow Road of Oku”",
+          "author": "Lauren Bo",
+          "source": "Cleveland Review of Books",
+          "summary": "I considered how easy it was to describe wreckage as something beautiful, like ancient ruins. The post May 16th: On Bashō’s “The Narrow Road of Oku” appeared first on Cleveland Review of Books.",
+          "why": "",
+          "url": "https://clereviewofbooks.com/on-bashos-the-narrow-road-of-oku/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "music",
+      "entries": [
+        {
+          "title": "The 2001 Project: Aesop Rock’s Labor Days",
+          "author": "Paul Thompson",
+          "source": "Passion of the Weiss",
+          "summary": "The sixth installment of our series reexamining hip-hop in the year 2001 revisits an album about your boss, your body, your time on Earth.",
+          "why": "",
+          "url": "https://www.powmag.net/p/the-2001-project-aesop-rock-labor-days",
+          "verified": true
+        },
+        {
+          "title": "Behind The Iron Curtain, Maťkovia Staged A Post-Punk Revolution",
+          "author": "Michal Wieczorek",
+          "source": "Bandcamp Daily",
+          "summary": "The Slovak band spent 40 years hiding from the censors; now, their music is finally seeing the light of day. Read full story on the Bandcamp Daily.",
+          "why": "",
+          "url": "https://daily.bandcamp.com/features/matkovia-1982-1986-feature",
+          "verified": true
+        },
+        {
+          "title": "The Beach Boys :: Radiant Radish",
+          "author": "Justin Gage",
+          "source": "Aquarium Drunkard",
+          "summary": "True story: in the late ’60s, Brian Wilson opened a short-lived health-food store called Radiant Radish in West Hollywood. Untrue story: there was a Beach Boys album named after it. There wasn’t—but now, thanks to the enterprising retrogorilla YouTube channel, there is. Radiant Radish is a wonderfully strange reimagining of the Smile / Smiley Smile / Wild Honey / Friends era, rearranged into a…",
+          "why": "",
+          "url": "https://aquariumdrunkard.com/2026/10/05/the-beach-boys-radiant-radish/",
+          "verified": true
+        },
+        {
+          "title": "Phil Collins Weighs In On “Nasty” Donald Trump, Has An Idea For A Song About America Called “Fat People With Guns”",
+          "author": "Chris DeVille",
+          "source": "Stereogum",
+          "summary": "Phil Collins has been making the media rounds in the lead-up to his induction into the Rock & Roll Hall Of Fame as a solo artist next month. (He's already in there as a member of Genesis.) The latest stop on the circuit was Friday's episode of Piers Morgan Uncensored, during which he discussed Donald Trump, Oasis, Taylor Swift, Paul McCartney, and more. The post Phil Collins Weighs In On “Nasty”…",
+          "why": "",
+          "url": "https://stereogum.com/2513650/phil-collins-weighs-in-on-nasty-donald-trump-has-an-idea-for-a-song-about-america-called-fat-people-with-guns/news/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "design",
+      "entries": [
+        {
+          "title": "The Urban Lens: “I Want to Show How Places Are Used”",
+          "author": "Martin Pedersen",
+          "source": "Common Edge",
+          "summary": "Urban designer Dennis Pieprz talks about his new book, Urban Lens: A Photo Diary of An Architectural Traveler.",
+          "why": "",
+          "url": "https://commonedge.org/the-urban-lens-i-want-to-show-how-places-are-used/",
+          "verified": true
+        },
+        {
+          "title": "Room for recovery: Bastion wellness centre and housing in New Orleans, Louisiana, United States by OJT",
+          "author": "Jyotsni Bhattacharyya",
+          "source": "The Architectural Review",
+          "summary": "The Architectural Review Room for recovery: Bastion wellness centre and housing in New Orleans, Louisiana, United States by OJT Housing and a wellness centre for a veterans’ non‑profit in New Orleans, designed by OJT, provide a place to heal The post Room for recovery: Bastion wellness centre and housing in New Orleans, Louisiana, United States by OJT appeared first on The Architectural Review.…",
+          "why": "",
+          "url": "https://www.architectural-review.com/buildings/room-for-recovery-bastion-wellness-centre-and-housing-in-new-orleans-louisiana-united-states-by-ojt",
+          "verified": true
+        },
+        {
+          "title": "This $50,000 BRABUS electric motorcycle gives urban riders a rare Fragment design experience",
+          "author": "Gaurav Sood",
+          "source": "Yanko Design",
+          "summary": "This $50,000 BRABUS electric motorcycle gives urban riders a rare Fragment design experienceBRABUS has given its Urban E electric motorcycle a unique personality with the new Urban E Fragment Edition, created with Japanese designer Hiroshi Fujiwara’s Fragment...",
+          "why": "",
+          "url": "https://www.yankodesign.com/2026/10/05/this-50000-brabus-electric-motorcycle-gives-urban-riders-a-rare-fragment-design-experience/?utm_source=rss&utm_medium=rss&utm_campaign=this-50000-brabus-electric-motorcycle-gives-urban-riders-a-rare-fragment-design-experience",
+          "verified": true
+        },
+        {
+          "title": "Shared Teaching Building (BEM), Paris-Saclay by OXO Architectes",
+          "author": "oxoarch",
+          "source": "Archinect",
+          "summary": "The Shared Teaching Building (BEM) gathers seven grandes écoles of the Paris-Saclay campus under one roof: école polytechnique, Télécom Paris, Télécom SudParis, ENSTA Paris, ENSAE Paris, AgroParisTech and Institut d'Optique. It was designed by Sou Fujimoto Architects (lead architect) with Nicolas Laisné, DREAM (Dimitri Roussel) and OXO Architectes (Manal Rachdi), winners of the 2015 competition,…",
+          "why": "",
+          "url": "https://archinect.com/firms/project/76828664/shared-teaching-building-bem-paris-saclay/150568539",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "fashion",
+      "entries": [
+        {
+          "title": "Why shoes are getting freakier and freakier",
+          "author": "Daisy Henry",
+          "source": "Fashion Journal",
+          "summary": "Shop the footwear section of your chosen fast-fashion vice and you’ll find an assortment of near-perfect high-fashion imitations. The Row’s jelly Mara flats, Alaïa’s fishnet Mary Janes and Phoebe Philo’s gathered ballet styles have all been re-interpreted and replicated countless times. Even Margiela Tabis, and their thonged toe, haven’t been able to escape the churn […] This article Why shoes…",
+          "why": "",
+          "url": "https://fashionjournal.com.au/fashion/shoes-are-getting-freakier/",
+          "verified": true
+        },
+        {
+          "title": "Surely Designers Can Make More Interesting Pottery",
+          "author": null,
+          "source": "Highsnobiety",
+          "summary": "The new JW Anderson x Wedgewood mugs reflect a wider trend in fashion houses partnering with ceramicists on really boring pottery that doesn't match the price.",
+          "why": "",
+          "url": "https://www.highsnobiety.com/p/jw-anderson-wedgewood-ceramics/",
+          "verified": true
+        },
+        {
+          "title": "Inside Track: September 27th – October 3rd Edition",
+          "author": "Derek Guy",
+          "source": "Put This On",
+          "summary": "Here are our hand-selected favorites from eBay for this week, plus a heads-up on recommended sales. If you’re a member... The post Inside Track: September 27th – October 3rd Edition appeared first on Put This On.",
+          "why": "",
+          "url": "https://putthison.com/inside-track-september-27th-october-3rd-edition-2/",
+          "verified": true
+        },
+        {
+          "title": "Valentino SS27 Brought the Noise to the Library",
+          "author": "info@hypebeast.com (Hypebeast)",
+          "source": "Hypebeast",
+          "summary": "SummaryAlessandro Michele’s SS27 Valentino “Antilibrary” collection frames garments as imaginative relics that transcend standard commercial functionality.The runway contrasted glamorous, maximalist womenswear featuring lace and feathers with unconventional, casual menswear highlighting exposed boxers and clashing patterns.For Spring/Summer 2027, Valentino brought its “Antilibrary” runway show to…",
+          "why": "",
+          "url": "https://hypebeast.com/2026/10/valentino-ss27-spring-summer-2027-runway-show-info",
+          "verified": true
+        }
+      ]
+    }
+  ]
+}
