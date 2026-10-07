@@ -1,0 +1,287 @@
+{
+  "issue": 30,
+  "date": "2026-10-07",
+  "headline": "The *Feed*",
+  "intro": "A selection of recent writing from across the culture press.",
+  "byline": "2026-10-07 — selected links",
+  "categories": [
+    {
+      "key": "art",
+      "entries": [
+        {
+          "title": "Souraya Noujaim Named Director of Louvre Abu Dhabi",
+          "author": "Polly Watson",
+          "source": "Artforum",
+          "summary": "The Department of Culture and Tourism – Abu Dhabi has announced Souraya Noujaim as the next director of the Louvre Abu Dhabi. Noujaim, a specialist in Islamic art history and archaeology, was most recently director of the department of Islamic art and heritage at the Louvre in Paris and chief of the French Grand Department […]",
+          "why": "",
+          "url": "https://www.artforum.com/news/souraya-noujaim-named-director-louvre-abu-dhabi-1234760959/",
+          "verified": true
+        },
+        {
+          "title": "The Hellhounds of Genocide",
+          "author": "Daniel Larkin",
+          "source": "Hyperallergic",
+          "summary": "In Ridikkuluz’s paintings, the irascible dog emerges as a symbol for Israel’s oppression of Palestinians.",
+          "why": "",
+          "url": "https://hyperallergic.com/the-hellhounds-of-genocide/",
+          "verified": true
+        },
+        {
+          "title": "Kehinde Wiley’s “Young Artists” Faces an Uncertain Future",
+          "author": "abby",
+          "source": "Art & Object",
+          "summary": "Kehinde Wiley’s “Young Artists” Faces an Uncertain Future WikiCommons Kehinde Wiley sculpture. License. abby Wed, 10/07/2026 - 10:30 More than 10 years after being commissioned to paint a canvas for the United States Embassy in the Dominican Republic by the State Department, Kehinde Wiley is endeavoring to buy Young Artists After Siamesas 1960 back. The piece was removed from embassy walls in…",
+          "why": "",
+          "url": "https://www.artandobject.com/news/kehinde-wileys-young-artists-faces-uncertain-future",
+          "verified": true
+        },
+        {
+          "title": "It Will Always Be the Devil Staring Back From the Other Side of the Lens",
+          "author": "Mariann Enge",
+          "source": "Kunstkritikk",
+          "summary": "Maria Pasenau is raw, in every sense of the word. The post It Will Always Be the Devil Staring Back From the Other Side of the Lens appeared first on Kunstkritikk.",
+          "why": "",
+          "url": "https://kunstkritikk.com/it-will-always-be-the-devil-staring-back-from-the-other-side-of-the-lens/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "film",
+      "entries": [
+        {
+          "title": "Interstellar: Love, Time, and the Ethics of Leaving",
+          "author": "Matthew Jones",
+          "source": "Philosophy in Film",
+          "summary": "In Interstellar (2014), Cooper leaves his children in order to help save them. The apparent clarity of that sentence conceals The post Interstellar: Love, Time, and the Ethics of Leaving appeared first on Philosophy in Film.",
+          "why": "",
+          "url": "https://philosophyinfilm.com/2026/10/07/interstellar-love-time-ethics-of-leaving/",
+          "verified": true
+        },
+        {
+          "title": "The Never-Ending Marathon of Terry Fox",
+          "author": "Liam Lacey",
+          "source": "POV Magazine",
+          "summary": "Sean Menard's documentary Run Terry Run offers previously unseen archives from Terry Fox's Marathon of Hope, which continues to inspire Canadians. The post The Never-Ending Marathon of Terry Fox appeared first on POV Magazine.",
+          "why": "",
+          "url": "https://povmagazine.com/the-never-ending-marathon-of-terry-fox/",
+          "verified": true
+        },
+        {
+          "title": "Review: Alison Reid’s ‘The Art of Adventure’",
+          "author": "Q.V. Hough",
+          "source": "Vague Visages",
+          "summary": "\"'The Art of Adventure' creates a pretty picture as a travel-themed film about trailblazin' naturalists, but a documentarian must always spend some time rollin' in the mud.\" The post Review: Alison Reid’s ‘The Art of Adventure’ appeared first on Vague Visages (Vawg-Vee-Sawj).",
+          "why": "",
+          "url": "https://vaguevisages.com/2026/10/06/the-art-of-adventure-review-amazon-apple-movie-film-documentary/",
+          "verified": true
+        },
+        {
+          "title": "Two Halves of a Chalky White Pill",
+          "author": "Chris Merola",
+          "source": "Talkhouse",
+          "summary": "Writer-director Chris Merola, whose debut feature Lemonade Blessing is out now, on life and filmmaking on Lexapro.",
+          "why": "",
+          "url": "https://talkhouse.com/two-halves-of-a-chalky-white-pill/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "tech",
+      "entries": [
+        {
+          "title": "Americans Are Losing The Long Game",
+          "author": "Simon Curtis",
+          "source": "Noema",
+          "summary": "The post Americans Are Losing The Long Game appeared first on NOEMA.",
+          "why": "",
+          "url": "https://www.noemamag.com/americans-are-losing-the-long-game",
+          "verified": true
+        },
+        {
+          "title": "115 Best Prime Day Deals We’re Shopping This October (2026)",
+          "author": "Louryn Strampe",
+          "source": "Wired",
+          "summary": "Amazon Prime Big Deal Days are here, and we’ve tracked down the best discounts on all the gear our team recommends.",
+          "why": "",
+          "url": "https://www.wired.com/story/absolute-best-amazon-prime-day-deals-10-07-2026/",
+          "verified": true
+        },
+        {
+          "title": "Anti-Patterns in Software Blogging",
+          "author": null,
+          "source": "Simon Willison",
+          "summary": "Anti-Patterns in Software Blogging Some excellent writing advice from Michael Lynch. Michael warns against \"meandering intros\", misjudging your reader's existing knowledge, assuming they'll read your previous posts, and excessive formality. He also warns against overreliance on links as an excuse not to explain terminology. This one hurt! I do this all the time, but I have a nagging suspicion…",
+          "why": "",
+          "url": "https://simonwillison.net/2026/Oct/7/anti-patterns-in-software-blogging/",
+          "verified": true
+        },
+        {
+          "title": "The Download: weight-loss drugs slowing aging and carbon dioxide batteries",
+          "author": "Thomas Macaulay",
+          "source": "MIT Technology Review",
+          "summary": "This is today’s edition of The Download, our weekday newsletter that provides a daily dose of what’s going on in the world of technology. Weight-loss drugs show signs of slowing biological aging, say drugmakers Popular weight-loss drugs may do more than help people shed pounds. They might also slow the aging process. Drugmakers Eli Lilly…",
+          "why": "",
+          "url": "https://www.technologyreview.com/2026/10/07/1145895/the-download-weight-loss-drugs-slow-aging-carbon-dioxide-batteries/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "lit",
+      "entries": [
+        {
+          "title": "Don’t Feed the Chickens: C. T. Muchemwa’s “The Inheritance”",
+          "author": "Sarah",
+          "source": "Reactor",
+          "summary": "Never look a gift-chicken in its terrible, toothy mouth... The post Don’t Feed the Chickens: C. T. Muchemwa’s “The Inheritance” appeared first on Reactor.",
+          "why": "",
+          "url": "https://reactormag.com/dont-feed-the-chickens-c-t-muchemwas-the-inheritance/",
+          "verified": true
+        },
+        {
+          "title": "Serbia’s great reversal",
+          "author": "Simon Garnett",
+          "source": "Eurozine",
+          "summary": "The glorification of Ratko Mladic was an example of how, in the former Yugoslavia, ethnic identity is performed through its most provocative symbols. But nationalism thrives in the absence of a convincing political horizon. As Serbia goes to the polls, will the EU recognize its own responsibility?",
+          "why": "",
+          "url": "https://www.eurozine.com/serbias-great-reversal/?utm_source=rss&utm_medium=rss&utm_campaign=serbias-great-reversal",
+          "verified": true
+        },
+        {
+          "title": "Connect Your AI to WordPress.com: 7 Ways To Get More Done",
+          "author": "Chris Huber",
+          "source": "Aotearoa NZ Review of Books",
+          "summary": "WordPress.com MCP connects AI assistants like ChatGPT and Claude to your site. Here are seven practical ways to publish and refresh content, check traffic, organize your site, and handle everyday WordPress.com work from your AI assistant.",
+          "why": "",
+          "url": "https://wordpress.com/blog/2026/10/06/wordpress-mcp-uses/",
+          "verified": true
+        },
+        {
+          "title": "Precarity, Rewritten: An Editorial Note",
+          "author": "ap",
+          "source": "PREE",
+          "summary": "PREE 15 marks a watershed moment for our platform, created eight years ago to showcase the work of writers from, on and about the Caribbean. From the beginning PREE’s existence has been precarious; an open-access platform with no revenue sources to pay ourselves or the large team of writers and editors who generously contribute their […] The post Precarity, Rewritten: An Editorial Note appeared…",
+          "why": "",
+          "url": "https://preelit.com/2026/10/06/precarity-rewritten-an-editorial-note/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "music",
+      "entries": [
+        {
+          "title": "The Most Canadian Band of 2026 Is from Outer Space: Angine de Poitrine",
+          "author": "Duncan McCallum",
+          "source": "PopMatters",
+          "summary": "At a moment of renewed Canadian self-definition, the country’s most celebrated musicians, Quebec duo Angine de Poitrine, insist they aren’t even from this planet.",
+          "why": "",
+          "url": "https://www.popmatters.com/angine-de-poitrine-fabienk",
+          "verified": true
+        },
+        {
+          "title": "Swedish post-metal band Cult of Luna share new song, \"The Rift\"",
+          "author": "Kayla Sandiford",
+          "source": "The Line of Best Fit",
+          "summary": "",
+          "why": "",
+          "url": "https://www.thelineofbestfit.com/news/swedish-post-metal-band-cult-of-luna-share-new-song-the-rift",
+          "verified": true
+        },
+        {
+          "title": "Jess Williamson – “Hum Of The City”",
+          "author": "Tom Breihan",
+          "source": "Stereogum",
+          "summary": "Jess Williamson has a voice. The Texan singer-songwriter is capable of a doing incredible things with a full-body gut wail that contains just a hint of high-lonesome yip. This isn't exactly news if you've ever spent any time listening to her, but it really comes through on her new song \"Hum Of The City.\" The post Jess Williamson – “Hum Of The City” appeared first on Stereogum.",
+          "why": "",
+          "url": "https://stereogum.com/2513860/jess-williamson-hum-of-the-city/music/",
+          "verified": true
+        },
+        {
+          "title": "Film Review: The Social Reckoning; Aaron Sorkin logs back on for a sharp, timely and occasionally surface-level examination of social media",
+          "author": "Peter Gray",
+          "source": "The AU Review",
+          "summary": "Given how dramatically our relationship with social media has mutated over the last two decades, it was perhaps inevitable that Aaron Sorkin would eventually return his attention to Facebook. This time, though, the creation of the platform is far less interesting than the monster it potentially became. Written and directed by Sorkin, The Social Reckoning...",
+          "why": "",
+          "url": "https://www.theaureview.com/watch/film-review-the-social-reckoning/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "design",
+      "entries": [
+        {
+          "title": "Ignoring the Climate Challenge Is Not an Option",
+          "author": "Martin Pedersen",
+          "source": "Common Edge",
+          "summary": "A better future for us and the coming generations is possible—but it will take a collective effort.",
+          "why": "",
+          "url": "https://commonedge.org/ignoring-the-climate-challenge-is-not-an-option/",
+          "verified": true
+        },
+        {
+          "title": "This $59 Cork Wallet Makes Your Overstuffed Bifold Look Embarrassing",
+          "author": "JC Torres",
+          "source": "Yanko Design",
+          "summary": "This $59 Cork Wallet Makes Your Overstuffed Bifold Look EmbarrassingMost wallets don’t start out bulky. They get there one receipt, spare card, and folded bill at a time, until slipping one into a front...",
+          "why": "",
+          "url": "https://www.yankodesign.com/2026/10/07/this-59-cork-wallet-makes-your-overstuffed-bifold-look-embarrassing/?utm_source=rss&utm_medium=rss&utm_campaign=this-59-cork-wallet-makes-your-overstuffed-bifold-look-embarrassing",
+          "verified": true
+        },
+        {
+          "title": "NYC’s Public Art Fund seeks project manager for exhibitions across the city",
+          "author": "Niall Patrick Walsh",
+          "source": "Archinect",
+          "summary": "Following our previous look at an opening for a Fellowship at the University at Buffalo, we are using this week’s edition of our Job Highlights series to explore an open role on Archinect Jobs for a Project Manager at the Public Art Fund. Based in New York City, the role calls for someone who will be “responsible for overseeing and coordinating the realization of multiple site-specific…",
+          "why": "",
+          "url": "https://archinect.com/news/article/150568942/nyc-s-public-art-fund-seeks-project-manager-for-exhibitions-across-the-city",
+          "verified": true
+        },
+        {
+          "title": "A Luxurious Spa by Liaigre Completes Hôtel Costes in Paris",
+          "author": "Elizabeth Pagliacolo",
+          "source": "Design Milk",
+          "summary": "The subterranean retreat extends Liaigre’s design language through travertine, smoked oak, immersive lighting, and a 65-foot pool at the storied Paris hotel",
+          "why": "",
+          "url": "https://design-milk.com/hotel-costes-spa-liaigre/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "fashion",
+      "entries": [
+        {
+          "title": "Lacoste CEO departs",
+          "author": "Anne Bruce",
+          "source": "Drapers",
+          "summary": "Drapers Lacoste CEO departs Lacoste CEO Éric Vallat has exited the business, with Thierry Guibert named as his successor, according to reports. The post Lacoste CEO departs appeared first on Drapers.",
+          "why": "",
+          "url": "https://www.drapersonline.com/news/lacoste-ceo-departs",
+          "verified": true
+        },
+        {
+          "title": "Ivy Style at The Harriman Cup",
+          "author": "Matthew Longcore",
+          "source": "Ivy Style",
+          "summary": "By Matthew Longcore The 42nd annual edition of the Harriman Cup Polo Match took place on Saturday, September 19th at Bethpage Polo at the Park in Old Bethpage, Long Island. J. Press was the main sponsor of the event. Established in 1985 and named for polo player and former New York Governor W. Averell Harriman, ... The post Ivy Style at The Harriman Cup appeared first on Ivy Style.",
+          "why": "",
+          "url": "https://www.ivy-style.com/ivy-style-at-the-harriman-cup.html",
+          "verified": true
+        },
+        {
+          "title": "New Balance’s Clean-Cut Skate Shoe Just Got a Nice Update",
+          "author": null,
+          "source": "Highsnobiety",
+          "summary": "The New Balance Numeric Brandon Westgate 508 arrives in Reflection with Fairweather Blue, pairing a clean, understated base with subtle hits of blue.",
+          "why": "",
+          "url": "https://www.highsnobiety.com/p/new-balance-numeric-brandon-westgate-508/",
+          "verified": true
+        }
+      ]
+    }
+  ]
+}
