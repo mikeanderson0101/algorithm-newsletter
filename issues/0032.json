@@ -1,0 +1,296 @@
+{
+  "issue": 32,
+  "date": "2026-10-09",
+  "headline": "The *Feed*",
+  "intro": "A selection of recent writing from across the culture press.",
+  "byline": "2026-10-09 — selected links",
+  "categories": [
+    {
+      "key": "art",
+      "entries": [
+        {
+          "title": "Teddy Sandoval: Everlasting",
+          "author": "twocoatsstaff",
+          "source": "Two Coats of Paint",
+          "summary": "Contributed by Bill Arning / Teddy Sandoval, a gay Mexican American artist who died of AIDS in 1995, made such art copiously. “Teddy Sandoval and the Butch Gardens School of Art” at El Museo Del Barrio offers mostly small-scale Xerox punk zines, erotic magazine illustrations, album covers, decorative ceramics, and minuscule works on paper. It is an outstanding show. Its overflowing curatorial…",
+          "why": "",
+          "url": "https://twocoatsofpaint.com/2026/10/teddy-sandoval-everlasting.html?utm_source=rss&utm_medium=rss&utm_campaign=teddy-sandoval-everlasting",
+          "verified": true
+        },
+        {
+          "title": "Balearic Images of Decadent Freedom",
+          "author": "Arthur Tonnerre",
+          "source": "Trebuchet",
+          "summary": "Victor Spinelli's photographs from behind the scenes at Manumission",
+          "why": "",
+          "url": "https://www.trebuchet-magazine.com/balearic-images-of-decadent-freedom/",
+          "verified": true
+        },
+        {
+          "title": "In the Studio with Dominique Muñoz",
+          "author": "Isabella Marie Garcia",
+          "source": "Burnaway",
+          "summary": "May Howard visits the Houston studio of Dominique Muñoz, speaking together on textiles inherited from loved ones, experimenting with cyanotypes, and what it means to weave an image.",
+          "why": "",
+          "url": "https://burnaway.org/daily/in-the-studio-with-dominique-munoz/",
+          "verified": true
+        },
+        {
+          "title": "Straining Bodies: ‘everybody’ at Georg Kolbe Museum",
+          "author": "Alison Hugill",
+          "source": "Berlin Art Link",
+          "summary": "by Jesse Slater // Oct. 9, 2026 Trees are especially green in the affluent Charlottenburg suburb that’s home to the Georg Kolbe Museum. Nestled between houses, this former residence and studio of the eponymous modern-era sculptor operates…[read on]",
+          "why": "",
+          "url": "https://www.berlinartlink.com/2026/10/09/everybody-georg-kolbe-museum-exhibition-review-performativity/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "film",
+      "entries": [
+        {
+          "title": "Classic Corner: Othello",
+          "author": "Sean Burns",
+          "source": "Crooked Marquee",
+          "summary": "Orson Welles’s low-budget 1951 adaptation of Shakespeare's tragedy is one of his most ingenious pictures, a threadbare, ramshackle, discombobulated production that he all but willed into greatness. The post Classic Corner: Othello appeared first on Crooked Marquee.",
+          "why": "",
+          "url": "https://crookedmarquee.com/classic-corner-othello/",
+          "verified": true
+        },
+        {
+          "title": "Review: Julia Kowalski’s ‘Her Will Be Done’",
+          "author": "Q.V. Hough",
+          "source": "Vague Visages",
+          "summary": "\"Charged by 'devil within' energy and two marvelous lead performances, 'Her Will Be Done' announces the arrival of another French auteur.\" The post Review: Julia Kowalski’s ‘Her Will Be Done’ appeared first on Vague Visages (Vawg-Vee-Sawj).",
+          "why": "",
+          "url": "https://vaguevisages.com/2026/10/02/her-will-be-done-review-amazon-apple-movie-film-julia-kowalski/",
+          "verified": true
+        },
+        {
+          "title": "Now Playing: OTHER MOMMY, FJORD, ANIMALS, TENZING",
+          "author": null,
+          "source": "Screen Anarchy",
+          "summary": "Plus: 'Once Upon a Time in the Middle East,' 'The Beast,' 'The Social Reckoning.' [Read the whole post on screenanarchy.com...]",
+          "why": "",
+          "url": "https://screenanarchy.com/2026/10/now-playing-other-mommy-fjord-animals-tenzing.html",
+          "verified": true
+        },
+        {
+          "title": "Fjord Review: A Thunderous, Opulent Triumph",
+          "author": "Luke Hicks",
+          "source": "The Film Stage",
+          "summary": "Note: This review was originally published as part of our 2026 Cannes coverage. The film opens in theaters on October 9. A soft upright piano playing “Amazing Grace” drapes in warmly over the opening image of Fjord: a powder-blue-hued glacial mountain towering over the glistening Norwegian fjord around which Lisbet (Renate Reinsve) and Mihai Gheorghiu […] The post Fjord Review: A Thunderous,…",
+          "why": "",
+          "url": "https://thefilmstage.com/cannes-review-cristian-mungius-fjord-is-a-thunderous-opulent-triumph/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "tech",
+      "entries": [
+        {
+          "title": "“You already had your chance”: The silent shame of online dating after divorce in Africa",
+          "author": "John Adoyi",
+          "source": "TechCabal",
+          "summary": "Runo is a dating platform engineered specifically for widows, widowers, divorcees, and single parents.",
+          "why": "",
+          "url": "https://techcabal.com/2026/10/09/runo-dating-platform/",
+          "verified": true
+        },
+        {
+          "title": "AI is solving math problems faster than humans can understand the solutions",
+          "author": "Ella Markianos",
+          "source": "Platformer",
+          "summary": "OpenAI’s math breakthroughs may trigger an identity crisis for mathematicians. Who’s next?",
+          "why": "",
+          "url": "https://www.platformer.news/openai-math-breakthroughs-tao-reaction/",
+          "verified": true
+        },
+        {
+          "title": "Amazon’s new Kindles appear to have a light leak problem",
+          "author": "Terrence O’Brien",
+          "source": "The Verge",
+          "summary": "Some users are reporting that the new Kindles have a light leak issue that is especially apparent when using dark mode. The latest base-model Kindles have a flush bezel that gives them a sleek appearance and looks great… as long as you keep the lights on. But things can change once you turn down the […]",
+          "why": "",
+          "url": "https://www.theverge.com/tech/1008833/amazon-kindle-light-leak",
+          "verified": true
+        },
+        {
+          "title": "The DOJ Is Weighing Perjury Charges Against Cassidy Hutchinson",
+          "author": "Hugo Lowell",
+          "source": "Wired",
+          "summary": "The Justice Department is considering a perjury and obstruction-of-justice case against Cassidy Hutchinson, a former White House aide who testified against Donald Trump to the January 6 committee.",
+          "why": "",
+          "url": "https://www.wired.com/story/the-doj-is-weighing-perjury-charges-against-cassidy-hutchinson/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "lit",
+      "entries": [
+        {
+          "title": "Life Inside a Legend: Review of Julie Salmon Kelleher’s The Sea-Glass Shore",
+          "author": "welltemperedwriter",
+          "source": "Ancillary Review of Books",
+          "summary": "Genevieve Williams Under Review:The Sea-Glass Shore. Julie Salmon Kelleher. Forest Avenue Press, September 2026. The selkie legend is common knowledge: beings who shapeshift between human and seal, by doffing or donning their sealskin. Take the skin, the selkie-wife story goes, and the selkie is bound to land, and to the man (it’s always a man) … Continue reading Life Inside a Legend: Review of…",
+          "why": "",
+          "url": "https://ancillaryreviewofbooks.org/2026/10/09/life-inside-a-legend-review-of-julie-salmon-kellehers-the-sea-glass-shore/",
+          "verified": true
+        },
+        {
+          "title": "The Stars My Destination by Alfred Bester",
+          "author": "Paul March-Russell",
+          "source": "Strange Horizons",
+          "summary": "It does not have a conventional linear narrative, but instead proceeds episodically, loops back almost to its starting-point, and finishes not on a revelation but a suspension.",
+          "why": "",
+          "url": "https://strangehorizons.com/wordpress/non-fiction/the-stars-my-destination-by-alfred-bester/",
+          "verified": true
+        },
+        {
+          "title": "The Most Anticipated Queer Books for Fall 2026",
+          "author": "D/Annie Liontas",
+          "source": "Electric Literature",
+          "summary": "Like many of you, I wake up each morning with the feeling that they’re coming for us. But then I think, they have always come for the queers. And we have always, throughout human history, stood watch all night over the fire. We have always taken care of each other, and we will keep on […] The post The Most Anticipated Queer Books for Fall 2026 appeared first on Electric Literature.",
+          "why": "",
+          "url": "https://electricliterature.com/the-most-anticipated-queer-books-for-fall-2026/",
+          "verified": true
+        },
+        {
+          "title": "A Lover’s Quarrel with Time: Solvej Balle and the Current Crisis",
+          "author": "Vector editors",
+          "source": "Vector/BSFA",
+          "summary": "By Matt Finch What’s gone wrong with time? Once, we might tell ourselves, the lines of travel were straight, clean, and unambiguous, even if they diverged: Doc Brown might have been eccentric, but he was authoritative when he explained the idea of forking parallel universes to Marty McFly – and the cinema audience of 1989 … Continue reading A Lover’s Quarrel with Time: Solvej Balle and the…",
+          "why": "",
+          "url": "https://vector-bsfa.com/2026/10/09/a-lovers-quarrel-with-time-solvej-balle-and-the-current-crisis/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "music",
+      "entries": [
+        {
+          "title": "Interview: FOLA Is Channeling A Striker’s Drive On ‘9’",
+          "author": "The Native",
+          "source": "The NATIVE",
+          "summary": "Across the 14 songs of ‘9,’ FOLA embraces the reality of his life in the limelight and acknowledges the massive strides he’s made. The post Interview: FOLA Is Channeling A Striker’s Drive On ‘9’ appeared first on The NATIVE.",
+          "why": "",
+          "url": "https://thenativemag.com/interview-fola-is-channeling-a-strikers-drive-on-9/",
+          "verified": true
+        },
+        {
+          "title": "Concerts Good, Recordings Bad",
+          "author": "Hugh Morris",
+          "source": "VAN Magazine",
+          "summary": "In “The Yellow Tie,” a biopic about the Romanian conductor Sergiu Celibidache whose premiere I attended in London on Wednesday, things start badly and get steadily worse. We begin with old Celi (John Malkovich) discussing a future engagement with a group of Japanese record executives over lunch at his French estate. To his dismay, they […] The post Concerts Good, Recordings Bad appeared first on…",
+          "why": "",
+          "url": "https://van-magazine.com/mag/sergiu-celibidache-the-yellow-tie/",
+          "verified": true
+        },
+        {
+          "title": "Decolonise Fest is a loud and colourful course correction",
+          "author": "Kayla Sandiford",
+          "source": "The Line of Best Fit",
+          "summary": "",
+          "why": "",
+          "url": "https://www.thelineofbestfit.com/features/festivals/decolonise-fest-2026-loud-colourful-course-correction",
+          "verified": true
+        },
+        {
+          "title": "New LEGO Marvel Skyline Depicts Marvel’s New York City in Microscale",
+          "author": "Ben Kaye",
+          "source": "Consequence",
+          "summary": "With teeny tiny references to Spider-Man, The Avengers, Fantastic Four, Daredevil, Doctor Strange, and more. New LEGO Marvel Skyline Depicts Marvel’s New York City in Microscale Ben Kaye",
+          "why": "",
+          "url": "https://consequence.net/2026/10/lego-marvel-skyline-microscale/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "design",
+      "entries": [
+        {
+          "title": "Fun, Lighthearted Furniture that Feels Straight Out of a Rom-Com",
+          "author": "Eric Mutrie",
+          "source": "Azure",
+          "summary": "New York's design week introduced us to our latest love interests. The post Fun, Lighthearted Furniture that Feels Straight Out of a Rom-Com appeared first on Azure Magazine.",
+          "why": "",
+          "url": "https://www.azuremagazine.com/article/nyc-2026-design-week-rom-com-furniture/",
+          "verified": true
+        },
+        {
+          "title": "Where We Work: Studio Shand",
+          "author": "Cassie Hansen",
+          "source": "ArchitectureAU Discussion",
+          "summary": "A new monthly series exploring the inner workings of design studios around Australia",
+          "why": "",
+          "url": "https://architectureau.com/articles/where-we-work-studio-shand/",
+          "verified": true
+        },
+        {
+          "title": "BONUS: Live from Essence Fest – The Work Gets Personal",
+          "author": "Ellen McGirt",
+          "source": "Design Observer",
+          "summary": "If you spend enough time on voting rights work, you become more fluent than you ever thought you’d be in legal history, court cases, maps, and the enormously creative, and pretty ugly, ways some people have used to keep others from casting their ballot. In front of a live audience at Essence Fest 2026, Janai … Continued The post BONUS: Live from Essence Fest – The Work Gets Personal appeared…",
+          "why": "",
+          "url": "https://designobserver.com/bonus-live-from-essence-fest-the-work-gets-personal/",
+          "verified": true
+        },
+        {
+          "title": "Thirst",
+          "author": "María Mazzanti",
+          "source": "Failed Architecture",
+          "summary": "",
+          "why": "",
+          "url": "https://failedarchitecture.com/thirst/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "fashion",
+      "entries": [
+        {
+          "title": "Dress-Up! With Aki and Koichi",
+          "author": "floramedina",
+          "source": "i-D",
+          "summary": "Checking in with the elder statespeople of internet style from the set of their Adidas x Mercedes-Benz campaign.",
+          "why": "",
+          "url": "https://i-d.co/article/aki-koichi-dress-up/",
+          "verified": true
+        },
+        {
+          "title": "At Chanel Matthieu Blazy Has the Freedom to Imagine",
+          "author": "Alexander Furyhttps://www.anothermag.com/rssfeed@dazedmedia.com",
+          "source": "AnOther",
+          "summary": "Adding to the creative director’s already extensive recalibration of Chanel, Blazy combines mind-boggling texture and eye-socking colour with a feeling of freedom",
+          "why": "",
+          "url": "https://www.anothermag.com/fashion-beauty/17557/chanel?utm_source=Link&utm_medium=Link&utm_campaign=RSSFeed&utm_term=at-chanel-matthieu-blazy-has-the-freedom-to-imagine",
+          "verified": true
+        },
+        {
+          "title": "COS launches AW26 campaign starring Awar Odhiang",
+          "author": "Isobel Van Dykehttps://www.dazeddigital.com/rssfeed@dazedmedia.com",
+          "source": "Dazed Fashion",
+          "summary": "The London-based brand unveils its latest campaign, plus all the fashion news you missed this week",
+          "why": "",
+          "url": "https://www.dazeddigital.com/fashion/article/71144/1/cos-launches-aw26-campaign-starring-awar-odhiang-fashion-news-this-week?utm_source=Link&utm_medium=Link&utm_campaign=RSSFeed&utm_term=cos-launches-aw26-campaign-starring-awar-odhiang",
+          "verified": true
+        },
+        {
+          "title": "Give CRED Some Credit: From Dravid’s Rage to Rakhi’s Loan Lessons",
+          "author": "Rajiv Singh/api/author/2354006",
+          "source": "Open Magazine",
+          "summary": "Rahul Dravid has anger issues. Ravi Shastri has happy hours. Rakhi Sawant has a lesson on responsible borrowing. CRED’s casting department appears to run a particularly entertaining employment exchange. Its latest recruit is seated beside a snowman inside a metro, dressed for a climate the carriage was never designed to provide. The Alps are financially out of reach. Rakhi must make other…",
+          "why": "",
+          "url": "https://openthemagazine.com/branding-marketing-and-advertising/give-cred-some-credit-from-dravids-rage-to-rakhis-loan-lessons",
+          "verified": true
+        }
+      ]
+    }
+  ]
+}
