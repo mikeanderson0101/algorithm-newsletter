@@ -1,0 +1,296 @@
+{
+  "issue": 34,
+  "date": "2026-10-10",
+  "headline": "The *Feed*",
+  "intro": "A selection of recent writing from across the culture press.",
+  "byline": "2026-10-10 — selected links",
+  "categories": [
+    {
+      "key": "art",
+      "entries": [
+        {
+          "title": "Julia Phillips wins 2026 K21 Global Art Award",
+          "author": "Kunstsammlung Nordrhein-Westfalen",
+          "source": "e-flux Criticism",
+          "summary": "With the K21 Global Art Award, Kunstsammlung Nordrhein-Westfalen presents the most generously endowed annual prize for younger international contemporary art in Germany. Returning for its fourth edition on October 8, 2026, the award is presented in partnership with the Friends of Kunstsammlung Nordrhein-Westfalen and with the support of the Reydan + Roger Weiss Foundation. The &euro;100,000 award…",
+          "why": "",
+          "url": "https://www.e-flux.com/announcements/6788334/julia-phillips-wins-2026-k21-global-art-award",
+          "verified": true
+        },
+        {
+          "title": "Ancestral Cosmology: Polina Osipova at Neun Kelche",
+          "author": "Alison Hugill",
+          "source": "Berlin Art Link",
+          "summary": "by Em Mai Chmiel // Oct. 9, 2026 Crossing the overgrown foliage of Pasedagplatz, I arrive at Neun Kelche, a glass facade formerly occupied by a supermarket. The gallery exterior illuminates the street in Weißensee…[read on]",
+          "why": "",
+          "url": "https://www.berlinartlink.com/2026/10/09/polina-osipova-neun-kelche-exhibition-review/",
+          "verified": true
+        },
+        {
+          "title": "OTHERNETWORK: REDEFINIR LA CULTURA DESDE LAS PERIFERIAS",
+          "author": "Alejandra Villasmil",
+          "source": "Artishock",
+          "summary": "OtherNetwork es una red internacional que enlaza espacios artísticos independientes de geografías diversas para multiplicar los nodos desde los que la cultura puede producirse y movilizarse. Hablamos con su fundador, Federico Martelli, sobre cómo descentralizar los circuitos culturales y construir infraestructura y vínculos de largo plazo desde la pequeña escala. Los espacios de arte…",
+          "why": "",
+          "url": "https://artishockrevista.com/2026/10/08/othernetwork-redefinir-la-cultura-desde-las-periferias/",
+          "verified": true
+        },
+        {
+          "title": "Lost in the Chaos and the Excess: The Politics of Arch Connelly",
+          "author": "Momus Admin",
+          "source": "Momus",
+          "summary": "In Arch Connelly: Art in Drag, a short video directed by Lisa Rovner, Arch Connelly references Pink Manifesto (1980), a statement he wrote for his first New York solo show at Artists Space. Printed in two sections on pink paper with an excess of capitalization and repetition, the manifesto consists of a list of things […]",
+          "why": "",
+          "url": "https://momus.ca/2026/10/08/lost-in-the-chaos-and-the-excess-the-politics-of-arch-connelly/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "film",
+      "entries": [
+        {
+          "title": "Discarded Clothing Finds New Life in This Cairo Exhibition",
+          "author": "Nadine Tag",
+          "source": "Egyptian Streets",
+          "summary": "Over the weekend in downtown Cairo, an exhibition turned donated clothing that might once have ended up in a landfill into a curated material system, sorted by color, texture, and pattern, inviting visitors to see textile waste as a resource. The Egyptian Clothing Bank (ECB), a nonprofit organization, held the fourth edition of its From Waste to Good Taste (FWGT) exhibition on 25 and 26 September…",
+          "why": "",
+          "url": "https://egyptianstreets.com/2026/10/10/discarded-clothing-finds-new-life-in-this-cairo-exhibition/",
+          "verified": true
+        },
+        {
+          "title": "MIGUEL VALVERDE E INDIELISBOA: 23 AÑOS CONSTRUYENDO UNA MIRADA Y LAS BASES DEL CINE PORTUGUÉS CONTEMPORÁNEO",
+          "author": "Staff",
+          "source": "desistfilm",
+          "summary": "Por Armando Russi Hablar del cine contemporáneo en Portugal exige, de manera obligatoria, detenerse en la historia de un festival que nació para desafiar las lógicas de la exhibición comercial a través de la mirada de quienes lo fundaron. A lo largo de sus 23 años de trayectoria, el crecimiento de IndieLisboa y la maduración profesional de Miguel Valverde (director artístico, productor,…",
+          "why": "",
+          "url": "https://desistfilm.com/miguel-valverde-e-indielisboa-23-anos-construyendo-una-mirada-y-las-bases-del-cine-portugues-contemporaneo/",
+          "verified": true
+        },
+        {
+          "title": "Elsinore – first-look review",
+          "author": "David Jenkins",
+          "source": "Little White Lies",
+          "summary": "Andrew Scott has his eyes on the prize as Ian Charleson, the British actor who played Hamlet at the National while fighting an AIDS diagnosis.",
+          "why": "",
+          "url": "https://lwlies.com/bfi-london-film-festival/elsinore-first-look-review",
+          "verified": true
+        },
+        {
+          "title": "Mood Board: Jess Williamson’s A Mile South of Heaven",
+          "author": "Jess Williamson",
+          "source": "Talkhouse",
+          "summary": "The Texan singer-songwriter on how a Pam Houston short story collection, Shooter Jennings’s tarot deck, and more shaped her new record.",
+          "why": "",
+          "url": "https://talkhouse.com/mood-board-jess-williamsons-a-mile-south-of-heaven/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "tech",
+      "entries": [
+        {
+          "title": "What it takes for voters to be resilience against AI misinformation",
+          "author": "Natasha Uzcátegui-Liggett",
+          "source": "The Markup",
+          "summary": "A conversation with political scientist Thessalia Merivaki",
+          "why": "",
+          "url": "https://themarkup.org/hello-world/2026/10/10/election-ai-resilience",
+          "verified": true
+        },
+        {
+          "title": "We Are Already Post-Human",
+          "author": "Nathan Gardels",
+          "source": "Noema",
+          "summary": "The post We Are Already Post-Human appeared first on NOEMA.",
+          "why": "",
+          "url": "https://www.noemamag.com/we-are-already-post-human",
+          "verified": true
+        },
+        {
+          "title": "As U.S. blocks DJI, Insta360 races to win American creators",
+          "author": "Viola Zhou",
+          "source": "Rest of World",
+          "summary": "Regulatory clarity and market timing are a boon for smaller Chinese smart-camera maker Insta360 and its independent Antigravity drone brand.",
+          "why": "",
+          "url": "https://restofworld.org/2026/insta360-us-dji-sanctions-drones-cameras/?utm_source=rss&utm_medium=rss&utm_campaign=feeds",
+          "verified": true
+        },
+        {
+          "title": "Barbara Ward’s vision",
+          "author": "Or Rosenboim",
+          "source": "Aeon",
+          "summary": "She was among the first to argue that prosperity, equality and the protection of nature are inseparable planetary goals - by Or Rosenboim Read on Aeon",
+          "why": "",
+          "url": "https://aeon.co/essays/why-we-should-heed-barbara-wards-vision-of-planetary-justice",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "lit",
+      "entries": [
+        {
+          "title": "What to Watch and Read This Weekend: There’s Always Time for More Hobbits",
+          "author": "Molly Templeton",
+          "source": "Reactor",
+          "summary": "Plus: Josh Hartnett vs. the Ocean The post What to Watch and Read This Weekend: There’s Always Time for More Hobbits appeared first on Reactor.",
+          "why": "",
+          "url": "https://reactormag.com/what-to-watch-and-read-this-weekend-october-9-2026/",
+          "verified": true
+        },
+        {
+          "title": "The Millions’ Great Fall 2026 Book Preview",
+          "author": "Editor",
+          "source": "The Millions",
+          "summary": "The busiest season of the publishing year is upon us, bringing a deluge of books to sift through as you curate your TBR list. We’ve got you covered. Below, you’ll find some 130 books out this fall that we’re excited about here at The Millions. Some we’ve already read in galley form; others we’re simply … The post The Millions’ Great Fall 2026 Book Preview appeared first on The Millions.",
+          "why": "",
+          "url": "https://themillions.com/2026/10/the-millions-great-fall-2026-book-preview.html",
+          "verified": true
+        },
+        {
+          "title": "Where Has My Mother’s Knowledge Gone?",
+          "author": "Marcelo Rubens Paiva",
+          "source": "Electric Literature",
+          "summary": "“Where Is Here?” an excerpt from I’m Still Here by Marcelo Rubens Paiva, translated by Alison Entrekin & Daniel Hahn We don’t remember the first images and accomplishments of our lives: milk from the breast, the bars of our crib, the mobile that turns magically of its own accord, rolling over, not being able to […] The post Where Has My Mother’s Knowledge Gone? appeared first on Electric…",
+          "why": "",
+          "url": "https://electricliterature.com/where-has-my-mothers-knowledge-gone/",
+          "verified": true
+        },
+        {
+          "title": "Heroic Relay Race: Review of Caskey Russell’s The Eagle in the Mountain",
+          "author": "Ancillary Review of Books",
+          "source": "Ancillary Review of Books",
+          "summary": "Aidan Bunker Under Review:The Eagle in the Mountain. Caskey Russell. Solaris, November 2026. For the first 50 pages of Caskey Russell’s The Eagle in the Mountain (sequel to The Door on the Sea), I found myself holding my breath. In part, this was due to the book dropping directly into a ferocious battle, but also, … Continue reading Heroic Relay Race: Review of Caskey Russell’s The Eagle in the…",
+          "why": "",
+          "url": "https://ancillaryreviewofbooks.org/2026/10/07/heroic-relay-race/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "music",
+      "entries": [
+        {
+          "title": "The Best Contemporary Classical Music on Bandcamp, September 2026",
+          "author": "Peter Margasak",
+          "source": "Bandcamp Daily",
+          "summary": "Our guide to the month’s crucial contemporary classical releases. Read full story on the Bandcamp Daily.",
+          "why": "",
+          "url": "https://daily.bandcamp.com/best-contemporary-classical/the-best-contemporary-classical-music-on-bandcamp-september-2026",
+          "verified": true
+        },
+        {
+          "title": "CAN :: Karussell der Jugend, Soest 1970",
+          "author": "Justin Gage",
+          "source": "Aquarium Drunkard",
+          "summary": "No blueprint. Filmed by West German television in November 1970 at the Karussell der Jugend festival in Soest, this 84-minute document captures CAN with Damo Suzuki, Michael Karoli, Irmin Schmidt, Holger Czukay and Jaki Liebezeit, still exploring the possibilities of a sound that didn't quite resemble anything else. Repetition, interruption, groove and collective instinct. More than half a…",
+          "why": "",
+          "url": "https://aquariumdrunkard.com/2026/10/09/can-karussell-der-jugend-soest-1970/",
+          "verified": true
+        },
+        {
+          "title": "The Ten Most Underrated Rap Albums of 2006",
+          "author": "Andrew Friedman",
+          "source": "Passion of the Weiss",
+          "summary": "Twenty years after the fact, Andrew Friedman goes deep on ten LPs he insists deserve a second look.",
+          "why": "",
+          "url": "https://www.powmag.net/p/the-ten-most-underrated-rap-albums-2006",
+          "verified": true
+        },
+        {
+          "title": "How Aviator Style Crash Games Turn Timing Into the Core Decision",
+          "author": "Sounds and Colours",
+          "source": "Sounds and Colours",
+          "summary": "Cuban son lives and dies on timing. The clave, a two-bar rhythmic pattern, decides when every part comes in, and a conga player who jumps early can throw the whole band off. Spribe’s Aviator asks for a similar instinct, stripped down to a single decision, and Latin America has taken to it with gusto. In... Read Article",
+          "why": "",
+          "url": "https://soundsandcolours.com/subjects/travel/how-aviator-style-crash-games-turn-timing-into-the-core-decision-313874/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "design",
+      "entries": [
+        {
+          "title": "Holy ground: Dormitories and forum in Traunstein, Germany by Studio Anna Heringer",
+          "author": "Jyotsni Bhattacharyya",
+          "source": "The Architectural Review",
+          "summary": "The Architectural Review Holy ground: Dormitories and forum in Traunstein, Germany by Studio Anna Heringer With timber and rammed earth, Studio Anna Heringer’s first large‑scale project in Europe fuses her experiences from the global south with the climate goals of her Catholic clients The post Holy ground: Dormitories and forum in Traunstein, Germany by Studio Anna Heringer appeared first on The…",
+          "why": "",
+          "url": "https://www.architectural-review.com/buildings/holy-ground-dormitories-and-forum-in-traunstein-germany-by-studio-anna-heringer",
+          "verified": true
+        },
+        {
+          "title": "Can NYC’s “Fast-Track” Community Districts Really Produce More Housing?",
+          "author": "Martin Pedersen",
+          "source": "Common Edge",
+          "summary": "The city needs big parcels of land to build complete neighborhoods, not just piecemeal infill projects.",
+          "why": "",
+          "url": "https://commonedge.org/can-nycs-fast-track-community-districts-really-produce-more-housing/",
+          "verified": true
+        },
+        {
+          "title": "A $599 Robot Dog That Fits on Your Desk and Works Like LEGO Technic",
+          "author": "JC Torres",
+          "source": "Yanko Design",
+          "summary": "A $599 Robot Dog That Fits on Your Desk and Works Like LEGO TechnicA robot dog usually arrives with a trick and a lot of wiring. Q8botOne takes the opposite approach, putting its core electronics onto a central...",
+          "why": "",
+          "url": "https://www.yankodesign.com/2026/10/10/a-599-robot-dog-that-fits-on-your-desk-and-works-like-lego-technic/?utm_source=rss&utm_medium=rss&utm_campaign=a-599-robot-dog-that-fits-on-your-desk-and-works-like-lego-technic",
+          "verified": true
+        },
+        {
+          "title": "10 modern home designs that stood out this week",
+          "author": "Nathaniel Bahadursingh",
+          "source": "Archinect",
+          "summary": "In case you haven't checked out Archinect's Pinterest boards in a while, we have compiled ten recently pinned images from outstanding projects on various Archinect Firm and People profiles. Today's top images (in no particular order) are from the board Houses. Tip: Use the handy FOLLOW feature to easily keep up-to-date with all your favorite Archinect profiles. &uarr; House in Kagurazaka, Tokyo,…",
+          "why": "",
+          "url": "https://archinect.com/news/article/150569269/10-modern-home-designs-that-stood-out-this-week",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "fashion",
+      "entries": [
+        {
+          "title": "Fire and Ice: AS Dulat opens up about his first novel",
+          "author": "Kaveree Bamzai/api/author/2341436",
+          "source": "Open Magazine",
+          "summary": "Long nights often lubricated with whiskey pegs, clandestine walks through twisty lanes with shadowed homes, friendly faces with unreadable minds, and concertina wires tied to triggers, real and imagined. Kashmir is a character in Amarjit Singh Dulat’s Our Kind of Games (Hachette, Rs 599), his first novel and sixth book, much as it has played a principal part in his 39 year-long career in the…",
+          "why": "",
+          "url": "https://openthemagazine.com/books/fire-and-ice-as-dulat-opens-up-about-his-first-novel",
+          "verified": true
+        },
+        {
+          "title": "Inside Paris Fashion Week with stylist Jana Bartolo",
+          "author": "Lara Daly",
+          "source": "Fashion Journal",
+          "summary": "My time in Paris didn’t quite begin the way I imagined. Between extreme weather, global travel delays and arriving much later than expected, my luggage never made it with me, and wouldn’t for another five days. A stylist in Paris for Fashion Week with no clothes is almost comical, but after the initial panic, it […] This article Inside Paris Fashion Week with stylist Jana Bartolo appeared first…",
+          "why": "",
+          "url": "https://fashionjournal.com.au/fashion/paris-fashion-week-photo-diary/",
+          "verified": true
+        },
+        {
+          "title": "Cole Bennett Knows Everything Is Better Imperfect",
+          "author": null,
+          "source": "Highsnobiety",
+          "summary": "His debut Birkenstock collaboration and first video with Future in almost a decade landed days apart. The two projects are more connected than you might think.",
+          "why": "",
+          "url": "https://www.highsnobiety.com/p/cole-bennett-interview/",
+          "verified": true
+        },
+        {
+          "title": "Shai Gilgeous-Alexander Reveals He Personally Hand-Drew the Upcoming Nike SHAI 002",
+          "author": "info@hypebeast.com (Hypebeast)",
+          "source": "Hypebeast",
+          "summary": "Summary Shai Gilgeous-Alexander revealed that he personally hand-drew the design for his upcoming Nike SHAI 002 signature sneakerThe model marks his second signature silhouette and his first brand-new design following his move from Converse to Nike BasketballThe Nike SHAI 002 is expected to launch in early 2027 with technical specifications and official imagery still under wraps Nike and Oklahoma…",
+          "why": "",
+          "url": "https://hypebeast.com/2026/10/shai-gilgeous-alexander-personally-hand-drew-nike-shai-002-revealed",
+          "verified": true
+        }
+      ]
+    }
+  ]
+}
