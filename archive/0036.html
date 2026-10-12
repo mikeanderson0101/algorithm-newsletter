@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0A0A0A">
+<title>Algorithm — Issue No. 36 — 12 Oct 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Source+Serif+4:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  html, body{ margin:0; padding:0; height:100%; background-color:#0A0A0A; }
+  *{box-sizing:border-box;}
+  body{
+    min-height:100dvh;
+    color:#FAFAF7;
+    font-family:'Source Serif 4', Georgia, serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .page{ background-color:#0A0A0A; min-height:100dvh; }
+  a{ color:inherit; }
+  .wrap{max-width:720px; margin:0 auto; padding:44px 24px 90px; position:relative;}
+  .masthead{
+    display:flex; justify-content:space-between; align-items:flex-end;
+    border-bottom:4px solid #FAFAF7;
+    padding-bottom:14px; margin-bottom:24px;
+  }
+  .mast-title{
+    font-family:'Archivo Black', sans-serif;
+    font-size:clamp(26px,6vw,34px);
+    letter-spacing:-0.01em;
+    text-transform:uppercase;
+    color:#FAFAF7;
+    text-decoration:none;
+  }
+  .stamp{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px; letter-spacing:0.1em; text-transform:uppercase;
+    color:#0A0A0A; background:#FF1F3D;
+    padding:5px 10px; border-radius:2px;
+    transform:rotate(-3deg); display:inline-block; font-weight:600;
+    white-space:nowrap;
+  }
+  .nav{display:flex; justify-content:space-between; align-items:center; gap:16px; margin-bottom:40px; flex-wrap:wrap;}
+  .nav-link{font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:#FAFAF7; text-decoration:none; border:1px solid rgba(250,250,247,0.35); padding:9px 14px; border-radius:2px; white-space:nowrap;}
+  .nav-link:hover{border-color:#FF1F3D; color:#FF1F3D;}
+  .search-wrap{position:relative; flex:1; min-width:220px;}
+  .search-input{width:100%; background:#151513; border:1px solid rgba(250,250,247,0.3); color:#FAFAF7; font-family:'IBM Plex Mono', monospace; font-size:13px; padding:10px 12px; border-radius:2px; outline:none;}
+  .search-input::placeholder{color:#6B6860;}
+  .search-input:focus{border-color:#FF1F3D;}
+  .search-results{position:absolute; top:calc(100% + 6px); left:0; right:0; background:#111110; border:1px solid rgba(250,250,247,0.25); border-radius:4px; max-height:380px; overflow-y:auto; z-index:20; display:none;}
+  .search-results.active{display:block;}
+  .search-result{display:block; padding:10px 12px; border-bottom:1px solid rgba(250,250,247,0.12); text-decoration:none;}
+  .search-result:last-child{border-bottom:none;}
+  .search-result:hover{background:rgba(255,31,61,0.08);}
+  .sr-tag{font-family:'IBM Plex Mono', monospace; font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:#A6A29A;}
+  .sr-title{display:block; font-style:italic; color:#FAFAF7; margin:2px 0; font-size:14px;}
+  .sr-meta{font-family:'IBM Plex Mono', monospace; font-size:10.5px; color:#A6A29A;}
+  .search-empty{padding:14px 12px; font-family:'IBM Plex Mono', monospace; font-size:12.5px; color:#A6A29A;}
+  h1.hero{
+    font-family:'Anton', sans-serif;
+    font-weight:400;
+    font-size:clamp(42px,10vw,72px);
+    line-height:0.94;
+    text-transform:uppercase;
+    margin:0 0 22px;
+    color:#FAFAF7;
+  }
+  h1.hero .pop{color:#FF1F3D;}
+  .intro{font-size:17px; color:#EDEAE2; max-width:56ch; margin-bottom:10px;}
+  .intro-byline{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px; letter-spacing:0.08em; text-transform:uppercase;
+    color:#A6A29A;
+    margin-top:16px; margin-bottom:54px; display:block;
+    border-left:2px solid #FF1F3D; padding-left:10px;
+  }
+  .section{position:relative; margin-bottom:50px; padding-left:56px;}
+  .section:last-of-type{margin-bottom:0;}
+  .stampnum{
+    position:absolute; left:0; top:0;
+    width:42px; height:42px;
+    border:2px solid #FAFAF7;
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Archivo Black', sans-serif;
+    font-size:15px; color:#FAFAF7;
+    transform:rotate(-6deg);
+  }
+  .art .stampnum{border-color:#C9A24B; color:#C9A24B;}
+  .film .stampnum{border-color:#FF5B4A; color:#FF5B4A;}
+  .tech .stampnum{border-color:#3FE0D0; color:#3FE0D0;}
+  .lit .stampnum{border-color:#B39DFF; color:#B39DFF;}
+  .music .stampnum{border-color:#FF5FA8; color:#FF5FA8;}
+  .design .stampnum{border-color:#FFD23F; color:#FFD23F;}
+  .fashion .stampnum{border-color:#FAFAF7; color:#FAFAF7;}
+  .section-head{display:flex; align-items:center; gap:12px; margin-bottom:18px; flex-wrap:wrap;}
+  .section-tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase;
+    color:#0A0A0A;
+    padding:6px 11px; border-radius:2px;
+  }
+  .art .section-tag{background:#C9A24B;}
+  .film .section-tag{background:#FF5B4A;}
+  .tech .section-tag{background:#3FE0D0;}
+  .lit .section-tag{background:#B39DFF;}
+  .music .section-tag{background:#FF5FA8;}
+  .design .section-tag{background:#FFD23F;}
+  .fashion .section-tag{background:#FAFAF7;}
+  .section-title{
+    font-family:'Archivo Black', sans-serif;
+    font-size:24px; text-transform:uppercase; letter-spacing:0.01em;
+    color:#FAFAF7;
+  }
+  .entry{margin-bottom:24px; padding-bottom:24px; border-bottom:1px solid rgba(250,250,247,0.16); scroll-margin-top:24px;}
+  .entry:last-child{border-bottom:none; margin-bottom:0; padding-bottom:0;}
+  .entry-byline{font-family:'IBM Plex Mono', monospace; font-size:12px; color:#A6A29A; margin-bottom:8px;}
+  .entry-title{font-weight:500; font-style:italic; color:#FAFAF7; text-decoration:underline; text-decoration-color:rgba(250,250,247,0.35); text-underline-offset:3px;}
+  .entry-title:hover{text-decoration-color:#FF1F3D;}
+  .entry p{margin:0 0 10px; font-size:16px; color:#EDEAE2;}
+  .entry .why{font-size:14.5px; color:#A6A29A; font-style:italic;}
+  .entry .why::before{content:"— ";}
+  .issue-list{list-style:none; margin:0; padding:0;}
+  .issue-card{display:block; text-decoration:none; padding:22px 0; border-bottom:1px solid rgba(250,250,247,0.16);}
+  .issue-card:first-child{padding-top:0;}
+  .issue-card:hover .issue-headline{ text-decoration-color:#FF1F3D; }
+  .issue-meta{font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:#A6A29A; margin-bottom:8px;}
+  .issue-meta .num{color:#FF1F3D;}
+  .issue-headline{font-family:'Archivo Black', sans-serif; font-size:22px; text-transform:uppercase; letter-spacing:0.01em; color:#FAFAF7; text-decoration:underline; text-decoration-color:rgba(250,250,247,0.35); text-underline-offset:4px; display:inline-block; margin-bottom:8px;}
+  .issue-desc{font-size:15px; color:#A6A29A; max-width:60ch; margin:0;}
+  footer{
+    margin-top:64px; padding-top:20px; border-top:1px solid rgba(250,250,247,0.16);
+    display:flex; justify-content:space-between; gap:12px;
+    font-family:'IBM Plex Mono', monospace; font-size:10.5px;
+    letter-spacing:0.06em; color:#A6A29A; text-transform:uppercase;
+  }
+  @media (max-width:520px){
+    .wrap{padding:30px 16px 70px;}
+    .section{padding-left:48px;}
+    .stampnum{width:36px; height:36px; font-size:13px;}
+    .section-title{font-size:20px;}
+    .nav{flex-direction:column; align-items:stretch;}
+  }
+</style>
+</head>
+<body data-root="../">
+<div class="page">
+<div class="wrap">
+  <div class="masthead">
+    <a class="mast-title" href="../index.html">Algorithm</a>
+    <span class="stamp">Issue No. 36</span>
+  </div>
+  <div class="nav">
+    <a class="nav-link" href="../index.html">&larr; Latest Issue</a>
+    <a class="nav-link" href="../archive/index.html">Full Archive</a>
+  </div>
+  <h1 class="hero">The <span class="pop">Feed</span></h1>
+  <p class="intro">A selection of recent writing from across the culture press.</p>
+  <span class="intro-byline">2026-10-12 — selected links</span>
+  <section class="section art">
+    <span class="stampnum">01</span>
+    <div class="section-head">
+      <span class="section-tag">Art</span>
+      <h2 class="section-title">Fine Art</h2>
+    </div>
+    <div class="entry" id="art-1">
+      <div class="entry-byline"><a class="entry-title" href="https://www.artandobject.com/slideshows/5-photo-exhibitions-check-out-fall" target="_blank" rel="noopener">5 Photo Exhibitions To Check Out This Fall</a> by abby — Art &amp; Object</div>
+
+      <p>5 Photo Exhibitions To Check Out This Fall © The Irving Penn Foundation Irving Penn, 12 Models Moving Their Heads, New York, 1947, Nicola Erni Collection, Zug abby Mon, 10/12/2026 - 08:30 Photography is having a moment this fall. Whether it&#39;s the opening of the Lucas Museum of Narrative Art in Los Angeles (featuring photos by Gordon Parks and Dorothea Lange), or the recent reopening of the…</p>
+    </div>
+    <div class="entry" id="art-2">
+      <div class="entry-byline"><a class="entry-title" href="https://www.artasiapacific.com/shows/nam-june-paik-at-the-watari-museum-of-contemporary-art/" target="_blank" rel="noopener">Nam June Paik at the Watari Museum of Contemporary Art</a> by Annette Meier — ArtAsiaPacific</div>
+
+      <p>The “father of video art” predicted that the screen would establish a novel infrastructure of perception—what does it mean to look back at his work from within the conditions he foresaw? Annette Meier</p>
+    </div>
+    <div class="entry" id="art-3">
+      <div class="entry-byline"><a class="entry-title" href="https://www.trebuchet-magazine.com/frieze-2026-all-the-fun-of-the-fair/" target="_blank" rel="noopener">Frieze 2026: All the Fun of the Fair</a> by Ruth O&#39;Sullivan — Trebuchet</div>
+
+      <p>Ruth O’Sullivan on levity, spectacle and what’s worth seeing at Frieze</p>
+    </div>
+    <div class="entry" id="art-4">
+      <div class="entry-byline"><a class="entry-title" href="https://kunstkritikk.com/livet-betraktat-fran-vintergatan/" target="_blank" rel="noopener">Livet betraktat från Vintergatan</a> by Frans Josef Petersson — Kunstkritikk</div>
+
+      <p>Kateryna Lysovenkos utställning i Helsingborg glöder. The post Livet betraktat från Vintergatan appeared first on Kunstkritikk.</p>
+    </div>
+  </section>
+  <section class="section film">
+    <span class="stampnum">02</span>
+    <div class="section-head">
+      <span class="section-tag">Film</span>
+      <h2 class="section-title">Film Criticism</h2>
+    </div>
+    <div class="entry" id="film-1">
+      <div class="entry-byline"><a class="entry-title" href="https://philosophyinfilm.com/2026/10/05/best-philosophical-films-of-all-time/" target="_blank" rel="noopener">15 Best Philosophical Films of All Time</a> by Matthew Jones — Philosophy in Film</div>
+
+      <p>The best philosophical films do not just show us arguments we could find elsewhere. Their images, performances, omissions, and structure The post 15 Best Philosophical Films of All Time appeared first on Philosophy in Film.</p>
+    </div>
+    <div class="entry" id="film-2">
+      <div class="entry-byline"><a class="entry-title" href="https://povmagazine.com/beatrice-gibson-on-at-night-and-domestic-chaotic-work/" target="_blank" rel="noopener">Beatrice Gibson on At Night and Domestic, Chaotic Work</a> by Nirris Nagendrarajah — POV Magazine</div>
+
+      <p>An interview with At Night director Beatrice Gibson about creating an intersectional portrait of Parisian women and drawing upon literary references. The post Beatrice Gibson on At Night and Domestic, Chaotic Work appeared first on POV Magazine.</p>
+    </div>
+    <div class="entry" id="film-3">
+      <div class="entry-byline"><a class="entry-title" href="https://screenanarchy.com/2026/10/opening-this-week-whalefall-swallowed-street-fighter-mauled-ken-russells-the-devils-restored.html" target="_blank" rel="noopener">Opening This Week: WHALEFALL Swallowed, STREET FIGHTER Mauled, KEN RUSSELL&#39;S THE DEVILS Restored</a> — Screen Anarchy</div>
+
+      <p>Plus: &#39;Musk,&#39; &#39;&#39;You Can See Everything,&#39; &#39;Crawlers,&#39; &#39;Sense and Sensibility,&#39; &#39;La Bola Negra,&#39; &#39;Once Upon a Time in Harlem,&#39; &#39;The Only Living Pickpocket in New York.&#39; [Read the whole post on screenanarchy.com...]</p>
+    </div>
+    <div class="entry" id="film-4">
+      <div class="entry-byline"><a class="entry-title" href="https://talkhouse.com/851-eric-szes-cookbook-puts-a-question-mark-on-taiwanese-food-on-purpose/" target="_blank" rel="noopener">851: Eric Sze’s Cookbook Puts a Question Mark on Taiwanese Food on Purpose</a> by This Is TASTE — Talkhouse</div>
+
+      <p>Eric Sze first joined the show amid research for his debut cookbook, Taiwanese?. The book will be released later this month, and I speak with the Wenwen chef about his deep research around lu rou fan, what “authentically inauthentic” really means on the page versus the plate, and how his sparkling book brings fresh perspective…</p>
+    </div>
+  </section>
+  <section class="section tech">
+    <span class="stampnum">03</span>
+    <div class="section-head">
+      <span class="section-tag">Tech &amp; AI</span>
+      <h2 class="section-title">Tech &amp; AI</h2>
+    </div>
+    <div class="entry" id="tech-1">
+      <div class="entry-byline"><a class="entry-title" href="https://www.404media.co/cops-can-creep-on-airbnb/" target="_blank" rel="noopener">Cops can creep on Airbnb</a> by Samantha Cole — 404 Media</div>
+
+      <p>That washer/dryer combo could be used by cops to identify a property.</p>
+    </div>
+    <div class="entry" id="tech-2">
+      <div class="entry-byline"><a class="entry-title" href="https://aeon.co/videos/the-fragile-majesty-of-the-buganda-royal-tombs-in-uganda" target="_blank" rel="noopener">Africa’s cultural landmarks: tombs of Buganda kings</a> by Aeon Video — Aeon</div>
+
+      <p>Built from vegetal materials, these majestic tombs housing Buganda kings bridge the realms of living and dead in Uganda - by Aeon Video Watch on Aeon</p>
+    </div>
+    <div class="entry" id="tech-3">
+      <div class="entry-byline"><a class="entry-title" href="https://restofworld.org/2026/china-america-tech-ai/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=feeds" target="_blank" rel="noopener">Not just AI. China is building technologies that challenge U.S. dominance</a> by Steve Feldstein — Rest of World</div>
+
+      <p>From batteries and solar panels to drones and satellites, China is building tech capabilities that extend well beyond AI, writes Steve Feldstein in his new book, &quot;Bytes and Bullets: Global Rivalries, Big Tech, and the New Shape of Modern Warfare.&quot;</p>
+    </div>
+    <div class="entry" id="tech-4">
+      <div class="entry-byline"><a class="entry-title" href="https://simonwillison.net/2026/Oct/12/python-3-15/" target="_blank" rel="noopener">Hello Python 3.15, goodbye 3.10, and now I can use 3.11</a> — Simon Willison</div>
+
+      <p>Python 3.15 is here! Here&#39;s the essential What&#39;s new in Python 3.15 guide, this year curated by 3.14 and 3.15 release manager Hugo van Kemenade. As someone who builds open source software that works in every supported Python version, I get to say goodbye to Python 3.10 and start embracing features from Python 3.11. First, some highlights from Python 3.15. Explicit lazy imports I&#39;m most excited…</p>
+    </div>
+  </section>
+  <section class="section lit">
+    <span class="stampnum">04</span>
+    <div class="section-head">
+      <span class="section-tag">Sci-Fi / Fantasy</span>
+      <h2 class="section-title">Literary Reviews</h2>
+    </div>
+    <div class="entry" id="lit-1">
+      <div class="entry-byline"><a class="entry-title" href="https://www.eurozine.com/mezi-tragikou-a-hravosti/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=mezi-tragikou-a-hravosti" target="_blank" rel="noopener">Mezi tragikou a hravostí</a> by Merve — Eurozine</div>
+
+    </div>
+    <div class="entry" id="lit-2">
+      <div class="entry-byline"><a class="entry-title" href="https://arablit.org/2026/10/12/its-publication-day-may-ziadehs-musings/" target="_blank" rel="noopener">It’s Publication Day: May Ziadeh’s ‘Musings’</a> by mlynxqualey — ArabLit</div>
+
+      <p>It&#39;s publication day for May Ziadeh&#39;s Musings of a Young Woman, the second title in our ERASED NOT FORGOTTEN series, ed. Ibtihal Rida Mahmood. In honor of the release, we share scholar-translator Dana Al Shahbari&#39;s introduction to the volume, which you can find in our store and in select bookshops worldwide.</p>
+    </div>
+    <div class="entry" id="lit-3">
+      <div class="entry-byline"><a class="entry-title" href="https://wordpress.com/blog/2026/10/08/domain-names-course/" target="_blank" rel="noopener">Domain Names, Explained in Plain English</a> by Wes Theron — Aotearoa NZ Review of Books</div>
+
+      <p>Domains don’t have to be confusing. Our free 45-minute video course explains how to register, connect, transfer, and manage a domain name on WordPress.com.</p>
+    </div>
+    <div class="entry" id="lit-4">
+      <div class="entry-byline"><a class="entry-title" href="https://strangehorizons.com/wordpress/poetry/how-to-cook-for-an-alien-tourist/" target="_blank" rel="noopener">How to Cook for an Alien Tourist</a> by Lee Hallison — Strange Horizons</div>
+
+      <p>Turn on the stove. See it startle.</p>
+    </div>
+  </section>
+  <section class="section music">
+    <span class="stampnum">05</span>
+    <div class="section-head">
+      <span class="section-tag">Music</span>
+      <h2 class="section-title">Music Criticism</h2>
+    </div>
+    <div class="entry" id="music-1">
+      <div class="entry-byline"><a class="entry-title" href="https://daily.bandcamp.com/best-country/the-best-country-music-on-bandcamp-september-2026" target="_blank" rel="noopener">The Best Country Music on Bandcamp, September 2026</a> by Ben Salmon — Bandcamp Daily</div>
+
+      <p>Our guide to the month’s crucial country LPs. Read full story on the Bandcamp Daily.</p>
+    </div>
+    <div class="entry" id="music-2">
+      <div class="entry-byline"><a class="entry-title" href="https://aquariumdrunkard.com/2026/10/12/offworlding-ambient-house-1992-1997-a-mixtape/" target="_blank" rel="noopener">Offworlding: Ambient House, 1992-1997 (A Mixtape)</a> by Justin Gage — Aquarium Drunkard</div>
+
+      <p>For a fleeting moment in the early-to-mid 90s, ambient house consummated the perfect synthesis of dance music groove and cosmic expanse. Emerging from the chillout rooms and the afterparties at the margins of club culture, ambient house cultivated the psychedelic elements of the rave scene into an altogether more atmospheric direction. The scene produced a handful of genuine superstars in the Orb…</p>
+    </div>
+    <div class="entry" id="music-3">
+      <div class="entry-byline"><a class="entry-title" href="https://thenativemag.com/black-sherif-is-pursuing-artistic-evolution-over-commercial-comfort-on-sun-sherif/" target="_blank" rel="noopener">Black Sherif Is Pursuing Artistic Evolution Over Commercial Comfort On ‘Sun Sherif’</a> by Frederick Adjavon — The NATIVE</div>
+
+      <p>The latest chapter in Black Sherif&#39;s journey is ‘Sun Sherif,’ a project where he elucidates a fresh vision and brings a new dimension. The post Black Sherif Is Pursuing Artistic Evolution Over Commercial Comfort On ‘Sun Sherif’ appeared first on The NATIVE.</p>
+    </div>
+    <div class="entry" id="music-4">
+      <div class="entry-byline"><a class="entry-title" href="https://www.theaureview.com/games/pax-aus-2026-persona-4-revival-hands-on/" target="_blank" rel="noopener">PAX Aus 2026 : Hands-On with Persona 4 Revival</a> by Alaisdair Leith — The AU Review</div>
+
+      <p>The Persona series has become a fan favourite not only worldwide but also in my house. I’m not a huge JRPG fan, but this series, along with Xenoblade Chronicles, just gets me. Hearing about Persona 4 Revival bringing with it a massive overhaul to the graphics system, voice acting and improved combat system, I was...</p>
+    </div>
+  </section>
+  <section class="section design">
+    <span class="stampnum">06</span>
+    <div class="section-head">
+      <span class="section-tag">Design</span>
+      <h2 class="section-title">Design</h2>
+    </div>
+    <div class="entry" id="design-1">
+      <div class="entry-byline"><a class="entry-title" href="https://commonedge.org/the-educational-value-of-drawing-sets/" target="_blank" rel="noopener">The Educational Value of Drawing Sets</a> by Martin Pedersen — Common Edge</div>
+
+      <p>In the AI era, it’s vital that firm leaders continue helping young designers learn to see what sketches may leave unresolved.</p>
+    </div>
+    <div class="entry" id="design-2">
+      <div class="entry-byline"><a class="entry-title" href="https://design-milk.com/bn-industries-builds-its-modular-systems-to-keep-evolving-after-installation/" target="_blank" rel="noopener">B+N Industries Builds Its Modular Systems to Keep Evolving After Installation</a> by Hayley Arsenault — Design Milk</div>
+
+      <p>Across System 1224, Sorbetti 2.0, and Muro, B+N Industries designs modular frameworks that expand, reconfigure, and take on new roles years after they first go up</p>
+    </div>
+    <div class="entry" id="design-3">
+      <div class="entry-byline"><a class="entry-title" href="https://www.archdaily.com/1033039/linho-house-tetro-arquitetura" target="_blank" rel="noopener">Linho House / TETRO Arquitetura</a> by Pilar Caballero — ArchDaily</div>
+
+      <p>Located in a residential neighborhood in Nova Lima, Minas Gerais, the Linho House is more than just a residence—it is a narrative crafted in architecture. Directly inspired by its inhabitant, a fashion designer who works with fabrics and sewing, the house translates the essence of her creative daily life into forms and materials.</p>
+    </div>
+    <div class="entry" id="design-4">
+      <div class="entry-byline"><a class="entry-title" href="https://www.itsnicethat.com/features/david-rudnick-johnnie-campbell-arsenal-rocastle-typeface-graphic-design-spotlight-121026" target="_blank" rel="noopener">David Rudnick on the “borderline impossible” process of designing a bespoke blackletter typeface for Arsenal</a> by Olivia Hingley — It&#39;s Nice That</div>
+
+      <p>For the past four years, the designer has been building a hand-drawn, three-weight type family that pays homage to one of the most beloved players in Arsenal’s history: David Rocastle. Here, It’s Nice That sits down with David and Arsenal Creative Studio lead Johnnie Campbell to get behind the scenes of the mammoth project.</p>
+    </div>
+  </section>
+  <section class="section fashion">
+    <span class="stampnum">07</span>
+    <div class="section-head">
+      <span class="section-tag">Men&#39;s Fashion</span>
+      <h2 class="section-title">Men&#39;s Fashion</h2>
+    </div>
+    <div class="entry" id="fashion-1">
+      <div class="entry-byline"><a class="entry-title" href="https://putthison.com/jacket-season/" target="_blank" rel="noopener">Jacket Season!</a> by Brynna — Put This On</div>
+
+      <p>Hi everyone, it’s your Shopkeeper Brynna, here with some more hot new items from the Put This On Shop. Everyone... The post Jacket Season! appeared first on Put This On.</p>
+    </div>
+    <div class="entry" id="fashion-2">
+      <div class="entry-byline"><a class="entry-title" href="https://fashionjournal.com.au/fashion/iti-brand-profile/" target="_blank" rel="noopener">From the Southern Highlands to Fashion Week, Iti is the Australian label to watch</a> by Maryel Sousa — Fashion Journal</div>
+
+      <p>From childhood, Jeorge Bradford felt the pull to create, but it wasn’t until he entered university that he shared his talent with the world. When Jeorge started wearing his own handmade shirts, sewn from leftover curtain fabric, people noticed. Then, when enough people had, Iti was born. When Fashion Journal editors first saw Iti on the […] This article From the Southern Highlands to Fashion…</p>
+    </div>
+    <div class="entry" id="fashion-3">
+      <div class="entry-byline"><a class="entry-title" href="https://www.drapersonline.com/news/andy-burnham-calls-for-new-eu-deal-to-boost-economic-growth" target="_blank" rel="noopener">Andy Burnham calls for new EU deal to boost economic growth</a> by Chloe Mills — Drapers</div>
+
+      <p>Drapers Andy Burnham calls for new EU deal to boost economic growth Andy Burnham said today (12 October) it would be a &quot;dereliction of duty&quot; to turn down a closer relationship with the EU, as part of his bid to drive economic growth. The post Andy Burnham calls for new EU deal to boost economic growth appeared first on Drapers.</p>
+    </div>
+    <div class="entry" id="fashion-4">
+      <div class="entry-byline"><a class="entry-title" href="https://hypebeast.com/2026/10/cmf-by-nothing-portable-speaker-series-s-m-release-info" target="_blank" rel="noopener">CMF’s First Speakers Are Built Around Color, Modularity and Portability</a> by info@hypebeast.com (Hypebeast) — Hypebeast</div>
+
+      <p>Summary CMF debuts its first portable speakers with the Speaker S and Speaker M.Both models feature modular designs, swappable panels, Stereo Mode and Auracast-powered Party Mode.Prices start at $59 USD, with sales beginning today. CMF by Nothing is expanding into portable audio for the first time with the Speaker S and Speaker M, a two-model lineup that carries the brand’s geometric, modular…</p>
+    </div>
+  </section>
+  <footer>
+    <span>Algorithm</span>
+    <span>Issue No. 36 — 12 Oct 2026</span>
+  </footer>
+</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,296 @@
+{
+  "issue": 36,
+  "date": "2026-10-12",
+  "headline": "The *Feed*",
+  "intro": "A selection of recent writing from across the culture press.",
+  "byline": "2026-10-12 — selected links",
+  "categories": [
+    {
+      "key": "art",
+      "entries": [
+        {
+          "title": "5 Photo Exhibitions To Check Out This Fall",
+          "author": "abby",
+          "source": "Art & Object",
+          "summary": "5 Photo Exhibitions To Check Out This Fall © The Irving Penn Foundation Irving Penn, 12 Models Moving Their Heads, New York, 1947, Nicola Erni Collection, Zug abby Mon, 10/12/2026 - 08:30 Photography is having a moment this fall. Whether it's the opening of the Lucas Museum of Narrative Art in Los Angeles (featuring photos by Gordon Parks and Dorothea Lange), or the recent reopening of the…",
+          "why": "",
+          "url": "https://www.artandobject.com/slideshows/5-photo-exhibitions-check-out-fall",
+          "verified": true
+        },
+        {
+          "title": "Nam June Paik at the Watari Museum of Contemporary Art",
+          "author": "Annette Meier",
+          "source": "ArtAsiaPacific",
+          "summary": "The “father of video art” predicted that the screen would establish a novel infrastructure of perception—what does it mean to look back at his work from within the conditions he foresaw? Annette Meier",
+          "why": "",
+          "url": "https://www.artasiapacific.com/shows/nam-june-paik-at-the-watari-museum-of-contemporary-art/",
+          "verified": true
+        },
+        {
+          "title": "Frieze 2026: All the Fun of the Fair",
+          "author": "Ruth O'Sullivan",
+          "source": "Trebuchet",
+          "summary": "Ruth O’Sullivan on levity, spectacle and what’s worth seeing at Frieze",
+          "why": "",
+          "url": "https://www.trebuchet-magazine.com/frieze-2026-all-the-fun-of-the-fair/",
+          "verified": true
+        },
+        {
+          "title": "Livet betraktat från Vintergatan",
+          "author": "Frans Josef Petersson",
+          "source": "Kunstkritikk",
+          "summary": "Kateryna Lysovenkos utställning i Helsingborg glöder. The post Livet betraktat från Vintergatan appeared first on Kunstkritikk.",
+          "why": "",
+          "url": "https://kunstkritikk.com/livet-betraktat-fran-vintergatan/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "film",
+      "entries": [
+        {
+          "title": "15 Best Philosophical Films of All Time",
+          "author": "Matthew Jones",
+          "source": "Philosophy in Film",
+          "summary": "The best philosophical films do not just show us arguments we could find elsewhere. Their images, performances, omissions, and structure The post 15 Best Philosophical Films of All Time appeared first on Philosophy in Film.",
+          "why": "",
+          "url": "https://philosophyinfilm.com/2026/10/05/best-philosophical-films-of-all-time/",
+          "verified": true
+        },
+        {
+          "title": "Beatrice Gibson on At Night and Domestic, Chaotic Work",
+          "author": "Nirris Nagendrarajah",
+          "source": "POV Magazine",
+          "summary": "An interview with At Night director Beatrice Gibson about creating an intersectional portrait of Parisian women and drawing upon literary references. The post Beatrice Gibson on At Night and Domestic, Chaotic Work appeared first on POV Magazine.",
+          "why": "",
+          "url": "https://povmagazine.com/beatrice-gibson-on-at-night-and-domestic-chaotic-work/",
+          "verified": true
+        },
+        {
+          "title": "Opening This Week: WHALEFALL Swallowed, STREET FIGHTER Mauled, KEN RUSSELL'S THE DEVILS Restored",
+          "author": null,
+          "source": "Screen Anarchy",
+          "summary": "Plus: 'Musk,' ''You Can See Everything,' 'Crawlers,' 'Sense and Sensibility,' 'La Bola Negra,' 'Once Upon a Time in Harlem,' 'The Only Living Pickpocket in New York.' [Read the whole post on screenanarchy.com...]",
+          "why": "",
+          "url": "https://screenanarchy.com/2026/10/opening-this-week-whalefall-swallowed-street-fighter-mauled-ken-russells-the-devils-restored.html",
+          "verified": true
+        },
+        {
+          "title": "851: Eric Sze’s Cookbook Puts a Question Mark on Taiwanese Food on Purpose",
+          "author": "This Is TASTE",
+          "source": "Talkhouse",
+          "summary": "Eric Sze first joined the show amid research for his debut cookbook, Taiwanese?. The book will be released later this month, and I speak with the Wenwen chef about his deep research around lu rou fan, what “authentically inauthentic” really means on the page versus the plate, and how his sparkling book brings fresh perspective…",
+          "why": "",
+          "url": "https://talkhouse.com/851-eric-szes-cookbook-puts-a-question-mark-on-taiwanese-food-on-purpose/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "tech",
+      "entries": [
+        {
+          "title": "Cops can creep on Airbnb",
+          "author": "Samantha Cole",
+          "source": "404 Media",
+          "summary": "That washer/dryer combo could be used by cops to identify a property.",
+          "why": "",
+          "url": "https://www.404media.co/cops-can-creep-on-airbnb/",
+          "verified": true
+        },
+        {
+          "title": "Africa’s cultural landmarks: tombs of Buganda kings",
+          "author": "Aeon Video",
+          "source": "Aeon",
+          "summary": "Built from vegetal materials, these majestic tombs housing Buganda kings bridge the realms of living and dead in Uganda - by Aeon Video Watch on Aeon",
+          "why": "",
+          "url": "https://aeon.co/videos/the-fragile-majesty-of-the-buganda-royal-tombs-in-uganda",
+          "verified": true
+        },
+        {
+          "title": "Not just AI. China is building technologies that challenge U.S. dominance",
+          "author": "Steve Feldstein",
+          "source": "Rest of World",
+          "summary": "From batteries and solar panels to drones and satellites, China is building tech capabilities that extend well beyond AI, writes Steve Feldstein in his new book, \"Bytes and Bullets: Global Rivalries, Big Tech, and the New Shape of Modern Warfare.\"",
+          "why": "",
+          "url": "https://restofworld.org/2026/china-america-tech-ai/?utm_source=rss&utm_medium=rss&utm_campaign=feeds",
+          "verified": true
+        },
+        {
+          "title": "Hello Python 3.15, goodbye 3.10, and now I can use 3.11",
+          "author": null,
+          "source": "Simon Willison",
+          "summary": "Python 3.15 is here! Here's the essential What's new in Python 3.15 guide, this year curated by 3.14 and 3.15 release manager Hugo van Kemenade. As someone who builds open source software that works in every supported Python version, I get to say goodbye to Python 3.10 and start embracing features from Python 3.11. First, some highlights from Python 3.15. Explicit lazy imports I'm most excited…",
+          "why": "",
+          "url": "https://simonwillison.net/2026/Oct/12/python-3-15/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "lit",
+      "entries": [
+        {
+          "title": "Mezi tragikou a hravostí",
+          "author": "Merve",
+          "source": "Eurozine",
+          "summary": "",
+          "why": "",
+          "url": "https://www.eurozine.com/mezi-tragikou-a-hravosti/?utm_source=rss&utm_medium=rss&utm_campaign=mezi-tragikou-a-hravosti",
+          "verified": true
+        },
+        {
+          "title": "It’s Publication Day: May Ziadeh’s ‘Musings’",
+          "author": "mlynxqualey",
+          "source": "ArabLit",
+          "summary": "It's publication day for May Ziadeh's Musings of a Young Woman, the second title in our ERASED NOT FORGOTTEN series, ed. Ibtihal Rida Mahmood. In honor of the release, we share scholar-translator Dana Al Shahbari's introduction to the volume, which you can find in our store and in select bookshops worldwide.",
+          "why": "",
+          "url": "https://arablit.org/2026/10/12/its-publication-day-may-ziadehs-musings/",
+          "verified": true
+        },
+        {
+          "title": "Domain Names, Explained in Plain English",
+          "author": "Wes Theron",
+          "source": "Aotearoa NZ Review of Books",
+          "summary": "Domains don’t have to be confusing. Our free 45-minute video course explains how to register, connect, transfer, and manage a domain name on WordPress.com.",
+          "why": "",
+          "url": "https://wordpress.com/blog/2026/10/08/domain-names-course/",
+          "verified": true
+        },
+        {
+          "title": "How to Cook for an Alien Tourist",
+          "author": "Lee Hallison",
+          "source": "Strange Horizons",
+          "summary": "Turn on the stove. See it startle.",
+          "why": "",
+          "url": "https://strangehorizons.com/wordpress/poetry/how-to-cook-for-an-alien-tourist/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "music",
+      "entries": [
+        {
+          "title": "The Best Country Music on Bandcamp, September 2026",
+          "author": "Ben Salmon",
+          "source": "Bandcamp Daily",
+          "summary": "Our guide to the month’s crucial country LPs. Read full story on the Bandcamp Daily.",
+          "why": "",
+          "url": "https://daily.bandcamp.com/best-country/the-best-country-music-on-bandcamp-september-2026",
+          "verified": true
+        },
+        {
+          "title": "Offworlding: Ambient House, 1992-1997 (A Mixtape)",
+          "author": "Justin Gage",
+          "source": "Aquarium Drunkard",
+          "summary": "For a fleeting moment in the early-to-mid 90s, ambient house consummated the perfect synthesis of dance music groove and cosmic expanse. Emerging from the chillout rooms and the afterparties at the margins of club culture, ambient house cultivated the psychedelic elements of the rave scene into an altogether more atmospheric direction. The scene produced a handful of genuine superstars in the Orb…",
+          "why": "",
+          "url": "https://aquariumdrunkard.com/2026/10/12/offworlding-ambient-house-1992-1997-a-mixtape/",
+          "verified": true
+        },
+        {
+          "title": "Black Sherif Is Pursuing Artistic Evolution Over Commercial Comfort On ‘Sun Sherif’",
+          "author": "Frederick Adjavon",
+          "source": "The NATIVE",
+          "summary": "The latest chapter in Black Sherif's journey is ‘Sun Sherif,’ a project where he elucidates a fresh vision and brings a new dimension. The post Black Sherif Is Pursuing Artistic Evolution Over Commercial Comfort On ‘Sun Sherif’ appeared first on The NATIVE.",
+          "why": "",
+          "url": "https://thenativemag.com/black-sherif-is-pursuing-artistic-evolution-over-commercial-comfort-on-sun-sherif/",
+          "verified": true
+        },
+        {
+          "title": "PAX Aus 2026 : Hands-On with Persona 4 Revival",
+          "author": "Alaisdair Leith",
+          "source": "The AU Review",
+          "summary": "The Persona series has become a fan favourite not only worldwide but also in my house. I’m not a huge JRPG fan, but this series, along with Xenoblade Chronicles, just gets me. Hearing about Persona 4 Revival bringing with it a massive overhaul to the graphics system, voice acting and improved combat system, I was...",
+          "why": "",
+          "url": "https://www.theaureview.com/games/pax-aus-2026-persona-4-revival-hands-on/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "design",
+      "entries": [
+        {
+          "title": "The Educational Value of Drawing Sets",
+          "author": "Martin Pedersen",
+          "source": "Common Edge",
+          "summary": "In the AI era, it’s vital that firm leaders continue helping young designers learn to see what sketches may leave unresolved.",
+          "why": "",
+          "url": "https://commonedge.org/the-educational-value-of-drawing-sets/",
+          "verified": true
+        },
+        {
+          "title": "B+N Industries Builds Its Modular Systems to Keep Evolving After Installation",
+          "author": "Hayley Arsenault",
+          "source": "Design Milk",
+          "summary": "Across System 1224, Sorbetti 2.0, and Muro, B+N Industries designs modular frameworks that expand, reconfigure, and take on new roles years after they first go up",
+          "why": "",
+          "url": "https://design-milk.com/bn-industries-builds-its-modular-systems-to-keep-evolving-after-installation/",
+          "verified": true
+        },
+        {
+          "title": "Linho House / TETRO Arquitetura",
+          "author": "Pilar Caballero",
+          "source": "ArchDaily",
+          "summary": "Located in a residential neighborhood in Nova Lima, Minas Gerais, the Linho House is more than just a residence—it is a narrative crafted in architecture. Directly inspired by its inhabitant, a fashion designer who works with fabrics and sewing, the house translates the essence of her creative daily life into forms and materials.",
+          "why": "",
+          "url": "https://www.archdaily.com/1033039/linho-house-tetro-arquitetura",
+          "verified": true
+        },
+        {
+          "title": "David Rudnick on the “borderline impossible” process of designing a bespoke blackletter typeface for Arsenal",
+          "author": "Olivia Hingley",
+          "source": "It's Nice That",
+          "summary": "For the past four years, the designer has been building a hand-drawn, three-weight type family that pays homage to one of the most beloved players in Arsenal’s history: David Rocastle. Here, It’s Nice That sits down with David and Arsenal Creative Studio lead Johnnie Campbell to get behind the scenes of the mammoth project.",
+          "why": "",
+          "url": "https://www.itsnicethat.com/features/david-rudnick-johnnie-campbell-arsenal-rocastle-typeface-graphic-design-spotlight-121026",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "fashion",
+      "entries": [
+        {
+          "title": "Jacket Season!",
+          "author": "Brynna",
+          "source": "Put This On",
+          "summary": "Hi everyone, it’s your Shopkeeper Brynna, here with some more hot new items from the Put This On Shop. Everyone... The post Jacket Season! appeared first on Put This On.",
+          "why": "",
+          "url": "https://putthison.com/jacket-season/",
+          "verified": true
+        },
+        {
+          "title": "From the Southern Highlands to Fashion Week, Iti is the Australian label to watch",
+          "author": "Maryel Sousa",
+          "source": "Fashion Journal",
+          "summary": "From childhood, Jeorge Bradford felt the pull to create, but it wasn’t until he entered university that he shared his talent with the world. When Jeorge started wearing his own handmade shirts, sewn from leftover curtain fabric, people noticed. Then, when enough people had, Iti was born. When Fashion Journal editors first saw Iti on the […] This article From the Southern Highlands to Fashion…",
+          "why": "",
+          "url": "https://fashionjournal.com.au/fashion/iti-brand-profile/",
+          "verified": true
+        },
+        {
+          "title": "Andy Burnham calls for new EU deal to boost economic growth",
+          "author": "Chloe Mills",
+          "source": "Drapers",
+          "summary": "Drapers Andy Burnham calls for new EU deal to boost economic growth Andy Burnham said today (12 October) it would be a \"dereliction of duty\" to turn down a closer relationship with the EU, as part of his bid to drive economic growth. The post Andy Burnham calls for new EU deal to boost economic growth appeared first on Drapers.",
+          "why": "",
+          "url": "https://www.drapersonline.com/news/andy-burnham-calls-for-new-eu-deal-to-boost-economic-growth",
+          "verified": true
+        },
+        {
+          "title": "CMF’s First Speakers Are Built Around Color, Modularity and Portability",
+          "author": "info@hypebeast.com (Hypebeast)",
+          "source": "Hypebeast",
+          "summary": "Summary CMF debuts its first portable speakers with the Speaker S and Speaker M.Both models feature modular designs, swappable panels, Stereo Mode and Auracast-powered Party Mode.Prices start at $59 USD, with sales beginning today. CMF by Nothing is expanding into portable audio for the first time with the Speaker S and Speaker M, a two-model lineup that carries the brand’s geometric, modular…",
+          "why": "",
+          "url": "https://hypebeast.com/2026/10/cmf-by-nothing-portable-speaker-series-s-m-release-info",
+          "verified": true
+        }
+      ]
+    }
+  ]
+}
