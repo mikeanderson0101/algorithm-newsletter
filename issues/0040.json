@@ -1,0 +1,296 @@
+{
+  "issue": 40,
+  "date": "2026-10-16",
+  "headline": "The *Feed*",
+  "intro": "A selection of recent writing from across the culture press.",
+  "byline": "2026-10-16 — selected links",
+  "categories": [
+    {
+      "key": "art",
+      "entries": [
+        {
+          "title": "A View From the Easel: Allan Wexler",
+          "author": "Lakshmi Rivera Amin",
+          "source": "Hyperallergic",
+          "summary": "“My past sculptures [and] tools act as levers that pry ideas from my mind.”",
+          "why": "",
+          "url": "https://hyperallergic.com/a-view-from-the-easel-359/",
+          "verified": true
+        },
+        {
+          "title": "Centre Pompidou’s Brazil Satellite Delayed Until 2029",
+          "author": "Thomas Patier",
+          "source": "Artforum",
+          "summary": "The creation of a Centre Pompidou in Foz do Iguaçu, a city in the Brazilian state of Paraná, was initially slated to open in November 2027, then rescheduled for 2028. Now, the project has been pushed back again, until 2029. The new museum will be designed by Paraguayan architect Solano Benítez, but the bidding process […]",
+          "why": "",
+          "url": "https://www.artforum.com/news/centre-pompidous-brazil-satellite-delayed-2029-1234761604/",
+          "verified": true
+        },
+        {
+          "title": "Philip Slein Gallery Presents An American Modernist",
+          "author": "abby",
+          "source": "Art & Object",
+          "summary": "Philip Slein Gallery Presents An American Modernist abby Fri, 10/16/2026 - 09:30",
+          "why": "",
+          "url": "https://www.artandobject.com/press-release/philip-slein-gallery-presents-american-modernist",
+          "verified": true
+        },
+        {
+          "title": "Earth Tones: Márcia Falcão’s Frieze London Diary",
+          "author": "Elephant Magazine",
+          "source": "Elephant",
+          "summary": "Artist Márcia Falcão reflects on her solo presentation at Frieze London with Fortes D’Aloia & Gabriel, exploring the relationship between colour, the female body and camouflage as a response to violence against women. On my way to London, I found myself thinking about earth tones. The week before my trip, I had been speaking with The post Earth Tones: Márcia Falcão’s Frieze London Diary appeared…",
+          "why": "",
+          "url": "https://elephant.art/earth-tones-marcia-falcaos-frieze-london-diary/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "film",
+      "entries": [
+        {
+          "title": "El Gouna Film Festival Kicks Off Ninth Edition: What to Expect",
+          "author": "Farah Samir",
+          "source": "Egyptian Streets",
+          "summary": "The ninth edition of El Gouna Film Festival (GFF) opened on Thursday, 15 October, bringing together Egyptian and international filmmakers, actors, and cinema professionals for nine days of screenings, discussions, and industry events in the Red Sea resort town. This year’s edition is held under the theme Cinema for Humanity: Archiving Narratives, highlighting cinema’s role in documenting human…",
+          "why": "",
+          "url": "https://egyptianstreets.com/2026/10/16/el-gouna-film-festival-kicks-off-ninth-edition-what-to-expect/",
+          "verified": true
+        },
+        {
+          "title": "You Can See Everything Review: Or, the Characters We Create for Ourselves",
+          "author": "Pat Mullen",
+          "source": "POV Magazine",
+          "summary": "In You Can See Everything Nathan Fielder and Lance Oppenheim capture the elusive mystery of Elizabeth Holmes in a portrait that proves the truth isn't nearly as interesting as a lie. The post You Can See Everything Review: Or, the Characters We Create for Ourselves appeared first on POV Magazine.",
+          "why": "",
+          "url": "https://povmagazine.com/you-can-see-everything-review-or-the-characters-we-create-for-ourselves/",
+          "verified": true
+        },
+        {
+          "title": "Shell (2024) Review: A Cheap Imitation of The Substance",
+          "author": "Matthew Jones",
+          "source": "Philosophy in Film",
+          "summary": "Shell takes aim at Hollywood’s beauty standards and the wellness industry, but its contrived twists and uneven performances turn horror into unintended comedy. Elisabeth Moss’s casting adds a striking Scientology parallel to a film that struggles to escape The Substance’s shadow. The post Shell (2024) Review: A Cheap Imitation of The Substance appeared first on Philosophy in Film.",
+          "why": "",
+          "url": "https://philosophyinfilm.com/2026/10/15/shell-2024-review/",
+          "verified": true
+        },
+        {
+          "title": "An Interview with ‘Herland’ Filmmaker Kallol Mukherjee",
+          "author": "Dipankar Sarkar",
+          "source": "Vague Visages",
+          "summary": "'Herland’ Interview: Dipankar Sarkar discusses the 2026 documentary with director Kallol Mukherjee. The post An Interview with ‘Herland’ Filmmaker Kallol Mukherjee appeared first on Vague Visages (Vawg-Vee-Sawj).",
+          "why": "",
+          "url": "https://vaguevisages.com/2026/10/14/herland-interview-kallol-mukherjee-movie-film/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "tech",
+      "entries": [
+        {
+          "title": "Pluralistic: Load-bearing (16 Oct 2026)",
+          "author": "Cory Doctorow",
+          "source": "Pluralistic",
+          "summary": "Today's links Load-bearing: Digital sovereignty vs AI. Hey look at this: Delights to delectate. Object permanence: Anthrax penmanship; Stolen WEBGEEK license plate; Arizona Republic endorses Clinton, gets death threats; Against the great forces of history. Upcoming appearances: Vancouver, Victoria, Ottawa, Vienna, Kilkenny, Oxford, Sheffield, Virtual, Oxford, Montreal. Recent appearances: Where…",
+          "why": "",
+          "url": "https://pluralistic.net/2026/10/15/sovereign-it/",
+          "verified": true
+        },
+        {
+          "title": "What We Can Save In A Time Of Endings",
+          "author": "Kat Hill",
+          "source": "Noema",
+          "summary": "The post What We Can Save In A Time Of Endings appeared first on NOEMA.",
+          "why": "",
+          "url": "https://www.noemamag.com/what-we-can-save-in-a-time-of-endings",
+          "verified": true
+        },
+        {
+          "title": "MyChart and a major hospital said I could opt out of sharing my health data. But they didn’t make it easy",
+          "author": "Alex Rosenblat",
+          "source": "The Markup",
+          "summary": "My journey included a notary, a hospital that won’t honor its own policies and employees that gave me wrong information.",
+          "why": "",
+          "url": "https://themarkup.org/privacy/2026/10/15/mychart-health-data-opt-out-epic-notary-hipaa",
+          "verified": true
+        },
+        {
+          "title": "The states come for OpenAI",
+          "author": "Casey Newton",
+          "source": "Platformer",
+          "summary": "Will the approach that beat Meta in New Mexico work against ChatGPT?",
+          "why": "",
+          "url": "https://www.platformer.news/openai-states-lawsuit-liability/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "lit",
+      "entries": [
+        {
+          "title": "What to Watch and Read This Weekend: I Don’t Know What to Do With the Netflix Volcano Sacrifice Movie",
+          "author": "Molly Templeton",
+          "source": "Reactor",
+          "summary": "Plus: All the books, all at once and an excuse to finally watch Save Yourselves! The post What to Watch and Read This Weekend: I Don’t Know What to Do With the Netflix Volcano Sacrifice Movie appeared first on Reactor.",
+          "why": "",
+          "url": "https://reactormag.com/what-to-watch-and-read-this-weekend-october-16-2026/",
+          "verified": true
+        },
+        {
+          "title": "Build Faster, Edit Your Way: What’s New with WordPress Agent",
+          "author": "Ronnie Burt",
+          "source": "Aotearoa NZ Review of Books",
+          "summary": "The WordPress Agent can now build custom themes, help refine your site, and manage plugins. Here's how the latest updates work.",
+          "why": "",
+          "url": "https://wordpress.com/blog/2026/10/15/wordpress-agent-updates/",
+          "verified": true
+        },
+        {
+          "title": "Folie",
+          "author": "Sander Pleij",
+          "source": "European Review of Books",
+          "summary": "Parting (2025) Sebastian Haffner (W&N, translated by Michael Hofmann) We need to talk about it because a) Haffner is a first-rate writer; b) there’s been hardly any coverage, but believe me, you want to read him; c) the story is a delicious love affair – and since it is set in Paris, let’s call it […] The post Folie appeared first on The European Review of Books.",
+          "why": "",
+          "url": "https://europeanreviewofbooks.com/folie/",
+          "verified": true
+        },
+        {
+          "title": "Return Competencies: On Solvej Balle’s “On the Calculation of Volume”",
+          "author": "Nick Glastonbury",
+          "source": "Cleveland Review of Books",
+          "summary": "the book is a fugue for the twilight of Europe, a jeremiad for an empire that has outlived its relevance to the world system it built The post Return Competencies: On Solvej Balle’s “On the Calculation of Volume” appeared first on Cleveland Review of Books.",
+          "why": "",
+          "url": "https://clereviewofbooks.com/on-solvej-balles-on-the-calculation-of-volume/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "music",
+      "entries": [
+        {
+          "title": "Can Comedy Be an Antidote to Authoritarianism’s Poison?",
+          "author": "Iain Ellis",
+          "source": "PopMatters",
+          "summary": "Politically, the opposite of authoritarianism is democracy; cognitively, it is humor. Comedy may indeed be the best medicine for our seriously unwell era.",
+          "why": "",
+          "url": "https://www.popmatters.com/comedy-antidote-authoritarianisms",
+          "verified": true
+        },
+        {
+          "title": "All 600-ish Hymns in the New English Hymnal, Ranked",
+          "author": "Maddie Lay",
+          "source": "VAN Magazine",
+          "summary": "The Church of England has a long history of books that shifted the paradigm of Anglican worship. The King James Bible brought biblical text into a rich and imposing vernacular. The Book of Common Prayer standardized the aesthetic of church practice. Most relevantly for a music magazine, one particular volume sent such a shockwave through […] The post All 600-ish Hymns in the New English Hymnal,…",
+          "why": "",
+          "url": "https://van-magazine.com/mag/every-new-english-hymnal-hymn-ranked/",
+          "verified": true
+        },
+        {
+          "title": "Chance The Rapper Wins Another Legal Battle Against Pat The Ex-Manager",
+          "author": "Tom Breihan",
+          "source": "Stereogum",
+          "summary": "The post Chance The Rapper Wins Another Legal Battle Against Pat The Ex-Manager appeared first on Stereogum.",
+          "why": "",
+          "url": "https://stereogum.com/2514776/chance-the-rapper-wins-another-legal-battle-against-pat-the-ex-manager/news/",
+          "verified": true
+        },
+        {
+          "title": "Pan’s Labyrinth, Guillermo del Toro’s Masterpiece, Receives 4K UHD Collector’s Edition",
+          "author": "Liz Shannon Miller",
+          "source": "Consequence",
+          "summary": "The Oscar-winning 2006 film is celebrating its 20th anniversary in style. Pan’s Labyrinth, Guillermo del Toro’s Masterpiece, Receives 4K UHD Collector’s Edition Liz Shannon Miller",
+          "why": "",
+          "url": "https://consequence.net/2026/10/pans-labyrinth-4k-uhd-steelbook-release/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "design",
+      "entries": [
+        {
+          "title": "AR Reading list 093: Manplan",
+          "author": "AR Editors",
+          "source": "The Architectural Review",
+          "summary": "The Architectural Review AR Reading list 093: Manplan Six free-to-read essays return to the campaign that asked architects to plan for people rather than statistics, and ask why so much of its agenda remains unfinished The post AR Reading list 093: Manplan appeared first on The Architectural Review. AR Editors",
+          "why": "",
+          "url": "https://www.architectural-review.com/archive/reading-lists/ar-reading-list-093",
+          "verified": true
+        },
+        {
+          "title": "Atelier Julien Boidot wins 2026 AR Emerging award with ‘savvy model for practice’",
+          "author": "Niall Patrick Walsh",
+          "source": "Archinect",
+          "summary": "French practice Atelier Julien Boidot has been announced as the winner of the AR Emerging Awards 2026. The firm was chosen from a shortlist of ten, which we reported on earlier this week. Awarding the accolade, the jury described Atelier Julien Boidot as “a savvy model for practice,” with a team including a quantity surveyor, engineer and interior designer in-house. Focusing on educational…",
+          "why": "",
+          "url": "https://archinect.com/news/bustler/11163/atelier-julien-boidot-wins-2026-ar-emerging-award-with-savvy-model-for-practice",
+          "verified": true
+        },
+        {
+          "title": "Amazon’s new Bee AI devices help you remember more without taking notes",
+          "author": "Gaurav Sood",
+          "source": "Yanko Design",
+          "summary": "Amazon’s new Bee AI devices help you remember more without taking notesRemembering details from meetings, conversations, and everyday interactions is hard when you’re splitting your attention between listening and taking notes. Amazon is addressing this with...",
+          "why": "",
+          "url": "https://www.yankodesign.com/2026/10/16/amazons-new-bee-ai-devices-help-you-remember-more-without-taking-notes/?utm_source=rss&utm_medium=rss&utm_campaign=amazons-new-bee-ai-devices-help-you-remember-more-without-taking-notes",
+          "verified": true
+        },
+        {
+          "title": "Transforming Barcelona's Waterfront: A Story of Urban Renewal",
+          "author": "Moises Carrasco",
+          "source": "ArchDaily",
+          "summary": "As one walks along the beachfront of Barcelona, the shoreline feels like it has always been there: sand, palm trees, a long promenade, restaurants, shops and modern hotels, when the reality is that it has not always been this way. Until the 1980s, Barcelona's seafront was a working barrier of railway lines, factories and informal housing, and wastewater ran straight into the Mediterranean.…",
+          "why": "",
+          "url": "https://www.archdaily.com/1186700/transforming-barcelonas-waterfront-a-story-of-urban-renewal",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "fashion",
+      "entries": [
+        {
+          "title": "‘No Signals’ Russia Wants to End War, Says Zelenskyy as He Seeks More EU Support",
+          "author": "Open Bureau/api/author/2365926",
+          "source": "Open Magazine",
+          "summary": "Ukrainian President Volodymyr Zelenskyy said on Friday that Russia had shown no readiness to end the war, as he sought further European support to protect Ukraine’s energy infrastructure, strengthen air defence and sustain its finances. Zelenskyy met European Council President António Costa and European Commission President Ursula von der Leyen in Brussels, with discussions also covering…",
+          "why": "",
+          "url": "https://openthemagazine.com/world/no-signals-russia-wants-to-end-war-says-zelenskyy-as-he-seeks-more-eu-support",
+          "verified": true
+        },
+        {
+          "title": "Why Gen Z Hates Sneaker Hype",
+          "author": null,
+          "source": "Highsnobiety",
+          "summary": "Saucony’s Senior Director of Global Energy, Jason Faustino, says sneaker culture is fundamentally broken. And he’s ready to blow it all up.",
+          "why": "",
+          "url": "https://www.highsnobiety.com/p/saucony-collaboration-interview/",
+          "verified": true
+        },
+        {
+          "title": "In pictures: Sainsbury’s Tu’s ‘elevated’ AW26 knitwear",
+          "author": "Chloe Mills",
+          "source": "Drapers",
+          "summary": "Drapers In pictures: Sainsbury’s Tu’s ‘elevated’ AW26 knitwear Sainsbury's clothing brand Tu has unveiled its \"elevated\" knitwear range for autumn/winter 2026, including a new collection of lambswool, alpaca, cashmere and mohair pieces. The post In pictures: Sainsbury’s Tu’s ‘elevated’ AW26 knitwear appeared first on Drapers.",
+          "why": "",
+          "url": "https://www.drapersonline.com/companies/directory/sainsburys/in-pictures-sainsburys-tus-elevated-aw26-knitwear",
+          "verified": true
+        },
+        {
+          "title": "Brooks Brothers Hosts A Nostalgic Evening",
+          "author": "Matthew Longcore",
+          "source": "Ivy Style",
+          "summary": "By Matthew Longcore Most of us who appreciate Ivy Style have that sentimental brand that first introduced them to the timeless elegance of navy blazers, oxford cloth button down shirts, repp ties, and the like. For me, that brand is Brooks Brothers. My earliest experience at Brooks Brothers was when I was a young boy ... The post Brooks Brothers Hosts A Nostalgic Evening appeared first on Ivy…",
+          "why": "",
+          "url": "https://www.ivy-style.com/brooks-brothers-hosts-a-nostalgic-evening.html",
+          "verified": true
+        }
+      ]
+    }
+  ]
+}
