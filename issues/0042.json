@@ -1,0 +1,287 @@
+{
+  "issue": 42,
+  "date": "2026-10-17",
+  "headline": "The *Feed*",
+  "intro": "A selection of recent writing from across the culture press.",
+  "byline": "2026-10-17 — selected links",
+  "categories": [
+    {
+      "key": "art",
+      "entries": [
+        {
+          "title": "Lois Dickson: Tenacity, curiosity, and persistence",
+          "author": "Sharon Butler",
+          "source": "Two Coats of Paint",
+          "summary": "Contributed by Bill Arning / Years before Hudson became an international art destination, there was Time & Space Limited, a cavernous space on Columbia Street, […]",
+          "why": "",
+          "url": "https://twocoatsofpaint.com/2026/10/lois-dickson-tenacity-curiosity-and-persistence.html?utm_source=rss&utm_medium=rss&utm_campaign=lois-dickson-tenacity-curiosity-and-persistence",
+          "verified": true
+        },
+        {
+          "title": "Performative Power: ‘Projections Onto the East’ at Schinkel Pavillon and n.b.k.",
+          "author": "Alison Hugill",
+          "source": "Berlin Art Link",
+          "summary": "by Jacob Zhicheng Zhang // Oct. 16, 2026 Performativity indicates action—and not necessarily the kind involving physical movement. In J.L. Austin’s theory, a performative utterance does not merely describe or refer. Under the right conditions, the utterance can…[read on]",
+          "why": "",
+          "url": "https://www.berlinartlink.com/2026/10/16/projections-onto-the-east-schinkel-pavillon-nbk-exhibition-review/",
+          "verified": true
+        },
+        {
+          "title": "Raw, Unruly Rituals: Collaborating with the Spirits at Palm Springs Art Museum",
+          "author": "Momus Admin",
+          "source": "Momus",
+          "summary": "A Queer Arcana: Art, Magic, and Spirit, curated by David Evans Frantz at the Palm Springs Art Museum, is a summer blockbuster eons away from what you would expect of a regional art museum known for championing West Coast abstraction. The artworks are potent and arresting, while the show presents magic’s cultural history with meticulous […]",
+          "why": "",
+          "url": "https://momus.ca/2026/10/15/raw-unruly-rituals-collaborating-with-the-spirits-at-palm-springs-art-museum/",
+          "verified": true
+        },
+        {
+          "title": "En innsparing som kan koste dyrt",
+          "author": "Mariann Enge",
+          "source": "Kunstkritikk",
+          "summary": "Forslaget om å slå KORO og Kulturtanken sammen med Kulturdirektoratet er risikabel kulturpolitikk. The post En innsparing som kan koste dyrt appeared first on Kunstkritikk.",
+          "why": "",
+          "url": "https://kunstkritikk.com/en-innsparing-som-kan-koste-dyrt/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "film",
+      "entries": [
+        {
+          "title": "High Heels: Pedro Almodóvar’s Fiery Mildred Pierce Remix",
+          "author": "Kayleigh Donaldson",
+          "source": "Crooked Marquee",
+          "summary": "Taking inspiration from a variety of classic Hollywood sources, Almodóvar’s film is a mother-daughter melodrama with an unexpected take on gender roles. The post High Heels: Pedro Almodóvar’s Fiery Mildred Pierce Remix appeared first on Crooked Marquee.",
+          "why": "",
+          "url": "https://crookedmarquee.com/high-heels-pedro-almodovars-fiery-mildred-pierce-remix/",
+          "verified": true
+        },
+        {
+          "title": "Review: Brian Duffield’s ‘Whalefall’",
+          "author": "Alistair Ryder",
+          "source": "Vague Visages",
+          "summary": "\"'Whalefall' sinks before it can swim, drowning in its own tedium far ahead of its descent underwater.\" The post Review: Brian Duffield’s ‘Whalefall’ appeared first on Vague Visages (Vawg-Vee-Sawj).",
+          "why": "",
+          "url": "https://vaguevisages.com/2026/10/16/whalefall-review-amazon-apple-disney-hbo-max-hulu-movie-film/",
+          "verified": true
+        },
+        {
+          "title": "Camera Japan Rotterdam 2026 Review: RHAPSODY, RHAPSODY, A Rom-Com Which Keeps It Real",
+          "author": null,
+          "source": "Screen Anarchy",
+          "summary": "It's the question which pops up in any interview with a director: \"What will your next film be?\" It is so common a question that if the mood allows for it, I will add \"A romantic comedy perhaps?\" and that will normally get a laugh out of my subject. I mean, if there is ONE genre we all dread, deem stale, or has more idiotic tropes than horror, it's the romantic comedy. Yet, after a hiatus of over…",
+          "why": "",
+          "url": "https://screenanarchy.com/2026/10/camera-japan-rotterdam-2026-review-rhapsody-rhapsody-a-rom-com-which-keeps-it-real.html",
+          "verified": true
+        },
+        {
+          "title": "The Criterion Collection’s January 2027 Lineup Features Claire Denis, Mike Leigh, and Deliverance on 4K",
+          "author": "Nick Newman",
+          "source": "The Film Stage",
+          "summary": "It’s not even Halloween but already time to set your 2027 viewing calendar. Coming to Criterion on Blu-ray are Claire Denis’ feature debut, Chocolat, a film whose colors and textures demand a higher, and Mike Leigh’s Career Girls, which will resonate differently after the vision of female friendship in his great, potentially final film Tender […] The post The Criterion Collection’s January 2027…",
+          "why": "",
+          "url": "https://thefilmstage.com/the-criterion-collections-january-2027-lineup-features-claire-denis-mike-leigh-and-deliverance-on-4k/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "tech",
+      "entries": [
+        {
+          "title": "Cracking the Nigerian syllabus: How Ex-UNILAG students engineered an exam cheat-code",
+          "author": "Opeyemi Kareem",
+          "source": "TechCabal",
+          "summary": "UniBeta uses AI to help Nigerian university students prepare for exams.",
+          "why": "",
+          "url": "https://techcabal.com/2026/10/17/cracking-the-nigerian-syllabus-unibeta-ai/",
+          "verified": true
+        },
+        {
+          "title": "SpaceX’s ambitious, expensive gamble to replace AT&T, T-Mobile, and Verizon",
+          "author": "Nilay Patel",
+          "source": "The Verge",
+          "summary": "Today, I’m talking with Walter Piecyk, a partner and analyst at LightShed Partners who covers tech, media, and telecom, about SpaceX’s recently announced plan to become a major wireless carrier. Last week, SpaceX agreed to buy a big chunk of low-band spectrum to expand the Starlink network, spectrum that’s been traded around the telecom business […]",
+          "why": "",
+          "url": "https://www.theverge.com/podcast/1012416/spacex-starlink-elon-musk-cell-carrier-wireless-mobile-att-verizon-t-mobile",
+          "verified": true
+        },
+        {
+          "title": "Encryption Is Getting Squeezed From All Sides",
+          "author": "Matt Burgess, Lily Hay Newman",
+          "source": "Wired",
+          "summary": "Canada’s planned surveillance law is the latest grim step in a series of threats to encryption that are spreading around the world.",
+          "why": "",
+          "url": "https://www.wired.com/story/kernel-panic-encryption-is-getting-squeezed-from-all-sides/",
+          "verified": true
+        },
+        {
+          "title": "Roundtables: A Conversation With the Creator of AI-Designed Viruses",
+          "author": "MIT Technology Review",
+          "source": "MIT Technology Review",
+          "summary": "Listen to the session or watch below Can AI design new life forms? In 2025, Stanford University PhD student Samuel King came up with a preliminary answer when he used a generative AI model to propose genetic blueprints for microscopic viruses. It isn’t yet an example of AI-generated life, but that could be next. Watch…",
+          "why": "",
+          "url": "https://www.technologyreview.com/2026/10/16/1146224/roundtables-a-conversation-with-the-creator-of-ai-designed-viruses/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "lit",
+      "entries": [
+        {
+          "title": "Dangerous Liaisons: A Guide to Robot Symbiosis",
+          "author": "Vector editors",
+          "source": "Vector/BSFA",
+          "summary": "By Jesse Rowell On its face, Brain Fruit is a simple tale of evolution through mutual symbiosis. Being a fan of symbiont sci-fi like Hal Clement’s classic 1950’s novel, Needle, and Peter Watts’s 2010 short story, “The Things,” I eagerly awaited Stephen Oram’s tale of artificial speciation in a hostile world of rock storms and … Continue reading Dangerous Liaisons: A Guide to Robot Symbiosis →",
+          "why": "",
+          "url": "https://vector-bsfa.com/2026/10/16/dangerous-liaisons-a-guide-to-robot-symbiosis/",
+          "verified": true
+        },
+        {
+          "title": "Fanfiction as Networked Literature: Review of Suzanne R. Black’s Between Novel and Network",
+          "author": "sebastiansparrevohn",
+          "source": "Ancillary Review of Books",
+          "summary": "Sebastian Sparrevohn Under Review:Suzanne R. Black. Between Novel and Network: Technology and Literary Form in Fiction and Fanfiction. LSU Press, May 2026. Networks are with us all the time now. We are entangled and embedded in them. The internet has long ago ceased being a place we go and is instead something that envelops us. … Continue reading Fanfiction as Networked Literature: Review of…",
+          "why": "",
+          "url": "https://ancillaryreviewofbooks.org/2026/10/16/fanfiction-as-networked-literature/",
+          "verified": true
+        },
+        {
+          "title": "15 Small Press Titles You Should Be Reading This Fall",
+          "author": "Wendy J Fox",
+          "source": "Electric Literature",
+          "summary": "Something I have been thinking about a lot—and talking to other industry peers with—is what has happened to media, and specifically books coverage. This is why even if you have just five dollars, you should consider donating to Electric Literature, who is one of the few remaining outlets specifically devoted to literature. Many of the […] The post 15 Small Press Titles You Should Be Reading This…",
+          "why": "",
+          "url": "https://electricliterature.com/15-small-press-titles-you-should-be-reading-this-fall/",
+          "verified": true
+        },
+        {
+          "title": "Contrition Actor",
+          "author": "Christina Apa",
+          "source": "Literary Review of Canada",
+          "summary": "The post Contrition Actor appeared first on Literary Review of Canada.",
+          "why": "",
+          "url": "https://reviewcanada.ca/magazine/2026/11/contrition-actor/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "music",
+      "entries": [
+        {
+          "title": "How Lagos Came To Be A Den Of Area Boys",
+          "author": "Tiléwa Kazeem",
+          "source": "The NATIVE",
+          "summary": "The area boy has become an index of Lagos itself; follow him closely enough, and you can trace the city’s history. The post How Lagos Came To Be A Den Of Area Boys appeared first on The NATIVE.",
+          "why": "",
+          "url": "https://thenativemag.com/how-lagos-came-to-be-a-den-of-area-boys/",
+          "verified": true
+        },
+        {
+          "title": "Kid Rock Drops Christian Music Album with Eminem Collaboration “Heal My Faith”",
+          "author": "Alex Young",
+          "source": "Consequence",
+          "summary": "Eminem says of their track: \"Not about choosing sides, just choosing to make music with my old friend. Praying for all of us.\" Kid Rock Drops Christian Music Album with Eminem Collaboration “Heal My Faith” Alex Young",
+          "why": "",
+          "url": "https://consequence.net/2026/10/kid-rock-christian-album-eminem/",
+          "verified": true
+        },
+        {
+          "title": "Every major concert, show and music festival coming to Las Vegas in 2027",
+          "author": "Chris Singh",
+          "source": "The AU Review",
+          "summary": "A good number of our readers regularly find themselves travelling across America for conferences, industry events and music festivals, particularly along the West Coast. And while those trips tend to be built around work commitments or a particular event, keeping an eye on what’s happening in Las Vegas can turn an otherwise routine business trip...",
+          "why": "",
+          "url": "https://www.theaureview.com/travel/las-vegas-concerts-2027/",
+          "verified": true
+        },
+        {
+          "title": "Worldpeace DMT’s Stick Around For Tea Is Not Your Father’s Laptop Twee",
+          "author": "Chris DeVille",
+          "source": "Stereogum",
+          "summary": "The post Worldpeace DMT’s Stick Around For Tea Is Not Your Father’s Laptop Twee appeared first on Stereogum.",
+          "why": "",
+          "url": "https://stereogum.com/2514847/worldpeace-dmts-stick-around-for-tea-is-not-your-fathers-laptop-twee/music/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "design",
+      "entries": [
+        {
+          "title": "Oslo’s New Government Quarter Reclaims a Site of Terror Through Architecture",
+          "author": "Yuki Sumner",
+          "source": "Azure",
+          "summary": "Integrating remnants of the 2011 terrorist attacks with preserved historic buildings and new construction, Nordic Office of Architecture reimagines a future for the civic campus without erasing its past. The post Oslo’s New Government Quarter Reclaims a Site of Terror Through Architecture appeared first on Azure Magazine.",
+          "why": "",
+          "url": "https://www.azuremagazine.com/article/oslo-new-government-quarter-nordic-office-of-architecture/",
+          "verified": true
+        },
+        {
+          "title": "Eglinton Street by Richard Stampton Architects",
+          "author": "Michael Roper",
+          "source": "ArchitectureAU Discussion",
+          "summary": "A conversation across generations, this update to Charles Duncan’s Ramsay House balances whimsy with reverence, bringing play to the process of respectful renovation.",
+          "why": "",
+          "url": "https://architectureau.com/articles/eglinton-street-by-richard-stampton-architects/",
+          "verified": true
+        },
+        {
+          "title": "From Spotlight to Soft-light: New Lighting by Coil + Drift",
+          "author": "Misha Agostinelli",
+          "source": "Design Milk",
+          "summary": "Drawing from theatrical spotlights and Catskill fire lookout towers, John Sorensen-Jolink creates two lighting collections that shape how we focus, unwind, and inhabit a room",
+          "why": "",
+          "url": "https://design-milk.com/coil-drift-lighting-touch-strut/",
+          "verified": true
+        },
+        {
+          "title": "On’s new editorial platform is where the brand’s ideas spark, meld and grow",
+          "author": "It's Nice That",
+          "source": "It's Nice That",
+          "summary": "Ondesign goes behind the scenes with On’s creative teams – spanning architects to stylists and designers – showing how they push what’s normal, and possible, for a sports and culture brand.",
+          "why": "",
+          "url": "https://www.itsnicethat.com/features/on-ondesign-editorial-platform-creative-industry-sponsored-content-151026",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "fashion",
+      "entries": [
+        {
+          "title": "Frieze 2026: A Shopping List",
+          "author": "AnOtherhttps://www.anothermag.com/rssfeed@dazedmedia.com",
+          "source": "AnOther",
+          "summary": "The AnOther team head over to Frieze 2026 to peruse the booths with an unlimited budget, hypothetically speaking. From a perfectly rendered still life by Old Master Jacob van Hulsdonck to pictures made from cigarettes, here’s what they’d buy",
+          "why": "",
+          "url": "https://www.anothermag.com/art-photography/17576/frieze-2026-a-shopping-list?utm_source=Link&utm_medium=Link&utm_campaign=RSSFeed&utm_term=frieze-2026-a-shopping-list",
+          "verified": true
+        },
+        {
+          "title": "Sophia Stel Is Taking in Her Newfound Power",
+          "author": "floramedina",
+          "source": "i-D",
+          "summary": "Her debut album, The Greatest Album of All Time, arrives as the Vancouver-based musician’s most audacious and self-assured move yet.",
+          "why": "",
+          "url": "https://i-d.co/article/sophia-stel-debut-interview-greatest-album-of-all-time/",
+          "verified": true
+        },
+        {
+          "title": "It’s primetime to buy A24’s Robert Pattinson T-shirt",
+          "author": "Isobel Van Dykehttps://www.dazeddigital.com/rssfeed@dazedmedia.com",
+          "source": "Dazed Fashion",
+          "summary": "The production company has teamed up with streetwear label Farmer’s Daughter for a Primetime collaboration. Plus: all the fashion news you missed this week",
+          "why": "",
+          "url": "https://www.dazeddigital.com/fashion/article/71189/1/it-s-primetime-to-buy-a24-s-robert-pattinson-t-shirt?utm_source=Link&utm_medium=Link&utm_campaign=RSSFeed&utm_term=it-s-primetime-to-buy-a24-s-robert-pattinson-t-shirt",
+          "verified": true
+        }
+      ]
+    }
+  ]
+}

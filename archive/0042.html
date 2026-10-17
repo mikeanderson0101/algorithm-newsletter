@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0A0A0A">
+<title>Algorithm — Issue No. 42 — 17 Oct 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Source+Serif+4:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  html, body{ margin:0; padding:0; height:100%; background-color:#0A0A0A; }
+  *{box-sizing:border-box;}
+  body{
+    min-height:100dvh;
+    color:#FAFAF7;
+    font-family:'Source Serif 4', Georgia, serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .page{ background-color:#0A0A0A; min-height:100dvh; }
+  a{ color:inherit; }
+  .wrap{max-width:720px; margin:0 auto; padding:44px 24px 90px; position:relative;}
+  .masthead{
+    display:flex; justify-content:space-between; align-items:flex-end;
+    border-bottom:4px solid #FAFAF7;
+    padding-bottom:14px; margin-bottom:24px;
+  }
+  .mast-title{
+    font-family:'Archivo Black', sans-serif;
+    font-size:clamp(26px,6vw,34px);
+    letter-spacing:-0.01em;
+    text-transform:uppercase;
+    color:#FAFAF7;
+    text-decoration:none;
+  }
+  .stamp{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px; letter-spacing:0.1em; text-transform:uppercase;
+    color:#0A0A0A; background:#FF1F3D;
+    padding:5px 10px; border-radius:2px;
+    transform:rotate(-3deg); display:inline-block; font-weight:600;
+    white-space:nowrap;
+  }
+  .nav{display:flex; justify-content:space-between; align-items:center; gap:16px; margin-bottom:40px; flex-wrap:wrap;}
+  .nav-link{font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:#FAFAF7; text-decoration:none; border:1px solid rgba(250,250,247,0.35); padding:9px 14px; border-radius:2px; white-space:nowrap;}
+  .nav-link:hover{border-color:#FF1F3D; color:#FF1F3D;}
+  .search-wrap{position:relative; flex:1; min-width:220px;}
+  .search-input{width:100%; background:#151513; border:1px solid rgba(250,250,247,0.3); color:#FAFAF7; font-family:'IBM Plex Mono', monospace; font-size:13px; padding:10px 12px; border-radius:2px; outline:none;}
+  .search-input::placeholder{color:#6B6860;}
+  .search-input:focus{border-color:#FF1F3D;}
+  .search-results{position:absolute; top:calc(100% + 6px); left:0; right:0; background:#111110; border:1px solid rgba(250,250,247,0.25); border-radius:4px; max-height:380px; overflow-y:auto; z-index:20; display:none;}
+  .search-results.active{display:block;}
+  .search-result{display:block; padding:10px 12px; border-bottom:1px solid rgba(250,250,247,0.12); text-decoration:none;}
+  .search-result:last-child{border-bottom:none;}
+  .search-result:hover{background:rgba(255,31,61,0.08);}
+  .sr-tag{font-family:'IBM Plex Mono', monospace; font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:#A6A29A;}
+  .sr-title{display:block; font-style:italic; color:#FAFAF7; margin:2px 0; font-size:14px;}
+  .sr-meta{font-family:'IBM Plex Mono', monospace; font-size:10.5px; color:#A6A29A;}
+  .search-empty{padding:14px 12px; font-family:'IBM Plex Mono', monospace; font-size:12.5px; color:#A6A29A;}
+  h1.hero{
+    font-family:'Anton', sans-serif;
+    font-weight:400;
+    font-size:clamp(42px,10vw,72px);
+    line-height:0.94;
+    text-transform:uppercase;
+    margin:0 0 22px;
+    color:#FAFAF7;
+  }
+  h1.hero .pop{color:#FF1F3D;}
+  .intro{font-size:17px; color:#EDEAE2; max-width:56ch; margin-bottom:10px;}
+  .intro-byline{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px; letter-spacing:0.08em; text-transform:uppercase;
+    color:#A6A29A;
+    margin-top:16px; margin-bottom:54px; display:block;
+    border-left:2px solid #FF1F3D; padding-left:10px;
+  }
+  .section{position:relative; margin-bottom:50px; padding-left:56px;}
+  .section:last-of-type{margin-bottom:0;}
+  .stampnum{
+    position:absolute; left:0; top:0;
+    width:42px; height:42px;
+    border:2px solid #FAFAF7;
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Archivo Black', sans-serif;
+    font-size:15px; color:#FAFAF7;
+    transform:rotate(-6deg);
+  }
+  .art .stampnum{border-color:#C9A24B; color:#C9A24B;}
+  .film .stampnum{border-color:#FF5B4A; color:#FF5B4A;}
+  .tech .stampnum{border-color:#3FE0D0; color:#3FE0D0;}
+  .lit .stampnum{border-color:#B39DFF; color:#B39DFF;}
+  .music .stampnum{border-color:#FF5FA8; color:#FF5FA8;}
+  .design .stampnum{border-color:#FFD23F; color:#FFD23F;}
+  .fashion .stampnum{border-color:#FAFAF7; color:#FAFAF7;}
+  .section-head{display:flex; align-items:center; gap:12px; margin-bottom:18px; flex-wrap:wrap;}
+  .section-tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase;
+    color:#0A0A0A;
+    padding:6px 11px; border-radius:2px;
+  }
+  .art .section-tag{background:#C9A24B;}
+  .film .section-tag{background:#FF5B4A;}
+  .tech .section-tag{background:#3FE0D0;}
+  .lit .section-tag{background:#B39DFF;}
+  .music .section-tag{background:#FF5FA8;}
+  .design .section-tag{background:#FFD23F;}
+  .fashion .section-tag{background:#FAFAF7;}
+  .section-title{
+    font-family:'Archivo Black', sans-serif;
+    font-size:24px; text-transform:uppercase; letter-spacing:0.01em;
+    color:#FAFAF7;
+  }
+  .entry{margin-bottom:24px; padding-bottom:24px; border-bottom:1px solid rgba(250,250,247,0.16); scroll-margin-top:24px;}
+  .entry:last-child{border-bottom:none; margin-bottom:0; padding-bottom:0;}
+  .entry-byline{font-family:'IBM Plex Mono', monospace; font-size:12px; color:#A6A29A; margin-bottom:8px;}
+  .entry-title{font-weight:500; font-style:italic; color:#FAFAF7; text-decoration:underline; text-decoration-color:rgba(250,250,247,0.35); text-underline-offset:3px;}
+  .entry-title:hover{text-decoration-color:#FF1F3D;}
+  .entry p{margin:0 0 10px; font-size:16px; color:#EDEAE2;}
+  .entry .why{font-size:14.5px; color:#A6A29A; font-style:italic;}
+  .entry .why::before{content:"— ";}
+  .issue-list{list-style:none; margin:0; padding:0;}
+  .issue-card{display:block; text-decoration:none; padding:22px 0; border-bottom:1px solid rgba(250,250,247,0.16);}
+  .issue-card:first-child{padding-top:0;}
+  .issue-card:hover .issue-headline{ text-decoration-color:#FF1F3D; }
+  .issue-meta{font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:#A6A29A; margin-bottom:8px;}
+  .issue-meta .num{color:#FF1F3D;}
+  .issue-headline{font-family:'Archivo Black', sans-serif; font-size:22px; text-transform:uppercase; letter-spacing:0.01em; color:#FAFAF7; text-decoration:underline; text-decoration-color:rgba(250,250,247,0.35); text-underline-offset:4px; display:inline-block; margin-bottom:8px;}
+  .issue-desc{font-size:15px; color:#A6A29A; max-width:60ch; margin:0;}
+  footer{
+    margin-top:64px; padding-top:20px; border-top:1px solid rgba(250,250,247,0.16);
+    display:flex; justify-content:space-between; gap:12px;
+    font-family:'IBM Plex Mono', monospace; font-size:10.5px;
+    letter-spacing:0.06em; color:#A6A29A; text-transform:uppercase;
+  }
+  @media (max-width:520px){
+    .wrap{padding:30px 16px 70px;}
+    .section{padding-left:48px;}
+    .stampnum{width:36px; height:36px; font-size:13px;}
+    .section-title{font-size:20px;}
+    .nav{flex-direction:column; align-items:stretch;}
+  }
+</style>
+</head>
+<body data-root="../">
+<div class="page">
+<div class="wrap">
+  <div class="masthead">
+    <a class="mast-title" href="../index.html">Algorithm</a>
+    <span class="stamp">Issue No. 42</span>
+  </div>
+  <div class="nav">
+    <a class="nav-link" href="../index.html">&larr; Latest Issue</a>
+    <a class="nav-link" href="../archive/index.html">Full Archive</a>
+  </div>
+  <h1 class="hero">The <span class="pop">Feed</span></h1>
+  <p class="intro">A selection of recent writing from across the culture press.</p>
+  <span class="intro-byline">2026-10-17 — selected links</span>
+  <section class="section art">
+    <span class="stampnum">01</span>
+    <div class="section-head">
+      <span class="section-tag">Art</span>
+      <h2 class="section-title">Fine Art</h2>
+    </div>
+    <div class="entry" id="art-1">
+      <div class="entry-byline"><a class="entry-title" href="https://twocoatsofpaint.com/2026/10/lois-dickson-tenacity-curiosity-and-persistence.html?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=lois-dickson-tenacity-curiosity-and-persistence" target="_blank" rel="noopener">Lois Dickson: Tenacity, curiosity, and persistence</a> by Sharon Butler — Two Coats of Paint</div>
+
+      <p>Contributed by Bill Arning / Years before Hudson became an international art destination, there was Time &amp; Space Limited, a cavernous space on Columbia Street, […]</p>
+    </div>
+    <div class="entry" id="art-2">
+      <div class="entry-byline"><a class="entry-title" href="https://www.berlinartlink.com/2026/10/16/projections-onto-the-east-schinkel-pavillon-nbk-exhibition-review/" target="_blank" rel="noopener">Performative Power: ‘Projections Onto the East’ at Schinkel Pavillon and n.b.k.</a> by Alison Hugill — Berlin Art Link</div>
+
+      <p>by Jacob Zhicheng Zhang // Oct. 16, 2026 Performativity indicates action—and not necessarily the kind involving physical movement. In J.L. Austin’s theory, a performative utterance does not merely describe or refer. Under the right conditions, the utterance can…[read on]</p>
+    </div>
+    <div class="entry" id="art-3">
+      <div class="entry-byline"><a class="entry-title" href="https://momus.ca/2026/10/15/raw-unruly-rituals-collaborating-with-the-spirits-at-palm-springs-art-museum/" target="_blank" rel="noopener">Raw, Unruly Rituals: Collaborating with the Spirits at Palm Springs Art Museum</a> by Momus Admin — Momus</div>
+
+      <p>A Queer Arcana: Art, Magic, and Spirit, curated by David Evans Frantz at the Palm Springs Art Museum, is a summer blockbuster eons away from what you would expect of a regional art museum known for championing West Coast abstraction. The artworks are potent and arresting, while the show presents magic’s cultural history with meticulous […]</p>
+    </div>
+    <div class="entry" id="art-4">
+      <div class="entry-byline"><a class="entry-title" href="https://kunstkritikk.com/en-innsparing-som-kan-koste-dyrt/" target="_blank" rel="noopener">En innsparing som kan koste dyrt</a> by Mariann Enge — Kunstkritikk</div>
+
+      <p>Forslaget om å slå KORO og Kulturtanken sammen med Kulturdirektoratet er risikabel kulturpolitikk. The post En innsparing som kan koste dyrt appeared first on Kunstkritikk.</p>
+    </div>
+  </section>
+  <section class="section film">
+    <span class="stampnum">02</span>
+    <div class="section-head">
+      <span class="section-tag">Film</span>
+      <h2 class="section-title">Film Criticism</h2>
+    </div>
+    <div class="entry" id="film-1">
+      <div class="entry-byline"><a class="entry-title" href="https://crookedmarquee.com/high-heels-pedro-almodovars-fiery-mildred-pierce-remix/" target="_blank" rel="noopener">High Heels: Pedro Almodóvar’s Fiery Mildred Pierce Remix</a> by Kayleigh Donaldson — Crooked Marquee</div>
+
+      <p>Taking inspiration from a variety of classic Hollywood sources, Almodóvar’s film is a mother-daughter melodrama with an unexpected take on gender roles. The post High Heels: Pedro Almodóvar’s Fiery Mildred Pierce Remix appeared first on Crooked Marquee.</p>
+    </div>
+    <div class="entry" id="film-2">
+      <div class="entry-byline"><a class="entry-title" href="https://vaguevisages.com/2026/10/16/whalefall-review-amazon-apple-disney-hbo-max-hulu-movie-film/" target="_blank" rel="noopener">Review: Brian Duffield’s ‘Whalefall’</a> by Alistair Ryder — Vague Visages</div>
+
+      <p>&quot;&#39;Whalefall&#39; sinks before it can swim, drowning in its own tedium far ahead of its descent underwater.&quot; The post Review: Brian Duffield’s ‘Whalefall’ appeared first on Vague Visages (Vawg-Vee-Sawj).</p>
+    </div>
+    <div class="entry" id="film-3">
+      <div class="entry-byline"><a class="entry-title" href="https://screenanarchy.com/2026/10/camera-japan-rotterdam-2026-review-rhapsody-rhapsody-a-rom-com-which-keeps-it-real.html" target="_blank" rel="noopener">Camera Japan Rotterdam 2026 Review: RHAPSODY, RHAPSODY, A Rom-Com Which Keeps It Real</a> — Screen Anarchy</div>
+
+      <p>It&#39;s the question which pops up in any interview with a director: &quot;What will your next film be?&quot; It is so common a question that if the mood allows for it, I will add &quot;A romantic comedy perhaps?&quot; and that will normally get a laugh out of my subject. I mean, if there is ONE genre we all dread, deem stale, or has more idiotic tropes than horror, it&#39;s the romantic comedy. Yet, after a hiatus of over…</p>
+    </div>
+    <div class="entry" id="film-4">
+      <div class="entry-byline"><a class="entry-title" href="https://thefilmstage.com/the-criterion-collections-january-2027-lineup-features-claire-denis-mike-leigh-and-deliverance-on-4k/" target="_blank" rel="noopener">The Criterion Collection’s January 2027 Lineup Features Claire Denis, Mike Leigh, and Deliverance on 4K</a> by Nick Newman — The Film Stage</div>
+
+      <p>It’s not even Halloween but already time to set your 2027 viewing calendar. Coming to Criterion on Blu-ray are Claire Denis’ feature debut, Chocolat, a film whose colors and textures demand a higher, and Mike Leigh’s Career Girls, which will resonate differently after the vision of female friendship in his great, potentially final film Tender […] The post The Criterion Collection’s January 2027…</p>
+    </div>
+  </section>
+  <section class="section tech">
+    <span class="stampnum">03</span>
+    <div class="section-head">
+      <span class="section-tag">Tech &amp; AI</span>
+      <h2 class="section-title">Tech &amp; AI</h2>
+    </div>
+    <div class="entry" id="tech-1">
+      <div class="entry-byline"><a class="entry-title" href="https://techcabal.com/2026/10/17/cracking-the-nigerian-syllabus-unibeta-ai/" target="_blank" rel="noopener">Cracking the Nigerian syllabus: How Ex-UNILAG students engineered an exam cheat-code</a> by Opeyemi Kareem — TechCabal</div>
+
+      <p>UniBeta uses AI to help Nigerian university students prepare for exams.</p>
+    </div>
+    <div class="entry" id="tech-2">
+      <div class="entry-byline"><a class="entry-title" href="https://www.theverge.com/podcast/1012416/spacex-starlink-elon-musk-cell-carrier-wireless-mobile-att-verizon-t-mobile" target="_blank" rel="noopener">SpaceX’s ambitious, expensive gamble to replace AT&amp;T, T-Mobile, and Verizon</a> by Nilay Patel — The Verge</div>
+
+      <p>Today, I’m talking with Walter Piecyk, a partner and analyst at LightShed Partners who covers tech, media, and telecom, about SpaceX’s recently announced plan to become a major wireless carrier. Last week, SpaceX agreed to buy a big chunk of low-band spectrum to expand the Starlink network, spectrum that’s been traded around the telecom business […]</p>
+    </div>
+    <div class="entry" id="tech-3">
+      <div class="entry-byline"><a class="entry-title" href="https://www.wired.com/story/kernel-panic-encryption-is-getting-squeezed-from-all-sides/" target="_blank" rel="noopener">Encryption Is Getting Squeezed From All Sides</a> by Matt Burgess, Lily Hay Newman — Wired</div>
+
+      <p>Canada’s planned surveillance law is the latest grim step in a series of threats to encryption that are spreading around the world.</p>
+    </div>
+    <div class="entry" id="tech-4">
+      <div class="entry-byline"><a class="entry-title" href="https://www.technologyreview.com/2026/10/16/1146224/roundtables-a-conversation-with-the-creator-of-ai-designed-viruses/" target="_blank" rel="noopener">Roundtables: A Conversation With the Creator of AI-Designed Viruses</a> by MIT Technology Review — MIT Technology Review</div>
+
+      <p>Listen to the session or watch below Can AI design new life forms? In 2025, Stanford University PhD student Samuel King came up with a preliminary answer when he used a generative AI model to propose genetic blueprints for microscopic viruses. It isn’t yet an example of AI-generated life, but that could be next. Watch…</p>
+    </div>
+  </section>
+  <section class="section lit">
+    <span class="stampnum">04</span>
+    <div class="section-head">
+      <span class="section-tag">Sci-Fi / Fantasy</span>
+      <h2 class="section-title">Literary Reviews</h2>
+    </div>
+    <div class="entry" id="lit-1">
+      <div class="entry-byline"><a class="entry-title" href="https://vector-bsfa.com/2026/10/16/dangerous-liaisons-a-guide-to-robot-symbiosis/" target="_blank" rel="noopener">Dangerous Liaisons: A Guide to Robot Symbiosis</a> by Vector editors — Vector/BSFA</div>
+
+      <p>By Jesse Rowell On its face, Brain Fruit is a simple tale of evolution through mutual symbiosis. Being a fan of symbiont sci-fi like Hal Clement’s classic 1950’s novel, Needle, and Peter Watts’s 2010 short story, “The Things,” I eagerly awaited Stephen Oram’s tale of artificial speciation in a hostile world of rock storms and … Continue reading Dangerous Liaisons: A Guide to Robot Symbiosis →</p>
+    </div>
+    <div class="entry" id="lit-2">
+      <div class="entry-byline"><a class="entry-title" href="https://ancillaryreviewofbooks.org/2026/10/16/fanfiction-as-networked-literature/" target="_blank" rel="noopener">Fanfiction as Networked Literature: Review of Suzanne R. Black’s Between Novel and Network</a> by sebastiansparrevohn — Ancillary Review of Books</div>
+
+      <p>Sebastian Sparrevohn Under Review:Suzanne R. Black. Between Novel and Network: Technology and Literary Form in Fiction and Fanfiction. LSU Press, May 2026. Networks are with us all the time now. We are entangled and embedded in them. The internet has long ago ceased being a place we go and is instead something that envelops us. … Continue reading Fanfiction as Networked Literature: Review of…</p>
+    </div>
+    <div class="entry" id="lit-3">
+      <div class="entry-byline"><a class="entry-title" href="https://electricliterature.com/15-small-press-titles-you-should-be-reading-this-fall/" target="_blank" rel="noopener">15 Small Press Titles You Should Be Reading This Fall</a> by Wendy J Fox — Electric Literature</div>
+
+      <p>Something I have been thinking about a lot—and talking to other industry peers with—is what has happened to media, and specifically books coverage. This is why even if you have just five dollars, you should consider donating to Electric Literature, who is one of the few remaining outlets specifically devoted to literature. Many of the […] The post 15 Small Press Titles You Should Be Reading This…</p>
+    </div>
+    <div class="entry" id="lit-4">
+      <div class="entry-byline"><a class="entry-title" href="https://reviewcanada.ca/magazine/2026/11/contrition-actor/" target="_blank" rel="noopener">Contrition Actor</a> by Christina Apa — Literary Review of Canada</div>
+
+      <p>The post Contrition Actor appeared first on Literary Review of Canada.</p>
+    </div>
+  </section>
+  <section class="section music">
+    <span class="stampnum">05</span>
+    <div class="section-head">
+      <span class="section-tag">Music</span>
+      <h2 class="section-title">Music Criticism</h2>
+    </div>
+    <div class="entry" id="music-1">
+      <div class="entry-byline"><a class="entry-title" href="https://thenativemag.com/how-lagos-came-to-be-a-den-of-area-boys/" target="_blank" rel="noopener">How Lagos Came To Be A Den Of Area Boys</a> by Tiléwa Kazeem — The NATIVE</div>
+
+      <p>The area boy has become an index of Lagos itself; follow him closely enough, and you can trace the city’s history. The post How Lagos Came To Be A Den Of Area Boys appeared first on The NATIVE.</p>
+    </div>
+    <div class="entry" id="music-2">
+      <div class="entry-byline"><a class="entry-title" href="https://consequence.net/2026/10/kid-rock-christian-album-eminem/" target="_blank" rel="noopener">Kid Rock Drops Christian Music Album with Eminem Collaboration “Heal My Faith”</a> by Alex Young — Consequence</div>
+
+      <p>Eminem says of their track: &quot;Not about choosing sides, just choosing to make music with my old friend. Praying for all of us.&quot; Kid Rock Drops Christian Music Album with Eminem Collaboration “Heal My Faith” Alex Young</p>
+    </div>
+    <div class="entry" id="music-3">
+      <div class="entry-byline"><a class="entry-title" href="https://www.theaureview.com/travel/las-vegas-concerts-2027/" target="_blank" rel="noopener">Every major concert, show and music festival coming to Las Vegas in 2027</a> by Chris Singh — The AU Review</div>
+
+      <p>A good number of our readers regularly find themselves travelling across America for conferences, industry events and music festivals, particularly along the West Coast. And while those trips tend to be built around work commitments or a particular event, keeping an eye on what’s happening in Las Vegas can turn an otherwise routine business trip...</p>
+    </div>
+    <div class="entry" id="music-4">
+      <div class="entry-byline"><a class="entry-title" href="https://stereogum.com/2514847/worldpeace-dmts-stick-around-for-tea-is-not-your-fathers-laptop-twee/music/" target="_blank" rel="noopener">Worldpeace DMT’s Stick Around For Tea Is Not Your Father’s Laptop Twee</a> by Chris DeVille — Stereogum</div>
+
+      <p>The post Worldpeace DMT’s Stick Around For Tea Is Not Your Father’s Laptop Twee appeared first on Stereogum.</p>
+    </div>
+  </section>
+  <section class="section design">
+    <span class="stampnum">06</span>
+    <div class="section-head">
+      <span class="section-tag">Design</span>
+      <h2 class="section-title">Design</h2>
+    </div>
+    <div class="entry" id="design-1">
+      <div class="entry-byline"><a class="entry-title" href="https://www.azuremagazine.com/article/oslo-new-government-quarter-nordic-office-of-architecture/" target="_blank" rel="noopener">Oslo’s New Government Quarter Reclaims a Site of Terror Through Architecture</a> by Yuki Sumner — Azure</div>
+
+      <p>Integrating remnants of the 2011 terrorist attacks with preserved historic buildings and new construction, Nordic Office of Architecture reimagines a future for the civic campus without erasing its past. The post Oslo’s New Government Quarter Reclaims a Site of Terror Through Architecture appeared first on Azure Magazine.</p>
+    </div>
+    <div class="entry" id="design-2">
+      <div class="entry-byline"><a class="entry-title" href="https://architectureau.com/articles/eglinton-street-by-richard-stampton-architects/" target="_blank" rel="noopener">Eglinton Street by Richard Stampton Architects</a> by Michael Roper — ArchitectureAU Discussion</div>
+
+      <p>A conversation across generations, this update to Charles Duncan’s Ramsay House balances whimsy with reverence, bringing play to the process of respectful renovation.</p>
+    </div>
+    <div class="entry" id="design-3">
+      <div class="entry-byline"><a class="entry-title" href="https://design-milk.com/coil-drift-lighting-touch-strut/" target="_blank" rel="noopener">From Spotlight to Soft-light: New Lighting by Coil + Drift</a> by Misha Agostinelli — Design Milk</div>
+
+      <p>Drawing from theatrical spotlights and Catskill fire lookout towers, John Sorensen-Jolink creates two lighting collections that shape how we focus, unwind, and inhabit a room</p>
+    </div>
+    <div class="entry" id="design-4">
+      <div class="entry-byline"><a class="entry-title" href="https://www.itsnicethat.com/features/on-ondesign-editorial-platform-creative-industry-sponsored-content-151026" target="_blank" rel="noopener">On’s new editorial platform is where the brand’s ideas spark, meld and grow</a> by It&#39;s Nice That — It&#39;s Nice That</div>
+
+      <p>Ondesign goes behind the scenes with On’s creative teams – spanning architects to stylists and designers – showing how they push what’s normal, and possible, for a sports and culture brand.</p>
+    </div>
+  </section>
+  <section class="section fashion">
+    <span class="stampnum">07</span>
+    <div class="section-head">
+      <span class="section-tag">Men&#39;s Fashion</span>
+      <h2 class="section-title">Men&#39;s Fashion</h2>
+    </div>
+    <div class="entry" id="fashion-1">
+      <div class="entry-byline"><a class="entry-title" href="https://www.anothermag.com/art-photography/17576/frieze-2026-a-shopping-list?utm_source=Link&amp;utm_medium=Link&amp;utm_campaign=RSSFeed&amp;utm_term=frieze-2026-a-shopping-list" target="_blank" rel="noopener">Frieze 2026: A Shopping List</a> by AnOtherhttps://www.anothermag.com/rssfeed@dazedmedia.com — AnOther</div>
+
+      <p>The AnOther team head over to Frieze 2026 to peruse the booths with an unlimited budget, hypothetically speaking. From a perfectly rendered still life by Old Master Jacob van Hulsdonck to pictures made from cigarettes, here’s what they’d buy</p>
+    </div>
+    <div class="entry" id="fashion-2">
+      <div class="entry-byline"><a class="entry-title" href="https://i-d.co/article/sophia-stel-debut-interview-greatest-album-of-all-time/" target="_blank" rel="noopener">Sophia Stel Is Taking in Her Newfound Power</a> by floramedina — i-D</div>
+
+      <p>Her debut album, The Greatest Album of All Time, arrives as the Vancouver-based musician’s most audacious and self-assured move yet.</p>
+    </div>
+    <div class="entry" id="fashion-3">
+      <div class="entry-byline"><a class="entry-title" href="https://www.dazeddigital.com/fashion/article/71189/1/it-s-primetime-to-buy-a24-s-robert-pattinson-t-shirt?utm_source=Link&amp;utm_medium=Link&amp;utm_campaign=RSSFeed&amp;utm_term=it-s-primetime-to-buy-a24-s-robert-pattinson-t-shirt" target="_blank" rel="noopener">It’s primetime to buy A24’s Robert Pattinson T-shirt</a> by Isobel Van Dykehttps://www.dazeddigital.com/rssfeed@dazedmedia.com — Dazed Fashion</div>
+
+      <p>The production company has teamed up with streetwear label Farmer’s Daughter for a Primetime collaboration. Plus: all the fashion news you missed this week</p>
+    </div>
+  </section>
+  <footer>
+    <span>Algorithm</span>
+    <span>Issue No. 42 — 17 Oct 2026</span>
+  </footer>
+</div>
+</div>
+
+</body>
+</html>
