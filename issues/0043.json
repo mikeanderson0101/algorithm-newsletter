@@ -1,0 +1,278 @@
+{
+  "issue": 43,
+  "date": "2026-10-17",
+  "headline": "The *Feed*",
+  "intro": "A selection of recent writing from across the culture press.",
+  "byline": "2026-10-17 — selected links",
+  "categories": [
+    {
+      "key": "art",
+      "entries": [
+        {
+          "title": "Diaries of a Primitive Man",
+          "author": "Hakim Bishara",
+          "source": "Hyperallergic",
+          "summary": "John Yau on Roy Lichtenstein, Megan O’Grady on John Berger, and Paddy Johnson answers the question: Do I need an agent?",
+          "why": "",
+          "url": "https://hyperallergic.com/diaries-of-a-primitive-man/",
+          "verified": true
+        },
+        {
+          "title": "Philadelphia Jewish Museum Could Join Smithsonian Museum Network",
+          "author": "Samuel Wilken",
+          "source": "Artforum",
+          "summary": "Philadelphia’s Weitzman National Museum of American Jewish History could join the Smithsonian museum network. The museum was founded in 1976 and is currently a Smithsonian affiliate. As an affiliate, it can borrow from the Smithsonian’s collections and draw on its resources. The museum regularly programs exhibitions, as well as housing a core collection covering Jewish […]",
+          "why": "",
+          "url": "https://www.artforum.com/news/philadelphia-jewish-museum-could-join-smithsonian-network-1234761652/",
+          "verified": true
+        },
+        {
+          "title": "Taryn Simon: Declassifying the world",
+          "author": "twocoatsstaff",
+          "source": "Two Coats of Paint",
+          "summary": "Contributed by Jonathan Stevenson / It’s the contrast between the stately simplicity of On Kawara’s plangently arrayed dates and the complexity of the days on earth they mark that makes them so moving. Time passes with spartan uniformity, but what happens within the neat artificial boundaries – hours, days, years, decades, centuries – is extravagantly messy. In her osmotically provocative…",
+          "why": "",
+          "url": "https://twocoatsofpaint.com/2026/10/taryn-simon-declassifying-the-world.html?utm_source=rss&utm_medium=rss&utm_campaign=taryn-simon-declassifying-the-world",
+          "verified": true
+        },
+        {
+          "title": "Art, Music, Maths: Dali Schonfelder interview",
+          "author": "Trebuchet Magazine",
+          "source": "Trebuchet",
+          "summary": "Maths, music and the layered structures of meaning",
+          "why": "",
+          "url": "https://www.trebuchet-magazine.com/art-music-maths-dali-schonfelder-interview/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "film",
+      "entries": [
+        {
+          "title": "7 Miles Out – first-look review",
+          "author": "David Jenkins",
+          "source": "Little White Lies",
+          "summary": "Carol Morley’s bittersweet chronicle of youth in revolt is lovingly ripped from the pages of her own memoir and is one of the finest British films of 2026.",
+          "why": "",
+          "url": "https://lwlies.com/bfi-london-film-festival/7-miles-out-first-look-review",
+          "verified": true
+        },
+        {
+          "title": "Classic Corner: West Side Story",
+          "author": "Josh Spiegel",
+          "source": "Crooked Marquee",
+          "summary": "The beloved 1961 adaptation of the iconic Broadway musical boasted two very different directors, but its memorable visuals and balletic choreography can best be attributed to just one of those men. The post Classic Corner: West Side Story appeared first on Crooked Marquee.",
+          "why": "",
+          "url": "https://crookedmarquee.com/classic-corner-west-side-story/",
+          "verified": true
+        },
+        {
+          "title": "BUSAN 2026. IRON BOY: CRECER FUERA DEL MOLDE",
+          "author": "Staff",
+          "source": "desistfilm",
+          "summary": "Por Fernanda Olvera Los festivales de cine fundamentalmente funcionan como espacios donde podemos conectar como sociedad a través de las narrativas que contamos, a veces haciéndolo desde la empatía y humor observacional, como sucede con Iron Boy (titulada originalmente Le Corset, 2026) del director Louis Clichy, que a través de un montaje rítmico convierte sus 90 minutos en un espacio de…",
+          "why": "",
+          "url": "https://desistfilm.com/busan-2026-iron-boy-crecer-fuera-del-molde/",
+          "verified": true
+        },
+        {
+          "title": "NYC Weekend Watch: The Devils, Vampire’s Kiss, Chantal Akerman & More",
+          "author": "Nick Newman",
+          "source": "The Film Stage",
+          "summary": "NYC Weekend Watch is our weekly round-up of repertory offerings. Film at Lincoln CenterKen Russell’s reconstructed The Devils has begun playing on a restored 35mm print—read (or listen to) our interview with Mark Kermode on it. Roxy CinemaA program of Michel Auder’s works and 30th-anniversary screening of Karishika play on Sunday. Museum of Modern ArtFilms […] The post NYC Weekend Watch: The…",
+          "why": "",
+          "url": "https://thefilmstage.com/nyc-weekend-watch-the-devils-vampires-kiss-chantal-akerman-more/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "tech",
+      "entries": [
+        {
+          "title": "This Might Be the Earliest Known Spear Murder In Earth’s History",
+          "author": "Becky Ferreira",
+          "source": "404 Media",
+          "summary": "Archaeologists have discovered a puncture wound from a spear in the shoulder blade of a Neanderthal that lived 75,000 years ago, offering a possible glimpse of early interpersonal violence.",
+          "why": "",
+          "url": "https://www.404media.co/this-might-be-the-earliest-known-spear-murder-in-earths-history/",
+          "verified": true
+        },
+        {
+          "title": "Why an Ethiopian nurse swapped her scrubs for software",
+          "author": "John Adoyi",
+          "source": "TechCabal",
+          "summary": "Medanit is a digital healthcare platform that is aiming to make healthcare easier to access in Ethiopia.",
+          "why": "",
+          "url": "https://techcabal.com/2026/10/17/how-medanit-was-built/",
+          "verified": true
+        },
+        {
+          "title": "Patients: All my best tips on how to opt out of data sharing",
+          "author": "Alex Rosenblat",
+          "source": "The Markup",
+          "summary": "Even when patients are told they can opt out, medical providers often don’t give patients instructions on how. For patients who are interested in opting out, here are my best tips on how to start.",
+          "why": "",
+          "url": "https://themarkup.org/privacy/2026/10/15/tips-how-to-opt-out-of-data-sharing",
+          "verified": true
+        },
+        {
+          "title": "The Best LED Grow Lights for Houseplants This Winter (2026)",
+          "author": "Kat Merck",
+          "source": "Wired",
+          "summary": "Shorter days don’t have to spell trouble for your houseplants. These are the lights we’ve used and loved in our own homes.",
+          "why": "",
+          "url": "https://www.wired.com/story/best-led-grow-lights/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "lit",
+      "entries": [
+        {
+          "title": "The Seven Palestinian Nominees for the 2027 Astrid Lindgren Award",
+          "author": "mlynxqualey",
+          "source": "ArabLit",
+          "summary": "As in previous years, there are a preponderance of European and North American nominees, with fourteen from the UK, twelve from the US, ten from France, and nine from Italy. However, there are also a surprising seven nominees from Palestine.",
+          "why": "",
+          "url": "https://arablit.org/2026/10/15/the-seven-palestinian-nominees-for-the-2027-astrid-lindgren-award/",
+          "verified": true
+        },
+        {
+          "title": "For Rent, Furnished",
+          "author": "Christina Apa",
+          "source": "Literary Review of Canada",
+          "summary": "The post For Rent, Furnished appeared first on Literary Review of Canada.",
+          "why": "",
+          "url": "https://reviewcanada.ca/magazine/2026/11/for-rent-furnished/",
+          "verified": true
+        },
+        {
+          "title": "The Recollections by Christopher Priest",
+          "author": "Aran Ward Sell",
+          "source": "Strange Horizons",
+          "summary": "These essays love—love—to needle the groupthink of Priest’s community.",
+          "why": "",
+          "url": "https://strangehorizons.com/wordpress/non-fiction/the-recollections-by-christopher-priest/",
+          "verified": true
+        },
+        {
+          "title": "Artă și anarhie în vremuri tulburi",
+          "author": "Sarah Waring",
+          "source": "Eurozine",
+          "summary": "",
+          "why": "",
+          "url": "https://www.eurozine.com/arta-si-anarhie-in-vremuri-tulburi/?utm_source=rss&utm_medium=rss&utm_campaign=arta-si-anarhie-in-vremuri-tulburi",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "music",
+      "entries": [
+        {
+          "title": "Somewhere Over the Rainbow",
+          "author": "Anthony Seaman",
+          "source": "Passion of the Weiss",
+          "summary": "The Rap-Up considers the most notable singles of the past week. Today, Anthony Seaman reviews new work from Gabe ‘Nandez, Draft Day, and the recently arrested Nino Paid.",
+          "why": "",
+          "url": "https://www.powmag.net/p/somewhere-over-the-rainbow-the-rap-up-nino-paid",
+          "verified": true
+        },
+        {
+          "title": "Jazz Saxophonist David S. Ware Never Played It Twice",
+          "author": "Tony Aramini",
+          "source": "PopMatters",
+          "summary": "Years after his untimely departure, David S. Ware remains one of free jazz's most versatile tenor saxophonists. We delve into his career by revisiting one of his last interviews.",
+          "why": "",
+          "url": "https://www.popmatters.com/david-s-ware-interview-2012",
+          "verified": true
+        },
+        {
+          "title": "A Sounds and Colours interview with Joyce Moreno",
+          "author": "Oleno Netto",
+          "source": "Sounds and Colours",
+          "summary": "The honour of speaking to a musician of Joyce Moreno’s calibre, and whose work is so dear to me, is immense. The singer, songwriter and musician became known simply as Joyce when taking part in 1967’s II Festival Internacional da Canção [II International Song Festival], which took place in her hometown, Rio de Janeiro. Her... Read Article",
+          "why": "",
+          "url": "https://soundsandcolours.com/articles/brazil/a-sounds-and-colours-interview-with-joyce-moreno-314033/",
+          "verified": true
+        },
+        {
+          "title": "The Kick annouce debut album of indie-sleaze-surf, 1+1, alongside seven-minute new single",
+          "author": "Hayden Merrick",
+          "source": "The Line of Best Fit",
+          "summary": "",
+          "why": "",
+          "url": "https://www.thelineofbestfit.com/news/the-kick-annouce-debut-album-of-indie-sleaze-surf-1-1-alongside-seven-minute-new-single",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "design",
+      "entries": [
+        {
+          "title": "Patricia Urquiola Made a Serious Splash at NeoCon 2026",
+          "author": "Elizabeth Pagliacolo",
+          "source": "Azure",
+          "summary": "The Spanish star was everywhere in Chicago, where her designs brought soft, sultry contours to workspaces. The post Patricia Urquiola Made a Serious Splash at NeoCon 2026 appeared first on Azure Magazine.",
+          "why": "",
+          "url": "https://www.azuremagazine.com/article/patricia-urquiola-neocon-2026/",
+          "verified": true
+        },
+        {
+          "title": "We’re building a New York‑sized city every month – that’s worrying for our climate",
+          "author": "William Craft, Philip Oldfield",
+          "source": "ArchitectureAU Discussion",
+          "summary": "Our ever-growing global population demands millions of new homes, workplaces and community spaces. But to truly tackle climate change, we must find better ways to balance society’s need for new space with a commitment to curb emissions.",
+          "why": "",
+          "url": "https://architectureau.com/articles/were-building-a-new-yorksized-city-every-month-thats-worrying-for-our-climate/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "fashion",
+      "entries": [
+        {
+          "title": "The Battle for the Buddha",
+          "author": "Lhendup G Bhutia/api/author/2341332",
+          "source": "Open Magazine",
+          "summary": "The seminars organised by the International Association for Tibetan Studies (IATS) are regarded among the most prestigious conferences for the discipline. Founded by Tibetologist Michael Aris, who would later become better known as Aung San Suu Kyi’s husband, at the University of Oxford in 1979, IATS’ conferences, held once every three years across the world, are one of the foremost international…",
+          "why": "",
+          "url": "https://openthemagazine.com/world/the-battle-for-the-buddha",
+          "verified": true
+        },
+        {
+          "title": "Róisín Tapponi’s Scene City is a Debut Novel for the Extreme Present",
+          "author": "Thom Waitehttps://www.anothermag.com/rssfeed@dazedmedia.com",
+          "source": "AnOther",
+          "summary": "Bouncing between London gallery openings, the writer and film programmer’s debut novel is designed for the era of the infinite scroll, via the YBAs and James Joyce",
+          "why": "",
+          "url": "https://www.anothermag.com/design-living/17577/roisin-tapponi-scene-city-debut-novel-interview?utm_source=Link&utm_medium=Link&utm_campaign=RSSFeed&utm_term=roisin-tapponi-s-scene-city-is-a-debut-novel-for-the-extreme-present",
+          "verified": true
+        },
+        {
+          "title": "Charlotte de Witte makes a revolutionary statement in G-STAR’s new campaign",
+          "author": "Dazed Digitalhttps://www.dazeddigital.com/rssfeed@dazedmedia.com",
+          "source": "Dazed Fashion",
+          "summary": "Between gritty club nights, the Belgian DJ and producer is the fresh global face of the denim brand, which had her scale the Arc de Triomphe for its Own the Arc campaign",
+          "why": "",
+          "url": "https://www.dazeddigital.com/fashion/article/71171/1/own-the-arc-charlotte-de-witte-scales-a-landmark-for-g-star-new-campaign?utm_source=Link&utm_medium=Link&utm_campaign=RSSFeed&utm_term=charlotte-de-witte-makes-a-revolutionary-statement-in-g-star-s-new-campaign",
+          "verified": true
+        },
+        {
+          "title": "Dress-Up! Starring Cannelle",
+          "author": "marleywendt",
+          "source": "i-D",
+          "summary": "Armed with blue hair and over-the-top accessories, the French pop star’s closet is just as playful as her music.",
+          "why": "",
+          "url": "https://i-d.co/article/dress-up-cannelle-interview/",
+          "verified": true
+        }
+      ]
+    }
+  ]
+}
