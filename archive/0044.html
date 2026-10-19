@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0A0A0A">
+<title>Algorithm — Issue No. 44 — 19 Oct 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Source+Serif+4:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  html, body{ margin:0; padding:0; height:100%; background-color:#0A0A0A; }
+  *{box-sizing:border-box;}
+  body{
+    min-height:100dvh;
+    color:#FAFAF7;
+    font-family:'Source Serif 4', Georgia, serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .page{ background-color:#0A0A0A; min-height:100dvh; }
+  a{ color:inherit; }
+  .wrap{max-width:720px; margin:0 auto; padding:44px 24px 90px; position:relative;}
+  .masthead{
+    display:flex; justify-content:space-between; align-items:flex-end;
+    border-bottom:4px solid #FAFAF7;
+    padding-bottom:14px; margin-bottom:24px;
+  }
+  .mast-title{
+    font-family:'Archivo Black', sans-serif;
+    font-size:clamp(26px,6vw,34px);
+    letter-spacing:-0.01em;
+    text-transform:uppercase;
+    color:#FAFAF7;
+    text-decoration:none;
+  }
+  .stamp{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px; letter-spacing:0.1em; text-transform:uppercase;
+    color:#0A0A0A; background:#FF1F3D;
+    padding:5px 10px; border-radius:2px;
+    transform:rotate(-3deg); display:inline-block; font-weight:600;
+    white-space:nowrap;
+  }
+  .nav{display:flex; justify-content:space-between; align-items:center; gap:16px; margin-bottom:40px; flex-wrap:wrap;}
+  .nav-link{font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:#FAFAF7; text-decoration:none; border:1px solid rgba(250,250,247,0.35); padding:9px 14px; border-radius:2px; white-space:nowrap;}
+  .nav-link:hover{border-color:#FF1F3D; color:#FF1F3D;}
+  .search-wrap{position:relative; flex:1; min-width:220px;}
+  .search-input{width:100%; background:#151513; border:1px solid rgba(250,250,247,0.3); color:#FAFAF7; font-family:'IBM Plex Mono', monospace; font-size:13px; padding:10px 12px; border-radius:2px; outline:none;}
+  .search-input::placeholder{color:#6B6860;}
+  .search-input:focus{border-color:#FF1F3D;}
+  .search-results{position:absolute; top:calc(100% + 6px); left:0; right:0; background:#111110; border:1px solid rgba(250,250,247,0.25); border-radius:4px; max-height:380px; overflow-y:auto; z-index:20; display:none;}
+  .search-results.active{display:block;}
+  .search-result{display:block; padding:10px 12px; border-bottom:1px solid rgba(250,250,247,0.12); text-decoration:none;}
+  .search-result:last-child{border-bottom:none;}
+  .search-result:hover{background:rgba(255,31,61,0.08);}
+  .sr-tag{font-family:'IBM Plex Mono', monospace; font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:#A6A29A;}
+  .sr-title{display:block; font-style:italic; color:#FAFAF7; margin:2px 0; font-size:14px;}
+  .sr-meta{font-family:'IBM Plex Mono', monospace; font-size:10.5px; color:#A6A29A;}
+  .search-empty{padding:14px 12px; font-family:'IBM Plex Mono', monospace; font-size:12.5px; color:#A6A29A;}
+  h1.hero{
+    font-family:'Anton', sans-serif;
+    font-weight:400;
+    font-size:clamp(42px,10vw,72px);
+    line-height:0.94;
+    text-transform:uppercase;
+    margin:0 0 22px;
+    color:#FAFAF7;
+  }
+  h1.hero .pop{color:#FF1F3D;}
+  .intro{font-size:17px; color:#EDEAE2; max-width:56ch; margin-bottom:10px;}
+  .intro-byline{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px; letter-spacing:0.08em; text-transform:uppercase;
+    color:#A6A29A;
+    margin-top:16px; margin-bottom:54px; display:block;
+    border-left:2px solid #FF1F3D; padding-left:10px;
+  }
+  .section{position:relative; margin-bottom:50px; padding-left:56px;}
+  .section:last-of-type{margin-bottom:0;}
+  .stampnum{
+    position:absolute; left:0; top:0;
+    width:42px; height:42px;
+    border:2px solid #FAFAF7;
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Archivo Black', sans-serif;
+    font-size:15px; color:#FAFAF7;
+    transform:rotate(-6deg);
+  }
+  .art .stampnum{border-color:#C9A24B; color:#C9A24B;}
+  .film .stampnum{border-color:#FF5B4A; color:#FF5B4A;}
+  .tech .stampnum{border-color:#3FE0D0; color:#3FE0D0;}
+  .lit .stampnum{border-color:#B39DFF; color:#B39DFF;}
+  .music .stampnum{border-color:#FF5FA8; color:#FF5FA8;}
+  .design .stampnum{border-color:#FFD23F; color:#FFD23F;}
+  .fashion .stampnum{border-color:#FAFAF7; color:#FAFAF7;}
+  .section-head{display:flex; align-items:center; gap:12px; margin-bottom:18px; flex-wrap:wrap;}
+  .section-tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase;
+    color:#0A0A0A;
+    padding:6px 11px; border-radius:2px;
+  }
+  .art .section-tag{background:#C9A24B;}
+  .film .section-tag{background:#FF5B4A;}
+  .tech .section-tag{background:#3FE0D0;}
+  .lit .section-tag{background:#B39DFF;}
+  .music .section-tag{background:#FF5FA8;}
+  .design .section-tag{background:#FFD23F;}
+  .fashion .section-tag{background:#FAFAF7;}
+  .section-title{
+    font-family:'Archivo Black', sans-serif;
+    font-size:24px; text-transform:uppercase; letter-spacing:0.01em;
+    color:#FAFAF7;
+  }
+  .entry{margin-bottom:24px; padding-bottom:24px; border-bottom:1px solid rgba(250,250,247,0.16); scroll-margin-top:24px;}
+  .entry:last-child{border-bottom:none; margin-bottom:0; padding-bottom:0;}
+  .entry-byline{font-family:'IBM Plex Mono', monospace; font-size:12px; color:#A6A29A; margin-bottom:8px;}
+  .entry-title{font-weight:500; font-style:italic; color:#FAFAF7; text-decoration:underline; text-decoration-color:rgba(250,250,247,0.35); text-underline-offset:3px;}
+  .entry-title:hover{text-decoration-color:#FF1F3D;}
+  .entry p{margin:0 0 10px; font-size:16px; color:#EDEAE2;}
+  .entry .why{font-size:14.5px; color:#A6A29A; font-style:italic;}
+  .entry .why::before{content:"— ";}
+  .issue-list{list-style:none; margin:0; padding:0;}
+  .issue-card{display:block; text-decoration:none; padding:22px 0; border-bottom:1px solid rgba(250,250,247,0.16);}
+  .issue-card:first-child{padding-top:0;}
+  .issue-card:hover .issue-headline{ text-decoration-color:#FF1F3D; }
+  .issue-meta{font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:#A6A29A; margin-bottom:8px;}
+  .issue-meta .num{color:#FF1F3D;}
+  .issue-headline{font-family:'Archivo Black', sans-serif; font-size:22px; text-transform:uppercase; letter-spacing:0.01em; color:#FAFAF7; text-decoration:underline; text-decoration-color:rgba(250,250,247,0.35); text-underline-offset:4px; display:inline-block; margin-bottom:8px;}
+  .issue-desc{font-size:15px; color:#A6A29A; max-width:60ch; margin:0;}
+  footer{
+    margin-top:64px; padding-top:20px; border-top:1px solid rgba(250,250,247,0.16);
+    display:flex; justify-content:space-between; gap:12px;
+    font-family:'IBM Plex Mono', monospace; font-size:10.5px;
+    letter-spacing:0.06em; color:#A6A29A; text-transform:uppercase;
+  }
+  @media (max-width:520px){
+    .wrap{padding:30px 16px 70px;}
+    .section{padding-left:48px;}
+    .stampnum{width:36px; height:36px; font-size:13px;}
+    .section-title{font-size:20px;}
+    .nav{flex-direction:column; align-items:stretch;}
+  }
+</style>
+</head>
+<body data-root="../">
+<div class="page">
+<div class="wrap">
+  <div class="masthead">
+    <a class="mast-title" href="../index.html">Algorithm</a>
+    <span class="stamp">Issue No. 44</span>
+  </div>
+  <div class="nav">
+    <a class="nav-link" href="../index.html">&larr; Latest Issue</a>
+    <a class="nav-link" href="../archive/index.html">Full Archive</a>
+  </div>
+  <h1 class="hero">The <span class="pop">Feed</span></h1>
+  <p class="intro">A selection of recent writing from across the culture press.</p>
+  <span class="intro-byline">2026-10-19 — selected links</span>
+  <section class="section art">
+    <span class="stampnum">01</span>
+    <div class="section-head">
+      <span class="section-tag">Art</span>
+      <h2 class="section-title">Fine Art</h2>
+    </div>
+    <div class="entry" id="art-1">
+      <div class="entry-byline"><a class="entry-title" href="https://elephant.art/150-feet-above-times-square-with-kinlaw-2/" target="_blank" rel="noopener">150 Feet Above Times Square with Kinlaw</a> by Elephant Magazine — Elephant</div>
+
+      <p>In a diary from 150 feet above Times Square, artist Kinlaw reflects on FALL RISK, a performance exploring care and the failures of the American healthcare system. It’s taken a year to get permission to hang from a crane in Times Square. FALL RISK is about trying to get my mom and dad the care The post 150 Feet Above Times Square with Kinlaw appeared first on ELEPHANT.</p>
+    </div>
+    <div class="entry" id="art-2">
+      <div class="entry-byline"><a class="entry-title" href="https://kunstkritikk.com/voyeurismens-magt/" target="_blank" rel="noopener">Voyeurismens magt</a> by Pernille Albrethsen — Kunstkritikk</div>
+
+      <p>Emma Rosenzweigs kortfilm Hole er en elegant feberdrøm om livskriser og patriarkalsk angst, men også tæmmet af sit eget filmhistoriske blik. The post Voyeurismens magt appeared first on Kunstkritikk.</p>
+    </div>
+    <div class="entry" id="art-3">
+      <div class="entry-byline"><a class="entry-title" href="https://www.berlinartlink.com/2026/10/19/things-to-do-in-berlin-art-openings-events-performances-oct19-oct25-2026/" target="_blank" rel="noopener">The Week October 19–25, 2026</a> by Anna — Berlin Art Link</div>
+
+      <p>Openings and events at 3hd 2026, Galerie Creative Game, Kunst Raum Mitte, Kunstraum Kreuzberg/Bethanien, attaque[e]r le visible, Hamburger Bahnhof, Deutsche Kinemathek, and more…[read on]</p>
+    </div>
+    <div class="entry" id="art-4">
+      <div class="entry-byline"><a class="entry-title" href="https://artishockrevista.com/2026/10/15/ana-segovia-the-office-of-inter-american-affairs-presents/" target="_blank" rel="noopener">ANA SEGOVIA: THE OFFICE OF INTER-AMERICAN AFFAIRS PRESENTS</a> by Artishock — Artishock</div>
+
+      <p>En “The Office of Inter-American Affairs Presents”, su primera exposición individual en kurimanzutto Nueva York, Ana Segovia retoma imágenes del western y archivos cinematográficos de la Política del Buen Vecino para examinar cómo el cine estadounidense ha reinterpretado figuras e imaginarios latinoamericanos. Mediante alteraciones cromáticas y operaciones de encuadre, el artista desestabiliza…</p>
+    </div>
+  </section>
+  <section class="section film">
+    <span class="stampnum">02</span>
+    <div class="section-head">
+      <span class="section-tag">Film</span>
+      <h2 class="section-title">Film Criticism</h2>
+    </div>
+    <div class="entry" id="film-1">
+      <div class="entry-byline"><a class="entry-title" href="https://desistfilm.com/christopher-nolan-the-architecture-of-identity/" target="_blank" rel="noopener">CHRISTOPHER NOLAN: THE ARCHITECTURE OF IDENTITY</a> by Staff — desistfilm</div>
+
+      <p>By Lexx Che Christopher Nolan’s films are more than a recognizable body of cinematic work. From Memento and The Dark Knight to Inception, Interstellar and Oppenheimer, Nolan has built a coherent identity system around fractured perception, time, memory, constructed roles, practical filmmaking and structural ambiguity. The article examines how that system evolved from an authorial signature into…</p>
+    </div>
+    <div class="entry" id="film-2">
+      <div class="entry-byline"><a class="entry-title" href="https://egyptianstreets.com/2026/10/19/egypt-to-switch-to-winter-time-on-october-30/" target="_blank" rel="noopener">Egypt to Switch to Winter Time on October 30</a> by Farah Abbas — Egyptian Streets</div>
+
+      <p>Egypt will turn clocks back by one hour at midnight on Thursday, 29 October, as daylight saving time comes to an end and the country returns to winter time on Friday, 30 October. The change will move clocks from 12:00 AM back to 11:00 PM on Thursday, giving residents an extra hour as the country transitions to standard time. Under Law No. 24 of 2023, daylight saving time begins on the last Friday…</p>
+    </div>
+    <div class="entry" id="film-3">
+      <div class="entry-byline"><a class="entry-title" href="https://www.lwlies.com/reviews/making-marie-antoinette" target="_blank" rel="noopener">Making Marie Antoinette review – passing the baton</a> by Christina Newland — Little White Lies</div>
+
+      <p>Pieced together from Eleanor Coppola’s behind-the-scenes footage and journal entries, this intimate documentary becomes a moving portrait of a mother witnessing her daughter’s artistry.</p>
+    </div>
+    <div class="entry" id="film-4">
+      <div class="entry-byline"><a class="entry-title" href="https://talkhouse.com/855-ayesha-nurdjaja-on-the-line-burns-swollen-knuckles-and-stolen-kunz-spoons/" target="_blank" rel="noopener">855: Ayesha Nurdjaja on the Line: Burns, Swollen Knuckles, and Stolen Kunz Spoons</a> by This Is TASTE — Talkhouse</div>
+
+      <p>Ayesha Nurdjaja grew up in Gravesend, Brooklyn, with an Indonesian father, an Italian mother, and a grandmother who walked her to Sahadi’s on Atlantic Avenue. After years in Italian kitchens like Felidia, she talked her bosses into a Middle Eastern New Year’s Eve menu that became the wildly popular Shuka and later Shukette. We discuss…</p>
+    </div>
+  </section>
+  <section class="section tech">
+    <span class="stampnum">03</span>
+    <div class="section-head">
+      <span class="section-tag">Tech &amp; AI</span>
+      <h2 class="section-title">Tech &amp; AI</h2>
+    </div>
+    <div class="entry" id="tech-1">
+      <div class="entry-byline"><a class="entry-title" href="https://aeon.co/videos/theres-nothing-inherently-good-in-the-natural-argues-bruno-latour" target="_blank" rel="noopener">A vocabulary for the future: nature</a> by Aeon Video — Aeon</div>
+
+      <p>For the philosopher Bruno Latour, seeing anything ‘natural’ as good and the ‘artificial’ as bad is perversely human-centric - by Aeon Video Watch on Aeon</p>
+    </div>
+    <div class="entry" id="tech-2">
+      <div class="entry-byline"><a class="entry-title" href="https://restofworld.org/2026/meta-muse-openai-dots-ai-agents-global-south/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=feeds" target="_blank" rel="noopener">Will developing nations be able to handle millions of AI agents?</a> by Danai Nesta Kupemba — Rest of World</div>
+
+      <p>It may be some time before AI agents can fully navigate the complexities and cultural nuances of developing nations.</p>
+    </div>
+    <div class="entry" id="tech-3">
+      <div class="entry-byline"><a class="entry-title" href="https://pluralistic.net/2026/10/19/spying-v-context/" target="_blank" rel="noopener">Pluralistic: The technopolitics of ad-tech (19 Oct 2026)</a> by Cory Doctorow — Pluralistic</div>
+
+      <p>Today&#39;s links The technopolitics of ad-tech: Spying is good for tech, context is good for publishers. Hey look at this: Delights to delectate. Object permanence: PNH x Mike Ford; Singapore v Far East Economic Review; Publishing v bestsellers; Architecture v security; Vista v everyone; Free Bieber; Belarus sells the sugar bowls; OCCUPY GEORGE; Grey type sucks; Spinal Tap v studio math; Terry…</p>
+    </div>
+    <div class="entry" id="tech-4">
+      <div class="entry-byline"><a class="entry-title" href="https://www.noemamag.com/when-the-present-eats-the-future" target="_blank" rel="noopener">When The Present Eats The Future</a> by Nathan Gardels — Noema</div>
+
+      <p>The post When The Present Eats The Future appeared first on NOEMA.</p>
+    </div>
+  </section>
+  <section class="section lit">
+    <span class="stampnum">04</span>
+    <div class="section-head">
+      <span class="section-tag">Sci-Fi / Fantasy</span>
+      <h2 class="section-title">Literary Reviews</h2>
+    </div>
+    <div class="entry" id="lit-1">
+      <div class="entry-byline"><a class="entry-title" href="https://reactormag.com/babylon-5-rewatch-crusades-racing-the-night/" target="_blank" rel="noopener">Babylon 5 Rewatch: Crusade’s “Racing the Night”</a> by Sarah — Reactor</div>
+
+      <p>Gideon and crew find themselves trapped by an alien civilization... The post Babylon 5 Rewatch: Crusade’s “Racing the Night” appeared first on Reactor.</p>
+    </div>
+    <div class="entry" id="lit-2">
+      <div class="entry-byline"><a class="entry-title" href="https://wordswithoutborders.org/read/article/2026-10/the-national-book-award-interviews-alvaro-enrigue-and-natasha-wimmer-now-i-surrender/" target="_blank" rel="noopener">The National Book Award Interviews: Álvaro Enrigue and Natasha Wimmer</a> by Alex Tan — Words Without Borders</div>
+
+      <p>Can you talk about how this book came into the world—first, the germ in the original language, and then the translation? Natasha Wimmer (NW): The translation got off to a dramatic start for me. I was working on a tight deadline to translate a sample. Álvaro always reads and gives feedback at some point in The post The National Book Award Interviews: Álvaro Enrigue and Natasha Wimmer appeared…</p>
+    </div>
+    <div class="entry" id="lit-3">
+      <div class="entry-byline"><a class="entry-title" href="https://www.eurozine.com/the-nationalist-dream-reality-is-ai-generated/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=the-nationalist-dream-reality-is-ai-generated" target="_blank" rel="noopener">The nationalist dream reality is AI generated</a> by Sarah Waring — Eurozine</div>
+
+      <p>Quick, cheap, repetitive and effective – far-right AI-generated imagery is flooding the internet and social media. Behind the kitsch facade lie parallels to Nazi propaganda, only now mass-media image-making is available to all and insidious, as illustrated by a Slovakian grassroots movement.</p>
+    </div>
+    <div class="entry" id="lit-4">
+      <div class="entry-byline"><a class="entry-title" href="https://electricliterature.com/everything-by-ingeborg-bachmann/" target="_blank" rel="noopener">I Cannot Make My Son Purer Than This Sickening World</a> by Ingeborg Bachmann — Electric Literature</div>
+
+      <p>“Everything” by Ingeborg Bachmann, translated by Philip Boehm and Tess Lewis When we sit down to eat like two people turned to stone or when we meet at the door to the apartment in the evening because we both thought to lock it at the same time, I feel our grief stretching like a bow […] The post I Cannot Make My Son Purer Than This Sickening World appeared first on Electric Literature.</p>
+    </div>
+  </section>
+  <section class="section music">
+    <span class="stampnum">05</span>
+    <div class="section-head">
+      <span class="section-tag">Music</span>
+      <h2 class="section-title">Music Criticism</h2>
+    </div>
+    <div class="entry" id="music-1">
+      <div class="entry-byline"><a class="entry-title" href="https://daily.bandcamp.com/big-ups/anna-lunoe-big-ups" target="_blank" rel="noopener">Anna Lunoe Picks Her Favorite Sydney Club Music on Bandcamp</a> by Harry Levin — Bandcamp Daily</div>
+
+      <p>The Aussie producer and tastemaker&#39;s recommendations double as a vital scene report. Read full story on the Bandcamp Daily.</p>
+    </div>
+    <div class="entry" id="music-2">
+      <div class="entry-byline"><a class="entry-title" href="https://aquariumdrunkard.com/2026/10/19/fela-kuti-africa-70-live-in-berlin-berliner-jazztage-1978/" target="_blank" rel="noopener">Fela Kuti &amp; Africa ’70 :: Live in Berlin (Berliner Jazztage, 1978)</a> by Justin Gage — Aquarium Drunkard</div>
+
+      <p>No retreat. No surrender. Filmed at the Berliner Jazztage on November 4, 1978, with Tony Allen still at the kit, this 87-minute document captures Fela Kuti and Africa ’70 at the end of their Herculean run. Unearthed decades later, the tapes capture the collective’s internal chemistry intact at the very moment its future was set to fracture. The post Fela Kuti &amp; Africa ’70 :: Live in Berlin…</p>
+    </div>
+    <div class="entry" id="music-3">
+      <div class="entry-byline"><a class="entry-title" href="https://www.powmag.net/p/bobbyy-tackyy-interview" target="_blank" rel="noopener">Your Soul Is Smart</a> by Laurent Fintoni — Passion of the Weiss</div>
+
+      <p>Bobbyy speaks at length about his remarkable new album, TACKYY.</p>
+    </div>
+    <div class="entry" id="music-4">
+      <div class="entry-byline"><a class="entry-title" href="https://soundsandcolours.com/subjects/travel/the-everyday-beauty-and-wellness-traditions-that-shape-latin-american-culture-314004/" target="_blank" rel="noopener">The Everyday Beauty and Wellness Traditions That Shape Latin American Culture</a> by Sounds and Colours — Sounds and Colours</div>
+
+      <p>Beauty and wellness traditions across Latin America are shaped by far more than products or passing trends. Family habits, climate, social life and regional customs all influence the way people think about grooming, personal care and presentation. There is no single Latin American beauty routine. Practices vary widely between countries, cities and generations. Still, certain... Read Article</p>
+    </div>
+  </section>
+  <section class="section design">
+    <span class="stampnum">06</span>
+    <div class="section-head">
+      <span class="section-tag">Design</span>
+      <h2 class="section-title">Design</h2>
+    </div>
+    <div class="entry" id="design-1">
+      <div class="entry-byline"><a class="entry-title" href="https://commonedge.org/architecture-is-bored-boring-and-self-serving/" target="_blank" rel="noopener">Architecture Is Bored, Boring, and Self-Serving</a> by Martin Pedersen — Common Edge</div>
+
+      <p>Aesthetically speaking, we’re currently in the age of “no there, there.”</p>
+    </div>
+    <div class="entry" id="design-2">
+      <div class="entry-byline"><a class="entry-title" href="https://www.yankodesign.com/2026/10/19/clevetura-s-keyboard-review-swipe-across-the-keys-instead-of-reaching-for-a-mouse/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=clevetura-s-keyboard-review-swipe-across-the-keys-instead-of-reaching-for-a-mouse" target="_blank" rel="noopener">Clevetura S Keyboard Review: Swipe Across the Keys Instead of Reaching for a Mouse</a> by JC Torres — Yanko Design</div>
+
+      <p>Clevetura S Keyboard Review: Swipe Across the Keys Instead of Reaching for a MouseKeyboards and mice have shared our desks for decades, but our hands still have to travel between them whenever typing gives way to clicking. That...</p>
+    </div>
+    <div class="entry" id="design-3">
+      <div class="entry-byline"><a class="entry-title" href="https://archinect.com/news/article/150570208/four-education-projects-around-the-world-by-fielding-international-your-next-employer" target="_blank" rel="noopener">Four education projects around the world by Fielding International: Your Next Employer?</a> by Niall Patrick Walsh — Archinect</div>
+
+      <p>Following our previous visit to Parnagian Architects, we are moving our Meet Your Next Employer series to Washington, DC, this week to explore the work of Fielding International. With offices in the U.S. and Singapore, the firm has built a portfolio over two decades for schools, districts, governments, and educational organizations in more than 50 countries. “Our mission is simple: Make the world…</p>
+    </div>
+  </section>
+  <section class="section fashion">
+    <span class="stampnum">07</span>
+    <div class="section-head">
+      <span class="section-tag">Men&#39;s Fashion</span>
+      <h2 class="section-title">Men&#39;s Fashion</h2>
+    </div>
+    <div class="entry" id="fashion-1">
+      <div class="entry-byline"><a class="entry-title" href="https://fashionjournal.com.au/fashion/work-outfits-ella-wight/" target="_blank" rel="noopener">A week in work outfits with graphic designer, Ella Wight</a> by Maryel Sousa — Fashion Journal</div>
+
+      <p>It’s never easy trying to come up with new outfit combinations for the working week. Instead of having a set uniform, an ever-changing schedule means every morning requires a set of questions. Am I running around, or just sitting at my desk? Do I need to dress specifically for a project? And what am I meant to […] This article A week in work outfits with graphic designer, Ella Wight appeared…</p>
+    </div>
+    <div class="entry" id="fashion-2">
+      <div class="entry-byline"><a class="entry-title" href="https://hypebeast.com/2026/10/virgil-abloh-the-codes-nike-exhibition-nyc-info" target="_blank" rel="noopener">‘Virgil Abloh’s ‘The Codes’ Retrospective Is Coming to NYC</a> by info@hypebeast.com (Hypebeast) — Hypebeast</div>
+
+      <p>Summary The Virgil Abloh Archive™ and Nike will present a New York iteration of &#39;Virgil Abloh: The Codes,&#39; a retrospective exhibition exploring the late designer&#39;s influence across fashion, culture, art, and designThe presentation features everything from finished products, prototypes, archival materials, sketches, to a recreation of Abloh&#39;s Paris office The showcase will run from December 10,…</p>
+    </div>
+    <div class="entry" id="fashion-3">
+      <div class="entry-byline"><a class="entry-title" href="https://www.highsnobiety.com/p/google-pixel-residency/" target="_blank" rel="noopener">Somewhere in Provence, Google Pixel is Rethinking Creativity</a> — Highsnobiety</div>
+
+      <p>For this year’s Pixel Residency, creators from around the world stepped away from everyday life for three action-packed days at Château de Fonscolombe in Provence.</p>
+    </div>
+    <div class="entry" id="fashion-4">
+      <div class="entry-byline"><a class="entry-title" href="https://www.esquireindia.co.in/style/kings-of-style/amit-aggarwals-lakme-fashion-week-finale-showcase-is-a-joyride-to-the-colours-of-india" target="_blank" rel="noopener">Amit Aggarwal&#39;s Lakmē Fashion Week Finale Showcase Is A Joyride To The Colours Of India</a> by Aditi Tarafdar/api/author/2449094 — Esquire India</div>
+
+      <p>Amit Aggarwal&#39;s Lakmē Fashion Week finale celebrated the vibrant essence of Indian childhood memories, blending everyday visuals with innovative design. The AM:IT collection, titled &#39;On a Day like Today,&#39; reimagines India&#39;s architectural geometry and street rhythms into wearable art, showcasing a seamless fusion of tradition and modernity. Amit Aggarwal closed the Delhi edition of Lakmē Fashion…</p>
+    </div>
+  </section>
+  <footer>
+    <span>Algorithm</span>
+    <span>Issue No. 44 — 19 Oct 2026</span>
+  </footer>
+</div>
+</div>
+
+</body>
+</html>
