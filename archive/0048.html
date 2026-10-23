@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0A0A0A">
+<title>Algorithm — Issue No. 48 — 23 Oct 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Source+Serif+4:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  html, body{ margin:0; padding:0; height:100%; background-color:#0A0A0A; }
+  *{box-sizing:border-box;}
+  body{
+    min-height:100dvh;
+    color:#FAFAF7;
+    font-family:'Source Serif 4', Georgia, serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .page{ background-color:#0A0A0A; min-height:100dvh; }
+  a{ color:inherit; }
+  .wrap{max-width:720px; margin:0 auto; padding:44px 24px 90px; position:relative;}
+  .masthead{
+    display:flex; justify-content:space-between; align-items:flex-end;
+    border-bottom:4px solid #FAFAF7;
+    padding-bottom:14px; margin-bottom:24px;
+  }
+  .mast-title{
+    font-family:'Archivo Black', sans-serif;
+    font-size:clamp(26px,6vw,34px);
+    letter-spacing:-0.01em;
+    text-transform:uppercase;
+    color:#FAFAF7;
+    text-decoration:none;
+  }
+  .stamp{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px; letter-spacing:0.1em; text-transform:uppercase;
+    color:#0A0A0A; background:#FF1F3D;
+    padding:5px 10px; border-radius:2px;
+    transform:rotate(-3deg); display:inline-block; font-weight:600;
+    white-space:nowrap;
+  }
+  .nav{display:flex; justify-content:space-between; align-items:center; gap:16px; margin-bottom:40px; flex-wrap:wrap;}
+  .nav-link{font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:#FAFAF7; text-decoration:none; border:1px solid rgba(250,250,247,0.35); padding:9px 14px; border-radius:2px; white-space:nowrap;}
+  .nav-link:hover{border-color:#FF1F3D; color:#FF1F3D;}
+  .search-wrap{position:relative; flex:1; min-width:220px;}
+  .search-input{width:100%; background:#151513; border:1px solid rgba(250,250,247,0.3); color:#FAFAF7; font-family:'IBM Plex Mono', monospace; font-size:13px; padding:10px 12px; border-radius:2px; outline:none;}
+  .search-input::placeholder{color:#6B6860;}
+  .search-input:focus{border-color:#FF1F3D;}
+  .search-results{position:absolute; top:calc(100% + 6px); left:0; right:0; background:#111110; border:1px solid rgba(250,250,247,0.25); border-radius:4px; max-height:380px; overflow-y:auto; z-index:20; display:none;}
+  .search-results.active{display:block;}
+  .search-result{display:block; padding:10px 12px; border-bottom:1px solid rgba(250,250,247,0.12); text-decoration:none;}
+  .search-result:last-child{border-bottom:none;}
+  .search-result:hover{background:rgba(255,31,61,0.08);}
+  .sr-tag{font-family:'IBM Plex Mono', monospace; font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:#A6A29A;}
+  .sr-title{display:block; font-style:italic; color:#FAFAF7; margin:2px 0; font-size:14px;}
+  .sr-meta{font-family:'IBM Plex Mono', monospace; font-size:10.5px; color:#A6A29A;}
+  .search-empty{padding:14px 12px; font-family:'IBM Plex Mono', monospace; font-size:12.5px; color:#A6A29A;}
+  h1.hero{
+    font-family:'Anton', sans-serif;
+    font-weight:400;
+    font-size:clamp(42px,10vw,72px);
+    line-height:0.94;
+    text-transform:uppercase;
+    margin:0 0 22px;
+    color:#FAFAF7;
+  }
+  h1.hero .pop{color:#FF1F3D;}
+  .intro{font-size:17px; color:#EDEAE2; max-width:56ch; margin-bottom:10px;}
+  .intro-byline{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px; letter-spacing:0.08em; text-transform:uppercase;
+    color:#A6A29A;
+    margin-top:16px; margin-bottom:54px; display:block;
+    border-left:2px solid #FF1F3D; padding-left:10px;
+  }
+  .section{position:relative; margin-bottom:50px; padding-left:56px;}
+  .section:last-of-type{margin-bottom:0;}
+  .stampnum{
+    position:absolute; left:0; top:0;
+    width:42px; height:42px;
+    border:2px solid #FAFAF7;
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Archivo Black', sans-serif;
+    font-size:15px; color:#FAFAF7;
+    transform:rotate(-6deg);
+  }
+  .art .stampnum{border-color:#C9A24B; color:#C9A24B;}
+  .film .stampnum{border-color:#FF5B4A; color:#FF5B4A;}
+  .tech .stampnum{border-color:#3FE0D0; color:#3FE0D0;}
+  .lit .stampnum{border-color:#B39DFF; color:#B39DFF;}
+  .music .stampnum{border-color:#FF5FA8; color:#FF5FA8;}
+  .design .stampnum{border-color:#FFD23F; color:#FFD23F;}
+  .fashion .stampnum{border-color:#FAFAF7; color:#FAFAF7;}
+  .section-head{display:flex; align-items:center; gap:12px; margin-bottom:18px; flex-wrap:wrap;}
+  .section-tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase;
+    color:#0A0A0A;
+    padding:6px 11px; border-radius:2px;
+  }
+  .art .section-tag{background:#C9A24B;}
+  .film .section-tag{background:#FF5B4A;}
+  .tech .section-tag{background:#3FE0D0;}
+  .lit .section-tag{background:#B39DFF;}
+  .music .section-tag{background:#FF5FA8;}
+  .design .section-tag{background:#FFD23F;}
+  .fashion .section-tag{background:#FAFAF7;}
+  .section-title{
+    font-family:'Archivo Black', sans-serif;
+    font-size:24px; text-transform:uppercase; letter-spacing:0.01em;
+    color:#FAFAF7;
+  }
+  .entry{margin-bottom:24px; padding-bottom:24px; border-bottom:1px solid rgba(250,250,247,0.16); scroll-margin-top:24px;}
+  .entry:last-child{border-bottom:none; margin-bottom:0; padding-bottom:0;}
+  .entry-byline{font-family:'IBM Plex Mono', monospace; font-size:12px; color:#A6A29A; margin-bottom:8px;}
+  .entry-title{font-weight:500; font-style:italic; color:#FAFAF7; text-decoration:underline; text-decoration-color:rgba(250,250,247,0.35); text-underline-offset:3px;}
+  .entry-title:hover{text-decoration-color:#FF1F3D;}
+  .entry p{margin:0 0 10px; font-size:16px; color:#EDEAE2;}
+  .entry .why{font-size:14.5px; color:#A6A29A; font-style:italic;}
+  .entry .why::before{content:"— ";}
+  .issue-list{list-style:none; margin:0; padding:0;}
+  .issue-card{display:block; text-decoration:none; padding:22px 0; border-bottom:1px solid rgba(250,250,247,0.16);}
+  .issue-card:first-child{padding-top:0;}
+  .issue-card:hover .issue-headline{ text-decoration-color:#FF1F3D; }
+  .issue-meta{font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:#A6A29A; margin-bottom:8px;}
+  .issue-meta .num{color:#FF1F3D;}
+  .issue-headline{font-family:'Archivo Black', sans-serif; font-size:22px; text-transform:uppercase; letter-spacing:0.01em; color:#FAFAF7; text-decoration:underline; text-decoration-color:rgba(250,250,247,0.35); text-underline-offset:4px; display:inline-block; margin-bottom:8px;}
+  .issue-desc{font-size:15px; color:#A6A29A; max-width:60ch; margin:0;}
+  footer{
+    margin-top:64px; padding-top:20px; border-top:1px solid rgba(250,250,247,0.16);
+    display:flex; justify-content:space-between; gap:12px;
+    font-family:'IBM Plex Mono', monospace; font-size:10.5px;
+    letter-spacing:0.06em; color:#A6A29A; text-transform:uppercase;
+  }
+  @media (max-width:520px){
+    .wrap{padding:30px 16px 70px;}
+    .section{padding-left:48px;}
+    .stampnum{width:36px; height:36px; font-size:13px;}
+    .section-title{font-size:20px;}
+    .nav{flex-direction:column; align-items:stretch;}
+  }
+</style>
+</head>
+<body data-root="../">
+<div class="page">
+<div class="wrap">
+  <div class="masthead">
+    <a class="mast-title" href="../index.html">Algorithm</a>
+    <span class="stamp">Issue No. 48</span>
+  </div>
+  <div class="nav">
+    <a class="nav-link" href="../index.html">&larr; Latest Issue</a>
+    <a class="nav-link" href="../archive/index.html">Full Archive</a>
+  </div>
+  <h1 class="hero">The <span class="pop">Feed</span></h1>
+  <p class="intro">A selection of recent writing from across the culture press.</p>
+  <span class="intro-byline">2026-10-23 — selected links</span>
+  <section class="section art">
+    <span class="stampnum">01</span>
+    <div class="section-head">
+      <span class="section-tag">Art</span>
+      <h2 class="section-title">Fine Art</h2>
+    </div>
+    <div class="entry" id="art-1">
+      <div class="entry-byline"><a class="entry-title" href="https://www.artforum.com/columns/four-years-in-prison-for-selling-fake-warhold-1234761985/" target="_blank" rel="noopener">Dealer Sentenced to Four Years in Prison for Selling Fake Warhols</a> by Samuel Wilken — Artforum</div>
+
+      <p>Leslie Roberts, a Miami art dealer, received a sentence of three years and ten months in federal prison on October 2 for selling forged Andy Warhol works. According to the Guardian, Roberts admitted to creating fraudulent invoices and authentication documents to trick buyers into purchasing the fakes through his Miami art gallery, claiming he had […]</p>
+    </div>
+    <div class="entry" id="art-2">
+      <div class="entry-byline"><a class="entry-title" href="https://hyperallergic.com/a-view-from-the-easel-360/" target="_blank" rel="noopener">A View From the Easel: Gerardo Rosales</a> by Lakshmi Rivera Amin — Hyperallergic</div>
+
+      <p>“I often say that my favorite material is the next one, the one I haven’t worked with yet.”</p>
+    </div>
+    <div class="entry" id="art-3">
+      <div class="entry-byline"><a class="entry-title" href="https://www.artasiapacific.com/news/rong-museum-of-art-reveals-its-curatorial-team/" target="_blank" rel="noopener">Róng Museum of Art Reveals Its Curatorial Team</a> by The Editors — ArtAsiaPacific</div>
+
+      <p>Freya Chou, Li Jia, and Susanna Zhu join the Shenzhen institution ahead of its 2027 opening. Harison Butler</p>
+    </div>
+    <div class="entry" id="art-4">
+      <div class="entry-byline"><a class="entry-title" href="https://www.berlinartlink.com/2026/10/23/art-basel-paris-2026-photo-highlights/" target="_blank" rel="noopener">Top Picks from Art Basel Paris</a> by Alison Hugill — Berlin Art Link</div>
+
+      <p>by Anna Russ // Oct. 23, 2026 Art Basel Paris takes place for the second time in the newly-renovated Grand Palais, in the heart of the French capital. This year, 206 galleries from 41 countries and territories…[read on]</p>
+    </div>
+  </section>
+  <section class="section film">
+    <span class="stampnum">02</span>
+    <div class="section-head">
+      <span class="section-tag">Film</span>
+      <h2 class="section-title">Film Criticism</h2>
+    </div>
+    <div class="entry" id="film-1">
+      <div class="entry-byline"><a class="entry-title" href="https://filmmakermagazine.com/134241-aus55-welcome-bonus-how-to-check-the-offer-before-you-claim/" target="_blank" rel="noopener">Aus55 Welcome Bonus: How to Check the Offer Before You Claim</a> by Jim Allen — Filmmaker Magazine</div>
+
+      <p>The Aus55 welcome bonus is presented as a three-stage package rather than one single 150% payment. Each stage advertises a 50% match, a minimum deposit of AUD20 and a bonus maximum of AUD150. Before making an Aus55 deposit, check the eligible games, turnover wording and withdrawal cap. You can also compare the published terms at aus55-casino.com/ mid-way through your research, but treat…</p>
+    </div>
+    <div class="entry" id="film-2">
+      <div class="entry-byline"><a class="entry-title" href="https://www.lwlies.com/in-conversation/lee-chang-dong-possible-love" target="_blank" rel="noopener">Lee Chang-dong: ‘Am I worthy of telling their story?’</a> by David Jenkins — Little White Lies</div>
+
+      <p>The Korean maestro returns with a sumptuous survey of class, capitalism and what it means to love someone in Possible Love.</p>
+    </div>
+    <div class="entry" id="film-3">
+      <div class="entry-byline"><a class="entry-title" href="https://crookedmarquee.com/review-the-only-living-pickpocket-in-new-york/" target="_blank" rel="noopener">Review: The Only Living Pickpocket in New York</a> by Jason Bailey — Crooked Marquee</div>
+
+      <p>Noah Segan’s modest character study is a tip-top showcase for one of our most reliable actors — an old pro playing an old pro. The post Review: The Only Living Pickpocket in New York appeared first on Crooked Marquee.</p>
+    </div>
+    <div class="entry" id="film-4">
+      <div class="entry-byline"><a class="entry-title" href="https://desistfilm.com/notes-on-the-austrian-film-director-karin-brandauer-where-the-geraniums-are-in-bloom/" target="_blank" rel="noopener">WHERE THE GERANIUMS ARE IN BLOOM…: NOTES ON THE AUSTRIAN FILM DIRECTOR KARIN BRANDAUER</a> by Staff — desistfilm</div>
+
+      <p>by Claudia Siefen-Leitich My text refers to two films by the Austrian director Karin Brandauer (1945-1992), Brennende Lieb’/Burning Love (1989) and Leb’ wohl du mein Südtirol/Farewell, My South Tyrol (1989). Brandauer co-wrote and directed two episodes of a four-part miniseries about the post-war effect of Mussolini’s sham 1939 referendum regarding Austria’s truncated South Tyrol province, which…</p>
+    </div>
+  </section>
+  <section class="section tech">
+    <span class="stampnum">03</span>
+    <div class="section-head">
+      <span class="section-tag">Tech &amp; AI</span>
+      <h2 class="section-title">Tech &amp; AI</h2>
+    </div>
+    <div class="entry" id="tech-1">
+      <div class="entry-byline"><a class="entry-title" href="https://www.404media.co/behind-the-blog-brute-forces/" target="_blank" rel="noopener">Behind the Blog: Brute Forces</a> by Samantha Cole — 404 Media</div>
+
+      <p>This week, we discuss reverse engineering and some wild court docs.</p>
+    </div>
+    <div class="entry" id="tech-2">
+      <div class="entry-byline"><a class="entry-title" href="https://techcabal.com/2026/10/23/africa-deep-tech-ambitions-software/" target="_blank" rel="noopener">Africa’s deep tech ambitions are running into an ecosystem raised on software</a> by Opeyemi Kareem — TechCabal</div>
+
+      <p>Africa’s deep tech ambitions are growing, but limited infrastructure, funding, talent and policy support make building harder.</p>
+    </div>
+    <div class="entry" id="tech-3">
+      <div class="entry-byline"><a class="entry-title" href="https://www.platformer.news/machine-gods-manifesto-ai-realism/" target="_blank" rel="noopener">Introducing Machine Gods</a> by Casey Newton — Platformer</div>
+
+      <p>Why we&#39;re betting on AI realism. PLUS: The hell of PHP2Shell</p>
+    </div>
+    <div class="entry" id="tech-4">
+      <div class="entry-byline"><a class="entry-title" href="https://www.theverge.com/transportation/1017435/nhtsa-autonomous-vehicle-cyan-lighting-fmvss" target="_blank" rel="noopener">Feds want robotaxis to signal ‘I’m driving’ with cyan-colored lights</a> by Andrew J. Hawkins — The Verge</div>
+
+      <p>After years of debating how driverless cars should tell the world no one is at the wheel - flashing text, audio alerts, custom lights - the feds just stepped in with a single answer: cyan. The National Highway Traffic Safety Administration released proposed changes to Federal Motor Vehicle Safety Standard (FMVSS) No. 108, specifically rewriting […]</p>
+    </div>
+  </section>
+  <section class="section lit">
+    <span class="stampnum">04</span>
+    <div class="section-head">
+      <span class="section-tag">Sci-Fi / Fantasy</span>
+      <h2 class="section-title">Literary Reviews</h2>
+    </div>
+    <div class="entry" id="lit-1">
+      <div class="entry-byline"><a class="entry-title" href="https://www.eurozine.com/food-and-modernity/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=food-and-modernity" target="_blank" rel="noopener">Food and modernity</a> by Simon Garnett — Eurozine</div>
+
+      <p>On the emancipation of the Finnish milkmaid; the distant memory of hunger; a quintessentially Swedish pizza; lives of luxury.</p>
+    </div>
+    <div class="entry" id="lit-2">
+      <div class="entry-byline"><a class="entry-title" href="https://europeanreviewofbooks.com/looting-and-desire/" target="_blank" rel="noopener">Looting and desire</a> by Sander Pleij — European Review of Books</div>
+
+      <p>France is now officially a country of malcontents. To make sense of the chaos of conflicting interests and threats, I read and listened to dozens of interpretations, but none added anything meaningful. Black clad men stalked the streets, looters expertly stripped luxury shops, flames burst from buildings: wreckage everywhere and not many peaceful protesters in […] The post Looting and desire…</p>
+    </div>
+    <div class="entry" id="lit-3">
+      <div class="entry-byline"><a class="entry-title" href="https://arablit.org/2026/10/22/a-taste-of-bitter-tea-by-mohammed-alnaas/" target="_blank" rel="noopener">‘A Taste of Bitter Tea’, by Mohammed Alnaas</a> by mlynxqualey — ArabLit</div>
+
+      <p>The title here is borrowed from the French edition, Un goût de thé amer, which was translated by Sarah Rolfo, while the Arabic original is titled العراك في جهنم. This satirical novella is set in a Libyan village called Hell and is a retelling of events our narrator claims took place there in the 1990s.</p>
+    </div>
+    <div class="entry" id="lit-4">
+      <div class="entry-byline"><a class="entry-title" href="https://strangehorizons.com/wordpress/poetry/subjected-to-secondary-use/" target="_blank" rel="noopener">Subjected to Secondary Use</a> by Hannan Khan — Strange Horizons</div>
+
+      <p>when they fetch the child out, he is fulgent in the wrong way</p>
+    </div>
+  </section>
+  <section class="section music">
+    <span class="stampnum">05</span>
+    <div class="section-head">
+      <span class="section-tag">Music</span>
+      <h2 class="section-title">Music Criticism</h2>
+    </div>
+    <div class="entry" id="music-1">
+      <div class="entry-byline"><a class="entry-title" href="https://www.powmag.net/p/amy-winehouse-back-to-black-review" target="_blank" rel="noopener">I Don’t Think It’s Funny: Back to Black at 20</a> by Vrinda Jagota — Passion of the Weiss</div>
+
+      <p>Amy Winehouse’s masterpiece is a reminder of the way brilliant women have been misunderstood, exploited, and dismissed.</p>
+    </div>
+    <div class="entry" id="music-2">
+      <div class="entry-byline"><a class="entry-title" href="https://www.popmatters.com/radiohead-fan-theories" target="_blank" rel="noopener">A Jigsaw Falling into Place: How Fan Theories Help Market Radiohead’s Music</a> by Lars Munzer — PopMatters</div>
+
+      <p>Masters of mystery, Radiohead&#39;s modus operandi manifests in various fan theories – particularly the Binary Theory – which becomes brilliant music marketing.</p>
+    </div>
+    <div class="entry" id="music-3">
+      <div class="entry-byline"><a class="entry-title" href="https://soundsandcolours.com/subjects/travel/beyond-the-music-the-visual-identity-of-latin-american-performers-314318/" target="_blank" rel="noopener">Beyond the Music, The Visual Identity of Latin American Performers</a> by Sounds and Colours — Sounds and Colours</div>
+
+      <p>Latin American music has become a powerful influence on global entertainment, with performers reaching international audiences through distinctive sounds, unforgettable performances, and carefully developed visual identities. From reggaeton and Latin pop to regional Mexican music and contemporary urban genres, artists increasingly use fashion, beauty, and personal styling to communicate who they…</p>
+    </div>
+    <div class="entry" id="music-4">
+      <div class="entry-byline"><a class="entry-title" href="https://www.thelineofbestfit.com/news/ryan-goslings-band-dead-mans-bones-is-back-after-17-years" target="_blank" rel="noopener">Ryan Gosling&#39;s band Dead Man&#39;s Bones is back after 17 years</a> by Hayden Merrick — The Line of Best Fit</div>
+
+    </div>
+  </section>
+  <section class="section design">
+    <span class="stampnum">06</span>
+    <div class="section-head">
+      <span class="section-tag">Design</span>
+      <h2 class="section-title">Design</h2>
+    </div>
+    <div class="entry" id="design-1">
+      <div class="entry-byline"><a class="entry-title" href="https://www.azuremagazine.com/article/super-sauna-nokken/" target="_blank" rel="noopener">Nokken’s Super Sauna Is a Complete Wellness Experience for Nearly Any Setting</a> by Kendra Jackson — Azure</div>
+
+      <p>A prefab modular structure, the sauna arrives fully intact and ready to go, allowing hospitality operators to offer an on-site therapeutic retreat. The post Nokken’s Super Sauna Is a Complete Wellness Experience for Nearly Any Setting appeared first on Azure Magazine.</p>
+    </div>
+    <div class="entry" id="design-2">
+      <div class="entry-byline"><a class="entry-title" href="https://architectureau.com/articles/finalists-revealed-for-melbournes-2026-city-design-award/" target="_blank" rel="noopener">Finalists revealed for Melbourne’s 2026 City Design Award</a> by ArchitectureAu Editorial — ArchitectureAU Discussion</div>
+
+      <p>Four finalists have been named for the City of Melbourne’s 2026 City Design Award, which recognises design excellence in architecture, landscape architecture and urban design.</p>
+    </div>
+    <div class="entry" id="design-3">
+      <div class="entry-byline"><a class="entry-title" href="https://design-milk.com/friday-five-grace-zhang-artist/" target="_blank" rel="noopener">Friday Five with Grace Zhang: How Light, Finance, and Chanel Inspire Her Art</a> by Danine Alati — Design Milk</div>
+
+      <p>The San Francisco-based artist finds unexpected connections between science, financial markets, and fashion in her paintings</p>
+    </div>
+    <div class="entry" id="design-4">
+      <div class="entry-byline"><a class="entry-title" href="https://www.archdaily.com/1187167/lele-hotel" target="_blank" rel="noopener">Lele Hotel / The Lab Evn</a> by Nina Vuga — ArchDaily</div>
+
+      <p>Located in Vayots Dzor, Lele Hotel is conceived as a direct response to the character and topography of its mountainous surroundings. Rather than imposing a separate architectural object on the landscape, the design seeks continuity with the terrain through its materiality, proportions, and relationship to the existing slope.</p>
+    </div>
+  </section>
+  <section class="section fashion">
+    <span class="stampnum">07</span>
+    <div class="section-head">
+      <span class="section-tag">Men&#39;s Fashion</span>
+      <h2 class="section-title">Men&#39;s Fashion</h2>
+    </div>
+    <div class="entry" id="fashion-1">
+      <div class="entry-byline"><a class="entry-title" href="https://www.dazeddigital.com/beauty/article/64911/1/halloween-2025-costume-ideas-beauty-fka-twigs-alexa-demie-tierra-whack?utm_source=Link&amp;utm_medium=Link&amp;utm_campaign=RSSFeed&amp;utm_term=need-halloween-ideas-these-5-sexy-beauty-icons-can-inspire-your-costume" target="_blank" rel="noopener">Need Halloween ideas? These 5 sexy beauty icons can inspire your costume</a> by Tiarnahttps://www.dazeddigital.com/rssfeed@dazedmedia.com — Dazed Fashion</div>
+
+      <p>From a harlequin to the traditional cats and witches costumes, we’ve dug into the Dazed Beauty archives to round up some of our best shoots to give you Halloween inspiration</p>
+    </div>
+    <div class="entry" id="fashion-2">
+      <div class="entry-byline"><a class="entry-title" href="https://openthemagazine.com/india/save-democracy-remove-anarchy-decoding-the-bjps-sir-offensive" target="_blank" rel="noopener">‘Save Democracy, Remove Anarchy’: Decoding the BJP’s SIR Offensive</a> by Sumit Singh/api/author/2623765 — Open Magazine</div>
+
+      <p>The voter list now has a battle cry. “Save Democracy, Remove Anarchy,” says the BJP, as it takes the fight over the Special Intensive Revision (SIR) of electoral rolls to streets, campuses and constituency meetings. The paperwork has acquired a political campaign. The slogan does some heavy lifting. It casts the BJP as democracy’s defender and invites voters to view the Opposition’s protests as a…</p>
+    </div>
+    <div class="entry" id="fashion-3">
+      <div class="entry-byline"><a class="entry-title" href="https://i-d.co/article/sophia-wilson-dr-martens-bouncing-soles/" target="_blank" rel="noopener">Sophia Wilson Goes Sole Searching</a> by nicolaiarips — i-D</div>
+
+      <p>Playing off Dr. Martens’s With Bouncing Soles campaign, the photographer delves into the art of girlhood and what it means to make a classic your own.</p>
+    </div>
+    <div class="entry" id="fashion-4">
+      <div class="entry-byline"><a class="entry-title" href="https://www.anothermag.com/projects/17602/issue-51?utm_source=Link&amp;utm_medium=Link&amp;utm_campaign=RSSFeed&amp;utm_term=issue-51" target="_blank" rel="noopener">Issue 51</a> by AnOtherhttps://www.anothermag.com/rssfeed@dazedmedia.com — AnOther</div>
+
+      <p>Autumn/Winter 2026</p>
+    </div>
+  </section>
+  <footer>
+    <span>Algorithm</span>
+    <span>Issue No. 48 — 23 Oct 2026</span>
+  </footer>
+</div>
+</div>
+
+</body>
+</html>
