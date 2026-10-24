@@ -1,0 +1,141 @@
+{
+  "batch": 5,
+  "date": "2026-10-24",
+  "items": [
+    {
+      "id": "the-war-on-drugs-who-s-that",
+      "site": "WBRU",
+      "src": {
+        "label": "Today's Top Indie: September 15, 2026",
+        "url": "https://wbru.substack.com/p/todays-top-indie-september-15-2026"
+      },
+      "artist": "The War On Drugs",
+      "title": "Who's That",
+      "note": "WBRU's first add that week; its big eighties sound was compared to the closing song of The Breakfast Club.",
+      "batch": 5,
+      "year": 2026
+    },
+    {
+      "id": "hana-stretton-from",
+      "site": "Stereogum",
+      "src": {
+        "label": "The 5 Best Songs Of The Week, Aug 7",
+        "url": "https://stereogum.com/2507462/the-5-best-songs-of-the-week-638/lists/the-5-best-songs-of-the-week/"
+      },
+      "artist": "Hana Stretton",
+      "title": "From",
+      "note": "Closing track from her album tiarn, recorded as a storm rolled into her Australian beach town; an ambient folk ballad, wistful and tender.",
+      "yt": "81zA1JjIwkQ",
+      "batch": 5,
+      "year": 2026
+    },
+    {
+      "id": "swapmeet-i-know",
+      "site": "Bandcamp Daily",
+      "src": {
+        "label": "Essential Releases, Jul 17",
+        "url": "https://daily.bandcamp.com/essential-releases/essential-releases-july-17-2026"
+      },
+      "artist": "Swapmeet",
+      "title": "I Know!",
+      "note": "Opening track of the debut album Mount Zero, with spindly guitars and a burrowing refrain.",
+      "bc": "https://swapmeetband.bandcamp.com/album/mount-zero",
+      "batch": 5,
+      "year": 2026
+    },
+    {
+      "id": "navy-blue-orchards",
+      "site": "Bandcamp Daily",
+      "src": {
+        "label": "Best hip-hop, Nov 1",
+        "url": "https://daily.bandcamp.com/best-hip-hop/the-best-hip-hop-on-bandcamp-november-2025"
+      },
+      "artist": "Navy Blue",
+      "title": "Orchards",
+      "note": "Second song on the follow-up, over delicate piano from Child Actor, arriving at tranquil acceptance.",
+      "batch": 5,
+      "year": 2025
+    },
+    {
+      "id": "editrix-the-big-e",
+      "site": "Various Small Flames",
+      "src": {
+        "label": "Weekly Listening: June 2025 #2",
+        "url": "https://varioussmallflames.co.uk/2025/06/09/weekly-listening-june-2025-2/"
+      },
+      "artist": "Editrix",
+      "title": "The Big E",
+      "note": "Title track and lead single from the album The Big E, about alien visitors, aging, and being misunderstood, with a frantic, unnerved energy.",
+      "yt": "nCXYfDl0DAw",
+      "bc": "https://editrix.bandcamp.com/album/the-big-e",
+      "batch": 5,
+      "year": 2025
+    },
+    {
+      "id": "lily-konigsberg-free-byrd",
+      "site": "The Guardian",
+      "src": {
+        "label": "Add to playlist, Sep 25",
+        "url": "https://www.theguardian.com/music/2026/sep/25/add-to-playlist-the-defiant-queer-dancehall-of-destin-conrad-and-the-weeks-best-new-tracks"
+      },
+      "artist": "Lily Konigsberg",
+      "title": "Free Byrd",
+      "note": "A winsome, characterful indie jangler about betting on yourself over a too-safe relationship, fulfilling its 'free' brief.",
+      "batch": 5,
+      "year": 2026
+    },
+    {
+      "id": "m-h-aol-scam-manifesto",
+      "site": "The Guardian",
+      "src": {
+        "label": "Add to playlist, Sep 11",
+        "url": "https://www.theguardian.com/music/2026/sep/11/add-to-playlist-grumpys-weirded-up-country-celebration-of-trans-joy-and-the-weeks-best-new-tracks"
+      },
+      "artist": "M(h)aol",
+      "title": "Scam Manifesto",
+      "note": "Irish post-punks riff on Valerie Solanas's manifesto to address hypocrisy about beauty norms, with sludgy guitar and muttered self-recrimination.",
+      "batch": 5,
+      "year": 2026
+    },
+    {
+      "id": "angine-de-poitrine-fabienk",
+      "site": "WBRU",
+      "src": {
+        "label": "Today's Top Indie: April 28, 2026",
+        "url": "https://wbru.substack.com/p/todays-top-indie-april-28-2026"
+      },
+      "artist": "Angine de Poitrine",
+      "title": "Fabienk",
+      "note": "Discussed as the big topic at the station's music meeting; described as hard to classify, current, nerdy, and almost danceable.",
+      "batch": 5,
+      "year": 2026
+    },
+    {
+      "id": "bollards-g-v-o",
+      "site": "DIY",
+      "src": {
+        "label": "The Neu Bulletin, Oct 23",
+        "url": "https://diymag.com/feature/the-neu-bulletin-bed-piss-jo-from-school-and-more-2"
+      },
+      "artist": "Bollards",
+      "title": "G.V.O.",
+      "note": "Their first single in three years, an absurdist post-punk track with literary influences and art-rock energy, described as a joy to hear back.",
+      "batch": 5,
+      "year": 2026
+    },
+    {
+      "id": "rowan-please-stratocaster",
+      "site": "The FADER",
+      "src": {
+        "label": "Songs you need this week, Oct 21",
+        "url": "https://www.thefader.com/2026/10/21/songs-you-need-in-your-life-october-21-2026"
+      },
+      "artist": "Rowan Please",
+      "title": "Stratocaster",
+      "note": "The crown jewel of Stick Around For Tea, with a sweetly chipper sound that hides an ache about expectations and refusing to play by rules.",
+      "yt": "2FECOQDGDHc",
+      "batch": 5,
+      "year": 2026
+    }
+  ]
+}

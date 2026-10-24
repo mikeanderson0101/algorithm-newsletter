@@ -68246,6 +68246,1623 @@
      "bc": null
     }
    ]
+  },
+  "https://daily.bandcamp.com/essential-releases/essential-releases-july-21-2023": {
+   "site": "Bandcamp Daily",
+   "title": "Essential Releases",
+   "label": "Essential Releases",
+   "published": "2023-07-21T00:00:00.000Z",
+   "read": "2026-10-24",
+   "songs": [
+    {
+     "artist": "Aluna",
+     "title": "Oh The Glamour",
+     "note": "A sparkling ode to Black and queer communities creating celebration and luxury even when times are hard.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Aluna",
+     "title": "Running Blind",
+     "note": "A classic house track about the soul-fortifying qualities of the dancefloor, reaching big ecstatic heights.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Aluna feat. Jayda G",
+     "title": "Mine O Mine",
+     "note": "A collab where Aluna explores her self-worth, offering a refreshingly honest take on resilience and independence.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Lauren Bousfield",
+     "title": "Hazer",
+     "note": "Its bloody, unsettling video nails the music's bug-eyed chaos and perverse sense of humor.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Lauren Bousfield",
+     "title": "Permanently Closed",
+     "note": "A gabber-style track where a breathy, cotton-candy vocal drifts to the surface of the chaos.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Lauren Bousfield",
+     "title": "Debtors Prison Click Here Disney Needs To See This",
+     "note": "Without its synth and drum storm, it could be a dreampop ballad, and it addresses capitalism's ravages.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Disclosure",
+     "title": "Sun Showers",
+     "note": "Bottom-heavy production and dynamic sleights of hand make this one of the standouts on Alchemy.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Disclosure",
+     "title": "Go The Distance",
+     "note": "Samples and dynamic production tie its sugar-high hooks together, setting it apart on Alchemy.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Mattstranger",
+     "title": "Moon Song",
+     "note": "A psychedelic single carried by ethereal vocals and dreamy guitar, the album's standout track.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Mattstranger",
+     "title": "Amsale Manefesha",
+     "note": "A lushly textured, entirely instrumental track that closes the album.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Mattstranger",
+     "title": "Perfect Blue",
+     "note": "The title track, with fuzzy guitars and Adamu singing about changing for someone he loves.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Warp",
+     "title": "Cream of the Crop",
+     "note": "Teeter-totter guitars and a pounding rhythm section back Tika Hall's livid howl over controlled chaos.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Warp",
+     "title": "Punk City USA",
+     "note": "A catchy track whose refrain about bad energy has stuck in the writer's head for weeks.",
+     "yt": null,
+     "bc": null
+    }
+   ]
+  },
+  "https://daily.bandcamp.com/best-jazz/the-best-jazz-on-bandcamp-august-2023": {
+   "site": "Bandcamp Daily",
+   "title": "Best jazz",
+   "label": "Best jazz",
+   "published": "2023-08-01T00:00:00.000Z",
+   "read": "2026-10-24",
+   "songs": []
+  },
+  "https://daily.bandcamp.com/best-punk/the-best-punk-on-bandcamp-july-2023": {
+   "site": "Bandcamp Daily",
+   "title": "Best punk",
+   "label": "Best punk",
+   "published": "2023-07-01T00:00:00.000Z",
+   "read": "2026-10-24",
+   "songs": [
+    {
+     "artist": "It Thing",
+     "title": "Constant State",
+     "note": "Two-song release; power-pop pace with bright hooks, and the post says The Ramones are a major influence.",
+     "yt": null,
+     "bc": "https://itthing.bandcamp.com/album/constant-state-p-c-h"
+    },
+    {
+     "artist": "It Thing",
+     "title": "P.C.H",
+     "note": "Vocalist Charlotte Gigi wields an aggressive voice over urgent '80s riffs.",
+     "yt": null,
+     "bc": "https://itthing.bandcamp.com/album/constant-state-p-c-h"
+    },
+    {
+     "artist": "Temple of Angels",
+     "title": "Tangled in Joy",
+     "note": "Effervescent, jangly '80s-style pop love song from their long-awaited debut full-length.",
+     "yt": null,
+     "bc": "https://templeofangels.bandcamp.com/album/endless-pursuit"
+    },
+    {
+     "artist": "Sweeping Promises",
+     "title": "Eraser",
+     "note": "Lead single showing the band's impeccable pacing, anthemic vocals, and sticky hooks.",
+     "yt": null,
+     "bc": "https://sweepingpromises.bandcamp.com/album/good-living-is-coming-for-you-2"
+    },
+    {
+     "artist": "Sweeping Promises",
+     "title": "Shadow Me",
+     "note": "Girl group-y track on their sophomore LP, showing singer Lira Mondal's versatile voice.",
+     "yt": null,
+     "bc": "https://sweepingpromises.bandcamp.com/album/good-living-is-coming-for-you-2"
+    },
+    {
+     "artist": "Sweeping Promises",
+     "title": "Petit Four",
+     "note": "Raw, funky track compared to Bush Tetras, highlighting the band's wider-ranging sound.",
+     "yt": null,
+     "bc": "https://sweepingpromises.bandcamp.com/album/good-living-is-coming-for-you-2"
+    },
+    {
+     "artist": "Khassarat",
+     "title": "The Third War",
+     "note": "Sung in Tunisian Arabic; predicts or threatens global mayhem from ongoing violence and death.",
+     "yt": null,
+     "bc": "https://awd-tapes.bandcamp.com/album/how-many-more-must-perish-in-the-pursuit-of-hope"
+    },
+    {
+     "artist": "Khassarat",
+     "title": "Lies",
+     "note": "Closing track described as a distorted, tense dirge and perhaps the release's standout.",
+     "yt": null,
+     "bc": "https://awd-tapes.bandcamp.com/album/how-many-more-must-perish-in-the-pursuit-of-hope"
+    },
+    {
+     "artist": "Spirito Di Lupo",
+     "title": "Vento Triste",
+     "note": "Explosive opener with machine-gun drums and shouted vocals about feeling dead inside.",
+     "yt": null,
+     "bc": "https://ironlungrecords.bandcamp.com/album/vedo-la-tua-faccia-nei-giorni-di-pioggia-lungs-250"
+    },
+    {
+     "artist": "Spirito Di Lupo",
+     "title": "Oltre Lo Sguardo",
+     "note": "Guitar takes on a psychedelic, almost surf-y tone on this track.",
+     "yt": null,
+     "bc": "https://ironlungrecords.bandcamp.com/album/vedo-la-tua-faccia-nei-giorni-di-pioggia-lungs-250"
+    },
+    {
+     "artist": "Spirito Di Lupo",
+     "title": "Canzone Della Foresta",
+     "note": "Soaring, ringing guitar notes make this one of the strongest tracks, a desolate ode to rain.",
+     "yt": null,
+     "bc": "https://ironlungrecords.bandcamp.com/album/vedo-la-tua-faccia-nei-giorni-di-pioggia-lungs-250"
+    },
+    {
+     "artist": "Carnations",
+     "title": "Garland",
+     "note": "Energetic highlight with laser-like synth lines and propulsive drumming in gloomy post-punk.",
+     "yt": null,
+     "bc": null
+    }
+   ]
+  },
+  "https://daily.bandcamp.com/essential-releases/essential-releases-june-23-2023": {
+   "site": "Bandcamp Daily",
+   "title": "Essential Releases",
+   "label": "Essential Releases",
+   "published": "2023-06-23T00:00:00.000Z",
+   "read": "2026-10-24",
+   "songs": [
+    {
+     "artist": "Destiny Bond",
+     "title": "Blood Chokes",
+     "note": "Named the most impactful track on Be My Vengeance, a cathartic celebration of trans resilience and found family.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Matthew",
+     "title": "NBC's Chris Angel",
+     "note": "Cited as an example of weary resignation on FOHDH, with wobbly bass and choral vocals over gravelly delivery.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Rrose",
+     "title": "Rib Cage",
+     "note": "A persistent beat shifts into a shuddering sound, from dragonfly-wing flutter to a troubled car engine.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Rrose",
+     "title": "Feeding Time",
+     "note": "Warbles, whistles, and whirrs suggest curious animals in a windy desert environment.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Rrose",
+     "title": "Spines",
+     "note": "Humid feel with crackling like a late summer storm and a discordant, ominous melodic element.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Tree",
+     "title": "10 Mach 11's",
+     "note": "Reworks Biggie's Come On over thick funk synths, with Tree praising his crew and dismissing imposters.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Tree",
+     "title": "Benz",
+     "note": "Rides a vintage Southern bounce beat, with Tree joyfully and convincingly repeating the Benz hook.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Waterbaby",
+     "title": "911",
+     "note": "A favorite from the debut EP, turning emergency vehicle sounds into an infectious hook.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Waterbaby",
+     "title": "Airforce blue",
+     "note": "Lead single pairing autotuned vocals with bedroom pop production; called another favorite.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Waterbaby",
+     "title": "Wishing well",
+     "note": "Closes the EP with an unrequited-love song over glistening piano keys and an abrupt ending.",
+     "yt": null,
+     "bc": null
+    }
+   ]
+  },
+  "https://daily.bandcamp.com/best-ambient/the-best-ambient-on-bandcamp-july-2023": {
+   "site": "Bandcamp Daily",
+   "title": "Best new ambient",
+   "label": "Best new ambient",
+   "published": "2023-07-01T00:00:00.000Z",
+   "read": "2026-10-24",
+   "songs": [
+    {
+     "artist": "Natural Wonder Beauty Concept",
+     "title": "III",
+     "note": "Roxanne and Piñeyro trade Dean Blunt-style verses over a trap-laced beat.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Natural Wonder Beauty Concept",
+     "title": "The Veil II",
+     "note": "Carried by sparse acoustic guitar playing and otherworldly chimes, with nothing else.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Natural Wonder Beauty Concept",
+     "title": "Natural Wonder Beauty Concept",
+     "note": "Its title track pairs an uptempo jungle groove with slow-motion vocal chops; called one of the year's best electronic tracks.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Four Tet",
+     "title": "Three Drums",
+     "note": "A blissful downtempo track that Kieran Hebden put out this year, after his dance-heavy festival run.",
+     "yt": null,
+     "bc": "https://fourtet.bandcamp.com/track/three-drums"
+    },
+    {
+     "artist": "Kieran Hebden & William Tyler",
+     "title": "Darkness, Darkness",
+     "note": "The A-side, built on loping drums, dry horn samples, and distorted guitar jamming.",
+     "yt": null,
+     "bc": "https://psychichotline.bandcamp.com/album/darkness-darkness-no-services"
+    },
+    {
+     "artist": "Kieran Hebden & William Tyler",
+     "title": "No Services",
+     "note": "The withdrawn back half, an ambient piece of resonant piano chords over faint fretboard scraping.",
+     "yt": null,
+     "bc": "https://psychichotline.bandcamp.com/album/darkness-darkness-no-services"
+    }
+   ]
+  },
+  "https://daily.bandcamp.com/essential-releases/essential-releases-july-28-2023": {
+   "site": "Bandcamp Daily",
+   "title": "Essential Releases",
+   "label": "Essential Releases",
+   "published": "2023-07-28T00:00:00.000Z",
+   "read": "2026-10-24",
+   "songs": [
+    {
+     "artist": "Amaara",
+     "title": "Child of Venus",
+     "note": "Dream-pop opener with airy atmosphere and lyrics about transitions and trauma; standout tracks include \"Still\", \"Photographs\" and \"Ghosts\".",
+     "yt": null,
+     "bc": "https://amaaraofficial.bandcamp.com/album/child-of-venus"
+    },
+    {
+     "artist": "El Kontessa",
+     "title": "Nos Habet Caramel",
+     "note": "Cairo DJ/producer's debut blends global club styles with Egyptian music; highlights include \"Bingo\", \"Ghaltet Meen\" and \"Mesh Marshmallow\".",
+     "yt": null,
+     "bc": "https://bilnaes.bandcamp.com/album/nos-habet-caramel"
+    },
+    {
+     "artist": "Halal Boys",
+     "title": "Kufi Conversations",
+     "note": "Gorgeous Jefe and Lord RA collaborate on upbeat, optimistic rap; standout tracks include \"The Touch\", \"UNICO\" and \"Toy Gunz\".",
+     "yt": null,
+     "bc": "https://jefesgoods.bandcamp.com/album/kufi-conversations"
+    },
+    {
+     "artist": "KUDIS",
+     "title": "DITELAN BUMI",
+     "note": "Singaporean punks' economical, live-sounding set of under ten minutes; highlights the title track and \"Mayat\".",
+     "yt": null,
+     "bc": "https://invisibleaudio.bandcamp.com/album/kudis-ditelan-bumi"
+    },
+    {
+     "artist": "Private Lives",
+     "title": "Hit Record",
+     "note": "Montreal band blends post-punk leanness with garage swagger; described as sparky, dynamic, melody-driven rock.",
+     "yt": null,
+     "bc": "https://privatelivesmtl.bandcamp.com/album/hit-record"
+    },
+    {
+     "artist": "Various Artists",
+     "title": "Disruptive Frequencies",
+     "note": "Compilation of Black and South Asian experimental and electronic artists; highlights Bantu's \"Dark Energy\" and Poulomi Desai's \"The Vichitra\".",
+     "yt": null,
+     "bc": "https://nonclassical.bandcamp.com/album/disruptive-frequencies"
+    }
+   ]
+  },
+  "https://daily.bandcamp.com/essential-releases/essential-releases-june-9-2023": {
+   "site": "Bandcamp Daily",
+   "title": "Essential Releases",
+   "label": "Essential Releases",
+   "published": "2023-06-09T00:00:00.000Z",
+   "read": "2026-10-24",
+   "songs": [
+    {
+     "artist": "Gacha Bakradze",
+     "title": "Overtime",
+     "note": "A euphoric, future-forward track on Pancakes that the post says goes extremely hard.",
+     "yt": null,
+     "bc": "https://gacha.bandcamp.com/album/pancakes"
+    },
+    {
+     "artist": "Gacha Bakradze",
+     "title": "Tainted",
+     "note": "A gentler, tender piece showing the softer side of the Pancakes album.",
+     "yt": null,
+     "bc": "https://gacha.bandcamp.com/album/pancakes"
+    },
+    {
+     "artist": "Gacha Bakradze",
+     "title": "Presence",
+     "note": "Melodic bass and celestial pads interrupted by metallic effects and a half-spoken vocal, sounding songwriterly and human.",
+     "yt": null,
+     "bc": "https://gacha.bandcamp.com/album/pancakes"
+    },
+    {
+     "artist": "Gacha Bakradze",
+     "title": "Morning Chatter",
+     "note": "A blissful track that the post says still carries a core of unease and melancholy.",
+     "yt": null,
+     "bc": "https://gacha.bandcamp.com/album/pancakes"
+    },
+    {
+     "artist": "McKinley Dixon",
+     "title": "Hanif Reads Toni",
+     "note": "Opens the album with poet Hanif Abdurraqqib reading a passage from Toni Morrison's Jazz.",
+     "yt": null,
+     "bc": "https://mckinleydixon.bandcamp.com/album/beloved-paradise-jazz-2"
+    },
+    {
+     "artist": "McKinley Dixon",
+     "title": "Run Run Run",
+     "note": "A bittersweet, energetic standout where Dixon recounts joyful and dark childhood moments.",
+     "yt": null,
+     "bc": "https://mckinleydixon.bandcamp.com/album/beloved-paradise-jazz-2"
+    },
+    {
+     "artist": "McKinley Dixon",
+     "title": "Beloved! Paradise! Jazz!?",
+     "note": "The soulful title track that closes the album, with Dixon singing about feeling fixed.",
+     "yt": null,
+     "bc": "https://mckinleydixon.bandcamp.com/album/beloved-paradise-jazz-2"
+    },
+    {
+     "artist": "Abbott Jackson, Swizzy, and Red Amandala",
+     "title": "Love Runs for Free",
+     "note": "The vocals share the bounce and swing of Jackson's smoky jazz arrangement.",
+     "yt": null,
+     "bc": "https://abbotjackson.bandcamp.com/album/3wizemen-2"
+    },
+    {
+     "artist": "Abbott Jackson, Swizzy, and Red Amandala",
+     "title": "Passionate",
+     "note": "An album highlight where the two rappers ride a cascade of marimba and snare.",
+     "yt": null,
+     "bc": "https://abbotjackson.bandcamp.com/album/3wizemen-2"
+    },
+    {
+     "artist": "Jayda G",
+     "title": "Scars",
+     "note": "An upbeat synth-driven standout on Guy, with lyrics about growth and her father's hardships.",
+     "yt": null,
+     "bc": "https://jaydag.bandcamp.com/album/guy"
+    },
+    {
+     "artist": "Jayda G",
+     "title": "Meant to Be",
+     "note": "A disco track on Guy where Jayda G declares she is Black from the start.",
+     "yt": null,
+     "bc": "https://jaydag.bandcamp.com/album/guy"
+    },
+    {
+     "artist": "Jayda G",
+     "title": "When She Dance",
+     "note": "A tribute to her grandmother, built from archival recordings of her late father.",
+     "yt": null,
+     "bc": "https://jaydag.bandcamp.com/album/guy"
+    },
+    {
+     "artist": "TEKE::TEKE",
+     "title": "Doppelgänger",
+     "note": "A pillowy, sophisticated arrangement that shows the band's sprawling, fluid sound on Hagata.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "TEKE::TEKE",
+     "title": "Hoppe",
+     "note": "An unpredictable, rowdy track on Hagata that contrasts with the band's more serene side.",
+     "yt": null,
+     "bc": null
+    }
+   ]
+  },
+  "https://daily.bandcamp.com/best-contemporary-classical/the-best-contemporary-classical-on-bandcamp-august-2023": {
+   "site": "Bandcamp Daily",
+   "title": "Best contemporary classical",
+   "label": "Best contemporary classical",
+   "published": "2023-08-01T00:00:00.000Z",
+   "read": "2026-10-24",
+   "songs": [
+    {
+     "artist": "Jessie Montgomery",
+     "title": "Rounds",
+     "note": "Pianist Awadagin Pratt improvises his own cadenza on this stirring piece, a practice the post links to Beethoven and Liszt.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Paola Prestini",
+     "title": "Code",
+     "note": "Fiery glassy piano runs trade with upper strings in a soloistic-ensemble dialogue before Roomful of Teeth enter dramatically.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Alvin Singleton",
+     "title": "Time Past, Time Future",
+     "note": "Left-handed piano gestures bring jazz roots and a hammering rhythm that the post compares to Horace Silver.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Tyshawn Sorey",
+     "title": "Untitled Composition for Piano and Eight Voices",
+     "note": "Brooding piano chords are set against harrowing, wordless vocal harmonies, described as deliciously stark.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Evan Johnson",
+     "title": "Wolke über Bäumen",
+     "note": "Violinist Sarah Saviet plays gut strings, a baroque bow, and scordatura retuned 32 times over sixteen minutes.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Lawrence Dunn",
+     "title": "Farewell to Piano",
+     "note": "Featured among the album's equally riveting works, with the post linking to the track.",
+     "yt": null,
+     "bc": "https://compostandheight.bandcamp.com/track/lawrence-dunn-farewell-to-piano"
+    },
+    {
+     "artist": "Lisa Streich",
+     "title": "Falter",
+     "note": "Named as one of the riveting works rounding out Sarah Saviet's album, with the post linking to the track.",
+     "yt": null,
+     "bc": "https://sarah-saviet.bandcamp.com/track/falter-by-lisa-streich"
+    },
+    {
+     "artist": "Katherine Balch",
+     "title": "Apartment Sounds",
+     "note": "Violin part is organized around clock ticking, porch chimes, and window ambience, using scratch tones and pizzicato.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Missy Mazzoli",
+     "title": "Tooth and Nail",
+     "note": "Synthetic patterns trace structures that Yvonne Lam's crystalline articulation inhabits beautifully; originally written for Nadia Sirota.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Anna Clyne",
+     "title": "Rest These Hands",
+     "note": "No electronic part; Lam reads a brief poem by the composer's mother with world-weary wisdom in her intonation.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Natasha Barrett",
+     "title": "Remote Sensing on the Beach",
+     "note": "Norwegian fjord recordings and sonified 3D coastal maps carry the listener from shore into the sea, with hydrophone sounds.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Cole Blouin",
+     "title": "Mundiglossia",
+     "note": "Solo soprano saxophone piece by Thomas Giles, built on extended techniques and a spiral structure over about 30 minutes.",
+     "yt": null,
+     "bc": "https://coleblu.bandcamp.com/album/torso"
+    }
+   ]
+  },
+  "https://daily.bandcamp.com/essential-releases/essential-releases-june-16-2023": {
+   "site": "Bandcamp Daily",
+   "title": "Essential Releases",
+   "label": "Essential Releases",
+   "published": "2023-06-16T00:00:00.000Z",
+   "read": "2026-10-24",
+   "songs": [
+    {
+     "artist": "Nourished By Time",
+     "title": "Quantum Suicide",
+     "note": "An R&B crooner built on smooth production, with lyrics that touch on depression and darker subject matter.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Nourished By Time",
+     "title": "Shed That Fear",
+     "note": "An anthemic track urging listeners to shed fear of death and live their lives the right way.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Nourished By Time",
+     "title": "Workers Interlude",
+     "note": "A soul-stirring track where Marcus Brown turns his sights on capitalism.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Nourished By Time",
+     "title": "Unbreak My Love",
+     "note": "A triumphant closer that the writer compared to early '90s Sounds of Blackness releases.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Julez and the Rollerz",
+     "title": "Is This Where The Party Is?",
+     "note": "A sugary garage-punk rock and roll title track with pathos beneath its party vibes, likened to the Bangles meeting Ex Hex.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Stik Figa & The Expert",
+     "title": "Slo Pokes",
+     "note": "Stik Figa takes aim at MCs who are all flash and no substance, turning clichés into pithy career advice.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Stik Figa & The Expert",
+     "title": "Zambezi Zinger",
+     "note": "A jubilant track with Tanya Morgan's Donwill and Von Pea, featuring a playful tweak of Nas's \"Oochie Wally.\"",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Stik Figa & The Expert",
+     "title": "Yah's Shorthand",
+     "note": "A ruminative track where Stik Figa wrestles with his own contradictions, called the album's most devastating moment.",
+     "yt": null,
+     "bc": null
+    }
+   ]
+  },
+  "https://daily.bandcamp.com/best-hip-hop/the-best-hip-hop-on-bandcamp-august-2023": {
+   "site": "Bandcamp Daily",
+   "title": "Best hip-hop",
+   "label": "Best hip-hop",
+   "published": "2023-08-01T00:00:00.000Z",
+   "read": "2026-10-24",
+   "songs": [
+    {
+     "artist": "Allen Vice",
+     "title": "CORNBALLS OF EARTH",
+     "note": "Filtered space jazz loop backs Vice gazing into a blunted galaxy and pondering his standing.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Bernz",
+     "title": "Reach Out",
+     "note": "Described as a nostalgia-drenched throwback session on the Yacht Club Vol. 2 release.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Bernz",
+     "title": "Key West",
+     "note": "Spun into a mini-travelogue, per the post, within the relaxed summer-themed album.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Bernz",
+     "title": "Cook",
+     "note": "Bernz pushes the seductive nature of his culinary skills across this track.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Bernz",
+     "title": "Sea Breeze",
+     "note": "Airy synth gusts carry Bernz's boast about flowing on his own reef.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Black Milk",
+     "title": "For How Much?",
+     "note": "Twists 80s R&B melody around crackling snares and kicks.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Black Milk",
+     "title": "Downs Got Up",
+     "note": "Powered by a bluesy low-end riff, per the post.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Black Milk",
+     "title": "The Black Surf",
+     "note": "Ventures into blissful psychedelic territory with guest vocals from Quelle Chris.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Black Milk",
+     "title": "Ain't Nobody Coming Down To Save You",
+     "note": "Crunching blues-rock with gospel touches delivers an end-of-days charge; a mid-album peak.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Funky DL",
+     "title": "Time",
+     "note": "Gentle introductory statement over a jazz-inflected backdrop and chugging mid-tempo drums.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Funky DL",
+     "title": "Guardian Angel",
+     "note": "Revisits going through school with an elder sibling, a personal track.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Funky DL",
+     "title": "Retrospect",
+     "note": "Embraces dwelling on the past to reach present-time satisfaction.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Funky DL",
+     "title": "Raised",
+     "note": "Explores the MC's own formative years.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Funky DL",
+     "title": "I Am Reuben",
+     "note": "Title track featuring archived vocals from his late brother Reuben over ominous keys.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Jazzbois",
+     "title": "Gomba Slap",
+     "note": "Spotlights Tamás Czirják's forceful drum work.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Jazzbois",
+     "title": "Mosquitoh",
+     "note": "A woozy showcase for Bencze Molnár's off-kilter synth patterns.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Jazzbois",
+     "title": "When It Hits",
+     "note": "Carried by Viktor Sági's lolling basslines.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Jazzbois",
+     "title": "Up In The Clouds",
+     "note": "Closes the album with feathery brushes and dreamy celestial synths.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Joell Ortiz & L'Orange",
+     "title": "Love is Love",
+     "note": "Atonal, piano-spiked track featuring Sheek Louch with minimalist atmospherics.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Joell Ortiz & L'Orange",
+     "title": "Masked Up",
+     "note": "Almost industrial-tinged experimental sortie in the Signature set.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Joell Ortiz & L'Orange",
+     "title": "Uncle Chris Car",
+     "note": "Album-setter where hazy bass spurs Ortiz to revisit his pre-rap days.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Psalm One & Custom Made",
+     "title": "Dearly Departed",
+     "note": "Opener mixing reflective sentiments with cut-throat barbs over mid-tempo beatwork.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Psalm One & Custom Made",
+     "title": "Best Nonfiction",
+     "note": "Mid-project cut with guest support from IAMGAWD over pillowy bass and serene synths.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Psalm One & Custom Made",
+     "title": "Consistent",
+     "note": "Mystically-charged closer with a guest turn from Angelenah.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Raw Poetic",
+     "title": "Ease Side",
+     "note": "Key cut with thudding drums and swaying guitar, warning against unguided missteps.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Raw Poetic",
+     "title": "Human Kindness (Acoustic Mix)",
+     "note": "Ends the album in sonic curveball fashion, venturing into experimental folk.",
+     "yt": null,
+     "bc": null
+    }
+   ]
+  },
+  "https://daily.bandcamp.com/best-electronic/the-best-electronic-music-on-bandcamp-july-2023": {
+   "site": "Bandcamp Daily",
+   "title": "Best new electronic",
+   "label": "Best new electronic",
+   "published": "2023-07-01T00:00:00.000Z",
+   "read": "2026-10-24",
+   "songs": [
+    {
+     "artist": "SYREETA",
+     "title": "Renni Bes",
+     "note": "Hints at UK garage and classic Detroit techno with heavy Reese bass drone and funky drum clatter.",
+     "yt": null,
+     "bc": "https://syreetamusic.bandcamp.com/album/renni-bes"
+    },
+    {
+     "artist": "SYREETA",
+     "title": "Seek",
+     "note": "Bass-heavy track using a gospel preacher over a heavy drum track, with physical, fresh sound.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Steven Simpson",
+     "title": "Acid 13",
+     "note": "Lifts you up on warm pads while digital spirits sing; one of the two standout electro-leaning tunes.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Suddi Raval",
+     "title": "Flight to Mars",
+     "note": "Plots out a darker, more isolationist groove; a standout electro-leaning tune.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Aloka",
+     "title": "Granulate",
+     "note": "Skittering stepper whose rhythm sometimes settles into four-to-the-floor before splitting into funkier patterns.",
+     "yt": null,
+     "bc": "https://typelessrecords.bandcamp.com/album/granulate-vector-space"
+    },
+    {
+     "artist": "Aloka",
+     "title": "Vector Space",
+     "note": "Sparse rhythm over a holding thrum, described as the real treat of the release.",
+     "yt": null,
+     "bc": "https://typelessrecords.bandcamp.com/album/granulate-vector-space"
+    },
+    {
+     "artist": "Ghoßt Assembly",
+     "title": "I Miss Your Love",
+     "note": "Loving reconstruction of 1980s Chicago house with a church-y, joyous dancefloor feel.",
+     "yt": null,
+     "bc": "https://ghostassembly.bandcamp.com/album/rk19-i-miss-your-love"
+    },
+    {
+     "artist": "JAGS 639 & PVSSY",
+     "title": "Azotandote",
+     "note": "Listed as a standout track from this month's electronic picks.",
+     "yt": null,
+     "bc": "https://noctm.bandcamp.com/track/jags-639-x-pvssy-azotandote"
+    },
+    {
+     "artist": "Edward Spark & Kiffie",
+     "title": "Never Say Never",
+     "note": "Melancholic electropop with a futurist twist, with Kiffie's gentle vocals and Edward Spark's production.",
+     "yt": null,
+     "bc": "https://edwardspark.bandcamp.com/album/never-say-never"
+    }
+   ]
+  },
+  "https://daily.bandcamp.com/best-punk/the-best-punk-on-bandcamp-august-2023": {
+   "site": "Bandcamp Daily",
+   "title": "Best punk",
+   "label": "Best punk",
+   "published": "2023-08-01T00:00:00.000Z",
+   "read": "2026-10-24",
+   "songs": [
+    {
+     "artist": "Fotokiller",
+     "title": "Eerie Nostalgia",
+     "note": "Berlin trio's lush, dark punk debut full-length; highlights include the updated closer \"Echoes\" and \"Asleep\". Released as an album, so the focus track is not clearly",
+     "yt": null,
+     "bc": "https://order05records.bandcamp.com/album/eerie-nostalgia"
+    },
+    {
+     "artist": "Water Machine",
+     "title": "Raw Liquid Power",
+     "note": "Glaswegian quartet's first studio EP, a fun, catchy follow-up to their 2022 demo, with the track \"Stilettos\" singled out.",
+     "yt": null,
+     "bc": "https://upsettherhythm.bandcamp.com/album/raw-liquid-power"
+    },
+    {
+     "artist": "Eye of the Cormorant/Eye of the Heron",
+     "title": "S/T",
+     "note": "Donna Allen's lo-fi bird-centric anarcho-punk demo, raw and energetic, with the first part named for the cormorant.",
+     "yt": null,
+     "bc": "https://roachlegrecords.bandcamp.com/album/demo-10"
+    },
+    {
+     "artist": "Sukatani",
+     "title": "Gelap Gempita",
+     "note": "Central Java duo's political electronic punk album, with the standout track \"Tanam Kemandirian\" praised for its soaring vocals.",
+     "yt": null,
+     "bc": "https://dugtrax.bandcamp.com/album/gelap-gempita"
+    },
+    {
+     "artist": "Spiral Dub",
+     "title": "Spiral Dub",
+     "note": "San Francisco six-piece psych-punk act; highlights include \"Top of the World\", \"Hang From the Line\", and \"Knockin' on My Head\".",
+     "yt": null,
+     "bc": "https://spiraldub.bandcamp.com/album/spiral-dub"
+    }
+   ]
+  },
+  "https://daily.bandcamp.com/best-experimental/the-best-experimental-music-on-bandcamp-august-2023": {
+   "site": "Bandcamp Daily",
+   "title": "Hi-Bias (experimental)",
+   "label": "Hi-Bias (experimental)",
+   "published": "2023-08-01T00:00:00.000Z",
+   "read": "2026-10-24",
+   "songs": [
+    {
+     "artist": "Cristián Alvear and Takashi Masubuchi",
+     "title": "4",
+     "note": "A tense, propulsive track where one player's spare plucks sit inside the other's rapid notes, seeming to escape time.",
+     "yt": null,
+     "bc": "https://cristianalvearmontecino.bandcamp.com/album/distinct-restless-objects"
+    },
+    {
+     "artist": "Max Pozin",
+     "title": "Reichwaltz",
+     "note": "The busier track from Pozin's electronics album, twisting through fast-pulsing oscillations and shifting rhythms.",
+     "yt": null,
+     "bc": "https://pozin.bandcamp.com/album/max-pozin-reichwaltz-schlafkultur-2023"
+    },
+    {
+     "artist": "Max Pozin",
+     "title": "Schlafkulture",
+     "note": "A higher-toned, more meditative track from Pozin's solo electronics album, balancing minimalism with glitch.",
+     "yt": null,
+     "bc": "https://pozin.bandcamp.com/album/max-pozin-reichwaltz-schlafkultur-2023"
+    },
+    {
+     "artist": "Sana Nagano and Leonor Falcón",
+     "title": "Etude 2",
+     "note": "A darting, pin-prick piece that injects burning edges into the reserved, tense duo material.",
+     "yt": null,
+     "bc": "https://577records.bandcamp.com/album/peach-and-tomato"
+    },
+    {
+     "artist": "Sana Nagano and Leonor Falcón",
+     "title": "Flow",
+     "note": "The album closer, where both musicians explore the full range of their instruments in an original piece.",
+     "yt": null,
+     "bc": "https://577records.bandcamp.com/album/peach-and-tomato"
+    },
+    {
+     "artist": "Williams / Kleijn / Kassinger",
+     "title": "Improvisation II",
+     "note": "A 17-minute improvisation where the trio loosens up more than elsewhere on the Oliveros-inspired album.",
+     "yt": null,
+     "bc": "https://williamskleijnkassinger.bandcamp.com/album/two-or-three"
+    }
+   ]
+  },
+  "https://daily.bandcamp.com/best-hip-hop/the-best-hip-hop-on-bandcamp-july-2023": {
+   "site": "Bandcamp Daily",
+   "title": "Best hip-hop",
+   "label": "Best hip-hop",
+   "published": "2023-07-01T00:00:00.000Z",
+   "read": "2026-10-24",
+   "songs": [
+    {
+     "artist": "B L A C K I E",
+     "title": "still got love",
+     "note": "A punchy, curt MC-mode blast that opens a distilled project of motivational mantras and lyrical catharsis.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "B L A C K I E",
+     "title": "born inside excrement",
+     "note": "The penultimate cut, driven by growling bass tones, with the MC urging listeners to forget what hurts.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Chester Watson",
+     "title": "fish don't climb trees",
+     "note": "The opening title track, heralded by a muted horn riff, showing the MC's drifting, abstract wanderlust.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Chester Watson",
+     "title": "Grey Theory",
+     "note": "A vital moment with craggy drums and wavering keys, where the MC sketches out blurred boundary lines.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Chester Watson",
+     "title": "Mirrors",
+     "note": "The closer, where the host admits to old soul aspirations and claims his sound is vintage.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Chill da God",
+     "title": "Could Be",
+     "note": "The melancholic opener, with a pained vocal sample over crackling mid-tempo drums and subdued brass.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Chill da God",
+     "title": "Lemons",
+     "note": "A swaying, Latin-tinged instrumental standout from the project.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Chill da God",
+     "title": "City Rhodes",
+     "note": "A skewed and hazy instrumental standout described as a highlight of the album.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Chill da God",
+     "title": "Breeze",
+     "note": "A gently weeping instrumental standout from the album.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Chill da God",
+     "title": "Thank You Very Much",
+     "note": "Closer featuring Lynx 196.9 and his aqueous, ear-catching flow.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Fatboi Sharif",
+     "title": "East Hollywood",
+     "note": "An early moment carried by a mournful, sad-clown piano riff full of lonesome regret.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Fatboi Sharif",
+     "title": "The 6th Floor",
+     "note": "Described as humid, humming guitar-based violence over a noir-leaning beatscape.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Fatboi Sharif",
+     "title": "Think Pieces",
+     "note": "A tornado of pained atmospherics built around an incantation from Sharif referencing many odd touchstones.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Five Steez & Son Raw",
+     "title": "Diamond Gem",
+     "note": "Showcases Son Raw's sweeping orchestral strings across the album's expansive beats.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Five Steez & Son Raw",
+     "title": "Maintain",
+     "note": "Static-encrusted funk production highlighted in the album's varied beat work.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Five Steez & Son Raw",
+     "title": "Simple Man",
+     "note": "Features bluesy sax riffs over crackly boom-bap drums.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Five Steez & Son Raw",
+     "title": "The General",
+     "note": "Five Steez declares his worth as a veteran and pushes his contribution to Jamaica's underground scene.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Five Steez & Son Raw",
+     "title": "Dub Outro",
+     "note": "Closes the album in a sticky mix of sound system effects and echo-inflected sirens.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "DJ Green Lantern",
+     "title": "Jazz Dreamin",
+     "note": "Scene-setting opener blending cushy keys and a melancholic sax refrain with a Biggie vocal snippet.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "DJ Green Lantern",
+     "title": "Jazz From The Soul",
+     "note": "Delves into meditative, deeper territory on the album's jazz theme.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "DJ Green Lantern",
+     "title": "Vibrations In Your Mind",
+     "note": "A woozy track that weaves in spiritual jazz influences.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "DJ Green Lantern",
+     "title": "Step Into A World",
+     "note": "KRS-One-inspired track featuring Amber Navran of Moonchild on two installments.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "jaH-Monte Ogbon",
+     "title": "Eight Pregnancy Scares",
+     "note": "An early moment where a missed love is reminisced over and chided by the MC's own intentions.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "jaH-Monte Ogbon",
+     "title": "Angela Bassett",
+     "note": "Shows the MC's confident, amiable tone, name-checking Grand Puba and Brand Nubian.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "jaH-Monte Ogbon",
+     "title": "COACH K & PEE",
+     "note": "A deep funk outing with U'nik Flow guesting on verses.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Radicule",
+     "title": "END CREDITS 2.5",
+     "note": "A glitchy funk track where the host brags about keeping it player.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Radicule",
+     "title": "LOWKEY AND OUT THE WAY",
+     "note": "Bedded by subdued keys, with Blackchai skating over the beat.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Radicule",
+     "title": "OSBORN WAVECAP",
+     "note": "S!LENCE adds to the aqueous ambiance of this track.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Substantial",
+     "title": "1580",
+     "note": "A key late-album song questioning where the love is, with a meditative mid-tempo feel.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Video Dave + Controller 7",
+     "title": "ThePlugTune",
+     "note": "Whistle-imbued opener that establishes the Native Tongues inspiration behind the project.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Video Dave + Controller 7",
+     "title": "BabyTalk",
+     "note": "Drifts in a woozy big band direction, showcasing Controller 7's melodic sensibilities.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Video Dave + Controller 7",
+     "title": "GoodBye",
+     "note": "Heralded by dreamy cinematic strings.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Video Dave + Controller 7",
+     "title": "LongTermPlans",
+     "note": "Treads through classic soul territory.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Video Dave + Controller 7",
+     "title": "PassingLane",
+     "note": "An 80s-tinged track featuring Dessa.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Video Dave + Controller 7",
+     "title": "BeesKnees",
+     "note": "Kooky, naturalistic funk with Iowa Rockwell on the track.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Video Dave + Controller 7",
+     "title": "PardonInterruptions",
+     "note": "MC Paul Barman teams with Open Mike Eagle, weaving in a De La Soul deep cut reference.",
+     "yt": null,
+     "bc": null
+    }
+   ]
+  },
+  "https://daily.bandcamp.com/best-contemporary-classical/the-best-contemporary-classical-on-bandcamp-july-2023": {
+   "site": "Bandcamp Daily",
+   "title": "Best contemporary classical",
+   "label": "Best contemporary classical",
+   "published": "2023-07-01T00:00:00.000Z",
+   "read": "2026-10-24",
+   "songs": [
+    {
+     "artist": "Niloufar Shiri",
+     "title": "Drowning Poet",
+     "note": "A askew, time-warping meditation where tones seem to bend like taffy, performed by the Anagram String Trio.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Mia Windsor",
+     "title": "Ensembletje!",
+     "note": "A gorgeous quartet piece named for the performing group, which includes the composer on electronics.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Mia Windsor",
+     "title": "this is a place where i can sit with clarity",
+     "note": "Title piece, a solo organ work with drone-like qualities and simple melodic shapes drifting through sustained tones.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Carol Robinson",
+     "title": "Les si doux redoux",
+     "note": "Basset horn piece evoking a slight winter thaw, casting an undulating, shimmering shadow rather than nature's violence.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Carol Robinson",
+     "title": "Black on Green",
+     "note": "A visceral piece for bassist Charlotte Testu conveying a tornado approaching, with a tightly wound sense of dread.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Carol Robinson",
+     "title": "Nacarat",
+     "note": "An epic for electric guitarist Serge Teyssot-Gay evoking a hurricane, though the review finds its structure predictable.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Fjóla Evans",
+     "title": "Augun",
+     "note": "A deconstruction of an Icelandic folk tune, recast in a tangle of colliding harmony and rhythm, performed by Ashley Bathgate.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Emily Cooley",
+     "title": "Assemble",
+     "note": "Evokes a chorale, treating eight tracks as an orchestral arrangement whose parts make sense only when voiced together.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Alex Weiser",
+     "title": "Willow's Song",
+     "note": "A brief, lush piece taken from a larger work, reconfigured for cellist Ashley Bathgate as a prelude.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Alex Weiser",
+     "title": "Shimmer",
+     "note": "A cycling, minimalist work of endlessly morphing permutations of a pattern, with lines taking on a life of their own.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Leá Boudreau",
+     "title": "Dementia",
+     "note": "Electro-acoustic piece where motifs become increasingly splintered and disconnected, reflecting the mental decay of the disease.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Leá Boudreau",
+     "title": "Recovery",
+     "note": "Aims to sonify the halting steps of recovery, with sonic tension transforming into a drifting serenity.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Leá Boudreau",
+     "title": "Mini-bestiaire pour la fin du monde",
+     "note": "Synthesizer melodies snake within abstract whooshes and crunches, suggesting elusive thematic development.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Leá Boudreau",
+     "title": "Impromptu[e]",
+     "note": "Uses cello sounds from cellist Lara Laverdure, twisted and chopped up, as source material for a rigorous composition.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Lucie Vítková",
+     "title": "Trash Trio",
+     "note": "A choreography-based work where timbres and rhythms shift with each performer's pace and noisemaking detritus.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Lucie Vítková",
+     "title": "Hair Score",
+     "note": "A deeply personal piece made from traced hair patterns, performed as a memorial to their late mother with tin cans.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Lucie Vítková",
+     "title": "Stones",
+     "note": "A brief open-ended Christian Wolff work where the crew produces shifting sonic mosaics from stones found in a cave.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Lucie Vítková",
+     "title": "Inside the Ritual",
+     "note": "An ambulatory ambient piece dominated by crickets, cowbells, footsteps, vocal incantations, and hichiriki flute.",
+     "yt": null,
+     "bc": null
+    }
+   ]
+  },
+  "https://daily.bandcamp.com/best-jazz/the-best-jazz-on-bandcamp-july-2023": {
+   "site": "Bandcamp Daily",
+   "title": "Best jazz",
+   "label": "Best jazz",
+   "published": "2023-07-01T00:00:00.000Z",
+   "read": "2026-10-24",
+   "songs": [
+    {
+     "artist": "Jon Cowherd",
+     "title": "Quilt City Blues",
+     "note": "Linked as a track by pianist Jon Cowherd, a familiar collaborator on Brian Blade's Kings Highway.",
+     "yt": null,
+     "bc": "https://lecoqrecords.bandcamp.com/track/quilt-city-blues"
+    },
+    {
+     "artist": "Underpool Collective",
+     "title": "La Balada dels Perduts",
+     "note": "Highlighted as a standout from several July releases by Barcelona label Underpool, recommended for checking out.",
+     "yt": null,
+     "bc": "https://underpool.bandcamp.com/track/la-balada-dels-perduts"
+    },
+    {
+     "artist": "Vincent von Schlippenbach (DJ Illvibe)",
+     "title": "28 Tables and Tapes",
+     "note": "Linked as a track featuring turntablist DJ Illvibe, who adds textures to a playful jazz take on Beethoven.",
+     "yt": null,
+     "bc": "https://ohnonoh.bandcamp.com/track/28-tables-and-tapes"
+    }
+   ]
+  },
+  "https://daily.bandcamp.com/best-metal/the-best-metal-on-bandcamp-july-2023": {
+   "site": "Bandcamp Daily",
+   "title": "Best metal",
+   "label": "Best metal",
+   "published": "2023-07-01T00:00:00.000Z",
+   "read": "2026-10-24",
+   "songs": [
+    {
+     "artist": "Gateway",
+     "title": "Scourged at Dawn",
+     "note": "Sits within Galgendood's all-consuming darkness, with scant squirming melodies that the post says extend the album's gloom.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Gateway",
+     "title": "Bog Bodies Near the Humid Crypt",
+     "note": "Another track whose faint melodies the post says feel like part of the album's unsettling, shadowed atmosphere.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Rannoch",
+     "title": "Daguerreotype",
+     "note": "Praised for rich melodicism and stop-start rhythmic madness, showing the band's range on Conflagrations.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Rannoch",
+     "title": "EarthRecycle",
+     "note": "An ambient-industrial oddity that the post cites as part of Rannoch's range on Conflagrations.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Rannoch",
+     "title": "Threnody to a Dying Star",
+     "note": "Album-closing 17-minute epic with dense interplay and powerful riffing that the post calls elite-level.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Fugitive",
+     "title": "Blast Furnace",
+     "note": "A loosie from the band's new release, with a fat midtempo groove and memorable riffs the post calls eternal.",
+     "yt": null,
+     "bc": "https://fugitivetx.bandcamp.com/album/blast-furnace-b-w-standoff"
+    },
+    {
+     "artist": "Fugitive",
+     "title": "Standoff",
+     "note": "The B-side loosie that the post says spends more time barreling full speed with memorable riffs and full-bodied tones.",
+     "yt": null,
+     "bc": "https://fugitivetx.bandcamp.com/album/blast-furnace-b-w-standoff"
+    },
+    {
+     "artist": "Blackbraid",
+     "title": "Moss Covered Bones on the Altar of the Moon",
+     "note": "A towering mid-album epic that the post says pushes the Blackbraid project to its highest peaks yet.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Blackbraid",
+     "title": "A Song of Death on Winds of Dawn",
+     "note": "A second towering mid-album epic on Blackbraid II that the post highlights as a high point.",
+     "yt": null,
+     "bc": null
+    }
+   ]
+  },
+  "https://daily.bandcamp.com/best-experimental/the-best-experimental-music-on-bandcamp-july-2023": {
+   "site": "Bandcamp Daily",
+   "title": "Hi-Bias (experimental)",
+   "label": "Hi-Bias (experimental)",
+   "published": "2023-07-01T00:00:00.000Z",
+   "read": "2026-10-24",
+   "songs": [
+    {
+     "artist": "Chemiefaserwerk & Tim Olive",
+     "title": "Der Hafen 1",
+     "note": "Dark, reverberant track where Olive shapes Schiefner's prepared tapes and mixer feedback into eerie portraits.",
+     "yt": null,
+     "bc": "https://moltfluid.bandcamp.com/album/der-hafen"
+    },
+    {
+     "artist": "Chemiefaserwerk & Tim Olive",
+     "title": "Der Hafen 2",
+     "note": "Olive uses magnetic pickups and tuning forks, prompting Schiefner to build varied, confrontational clanging noise.",
+     "yt": null,
+     "bc": "https://moltfluid.bandcamp.com/album/der-hafen"
+    },
+    {
+     "artist": "David Louis Cintron",
+     "title": "One",
+     "note": "Instrumental rock track with fiery energy, opening World Views from a former Pere Ubu member.",
+     "yt": null,
+     "bc": "https://textilerecords.bandcamp.com/album/world-views"
+    },
+    {
+     "artist": "Forbes Graham",
+     "title": "Conversations in an Ancient Forest",
+     "note": "Graham turns horn bleats into a field of noise on this track from I Continue.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Forbes Graham",
+     "title": "You Know That I Will Never Give Up",
+     "note": "High-pitched dissonance bounces around like comets, filling the track with cosmic-feeling sound.",
+     "yt": null,
+     "bc": null
+    },
+    {
+     "artist": "Ellen Phan",
+     "title": "Transform",
+     "note": "A ping-pong-gone-wrong piece with fast, frantic repetitions and bright, high-energy tones.",
+     "yt": null,
+     "bc": "https://nadarecs.bandcamp.com/album/free-thinker-2"
+    },
+    {
+     "artist": "Ellen Phan",
+     "title": "Superconscious",
+     "note": "A harried, neuron-firing fusion of man and machine that the writer especially admires.",
+     "yt": null,
+     "bc": "https://nadarecs.bandcamp.com/album/free-thinker-2"
+    },
+    {
+     "artist": "Sam Scranton",
+     "title": "Luna",
+     "note": "A skewed clip built on Scranton's idiosyncratic internal rhythm, opening Body Pillow.",
+     "yt": null,
+     "bc": "https://samscranton.bandcamp.com/album/body-pillow-2"
+    },
+    {
+     "artist": "Sam Scranton",
+     "title": "Big Glider",
+     "note": "A swinging lope that adds to the rhythmic momentum of Body Pillow's early tracks.",
+     "yt": null,
+     "bc": "https://samscranton.bandcamp.com/album/body-pillow-2"
+    },
+    {
+     "artist": "Sam Scranton",
+     "title": "Tricks in the Air",
+     "note": "Described as the Residents setting up a laboratory in Autechre's basement; the album's intoxicating culmination.",
+     "yt": null,
+     "bc": "https://samscranton.bandcamp.com/album/body-pillow-2"
+    },
+    {
+     "artist": "Lucie Vítková",
+     "title": "Trash Trio",
+     "note": "Cacophonous opener made in a Czech cave with siblings, rattling metal and echoing physical movements.",
+     "yt": null,
+     "bc": "https://mappa.bandcamp.com/album/cave-acoustics"
+    },
+    {
+     "artist": "Lucie Vítková",
+     "title": "Hair Score",
+     "note": "Harrowing hums and moans that deal with the passing of Vítková's mother.",
+     "yt": null,
+     "bc": "https://mappa.bandcamp.com/album/cave-acoustics"
+    },
+    {
+     "artist": "Lucie Vítková",
+     "title": "Stones",
+     "note": "A Christian Wolff composition where rocks are clacked together in a downpour of rhythm.",
+     "yt": null,
+     "bc": "https://mappa.bandcamp.com/album/cave-acoustics"
+    },
+    {
+     "artist": "Lucie Vítková",
+     "title": "Inside the Ritual",
+     "note": "Recorded in a Slovakian church, a 23-minute closer blending reality and dreams through voice and flute.",
+     "yt": null,
+     "bc": "https://mappa.bandcamp.com/album/cave-acoustics"
+    },
+    {
+     "artist": "Matt Weston",
+     "title": "The Sky Over Petrograd",
+     "note": "A 15-minute cloud of repetition, noise, and churn that the writer calls particularly impressive.",
+     "yt": null,
+     "bc": "https://mattweston.bandcamp.com/album/embrace-this-twilight"
+    }
+   ]
   }
  }
 }
