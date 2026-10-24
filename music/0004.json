@@ -1,0 +1,253 @@
+{
+  "batch": 4,
+  "date": "2026-10-24",
+  "items": [
+    {
+      "id": "deafheaven-sorry-laid-the-hearth",
+      "site": "Stereogum",
+      "src": {
+        "label": "The 5 Best Songs Of The Week, Oct 16",
+        "url": "https://stereogum.com/2514816/the-5-best-songs-of-the-week-648/lists/the-5-best-songs-of-the-week/"
+      },
+      "artist": "Deafheaven",
+      "title": "Sorry Laid The Hearth",
+      "note": "Opens the week's picks; the post lists it first in the embedded videos but gives no commentary on it.",
+      "yt": "ZzMfgcb44SM",
+      "batch": 4
+    },
+    {
+      "id": "brimheim-my-collection",
+      "site": "Various Small Flames",
+      "src": {
+        "label": "Weekly Listening: October 2026 #2, Oct 14",
+        "url": "https://varioussmallflames.co.uk/2026/10/14/weekly-listening-october-2026-2/"
+      },
+      "artist": "Brimheim",
+      "title": "My Collection",
+      "note": "A jazzy, oblique single about an eccentric woman who collects discarded objects and values their hidden beauty.",
+      "yt": "nlbIGmXdDPU",
+      "bc": "https://brimheim.bandcamp.com/album/my-collection",
+      "batch": 4
+    },
+    {
+      "id": "caoilfhionn-rose-horizon",
+      "site": "Various Small Flames",
+      "src": {
+        "label": "Weekly Listening: October 2026 #2, Oct 14",
+        "url": "https://varioussmallflames.co.uk/2026/10/14/weekly-listening-october-2026-2/"
+      },
+      "artist": "Caoilfhionn Rose",
+      "title": "Horizon",
+      "note": "Lead single from the upcoming album Draw Out Your World, with ethereal electronics from Svaneborg Kardyb.",
+      "batch": 4
+    },
+    {
+      "id": "hank-tree-x-peter-broderick-you-can-thrive",
+      "site": "Various Small Flames",
+      "src": {
+        "label": "Weekly Listening: October 2026 #2, Oct 14",
+        "url": "https://varioussmallflames.co.uk/2026/10/14/weekly-listening-october-2026-2/"
+      },
+      "artist": "Hank Tree x Peter Broderick",
+      "title": "You Can Thrive",
+      "note": "Single from Care 1, a folk-leaning track described as intimate, compassionate and subtly unflinching.",
+      "batch": 4
+    },
+    {
+      "id": "samjo-franconia",
+      "site": "Various Small Flames",
+      "src": {
+        "label": "Weekly Listening: October 2026 #2, Oct 14",
+        "url": "https://varioussmallflames.co.uk/2026/10/14/weekly-listening-october-2026-2/"
+      },
+      "artist": "Samjo",
+      "title": "Franconia",
+      "note": "A slow-building indie rock track with cinematic strings, moving from a bad day toward compassion and solace.",
+      "yt": "ozFesmY0_RU",
+      "batch": 4
+    },
+    {
+      "id": "tough-old-bird-tall-summer-clouds",
+      "site": "Various Small Flames",
+      "src": {
+        "label": "Weekly Listening: October 2026 #2, Oct 14",
+        "url": "https://varioussmallflames.co.uk/2026/10/14/weekly-listening-october-2026-2/"
+      },
+      "artist": "Tough Old Bird",
+      "title": "Tall Summer Clouds",
+      "note": "A bittersweet single about the blend of joy and sorrow in the passing of time, written as a child was on the way.",
+      "bc": "https://tougholdbird.bandcamp.com/album/tall-summer-clouds",
+      "batch": 4
+    },
+    {
+      "id": "big-warm-bed-june-bug",
+      "site": "Various Small Flames",
+      "src": {
+        "label": "Weekly Listening: October 2026 #3, Oct 21",
+        "url": "https://varioussmallflames.co.uk/2026/10/21/weekly-listening-october-2026-3/"
+      },
+      "artist": "Big Warm Bed",
+      "title": "June Bug",
+      "note": "Wistful indie rock about friendship and being there for loved ones, performed by a full band; live session video included.",
+      "yt": "pIGA965brrA",
+      "batch": 4
+    },
+    {
+      "id": "fleur-geurl-stone-in-the-stew",
+      "site": "Various Small Flames",
+      "src": {
+        "label": "Weekly Listening: October 2026 #3, Oct 21",
+        "url": "https://varioussmallflames.co.uk/2026/10/21/weekly-listening-october-2026-3/"
+      },
+      "artist": "Fleur Geurl",
+      "title": "stone in the stew",
+      "note": "Track from 11:11 that plays with display and concealment, reflecting a record between cold reality and dreams.",
+      "batch": 4
+    },
+    {
+      "id": "generifus-bird-beak",
+      "site": "Various Small Flames",
+      "src": {
+        "label": "Weekly Listening: October 2026 #3, Oct 21",
+        "url": "https://varioussmallflames.co.uk/2026/10/21/weekly-listening-october-2026-3/"
+      },
+      "artist": "Generifus",
+      "title": "Bird Beak",
+      "note": "Lead single for Pulling on the Seam, a meditation on hard truths and dashed dreams.",
+      "bc": "https://generifus.bandcamp.com/album/bird-beak",
+      "batch": 4
+    },
+    {
+      "id": "richard-thompson-unsung-hero",
+      "site": "Bandcamp Daily",
+      "src": {
+        "label": "Essential Releases, October 16, 2026, Oct 16",
+        "url": "https://daily.bandcamp.com/essential-releases/essential-releases-october-16-2026"
+      },
+      "artist": "Richard Thompson",
+      "title": "Unsung Hero",
+      "note": "Named as one of the couple of stunning but brief guitar explosions on Hippies, Thugs and Heroes.",
+      "batch": 4
+    },
+    {
+      "id": "metoronori-pearl-ptyx",
+      "site": "Bandcamp Daily",
+      "src": {
+        "label": "Essential Releases, October 23, 2026, Oct 23",
+        "url": "https://daily.bandcamp.com/essential-releases/essential-releases-october-23-2026"
+      },
+      "artist": "Metoronori",
+      "title": "Pearl? Ptyx?",
+      "note": "Highlight from forgot reef number, where atonal melodies and disintegrated rhythms disturb its calm surface.",
+      "batch": 4
+    },
+    {
+      "id": "dolorres-and-brodinski-ora-siamo-noi",
+      "site": "Bandcamp Daily",
+      "src": {
+        "label": "Essential Releases, October 23, 2026, Oct 23",
+        "url": "https://daily.bandcamp.com/essential-releases/essential-releases-october-23-2026"
+      },
+      "artist": "DoloRRes and Brodinski",
+      "title": "Ora Siamo Noi",
+      "note": "Rome and Paris collaborators surf a dark, apocalyptic reggaeton sound on this track.",
+      "batch": 4
+    },
+    {
+      "id": "vv-pete-money-maker",
+      "site": "Bandcamp Daily",
+      "src": {
+        "label": "Essential Releases, October 23, 2026, Oct 23",
+        "url": "https://daily.bandcamp.com/essential-releases/essential-releases-october-23-2026"
+      },
+      "artist": "Vv Pete",
+      "title": "Money Maker",
+      "note": "Sydney artist's whine-inducing delivery is highlighted on this track from the Futures roundup.",
+      "batch": 4
+    },
+    {
+      "id": "meg-shanian-skull",
+      "site": "The Line of Best Fit",
+      "src": {
+        "label": "New Music Discovery",
+        "url": "https://www.thelineofbestfit.com/news/new-music-discovery-playlist-horse-vision-meg-shanian-threshold-leah-cleaver-hank-slate"
+      },
+      "artist": "Meg Shanian",
+      "title": "skull",
+      "note": "Included in the weekly playlist of brand new under-the-radar artists picked by the editors and writers.",
+      "batch": 4
+    },
+    {
+      "id": "threshold-stillwater",
+      "site": "The Line of Best Fit",
+      "src": {
+        "label": "New Music Discovery",
+        "url": "https://www.thelineofbestfit.com/news/new-music-discovery-playlist-horse-vision-meg-shanian-threshold-leah-cleaver-hank-slate"
+      },
+      "artist": "Threshold",
+      "title": "Stillwater",
+      "note": "Featured on the 23 October 2026 New Music Discovery playlist of emerging artists.",
+      "batch": 4
+    },
+    {
+      "id": "leah-cleaver-uma",
+      "site": "The Line of Best Fit",
+      "src": {
+        "label": "New Music Discovery",
+        "url": "https://www.thelineofbestfit.com/news/new-music-discovery-playlist-horse-vision-meg-shanian-threshold-leah-cleaver-hank-slate"
+      },
+      "artist": "Leah Cleaver",
+      "title": "UMA",
+      "note": "Featured on the 23 October 2026 New Music Discovery playlist of emerging artists.",
+      "batch": 4
+    },
+    {
+      "id": "sasha-cay-scab",
+      "site": "The Line of Best Fit",
+      "src": {
+        "label": "New Music Discovery",
+        "url": "https://www.thelineofbestfit.com/news/new-music-discovery-playlist-horse-vision-meg-shanian-threshold-leah-cleaver-hank-slate"
+      },
+      "artist": "Sasha Cay",
+      "title": "Scab",
+      "note": "Featured on the 23 October 2026 New Music Discovery playlist of emerging artists.",
+      "batch": 4
+    },
+    {
+      "id": "whait-wendy-eisenberg-falling-down",
+      "site": "The Line of Best Fit",
+      "src": {
+        "label": "New Music Discovery",
+        "url": "https://www.thelineofbestfit.com/news/new-music-discovery-playlist-horse-vision-meg-shanian-threshold-leah-cleaver-hank-slate"
+      },
+      "artist": "Whait, Wendy Eisenberg",
+      "title": "Falling down",
+      "note": "Featured on the 23 October 2026 New Music Discovery playlist of emerging artists.",
+      "batch": 4
+    },
+    {
+      "id": "interlay-reaching-for-my-revolver",
+      "site": "The Line of Best Fit",
+      "src": {
+        "label": "New Music Discovery",
+        "url": "https://www.thelineofbestfit.com/news/new-music-discovery-playlist-horse-vision-meg-shanian-threshold-leah-cleaver-hank-slate"
+      },
+      "artist": "Interlay",
+      "title": "Reaching For My Revolver",
+      "note": "Featured on the 23 October 2026 New Music Discovery playlist of emerging artists.",
+      "batch": 4
+    },
+    {
+      "id": "girl-group-saviour-father-prince",
+      "site": "The Line of Best Fit",
+      "src": {
+        "label": "New Music Discovery",
+        "url": "https://www.thelineofbestfit.com/news/new-music-discovery-playlist-horse-vision-meg-shanian-threshold-leah-cleaver-hank-slate"
+      },
+      "artist": "Girl Group",
+      "title": "SAVIOUR/FATHER/PRINCE",
+      "note": "Featured on the 23 October 2026 New Music Discovery playlist of emerging artists.",
+      "batch": 4
+    }
+  ]
+}
