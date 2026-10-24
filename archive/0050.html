@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0A0A0A">
+<title>Algorithm — Issue No. 50 — 24 Oct 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Source+Serif+4:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  html, body{ margin:0; padding:0; height:100%; background-color:#0A0A0A; }
+  *{box-sizing:border-box;}
+  body{
+    min-height:100dvh;
+    color:#FAFAF7;
+    font-family:'Source Serif 4', Georgia, serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .page{ background-color:#0A0A0A; min-height:100dvh; }
+  a{ color:inherit; }
+  .wrap{max-width:720px; margin:0 auto; padding:44px 24px 90px; position:relative;}
+  .masthead{
+    display:flex; justify-content:space-between; align-items:flex-end;
+    border-bottom:4px solid #FAFAF7;
+    padding-bottom:14px; margin-bottom:24px;
+  }
+  .mast-title{
+    font-family:'Archivo Black', sans-serif;
+    font-size:clamp(26px,6vw,34px);
+    letter-spacing:-0.01em;
+    text-transform:uppercase;
+    color:#FAFAF7;
+    text-decoration:none;
+  }
+  .stamp{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px; letter-spacing:0.1em; text-transform:uppercase;
+    color:#0A0A0A; background:#FF1F3D;
+    padding:5px 10px; border-radius:2px;
+    transform:rotate(-3deg); display:inline-block; font-weight:600;
+    white-space:nowrap;
+  }
+  .nav{display:flex; justify-content:space-between; align-items:center; gap:16px; margin-bottom:40px; flex-wrap:wrap;}
+  .nav-link{font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:#FAFAF7; text-decoration:none; border:1px solid rgba(250,250,247,0.35); padding:9px 14px; border-radius:2px; white-space:nowrap;}
+  .nav-link:hover{border-color:#FF1F3D; color:#FF1F3D;}
+  .search-wrap{position:relative; flex:1; min-width:220px;}
+  .search-input{width:100%; background:#151513; border:1px solid rgba(250,250,247,0.3); color:#FAFAF7; font-family:'IBM Plex Mono', monospace; font-size:13px; padding:10px 12px; border-radius:2px; outline:none;}
+  .search-input::placeholder{color:#6B6860;}
+  .search-input:focus{border-color:#FF1F3D;}
+  .search-results{position:absolute; top:calc(100% + 6px); left:0; right:0; background:#111110; border:1px solid rgba(250,250,247,0.25); border-radius:4px; max-height:380px; overflow-y:auto; z-index:20; display:none;}
+  .search-results.active{display:block;}
+  .search-result{display:block; padding:10px 12px; border-bottom:1px solid rgba(250,250,247,0.12); text-decoration:none;}
+  .search-result:last-child{border-bottom:none;}
+  .search-result:hover{background:rgba(255,31,61,0.08);}
+  .sr-tag{font-family:'IBM Plex Mono', monospace; font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:#A6A29A;}
+  .sr-title{display:block; font-style:italic; color:#FAFAF7; margin:2px 0; font-size:14px;}
+  .sr-meta{font-family:'IBM Plex Mono', monospace; font-size:10.5px; color:#A6A29A;}
+  .search-empty{padding:14px 12px; font-family:'IBM Plex Mono', monospace; font-size:12.5px; color:#A6A29A;}
+  h1.hero{
+    font-family:'Anton', sans-serif;
+    font-weight:400;
+    font-size:clamp(42px,10vw,72px);
+    line-height:0.94;
+    text-transform:uppercase;
+    margin:0 0 22px;
+    color:#FAFAF7;
+  }
+  h1.hero .pop{color:#FF1F3D;}
+  .intro{font-size:17px; color:#EDEAE2; max-width:56ch; margin-bottom:10px;}
+  .intro-byline{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px; letter-spacing:0.08em; text-transform:uppercase;
+    color:#A6A29A;
+    margin-top:16px; margin-bottom:54px; display:block;
+    border-left:2px solid #FF1F3D; padding-left:10px;
+  }
+  .section{position:relative; margin-bottom:50px; padding-left:56px;}
+  .section:last-of-type{margin-bottom:0;}
+  .stampnum{
+    position:absolute; left:0; top:0;
+    width:42px; height:42px;
+    border:2px solid #FAFAF7;
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Archivo Black', sans-serif;
+    font-size:15px; color:#FAFAF7;
+    transform:rotate(-6deg);
+  }
+  .art .stampnum{border-color:#C9A24B; color:#C9A24B;}
+  .film .stampnum{border-color:#FF5B4A; color:#FF5B4A;}
+  .tech .stampnum{border-color:#3FE0D0; color:#3FE0D0;}
+  .lit .stampnum{border-color:#B39DFF; color:#B39DFF;}
+  .music .stampnum{border-color:#FF5FA8; color:#FF5FA8;}
+  .design .stampnum{border-color:#FFD23F; color:#FFD23F;}
+  .fashion .stampnum{border-color:#FAFAF7; color:#FAFAF7;}
+  .section-head{display:flex; align-items:center; gap:12px; margin-bottom:18px; flex-wrap:wrap;}
+  .section-tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase;
+    color:#0A0A0A;
+    padding:6px 11px; border-radius:2px;
+  }
+  .art .section-tag{background:#C9A24B;}
+  .film .section-tag{background:#FF5B4A;}
+  .tech .section-tag{background:#3FE0D0;}
+  .lit .section-tag{background:#B39DFF;}
+  .music .section-tag{background:#FF5FA8;}
+  .design .section-tag{background:#FFD23F;}
+  .fashion .section-tag{background:#FAFAF7;}
+  .section-title{
+    font-family:'Archivo Black', sans-serif;
+    font-size:24px; text-transform:uppercase; letter-spacing:0.01em;
+    color:#FAFAF7;
+  }
+  .entry{margin-bottom:24px; padding-bottom:24px; border-bottom:1px solid rgba(250,250,247,0.16); scroll-margin-top:24px;}
+  .entry:last-child{border-bottom:none; margin-bottom:0; padding-bottom:0;}
+  .entry-byline{font-family:'IBM Plex Mono', monospace; font-size:12px; color:#A6A29A; margin-bottom:8px;}
+  .entry-title{font-weight:500; font-style:italic; color:#FAFAF7; text-decoration:underline; text-decoration-color:rgba(250,250,247,0.35); text-underline-offset:3px;}
+  .entry-title:hover{text-decoration-color:#FF1F3D;}
+  .entry p{margin:0 0 10px; font-size:16px; color:#EDEAE2;}
+  .entry .why{font-size:14.5px; color:#A6A29A; font-style:italic;}
+  .entry .why::before{content:"— ";}
+  .issue-list{list-style:none; margin:0; padding:0;}
+  .issue-card{display:block; text-decoration:none; padding:22px 0; border-bottom:1px solid rgba(250,250,247,0.16);}
+  .issue-card:first-child{padding-top:0;}
+  .issue-card:hover .issue-headline{ text-decoration-color:#FF1F3D; }
+  .issue-meta{font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:#A6A29A; margin-bottom:8px;}
+  .issue-meta .num{color:#FF1F3D;}
+  .issue-headline{font-family:'Archivo Black', sans-serif; font-size:22px; text-transform:uppercase; letter-spacing:0.01em; color:#FAFAF7; text-decoration:underline; text-decoration-color:rgba(250,250,247,0.35); text-underline-offset:4px; display:inline-block; margin-bottom:8px;}
+  .issue-desc{font-size:15px; color:#A6A29A; max-width:60ch; margin:0;}
+  footer{
+    margin-top:64px; padding-top:20px; border-top:1px solid rgba(250,250,247,0.16);
+    display:flex; justify-content:space-between; gap:12px;
+    font-family:'IBM Plex Mono', monospace; font-size:10.5px;
+    letter-spacing:0.06em; color:#A6A29A; text-transform:uppercase;
+  }
+  @media (max-width:520px){
+    .wrap{padding:30px 16px 70px;}
+    .section{padding-left:48px;}
+    .stampnum{width:36px; height:36px; font-size:13px;}
+    .section-title{font-size:20px;}
+    .nav{flex-direction:column; align-items:stretch;}
+  }
+</style>
+</head>
+<body data-root="../">
+<div class="page">
+<div class="wrap">
+  <div class="masthead">
+    <a class="mast-title" href="../index.html">Algorithm</a>
+    <span class="stamp">Issue No. 50</span>
+  </div>
+  <div class="nav">
+    <a class="nav-link" href="../index.html">&larr; Latest Issue</a>
+    <a class="nav-link" href="../archive/index.html">Full Archive</a>
+  </div>
+  <h1 class="hero">The <span class="pop">Feed</span></h1>
+  <p class="intro">A selection of recent writing from across the culture press.</p>
+  <span class="intro-byline">2026-10-24 — selected links</span>
+  <section class="section art">
+    <span class="stampnum">01</span>
+    <div class="section-head">
+      <span class="section-tag">Art</span>
+      <h2 class="section-title">Fine Art</h2>
+    </div>
+    <div class="entry" id="art-1">
+      <div class="entry-byline"><a class="entry-title" href="https://twocoatsofpaint.com/2026/10/brice-mardens-throwback-splendor.html?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=brice-mardens-throwback-splendor" target="_blank" rel="noopener">Brice Marden’s throwback splendor</a> by twocoatsstaff — Two Coats of Paint</div>
+
+      <p>Contributed by David Carrier / Brice Marden, who died in 2023, has always had an astonishing mystique. Two generations ago, when painting was often pronounced dead, he identified as a rare heroic survivor and continued to make abstractions. It was possible then to see him as the true successor to Jackson Pollock and Jasper Johns – the one artist who kept the New York School alive. But now, in a…</p>
+    </div>
+    <div class="entry" id="art-2">
+      <div class="entry-byline"><a class="entry-title" href="https://www.e-flux.com/announcements/6788405/primary-structures-multiple-systems" target="_blank" rel="noopener">Primary Structures / Multiple Systems</a> by Antonio Dalle Nogare Foundation — e-flux Criticism</div>
+
+      <p>Curated by Eva Brioschi. Sixty years after the landmark exhibition Primary Structures: Younger American and British Sculptors, held in 1966 at New York’s Jewish Museum, the Antonio Dalle Nogare Foundation is proud to present a new exhibition project that aims to celebrate and historically reconsider the legacy of Minimalism and its influence on contemporary art through a selection of works from…</p>
+    </div>
+    <div class="entry" id="art-3">
+      <div class="entry-byline"><a class="entry-title" href="https://www.berlinartlink.com/2026/10/20/carrie-mae-weems-co-berlin-exhibition-review/" target="_blank" rel="noopener">Staging Reality: Carrie Mae Weems at C/O Berlin</a> by Alison Hugill — Berlin Art Link</div>
+
+      <p>by Olivia Noss // Oct. 20, 2026 Carrie Mae Weems’ career-defining images embodied a new advent in photography that emerged in the 1990s and into the early 2000s, ushering in portraits by…[read on]</p>
+    </div>
+    <div class="entry" id="art-4">
+      <div class="entry-byline"><a class="entry-title" href="https://hyperallergic.com/how-art-can-deliver-justice-for-refugees/" target="_blank" rel="noopener">How Art Can Deliver Justice for Refugees</a> by Duaa Shah — Hyperallergic</div>
+
+      <p>In the legal system, art created by refugees and incarcerated people can serve both as a form of therapy and as evidence of mass atrocities.</p>
+    </div>
+  </section>
+  <section class="section film">
+    <span class="stampnum">02</span>
+    <div class="section-head">
+      <span class="section-tag">Film</span>
+      <h2 class="section-title">Film Criticism</h2>
+    </div>
+    <div class="entry" id="film-1">
+      <div class="entry-byline"><a class="entry-title" href="https://povmagazine.com/possible-love-review-class-seen-through-the-documentary-lens/" target="_blank" rel="noopener">Possible Love Review: Class Seen through the Documentary Lens</a> by Pat Mullen — POV Magazine</div>
+
+      <p>A documentary fimmaker explores labour strife but struggles to reckon with her own social privilege in Lee Chang-dong&#39;s quietly moving Possible Love. The post Possible Love Review: Class Seen through the Documentary Lens appeared first on POV Magazine.</p>
+    </div>
+    <div class="entry" id="film-2">
+      <div class="entry-byline"><a class="entry-title" href="https://talkhouse.com/a-love-letter-to-powwows/" target="_blank" rel="noopener">A Love Letter to Powwows</a> by Sky Hopinka — Talkhouse</div>
+
+      <p>Sky Hopinka shares the backstory to making his latest film, Powwow People, which is out now in theaters.</p>
+    </div>
+    <div class="entry" id="film-3">
+      <div class="entry-byline"><a class="entry-title" href="https://egyptianstreets.com/2026/10/24/egypt-condemns-deadly-church-attack-in-jordan/" target="_blank" rel="noopener">Egypt Condemns Deadly Church Attack in Jordan</a> by Farah Samir — Egyptian Streets</div>
+
+      <p>President Abdel Fattah El-Sisi condemned a shooting at a church in Jordan’s Karak Governorate that killed at least seven people and injured dozens on Friday, 23 October, expressing Egypt’s solidarity with Jordan in a statement. El-Sisi extended his condolences to King Abdullah II and the Jordanian people following the attack. “I extend my sincere condolences and deepest sympathies to His Majesty…</p>
+    </div>
+    <div class="entry" id="film-4">
+      <div class="entry-byline"><a class="entry-title" href="https://thefilmstage.com/todd-haynes-and-cate-blanchett-plan-reunion-with-adaptation-of-jean-genets-the-maids/" target="_blank" rel="noopener">Todd Haynes and Cate Blanchett Plan Reunion with Adaptation of Jean Genet’s The Maids</a> by Leonard Pearce — The Film Stage</div>
+
+      <p>Every Todd Haynes movie—especially when they’re susceptible to last-minute cancellations—is an event and a gift. Thus as we await the overdue, Cannes-likely arrival of De Noche, it’s heartening to know the next-next project is already in motion. Speaking with Le Point, Haynes revealed the project is a take on Jean Genet’s play The Maids that […] The post Todd Haynes and Cate Blanchett Plan…</p>
+    </div>
+  </section>
+  <section class="section tech">
+    <span class="stampnum">03</span>
+    <div class="section-head">
+      <span class="section-tag">Tech &amp; AI</span>
+      <h2 class="section-title">Tech &amp; AI</h2>
+    </div>
+    <div class="entry" id="tech-1">
+      <div class="entry-byline"><a class="entry-title" href="https://pluralistic.net/2026/10/23/better-to-give/" target="_blank" rel="noopener">Pluralistic: Critique and writing (23 Oct 2026)</a> by Cory Doctorow — Pluralistic</div>
+
+      <p>Today&#39;s links Critique and writing: The most important part of a writing workshop is trying to fix other people&#39;s stories. Hey look at this: Delights to delectate. Object permanence: USPS nukes the mail; Enron Explorer; &quot;Scored&quot;; UAE&#39;s international hacker legion; NZ provides hacking tools to torturers; Truecrypt insecure; The Traitorous Eight. Upcoming appearances: Vancouver, Ottawa, Vienna,…</p>
+    </div>
+    <div class="entry" id="tech-2">
+      <div class="entry-byline"><a class="entry-title" href="https://www.technologyreview.com/2026/10/23/1147610/biotech-you-can-see-everything-theranos-holmes/" target="_blank" rel="noopener">In the biotech world, you can’t see everything</a> by Jessica Hamzelou — MIT Technology Review</div>
+
+      <p>Earlier this week, I attended a screening of You Can See Everything, the buzzy new documentary about the disgraced former biotech CEO Elizabeth Holmes. I went in not really knowing what to expect. I’d avoided spoilers (and won’t be giving anything away here, either!). I was wondering what new information this film could reveal, given…</p>
+    </div>
+    <div class="entry" id="tech-3">
+      <div class="entry-byline"><a class="entry-title" href="https://simonwillison.net/2026/Oct/24/battledrones/" target="_blank" rel="noopener">battledrones v14: Compass Rose, a four player map</a> — Simon Willison</div>
+
+      <p>Release: battledrones v14: Compass Rose, a four player map I added four player online mode to Battledrones - previous maps were limited to two. Here&#39;s the initial prompt I used: Add a new map for a four player battle - four way rotational symmetry, up to four AI players, works with the WebSocket non-audio based multiplayer mode so up to four human players can join (any spare slots use AI) Claude…</p>
+    </div>
+  </section>
+  <section class="section lit">
+    <span class="stampnum">04</span>
+    <div class="section-head">
+      <span class="section-tag">Sci-Fi / Fantasy</span>
+      <h2 class="section-title">Literary Reviews</h2>
+    </div>
+    <div class="entry" id="lit-1">
+      <div class="entry-byline"><a class="entry-title" href="https://vector-bsfa.com/2026/10/23/myth-made-machines/" target="_blank" rel="noopener">Myth-Made Machines</a> by Vector editors — Vector/BSFA</div>
+
+      <p>Kathleen Hughes interviews Dave Bradley and Kelly Vero, the authors behind Myth-Made Machines: The Stories Behind Artificial Intelligence (Bloomsbury Academic) KH: Tell us a little about how and why you came to write about the stories behind Artificial Intelligence – the background and aims of the project. KV: There are already many, many books about … Continue reading Myth-Made Machines →</p>
+    </div>
+    <div class="entry" id="lit-2">
+      <div class="entry-byline"><a class="entry-title" href="https://clereviewofbooks.com/this-is-a-story-to-pass-on-how-toni-morrison-shaped-my-writing-of-wake/" target="_blank" rel="noopener">This Is a Story To Pass On: How Toni Morrison Shaped My Writing of “Wake”</a> by Dr. Rebecca Hall — Cleveland Review of Books</div>
+
+      <p>Like Toni Morrison, I tried to take what was in the margin, to bring it to the center. The post This Is a Story To Pass On: How Toni Morrison Shaped My Writing of “Wake” appeared first on Cleveland Review of Books.</p>
+    </div>
+    <div class="entry" id="lit-3">
+      <div class="entry-byline"><a class="entry-title" href="https://ancillaryreviewofbooks.org/2026/10/23/questioning-consciousness/" target="_blank" rel="noopener">Questioning Consciousness: Review of Peter Watts’ Fold Catastrophes</a> by allisonpottern — Ancillary Review of Books</div>
+
+      <p>Allison Pottern Under Review:Fold Catastrophes. Peter Watts. Tachyon, September 2026. A friend recently invited me to join a reading and discussion group on the nature of consciousness. As a science fiction author and reader, it feels especially relevant to have a deeper understanding of the implications of consciousness and intelligence. With large-language models and AI … Continue reading…</p>
+    </div>
+    <div class="entry" id="lit-4">
+      <div class="entry-byline"><a class="entry-title" href="https://reviewcanada.ca/magazine/2026/11/pages-left-to-turn/" target="_blank" rel="noopener">Pages Left to Turn</a> by Christina Apa — Literary Review of Canada</div>
+
+      <p>I am not going to lie to you. I still haven’t finished The Power Broker. I will finish it, I promise. I just haven’t finished it yet. I have no defence. But in my defence, it is 1,162 pages long, not including the notes and index. My paperback copy of it — and this isn’t a joke — requires genuine… The post Pages Left to Turn appeared first on Literary Review of Canada.</p>
+    </div>
+  </section>
+  <section class="section music">
+    <span class="stampnum">05</span>
+    <div class="section-head">
+      <span class="section-tag">Music</span>
+      <h2 class="section-title">Music Criticism</h2>
+    </div>
+    <div class="entry" id="music-1">
+      <div class="entry-byline"><a class="entry-title" href="https://www.popmatters.com/chinatown-presses-limits-of-knowledge" target="_blank" rel="noopener">Roman Polanski’s ‘Chinatown’ Presses the Limits of Knowledge</a> by Mike Cormack — PopMatters</div>
+
+      <p>If the detective story assumes that exposure brings understanding, and understanding brings justice, it mirrors the liberal belief in open information and discourse. In Chinatown, however, the truth is often already visible.</p>
+    </div>
+    <div class="entry" id="music-2">
+      <div class="entry-byline"><a class="entry-title" href="https://www.theaureview.com/watch/interview-andros-georgiou/" target="_blank" rel="noopener">Interview: Andros Georgiou on George Michael, the lost masterpiece of Trojan Souls and a lifetime of musical memories</a> by Peter Gray — The AU Review</div>
+
+      <p>Some of the most revealing moments in music history were never intended for an audience. In 1993, Andros Georgiou picked up a Sony Handycam and began filming his cousin, lifelong best friend and creative collaborator, George Michael, as they embarked on one of the most ambitious projects of the singer’s career. The resulting footage now...</p>
+    </div>
+    <div class="entry" id="music-3">
+      <div class="entry-byline"><a class="entry-title" href="https://consequence.net/2026/10/dallas-cowboys-cheerleaders-sue-my-chemical-romance/" target="_blank" rel="noopener">Dallas Cowboys Cheerleaders Sue My Chemical Romance</a> by Alex Young — Consequence</div>
+
+      <p>The band performed with dancers spoofing the Dallas Cowboys Cheerleaders&#39; outfits. Dallas Cowboys Cheerleaders Sue My Chemical Romance Alex Young</p>
+    </div>
+    <div class="entry" id="music-4">
+      <div class="entry-byline"><a class="entry-title" href="https://stereogum.com/2515493/bruiser-wolf-conductor-williams-aint-got-time/music/" target="_blank" rel="noopener">Bruiser Wolf &amp; Conductor Williams – “Ain’t Got Time”</a> by Chris DeVille — Stereogum</div>
+
+      <p>The post Bruiser Wolf &amp; Conductor Williams – “Ain’t Got Time” appeared first on Stereogum.</p>
+    </div>
+  </section>
+  <section class="section design">
+    <span class="stampnum">06</span>
+    <div class="section-head">
+      <span class="section-tag">Design</span>
+      <h2 class="section-title">Design</h2>
+    </div>
+    <div class="entry" id="design-1">
+      <div class="entry-byline"><a class="entry-title" href="https://www.architectural-review.com/essays/profiles-and-interviews/ja-projects-united-kingdom" target="_blank" rel="noopener">JA Projects</a> by Jyotsni Bhattacharyya — The Architectural Review</div>
+
+      <p>The Architectural Review JA Projects Working both in the city and in cultural institutions, this London‑based studio seeks to find resonance with the communities it serves The post JA Projects appeared first on The Architectural Review. Jyotsni Bhattacharyya</p>
+    </div>
+    <div class="entry" id="design-2">
+      <div class="entry-byline"><a class="entry-title" href="https://www.yankodesign.com/2026/10/24/byredos-steel-spheres-reveal-hidden-landscapes-inspired-by-scent/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=byredos-steel-spheres-reveal-hidden-landscapes-inspired-by-scent" target="_blank" rel="noopener">BYREDO’s Steel Spheres Reveal Hidden Landscapes Inspired by Scent</a> by Ida Torres — Yanko Design</div>
+
+      <p>BYREDO’s Steel Spheres Reveal Hidden Landscapes Inspired by ScentA field of tiny steel spheres is an unusual way to introduce a perfume. It also addresses a familiar problem with fragrance displays: the bottle...</p>
+    </div>
+    <div class="entry" id="design-3">
+      <div class="entry-byline"><a class="entry-title" href="https://archinect.com/news/article/150571197/10-interior-spaces-that-stood-out-this-week" target="_blank" rel="noopener">10 interior spaces that stood out this week</a> by Nathaniel Bahadursingh — Archinect</div>
+
+      <p>In case you haven&#39;t checked out Archinect&#39;s Pinterest boards in a while, we have compiled ten recently pinned images from outstanding projects on various Archinect Firm and People profiles. Today&#39;s top images (in no particular order) are from the board Interiors. Tip: Use the handy FOLLOW feature to easily keep up-to-date with all your favorite Archinect profiles. &amp;uarr; Wild Hope by North House…</p>
+    </div>
+  </section>
+  <section class="section fashion">
+    <span class="stampnum">07</span>
+    <div class="section-head">
+      <span class="section-tag">Men&#39;s Fashion</span>
+      <h2 class="section-title">Men&#39;s Fashion</h2>
+    </div>
+    <div class="entry" id="fashion-1">
+      <div class="entry-byline"><a class="entry-title" href="https://vestoj.com/docile-bodies/" target="_blank" rel="noopener">Docile Bodies</a> by Anja Aronowsky Cronberg — Vestoj</div>
+
+      <p>Prison literature and theory often focuses on the oppressiveness of the system, the callous discipline enforced on the prisoner, the strict rules which often seem arbitrary in their focus and the often patronising attitude of the authorities. We often assume that prison is an environment so infused with control and discipline that the inmates have no choice but to bow to the authorities. This is…</p>
+    </div>
+    <div class="entry" id="fashion-2">
+      <div class="entry-byline"><a class="entry-title" href="https://www.highsnobiety.com/p/vansza-knu-skool-mule-black/" target="_blank" rel="noopener">Vansza’s Knu Skool Mule Cuts Some Dead Weight</a> — Highsnobiety</div>
+
+      <p>Vansza&#39;s chopped-up Knu Skool Mule takes a classic thrasher &amp; turns it into a mutable mule.</p>
+    </div>
+    <div class="entry" id="fashion-3">
+      <div class="entry-byline"><a class="entry-title" href="https://www.drapersonline.com/news/sezane-opens-third-london-store" target="_blank" rel="noopener">Sézane opens third London store</a> by Katie Ross — Drapers</div>
+
+      <p>Drapers Sézane opens third London store French womenswear brand Sézane has opened its third London store on Chelsea&#39;s King&#39;s Road today (23 October). The post Sézane opens third London store appeared first on Drapers.</p>
+    </div>
+    <div class="entry" id="fashion-4">
+      <div class="entry-byline"><a class="entry-title" href="https://www.ivy-style.com/a-pair-of-khakis-that-lasted-a-lifetime.html" target="_blank" rel="noopener">A Pair of Khakis That Lasted A Lifetime</a> by Matthew Longcore — Ivy Style</div>
+
+      <p>By Bill Thomas Bill Thomas is the entrepreneur who founded Bills Khakis in 1990 and PennBilt in 2022. It all started with a pair of original WWII khakis that Bill found at an army surplus store down the road from his college. Today, PennBilt is a continuation of a life’s work, blending the best of old ... The post A Pair of Khakis That Lasted A Lifetime appeared first on Ivy Style.</p>
+    </div>
+  </section>
+  <footer>
+    <span>Algorithm</span>
+    <span>Issue No. 50 — 24 Oct 2026</span>
+  </footer>
+</div>
+</div>
+
+</body>
+</html>
