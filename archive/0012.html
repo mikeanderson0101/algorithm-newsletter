@@ -2,362 +2,434 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="color-scheme" content="dark">
-<meta name="theme-color" content="#0A0A0A">
-<title>Algorithm — Issue No. 12 — 21 Sep 2026</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#F1EEE9">
+<title>Troller — Issue 12</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Source+Serif+4:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>try{var u=JSON.parse(localStorage.getItem('troller-ui')||'{}');if(u.calm)document.documentElement.setAttribute('data-calm','');}catch(e){}</script>
 <style>
-  html, body{ margin:0; padding:0; height:100%; background-color:#0A0A0A; }
-  *{box-sizing:border-box;}
-  body{
-    min-height:100dvh;
-    color:#FAFAF7;
-    font-family:'Source Serif 4', Georgia, serif;
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-  }
-  .page{ background-color:#0A0A0A; min-height:100dvh; }
-  a{ color:inherit; }
-  .wrap{max-width:720px; margin:0 auto; padding:44px 24px 90px; position:relative;}
-  .masthead{
-    display:flex; justify-content:space-between; align-items:flex-end;
-    border-bottom:4px solid #FAFAF7;
-    padding-bottom:14px; margin-bottom:24px;
-  }
-  .mast-title{
-    font-family:'Archivo Black', sans-serif;
-    font-size:clamp(26px,6vw,34px);
-    letter-spacing:-0.01em;
-    text-transform:uppercase;
-    color:#FAFAF7;
-    text-decoration:none;
-  }
-  .stamp{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:11px; letter-spacing:0.1em; text-transform:uppercase;
-    color:#0A0A0A; background:#FF1F3D;
-    padding:5px 10px; border-radius:2px;
-    transform:rotate(-3deg); display:inline-block; font-weight:600;
-    white-space:nowrap;
-  }
-  .tabs{display:flex; gap:22px; margin:-8px 0 26px; font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.1em; text-transform:uppercase;}
-  .tab{color:#A6A29A; text-decoration:none; padding-bottom:6px; border-bottom:2px solid transparent;}
-  .tab:hover{color:#FAFAF7;}
-  .tab.is-active{color:#FAFAF7; border-bottom-color:#FF1F3D;}
-  .nav{display:flex; justify-content:space-between; align-items:center; gap:16px; margin-bottom:40px; flex-wrap:wrap;}
-  .nav-link{font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:#FAFAF7; text-decoration:none; border:1px solid rgba(250,250,247,0.35); padding:9px 14px; border-radius:2px; white-space:nowrap;}
-  .nav-link:hover{border-color:#FF1F3D; color:#FF1F3D;}
-  .search-wrap{position:relative; flex:1; min-width:220px;}
-  .search-input{width:100%; background:#151513; border:1px solid rgba(250,250,247,0.3); color:#FAFAF7; font-family:'IBM Plex Mono', monospace; font-size:13px; padding:10px 12px; border-radius:2px; outline:none;}
-  .search-input::placeholder{color:#6B6860;}
-  .search-input:focus{border-color:#FF1F3D;}
-  .search-results{position:absolute; top:calc(100% + 6px); left:0; right:0; background:#111110; border:1px solid rgba(250,250,247,0.25); border-radius:4px; max-height:380px; overflow-y:auto; z-index:20; display:none;}
-  .search-results.active{display:block;}
-  .search-result{display:block; padding:10px 12px; border-bottom:1px solid rgba(250,250,247,0.12); text-decoration:none;}
-  .search-result:last-child{border-bottom:none;}
-  .search-result:hover{background:rgba(255,31,61,0.08);}
-  .sr-tag{font-family:'IBM Plex Mono', monospace; font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:#A6A29A;}
-  .sr-title{display:block; font-style:italic; color:#FAFAF7; margin:2px 0; font-size:14px;}
-  .sr-meta{font-family:'IBM Plex Mono', monospace; font-size:10.5px; color:#A6A29A;}
-  .search-empty{padding:14px 12px; font-family:'IBM Plex Mono', monospace; font-size:12.5px; color:#A6A29A;}
-  h1.hero{
-    font-family:'Anton', sans-serif;
-    font-weight:400;
-    font-size:clamp(42px,10vw,72px);
-    line-height:0.94;
-    text-transform:uppercase;
-    margin:0 0 22px;
-    color:#FAFAF7;
-  }
-  h1.hero .pop{color:#FF1F3D;}
-  .intro{font-size:17px; color:#EDEAE2; max-width:56ch; margin-bottom:10px;}
-  .intro-byline{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:11px; letter-spacing:0.08em; text-transform:uppercase;
-    color:#A6A29A;
-    margin-top:16px; margin-bottom:54px; display:block;
-    border-left:2px solid #FF1F3D; padding-left:10px;
-  }
-  .section{position:relative; margin-bottom:50px; padding-left:56px;}
-  .section:last-of-type{margin-bottom:0;}
-  .stampnum{
-    position:absolute; left:0; top:0;
-    width:42px; height:42px;
-    border:2px solid #FAFAF7;
-    border-radius:50%;
-    display:flex; align-items:center; justify-content:center;
-    font-family:'Archivo Black', sans-serif;
-    font-size:15px; color:#FAFAF7;
-    transform:rotate(-6deg);
-  }
-  .art .stampnum{border-color:#C9A24B; color:#C9A24B;}
-  .film .stampnum{border-color:#FF5B4A; color:#FF5B4A;}
-  .tech .stampnum{border-color:#3FE0D0; color:#3FE0D0;}
-  .lit .stampnum{border-color:#B39DFF; color:#B39DFF;}
-  .music .stampnum{border-color:#FF5FA8; color:#FF5FA8;}
-  .design .stampnum{border-color:#FFD23F; color:#FFD23F;}
-  .fashion .stampnum{border-color:#FAFAF7; color:#FAFAF7;}
-  .section-head{display:flex; align-items:center; gap:12px; margin-bottom:18px; flex-wrap:wrap;}
-  .section-tag{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:12px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase;
-    color:#0A0A0A;
-    padding:6px 11px; border-radius:2px;
-  }
-  .art .section-tag{background:#C9A24B;}
-  .film .section-tag{background:#FF5B4A;}
-  .tech .section-tag{background:#3FE0D0;}
-  .lit .section-tag{background:#B39DFF;}
-  .music .section-tag{background:#FF5FA8;}
-  .design .section-tag{background:#FFD23F;}
-  .fashion .section-tag{background:#FAFAF7;}
-  .section-title{
-    font-family:'Archivo Black', sans-serif;
-    font-size:24px; text-transform:uppercase; letter-spacing:0.01em;
-    color:#FAFAF7;
-  }
-  .entry{margin-bottom:24px; padding-bottom:24px; border-bottom:1px solid rgba(250,250,247,0.16); scroll-margin-top:24px;}
-  .entry:last-child{border-bottom:none; margin-bottom:0; padding-bottom:0;}
-  .entry-byline{font-family:'IBM Plex Mono', monospace; font-size:12px; color:#A6A29A; margin-bottom:8px;}
-  .entry-title{font-weight:500; font-style:italic; color:#FAFAF7; text-decoration:underline; text-decoration-color:rgba(250,250,247,0.35); text-underline-offset:3px;}
-  .entry-title:hover{text-decoration-color:#FF1F3D;}
-  .entry p{margin:0 0 10px; font-size:16px; color:#EDEAE2;}
-  .entry .why{font-size:14.5px; color:#A6A29A; font-style:italic;}
-  .entry .why::before{content:"— ";}
-  .issue-list{list-style:none; margin:0; padding:0;}
-  .issue-card{display:block; text-decoration:none; padding:22px 0; border-bottom:1px solid rgba(250,250,247,0.16);}
-  .issue-card:first-child{padding-top:0;}
-  .issue-card:hover .issue-headline{ text-decoration-color:#FF1F3D; }
-  .issue-meta{font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:#A6A29A; margin-bottom:8px;}
-  .issue-meta .num{color:#FF1F3D;}
-  .issue-headline{font-family:'Archivo Black', sans-serif; font-size:22px; text-transform:uppercase; letter-spacing:0.01em; color:#FAFAF7; text-decoration:underline; text-decoration-color:rgba(250,250,247,0.35); text-underline-offset:4px; display:inline-block; margin-bottom:8px;}
-  .issue-desc{font-size:15px; color:#A6A29A; max-width:60ch; margin:0;}
-  footer{
-    margin-top:64px; padding-top:20px; border-top:1px solid rgba(250,250,247,0.16);
-    display:flex; justify-content:space-between; gap:12px;
-    font-family:'IBM Plex Mono', monospace; font-size:10.5px;
-    letter-spacing:0.06em; color:#A6A29A; text-transform:uppercase;
-  }
-  @media (max-width:520px){
-    .wrap{padding:30px 16px 70px;}
-    .section{padding-left:48px;}
-    .stampnum{width:36px; height:36px; font-size:13px;}
-    .section-title{font-size:20px;}
-    .nav{flex-direction:column; align-items:stretch;}
-  }
+:root {
+  --bg: #F1EEE9;
+  --surface: #FFFFFF;
+  --ink: #3C3C3C;
+  --muted: #6B665F;
+  --line: #D7D1C7;
+  --sand: #CDC0B0;
+  --yellow: #FFE500;
+  --yellow-ink: #1E1E1E;
+  --btn: #3C3C3C;
+  --btn-ink: #FFFFFF;
+  --sleeve-s: 26%;
+  --sleeve-l: 78%;
+  --font: "Switzer", "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
+  color-scheme: light;
+}
+html { scroll-behavior: smooth; }
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font); font-size: 17px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+
+/* calm mode: no motion */
+:root[data-calm] *, :root[data-calm] *::before, :root[data-calm] *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+:root[data-calm] mark { background-size: 100% 100% !important; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; scroll-behavior: auto !important; } mark { background-size: 100% 100% !important; } }
+
+/* top bar */
+.bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding: 22px 0; }
+.mark { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.15rem; letter-spacing: -0.02em; text-decoration: none; }
+.mark i { width: 14px; height: 14px; background: var(--yellow); display: inline-block; }
+.nav { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; font-size: 0.95rem; }
+.nav a { text-decoration: none; }
+.nav a:hover, .nav a[aria-current] { text-decoration: underline; text-underline-offset: 4px; }
+.nav a[aria-current] { text-decoration-thickness: 2px; text-decoration-color: var(--ink); }
+.sw { display: inline-flex; align-items: center; gap: 8px; padding: 0; border: 0; background: none; color: var(--ink); font: 500 0.88rem var(--font); cursor: pointer; }
+.sw .box { width: 34px; height: 18px; border: 1.5px solid var(--ink); position: relative; flex: none; }
+.sw .box::after { content: ""; position: absolute; top: 2px; left: 2px; width: 11px; height: 11px; background: var(--ink); transition: transform 0.18s ease; }
+.sw[aria-pressed="true"] .box { background: var(--yellow); border-color: var(--yellow-ink); }
+.sw[aria-pressed="true"] .box::after { transform: translateX(16px); background: var(--yellow-ink); }
+
+/* hero */
+.hero { padding: 72px 0 56px; border-top: 1px solid var(--line); }
+.eyebrow { margin: 0 0 22px; color: var(--muted); font-size: 0.95rem; }
+h1 { margin: 0 0 28px; font-weight: 500; font-size: clamp(3.6rem, 13vw, 9rem); line-height: 0.95; letter-spacing: -0.045em; }
+mark {
+  background-image: linear-gradient(var(--yellow), var(--yellow)); background-repeat: no-repeat; background-size: 100% 100%;
+  background-color: transparent; color: var(--yellow-ink); padding: 0 0.12em;
+  animation: sweep 0.9s 0.45s cubic-bezier(.2,.7,.2,1) both;
+}
+@keyframes sweep { from { background-size: 0% 100%; } to { background-size: 100% 100%; } }
+@keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+.hero > * { animation: rise 0.75s cubic-bezier(.2,.7,.2,1) both; animation-delay: calc(var(--i, 0) * 90ms); }
+.hero > :nth-child(1) { --i: 0; } .hero > :nth-child(2) { --i: 1; } .hero > :nth-child(3) { --i: 2; } .hero > :nth-child(4) { --i: 3; } .hero > :nth-child(5) { --i: 4; }
+.hero p.sub { max-width: 52ch; color: var(--muted); font-size: 1.1rem; margin: 0 0 32px; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn {
+  display: inline-block; padding: 14px 24px; border: 1.5px solid var(--btn);
+  background: var(--btn); color: var(--btn-ink);
+  font: 600 0.95rem var(--font); text-decoration: none; cursor: pointer; border-radius: 0;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.btn:hover { background: transparent; color: var(--ink); }
+.btn.alt { background: var(--surface); color: var(--ink); border-color: var(--ink); }
+.btn.alt:hover { background: var(--ink); color: var(--bg); }
+.btn:disabled { opacity: 0.5; cursor: default; }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 56px; border-top: 1px solid var(--ink); }
+.stat { padding: 18px 0 0; }
+.stat b { display: block; font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 500; letter-spacing: -0.03em; line-height: 1.05; }
+.stat span { color: var(--muted); font-size: 0.92rem; }
+
+/* sections */
+section { padding: 64px 0; border-top: 1px solid var(--line); }
+h2 { margin: 0 0 32px; font-weight: 500; font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1.02; letter-spacing: -0.035em; }
+h2 small { display: block; margin-top: 10px; font-size: 0.95rem; letter-spacing: 0; color: var(--muted); font-weight: 400; }
+
+/* rows: issue entries, archive issues, music sources */
+.rows { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--ink); }
+.row { display: grid; grid-template-columns: 56px 1fr auto; gap: 8px 20px; align-items: center; padding: 22px 0; border-bottom: 1px solid var(--line); animation: rise 0.6s cubic-bezier(.2,.7,.2,1) both; animation-delay: calc(var(--i, 0) * 50ms); scroll-margin-top: 24px; }
+.row .n { color: var(--muted); font-size: 0.95rem; }
+.row h3 { margin: 0; font-weight: 500; font-size: 1.5rem; line-height: 1.2; letter-spacing: -0.02em; }
+.row h3 a { text-decoration: none; }
+.row h3 a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.row p { margin: 4px 0 0; color: var(--muted); font-size: 0.95rem; }
+.row p.note { color: var(--ink); max-width: 64ch; }
+.row .btn { padding: 9px 18px; font-size: 0.88rem; }
+
+/* search */
+.search-wrap { position: relative; margin: 0 0 28px; }
+.search { width: 100%; min-width: 0; padding: 12px 14px; border: 1.5px solid var(--line); border-radius: 0; background: var(--surface); color: var(--ink); font: 400 0.95rem var(--font); }
+.search:focus { border-color: var(--ink); outline: none; }
+.search-results { position: absolute; top: calc(100% + 6px); left: 0; right: 0; background: var(--surface); border: 1.5px solid var(--ink); max-height: 420px; overflow-y: auto; z-index: 20; display: none; }
+.search-results.active { display: block; }
+.search-result { display: block; padding: 12px 14px; border-bottom: 1px solid var(--line); text-decoration: none; }
+.search-result:last-child { border-bottom: none; }
+.search-result:hover { background: var(--bg); }
+.sr-tag { font-size: 0.8rem; color: var(--muted); }
+.sr-title { display: block; font-weight: 500; margin: 2px 0; }
+.sr-meta { font-size: 0.85rem; color: var(--muted); }
+.search-empty { padding: 14px; color: var(--muted); font-size: 0.95rem; }
+
+/* footer */
+footer { padding: 56px 0 40px; border-top: 1px solid var(--line); }
+.fine { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 24px; color: var(--muted); font-size: 0.9rem; }
+.fine p { margin: 0 0 8px; max-width: 58ch; }
+.fine a { text-underline-offset: 3px; }
+.big { margin: 40px 0 0; font-weight: 500; font-size: clamp(3rem, 15vw, 11rem); line-height: 0.9; letter-spacing: -0.05em; color: var(--sand); user-select: none; }
+
+@media (max-width: 640px) {
+  .wrap { padding: 0 16px; }
+  .hero { padding: 48px 0 40px; }
+  section { padding: 48px 0; }
+  .row { grid-template-columns: 36px 1fr; }
+  .row .btn { grid-column: 2; justify-self: start; }
+  .row h3 { font-size: 1.25rem; }
+}
 </style>
 </head>
 <body data-root="../">
-<div class="page">
 <div class="wrap">
-  <div class="masthead">
-    <a class="mast-title" href="../index.html">Algorithm</a>
-    <span class="stamp">Issue No. 12</span>
+  <header class="bar">
+    <a class="mark" href="../index.html"><i aria-hidden="true"></i>Troller</a>
+    <nav class="nav" aria-label="Site">
+      <a href="../index.html">News Troll</a>
+      <a href="../music/index.html">Song Troll</a>
+      <a href="../archive/index.html" aria-current="page">Archive</a>
+      <button class="sw" id="sw-calm" type="button" aria-pressed="false"><span class="box" aria-hidden="true"></span>Reduce animation</button>
+    </nav>
+  </header>
+  <div class="hero" id="top">
+    <p class="eyebrow">News Troll · week of 21 September 2026</p>
+    <h1>Issue <mark>12.</mark></h1>
+    <p class="sub">A selection of recent writing from across the culture press.</p>
+    <div class="hero-actions">
+      <a class="btn" href="#art">Start reading</a>
+      <a class="btn alt" href="../music/index.html">Song Troll</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>27</b><span>links</span></div>
+      <div class="stat"><b>27</b><span>publications</span></div>
+      <div class="stat"><b>7</b><span>sections</span></div>
+    </div>
   </div>
-  <nav class="tabs" aria-label="Sections">
-    <a class="tab is-active" href="../index.html" aria-current="page">Criticism</a>
-    <a class="tab" href="../music/index.html">New Music</a>
-  </nav>
-  <div class="nav">
-    <a class="nav-link" href="../index.html">&larr; Latest Issue</a>
-    <a class="nav-link" href="../archive/index.html">Full Archive</a>
-  </div>
-  <h1 class="hero">The <span class="pop">Feed</span></h1>
-  <p class="intro">A selection of recent writing from across the culture press.</p>
-  <span class="intro-byline">2026-09-21 — selected links</span>
-  <section class="section art">
-    <span class="stampnum">01</span>
-    <div class="section-head">
-      <span class="section-tag">Art</span>
-      <h2 class="section-title">Fine Art</h2>
-    </div>
-    <div class="entry" id="art-1">
-      <div class="entry-byline"><a class="entry-title" href="https://burnaway.org/daily/enid-2026-generations-of-women-sculptors-at-the-kmac-museum-louisville/" target="_blank" rel="noopener">ENID 2026: Generations of Women Sculptors at the KMAC Museum, Louisville</a> by Editorial Intern — Burnaway</div>
 
-      <p>Burnaway takes a close look at ENID 2026: Generations of Women Sculptors at KMAC Museum, Louisville.</p>
-    </div>
-    <div class="entry" id="art-2">
-      <div class="entry-byline"><a class="entry-title" href="https://www.artforum.com/columns/from-a-to-t-andback-again-openings-part-one-1234759385/" target="_blank" rel="noopener">From A to T &amp; Back Again: Openings, Part One</a> by Alexander Jovanovich — Artforum</div>
-
-      <p>Visits to Olney Gleason, Garth Greenan, David Zwirner, and more during New York&#39;s first week of fall openings</p>
-    </div>
-    <div class="entry" id="art-3">
-      <div class="entry-byline"><a class="entry-title" href="https://www.artandobject.com/news/daniel-chester-french-lincoln-memorials-sculptor" target="_blank" rel="noopener">Daniel Chester French: The Lincoln Memorial&#39;s Sculptor</a> by rebecca — Art &amp; Object</div>
-
-      <p>Daniel Chester French: The Lincoln Memorial&#39;s Sculptor WIKIMEDIA COMMONS Daniel Chester French in his studio, New York, c. 1889, Department of Image Collections, National Gallery of Art Library, Washington, DC rebecca Fri, 09/18/2026 - 12:09 The Berkshires, a lush region of mountains, rolling green hills, and picturesque farmland in western Massachusetts, has long attracted artists looking to…</p>
-    </div>
+  <section id="art" aria-labelledby="h-art">
+    <h2 id="h-art">Fine Art</h2>
+    <ol class="rows">
+    <li class="row" id="art-1" style="--i:0">
+      <span class="n">01</span>
+      <div>
+        <h3><a href="https://burnaway.org/daily/enid-2026-generations-of-women-sculptors-at-the-kmac-museum-louisville/" target="_blank" rel="noopener">ENID 2026: Generations of Women Sculptors at the KMAC Museum, Louisville</a></h3>
+        <p>Editorial Intern · Burnaway</p>
+      </div>
+      <a class="btn alt" href="https://burnaway.org/daily/enid-2026-generations-of-women-sculptors-at-the-kmac-museum-louisville/" target="_blank" rel="noopener" aria-label="Read ENID 2026: Generations of Women Sculptors at the KMAC Museum, Louisville">Read</a>
+    </li>
+    <li class="row" id="art-2" style="--i:1">
+      <span class="n">02</span>
+      <div>
+        <h3><a href="https://www.artforum.com/columns/from-a-to-t-andback-again-openings-part-one-1234759385/" target="_blank" rel="noopener">From A to T &amp; Back Again: Openings, Part One</a></h3>
+        <p>Alexander Jovanovich · Artforum</p>
+      </div>
+      <a class="btn alt" href="https://www.artforum.com/columns/from-a-to-t-andback-again-openings-part-one-1234759385/" target="_blank" rel="noopener" aria-label="Read From A to T &amp; Back Again: Openings, Part One">Read</a>
+    </li>
+    <li class="row" id="art-3" style="--i:2">
+      <span class="n">03</span>
+      <div>
+        <h3><a href="https://www.artandobject.com/news/daniel-chester-french-lincoln-memorials-sculptor" target="_blank" rel="noopener">Daniel Chester French: The Lincoln Memorial&#39;s Sculptor</a></h3>
+        <p>rebecca · Art &amp; Object</p>
+      </div>
+      <a class="btn alt" href="https://www.artandobject.com/news/daniel-chester-french-lincoln-memorials-sculptor" target="_blank" rel="noopener" aria-label="Read Daniel Chester French: The Lincoln Memorial&#39;s Sculptor">Read</a>
+    </li>
+    </ol>
   </section>
-  <section class="section film">
-    <span class="stampnum">02</span>
-    <div class="section-head">
-      <span class="section-tag">Film</span>
-      <h2 class="section-title">Film Criticism</h2>
-    </div>
-    <div class="entry" id="film-1">
-      <div class="entry-byline"><a class="entry-title" href="https://egyptianstreets.com/2026/09/20/mohamed-salah-fires-a-first-trabzonspor-hat-trick-as-trabzonspor-crush-galatasaray-4-0/" target="_blank" rel="noopener">Mohamed Salah Fires a First Trabzonspor Hat Trick as Trabzonspor Crush Galatasaray 4-0</a> by Belal Nawar — Egyptian Streets</div>
-
-      <p>Egyptian forward Mohamed Salah scored his first hat-trick on Saturday, 19 September, after a dominant 4-0 victory over league leaders Galatasaray, a Turkish professional football club. In the standout fixture of the seventh round, Trabzonspor, the Turkish football club which Salah joined on 6 August 2026, overwhelmed the visitors with multiple counter-attacks in front of goal. In the fourth…</p>
-    </div>
-    <div class="entry" id="film-2">
-      <div class="entry-byline"><a class="entry-title" href="https://talkhouse.com/the-king-of-comedy-with-stavros-halkias/" target="_blank" rel="noopener">The King of Comedy with Stavros Halkias</a> by Blank Check with Griffin &amp; David — Talkhouse</div>
-
-      <p>This week we’re covering Scorsese’s The King of Comedy and we’ve got the real King of Comedy on to talk about how Rupert Pupkin should have done some open mic nights. The great Stavros Halkias returns to talk Marty, Bobby, Jerry Lewis, Sandra Bernhard, the Klumps, and his billion-dollar pitch for a new action franchise…</p>
-    </div>
-    <div class="entry" id="film-3">
-      <div class="entry-byline"><a class="entry-title" href="https://crookedmarquee.com/classic-corner-the-driller-killer/" target="_blank" rel="noopener">Classic Corner: The Driller Killer</a> by Craig J. Clark — Crooked Marquee</div>
-
-      <p>In the late ’70s, there were two surefire ways to break into movies: porn and horror. Abel Ferrara tried both, launching a career spent probing society’s underbelly. The post Classic Corner: The Driller Killer appeared first on Crooked Marquee.</p>
-    </div>
-    <div class="entry" id="film-4">
-      <div class="entry-byline"><a class="entry-title" href="https://vaguevisages.com/2026/09/18/72-hours-soundtrack-netflix-movie-film-music-songs/" target="_blank" rel="noopener">Soundtracks of Cinema: ’72 Hours’</a> by Q.V. Hough — Vague Visages</div>
-
-      <p>&#39;72 Hours&#39; Soundtrack: A Vague Visages guide for every song in Tim Story&#39;s 2026 Netflix movie. The post Soundtracks of Cinema: ’72 Hours’ appeared first on Vague Visages (Vawg-Vee-Sawj).</p>
-    </div>
+  <section id="film" aria-labelledby="h-film">
+    <h2 id="h-film">Film</h2>
+    <ol class="rows">
+    <li class="row" id="film-1" style="--i:0">
+      <span class="n">01</span>
+      <div>
+        <h3><a href="https://egyptianstreets.com/2026/09/20/mohamed-salah-fires-a-first-trabzonspor-hat-trick-as-trabzonspor-crush-galatasaray-4-0/" target="_blank" rel="noopener">Mohamed Salah Fires a First Trabzonspor Hat Trick as Trabzonspor Crush Galatasaray 4-0</a></h3>
+        <p>Belal Nawar · Egyptian Streets</p>
+      </div>
+      <a class="btn alt" href="https://egyptianstreets.com/2026/09/20/mohamed-salah-fires-a-first-trabzonspor-hat-trick-as-trabzonspor-crush-galatasaray-4-0/" target="_blank" rel="noopener" aria-label="Read Mohamed Salah Fires a First Trabzonspor Hat Trick as Trabzonspor Crush Galatasaray 4-0">Read</a>
+    </li>
+    <li class="row" id="film-2" style="--i:1">
+      <span class="n">02</span>
+      <div>
+        <h3><a href="https://talkhouse.com/the-king-of-comedy-with-stavros-halkias/" target="_blank" rel="noopener">The King of Comedy with Stavros Halkias</a></h3>
+        <p>Blank Check with Griffin &amp; David · Talkhouse</p>
+      </div>
+      <a class="btn alt" href="https://talkhouse.com/the-king-of-comedy-with-stavros-halkias/" target="_blank" rel="noopener" aria-label="Read The King of Comedy with Stavros Halkias">Read</a>
+    </li>
+    <li class="row" id="film-3" style="--i:2">
+      <span class="n">03</span>
+      <div>
+        <h3><a href="https://crookedmarquee.com/classic-corner-the-driller-killer/" target="_blank" rel="noopener">Classic Corner: The Driller Killer</a></h3>
+        <p>Craig J. Clark · Crooked Marquee</p>
+      </div>
+      <a class="btn alt" href="https://crookedmarquee.com/classic-corner-the-driller-killer/" target="_blank" rel="noopener" aria-label="Read Classic Corner: The Driller Killer">Read</a>
+    </li>
+    <li class="row" id="film-4" style="--i:3">
+      <span class="n">04</span>
+      <div>
+        <h3><a href="https://vaguevisages.com/2026/09/18/72-hours-soundtrack-netflix-movie-film-music-songs/" target="_blank" rel="noopener">Soundtracks of Cinema: ’72 Hours’</a></h3>
+        <p>Q.V. Hough · Vague Visages</p>
+      </div>
+      <a class="btn alt" href="https://vaguevisages.com/2026/09/18/72-hours-soundtrack-netflix-movie-film-music-songs/" target="_blank" rel="noopener" aria-label="Read Soundtracks of Cinema: ’72 Hours’">Read</a>
+    </li>
+    </ol>
   </section>
-  <section class="section tech">
-    <span class="stampnum">03</span>
-    <div class="section-head">
-      <span class="section-tag">Tech &amp; AI</span>
-      <h2 class="section-title">Tech &amp; AI</h2>
-    </div>
-    <div class="entry" id="tech-1">
-      <div class="entry-byline"><a class="entry-title" href="https://www.agbi.com/banking-finance/2026/09/al-fardan-broken-banking-lazy-vcs-and-the-future-of-finance/" target="_blank" rel="noopener">Al Fardan: broken banking, lazy VCs and the future of finance</a> by Shruthi Nair — AGBI</div>
-
-      <p>Mohammed Ebrahim Al Fardan says the global financial system is broken and regional venture capitalists are neither serious nor innovative enough. He has earned the right to say this as a Middle East VC pioneer from a century-plus family business that has outlived oil crises, wars and tech disruptions. The head of business group Al […]</p>
-    </div>
-    <div class="entry" id="tech-2">
-      <div class="entry-byline"><a class="entry-title" href="https://simonwillison.net/2026/Sep/20/voxium/" target="_blank" rel="noopener">Quoting voxium</a> — Simon Willison</div>
-
-      <p>It has been half a month since I started a new role at a big company. Nobody knows anything here. The specs, code, tests, PRDs, tickets, resolution of those tickets, reports, etc., everything is made by Claude Code. Nobody on my team likes this. They are being forced to ship as much as they can. I have heard multiple times from higher management that pushing code is not a bottleneck, so why are…</p>
-    </div>
-    <div class="entry" id="tech-3">
-      <div class="entry-byline"><a class="entry-title" href="https://techcabal.com/2026/09/20/the-next-wave-the-expensive-life-of-twiga-foods/" target="_blank" rel="noopener">The Next Wave: The expensive life of Twiga Foods</a> by Kenn Abuya — TechCabal</div>
-
-      <p>Twiga Foods demonstrated that venture capital subsidies can accelerate customer acquisition, but they cannot change unit economics.</p>
-    </div>
-    <div class="entry" id="tech-4">
-      <div class="entry-byline"><a class="entry-title" href="https://it-online.co.za/2026/09/19/application-engineer-gauteng-sandown-2/" target="_blank" rel="noopener">Application Engineer – Gauteng Sandown</a> by Career Junction — IT-Online</div>
-
-      <p>Our client, a leading provider of medical imaging technology, is seeking an experienced and technically proficient Ultrasound Applications Engineer to join their team. This permanent role offers the opportunity to combine clinical expertise with technical applications support, ensuring healthcare professionals receive the highest level of training and guidance on advanced ultrasound equipment.…</p>
-    </div>
+  <section id="tech" aria-labelledby="h-tech">
+    <h2 id="h-tech">Tech &amp; AI</h2>
+    <ol class="rows">
+    <li class="row" id="tech-1" style="--i:0">
+      <span class="n">01</span>
+      <div>
+        <h3><a href="https://www.agbi.com/banking-finance/2026/09/al-fardan-broken-banking-lazy-vcs-and-the-future-of-finance/" target="_blank" rel="noopener">Al Fardan: broken banking, lazy VCs and the future of finance</a></h3>
+        <p>Shruthi Nair · AGBI</p>
+      </div>
+      <a class="btn alt" href="https://www.agbi.com/banking-finance/2026/09/al-fardan-broken-banking-lazy-vcs-and-the-future-of-finance/" target="_blank" rel="noopener" aria-label="Read Al Fardan: broken banking, lazy VCs and the future of finance">Read</a>
+    </li>
+    <li class="row" id="tech-2" style="--i:1">
+      <span class="n">02</span>
+      <div>
+        <h3><a href="https://simonwillison.net/2026/Sep/20/voxium/" target="_blank" rel="noopener">Quoting voxium</a></h3>
+        <p>Simon Willison</p>
+      </div>
+      <a class="btn alt" href="https://simonwillison.net/2026/Sep/20/voxium/" target="_blank" rel="noopener" aria-label="Read Quoting voxium">Read</a>
+    </li>
+    <li class="row" id="tech-3" style="--i:2">
+      <span class="n">03</span>
+      <div>
+        <h3><a href="https://techcabal.com/2026/09/20/the-next-wave-the-expensive-life-of-twiga-foods/" target="_blank" rel="noopener">The Next Wave: The expensive life of Twiga Foods</a></h3>
+        <p>Kenn Abuya · TechCabal</p>
+      </div>
+      <a class="btn alt" href="https://techcabal.com/2026/09/20/the-next-wave-the-expensive-life-of-twiga-foods/" target="_blank" rel="noopener" aria-label="Read The Next Wave: The expensive life of Twiga Foods">Read</a>
+    </li>
+    <li class="row" id="tech-4" style="--i:3">
+      <span class="n">04</span>
+      <div>
+        <h3><a href="https://it-online.co.za/2026/09/19/application-engineer-gauteng-sandown-2/" target="_blank" rel="noopener">Application Engineer – Gauteng Sandown</a></h3>
+        <p>Career Junction · IT-Online</p>
+      </div>
+      <a class="btn alt" href="https://it-online.co.za/2026/09/19/application-engineer-gauteng-sandown-2/" target="_blank" rel="noopener" aria-label="Read Application Engineer – Gauteng Sandown">Read</a>
+    </li>
+    </ol>
   </section>
-  <section class="section lit">
-    <span class="stampnum">04</span>
-    <div class="section-head">
-      <span class="section-tag">Sci-Fi / Fantasy</span>
-      <h2 class="section-title">Literary Reviews</h2>
-    </div>
-    <div class="entry" id="lit-1">
-      <div class="entry-byline"><a class="entry-title" href="https://locusmag.com/2026/09/locus-bestsellers-august-2026/" target="_blank" rel="noopener">Locus Bestsellers, August 2026</a> by locusmag — Locus</div>
-
-      <p>The Locus Bestsellers for November include top titles: Carl&#39;s Doomsday Scenario by Matt Dinniman (Ace), Dungeon Crawler Carl by Matt Dinniman (Ace)), and Warhammer 40,000: Eisenhorn: The Omnibus by Dan Abnett (Black Library). HARDCOVERS Months on list Last month 1) Carl&#39;s Doomsday Scenario, Matt Dinniman (Ace) 6 3 2) The Gate of the Feral Gods, Matt Dinniman (Ace) 7 - 3) A Parade of Horribles,…</p>
-    </div>
-    <div class="entry" id="lit-2">
-      <div class="entry-byline"><a class="entry-title" href="https://wordpress.com/blog/2026/09/19/answer-engine-optimization/" target="_blank" rel="noopener">What Answer Engine Optimization (AEO) Actually Means</a> by Maddy Osman — Aotearoa NZ Review of Books</div>
-
-      <p>Heard people talk about AI search optimization or AEO? It’s less a new rulebook than clearer, more useful content that AI tools can understand and cite.</p>
-    </div>
-    <div class="entry" id="lit-3">
-      <div class="entry-byline"><a class="entry-title" href="https://reactormag.com/how-outlander-blood-of-my-blood-season-2-claire/" target="_blank" rel="noopener">How Outlander: Blood of My Blood Season 2 Handles the Claire of It All</a> by Vanessa Armstrong — Reactor</div>
-
-      <p>&quot;The reality that she may never see her daughter again kicks in… that breaks her heart.&quot; The post How Outlander: Blood of My Blood Season 2 Handles the Claire of It All appeared first on Reactor.</p>
-    </div>
-    <div class="entry" id="lit-4">
-      <div class="entry-byline"><a class="entry-title" href="https://electricliterature.com/8-memoirs-that-complicate-the-story-of-filipino-america/" target="_blank" rel="noopener">8 Memoirs That Complicate the Story of Filipino America</a> by Nita Noveno — Electric Literature</div>
-
-      <p>The first known Filipino American memoir, Carlos Bulosan’s America Is in the Heart, was published in 1946. The next wouldn’t appear on the American literary landscape for nearly 60 years. Then, starting around 2018, something shifted: a surge of memoir and hybrid writing by Filipino American writers that hasn’t slowed down since. What connects this […] The post 8 Memoirs That Complicate the Story…</p>
-    </div>
+  <section id="lit" aria-labelledby="h-lit">
+    <h2 id="h-lit">Books</h2>
+    <ol class="rows">
+    <li class="row" id="lit-1" style="--i:0">
+      <span class="n">01</span>
+      <div>
+        <h3><a href="https://locusmag.com/2026/09/locus-bestsellers-august-2026/" target="_blank" rel="noopener">Locus Bestsellers, August 2026</a></h3>
+        <p>locusmag · Locus</p>
+      </div>
+      <a class="btn alt" href="https://locusmag.com/2026/09/locus-bestsellers-august-2026/" target="_blank" rel="noopener" aria-label="Read Locus Bestsellers, August 2026">Read</a>
+    </li>
+    <li class="row" id="lit-2" style="--i:1">
+      <span class="n">02</span>
+      <div>
+        <h3><a href="https://wordpress.com/blog/2026/09/19/answer-engine-optimization/" target="_blank" rel="noopener">What Answer Engine Optimization (AEO) Actually Means</a></h3>
+        <p>Maddy Osman · Aotearoa NZ Review of Books</p>
+      </div>
+      <a class="btn alt" href="https://wordpress.com/blog/2026/09/19/answer-engine-optimization/" target="_blank" rel="noopener" aria-label="Read What Answer Engine Optimization (AEO) Actually Means">Read</a>
+    </li>
+    <li class="row" id="lit-3" style="--i:2">
+      <span class="n">03</span>
+      <div>
+        <h3><a href="https://reactormag.com/how-outlander-blood-of-my-blood-season-2-claire/" target="_blank" rel="noopener">How Outlander: Blood of My Blood Season 2 Handles the Claire of It All</a></h3>
+        <p>Vanessa Armstrong · Reactor</p>
+      </div>
+      <a class="btn alt" href="https://reactormag.com/how-outlander-blood-of-my-blood-season-2-claire/" target="_blank" rel="noopener" aria-label="Read How Outlander: Blood of My Blood Season 2 Handles the Claire of It All">Read</a>
+    </li>
+    <li class="row" id="lit-4" style="--i:3">
+      <span class="n">04</span>
+      <div>
+        <h3><a href="https://electricliterature.com/8-memoirs-that-complicate-the-story-of-filipino-america/" target="_blank" rel="noopener">8 Memoirs That Complicate the Story of Filipino America</a></h3>
+        <p>Nita Noveno · Electric Literature</p>
+      </div>
+      <a class="btn alt" href="https://electricliterature.com/8-memoirs-that-complicate-the-story-of-filipino-america/" target="_blank" rel="noopener" aria-label="Read 8 Memoirs That Complicate the Story of Filipino America">Read</a>
+    </li>
+    </ol>
   </section>
-  <section class="section music">
-    <span class="stampnum">05</span>
-    <div class="section-head">
-      <span class="section-tag">Music</span>
-      <h2 class="section-title">Music Criticism</h2>
-    </div>
-    <div class="entry" id="music-1">
-      <div class="entry-byline"><a class="entry-title" href="https://www.theaureview.com/music/brother-ali-triffid-brisbane-review/" target="_blank" rel="noopener">Brother Ali spreads peace and love at Brisbane’s The Triffid</a> by Dylan Oxley — The AU Review</div>
-
-      <p>Hip hop heads left enlightened after legendary artist and activist Brother Ali played The Triffid in Brisbane last night. The second show of his three-date East Coast tour with support from homegrown heroes Horrorshow proved that the Minnesota rapper is far from finished. Brother Ali is one of the most respected MCs in the game...</p>
-    </div>
-    <div class="entry" id="music-2">
-      <div class="entry-byline"><a class="entry-title" href="https://louderthanwar.com/clint-boon-the-manchester-chronicles-book-review/" target="_blank" rel="noopener">Clint Boon ‘ The Manchester Chronicles’ Book Review</a> by johnrobb — Louder Than War</div>
-
-      <p>Clint Boon memoirs The post Clint Boon ‘ The Manchester Chronicles’ Book Review appeared first on Louder Than War.</p>
-    </div>
-    <div class="entry" id="music-3">
-      <div class="entry-byline"><a class="entry-title" href="https://thenativemag.com/kaelo-iyizoba-has-a-specific-vision-of-what-nigerian-cinema-can-be/" target="_blank" rel="noopener">Kaelo Iyizoba Has A Specific Vision of What Nigerian Cinema Can Be</a> by Shalom Tewobola — The NATIVE</div>
-
-      <p>What began as Kaelo Iyizoba creating a slideshow for his sister has led him to a film screening at TIFF 2026. The post Kaelo Iyizoba Has A Specific Vision of What Nigerian Cinema Can Be appeared first on The NATIVE.</p>
-    </div>
-    <div class="entry" id="music-4">
-      <div class="entry-byline"><a class="entry-title" href="https://unorthodoxreviews.com/insanechips-oh-my-days" target="_blank" rel="noopener">InsaneChips Makes a Striking Statement With ‘OH MY DAYS’</a> by Jaedon — Unorthodox Reviews</div>
-
-      <p>Nigerian singer, songwriter, producer, and sound engineer InsaneChips steps into the spotlight with ‘OH MY DAYS’, a captivating release that reflects the creative versatility behind his growing musical identity. Born and raised in Nigeria, Oku Chibuike, better known as InsaneChips, has carved out a distinctive space by bringing together Afrobeats, Afro-fusion, and contemporary rap. His […]</p>
-    </div>
+  <section id="music" aria-labelledby="h-music">
+    <h2 id="h-music">Music Criticism</h2>
+    <ol class="rows">
+    <li class="row" id="music-1" style="--i:0">
+      <span class="n">01</span>
+      <div>
+        <h3><a href="https://www.theaureview.com/music/brother-ali-triffid-brisbane-review/" target="_blank" rel="noopener">Brother Ali spreads peace and love at Brisbane’s The Triffid</a></h3>
+        <p>Dylan Oxley · The AU Review</p>
+      </div>
+      <a class="btn alt" href="https://www.theaureview.com/music/brother-ali-triffid-brisbane-review/" target="_blank" rel="noopener" aria-label="Read Brother Ali spreads peace and love at Brisbane’s The Triffid">Read</a>
+    </li>
+    <li class="row" id="music-2" style="--i:1">
+      <span class="n">02</span>
+      <div>
+        <h3><a href="https://louderthanwar.com/clint-boon-the-manchester-chronicles-book-review/" target="_blank" rel="noopener">Clint Boon ‘ The Manchester Chronicles’ Book Review</a></h3>
+        <p>johnrobb · Louder Than War</p>
+      </div>
+      <a class="btn alt" href="https://louderthanwar.com/clint-boon-the-manchester-chronicles-book-review/" target="_blank" rel="noopener" aria-label="Read Clint Boon ‘ The Manchester Chronicles’ Book Review">Read</a>
+    </li>
+    <li class="row" id="music-3" style="--i:2">
+      <span class="n">03</span>
+      <div>
+        <h3><a href="https://thenativemag.com/kaelo-iyizoba-has-a-specific-vision-of-what-nigerian-cinema-can-be/" target="_blank" rel="noopener">Kaelo Iyizoba Has A Specific Vision of What Nigerian Cinema Can Be</a></h3>
+        <p>Shalom Tewobola · The NATIVE</p>
+      </div>
+      <a class="btn alt" href="https://thenativemag.com/kaelo-iyizoba-has-a-specific-vision-of-what-nigerian-cinema-can-be/" target="_blank" rel="noopener" aria-label="Read Kaelo Iyizoba Has A Specific Vision of What Nigerian Cinema Can Be">Read</a>
+    </li>
+    <li class="row" id="music-4" style="--i:3">
+      <span class="n">04</span>
+      <div>
+        <h3><a href="https://unorthodoxreviews.com/insanechips-oh-my-days" target="_blank" rel="noopener">InsaneChips Makes a Striking Statement With ‘OH MY DAYS’</a></h3>
+        <p>Jaedon · Unorthodox Reviews</p>
+      </div>
+      <a class="btn alt" href="https://unorthodoxreviews.com/insanechips-oh-my-days" target="_blank" rel="noopener" aria-label="Read InsaneChips Makes a Striking Statement With ‘OH MY DAYS’">Read</a>
+    </li>
+    </ol>
   </section>
-  <section class="section design">
-    <span class="stampnum">06</span>
-    <div class="section-head">
-      <span class="section-tag">Design</span>
-      <h2 class="section-title">Design</h2>
-    </div>
-    <div class="entry" id="design-1">
-      <div class="entry-byline"><a class="entry-title" href="https://architectureau.com/articles/who-cares-the-case-for-education-as-common-ground-in-times-of-disruptive-change/" target="_blank" rel="noopener">Who cares? On education as common ground in times of disruptive change</a> by Liz Brogden — ArchitectureAU Discussion</div>
-
-      <p>Facing an urgent climate crisis and increasing professional demands, the profession can no longer afford the divide between classroom theory and real-world practice, Liz Brogden argues.</p>
-    </div>
-    <div class="entry" id="design-2">
-      <div class="entry-byline"><a class="entry-title" href="https://www.azuremagazine.com/article/in-czechia-a-new-arena-acts-as-an-urban-connector/" target="_blank" rel="noopener">In Czechia, A New Arena Acts as an Urban Connector</a> by Sydney Shilling — Azure</div>
-
-      <p>Rather than treating the venue as an isolated destination on the city’s periphery, CHYBIK + KRISTOF keeps it embedded in Jihlava’s historic centre, using the building to reinforce existing pedestrian routes and open the site for everyday access. The post In Czechia, A New Arena Acts as an Urban Connector appeared first on Azure Magazine.</p>
-    </div>
-    <div class="entry" id="design-3">
-      <div class="entry-byline"><a class="entry-title" href="https://www.itsnicethat.com/articles/alistair-nicholls-running-late-animation-project-170926" target="_blank" rel="noopener">Crocs and walking alarm clocks: Alistair Nicholls embraces “pure silliness” in his self-funded claymation</a> by Marigold Warner — It&#39;s Nice That</div>
-
-      <p>Created between paid commissions, Running Late follows a surreal morning routine populated by stubby-legged alarm clocks and a crocodile that dispenses toothpaste.</p>
-    </div>
-    <div class="entry" id="design-4">
-      <div class="entry-byline"><a class="entry-title" href="https://www.yankodesign.com/2026/09/20/hisense-u6sf-pro-wraps-a-1200-nit-mini-led-panel-in-glare-free-screen-and-699-price-tag/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=hisense-u6sf-pro-wraps-a-1200-nit-mini-led-panel-in-glare-free-screen-and-699-price-tag" target="_blank" rel="noopener">Hisense U6SF Pro Wraps a 1,200-Nit Mini LED Panel in Glare-Free Screen and $699 Price Tag</a> by Sarang Sheth — Yanko Design</div>
-
-      <p>Hisense U6SF Pro Wraps a 1,200-Nit Mini LED Panel in Glare-Free Screen and $699 Price TagIf you spent the World Cup squinting at a TV that turned every afternoon match into a reflection of your living room window, I have...</p>
-    </div>
+  <section id="design" aria-labelledby="h-design">
+    <h2 id="h-design">Design</h2>
+    <ol class="rows">
+    <li class="row" id="design-1" style="--i:0">
+      <span class="n">01</span>
+      <div>
+        <h3><a href="https://architectureau.com/articles/who-cares-the-case-for-education-as-common-ground-in-times-of-disruptive-change/" target="_blank" rel="noopener">Who cares? On education as common ground in times of disruptive change</a></h3>
+        <p>Liz Brogden · ArchitectureAU Discussion</p>
+      </div>
+      <a class="btn alt" href="https://architectureau.com/articles/who-cares-the-case-for-education-as-common-ground-in-times-of-disruptive-change/" target="_blank" rel="noopener" aria-label="Read Who cares? On education as common ground in times of disruptive change">Read</a>
+    </li>
+    <li class="row" id="design-2" style="--i:1">
+      <span class="n">02</span>
+      <div>
+        <h3><a href="https://www.azuremagazine.com/article/in-czechia-a-new-arena-acts-as-an-urban-connector/" target="_blank" rel="noopener">In Czechia, A New Arena Acts as an Urban Connector</a></h3>
+        <p>Sydney Shilling · Azure</p>
+      </div>
+      <a class="btn alt" href="https://www.azuremagazine.com/article/in-czechia-a-new-arena-acts-as-an-urban-connector/" target="_blank" rel="noopener" aria-label="Read In Czechia, A New Arena Acts as an Urban Connector">Read</a>
+    </li>
+    <li class="row" id="design-3" style="--i:2">
+      <span class="n">03</span>
+      <div>
+        <h3><a href="https://www.itsnicethat.com/articles/alistair-nicholls-running-late-animation-project-170926" target="_blank" rel="noopener">Crocs and walking alarm clocks: Alistair Nicholls embraces “pure silliness” in his self-funded claymation</a></h3>
+        <p>Marigold Warner · It&#39;s Nice That</p>
+      </div>
+      <a class="btn alt" href="https://www.itsnicethat.com/articles/alistair-nicholls-running-late-animation-project-170926" target="_blank" rel="noopener" aria-label="Read Crocs and walking alarm clocks: Alistair Nicholls embraces “pure silliness” in his self-funded claymation">Read</a>
+    </li>
+    <li class="row" id="design-4" style="--i:3">
+      <span class="n">04</span>
+      <div>
+        <h3><a href="https://www.yankodesign.com/2026/09/20/hisense-u6sf-pro-wraps-a-1200-nit-mini-led-panel-in-glare-free-screen-and-699-price-tag/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=hisense-u6sf-pro-wraps-a-1200-nit-mini-led-panel-in-glare-free-screen-and-699-price-tag" target="_blank" rel="noopener">Hisense U6SF Pro Wraps a 1,200-Nit Mini LED Panel in Glare-Free Screen and $699 Price Tag</a></h3>
+        <p>Sarang Sheth · Yanko Design</p>
+      </div>
+      <a class="btn alt" href="https://www.yankodesign.com/2026/09/20/hisense-u6sf-pro-wraps-a-1200-nit-mini-led-panel-in-glare-free-screen-and-699-price-tag/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=hisense-u6sf-pro-wraps-a-1200-nit-mini-led-panel-in-glare-free-screen-and-699-price-tag" target="_blank" rel="noopener" aria-label="Read Hisense U6SF Pro Wraps a 1,200-Nit Mini LED Panel in Glare-Free Screen and $699 Price Tag">Read</a>
+    </li>
+    </ol>
   </section>
-  <section class="section fashion">
-    <span class="stampnum">07</span>
-    <div class="section-head">
-      <span class="section-tag">Men&#39;s Fashion</span>
-      <h2 class="section-title">Men&#39;s Fashion</h2>
-    </div>
-    <div class="entry" id="fashion-1">
-      <div class="entry-byline"><a class="entry-title" href="https://openthemagazine.com/world/choose-to-be-hopeful-guterres-urges-cooperation-ahead-of-his-final-un-general-assembly" target="_blank" rel="noopener">‘Choose to Be Hopeful’: Guterres Urges Cooperation Ahead of His Final UN General Assembly</a> by Open Bureau/api/author/2365926 — Open Magazine</div>
-
-      <p>United Nations Secretary-General Antonio Guterres has urged the world to hold on to hope and strengthen international cooperation as he prepares for his final UN General Assembly as UN chief. In a message posted on X on Sunday, Guterres reflected on the challenges confronting people worldwide and called for renewed efforts towards a better future. His tenure concludes later this year. “In these…</p>
-    </div>
-    <div class="entry" id="fashion-2">
-      <div class="entry-byline"><a class="entry-title" href="https://putthison.com/inside-track-september-13th-september-19th-edition-2/" target="_blank" rel="noopener">Inside Track: September 13th – September 19th Edition</a> by Derek Guy — Put This On</div>
-
-      <p>Here are our hand-selected favorites from eBay for this week, plus a heads-up on recommended sales. If you’re a member... The post Inside Track: September 13th – September 19th Edition appeared first on Put This On.</p>
-    </div>
-    <div class="entry" id="fashion-3">
-      <div class="entry-byline"><a class="entry-title" href="https://hypebeast.com/2026/9/wtaps-shanghai-tang-collabo-release-info" target="_blank" rel="noopener">WTAPS and Shanghai Tang Launch Their First Collaboration Collection</a> by info@hypebeast.com (Hypebeast) — Hypebeast</div>
-
-      <p>WTAPS® has unveiled a collaborative collection with Shanghai Tang, the Hong Kong–born lifestyle brand.For the collection, Shanghai Tang’s signature TANG jacket and trousers have been reworked in WTAPS silhouettes using a brushed cut-and-sew fabric originally used in the 1990s. The reversible jacket features toggle closures on its black side and a clean placket on its blue side.Footwear includes…</p>
-    </div>
-    <div class="entry" id="fashion-4">
-      <div class="entry-byline"><a class="entry-title" href="https://www.esquireindia.co.in/tech-and-auto/gadgets/iphone-18-pro-max-price-cut-croma-139900-from-179900" target="_blank" rel="noopener">iPhone 18 Pro Max Price Cut? Get It For Rs 139900 Via These Offers</a> by Annie Sharma/api/author/2565814 — Esquire India</div>
-
-      <p>The newest iPhone 18 Pro Max price tag can make your bank balance wither away. Croma, however, is offering a few launch benefits that could bring the cost down considerably. The retailer has announced launch offers on the iPhone 18 Pro Max in India. The iPhone 18 Pro Max price cut is via various offers for the 256GB model and the effective amount you pay is Rs 139900. The actual iPhone 18 Pro Max…</p>
-    </div>
+  <section id="fashion" aria-labelledby="h-fashion">
+    <h2 id="h-fashion">Men&#39;s Fashion</h2>
+    <ol class="rows">
+    <li class="row" id="fashion-1" style="--i:0">
+      <span class="n">01</span>
+      <div>
+        <h3><a href="https://openthemagazine.com/world/choose-to-be-hopeful-guterres-urges-cooperation-ahead-of-his-final-un-general-assembly" target="_blank" rel="noopener">‘Choose to Be Hopeful’: Guterres Urges Cooperation Ahead of His Final UN General Assembly</a></h3>
+        <p>Open Bureau/api/author/2365926 · Open Magazine</p>
+      </div>
+      <a class="btn alt" href="https://openthemagazine.com/world/choose-to-be-hopeful-guterres-urges-cooperation-ahead-of-his-final-un-general-assembly" target="_blank" rel="noopener" aria-label="Read ‘Choose to Be Hopeful’: Guterres Urges Cooperation Ahead of His Final UN General Assembly">Read</a>
+    </li>
+    <li class="row" id="fashion-2" style="--i:1">
+      <span class="n">02</span>
+      <div>
+        <h3><a href="https://putthison.com/inside-track-september-13th-september-19th-edition-2/" target="_blank" rel="noopener">Inside Track: September 13th – September 19th Edition</a></h3>
+        <p>Derek Guy · Put This On</p>
+      </div>
+      <a class="btn alt" href="https://putthison.com/inside-track-september-13th-september-19th-edition-2/" target="_blank" rel="noopener" aria-label="Read Inside Track: September 13th – September 19th Edition">Read</a>
+    </li>
+    <li class="row" id="fashion-3" style="--i:2">
+      <span class="n">03</span>
+      <div>
+        <h3><a href="https://hypebeast.com/2026/9/wtaps-shanghai-tang-collabo-release-info" target="_blank" rel="noopener">WTAPS and Shanghai Tang Launch Their First Collaboration Collection</a></h3>
+        <p>info@hypebeast.com (Hypebeast) · Hypebeast</p>
+      </div>
+      <a class="btn alt" href="https://hypebeast.com/2026/9/wtaps-shanghai-tang-collabo-release-info" target="_blank" rel="noopener" aria-label="Read WTAPS and Shanghai Tang Launch Their First Collaboration Collection">Read</a>
+    </li>
+    <li class="row" id="fashion-4" style="--i:3">
+      <span class="n">04</span>
+      <div>
+        <h3><a href="https://www.esquireindia.co.in/tech-and-auto/gadgets/iphone-18-pro-max-price-cut-croma-139900-from-179900" target="_blank" rel="noopener">iPhone 18 Pro Max Price Cut? Get It For Rs 139900 Via These Offers</a></h3>
+        <p>Annie Sharma/api/author/2565814 · Esquire India</p>
+      </div>
+      <a class="btn alt" href="https://www.esquireindia.co.in/tech-and-auto/gadgets/iphone-18-pro-max-price-cut-croma-139900-from-179900" target="_blank" rel="noopener" aria-label="Read iPhone 18 Pro Max Price Cut? Get It For Rs 139900 Via These Offers">Read</a>
+    </li>
+    </ol>
   </section>
   <footer>
-    <span>Algorithm</span>
-    <span>Issue No. 12 — 21 Sep 2026</span>
+    <div class="fine">
+      <div><p>Troller, Issue 12, week of 21 September 2026. Every link was read in full before it was picked.</p>
+        <p><a href="../archive/index.html">Every issue</a></p></div>
+      <p><a href="#top">Back to top</a></p>
+    </div>
+    <p class="big" aria-hidden="true">happy reading</p>
   </footer>
 </div>
-</div>
+<script>
+(function(){
+  var sw = document.getElementById('sw-calm');
+  if (!sw) return;
+  function load(){ try { return JSON.parse(localStorage.getItem('troller-ui') || '{}') || {}; } catch (e) { return {}; } }
+  function paint(){ var on = document.documentElement.hasAttribute('data-calm'); sw.setAttribute('aria-pressed', on ? 'true' : 'false'); }
+  sw.addEventListener('click', function(){
+    var ui = load(); ui.calm = !document.documentElement.hasAttribute('data-calm');
+    if (ui.calm) document.documentElement.setAttribute('data-calm', ''); else document.documentElement.removeAttribute('data-calm');
+    try { localStorage.setItem('troller-ui', JSON.stringify(ui)); } catch (e) {}
+    paint();
+  });
+  paint();
+})();</script>
 
 </body>
 </html>

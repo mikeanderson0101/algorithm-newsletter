@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Algorithm — tests for feed-lib.js.
+ * Troller — tests for feed-lib.js.
  *
  * Run: node scripts/test-feed-lib.js
  * Exits non-zero on any failure, so it can gate the workflow.

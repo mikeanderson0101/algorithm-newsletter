@@ -2,357 +2,426 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="color-scheme" content="dark">
-<meta name="theme-color" content="#0A0A0A">
-<title>Algorithm — Issue No. 35 — 10 Oct 2026</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#F1EEE9">
+<title>Troller — Issue 35</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Source+Serif+4:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>try{var u=JSON.parse(localStorage.getItem('troller-ui')||'{}');if(u.calm)document.documentElement.setAttribute('data-calm','');}catch(e){}</script>
 <style>
-  html, body{ margin:0; padding:0; height:100%; background-color:#0A0A0A; }
-  *{box-sizing:border-box;}
-  body{
-    min-height:100dvh;
-    color:#FAFAF7;
-    font-family:'Source Serif 4', Georgia, serif;
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-  }
-  .page{ background-color:#0A0A0A; min-height:100dvh; }
-  a{ color:inherit; }
-  .wrap{max-width:720px; margin:0 auto; padding:44px 24px 90px; position:relative;}
-  .masthead{
-    display:flex; justify-content:space-between; align-items:flex-end;
-    border-bottom:4px solid #FAFAF7;
-    padding-bottom:14px; margin-bottom:24px;
-  }
-  .mast-title{
-    font-family:'Archivo Black', sans-serif;
-    font-size:clamp(26px,6vw,34px);
-    letter-spacing:-0.01em;
-    text-transform:uppercase;
-    color:#FAFAF7;
-    text-decoration:none;
-  }
-  .stamp{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:11px; letter-spacing:0.1em; text-transform:uppercase;
-    color:#0A0A0A; background:#FF1F3D;
-    padding:5px 10px; border-radius:2px;
-    transform:rotate(-3deg); display:inline-block; font-weight:600;
-    white-space:nowrap;
-  }
-  .tabs{display:flex; gap:22px; margin:-8px 0 26px; font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.1em; text-transform:uppercase;}
-  .tab{color:#A6A29A; text-decoration:none; padding-bottom:6px; border-bottom:2px solid transparent;}
-  .tab:hover{color:#FAFAF7;}
-  .tab.is-active{color:#FAFAF7; border-bottom-color:#FF1F3D;}
-  .nav{display:flex; justify-content:space-between; align-items:center; gap:16px; margin-bottom:40px; flex-wrap:wrap;}
-  .nav-link{font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:#FAFAF7; text-decoration:none; border:1px solid rgba(250,250,247,0.35); padding:9px 14px; border-radius:2px; white-space:nowrap;}
-  .nav-link:hover{border-color:#FF1F3D; color:#FF1F3D;}
-  .search-wrap{position:relative; flex:1; min-width:220px;}
-  .search-input{width:100%; background:#151513; border:1px solid rgba(250,250,247,0.3); color:#FAFAF7; font-family:'IBM Plex Mono', monospace; font-size:13px; padding:10px 12px; border-radius:2px; outline:none;}
-  .search-input::placeholder{color:#6B6860;}
-  .search-input:focus{border-color:#FF1F3D;}
-  .search-results{position:absolute; top:calc(100% + 6px); left:0; right:0; background:#111110; border:1px solid rgba(250,250,247,0.25); border-radius:4px; max-height:380px; overflow-y:auto; z-index:20; display:none;}
-  .search-results.active{display:block;}
-  .search-result{display:block; padding:10px 12px; border-bottom:1px solid rgba(250,250,247,0.12); text-decoration:none;}
-  .search-result:last-child{border-bottom:none;}
-  .search-result:hover{background:rgba(255,31,61,0.08);}
-  .sr-tag{font-family:'IBM Plex Mono', monospace; font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:#A6A29A;}
-  .sr-title{display:block; font-style:italic; color:#FAFAF7; margin:2px 0; font-size:14px;}
-  .sr-meta{font-family:'IBM Plex Mono', monospace; font-size:10.5px; color:#A6A29A;}
-  .search-empty{padding:14px 12px; font-family:'IBM Plex Mono', monospace; font-size:12.5px; color:#A6A29A;}
-  h1.hero{
-    font-family:'Anton', sans-serif;
-    font-weight:400;
-    font-size:clamp(42px,10vw,72px);
-    line-height:0.94;
-    text-transform:uppercase;
-    margin:0 0 22px;
-    color:#FAFAF7;
-  }
-  h1.hero .pop{color:#FF1F3D;}
-  .intro{font-size:17px; color:#EDEAE2; max-width:56ch; margin-bottom:10px;}
-  .intro-byline{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:11px; letter-spacing:0.08em; text-transform:uppercase;
-    color:#A6A29A;
-    margin-top:16px; margin-bottom:54px; display:block;
-    border-left:2px solid #FF1F3D; padding-left:10px;
-  }
-  .section{position:relative; margin-bottom:50px; padding-left:56px;}
-  .section:last-of-type{margin-bottom:0;}
-  .stampnum{
-    position:absolute; left:0; top:0;
-    width:42px; height:42px;
-    border:2px solid #FAFAF7;
-    border-radius:50%;
-    display:flex; align-items:center; justify-content:center;
-    font-family:'Archivo Black', sans-serif;
-    font-size:15px; color:#FAFAF7;
-    transform:rotate(-6deg);
-  }
-  .art .stampnum{border-color:#C9A24B; color:#C9A24B;}
-  .film .stampnum{border-color:#FF5B4A; color:#FF5B4A;}
-  .tech .stampnum{border-color:#3FE0D0; color:#3FE0D0;}
-  .lit .stampnum{border-color:#B39DFF; color:#B39DFF;}
-  .music .stampnum{border-color:#FF5FA8; color:#FF5FA8;}
-  .design .stampnum{border-color:#FFD23F; color:#FFD23F;}
-  .fashion .stampnum{border-color:#FAFAF7; color:#FAFAF7;}
-  .section-head{display:flex; align-items:center; gap:12px; margin-bottom:18px; flex-wrap:wrap;}
-  .section-tag{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:12px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase;
-    color:#0A0A0A;
-    padding:6px 11px; border-radius:2px;
-  }
-  .art .section-tag{background:#C9A24B;}
-  .film .section-tag{background:#FF5B4A;}
-  .tech .section-tag{background:#3FE0D0;}
-  .lit .section-tag{background:#B39DFF;}
-  .music .section-tag{background:#FF5FA8;}
-  .design .section-tag{background:#FFD23F;}
-  .fashion .section-tag{background:#FAFAF7;}
-  .section-title{
-    font-family:'Archivo Black', sans-serif;
-    font-size:24px; text-transform:uppercase; letter-spacing:0.01em;
-    color:#FAFAF7;
-  }
-  .entry{margin-bottom:24px; padding-bottom:24px; border-bottom:1px solid rgba(250,250,247,0.16); scroll-margin-top:24px;}
-  .entry:last-child{border-bottom:none; margin-bottom:0; padding-bottom:0;}
-  .entry-byline{font-family:'IBM Plex Mono', monospace; font-size:12px; color:#A6A29A; margin-bottom:8px;}
-  .entry-title{font-weight:500; font-style:italic; color:#FAFAF7; text-decoration:underline; text-decoration-color:rgba(250,250,247,0.35); text-underline-offset:3px;}
-  .entry-title:hover{text-decoration-color:#FF1F3D;}
-  .entry p{margin:0 0 10px; font-size:16px; color:#EDEAE2;}
-  .entry .why{font-size:14.5px; color:#A6A29A; font-style:italic;}
-  .entry .why::before{content:"— ";}
-  .issue-list{list-style:none; margin:0; padding:0;}
-  .issue-card{display:block; text-decoration:none; padding:22px 0; border-bottom:1px solid rgba(250,250,247,0.16);}
-  .issue-card:first-child{padding-top:0;}
-  .issue-card:hover .issue-headline{ text-decoration-color:#FF1F3D; }
-  .issue-meta{font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:#A6A29A; margin-bottom:8px;}
-  .issue-meta .num{color:#FF1F3D;}
-  .issue-headline{font-family:'Archivo Black', sans-serif; font-size:22px; text-transform:uppercase; letter-spacing:0.01em; color:#FAFAF7; text-decoration:underline; text-decoration-color:rgba(250,250,247,0.35); text-underline-offset:4px; display:inline-block; margin-bottom:8px;}
-  .issue-desc{font-size:15px; color:#A6A29A; max-width:60ch; margin:0;}
-  footer{
-    margin-top:64px; padding-top:20px; border-top:1px solid rgba(250,250,247,0.16);
-    display:flex; justify-content:space-between; gap:12px;
-    font-family:'IBM Plex Mono', monospace; font-size:10.5px;
-    letter-spacing:0.06em; color:#A6A29A; text-transform:uppercase;
-  }
-  @media (max-width:520px){
-    .wrap{padding:30px 16px 70px;}
-    .section{padding-left:48px;}
-    .stampnum{width:36px; height:36px; font-size:13px;}
-    .section-title{font-size:20px;}
-    .nav{flex-direction:column; align-items:stretch;}
-  }
+:root {
+  --bg: #F1EEE9;
+  --surface: #FFFFFF;
+  --ink: #3C3C3C;
+  --muted: #6B665F;
+  --line: #D7D1C7;
+  --sand: #CDC0B0;
+  --yellow: #FFE500;
+  --yellow-ink: #1E1E1E;
+  --btn: #3C3C3C;
+  --btn-ink: #FFFFFF;
+  --sleeve-s: 26%;
+  --sleeve-l: 78%;
+  --font: "Switzer", "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
+  color-scheme: light;
+}
+html { scroll-behavior: smooth; }
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font); font-size: 17px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+
+/* calm mode: no motion */
+:root[data-calm] *, :root[data-calm] *::before, :root[data-calm] *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+:root[data-calm] mark { background-size: 100% 100% !important; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; scroll-behavior: auto !important; } mark { background-size: 100% 100% !important; } }
+
+/* top bar */
+.bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding: 22px 0; }
+.mark { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.15rem; letter-spacing: -0.02em; text-decoration: none; }
+.mark i { width: 14px; height: 14px; background: var(--yellow); display: inline-block; }
+.nav { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; font-size: 0.95rem; }
+.nav a { text-decoration: none; }
+.nav a:hover, .nav a[aria-current] { text-decoration: underline; text-underline-offset: 4px; }
+.nav a[aria-current] { text-decoration-thickness: 2px; text-decoration-color: var(--ink); }
+.sw { display: inline-flex; align-items: center; gap: 8px; padding: 0; border: 0; background: none; color: var(--ink); font: 500 0.88rem var(--font); cursor: pointer; }
+.sw .box { width: 34px; height: 18px; border: 1.5px solid var(--ink); position: relative; flex: none; }
+.sw .box::after { content: ""; position: absolute; top: 2px; left: 2px; width: 11px; height: 11px; background: var(--ink); transition: transform 0.18s ease; }
+.sw[aria-pressed="true"] .box { background: var(--yellow); border-color: var(--yellow-ink); }
+.sw[aria-pressed="true"] .box::after { transform: translateX(16px); background: var(--yellow-ink); }
+
+/* hero */
+.hero { padding: 72px 0 56px; border-top: 1px solid var(--line); }
+.eyebrow { margin: 0 0 22px; color: var(--muted); font-size: 0.95rem; }
+h1 { margin: 0 0 28px; font-weight: 500; font-size: clamp(3.6rem, 13vw, 9rem); line-height: 0.95; letter-spacing: -0.045em; }
+mark {
+  background-image: linear-gradient(var(--yellow), var(--yellow)); background-repeat: no-repeat; background-size: 100% 100%;
+  background-color: transparent; color: var(--yellow-ink); padding: 0 0.12em;
+  animation: sweep 0.9s 0.45s cubic-bezier(.2,.7,.2,1) both;
+}
+@keyframes sweep { from { background-size: 0% 100%; } to { background-size: 100% 100%; } }
+@keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+.hero > * { animation: rise 0.75s cubic-bezier(.2,.7,.2,1) both; animation-delay: calc(var(--i, 0) * 90ms); }
+.hero > :nth-child(1) { --i: 0; } .hero > :nth-child(2) { --i: 1; } .hero > :nth-child(3) { --i: 2; } .hero > :nth-child(4) { --i: 3; } .hero > :nth-child(5) { --i: 4; }
+.hero p.sub { max-width: 52ch; color: var(--muted); font-size: 1.1rem; margin: 0 0 32px; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn {
+  display: inline-block; padding: 14px 24px; border: 1.5px solid var(--btn);
+  background: var(--btn); color: var(--btn-ink);
+  font: 600 0.95rem var(--font); text-decoration: none; cursor: pointer; border-radius: 0;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.btn:hover { background: transparent; color: var(--ink); }
+.btn.alt { background: var(--surface); color: var(--ink); border-color: var(--ink); }
+.btn.alt:hover { background: var(--ink); color: var(--bg); }
+.btn:disabled { opacity: 0.5; cursor: default; }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 56px; border-top: 1px solid var(--ink); }
+.stat { padding: 18px 0 0; }
+.stat b { display: block; font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 500; letter-spacing: -0.03em; line-height: 1.05; }
+.stat span { color: var(--muted); font-size: 0.92rem; }
+
+/* sections */
+section { padding: 64px 0; border-top: 1px solid var(--line); }
+h2 { margin: 0 0 32px; font-weight: 500; font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1.02; letter-spacing: -0.035em; }
+h2 small { display: block; margin-top: 10px; font-size: 0.95rem; letter-spacing: 0; color: var(--muted); font-weight: 400; }
+
+/* rows: issue entries, archive issues, music sources */
+.rows { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--ink); }
+.row { display: grid; grid-template-columns: 56px 1fr auto; gap: 8px 20px; align-items: center; padding: 22px 0; border-bottom: 1px solid var(--line); animation: rise 0.6s cubic-bezier(.2,.7,.2,1) both; animation-delay: calc(var(--i, 0) * 50ms); scroll-margin-top: 24px; }
+.row .n { color: var(--muted); font-size: 0.95rem; }
+.row h3 { margin: 0; font-weight: 500; font-size: 1.5rem; line-height: 1.2; letter-spacing: -0.02em; }
+.row h3 a { text-decoration: none; }
+.row h3 a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.row p { margin: 4px 0 0; color: var(--muted); font-size: 0.95rem; }
+.row p.note { color: var(--ink); max-width: 64ch; }
+.row .btn { padding: 9px 18px; font-size: 0.88rem; }
+
+/* search */
+.search-wrap { position: relative; margin: 0 0 28px; }
+.search { width: 100%; min-width: 0; padding: 12px 14px; border: 1.5px solid var(--line); border-radius: 0; background: var(--surface); color: var(--ink); font: 400 0.95rem var(--font); }
+.search:focus { border-color: var(--ink); outline: none; }
+.search-results { position: absolute; top: calc(100% + 6px); left: 0; right: 0; background: var(--surface); border: 1.5px solid var(--ink); max-height: 420px; overflow-y: auto; z-index: 20; display: none; }
+.search-results.active { display: block; }
+.search-result { display: block; padding: 12px 14px; border-bottom: 1px solid var(--line); text-decoration: none; }
+.search-result:last-child { border-bottom: none; }
+.search-result:hover { background: var(--bg); }
+.sr-tag { font-size: 0.8rem; color: var(--muted); }
+.sr-title { display: block; font-weight: 500; margin: 2px 0; }
+.sr-meta { font-size: 0.85rem; color: var(--muted); }
+.search-empty { padding: 14px; color: var(--muted); font-size: 0.95rem; }
+
+/* footer */
+footer { padding: 56px 0 40px; border-top: 1px solid var(--line); }
+.fine { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 24px; color: var(--muted); font-size: 0.9rem; }
+.fine p { margin: 0 0 8px; max-width: 58ch; }
+.fine a { text-underline-offset: 3px; }
+.big { margin: 40px 0 0; font-weight: 500; font-size: clamp(3rem, 15vw, 11rem); line-height: 0.9; letter-spacing: -0.05em; color: var(--sand); user-select: none; }
+
+@media (max-width: 640px) {
+  .wrap { padding: 0 16px; }
+  .hero { padding: 48px 0 40px; }
+  section { padding: 48px 0; }
+  .row { grid-template-columns: 36px 1fr; }
+  .row .btn { grid-column: 2; justify-self: start; }
+  .row h3 { font-size: 1.25rem; }
+}
 </style>
 </head>
 <body data-root="../">
-<div class="page">
 <div class="wrap">
-  <div class="masthead">
-    <a class="mast-title" href="../index.html">Algorithm</a>
-    <span class="stamp">Issue No. 35</span>
+  <header class="bar">
+    <a class="mark" href="../index.html"><i aria-hidden="true"></i>Troller</a>
+    <nav class="nav" aria-label="Site">
+      <a href="../index.html">News Troll</a>
+      <a href="../music/index.html">Song Troll</a>
+      <a href="../archive/index.html" aria-current="page">Archive</a>
+      <button class="sw" id="sw-calm" type="button" aria-pressed="false"><span class="box" aria-hidden="true"></span>Reduce animation</button>
+    </nav>
+  </header>
+  <div class="hero" id="top">
+    <p class="eyebrow">News Troll · week of 10 October 2026</p>
+    <h1>Issue <mark>35.</mark></h1>
+    <p class="sub">A selection of recent writing from across the culture press.</p>
+    <div class="hero-actions">
+      <a class="btn" href="#art">Start reading</a>
+      <a class="btn alt" href="../music/index.html">Song Troll</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>26</b><span>links</span></div>
+      <div class="stat"><b>26</b><span>publications</span></div>
+      <div class="stat"><b>7</b><span>sections</span></div>
+    </div>
   </div>
-  <nav class="tabs" aria-label="Sections">
-    <a class="tab is-active" href="../index.html" aria-current="page">Criticism</a>
-    <a class="tab" href="../music/index.html">New Music</a>
-  </nav>
-  <div class="nav">
-    <a class="nav-link" href="../index.html">&larr; Latest Issue</a>
-    <a class="nav-link" href="../archive/index.html">Full Archive</a>
-  </div>
-  <h1 class="hero">The <span class="pop">Feed</span></h1>
-  <p class="intro">A selection of recent writing from across the culture press.</p>
-  <span class="intro-byline">2026-10-10 — selected links</span>
-  <section class="section art">
-    <span class="stampnum">01</span>
-    <div class="section-head">
-      <span class="section-tag">Art</span>
-      <h2 class="section-title">Fine Art</h2>
-    </div>
-    <div class="entry" id="art-1">
-      <div class="entry-byline"><a class="entry-title" href="https://artishockrevista.com/2026/10/10/jun-martinez-entrevista/" target="_blank" rel="noopener">JUN MARTÍNEZ: “EL LUGAR QUE ANTES HABITABA AHORA HABITA EN MÍ”</a> by Alejandra Villasmil — Artishock</div>
 
-      <p>Desde Londres, el artista puertorriqueño Jun Martínez reflexiona sobre la distancia, la pertenencia y las tensiones entre belleza y violencia que atraviesan su pintura. En esta conversación, aborda cómo el paisaje de su isla natal persiste en su práctica y comparte las nuevas investigaciones sobre la vegetación del Caribe que comienzan a orientar su trabajo. La entrada JUN MARTÍNEZ: “EL LUGAR QUE…</p>
-    </div>
-    <div class="entry" id="art-2">
-      <div class="entry-byline"><a class="entry-title" href="https://hyperallergic.com/long-live-generation-6-7/" target="_blank" rel="noopener">Long Live Generation 6-7</a> by Hakim Bishara — Hyperallergic</div>
-
-      <p>Lucy Ives reviews the Krasner-Pollock show at The Met, the L train burlesque arrives in Manhattan, photos from the student protests in France, and an interview with outgoing Yaddo President Elaina Richardson.</p>
-    </div>
-    <div class="entry" id="art-3">
-      <div class="entry-byline"><a class="entry-title" href="https://www.artforum.com/columns/barry-schwabsky-on-the-life-of-rafael-ferrer-19332026-1234761177/" target="_blank" rel="noopener">How Rafael Ferrer Skewered the Art World</a> by Alexander Jovanovich — Artforum</div>
-
-      <p>Remembering Ferrer (1933–2026), whose scathing wit matched his exuberant inventiveness</p>
-    </div>
-    <div class="entry" id="art-4">
-      <div class="entry-byline"><a class="entry-title" href="https://www.artandobject.com/news/7-films-about-art-cozy-fall" target="_blank" rel="noopener">7 Films About Art to Cozy Up With This Fall</a> by chandra — Art &amp; Object</div>
-
-      <p>7 Films About Art to Cozy Up With This Fall chandra Fri, 10/09/2026 - 09:00 As the chill of fall sets in, you may find it more difficult to muster up the determination to get out and about. And yet, filmmakers continue to offer inspiration in the art world. You’ll find these seven films offer something to suit every taste. So settle into your comfy place and get your culture-fix from the comfort…</p>
-    </div>
+  <section id="art" aria-labelledby="h-art">
+    <h2 id="h-art">Fine Art</h2>
+    <ol class="rows">
+    <li class="row" id="art-1" style="--i:0">
+      <span class="n">01</span>
+      <div>
+        <h3><a href="https://artishockrevista.com/2026/10/10/jun-martinez-entrevista/" target="_blank" rel="noopener">JUN MARTÍNEZ: “EL LUGAR QUE ANTES HABITABA AHORA HABITA EN MÍ”</a></h3>
+        <p>Alejandra Villasmil · Artishock</p>
+      </div>
+      <a class="btn alt" href="https://artishockrevista.com/2026/10/10/jun-martinez-entrevista/" target="_blank" rel="noopener" aria-label="Read JUN MARTÍNEZ: “EL LUGAR QUE ANTES HABITABA AHORA HABITA EN MÍ”">Read</a>
+    </li>
+    <li class="row" id="art-2" style="--i:1">
+      <span class="n">02</span>
+      <div>
+        <h3><a href="https://hyperallergic.com/long-live-generation-6-7/" target="_blank" rel="noopener">Long Live Generation 6-7</a></h3>
+        <p>Hakim Bishara · Hyperallergic</p>
+      </div>
+      <a class="btn alt" href="https://hyperallergic.com/long-live-generation-6-7/" target="_blank" rel="noopener" aria-label="Read Long Live Generation 6-7">Read</a>
+    </li>
+    <li class="row" id="art-3" style="--i:2">
+      <span class="n">03</span>
+      <div>
+        <h3><a href="https://www.artforum.com/columns/barry-schwabsky-on-the-life-of-rafael-ferrer-19332026-1234761177/" target="_blank" rel="noopener">How Rafael Ferrer Skewered the Art World</a></h3>
+        <p>Alexander Jovanovich · Artforum</p>
+      </div>
+      <a class="btn alt" href="https://www.artforum.com/columns/barry-schwabsky-on-the-life-of-rafael-ferrer-19332026-1234761177/" target="_blank" rel="noopener" aria-label="Read How Rafael Ferrer Skewered the Art World">Read</a>
+    </li>
+    <li class="row" id="art-4" style="--i:3">
+      <span class="n">04</span>
+      <div>
+        <h3><a href="https://www.artandobject.com/news/7-films-about-art-cozy-fall" target="_blank" rel="noopener">7 Films About Art to Cozy Up With This Fall</a></h3>
+        <p>chandra · Art &amp; Object</p>
+      </div>
+      <a class="btn alt" href="https://www.artandobject.com/news/7-films-about-art-cozy-fall" target="_blank" rel="noopener" aria-label="Read 7 Films About Art to Cozy Up With This Fall">Read</a>
+    </li>
+    </ol>
   </section>
-  <section class="section film">
-    <span class="stampnum">02</span>
-    <div class="section-head">
-      <span class="section-tag">Film</span>
-      <h2 class="section-title">Film Criticism</h2>
-    </div>
-    <div class="entry" id="film-1">
-      <div class="entry-byline"><a class="entry-title" href="https://egyptianstreets.com/2026/10/10/how-digital-tools-are-transforming-egypts-heritage-preservation/" target="_blank" rel="noopener">How Digital Tools Are Transforming Egypt’s Heritage Preservation</a> by Nadine Tag — Egyptian Streets</div>
-
-      <p>Protecting cultural heritage is no longer a local matter or the responsibility of any single state, but a shared human responsibility that requires international cooperation between cultural, academic, and technology institutions, Ashraf El-Ezaby, secretary-general of Egypt’s Supreme Council of Culture, stated. On 9 September, he spoke before an audience of more than 300 experts and institutional…</p>
-    </div>
-    <div class="entry" id="film-2">
-      <div class="entry-byline"><a class="entry-title" href="https://vaguevisages.com/2026/10/10/animals-cast-netflix-movie-film-actors-characters/" target="_blank" rel="noopener">Know the Cast: ‘Animals’</a> by Q.V. Hough — Vague Visages</div>
-
-      <p>&#39;Animals&#39; Cast: A Vague Visages guide for every actor and character in Ben Affleck&#39;s 2026 Netflix movie. The post Know the Cast: ‘Animals’ appeared first on Vague Visages (Vawg-Vee-Sawj).</p>
-    </div>
-    <div class="entry" id="film-3">
-      <div class="entry-byline"><a class="entry-title" href="https://povmagazine.com/ceremony-wins-best-canadian-documentary-at-viff/" target="_blank" rel="noopener">Ceremony Wins Best Canadian Documentary at VIFF</a> by Pat Mullen — POV Magazine</div>
-
-      <p>Winners of the Vancouver International Film Festival (VIFF) awards for 2026 include Ceremony, directed by Banchi Hanuse, which took home top doc. The post Ceremony Wins Best Canadian Documentary at VIFF appeared first on POV Magazine.</p>
-    </div>
-    <div class="entry" id="film-4">
-      <div class="entry-byline"><a class="entry-title" href="https://philosophyinfilm.com/2026/10/08/the-death-of-robin-hood-2026-review/" target="_blank" rel="noopener">The Death of Robin Hood (2026) Review: Brutal but Strangely Dull</a> by Matthew Jones — Philosophy in Film</div>
-
-      <p>Spoilers for the ending of The Death of Robin Hood and The Uprising follow. I was ready for The Death The post The Death of Robin Hood (2026) Review: Brutal but Strangely Dull appeared first on Philosophy in Film.</p>
-    </div>
+  <section id="film" aria-labelledby="h-film">
+    <h2 id="h-film">Film</h2>
+    <ol class="rows">
+    <li class="row" id="film-1" style="--i:0">
+      <span class="n">01</span>
+      <div>
+        <h3><a href="https://egyptianstreets.com/2026/10/10/how-digital-tools-are-transforming-egypts-heritage-preservation/" target="_blank" rel="noopener">How Digital Tools Are Transforming Egypt’s Heritage Preservation</a></h3>
+        <p>Nadine Tag · Egyptian Streets</p>
+      </div>
+      <a class="btn alt" href="https://egyptianstreets.com/2026/10/10/how-digital-tools-are-transforming-egypts-heritage-preservation/" target="_blank" rel="noopener" aria-label="Read How Digital Tools Are Transforming Egypt’s Heritage Preservation">Read</a>
+    </li>
+    <li class="row" id="film-2" style="--i:1">
+      <span class="n">02</span>
+      <div>
+        <h3><a href="https://vaguevisages.com/2026/10/10/animals-cast-netflix-movie-film-actors-characters/" target="_blank" rel="noopener">Know the Cast: ‘Animals’</a></h3>
+        <p>Q.V. Hough · Vague Visages</p>
+      </div>
+      <a class="btn alt" href="https://vaguevisages.com/2026/10/10/animals-cast-netflix-movie-film-actors-characters/" target="_blank" rel="noopener" aria-label="Read Know the Cast: ‘Animals’">Read</a>
+    </li>
+    <li class="row" id="film-3" style="--i:2">
+      <span class="n">03</span>
+      <div>
+        <h3><a href="https://povmagazine.com/ceremony-wins-best-canadian-documentary-at-viff/" target="_blank" rel="noopener">Ceremony Wins Best Canadian Documentary at VIFF</a></h3>
+        <p>Pat Mullen · POV Magazine</p>
+      </div>
+      <a class="btn alt" href="https://povmagazine.com/ceremony-wins-best-canadian-documentary-at-viff/" target="_blank" rel="noopener" aria-label="Read Ceremony Wins Best Canadian Documentary at VIFF">Read</a>
+    </li>
+    <li class="row" id="film-4" style="--i:3">
+      <span class="n">04</span>
+      <div>
+        <h3><a href="https://philosophyinfilm.com/2026/10/08/the-death-of-robin-hood-2026-review/" target="_blank" rel="noopener">The Death of Robin Hood (2026) Review: Brutal but Strangely Dull</a></h3>
+        <p>Matthew Jones · Philosophy in Film</p>
+      </div>
+      <a class="btn alt" href="https://philosophyinfilm.com/2026/10/08/the-death-of-robin-hood-2026-review/" target="_blank" rel="noopener" aria-label="Read The Death of Robin Hood (2026) Review: Brutal but Strangely Dull">Read</a>
+    </li>
+    </ol>
   </section>
-  <section class="section tech">
-    <span class="stampnum">03</span>
-    <div class="section-head">
-      <span class="section-tag">Tech &amp; AI</span>
-      <h2 class="section-title">Tech &amp; AI</h2>
-    </div>
-    <div class="entry" id="tech-1">
-      <div class="entry-byline"><a class="entry-title" href="https://www.noemamag.com/does-claude-feel-the-whip" target="_blank" rel="noopener">Does Claude Feel The Whip?</a> by Yaniv Regev — Noema</div>
-
-      <p>The post Does Claude Feel The Whip? appeared first on NOEMA.</p>
-    </div>
-    <div class="entry" id="tech-2">
-      <div class="entry-byline"><a class="entry-title" href="https://pluralistic.net/2026/10/07/gouged/" target="_blank" rel="noopener">Pluralistic: Disloyalty (07 Oct 2026)</a> by Cory Doctorow — Pluralistic</div>
-
-      <p>Today&#39;s links Disloyalty: Air Canada&#39;s frequent flier fuckery. Hey look at this: Delights to delectate. Object permanence: Indie booksellers v internet; Coke pays dieticians to astroturf soda taxes; Voting in a voter-suppression state; Facebook v your use of Facebook. Upcoming appearances: Hudson, Calgary, Winnipeg, Paris, Vancouver, Victoria, Ottawa, Kilkenny, Sheffield, Oxford, Montreal. Recent…</p>
-    </div>
-    <div class="entry" id="tech-3">
-      <div class="entry-byline"><a class="entry-title" href="https://www.theverge.com/entertainment/1009309/distrokid-take-down-songs-umg-lawsuit" target="_blank" rel="noopener">DistroKid has been quietly taking down songs in response to UMG lawsuit</a> by Terrence O’Brien — The Verge</div>
-
-      <p>Artists are taking to social media to complain that DistroKid has unceremoniously removed their work without notice. Now DistroKid has confirmed to The Verge that the takedowns are a direct response to claims made by UMG. The label filed a lawsuit in September claiming that DistroKid has created an &quot;AI-slop pipeline.&quot; Artists are saying that […]</p>
-    </div>
-    <div class="entry" id="tech-4">
-      <div class="entry-byline"><a class="entry-title" href="https://www.wired.com/story/ai-is-getting-really-good-at-messing-with-cybercriminals/" target="_blank" rel="noopener">AI Is Getting Really Good at Messing With Cybercriminals</a> by Lily Hay Newman, Matt Burgess — Wired</div>
-
-      <p>Anti-cybercrime initiatives are increasingly using AI to scam the scammers by tricking them into talking to lifelike bots that they think are real victims.</p>
-    </div>
+  <section id="tech" aria-labelledby="h-tech">
+    <h2 id="h-tech">Tech &amp; AI</h2>
+    <ol class="rows">
+    <li class="row" id="tech-1" style="--i:0">
+      <span class="n">01</span>
+      <div>
+        <h3><a href="https://www.noemamag.com/does-claude-feel-the-whip" target="_blank" rel="noopener">Does Claude Feel The Whip?</a></h3>
+        <p>Yaniv Regev · Noema</p>
+      </div>
+      <a class="btn alt" href="https://www.noemamag.com/does-claude-feel-the-whip" target="_blank" rel="noopener" aria-label="Read Does Claude Feel The Whip?">Read</a>
+    </li>
+    <li class="row" id="tech-2" style="--i:1">
+      <span class="n">02</span>
+      <div>
+        <h3><a href="https://pluralistic.net/2026/10/07/gouged/" target="_blank" rel="noopener">Pluralistic: Disloyalty (07 Oct 2026)</a></h3>
+        <p>Cory Doctorow · Pluralistic</p>
+      </div>
+      <a class="btn alt" href="https://pluralistic.net/2026/10/07/gouged/" target="_blank" rel="noopener" aria-label="Read Pluralistic: Disloyalty (07 Oct 2026)">Read</a>
+    </li>
+    <li class="row" id="tech-3" style="--i:2">
+      <span class="n">03</span>
+      <div>
+        <h3><a href="https://www.theverge.com/entertainment/1009309/distrokid-take-down-songs-umg-lawsuit" target="_blank" rel="noopener">DistroKid has been quietly taking down songs in response to UMG lawsuit</a></h3>
+        <p>Terrence O’Brien · The Verge</p>
+      </div>
+      <a class="btn alt" href="https://www.theverge.com/entertainment/1009309/distrokid-take-down-songs-umg-lawsuit" target="_blank" rel="noopener" aria-label="Read DistroKid has been quietly taking down songs in response to UMG lawsuit">Read</a>
+    </li>
+    <li class="row" id="tech-4" style="--i:3">
+      <span class="n">04</span>
+      <div>
+        <h3><a href="https://www.wired.com/story/ai-is-getting-really-good-at-messing-with-cybercriminals/" target="_blank" rel="noopener">AI Is Getting Really Good at Messing With Cybercriminals</a></h3>
+        <p>Lily Hay Newman, Matt Burgess · Wired</p>
+      </div>
+      <a class="btn alt" href="https://www.wired.com/story/ai-is-getting-really-good-at-messing-with-cybercriminals/" target="_blank" rel="noopener" aria-label="Read AI Is Getting Really Good at Messing With Cybercriminals">Read</a>
+    </li>
+    </ol>
   </section>
-  <section class="section lit">
-    <span class="stampnum">04</span>
-    <div class="section-head">
-      <span class="section-tag">Sci-Fi / Fantasy</span>
-      <h2 class="section-title">Literary Reviews</h2>
-    </div>
-    <div class="entry" id="lit-1">
-      <div class="entry-byline"><a class="entry-title" href="https://reactormag.com/canadian-house-hippos-and-other-obscure-fauna/" target="_blank" rel="noopener">Canadian House Hippos and Other Obscure Fauna</a> by Sarah — Reactor</div>
-
-      <p>House Hippo infestations? Crocodiles in the Great Lakes?! The post Canadian House Hippos and Other Obscure Fauna appeared first on Reactor.</p>
-    </div>
-    <div class="entry" id="lit-2">
-      <div class="entry-byline"><a class="entry-title" href="https://wordpress.com/blog/2026/10/09/student-nonprofit-website/" target="_blank" rel="noopener">WordPress.com Education: How Two Design Students Built a Nonprofit’s Website</a> by Alvaro Gómez — Aotearoa NZ Review of Books</div>
-
-      <p>For their internship, two UDIT design students worked with Spanish nonprofit Odón Solar to plan, design, and launch a WordPress.com website. The project gave them a real client, a portfolio piece, and hands-on experience with WordPress Studio.</p>
-    </div>
-    <div class="entry" id="lit-3">
-      <div class="entry-byline"><a class="entry-title" href="https://www.eurozine.com/czech-german-conversations/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=czech-german-conversations" target="_blank" rel="noopener">Czech-German conversations</a> by Simon Garnett — Eurozine</div>
-
-      <p>Books and their readers in a changing industry; the crisis of public broadcasting; social memory and the task of historians; Russian emigrés in 1920s Prague.</p>
-    </div>
-    <div class="entry" id="lit-4">
-      <div class="entry-byline"><a class="entry-title" href="https://clereviewofbooks.com/three-poems-talon/" target="_blank" rel="noopener">Three Poems</a> by Bridget Talone — Cleveland Review of Books</div>
-
-      <p>Image of the pig, whose head is altered by a line of platinum magic, zig zag line which has the teeth of the shark, sharkish teeth of the heart&#39;s work medically transcribed. The post Three Poems appeared first on Cleveland Review of Books.</p>
-    </div>
+  <section id="lit" aria-labelledby="h-lit">
+    <h2 id="h-lit">Books</h2>
+    <ol class="rows">
+    <li class="row" id="lit-1" style="--i:0">
+      <span class="n">01</span>
+      <div>
+        <h3><a href="https://reactormag.com/canadian-house-hippos-and-other-obscure-fauna/" target="_blank" rel="noopener">Canadian House Hippos and Other Obscure Fauna</a></h3>
+        <p>Sarah · Reactor</p>
+      </div>
+      <a class="btn alt" href="https://reactormag.com/canadian-house-hippos-and-other-obscure-fauna/" target="_blank" rel="noopener" aria-label="Read Canadian House Hippos and Other Obscure Fauna">Read</a>
+    </li>
+    <li class="row" id="lit-2" style="--i:1">
+      <span class="n">02</span>
+      <div>
+        <h3><a href="https://wordpress.com/blog/2026/10/09/student-nonprofit-website/" target="_blank" rel="noopener">WordPress.com Education: How Two Design Students Built a Nonprofit’s Website</a></h3>
+        <p>Alvaro Gómez · Aotearoa NZ Review of Books</p>
+      </div>
+      <a class="btn alt" href="https://wordpress.com/blog/2026/10/09/student-nonprofit-website/" target="_blank" rel="noopener" aria-label="Read WordPress.com Education: How Two Design Students Built a Nonprofit’s Website">Read</a>
+    </li>
+    <li class="row" id="lit-3" style="--i:2">
+      <span class="n">03</span>
+      <div>
+        <h3><a href="https://www.eurozine.com/czech-german-conversations/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=czech-german-conversations" target="_blank" rel="noopener">Czech-German conversations</a></h3>
+        <p>Simon Garnett · Eurozine</p>
+      </div>
+      <a class="btn alt" href="https://www.eurozine.com/czech-german-conversations/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=czech-german-conversations" target="_blank" rel="noopener" aria-label="Read Czech-German conversations">Read</a>
+    </li>
+    <li class="row" id="lit-4" style="--i:3">
+      <span class="n">04</span>
+      <div>
+        <h3><a href="https://clereviewofbooks.com/three-poems-talon/" target="_blank" rel="noopener">Three Poems</a></h3>
+        <p>Bridget Talone · Cleveland Review of Books</p>
+      </div>
+      <a class="btn alt" href="https://clereviewofbooks.com/three-poems-talon/" target="_blank" rel="noopener" aria-label="Read Three Poems">Read</a>
+    </li>
+    </ol>
   </section>
-  <section class="section music">
-    <span class="stampnum">05</span>
-    <div class="section-head">
-      <span class="section-tag">Music</span>
-      <h2 class="section-title">Music Criticism</h2>
-    </div>
-    <div class="entry" id="music-1">
-      <div class="entry-byline"><a class="entry-title" href="https://www.popmatters.com/duane-betts-concert-2026" target="_blank" rel="noopener">Duane Betts Blazes a Fresh Trail on the Isle of Hope Tour</a> by Greg M. Schwartz — PopMatters</div>
-
-      <p>Duane Betts&#39; sound conjures a musical sanctuary, highlighted in a festive two-night stand at the Bay Area&#39;s Sweetwater Music Hall.</p>
-    </div>
-    <div class="entry" id="music-2">
-      <div class="entry-byline"><a class="entry-title" href="https://consequence.net/2026/10/barry-manilows-vegas-comeback-derailed-by-bronchitis/" target="_blank" rel="noopener">Barry Manilow’s Vegas Comeback Derailed by Bronchitis</a> by Alex Young — Consequence</div>
-
-      <p>The 83-year-old singer was forced to cut short his concert in Las Vegas on Friday night after just two songs and subsequently canceled his scheduled Saturday night performance. Barry Manilow’s Vegas Comeback Derailed by Bronchitis Alex Young</p>
-    </div>
-    <div class="entry" id="music-3">
-      <div class="entry-byline"><a class="entry-title" href="https://stereogum.com/2514217/charli-xcx-brings-out-tinashe-at-acl/news/" target="_blank" rel="noopener">Charli XCX Brings Out Tinashe At ACL</a> by Danielle Chelosky — Stereogum</div>
-
-      <p>Charli XCX&#39;s Music, Fashion, Film and Tinashe&#39;s Popstar are easily two of the best albums of the year. Last weekend, Charli brought out Troye Sivan for her Austin City Limits headlining set. Last night for the second weekend of ACL, she brought out Tinashe, the subject of Stereogum’s recent cover story. The post Charli XCX Brings Out Tinashe At ACL appeared first on Stereogum.</p>
-    </div>
-    <div class="entry" id="music-4">
-      <div class="entry-byline"><a class="entry-title" href="https://www.theaureview.com/watch/trailer-exorcist-martyrs/" target="_blank" rel="noopener">Darkness must be hunted in the first trailer for Mike Flanagan’s The Exorcist: Martyrs</a> by Peter Gray — The AU Review</div>
-
-      <p>Mike Flanagan is no stranger to exploring the darker corners of the human psyche, but with The Exorcist: Martyrs, the acclaimed filmmaker is stepping into one of horror cinema’s most iconic franchises. And judging by the newly released trailer, he’s bringing his particular brand of psychological unease to a story where the horrors of the...</p>
-    </div>
+  <section id="music" aria-labelledby="h-music">
+    <h2 id="h-music">Music Criticism</h2>
+    <ol class="rows">
+    <li class="row" id="music-1" style="--i:0">
+      <span class="n">01</span>
+      <div>
+        <h3><a href="https://www.popmatters.com/duane-betts-concert-2026" target="_blank" rel="noopener">Duane Betts Blazes a Fresh Trail on the Isle of Hope Tour</a></h3>
+        <p>Greg M. Schwartz · PopMatters</p>
+      </div>
+      <a class="btn alt" href="https://www.popmatters.com/duane-betts-concert-2026" target="_blank" rel="noopener" aria-label="Read Duane Betts Blazes a Fresh Trail on the Isle of Hope Tour">Read</a>
+    </li>
+    <li class="row" id="music-2" style="--i:1">
+      <span class="n">02</span>
+      <div>
+        <h3><a href="https://consequence.net/2026/10/barry-manilows-vegas-comeback-derailed-by-bronchitis/" target="_blank" rel="noopener">Barry Manilow’s Vegas Comeback Derailed by Bronchitis</a></h3>
+        <p>Alex Young · Consequence</p>
+      </div>
+      <a class="btn alt" href="https://consequence.net/2026/10/barry-manilows-vegas-comeback-derailed-by-bronchitis/" target="_blank" rel="noopener" aria-label="Read Barry Manilow’s Vegas Comeback Derailed by Bronchitis">Read</a>
+    </li>
+    <li class="row" id="music-3" style="--i:2">
+      <span class="n">03</span>
+      <div>
+        <h3><a href="https://stereogum.com/2514217/charli-xcx-brings-out-tinashe-at-acl/news/" target="_blank" rel="noopener">Charli XCX Brings Out Tinashe At ACL</a></h3>
+        <p>Danielle Chelosky · Stereogum</p>
+      </div>
+      <a class="btn alt" href="https://stereogum.com/2514217/charli-xcx-brings-out-tinashe-at-acl/news/" target="_blank" rel="noopener" aria-label="Read Charli XCX Brings Out Tinashe At ACL">Read</a>
+    </li>
+    <li class="row" id="music-4" style="--i:3">
+      <span class="n">04</span>
+      <div>
+        <h3><a href="https://www.theaureview.com/watch/trailer-exorcist-martyrs/" target="_blank" rel="noopener">Darkness must be hunted in the first trailer for Mike Flanagan’s The Exorcist: Martyrs</a></h3>
+        <p>Peter Gray · The AU Review</p>
+      </div>
+      <a class="btn alt" href="https://www.theaureview.com/watch/trailer-exorcist-martyrs/" target="_blank" rel="noopener" aria-label="Read Darkness must be hunted in the first trailer for Mike Flanagan’s The Exorcist: Martyrs">Read</a>
+    </li>
+    </ol>
   </section>
-  <section class="section design">
-    <span class="stampnum">06</span>
-    <div class="section-head">
-      <span class="section-tag">Design</span>
-      <h2 class="section-title">Design</h2>
-    </div>
-    <div class="entry" id="design-1">
-      <div class="entry-byline"><a class="entry-title" href="https://www.yankodesign.com/2026/10/10/the-corner-bound-notebook-without-the-wrist-digging-problem/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=the-corner-bound-notebook-without-the-wrist-digging-problem" target="_blank" rel="noopener">The Corner-Bound Notebook Without the Wrist-Digging Problem</a> by Ida Torres — Yanko Design</div>
-
-      <p>The Corner-Bound Notebook Without the Wrist-Digging ProblemAs a certified stationery hoarder (if there were an actual certification for that), I own all kinds of notebooks: hardcover, softcover, A5, A6, dotted, lined,...</p>
-    </div>
-    <div class="entry" id="design-2">
-      <div class="entry-byline"><a class="entry-title" href="https://www.archdaily.com/1186467/casa-mg-startup-architettura" target="_blank" rel="noopener">CASA MG / Startup Architettura</a> by Nina Vuga — ArchDaily</div>
-
-      <p>Located within a 1930s residential building, Casa MG reinterprets and elevates some of the period&#39;s most distinctive and iconic architectural features, making them a recurring design language at the heart of the apartment&#39;s spatial reorganization.</p>
-    </div>
-    <div class="entry" id="design-3">
-      <div class="entry-byline"><a class="entry-title" href="https://archinect.com/firms/project/2495309/california-house/150569087" target="_blank" rel="noopener">California House by GLUCK+</a> by gluck — Archinect</div>
-
-      <p>California House’s site is spectacular, a steep north-facing hillside with unobstructed views of the San Fernando Valley and the mountains. Building on the site, long considered unbuildable, presented two challenges: first, to minimize the impact of the house on the landscape and second, to create sufficient flat area to be comfortable for outdoor activities. The solution—a contemporary nod to…</p>
-    </div>
-    <div class="entry" id="design-4">
-      <div class="entry-byline"><a class="entry-title" href="https://design-milk.com/freitag-reference-collection/" target="_blank" rel="noopener">Freitag Turns Used Truck Tarps Into a New Kind of Luxury</a> by Justin Kirkland — Design Milk</div>
-
-      <p>The new Reference collection pairs one-of-a-kind patina with streamlined silhouettes, unexpected industrial details, and repair kits designed to extend each bag’s life</p>
-    </div>
+  <section id="design" aria-labelledby="h-design">
+    <h2 id="h-design">Design</h2>
+    <ol class="rows">
+    <li class="row" id="design-1" style="--i:0">
+      <span class="n">01</span>
+      <div>
+        <h3><a href="https://www.yankodesign.com/2026/10/10/the-corner-bound-notebook-without-the-wrist-digging-problem/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=the-corner-bound-notebook-without-the-wrist-digging-problem" target="_blank" rel="noopener">The Corner-Bound Notebook Without the Wrist-Digging Problem</a></h3>
+        <p>Ida Torres · Yanko Design</p>
+      </div>
+      <a class="btn alt" href="https://www.yankodesign.com/2026/10/10/the-corner-bound-notebook-without-the-wrist-digging-problem/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=the-corner-bound-notebook-without-the-wrist-digging-problem" target="_blank" rel="noopener" aria-label="Read The Corner-Bound Notebook Without the Wrist-Digging Problem">Read</a>
+    </li>
+    <li class="row" id="design-2" style="--i:1">
+      <span class="n">02</span>
+      <div>
+        <h3><a href="https://www.archdaily.com/1186467/casa-mg-startup-architettura" target="_blank" rel="noopener">CASA MG / Startup Architettura</a></h3>
+        <p>Nina Vuga · ArchDaily</p>
+      </div>
+      <a class="btn alt" href="https://www.archdaily.com/1186467/casa-mg-startup-architettura" target="_blank" rel="noopener" aria-label="Read CASA MG / Startup Architettura">Read</a>
+    </li>
+    <li class="row" id="design-3" style="--i:2">
+      <span class="n">03</span>
+      <div>
+        <h3><a href="https://archinect.com/firms/project/2495309/california-house/150569087" target="_blank" rel="noopener">California House by GLUCK+</a></h3>
+        <p>gluck · Archinect</p>
+      </div>
+      <a class="btn alt" href="https://archinect.com/firms/project/2495309/california-house/150569087" target="_blank" rel="noopener" aria-label="Read California House by GLUCK+">Read</a>
+    </li>
+    <li class="row" id="design-4" style="--i:3">
+      <span class="n">04</span>
+      <div>
+        <h3><a href="https://design-milk.com/freitag-reference-collection/" target="_blank" rel="noopener">Freitag Turns Used Truck Tarps Into a New Kind of Luxury</a></h3>
+        <p>Justin Kirkland · Design Milk</p>
+      </div>
+      <a class="btn alt" href="https://design-milk.com/freitag-reference-collection/" target="_blank" rel="noopener" aria-label="Read Freitag Turns Used Truck Tarps Into a New Kind of Luxury">Read</a>
+    </li>
+    </ol>
   </section>
-  <section class="section fashion">
-    <span class="stampnum">07</span>
-    <div class="section-head">
-      <span class="section-tag">Men&#39;s Fashion</span>
-      <h2 class="section-title">Men&#39;s Fashion</h2>
-    </div>
-    <div class="entry" id="fashion-1">
-      <div class="entry-byline"><a class="entry-title" href="https://www.highsnobiety.com/p/nike-air-max-90-triple-black-leather/" target="_blank" rel="noopener">Nike’s All-Black Air Maxes Wears a Slick Leather Puffer Jacket</a> — Highsnobiety</div>
-
-      <p>Nike&#39;s classic Air Max 90 sneaker slips into a nice padded leather look, resulting in a super-cozy &amp; stylish take on the model.</p>
-    </div>
-    <div class="entry" id="fashion-2">
-      <div class="entry-byline"><a class="entry-title" href="https://www.drapersonline.com/insight/comment/tom-joule-our-mission-was-clear-rebuild-the-trust-of-our-trade-accounts" target="_blank" rel="noopener">Tom Joule: ‘Our mission was clear – rebuild the trust of our trade accounts’</a> by Emma Finamore — Drapers</div>
-
-      <p>Drapers Tom Joule: ‘Our mission was clear – rebuild the trust of our trade accounts’ Tom Joule, founder and chief brand officer of Joules, reveals his stratgies for reviving the business, almost four years after he bought it out of administration with Next. The post Tom Joule: ‘Our mission was clear – rebuild the trust of our trade accounts’ appeared first on Drapers.</p>
-    </div>
+  <section id="fashion" aria-labelledby="h-fashion">
+    <h2 id="h-fashion">Men&#39;s Fashion</h2>
+    <ol class="rows">
+    <li class="row" id="fashion-1" style="--i:0">
+      <span class="n">01</span>
+      <div>
+        <h3><a href="https://www.highsnobiety.com/p/nike-air-max-90-triple-black-leather/" target="_blank" rel="noopener">Nike’s All-Black Air Maxes Wears a Slick Leather Puffer Jacket</a></h3>
+        <p>Highsnobiety</p>
+      </div>
+      <a class="btn alt" href="https://www.highsnobiety.com/p/nike-air-max-90-triple-black-leather/" target="_blank" rel="noopener" aria-label="Read Nike’s All-Black Air Maxes Wears a Slick Leather Puffer Jacket">Read</a>
+    </li>
+    <li class="row" id="fashion-2" style="--i:1">
+      <span class="n">02</span>
+      <div>
+        <h3><a href="https://www.drapersonline.com/insight/comment/tom-joule-our-mission-was-clear-rebuild-the-trust-of-our-trade-accounts" target="_blank" rel="noopener">Tom Joule: ‘Our mission was clear – rebuild the trust of our trade accounts’</a></h3>
+        <p>Emma Finamore · Drapers</p>
+      </div>
+      <a class="btn alt" href="https://www.drapersonline.com/insight/comment/tom-joule-our-mission-was-clear-rebuild-the-trust-of-our-trade-accounts" target="_blank" rel="noopener" aria-label="Read Tom Joule: ‘Our mission was clear – rebuild the trust of our trade accounts’">Read</a>
+    </li>
+    </ol>
   </section>
   <footer>
-    <span>Algorithm</span>
-    <span>Issue No. 35 — 10 Oct 2026</span>
+    <div class="fine">
+      <div><p>Troller, Issue 35, week of 10 October 2026. Every link was read in full before it was picked.</p>
+        <p><a href="../archive/index.html">Every issue</a></p></div>
+      <p><a href="#top">Back to top</a></p>
+    </div>
+    <p class="big" aria-hidden="true">happy reading</p>
   </footer>
 </div>
-</div>
+<script>
+(function(){
+  var sw = document.getElementById('sw-calm');
+  if (!sw) return;
+  function load(){ try { return JSON.parse(localStorage.getItem('troller-ui') || '{}') || {}; } catch (e) { return {}; } }
+  function paint(){ var on = document.documentElement.hasAttribute('data-calm'); sw.setAttribute('aria-pressed', on ? 'true' : 'false'); }
+  sw.addEventListener('click', function(){
+    var ui = load(); ui.calm = !document.documentElement.hasAttribute('data-calm');
+    if (ui.calm) document.documentElement.setAttribute('data-calm', ''); else document.documentElement.removeAttribute('data-calm');
+    try { localStorage.setItem('troller-ui', JSON.stringify(ui)); } catch (e) {}
+    paint();
+  });
+  paint();
+})();</script>
 
 </body>
 </html>

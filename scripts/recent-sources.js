@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Algorithm — recently-used and never-used publications.
+ * Troller — recently-used and never-used publications.
  *
  * Prints a per-category list of publications that have run recently (to
  * rest), AND publications that have never run at all (to reach for), for

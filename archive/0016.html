@@ -2,352 +2,418 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="color-scheme" content="dark">
-<meta name="theme-color" content="#0A0A0A">
-<title>Algorithm — Issue No. 16 — 23 Sep 2026</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#F1EEE9">
+<title>Troller — Issue 16</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Source+Serif+4:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>try{var u=JSON.parse(localStorage.getItem('troller-ui')||'{}');if(u.calm)document.documentElement.setAttribute('data-calm','');}catch(e){}</script>
 <style>
-  html, body{ margin:0; padding:0; height:100%; background-color:#0A0A0A; }
-  *{box-sizing:border-box;}
-  body{
-    min-height:100dvh;
-    color:#FAFAF7;
-    font-family:'Source Serif 4', Georgia, serif;
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-  }
-  .page{ background-color:#0A0A0A; min-height:100dvh; }
-  a{ color:inherit; }
-  .wrap{max-width:720px; margin:0 auto; padding:44px 24px 90px; position:relative;}
-  .masthead{
-    display:flex; justify-content:space-between; align-items:flex-end;
-    border-bottom:4px solid #FAFAF7;
-    padding-bottom:14px; margin-bottom:24px;
-  }
-  .mast-title{
-    font-family:'Archivo Black', sans-serif;
-    font-size:clamp(26px,6vw,34px);
-    letter-spacing:-0.01em;
-    text-transform:uppercase;
-    color:#FAFAF7;
-    text-decoration:none;
-  }
-  .stamp{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:11px; letter-spacing:0.1em; text-transform:uppercase;
-    color:#0A0A0A; background:#FF1F3D;
-    padding:5px 10px; border-radius:2px;
-    transform:rotate(-3deg); display:inline-block; font-weight:600;
-    white-space:nowrap;
-  }
-  .tabs{display:flex; gap:22px; margin:-8px 0 26px; font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.1em; text-transform:uppercase;}
-  .tab{color:#A6A29A; text-decoration:none; padding-bottom:6px; border-bottom:2px solid transparent;}
-  .tab:hover{color:#FAFAF7;}
-  .tab.is-active{color:#FAFAF7; border-bottom-color:#FF1F3D;}
-  .nav{display:flex; justify-content:space-between; align-items:center; gap:16px; margin-bottom:40px; flex-wrap:wrap;}
-  .nav-link{font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:#FAFAF7; text-decoration:none; border:1px solid rgba(250,250,247,0.35); padding:9px 14px; border-radius:2px; white-space:nowrap;}
-  .nav-link:hover{border-color:#FF1F3D; color:#FF1F3D;}
-  .search-wrap{position:relative; flex:1; min-width:220px;}
-  .search-input{width:100%; background:#151513; border:1px solid rgba(250,250,247,0.3); color:#FAFAF7; font-family:'IBM Plex Mono', monospace; font-size:13px; padding:10px 12px; border-radius:2px; outline:none;}
-  .search-input::placeholder{color:#6B6860;}
-  .search-input:focus{border-color:#FF1F3D;}
-  .search-results{position:absolute; top:calc(100% + 6px); left:0; right:0; background:#111110; border:1px solid rgba(250,250,247,0.25); border-radius:4px; max-height:380px; overflow-y:auto; z-index:20; display:none;}
-  .search-results.active{display:block;}
-  .search-result{display:block; padding:10px 12px; border-bottom:1px solid rgba(250,250,247,0.12); text-decoration:none;}
-  .search-result:last-child{border-bottom:none;}
-  .search-result:hover{background:rgba(255,31,61,0.08);}
-  .sr-tag{font-family:'IBM Plex Mono', monospace; font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:#A6A29A;}
-  .sr-title{display:block; font-style:italic; color:#FAFAF7; margin:2px 0; font-size:14px;}
-  .sr-meta{font-family:'IBM Plex Mono', monospace; font-size:10.5px; color:#A6A29A;}
-  .search-empty{padding:14px 12px; font-family:'IBM Plex Mono', monospace; font-size:12.5px; color:#A6A29A;}
-  h1.hero{
-    font-family:'Anton', sans-serif;
-    font-weight:400;
-    font-size:clamp(42px,10vw,72px);
-    line-height:0.94;
-    text-transform:uppercase;
-    margin:0 0 22px;
-    color:#FAFAF7;
-  }
-  h1.hero .pop{color:#FF1F3D;}
-  .intro{font-size:17px; color:#EDEAE2; max-width:56ch; margin-bottom:10px;}
-  .intro-byline{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:11px; letter-spacing:0.08em; text-transform:uppercase;
-    color:#A6A29A;
-    margin-top:16px; margin-bottom:54px; display:block;
-    border-left:2px solid #FF1F3D; padding-left:10px;
-  }
-  .section{position:relative; margin-bottom:50px; padding-left:56px;}
-  .section:last-of-type{margin-bottom:0;}
-  .stampnum{
-    position:absolute; left:0; top:0;
-    width:42px; height:42px;
-    border:2px solid #FAFAF7;
-    border-radius:50%;
-    display:flex; align-items:center; justify-content:center;
-    font-family:'Archivo Black', sans-serif;
-    font-size:15px; color:#FAFAF7;
-    transform:rotate(-6deg);
-  }
-  .art .stampnum{border-color:#C9A24B; color:#C9A24B;}
-  .film .stampnum{border-color:#FF5B4A; color:#FF5B4A;}
-  .tech .stampnum{border-color:#3FE0D0; color:#3FE0D0;}
-  .lit .stampnum{border-color:#B39DFF; color:#B39DFF;}
-  .music .stampnum{border-color:#FF5FA8; color:#FF5FA8;}
-  .design .stampnum{border-color:#FFD23F; color:#FFD23F;}
-  .fashion .stampnum{border-color:#FAFAF7; color:#FAFAF7;}
-  .section-head{display:flex; align-items:center; gap:12px; margin-bottom:18px; flex-wrap:wrap;}
-  .section-tag{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:12px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase;
-    color:#0A0A0A;
-    padding:6px 11px; border-radius:2px;
-  }
-  .art .section-tag{background:#C9A24B;}
-  .film .section-tag{background:#FF5B4A;}
-  .tech .section-tag{background:#3FE0D0;}
-  .lit .section-tag{background:#B39DFF;}
-  .music .section-tag{background:#FF5FA8;}
-  .design .section-tag{background:#FFD23F;}
-  .fashion .section-tag{background:#FAFAF7;}
-  .section-title{
-    font-family:'Archivo Black', sans-serif;
-    font-size:24px; text-transform:uppercase; letter-spacing:0.01em;
-    color:#FAFAF7;
-  }
-  .entry{margin-bottom:24px; padding-bottom:24px; border-bottom:1px solid rgba(250,250,247,0.16); scroll-margin-top:24px;}
-  .entry:last-child{border-bottom:none; margin-bottom:0; padding-bottom:0;}
-  .entry-byline{font-family:'IBM Plex Mono', monospace; font-size:12px; color:#A6A29A; margin-bottom:8px;}
-  .entry-title{font-weight:500; font-style:italic; color:#FAFAF7; text-decoration:underline; text-decoration-color:rgba(250,250,247,0.35); text-underline-offset:3px;}
-  .entry-title:hover{text-decoration-color:#FF1F3D;}
-  .entry p{margin:0 0 10px; font-size:16px; color:#EDEAE2;}
-  .entry .why{font-size:14.5px; color:#A6A29A; font-style:italic;}
-  .entry .why::before{content:"— ";}
-  .issue-list{list-style:none; margin:0; padding:0;}
-  .issue-card{display:block; text-decoration:none; padding:22px 0; border-bottom:1px solid rgba(250,250,247,0.16);}
-  .issue-card:first-child{padding-top:0;}
-  .issue-card:hover .issue-headline{ text-decoration-color:#FF1F3D; }
-  .issue-meta{font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:#A6A29A; margin-bottom:8px;}
-  .issue-meta .num{color:#FF1F3D;}
-  .issue-headline{font-family:'Archivo Black', sans-serif; font-size:22px; text-transform:uppercase; letter-spacing:0.01em; color:#FAFAF7; text-decoration:underline; text-decoration-color:rgba(250,250,247,0.35); text-underline-offset:4px; display:inline-block; margin-bottom:8px;}
-  .issue-desc{font-size:15px; color:#A6A29A; max-width:60ch; margin:0;}
-  footer{
-    margin-top:64px; padding-top:20px; border-top:1px solid rgba(250,250,247,0.16);
-    display:flex; justify-content:space-between; gap:12px;
-    font-family:'IBM Plex Mono', monospace; font-size:10.5px;
-    letter-spacing:0.06em; color:#A6A29A; text-transform:uppercase;
-  }
-  @media (max-width:520px){
-    .wrap{padding:30px 16px 70px;}
-    .section{padding-left:48px;}
-    .stampnum{width:36px; height:36px; font-size:13px;}
-    .section-title{font-size:20px;}
-    .nav{flex-direction:column; align-items:stretch;}
-  }
+:root {
+  --bg: #F1EEE9;
+  --surface: #FFFFFF;
+  --ink: #3C3C3C;
+  --muted: #6B665F;
+  --line: #D7D1C7;
+  --sand: #CDC0B0;
+  --yellow: #FFE500;
+  --yellow-ink: #1E1E1E;
+  --btn: #3C3C3C;
+  --btn-ink: #FFFFFF;
+  --sleeve-s: 26%;
+  --sleeve-l: 78%;
+  --font: "Switzer", "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
+  color-scheme: light;
+}
+html { scroll-behavior: smooth; }
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font); font-size: 17px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+
+/* calm mode: no motion */
+:root[data-calm] *, :root[data-calm] *::before, :root[data-calm] *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+:root[data-calm] mark { background-size: 100% 100% !important; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; scroll-behavior: auto !important; } mark { background-size: 100% 100% !important; } }
+
+/* top bar */
+.bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding: 22px 0; }
+.mark { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.15rem; letter-spacing: -0.02em; text-decoration: none; }
+.mark i { width: 14px; height: 14px; background: var(--yellow); display: inline-block; }
+.nav { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; font-size: 0.95rem; }
+.nav a { text-decoration: none; }
+.nav a:hover, .nav a[aria-current] { text-decoration: underline; text-underline-offset: 4px; }
+.nav a[aria-current] { text-decoration-thickness: 2px; text-decoration-color: var(--ink); }
+.sw { display: inline-flex; align-items: center; gap: 8px; padding: 0; border: 0; background: none; color: var(--ink); font: 500 0.88rem var(--font); cursor: pointer; }
+.sw .box { width: 34px; height: 18px; border: 1.5px solid var(--ink); position: relative; flex: none; }
+.sw .box::after { content: ""; position: absolute; top: 2px; left: 2px; width: 11px; height: 11px; background: var(--ink); transition: transform 0.18s ease; }
+.sw[aria-pressed="true"] .box { background: var(--yellow); border-color: var(--yellow-ink); }
+.sw[aria-pressed="true"] .box::after { transform: translateX(16px); background: var(--yellow-ink); }
+
+/* hero */
+.hero { padding: 72px 0 56px; border-top: 1px solid var(--line); }
+.eyebrow { margin: 0 0 22px; color: var(--muted); font-size: 0.95rem; }
+h1 { margin: 0 0 28px; font-weight: 500; font-size: clamp(3.6rem, 13vw, 9rem); line-height: 0.95; letter-spacing: -0.045em; }
+mark {
+  background-image: linear-gradient(var(--yellow), var(--yellow)); background-repeat: no-repeat; background-size: 100% 100%;
+  background-color: transparent; color: var(--yellow-ink); padding: 0 0.12em;
+  animation: sweep 0.9s 0.45s cubic-bezier(.2,.7,.2,1) both;
+}
+@keyframes sweep { from { background-size: 0% 100%; } to { background-size: 100% 100%; } }
+@keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+.hero > * { animation: rise 0.75s cubic-bezier(.2,.7,.2,1) both; animation-delay: calc(var(--i, 0) * 90ms); }
+.hero > :nth-child(1) { --i: 0; } .hero > :nth-child(2) { --i: 1; } .hero > :nth-child(3) { --i: 2; } .hero > :nth-child(4) { --i: 3; } .hero > :nth-child(5) { --i: 4; }
+.hero p.sub { max-width: 52ch; color: var(--muted); font-size: 1.1rem; margin: 0 0 32px; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn {
+  display: inline-block; padding: 14px 24px; border: 1.5px solid var(--btn);
+  background: var(--btn); color: var(--btn-ink);
+  font: 600 0.95rem var(--font); text-decoration: none; cursor: pointer; border-radius: 0;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.btn:hover { background: transparent; color: var(--ink); }
+.btn.alt { background: var(--surface); color: var(--ink); border-color: var(--ink); }
+.btn.alt:hover { background: var(--ink); color: var(--bg); }
+.btn:disabled { opacity: 0.5; cursor: default; }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 56px; border-top: 1px solid var(--ink); }
+.stat { padding: 18px 0 0; }
+.stat b { display: block; font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 500; letter-spacing: -0.03em; line-height: 1.05; }
+.stat span { color: var(--muted); font-size: 0.92rem; }
+
+/* sections */
+section { padding: 64px 0; border-top: 1px solid var(--line); }
+h2 { margin: 0 0 32px; font-weight: 500; font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1.02; letter-spacing: -0.035em; }
+h2 small { display: block; margin-top: 10px; font-size: 0.95rem; letter-spacing: 0; color: var(--muted); font-weight: 400; }
+
+/* rows: issue entries, archive issues, music sources */
+.rows { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--ink); }
+.row { display: grid; grid-template-columns: 56px 1fr auto; gap: 8px 20px; align-items: center; padding: 22px 0; border-bottom: 1px solid var(--line); animation: rise 0.6s cubic-bezier(.2,.7,.2,1) both; animation-delay: calc(var(--i, 0) * 50ms); scroll-margin-top: 24px; }
+.row .n { color: var(--muted); font-size: 0.95rem; }
+.row h3 { margin: 0; font-weight: 500; font-size: 1.5rem; line-height: 1.2; letter-spacing: -0.02em; }
+.row h3 a { text-decoration: none; }
+.row h3 a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.row p { margin: 4px 0 0; color: var(--muted); font-size: 0.95rem; }
+.row p.note { color: var(--ink); max-width: 64ch; }
+.row .btn { padding: 9px 18px; font-size: 0.88rem; }
+
+/* search */
+.search-wrap { position: relative; margin: 0 0 28px; }
+.search { width: 100%; min-width: 0; padding: 12px 14px; border: 1.5px solid var(--line); border-radius: 0; background: var(--surface); color: var(--ink); font: 400 0.95rem var(--font); }
+.search:focus { border-color: var(--ink); outline: none; }
+.search-results { position: absolute; top: calc(100% + 6px); left: 0; right: 0; background: var(--surface); border: 1.5px solid var(--ink); max-height: 420px; overflow-y: auto; z-index: 20; display: none; }
+.search-results.active { display: block; }
+.search-result { display: block; padding: 12px 14px; border-bottom: 1px solid var(--line); text-decoration: none; }
+.search-result:last-child { border-bottom: none; }
+.search-result:hover { background: var(--bg); }
+.sr-tag { font-size: 0.8rem; color: var(--muted); }
+.sr-title { display: block; font-weight: 500; margin: 2px 0; }
+.sr-meta { font-size: 0.85rem; color: var(--muted); }
+.search-empty { padding: 14px; color: var(--muted); font-size: 0.95rem; }
+
+/* footer */
+footer { padding: 56px 0 40px; border-top: 1px solid var(--line); }
+.fine { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 24px; color: var(--muted); font-size: 0.9rem; }
+.fine p { margin: 0 0 8px; max-width: 58ch; }
+.fine a { text-underline-offset: 3px; }
+.big { margin: 40px 0 0; font-weight: 500; font-size: clamp(3rem, 15vw, 11rem); line-height: 0.9; letter-spacing: -0.05em; color: var(--sand); user-select: none; }
+
+@media (max-width: 640px) {
+  .wrap { padding: 0 16px; }
+  .hero { padding: 48px 0 40px; }
+  section { padding: 48px 0; }
+  .row { grid-template-columns: 36px 1fr; }
+  .row .btn { grid-column: 2; justify-self: start; }
+  .row h3 { font-size: 1.25rem; }
+}
 </style>
 </head>
 <body data-root="../">
-<div class="page">
 <div class="wrap">
-  <div class="masthead">
-    <a class="mast-title" href="../index.html">Algorithm</a>
-    <span class="stamp">Issue No. 16</span>
+  <header class="bar">
+    <a class="mark" href="../index.html"><i aria-hidden="true"></i>Troller</a>
+    <nav class="nav" aria-label="Site">
+      <a href="../index.html">News Troll</a>
+      <a href="../music/index.html">Song Troll</a>
+      <a href="../archive/index.html" aria-current="page">Archive</a>
+      <button class="sw" id="sw-calm" type="button" aria-pressed="false"><span class="box" aria-hidden="true"></span>Reduce animation</button>
+    </nav>
+  </header>
+  <div class="hero" id="top">
+    <p class="eyebrow">News Troll · week of 23 September 2026</p>
+    <h1>Issue <mark>16.</mark></h1>
+    <p class="sub">This issue gathers long-form reporting, criticism, and profiles from across the globe, from Gwangju&#39;s biennale halls to Nuuk&#39;s contested museum plans. Expect deep dives into AI geopolitics, industrial-metal legacies, and the quiet politics of design and dress.</p>
+    <div class="hero-actions">
+      <a class="btn" href="#art">Start reading</a>
+      <a class="btn alt" href="../music/index.html">Song Troll</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>25</b><span>links</span></div>
+      <div class="stat"><b>25</b><span>publications</span></div>
+      <div class="stat"><b>7</b><span>sections</span></div>
+    </div>
   </div>
-  <nav class="tabs" aria-label="Sections">
-    <a class="tab is-active" href="../index.html" aria-current="page">Criticism</a>
-    <a class="tab" href="../music/index.html">New Music</a>
-  </nav>
-  <div class="nav">
-    <a class="nav-link" href="../index.html">&larr; Latest Issue</a>
-    <a class="nav-link" href="../archive/index.html">Full Archive</a>
-  </div>
-  <h1 class="hero">Depth Over <span class="pop">Noise</span> This Week</h1>
-  <p class="intro">This issue gathers long-form reporting, criticism, and profiles from across the globe, from Gwangju&#39;s biennale halls to Nuuk&#39;s contested museum plans. Expect deep dives into AI geopolitics, industrial-metal legacies, and the quiet politics of design and dress.</p>
-  <span class="intro-byline">2026-09-23 — selected links</span>
-  <section class="section art">
-    <span class="stampnum">01</span>
-    <div class="section-head">
-      <span class="section-tag">Art</span>
-      <h2 class="section-title">Fine Art</h2>
-    </div>
-    <div class="entry" id="art-1">
-      <div class="entry-byline"><a class="entry-title" href="https://kunstkritikk.com/ch-ch-ch-ch-changes/" target="_blank" rel="noopener">Ch-ch-ch-ch-changes</a> by Stian Gabrielsen — Kunstkritikk</div>
 
-      <p>Fewer artists and a deeper focus make the 16th Gwangju Biennale a rare, organic experience. The post Ch-ch-ch-ch-changes appeared first on Kunstkritikk.</p>
-    </div>
-    <div class="entry" id="art-2">
-      <div class="entry-byline"><a class="entry-title" href="https://www.artasiapacific.com/people/inside-the-self-enclosed-universe-of-henri-alexander-levy/" target="_blank" rel="noopener">Inside the Self-Enclosed Universe of Henri Alexander Levy</a> by Louis Lu — ArtAsiaPacific</div>
-
-      <p>The founder of the cult fashion label Enfants Riches Déprimés speaks about discipline, self-destruction, and why provocation, for him, was never the point. Louis Lu</p>
-    </div>
-    <div class="entry" id="art-3">
-      <div class="entry-byline"><a class="entry-title" href="https://momus.ca/2026/09/03/frictional-fantasies-shannon-bool-at-daniel-faria-gallery/" target="_blank" rel="noopener">Frictional Fantasies: Shannon Bool at Daniel Faria Gallery</a> by Momus Admin — Momus</div>
-
-      <p>“There is always a danger that the relative freedom of art can render it meaningless. Yet it is this same freedom which allows art, and art alone, to express and preserve the profoundest expectations of a period.” —Art and Revolution, John Berger (1969) To move in on a piece of Shannon Bool’s—a textile, a collage—is […]</p>
-    </div>
+  <section id="art" aria-labelledby="h-art">
+    <h2 id="h-art">Fine Art</h2>
+    <ol class="rows">
+    <li class="row" id="art-1" style="--i:0">
+      <span class="n">01</span>
+      <div>
+        <h3><a href="https://kunstkritikk.com/ch-ch-ch-ch-changes/" target="_blank" rel="noopener">Ch-ch-ch-ch-changes</a></h3>
+        <p>Stian Gabrielsen · Kunstkritikk</p>
+      </div>
+      <a class="btn alt" href="https://kunstkritikk.com/ch-ch-ch-ch-changes/" target="_blank" rel="noopener" aria-label="Read Ch-ch-ch-ch-changes">Read</a>
+    </li>
+    <li class="row" id="art-2" style="--i:1">
+      <span class="n">02</span>
+      <div>
+        <h3><a href="https://www.artasiapacific.com/people/inside-the-self-enclosed-universe-of-henri-alexander-levy/" target="_blank" rel="noopener">Inside the Self-Enclosed Universe of Henri Alexander Levy</a></h3>
+        <p>Louis Lu · ArtAsiaPacific</p>
+      </div>
+      <a class="btn alt" href="https://www.artasiapacific.com/people/inside-the-self-enclosed-universe-of-henri-alexander-levy/" target="_blank" rel="noopener" aria-label="Read Inside the Self-Enclosed Universe of Henri Alexander Levy">Read</a>
+    </li>
+    <li class="row" id="art-3" style="--i:2">
+      <span class="n">03</span>
+      <div>
+        <h3><a href="https://momus.ca/2026/09/03/frictional-fantasies-shannon-bool-at-daniel-faria-gallery/" target="_blank" rel="noopener">Frictional Fantasies: Shannon Bool at Daniel Faria Gallery</a></h3>
+        <p>Momus Admin · Momus</p>
+      </div>
+      <a class="btn alt" href="https://momus.ca/2026/09/03/frictional-fantasies-shannon-bool-at-daniel-faria-gallery/" target="_blank" rel="noopener" aria-label="Read Frictional Fantasies: Shannon Bool at Daniel Faria Gallery">Read</a>
+    </li>
+    </ol>
   </section>
-  <section class="section film">
-    <span class="stampnum">02</span>
-    <div class="section-head">
-      <span class="section-tag">Film</span>
-      <h2 class="section-title">Film Criticism</h2>
-    </div>
-    <div class="entry" id="film-1">
-      <div class="entry-byline"><a class="entry-title" href="https://philosophyinfilm.com/2026/09/21/memento-explained-memory-identity-self-deception/" target="_blank" rel="noopener">Memento Explained: Memory, Identity and the Lies We Tell Ourselves</a> by Matthew Jones — Philosophy in Film</div>
-
-      <p>Christopher Nolan’s Memento is not simply a puzzle about memory. Its reverse chronology reveals how Leonard turns self-deception into an external system, allowing one version of himself to manipulate the next. The post Memento Explained: Memory, Identity and the Lies We Tell Ourselves appeared first on Philosophy in Film.</p>
-    </div>
-    <div class="entry" id="film-2">
-      <div class="entry-byline"><a class="entry-title" href="https://povmagazine.com/the-black-box-is-orange-review-the-courage-to-remember/" target="_blank" rel="noopener">The Black Box Is Orange Review: The Courage to Remember</a> by Mike Hoolboom — POV Magazine</div>
-
-      <p>In The Black Box Is Orange, Yuula Benivolski goes home to Palestine by revisiting family photos and archives, asserting the existence of a nation long denied. The post The Black Box Is Orange Review: The Courage to Remember appeared first on POV Magazine.</p>
-    </div>
-    <div class="entry" id="film-3">
-      <div class="entry-byline"><a class="entry-title" href="https://desistfilm.com/venecia-2026-dau-de-ilya-khrzhanovsky-despues-de-la-fisica/" target="_blank" rel="noopener">VENECIA 2026: DAU DE ILYA KHRZHANOVSKY. DESPUÉS DE LA FÍSICA</a> by Staff — desistfilm</div>
-
-      <p>Por Arnau Martín DAU culmina el megaproyecto del apátrida Ilya Khrzhanovsky -iniciado hace veinte años-, siendo un largometraje aglutinador de ambición extraordinaria. El cometido del cineasta, que ofrece su contrapunto respecto a Oppenheimer-incluso a La Odisea- tal y como Tarkovski respondió al 2001: Odisea en el espacio de Kubrick con su Solaris, es contar la historia de Lev Landáu, premio…</p>
-    </div>
-    <div class="entry" id="film-4">
-      <div class="entry-byline"><a class="entry-title" href="https://filmquarterly.org/2026/09/22/film-quarterly-fall-2026/" target="_blank" rel="noopener">Film Quarterly Fall 2026</a> by Film Quarterly — Film Quarterly</div>
-
-      <p>FQ’s current issue (80.1) has great reads! From the Editor Editor’s Notebook J. M. Tyree Features “It Is in Our House Now”: Scenes from the David Lynch Compound Justus Nieland The Birth of the Electrical Boy Amy Herzog Dossier: Mulholland Drive at 25 Edited by Eileen G’Sell Uncanny Intimacies, Abject Desires Eileen G’Sell The Radical Intimacy of Rot: Mulholland Drive’s Queer Proliferations Laura…</p>
-    </div>
+  <section id="film" aria-labelledby="h-film">
+    <h2 id="h-film">Film</h2>
+    <ol class="rows">
+    <li class="row" id="film-1" style="--i:0">
+      <span class="n">01</span>
+      <div>
+        <h3><a href="https://philosophyinfilm.com/2026/09/21/memento-explained-memory-identity-self-deception/" target="_blank" rel="noopener">Memento Explained: Memory, Identity and the Lies We Tell Ourselves</a></h3>
+        <p>Matthew Jones · Philosophy in Film</p>
+      </div>
+      <a class="btn alt" href="https://philosophyinfilm.com/2026/09/21/memento-explained-memory-identity-self-deception/" target="_blank" rel="noopener" aria-label="Read Memento Explained: Memory, Identity and the Lies We Tell Ourselves">Read</a>
+    </li>
+    <li class="row" id="film-2" style="--i:1">
+      <span class="n">02</span>
+      <div>
+        <h3><a href="https://povmagazine.com/the-black-box-is-orange-review-the-courage-to-remember/" target="_blank" rel="noopener">The Black Box Is Orange Review: The Courage to Remember</a></h3>
+        <p>Mike Hoolboom · POV Magazine</p>
+      </div>
+      <a class="btn alt" href="https://povmagazine.com/the-black-box-is-orange-review-the-courage-to-remember/" target="_blank" rel="noopener" aria-label="Read The Black Box Is Orange Review: The Courage to Remember">Read</a>
+    </li>
+    <li class="row" id="film-3" style="--i:2">
+      <span class="n">03</span>
+      <div>
+        <h3><a href="https://desistfilm.com/venecia-2026-dau-de-ilya-khrzhanovsky-despues-de-la-fisica/" target="_blank" rel="noopener">VENECIA 2026: DAU DE ILYA KHRZHANOVSKY. DESPUÉS DE LA FÍSICA</a></h3>
+        <p>Staff · desistfilm</p>
+      </div>
+      <a class="btn alt" href="https://desistfilm.com/venecia-2026-dau-de-ilya-khrzhanovsky-despues-de-la-fisica/" target="_blank" rel="noopener" aria-label="Read VENECIA 2026: DAU DE ILYA KHRZHANOVSKY. DESPUÉS DE LA FÍSICA">Read</a>
+    </li>
+    <li class="row" id="film-4" style="--i:3">
+      <span class="n">04</span>
+      <div>
+        <h3><a href="https://filmquarterly.org/2026/09/22/film-quarterly-fall-2026/" target="_blank" rel="noopener">Film Quarterly Fall 2026</a></h3>
+        <p>Film Quarterly · Film Quarterly</p>
+      </div>
+      <a class="btn alt" href="https://filmquarterly.org/2026/09/22/film-quarterly-fall-2026/" target="_blank" rel="noopener" aria-label="Read Film Quarterly Fall 2026">Read</a>
+    </li>
+    </ol>
   </section>
-  <section class="section tech">
-    <span class="stampnum">03</span>
-    <div class="section-head">
-      <span class="section-tag">Tech &amp; AI</span>
-      <h2 class="section-title">Tech &amp; AI</h2>
-    </div>
-    <div class="entry" id="tech-1">
-      <div class="entry-byline"><a class="entry-title" href="https://www.404media.co/woman-arrested-after-city-council-denies-residents-right-to-speak-on-flock-cameras/" target="_blank" rel="noopener">Woman Arrested, Dragged Away After Quietly Speaking About Flock at City Council Meeting</a> by Matthew Gault — 404 Media</div>
-
-      <p>Citizens of Springfield, Missouri showed up to a city council meeting to discuss the city’s Flock contract. The mayor shut them down and arrested two people for ‘disruption of meetings of city council.’</p>
-    </div>
-    <div class="entry" id="tech-2">
-      <div class="entry-byline"><a class="entry-title" href="https://restofworld.org/2026/china-rejects-dario-amodei-anthropic-ai-slowdown-trump-xi/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=feeds" target="_blank" rel="noopener">Dario Amodei wants to slow AI. China isn’t taking orders</a> by Kinling Lo — Rest of World</div>
-
-      <p>Chinese officials and engineers see an attempt to preserve the U.S. lead; “Why do you always get to define the game — and change the rules?”</p>
-    </div>
-    <div class="entry" id="tech-3">
-      <div class="entry-byline"><a class="entry-title" href="https://themarkup.org/pixel-hunt/2026/09/14/how-tiktok-and-google-ended-up-with-information-about-doctors-appointments-around-the-world" target="_blank" rel="noopener">How TikTok and Google ended up with information about doctors’ appointments around the world</a> by Colin Lecher and Aline Melo, for Agência Pública — The Markup</div>
-
-      <p>Doctoralia sent information about specialists and appointment dates to social media companies.</p>
-    </div>
-    <div class="entry" id="tech-4">
-      <div class="entry-byline"><a class="entry-title" href="https://www.platformer.news/meta-muse-consumer-agents/" target="_blank" rel="noopener">Muse is having a moment</a> by Casey Newton — Platformer</div>
-
-      <p>Are consumer agents the future — or a mirage?</p>
-    </div>
+  <section id="tech" aria-labelledby="h-tech">
+    <h2 id="h-tech">Tech &amp; AI</h2>
+    <ol class="rows">
+    <li class="row" id="tech-1" style="--i:0">
+      <span class="n">01</span>
+      <div>
+        <h3><a href="https://www.404media.co/woman-arrested-after-city-council-denies-residents-right-to-speak-on-flock-cameras/" target="_blank" rel="noopener">Woman Arrested, Dragged Away After Quietly Speaking About Flock at City Council Meeting</a></h3>
+        <p>Matthew Gault · 404 Media</p>
+      </div>
+      <a class="btn alt" href="https://www.404media.co/woman-arrested-after-city-council-denies-residents-right-to-speak-on-flock-cameras/" target="_blank" rel="noopener" aria-label="Read Woman Arrested, Dragged Away After Quietly Speaking About Flock at City Council Meeting">Read</a>
+    </li>
+    <li class="row" id="tech-2" style="--i:1">
+      <span class="n">02</span>
+      <div>
+        <h3><a href="https://restofworld.org/2026/china-rejects-dario-amodei-anthropic-ai-slowdown-trump-xi/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=feeds" target="_blank" rel="noopener">Dario Amodei wants to slow AI. China isn’t taking orders</a></h3>
+        <p>Kinling Lo · Rest of World</p>
+      </div>
+      <a class="btn alt" href="https://restofworld.org/2026/china-rejects-dario-amodei-anthropic-ai-slowdown-trump-xi/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=feeds" target="_blank" rel="noopener" aria-label="Read Dario Amodei wants to slow AI. China isn’t taking orders">Read</a>
+    </li>
+    <li class="row" id="tech-3" style="--i:2">
+      <span class="n">03</span>
+      <div>
+        <h3><a href="https://themarkup.org/pixel-hunt/2026/09/14/how-tiktok-and-google-ended-up-with-information-about-doctors-appointments-around-the-world" target="_blank" rel="noopener">How TikTok and Google ended up with information about doctors’ appointments around the world</a></h3>
+        <p>Colin Lecher and Aline Melo, for Agência Pública · The Markup</p>
+      </div>
+      <a class="btn alt" href="https://themarkup.org/pixel-hunt/2026/09/14/how-tiktok-and-google-ended-up-with-information-about-doctors-appointments-around-the-world" target="_blank" rel="noopener" aria-label="Read How TikTok and Google ended up with information about doctors’ appointments around the world">Read</a>
+    </li>
+    <li class="row" id="tech-4" style="--i:3">
+      <span class="n">04</span>
+      <div>
+        <h3><a href="https://www.platformer.news/meta-muse-consumer-agents/" target="_blank" rel="noopener">Muse is having a moment</a></h3>
+        <p>Casey Newton · Platformer</p>
+      </div>
+      <a class="btn alt" href="https://www.platformer.news/meta-muse-consumer-agents/" target="_blank" rel="noopener" aria-label="Read Muse is having a moment">Read</a>
+    </li>
+    </ol>
   </section>
-  <section class="section lit">
-    <span class="stampnum">04</span>
-    <div class="section-head">
-      <span class="section-tag">Sci-Fi / Fantasy</span>
-      <h2 class="section-title">Literary Reviews</h2>
-    </div>
-    <div class="entry" id="lit-1">
-      <div class="entry-byline"><a class="entry-title" href="https://europeanreviewofbooks.com/project-a-black-planet-the-art-and-culture-of-pan-africa/" target="_blank" rel="noopener">Project a black planet: the art and culture of pan-Africa</a> by Fernanda Eberstadt — European Review of Books</div>
-
-      <p>Lynette Yiadom-Boakye, born in London in 1977, is one of the best British artists alive today. Enigmatic, mischievous, troubling, her work comprises rich, densely scrabbled Old Master-like oil portraits of a single figure, or a small group. (Her inspirations are Velasquez and Sargent.) Her subjects are always Black; sometimes they are wearing a necklace of […] The post Project a black planet: the…</p>
-    </div>
-    <div class="entry" id="lit-2">
-      <div class="entry-byline"><a class="entry-title" href="https://clereviewofbooks.com/on-joanna-walshs-amateurs/" target="_blank" rel="noopener">Radical Meme-Making: On Joanna Walsh’s “Amateurs”</a> by José Sanchez — Cleveland Review of Books</div>
-
-      <p>Whatever Walsh says, there is no viable alternative the internet offers to art and politics. Though I suppose it is entertaining to think otherwise. The post Radical Meme-Making: On Joanna Walsh’s “Amateurs” appeared first on Cleveland Review of Books.</p>
-    </div>
-    <div class="entry" id="lit-3">
-      <div class="entry-byline"><a class="entry-title" href="https://vector-bsfa.com/2026/09/18/a-deeper-magic-paul-march-russell-in-conversation-with-lisa-tuttle/" target="_blank" rel="noopener">A Deeper Magic: Paul March-Russell in conversation with Lisa Tuttle</a> by Vector editors — Vector/BSFA</div>
-
-      <p>The following is an edited transcript, abridged from the original conversation that closed the BSFA/SFF AGM on 14 June 2026. The event was held online on Zoom. Paul March-Russell: I’m honoured to have Lisa Tuttle here to discuss her novella My Death, which was originally published by P.S. Publishing in 2004, reprinted by NYRB Classics, … Continue reading A Deeper Magic: Paul March-Russell in…</p>
-    </div>
-    <div class="entry" id="lit-4">
-      <div class="entry-byline"><a class="entry-title" href="https://ancillaryreviewofbooks.org/2026/09/11/the-mothers-laboratory/" target="_blank" rel="noopener">The Mother’s Laboratory: Review of Auroville, A City of Dreams</a> by Chandra Clarke — Ancillary Review of Books</div>
-
-      <p>Chandra Clarke Under Review:Auroville: A City of Dreams. Katarzyna Boni, translated by Mark Ordon. Open Letter Books, July 2026. History is littered with attempts at utopian communities. Some end quickly and spectacularly, torn apart by strife. Others succeed for a while and then fade away as successive generations lose interest in the original premise. Of … Continue reading The Mother’s…</p>
-    </div>
+  <section id="lit" aria-labelledby="h-lit">
+    <h2 id="h-lit">Books</h2>
+    <ol class="rows">
+    <li class="row" id="lit-1" style="--i:0">
+      <span class="n">01</span>
+      <div>
+        <h3><a href="https://europeanreviewofbooks.com/project-a-black-planet-the-art-and-culture-of-pan-africa/" target="_blank" rel="noopener">Project a black planet: the art and culture of pan-Africa</a></h3>
+        <p>Fernanda Eberstadt · European Review of Books</p>
+      </div>
+      <a class="btn alt" href="https://europeanreviewofbooks.com/project-a-black-planet-the-art-and-culture-of-pan-africa/" target="_blank" rel="noopener" aria-label="Read Project a black planet: the art and culture of pan-Africa">Read</a>
+    </li>
+    <li class="row" id="lit-2" style="--i:1">
+      <span class="n">02</span>
+      <div>
+        <h3><a href="https://clereviewofbooks.com/on-joanna-walshs-amateurs/" target="_blank" rel="noopener">Radical Meme-Making: On Joanna Walsh’s “Amateurs”</a></h3>
+        <p>José Sanchez · Cleveland Review of Books</p>
+      </div>
+      <a class="btn alt" href="https://clereviewofbooks.com/on-joanna-walshs-amateurs/" target="_blank" rel="noopener" aria-label="Read Radical Meme-Making: On Joanna Walsh’s “Amateurs”">Read</a>
+    </li>
+    <li class="row" id="lit-3" style="--i:2">
+      <span class="n">03</span>
+      <div>
+        <h3><a href="https://vector-bsfa.com/2026/09/18/a-deeper-magic-paul-march-russell-in-conversation-with-lisa-tuttle/" target="_blank" rel="noopener">A Deeper Magic: Paul March-Russell in conversation with Lisa Tuttle</a></h3>
+        <p>Vector editors · Vector/BSFA</p>
+      </div>
+      <a class="btn alt" href="https://vector-bsfa.com/2026/09/18/a-deeper-magic-paul-march-russell-in-conversation-with-lisa-tuttle/" target="_blank" rel="noopener" aria-label="Read A Deeper Magic: Paul March-Russell in conversation with Lisa Tuttle">Read</a>
+    </li>
+    <li class="row" id="lit-4" style="--i:3">
+      <span class="n">04</span>
+      <div>
+        <h3><a href="https://ancillaryreviewofbooks.org/2026/09/11/the-mothers-laboratory/" target="_blank" rel="noopener">The Mother’s Laboratory: Review of Auroville, A City of Dreams</a></h3>
+        <p>Chandra Clarke · Ancillary Review of Books</p>
+      </div>
+      <a class="btn alt" href="https://ancillaryreviewofbooks.org/2026/09/11/the-mothers-laboratory/" target="_blank" rel="noopener" aria-label="Read The Mother’s Laboratory: Review of Auroville, A City of Dreams">Read</a>
+    </li>
+    </ol>
   </section>
-  <section class="section music">
-    <span class="stampnum">05</span>
-    <div class="section-head">
-      <span class="section-tag">Music</span>
-      <h2 class="section-title">Music Criticism</h2>
-    </div>
-    <div class="entry" id="music-1">
-      <div class="entry-byline"><a class="entry-title" href="https://daily.bandcamp.com/lists/godflesh-albums-list" target="_blank" rel="noopener">Industrial Strength: A Guide to Godflesh</a> by J. Bennett — Bandcamp Daily</div>
-
-      <p>Justin Broadrick is shutting down his famed industrial-metal project—but first, a guided tour of his catalog. Read full story on the Bandcamp Daily.</p>
-    </div>
-    <div class="entry" id="music-2">
-      <div class="entry-byline"><a class="entry-title" href="https://thenativemag.com/interview-juls-has-always-followed-the-sound/" target="_blank" rel="noopener">Interview: Juls Has Always Followed the Sound</a> by Temiloluwa Adeyemo — The NATIVE</div>
-
-      <p>For Juls, ‘Junction’ is evidence of where his own curiosity has taken him during a career built on movement between sounds and cultures, The post Interview: Juls Has Always Followed the Sound appeared first on The NATIVE.</p>
-    </div>
-    <div class="entry" id="music-3">
-      <div class="entry-byline"><a class="entry-title" href="https://aquariumdrunkard.com/2026/09/22/neil-young-and-the-chrome-hearts-second-song/" target="_blank" rel="noopener">Neil Young and the Chrome Hearts :: Second Song</a> by Justin Gage — Aquarium Drunkard</div>
-
-      <p>At 80, Neil Young remains gloriously unfinished. Second Song, his latest with the Chrome Hearts, is a weathered, luminous meditation on memory, mortality, love, and the strange passage of time. With shimmering textures, warm harmonies, wandering tempos, and that unmistakably vulnerable voice, Young looks backward without quite letting go of the future. An elegiac, deeply human record from an…</p>
-    </div>
-    <div class="entry" id="music-4">
-      <div class="entry-byline"><a class="entry-title" href="https://soundsandcolours.com/articles/caribbean/the-mambo-calls-inside-orchestra-mambo-internationals-apuntalo-276900/" target="_blank" rel="noopener">The Mambo Calls: Inside Orchestra Mambo International’s ¡Apúntalo!</a> by Marco Pisciotti — Sounds and Colours</div>
-
-      <p>Mambo has travelled a long way from the streets and clubs of New York and the Caribbean. These days, you can find it taking shape in West Yorkshire. Orchestra Mambo International grew out of a one-off Latin night in Manchester in 2022, but what began as a tribute to Tito Puente quickly became something much... Read Article</p>
-    </div>
+  <section id="music" aria-labelledby="h-music">
+    <h2 id="h-music">Music Criticism</h2>
+    <ol class="rows">
+    <li class="row" id="music-1" style="--i:0">
+      <span class="n">01</span>
+      <div>
+        <h3><a href="https://daily.bandcamp.com/lists/godflesh-albums-list" target="_blank" rel="noopener">Industrial Strength: A Guide to Godflesh</a></h3>
+        <p>J. Bennett · Bandcamp Daily</p>
+      </div>
+      <a class="btn alt" href="https://daily.bandcamp.com/lists/godflesh-albums-list" target="_blank" rel="noopener" aria-label="Read Industrial Strength: A Guide to Godflesh">Read</a>
+    </li>
+    <li class="row" id="music-2" style="--i:1">
+      <span class="n">02</span>
+      <div>
+        <h3><a href="https://thenativemag.com/interview-juls-has-always-followed-the-sound/" target="_blank" rel="noopener">Interview: Juls Has Always Followed the Sound</a></h3>
+        <p>Temiloluwa Adeyemo · The NATIVE</p>
+      </div>
+      <a class="btn alt" href="https://thenativemag.com/interview-juls-has-always-followed-the-sound/" target="_blank" rel="noopener" aria-label="Read Interview: Juls Has Always Followed the Sound">Read</a>
+    </li>
+    <li class="row" id="music-3" style="--i:2">
+      <span class="n">03</span>
+      <div>
+        <h3><a href="https://aquariumdrunkard.com/2026/09/22/neil-young-and-the-chrome-hearts-second-song/" target="_blank" rel="noopener">Neil Young and the Chrome Hearts :: Second Song</a></h3>
+        <p>Justin Gage · Aquarium Drunkard</p>
+      </div>
+      <a class="btn alt" href="https://aquariumdrunkard.com/2026/09/22/neil-young-and-the-chrome-hearts-second-song/" target="_blank" rel="noopener" aria-label="Read Neil Young and the Chrome Hearts :: Second Song">Read</a>
+    </li>
+    <li class="row" id="music-4" style="--i:3">
+      <span class="n">04</span>
+      <div>
+        <h3><a href="https://soundsandcolours.com/articles/caribbean/the-mambo-calls-inside-orchestra-mambo-internationals-apuntalo-276900/" target="_blank" rel="noopener">The Mambo Calls: Inside Orchestra Mambo International’s ¡Apúntalo!</a></h3>
+        <p>Marco Pisciotti · Sounds and Colours</p>
+      </div>
+      <a class="btn alt" href="https://soundsandcolours.com/articles/caribbean/the-mambo-calls-inside-orchestra-mambo-internationals-apuntalo-276900/" target="_blank" rel="noopener" aria-label="Read The Mambo Calls: Inside Orchestra Mambo International’s ¡Apúntalo!">Read</a>
+    </li>
+    </ol>
   </section>
-  <section class="section design">
-    <span class="stampnum">06</span>
-    <div class="section-head">
-      <span class="section-tag">Design</span>
-      <h2 class="section-title">Design</h2>
-    </div>
-    <div class="entry" id="design-1">
-      <div class="entry-byline"><a class="entry-title" href="https://designobserver.com/the-kardashians-will-make-you-cringe-but-first-theyll-sell-you-shapewear/" target="_blank" rel="noopener">The Kardashians will make you cringe, but first they’ll sell you shapewear</a> by Rachel Paese — Design Observer</div>
-
-      <p>Writer and Media Theorist MJ Corey, aka Kardashian Kolloquium, on making a career out of taking the Kardashian’s influence seriously The post The Kardashians will make you cringe, but first they’ll sell you shapewear appeared first on DesignObserver.</p>
-    </div>
-    <div class="entry" id="design-2">
-      <div class="entry-byline"><a class="entry-title" href="https://www.archdaily.com/1033068/shore-house-stanley-office-of-architecture" target="_blank" rel="noopener">Shore House / Stanley Office of Architecture</a> by Pilar Caballero — ArchDaily</div>
-
-      <p>Perched on a steep, forested slope at the edge of Kootenay Lake, Shore House is a family home that responds to its challenging terrain with deep foundations and cantilevered floors projecting over the landscape.</p>
-    </div>
-    <div class="entry" id="design-3">
-      <div class="entry-byline"><a class="entry-title" href="https://design-milk.com/friday-five-elliot-march-mawd/" target="_blank" rel="noopener">Elliot March Lets the Landscape Lead the Way</a> by Anna Zappia — Design Milk</div>
-
-      <p>The MAWD cofounder looks to landscapes, architecture, and the character of a place to shape spaces that feel like they belong</p>
-    </div>
-    <div class="entry" id="design-4">
-      <div class="entry-byline"><a class="entry-title" href="https://www.printmag.com/what-matters/what-matters-to-aiqi-zhang/" target="_blank" rel="noopener">What Matters to Aiqi Zhang</a> by Debbie Millman — Print Magazine</div>
-
-      <p>Aiqi Zhang reflects on how observation, curiosity, cultural memory, and an openness to change shape both her creative practice and her approach to life, finding meaning in the small details and traces we leave behind. The post What Matters to Aiqi Zhang appeared first on PRINT Magazine.</p>
-    </div>
+  <section id="design" aria-labelledby="h-design">
+    <h2 id="h-design">Design</h2>
+    <ol class="rows">
+    <li class="row" id="design-1" style="--i:0">
+      <span class="n">01</span>
+      <div>
+        <h3><a href="https://designobserver.com/the-kardashians-will-make-you-cringe-but-first-theyll-sell-you-shapewear/" target="_blank" rel="noopener">The Kardashians will make you cringe, but first they’ll sell you shapewear</a></h3>
+        <p>Rachel Paese · Design Observer</p>
+      </div>
+      <a class="btn alt" href="https://designobserver.com/the-kardashians-will-make-you-cringe-but-first-theyll-sell-you-shapewear/" target="_blank" rel="noopener" aria-label="Read The Kardashians will make you cringe, but first they’ll sell you shapewear">Read</a>
+    </li>
+    <li class="row" id="design-2" style="--i:1">
+      <span class="n">02</span>
+      <div>
+        <h3><a href="https://www.archdaily.com/1033068/shore-house-stanley-office-of-architecture" target="_blank" rel="noopener">Shore House / Stanley Office of Architecture</a></h3>
+        <p>Pilar Caballero · ArchDaily</p>
+      </div>
+      <a class="btn alt" href="https://www.archdaily.com/1033068/shore-house-stanley-office-of-architecture" target="_blank" rel="noopener" aria-label="Read Shore House / Stanley Office of Architecture">Read</a>
+    </li>
+    <li class="row" id="design-3" style="--i:2">
+      <span class="n">03</span>
+      <div>
+        <h3><a href="https://design-milk.com/friday-five-elliot-march-mawd/" target="_blank" rel="noopener">Elliot March Lets the Landscape Lead the Way</a></h3>
+        <p>Anna Zappia · Design Milk</p>
+      </div>
+      <a class="btn alt" href="https://design-milk.com/friday-five-elliot-march-mawd/" target="_blank" rel="noopener" aria-label="Read Elliot March Lets the Landscape Lead the Way">Read</a>
+    </li>
+    <li class="row" id="design-4" style="--i:3">
+      <span class="n">04</span>
+      <div>
+        <h3><a href="https://www.printmag.com/what-matters/what-matters-to-aiqi-zhang/" target="_blank" rel="noopener">What Matters to Aiqi Zhang</a></h3>
+        <p>Debbie Millman · Print Magazine</p>
+      </div>
+      <a class="btn alt" href="https://www.printmag.com/what-matters/what-matters-to-aiqi-zhang/" target="_blank" rel="noopener" aria-label="Read What Matters to Aiqi Zhang">Read</a>
+    </li>
+    </ol>
   </section>
-  <section class="section fashion">
-    <span class="stampnum">07</span>
-    <div class="section-head">
-      <span class="section-tag">Men&#39;s Fashion</span>
-      <h2 class="section-title">Men&#39;s Fashion</h2>
-    </div>
-    <div class="entry" id="fashion-1">
-      <div class="entry-byline"><a class="entry-title" href="https://fashionjournal.com.au/fashion/monroe-the-label/" target="_blank" rel="noopener">Monroe the Label was made to fill the gap in your wardrobe</a> by Daisy Henry — Fashion Journal</div>
-
-      <p>Sometimes you find the best fashion labels browsing aimlessly in-store; other times, it comes from a friend whose outfit you can’t help but admire. It was at the recommendation of Mulan Puchman that we discovered Monroe the Label. Working out of her Brunswick studio in Melbourne, Monroe the Label is the creation of 26-year-old designer […] This article Monroe the Label was made to fill the gap in…</p>
-    </div>
-    <div class="entry" id="fashion-2">
-      <div class="entry-byline"><a class="entry-title" href="https://putthison.com/scarf-season-is-almost-upon-us/" target="_blank" rel="noopener">Scarf Season Is Almost Upon Us!</a> by Brynna — Put This On</div>
-
-      <p>(Pictured: Intricately Patterned Red Floral Square Silk Scarf on Tardan Art Deco Hat Display Mannequin Head) Hi all, it’s your... The post Scarf Season Is Almost Upon Us! appeared first on Put This On.</p>
-    </div>
+  <section id="fashion" aria-labelledby="h-fashion">
+    <h2 id="h-fashion">Men&#39;s Fashion</h2>
+    <ol class="rows">
+    <li class="row" id="fashion-1" style="--i:0">
+      <span class="n">01</span>
+      <div>
+        <h3><a href="https://fashionjournal.com.au/fashion/monroe-the-label/" target="_blank" rel="noopener">Monroe the Label was made to fill the gap in your wardrobe</a></h3>
+        <p>Daisy Henry · Fashion Journal</p>
+      </div>
+      <a class="btn alt" href="https://fashionjournal.com.au/fashion/monroe-the-label/" target="_blank" rel="noopener" aria-label="Read Monroe the Label was made to fill the gap in your wardrobe">Read</a>
+    </li>
+    <li class="row" id="fashion-2" style="--i:1">
+      <span class="n">02</span>
+      <div>
+        <h3><a href="https://putthison.com/scarf-season-is-almost-upon-us/" target="_blank" rel="noopener">Scarf Season Is Almost Upon Us!</a></h3>
+        <p>Brynna · Put This On</p>
+      </div>
+      <a class="btn alt" href="https://putthison.com/scarf-season-is-almost-upon-us/" target="_blank" rel="noopener" aria-label="Read Scarf Season Is Almost Upon Us!">Read</a>
+    </li>
+    </ol>
   </section>
   <footer>
-    <span>Algorithm</span>
-    <span>Issue No. 16 — 23 Sep 2026</span>
+    <div class="fine">
+      <div><p>Troller, Issue 16, week of 23 September 2026. Every link was read in full before it was picked.</p>
+        <p><a href="../archive/index.html">Every issue</a></p></div>
+      <p><a href="#top">Back to top</a></p>
+    </div>
+    <p class="big" aria-hidden="true">happy reading</p>
   </footer>
 </div>
-</div>
+<script>
+(function(){
+  var sw = document.getElementById('sw-calm');
+  if (!sw) return;
+  function load(){ try { return JSON.parse(localStorage.getItem('troller-ui') || '{}') || {}; } catch (e) { return {}; } }
+  function paint(){ var on = document.documentElement.hasAttribute('data-calm'); sw.setAttribute('aria-pressed', on ? 'true' : 'false'); }
+  sw.addEventListener('click', function(){
+    var ui = load(); ui.calm = !document.documentElement.hasAttribute('data-calm');
+    if (ui.calm) document.documentElement.setAttribute('data-calm', ''); else document.documentElement.removeAttribute('data-calm');
+    try { localStorage.setItem('troller-ui', JSON.stringify(ui)); } catch (e) {}
+    paint();
+  });
+  paint();
+})();</script>
 
 </body>
 </html>

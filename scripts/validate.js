@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Algorithm — issue validator.
+ * Troller — issue validator.
  *
  * Runs BEFORE the build, and fails the workflow on any violation. This exists
  * because the first hand-made issue shipped two articles duplicated from a
@@ -52,17 +52,8 @@ function validateIssue(issue, filename, priorUrls, priorTitles, recentHistory) {
     err(`${where}: "date" must be YYYY-MM-DD.`);
   }
 
-  if (!issue.headline || String(issue.headline).trim().length < 3) {
-    warn(`${where}: no "headline" (a fallback will be used).`);
-  } else {
-    const words = String(issue.headline).replace(/\*/g, '').trim().split(/\s+/).length;
-    if (words < 3 || words > 6) {
-      warn(`${where}: headline is ${words} words; the format calls for 3-6.`);
-    }
-    if (!/\*[^*]+\*/.test(issue.headline)) {
-      warn(`${where}: headline has no *accent* markers, so nothing renders in red.`);
-    }
-  }
+  // No headline checks. Since 24 Oct 2026 issues are titled plainly by
+  // number and week, and the builder ignores the old cover lines.
 
   if (!issue.intro || !String(issue.intro).trim()) {
     warn(`${where}: no "intro" (a fallback will be used).`);

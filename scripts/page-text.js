@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Algorithm — turning an article page into readable text. PURE FUNCTIONS.
+ * Troller — turning an article page into readable text. PURE FUNCTIONS.
  *
  * This is what lets a cheap model actually read a piece: the page is fetched
  * in code (free), cut down to the article body here (free), and only then

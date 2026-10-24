@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Algorithm — feed parsing and candidate selection. PURE FUNCTIONS ONLY.
+ * Troller — feed parsing and candidate selection. PURE FUNCTIONS ONLY.
  *
  * Nothing here touches the network, the filesystem, or the clock (the
  * current time is always passed in). That is deliberate: every rule that

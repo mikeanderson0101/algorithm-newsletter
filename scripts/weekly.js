@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Algorithm — make an issue, by hand, once or twice a week.
+ * Troller — make an issue, by hand, once or twice a week.
  *
  *   node scripts/weekly.js scout    [--date YYYY-MM-DD]   builds the shortlist
  *   node scripts/weekly.js publish  [--date YYYY-MM-DD]   writes the issue + music batch, validates, builds
@@ -155,7 +155,7 @@ const words = (s, n) => String(s || '').split(/\s+/).slice(0, n).join(' ');
 // ---------------------------------------------------------------------------
 
 const TRIAGE_SYSTEM =
-  'You shortlist articles for Algorithm, a weekly digest of links to the best criticism and ' +
+  'You shortlist articles for Troller, a weekly digest of links to the best criticism and ' +
   'long-form cultural writing in English. You see only titles, outlets and excerpts. Favour pieces ' +
   'likely to be criticism, essays, substantial reviews, reported features or serious interviews on ' +
   "the category's subject. Pass over anything that reads as news, an announcement, a listicle, " +
@@ -182,7 +182,7 @@ const TRIAGE_SCHEMA = {
 };
 
 const READ_SYSTEM =
-  'You screen one article for Algorithm, a weekly digest of links to the best criticism and ' +
+  'You screen one article for Troller, a weekly digest of links to the best criticism and ' +
   'long-form cultural writing. You are given the full text. Judge only what is on the page. ' +
   'keep is true only if the piece is criticism, an essay, a substantial review, a reported feature ' +
   "or a serious interview, AND it is on the category's subject, AND it is in English. keep is false " +
@@ -204,7 +204,7 @@ const READ_SCHEMA = {
 };
 
 const CHECK_SYSTEM =
-  'You are the final editor of Algorithm, a weekly digest of links to the best criticism and ' +
+  'You are the final editor of Troller, a weekly digest of links to the best criticism and ' +
   'long-form cultural writing, for a demanding reader. You are given one article in full. ' +
   'score from 1 to 10 for how much that reader would want this link: 9-10 a must-read, 7-8 strong, ' +
   '5-6 competent but ordinary, 4 or below should not run. keep is false if it is not substantive ' +
@@ -616,7 +616,7 @@ async function scoutMusic(work, ledger, opts) {
 // ---------------------------------------------------------------------------
 
 function shortlistMarkdown(date, articles, music, ledger) {
-  const out = [`# Algorithm shortlist, ${date}`, ''];
+  const out = [`# Troller shortlist, ${date}`, ''];
   out.push('Ticked entries are the default picks. To change them, set `"pick"` in shortlist.json, or ask Claude.', '');
   const names = { art: 'Fine Art', film: 'Film', tech: 'Tech & AI', lit: 'Literary', music: 'Music Criticism', design: 'Design', fashion: "Men's Fashion" };
   for (const cat of CATEGORIES) {
@@ -629,7 +629,7 @@ function shortlistMarkdown(date, articles, music, ledger) {
     }
     out.push('');
   }
-  out.push(`## New Music (${music.filter((s) => s.pick).length} picked)`, '');
+  out.push(`## Song Troll (${music.filter((s) => s.pick).length} picked)`, '');
   for (const s of music) {
     out.push(`- [${s.pick ? 'x' : ' '}] ${s.artist} – ${s.title} (${s.site}, ${s.cid}). ${s.note}`);
   }
@@ -681,13 +681,6 @@ async function scout(date, work) {
   console.log(`Then:   node scripts/weekly.js publish --date ${date}`);
 }
 
-const HEADLINE_SCHEMA = {
-  type: 'object',
-  properties: { headline: { type: 'string' } },
-  required: ['headline'],
-  additionalProperties: false,
-};
-
 async function publish(date, work) {
   const opts = options();
   const ledger = new AI.Ledger({ cap: opts.cap, file: path.join(work, 'cost.json') });
@@ -705,34 +698,18 @@ async function publish(date, work) {
   const entries = categories.flatMap((c) => c.entries);
   const songs = (shortlist.music || []).filter((s) => s.pick);
 
-  // The cover line is the one piece of prose, and it is written from the
-  // picked titles alone, so it cannot claim anything about their contents.
-  let headline = 'The *Week* in Criticism';
-  if (entries.length && !has('no-headline')) {
-    try {
-      const prompt = 'Write a punchy 3-6 word cover line for this week\'s issue, tabloid-magazine style, ' +
-        'riffing on a theme you can see across these titles. Wrap exactly one word or short phrase in ' +
-        '*asterisks* for the red accent. No colon.\n\n' + entries.map((e) => `- ${e.title} (${e.source})`).join('\n');
-      ledger.room('Headline', AI.project(AI.MODELS.judge, prompt.length, 1500));
-      const r = await AI.askJson(ledger, 'headline', {
-        model: AI.MODELS.judge, system: 'You write magazine cover lines.', prompt, schema: HEADLINE_SCHEMA, maxTokens: 2000,
-      });
-      if (r.headline && /\*[^*]+\*/.test(r.headline)) headline = r.headline.trim();
-    } catch (err) {
-      console.log(`  headline fell back to the default (${err.message})`);
-    }
-  }
-
+  // No cover line. Issues are titled plainly by number and week (Mike's call,
+  // 24 Oct 2026); the automated versions wrote tabloid headlines.
   const outlets = new Set(entries.map((e) => e.source.toLowerCase())).size;
   const issueNo = loadNumbered(ISSUES_DIR).length + 1;
   const intro =
     `${entries.length} pieces of criticism from ${outlets} publications, each read in full before it was picked. ` +
-    (songs.length ? `Plus ${songs.length} new songs in New Music.` : '');
+    (songs.length ? `Plus ${songs.length} new songs in Song Troll.` : '');
 
   const issue = {
     issue: issueNo,
     date,
-    headline,
+    headline: `Issue ${issueNo}`,
     intro: intro.trim(),
     byline: `Issue No. ${issueNo} — week of ${date}`,
     pipeline: 'weekly',

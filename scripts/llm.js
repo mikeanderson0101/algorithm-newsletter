@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Algorithm — every model call goes through here, and so does every cent.
+ * Troller — every model call goes through here, and so does every cent.
  *
  * Two things this file exists to guarantee:
  *
@@ -100,9 +100,22 @@ function project(model, inputChars, outputTokens, { batch = false } = {}) {
   return (((inputChars / 4) * p.input + outputTokens * p.output) / 1e6) * (batch ? BATCH_DISCOUNT : 1);
 }
 
+// Where the key lives when it is not in the environment: one line in a file
+// in the user's home folder, outside the repo and outside Dropbox.
+const KEY_FILE = require('path').join(require('os').homedir(), '.algorithm-anthropic-key');
+
 let client = null;
 function getClient() {
-  if (!client) client = new Anthropic();
+  if (!client) {
+    let apiKey = process.env.ANTHROPIC_API_KEY;
+    if (!apiKey && fs.existsSync(KEY_FILE)) {
+      apiKey = fs.readFileSync(KEY_FILE, 'utf8').replace(/^﻿/, '').trim();
+    }
+    if (!apiKey) {
+      throw new Error(`No API key. Set ANTHROPIC_API_KEY, or paste the key into ${KEY_FILE}.`);
+    }
+    client = new Anthropic({ apiKey });
+  }
   return client;
 }
 

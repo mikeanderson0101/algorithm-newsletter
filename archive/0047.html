@@ -2,367 +2,442 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="color-scheme" content="dark">
-<meta name="theme-color" content="#0A0A0A">
-<title>Algorithm — Issue No. 47 — 21 Oct 2026</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#F1EEE9">
+<title>Troller — Issue 47</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Source+Serif+4:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>try{var u=JSON.parse(localStorage.getItem('troller-ui')||'{}');if(u.calm)document.documentElement.setAttribute('data-calm','');}catch(e){}</script>
 <style>
-  html, body{ margin:0; padding:0; height:100%; background-color:#0A0A0A; }
-  *{box-sizing:border-box;}
-  body{
-    min-height:100dvh;
-    color:#FAFAF7;
-    font-family:'Source Serif 4', Georgia, serif;
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-  }
-  .page{ background-color:#0A0A0A; min-height:100dvh; }
-  a{ color:inherit; }
-  .wrap{max-width:720px; margin:0 auto; padding:44px 24px 90px; position:relative;}
-  .masthead{
-    display:flex; justify-content:space-between; align-items:flex-end;
-    border-bottom:4px solid #FAFAF7;
-    padding-bottom:14px; margin-bottom:24px;
-  }
-  .mast-title{
-    font-family:'Archivo Black', sans-serif;
-    font-size:clamp(26px,6vw,34px);
-    letter-spacing:-0.01em;
-    text-transform:uppercase;
-    color:#FAFAF7;
-    text-decoration:none;
-  }
-  .stamp{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:11px; letter-spacing:0.1em; text-transform:uppercase;
-    color:#0A0A0A; background:#FF1F3D;
-    padding:5px 10px; border-radius:2px;
-    transform:rotate(-3deg); display:inline-block; font-weight:600;
-    white-space:nowrap;
-  }
-  .tabs{display:flex; gap:22px; margin:-8px 0 26px; font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.1em; text-transform:uppercase;}
-  .tab{color:#A6A29A; text-decoration:none; padding-bottom:6px; border-bottom:2px solid transparent;}
-  .tab:hover{color:#FAFAF7;}
-  .tab.is-active{color:#FAFAF7; border-bottom-color:#FF1F3D;}
-  .nav{display:flex; justify-content:space-between; align-items:center; gap:16px; margin-bottom:40px; flex-wrap:wrap;}
-  .nav-link{font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:#FAFAF7; text-decoration:none; border:1px solid rgba(250,250,247,0.35); padding:9px 14px; border-radius:2px; white-space:nowrap;}
-  .nav-link:hover{border-color:#FF1F3D; color:#FF1F3D;}
-  .search-wrap{position:relative; flex:1; min-width:220px;}
-  .search-input{width:100%; background:#151513; border:1px solid rgba(250,250,247,0.3); color:#FAFAF7; font-family:'IBM Plex Mono', monospace; font-size:13px; padding:10px 12px; border-radius:2px; outline:none;}
-  .search-input::placeholder{color:#6B6860;}
-  .search-input:focus{border-color:#FF1F3D;}
-  .search-results{position:absolute; top:calc(100% + 6px); left:0; right:0; background:#111110; border:1px solid rgba(250,250,247,0.25); border-radius:4px; max-height:380px; overflow-y:auto; z-index:20; display:none;}
-  .search-results.active{display:block;}
-  .search-result{display:block; padding:10px 12px; border-bottom:1px solid rgba(250,250,247,0.12); text-decoration:none;}
-  .search-result:last-child{border-bottom:none;}
-  .search-result:hover{background:rgba(255,31,61,0.08);}
-  .sr-tag{font-family:'IBM Plex Mono', monospace; font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:#A6A29A;}
-  .sr-title{display:block; font-style:italic; color:#FAFAF7; margin:2px 0; font-size:14px;}
-  .sr-meta{font-family:'IBM Plex Mono', monospace; font-size:10.5px; color:#A6A29A;}
-  .search-empty{padding:14px 12px; font-family:'IBM Plex Mono', monospace; font-size:12.5px; color:#A6A29A;}
-  h1.hero{
-    font-family:'Anton', sans-serif;
-    font-weight:400;
-    font-size:clamp(42px,10vw,72px);
-    line-height:0.94;
-    text-transform:uppercase;
-    margin:0 0 22px;
-    color:#FAFAF7;
-  }
-  h1.hero .pop{color:#FF1F3D;}
-  .intro{font-size:17px; color:#EDEAE2; max-width:56ch; margin-bottom:10px;}
-  .intro-byline{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:11px; letter-spacing:0.08em; text-transform:uppercase;
-    color:#A6A29A;
-    margin-top:16px; margin-bottom:54px; display:block;
-    border-left:2px solid #FF1F3D; padding-left:10px;
-  }
-  .section{position:relative; margin-bottom:50px; padding-left:56px;}
-  .section:last-of-type{margin-bottom:0;}
-  .stampnum{
-    position:absolute; left:0; top:0;
-    width:42px; height:42px;
-    border:2px solid #FAFAF7;
-    border-radius:50%;
-    display:flex; align-items:center; justify-content:center;
-    font-family:'Archivo Black', sans-serif;
-    font-size:15px; color:#FAFAF7;
-    transform:rotate(-6deg);
-  }
-  .art .stampnum{border-color:#C9A24B; color:#C9A24B;}
-  .film .stampnum{border-color:#FF5B4A; color:#FF5B4A;}
-  .tech .stampnum{border-color:#3FE0D0; color:#3FE0D0;}
-  .lit .stampnum{border-color:#B39DFF; color:#B39DFF;}
-  .music .stampnum{border-color:#FF5FA8; color:#FF5FA8;}
-  .design .stampnum{border-color:#FFD23F; color:#FFD23F;}
-  .fashion .stampnum{border-color:#FAFAF7; color:#FAFAF7;}
-  .section-head{display:flex; align-items:center; gap:12px; margin-bottom:18px; flex-wrap:wrap;}
-  .section-tag{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:12px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase;
-    color:#0A0A0A;
-    padding:6px 11px; border-radius:2px;
-  }
-  .art .section-tag{background:#C9A24B;}
-  .film .section-tag{background:#FF5B4A;}
-  .tech .section-tag{background:#3FE0D0;}
-  .lit .section-tag{background:#B39DFF;}
-  .music .section-tag{background:#FF5FA8;}
-  .design .section-tag{background:#FFD23F;}
-  .fashion .section-tag{background:#FAFAF7;}
-  .section-title{
-    font-family:'Archivo Black', sans-serif;
-    font-size:24px; text-transform:uppercase; letter-spacing:0.01em;
-    color:#FAFAF7;
-  }
-  .entry{margin-bottom:24px; padding-bottom:24px; border-bottom:1px solid rgba(250,250,247,0.16); scroll-margin-top:24px;}
-  .entry:last-child{border-bottom:none; margin-bottom:0; padding-bottom:0;}
-  .entry-byline{font-family:'IBM Plex Mono', monospace; font-size:12px; color:#A6A29A; margin-bottom:8px;}
-  .entry-title{font-weight:500; font-style:italic; color:#FAFAF7; text-decoration:underline; text-decoration-color:rgba(250,250,247,0.35); text-underline-offset:3px;}
-  .entry-title:hover{text-decoration-color:#FF1F3D;}
-  .entry p{margin:0 0 10px; font-size:16px; color:#EDEAE2;}
-  .entry .why{font-size:14.5px; color:#A6A29A; font-style:italic;}
-  .entry .why::before{content:"— ";}
-  .issue-list{list-style:none; margin:0; padding:0;}
-  .issue-card{display:block; text-decoration:none; padding:22px 0; border-bottom:1px solid rgba(250,250,247,0.16);}
-  .issue-card:first-child{padding-top:0;}
-  .issue-card:hover .issue-headline{ text-decoration-color:#FF1F3D; }
-  .issue-meta{font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:#A6A29A; margin-bottom:8px;}
-  .issue-meta .num{color:#FF1F3D;}
-  .issue-headline{font-family:'Archivo Black', sans-serif; font-size:22px; text-transform:uppercase; letter-spacing:0.01em; color:#FAFAF7; text-decoration:underline; text-decoration-color:rgba(250,250,247,0.35); text-underline-offset:4px; display:inline-block; margin-bottom:8px;}
-  .issue-desc{font-size:15px; color:#A6A29A; max-width:60ch; margin:0;}
-  footer{
-    margin-top:64px; padding-top:20px; border-top:1px solid rgba(250,250,247,0.16);
-    display:flex; justify-content:space-between; gap:12px;
-    font-family:'IBM Plex Mono', monospace; font-size:10.5px;
-    letter-spacing:0.06em; color:#A6A29A; text-transform:uppercase;
-  }
-  @media (max-width:520px){
-    .wrap{padding:30px 16px 70px;}
-    .section{padding-left:48px;}
-    .stampnum{width:36px; height:36px; font-size:13px;}
-    .section-title{font-size:20px;}
-    .nav{flex-direction:column; align-items:stretch;}
-  }
+:root {
+  --bg: #F1EEE9;
+  --surface: #FFFFFF;
+  --ink: #3C3C3C;
+  --muted: #6B665F;
+  --line: #D7D1C7;
+  --sand: #CDC0B0;
+  --yellow: #FFE500;
+  --yellow-ink: #1E1E1E;
+  --btn: #3C3C3C;
+  --btn-ink: #FFFFFF;
+  --sleeve-s: 26%;
+  --sleeve-l: 78%;
+  --font: "Switzer", "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
+  color-scheme: light;
+}
+html { scroll-behavior: smooth; }
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font); font-size: 17px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+
+/* calm mode: no motion */
+:root[data-calm] *, :root[data-calm] *::before, :root[data-calm] *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+:root[data-calm] mark { background-size: 100% 100% !important; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; scroll-behavior: auto !important; } mark { background-size: 100% 100% !important; } }
+
+/* top bar */
+.bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding: 22px 0; }
+.mark { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.15rem; letter-spacing: -0.02em; text-decoration: none; }
+.mark i { width: 14px; height: 14px; background: var(--yellow); display: inline-block; }
+.nav { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; font-size: 0.95rem; }
+.nav a { text-decoration: none; }
+.nav a:hover, .nav a[aria-current] { text-decoration: underline; text-underline-offset: 4px; }
+.nav a[aria-current] { text-decoration-thickness: 2px; text-decoration-color: var(--ink); }
+.sw { display: inline-flex; align-items: center; gap: 8px; padding: 0; border: 0; background: none; color: var(--ink); font: 500 0.88rem var(--font); cursor: pointer; }
+.sw .box { width: 34px; height: 18px; border: 1.5px solid var(--ink); position: relative; flex: none; }
+.sw .box::after { content: ""; position: absolute; top: 2px; left: 2px; width: 11px; height: 11px; background: var(--ink); transition: transform 0.18s ease; }
+.sw[aria-pressed="true"] .box { background: var(--yellow); border-color: var(--yellow-ink); }
+.sw[aria-pressed="true"] .box::after { transform: translateX(16px); background: var(--yellow-ink); }
+
+/* hero */
+.hero { padding: 72px 0 56px; border-top: 1px solid var(--line); }
+.eyebrow { margin: 0 0 22px; color: var(--muted); font-size: 0.95rem; }
+h1 { margin: 0 0 28px; font-weight: 500; font-size: clamp(3.6rem, 13vw, 9rem); line-height: 0.95; letter-spacing: -0.045em; }
+mark {
+  background-image: linear-gradient(var(--yellow), var(--yellow)); background-repeat: no-repeat; background-size: 100% 100%;
+  background-color: transparent; color: var(--yellow-ink); padding: 0 0.12em;
+  animation: sweep 0.9s 0.45s cubic-bezier(.2,.7,.2,1) both;
+}
+@keyframes sweep { from { background-size: 0% 100%; } to { background-size: 100% 100%; } }
+@keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+.hero > * { animation: rise 0.75s cubic-bezier(.2,.7,.2,1) both; animation-delay: calc(var(--i, 0) * 90ms); }
+.hero > :nth-child(1) { --i: 0; } .hero > :nth-child(2) { --i: 1; } .hero > :nth-child(3) { --i: 2; } .hero > :nth-child(4) { --i: 3; } .hero > :nth-child(5) { --i: 4; }
+.hero p.sub { max-width: 52ch; color: var(--muted); font-size: 1.1rem; margin: 0 0 32px; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn {
+  display: inline-block; padding: 14px 24px; border: 1.5px solid var(--btn);
+  background: var(--btn); color: var(--btn-ink);
+  font: 600 0.95rem var(--font); text-decoration: none; cursor: pointer; border-radius: 0;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.btn:hover { background: transparent; color: var(--ink); }
+.btn.alt { background: var(--surface); color: var(--ink); border-color: var(--ink); }
+.btn.alt:hover { background: var(--ink); color: var(--bg); }
+.btn:disabled { opacity: 0.5; cursor: default; }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 56px; border-top: 1px solid var(--ink); }
+.stat { padding: 18px 0 0; }
+.stat b { display: block; font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 500; letter-spacing: -0.03em; line-height: 1.05; }
+.stat span { color: var(--muted); font-size: 0.92rem; }
+
+/* sections */
+section { padding: 64px 0; border-top: 1px solid var(--line); }
+h2 { margin: 0 0 32px; font-weight: 500; font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1.02; letter-spacing: -0.035em; }
+h2 small { display: block; margin-top: 10px; font-size: 0.95rem; letter-spacing: 0; color: var(--muted); font-weight: 400; }
+
+/* rows: issue entries, archive issues, music sources */
+.rows { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--ink); }
+.row { display: grid; grid-template-columns: 56px 1fr auto; gap: 8px 20px; align-items: center; padding: 22px 0; border-bottom: 1px solid var(--line); animation: rise 0.6s cubic-bezier(.2,.7,.2,1) both; animation-delay: calc(var(--i, 0) * 50ms); scroll-margin-top: 24px; }
+.row .n { color: var(--muted); font-size: 0.95rem; }
+.row h3 { margin: 0; font-weight: 500; font-size: 1.5rem; line-height: 1.2; letter-spacing: -0.02em; }
+.row h3 a { text-decoration: none; }
+.row h3 a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.row p { margin: 4px 0 0; color: var(--muted); font-size: 0.95rem; }
+.row p.note { color: var(--ink); max-width: 64ch; }
+.row .btn { padding: 9px 18px; font-size: 0.88rem; }
+
+/* search */
+.search-wrap { position: relative; margin: 0 0 28px; }
+.search { width: 100%; min-width: 0; padding: 12px 14px; border: 1.5px solid var(--line); border-radius: 0; background: var(--surface); color: var(--ink); font: 400 0.95rem var(--font); }
+.search:focus { border-color: var(--ink); outline: none; }
+.search-results { position: absolute; top: calc(100% + 6px); left: 0; right: 0; background: var(--surface); border: 1.5px solid var(--ink); max-height: 420px; overflow-y: auto; z-index: 20; display: none; }
+.search-results.active { display: block; }
+.search-result { display: block; padding: 12px 14px; border-bottom: 1px solid var(--line); text-decoration: none; }
+.search-result:last-child { border-bottom: none; }
+.search-result:hover { background: var(--bg); }
+.sr-tag { font-size: 0.8rem; color: var(--muted); }
+.sr-title { display: block; font-weight: 500; margin: 2px 0; }
+.sr-meta { font-size: 0.85rem; color: var(--muted); }
+.search-empty { padding: 14px; color: var(--muted); font-size: 0.95rem; }
+
+/* footer */
+footer { padding: 56px 0 40px; border-top: 1px solid var(--line); }
+.fine { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 24px; color: var(--muted); font-size: 0.9rem; }
+.fine p { margin: 0 0 8px; max-width: 58ch; }
+.fine a { text-underline-offset: 3px; }
+.big { margin: 40px 0 0; font-weight: 500; font-size: clamp(3rem, 15vw, 11rem); line-height: 0.9; letter-spacing: -0.05em; color: var(--sand); user-select: none; }
+
+@media (max-width: 640px) {
+  .wrap { padding: 0 16px; }
+  .hero { padding: 48px 0 40px; }
+  section { padding: 48px 0; }
+  .row { grid-template-columns: 36px 1fr; }
+  .row .btn { grid-column: 2; justify-self: start; }
+  .row h3 { font-size: 1.25rem; }
+}
 </style>
 </head>
 <body data-root="../">
-<div class="page">
 <div class="wrap">
-  <div class="masthead">
-    <a class="mast-title" href="../index.html">Algorithm</a>
-    <span class="stamp">Issue No. 47</span>
+  <header class="bar">
+    <a class="mark" href="../index.html"><i aria-hidden="true"></i>Troller</a>
+    <nav class="nav" aria-label="Site">
+      <a href="../index.html">News Troll</a>
+      <a href="../music/index.html">Song Troll</a>
+      <a href="../archive/index.html" aria-current="page">Archive</a>
+      <button class="sw" id="sw-calm" type="button" aria-pressed="false"><span class="box" aria-hidden="true"></span>Reduce animation</button>
+    </nav>
+  </header>
+  <div class="hero" id="top">
+    <p class="eyebrow">News Troll · week of 21 October 2026</p>
+    <h1>Issue <mark>47.</mark></h1>
+    <p class="sub">A selection of recent writing from across the culture press.</p>
+    <div class="hero-actions">
+      <a class="btn" href="#art">Start reading</a>
+      <a class="btn alt" href="../music/index.html">Song Troll</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>28</b><span>links</span></div>
+      <div class="stat"><b>28</b><span>publications</span></div>
+      <div class="stat"><b>7</b><span>sections</span></div>
+    </div>
   </div>
-  <nav class="tabs" aria-label="Sections">
-    <a class="tab is-active" href="../index.html" aria-current="page">Criticism</a>
-    <a class="tab" href="../music/index.html">New Music</a>
-  </nav>
-  <div class="nav">
-    <a class="nav-link" href="../index.html">&larr; Latest Issue</a>
-    <a class="nav-link" href="../archive/index.html">Full Archive</a>
-  </div>
-  <h1 class="hero">The <span class="pop">Feed</span></h1>
-  <p class="intro">A selection of recent writing from across the culture press.</p>
-  <span class="intro-byline">2026-10-21 — selected links</span>
-  <section class="section art">
-    <span class="stampnum">01</span>
-    <div class="section-head">
-      <span class="section-tag">Art</span>
-      <h2 class="section-title">Fine Art</h2>
-    </div>
-    <div class="entry" id="art-1">
-      <div class="entry-byline"><a class="entry-title" href="https://elephant.art/a-story-without-stakes-stands-to-bore-uncommissioned-in-curacao/" target="_blank" rel="noopener">“A Story Without Stakes Stands to Bore”: uncommissioned in Curaçao</a> by Elephant Magazine — Elephant</div>
 
-      <p>Vittoria Benzine travels to Curaçao for the second edition of uncommissioned, Novo Collective’s experimental public art programme. If you’re feeling cynical about art, maybe you aren’t looking closely enough. Six new works just cropped up throughout the Caribbean island of Curaçao, for those with eyes to see – courtesy of Novo Collective, one of contemporary The post “A Story Without Stakes…</p>
-    </div>
-    <div class="entry" id="art-2">
-      <div class="entry-byline"><a class="entry-title" href="https://kunstkritikk.com/disco-delay-desire/" target="_blank" rel="noopener">Disco, Delay, Desire</a> by Frans Josef Petersson — Kunstkritikk</div>
-
-      <p>Monir Shahroudy Farmanfarmaian seduces the eye and keeps the mind guessing. The post Disco, Delay, Desire appeared first on Kunstkritikk.</p>
-    </div>
-    <div class="entry" id="art-3">
-      <div class="entry-byline"><a class="entry-title" href="https://burnaway.org/daily/stories-to-tell-in-conversation-with-willie-birch/" target="_blank" rel="noopener">Stories to Tell: In Conversation with Willie Birch</a> by Kristina Robinson — Burnaway</div>
-
-      <p>Kristina Kay Robinson speaks with Willie Birch about his sixty year retrospective at California African American Museum in Los Angeles, his studio practice in New Orleans, and staying true to one&#39;s artistic vision.</p>
-    </div>
-    <div class="entry" id="art-4">
-      <div class="entry-byline"><a class="entry-title" href="https://twocoatsofpaint.com/2026/10/celeste-dupuy-spencer-at-the-edge.html?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=celeste-dupuy-spencer-at-the-edge" target="_blank" rel="noopener">Celeste Dupuy-Spencer At the Edge</a> by twocoatsstaff — Two Coats of Paint</div>
-
-      <p>Contributed by Margaret McCann / Celeste Dupuy-Spencer (1979–2026) left too soon, but her candid, cynical expressions of Americana, angst, and injustice leave a powerful legacy. The poetically titled exhibition “Burning in the Eyes of the Maker” (Daniel Lanois lyrics) at Jeffrey Deitch Gallery has less of her colorful work. Even without the great Don’t You See That I Am Burning depicting January…</p>
-    </div>
+  <section id="art" aria-labelledby="h-art">
+    <h2 id="h-art">Fine Art</h2>
+    <ol class="rows">
+    <li class="row" id="art-1" style="--i:0">
+      <span class="n">01</span>
+      <div>
+        <h3><a href="https://elephant.art/a-story-without-stakes-stands-to-bore-uncommissioned-in-curacao/" target="_blank" rel="noopener">“A Story Without Stakes Stands to Bore”: uncommissioned in Curaçao</a></h3>
+        <p>Elephant Magazine · Elephant</p>
+      </div>
+      <a class="btn alt" href="https://elephant.art/a-story-without-stakes-stands-to-bore-uncommissioned-in-curacao/" target="_blank" rel="noopener" aria-label="Read “A Story Without Stakes Stands to Bore”: uncommissioned in Curaçao">Read</a>
+    </li>
+    <li class="row" id="art-2" style="--i:1">
+      <span class="n">02</span>
+      <div>
+        <h3><a href="https://kunstkritikk.com/disco-delay-desire/" target="_blank" rel="noopener">Disco, Delay, Desire</a></h3>
+        <p>Frans Josef Petersson · Kunstkritikk</p>
+      </div>
+      <a class="btn alt" href="https://kunstkritikk.com/disco-delay-desire/" target="_blank" rel="noopener" aria-label="Read Disco, Delay, Desire">Read</a>
+    </li>
+    <li class="row" id="art-3" style="--i:2">
+      <span class="n">03</span>
+      <div>
+        <h3><a href="https://burnaway.org/daily/stories-to-tell-in-conversation-with-willie-birch/" target="_blank" rel="noopener">Stories to Tell: In Conversation with Willie Birch</a></h3>
+        <p>Kristina Robinson · Burnaway</p>
+      </div>
+      <a class="btn alt" href="https://burnaway.org/daily/stories-to-tell-in-conversation-with-willie-birch/" target="_blank" rel="noopener" aria-label="Read Stories to Tell: In Conversation with Willie Birch">Read</a>
+    </li>
+    <li class="row" id="art-4" style="--i:3">
+      <span class="n">04</span>
+      <div>
+        <h3><a href="https://twocoatsofpaint.com/2026/10/celeste-dupuy-spencer-at-the-edge.html?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=celeste-dupuy-spencer-at-the-edge" target="_blank" rel="noopener">Celeste Dupuy-Spencer At the Edge</a></h3>
+        <p>twocoatsstaff · Two Coats of Paint</p>
+      </div>
+      <a class="btn alt" href="https://twocoatsofpaint.com/2026/10/celeste-dupuy-spencer-at-the-edge.html?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=celeste-dupuy-spencer-at-the-edge" target="_blank" rel="noopener" aria-label="Read Celeste Dupuy-Spencer At the Edge">Read</a>
+    </li>
+    </ol>
   </section>
-  <section class="section film">
-    <span class="stampnum">02</span>
-    <div class="section-head">
-      <span class="section-tag">Film</span>
-      <h2 class="section-title">Film Criticism</h2>
-    </div>
-    <div class="entry" id="film-1">
-      <div class="entry-byline"><a class="entry-title" href="https://crookedmarquee.com/chloe-walkers-london-film-festival-diary/" target="_blank" rel="noopener">Chloe Walker’s London Film Festival Diary</a> by Chloe Walker — Crooked Marquee</div>
-
-      <p>On the animals, politics, and surprises both welcome and unwelcome at this year&#39;s LFF. The post Chloe Walker’s London Film Festival Diary appeared first on Crooked Marquee.</p>
-    </div>
-    <div class="entry" id="film-2">
-      <div class="entry-byline"><a class="entry-title" href="https://vaguevisages.com/2026/10/01/unabomber-soundtrack-netflix-movie-film-music-songs/" target="_blank" rel="noopener">Soundtracks of Cinema: ‘Unabomber’</a> by Q.V. Hough — Vague Visages</div>
-
-      <p>&#39;Unabomber&#39; Soundtrack: A Vague Visages guide for every song in Janus Metz&#39; 2026 Netflix movie. The post Soundtracks of Cinema: ‘Unabomber’ appeared first on Vague Visages (Vawg-Vee-Sawj).</p>
-    </div>
-    <div class="entry" id="film-3">
-      <div class="entry-byline"><a class="entry-title" href="https://screenanarchy.com/2026/10/brooklyn-horror-2026-review-erie.html" target="_blank" rel="noopener">Brooklyn Horror 2026 Review: ERIE, Debut Found Footage Horror Overcomplicates Its Own Style</a> — Screen Anarchy</div>
-
-      <p>In the late 1990s, the city of Erie, Pennsylvania, experiences an epidemic of inexplicable deaths. One of the victims is Iris Scott (Aimee Paxton), whose strange death in the woods is eventually ruled a suicide, like most of the other cases. Her sister, Stella (Carly Stewart), isn’t content with the explanation and, having discovered that Iris isn’t the only one, wants to dig deeper, roping their…</p>
-    </div>
-    <div class="entry" id="film-4">
-      <div class="entry-byline"><a class="entry-title" href="https://thefilmstage.com/where-to-stream-the-best-films-of-2026/" target="_blank" rel="noopener">Where to Stream the Best Films of 2026</a> by Jordan Raup — The Film Stage</div>
-
-      <p>As 2026 winds down, like most cinephiles, we’re looking to get our eyes on titles that may have slipped through the cracks or simply gone unseen, so—as we do each year—we’re sharing a rundown of the best titles available to watch at home. Curated from the Best Films of 2026 So Far list we published for the […] The post Where to Stream the Best Films of 2026 first appeared on The Film Stage.</p>
-    </div>
+  <section id="film" aria-labelledby="h-film">
+    <h2 id="h-film">Film</h2>
+    <ol class="rows">
+    <li class="row" id="film-1" style="--i:0">
+      <span class="n">01</span>
+      <div>
+        <h3><a href="https://crookedmarquee.com/chloe-walkers-london-film-festival-diary/" target="_blank" rel="noopener">Chloe Walker’s London Film Festival Diary</a></h3>
+        <p>Chloe Walker · Crooked Marquee</p>
+      </div>
+      <a class="btn alt" href="https://crookedmarquee.com/chloe-walkers-london-film-festival-diary/" target="_blank" rel="noopener" aria-label="Read Chloe Walker’s London Film Festival Diary">Read</a>
+    </li>
+    <li class="row" id="film-2" style="--i:1">
+      <span class="n">02</span>
+      <div>
+        <h3><a href="https://vaguevisages.com/2026/10/01/unabomber-soundtrack-netflix-movie-film-music-songs/" target="_blank" rel="noopener">Soundtracks of Cinema: ‘Unabomber’</a></h3>
+        <p>Q.V. Hough · Vague Visages</p>
+      </div>
+      <a class="btn alt" href="https://vaguevisages.com/2026/10/01/unabomber-soundtrack-netflix-movie-film-music-songs/" target="_blank" rel="noopener" aria-label="Read Soundtracks of Cinema: ‘Unabomber’">Read</a>
+    </li>
+    <li class="row" id="film-3" style="--i:2">
+      <span class="n">03</span>
+      <div>
+        <h3><a href="https://screenanarchy.com/2026/10/brooklyn-horror-2026-review-erie.html" target="_blank" rel="noopener">Brooklyn Horror 2026 Review: ERIE, Debut Found Footage Horror Overcomplicates Its Own Style</a></h3>
+        <p>Screen Anarchy</p>
+      </div>
+      <a class="btn alt" href="https://screenanarchy.com/2026/10/brooklyn-horror-2026-review-erie.html" target="_blank" rel="noopener" aria-label="Read Brooklyn Horror 2026 Review: ERIE, Debut Found Footage Horror Overcomplicates Its Own Style">Read</a>
+    </li>
+    <li class="row" id="film-4" style="--i:3">
+      <span class="n">04</span>
+      <div>
+        <h3><a href="https://thefilmstage.com/where-to-stream-the-best-films-of-2026/" target="_blank" rel="noopener">Where to Stream the Best Films of 2026</a></h3>
+        <p>Jordan Raup · The Film Stage</p>
+      </div>
+      <a class="btn alt" href="https://thefilmstage.com/where-to-stream-the-best-films-of-2026/" target="_blank" rel="noopener" aria-label="Read Where to Stream the Best Films of 2026">Read</a>
+    </li>
+    </ol>
   </section>
-  <section class="section tech">
-    <span class="stampnum">03</span>
-    <div class="section-head">
-      <span class="section-tag">Tech &amp; AI</span>
-      <h2 class="section-title">Tech &amp; AI</h2>
-    </div>
-    <div class="entry" id="tech-1">
-      <div class="entry-byline"><a class="entry-title" href="https://techcabal.com/2026/10/21/african-banks-payment-technology/" target="_blank" rel="noopener">African banks may be sitting on payment technology they aren’t fully using</a> by Phathisani Moyo — TechCabal</div>
-
-      <p>“Technology is important, but modernisation should ultimately be driven by business priorities and opportunities,” Bautista said.</p>
-    </div>
-    <div class="entry" id="tech-2">
-      <div class="entry-byline"><a class="entry-title" href="https://restofworld.org/2026/west-ai-anxiety-optimism-innovation/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=feeds" target="_blank" rel="noopener">What the West can learn from AI optimists in the rest of the world</a> by Payal Arora — Rest of World</div>
-
-      <p>The developing world’s enthusiastic adoption of AI and necessity-driven innovations offer lessons for an anxiety-ridden West.</p>
-    </div>
-    <div class="entry" id="tech-3">
-      <div class="entry-byline"><a class="entry-title" href="https://www.theverge.com/ai-artificial-intelligence/1015715/walmart-ai-shopping-agents" target="_blank" rel="noopener">Walmart is inviting AI agents to shop for you</a> by Emma Roth — The Verge</div>
-
-      <p>Walmart will soon let AI agents shop on its website for you. Next month, the retail giant will allow you to connect your own AI agent to the site, with systems in place to let you approve and review purchases and set spending limits. The embrace of AI agents stands in stark contrast to Amazon, […]</p>
-    </div>
-    <div class="entry" id="tech-4">
-      <div class="entry-byline"><a class="entry-title" href="https://www.wired.com/story/eufy-security-camera-deals-october-2026/" target="_blank" rel="noopener">Eufy Security Wall Light Cam S4 Deal: Save $80 on This Versatile Gadget</a> by Simon Hill — Wired</div>
-
-      <p>This feature-packed security camera is the perfect way to keep an eye on your home and fam from afar.</p>
-    </div>
+  <section id="tech" aria-labelledby="h-tech">
+    <h2 id="h-tech">Tech &amp; AI</h2>
+    <ol class="rows">
+    <li class="row" id="tech-1" style="--i:0">
+      <span class="n">01</span>
+      <div>
+        <h3><a href="https://techcabal.com/2026/10/21/african-banks-payment-technology/" target="_blank" rel="noopener">African banks may be sitting on payment technology they aren’t fully using</a></h3>
+        <p>Phathisani Moyo · TechCabal</p>
+      </div>
+      <a class="btn alt" href="https://techcabal.com/2026/10/21/african-banks-payment-technology/" target="_blank" rel="noopener" aria-label="Read African banks may be sitting on payment technology they aren’t fully using">Read</a>
+    </li>
+    <li class="row" id="tech-2" style="--i:1">
+      <span class="n">02</span>
+      <div>
+        <h3><a href="https://restofworld.org/2026/west-ai-anxiety-optimism-innovation/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=feeds" target="_blank" rel="noopener">What the West can learn from AI optimists in the rest of the world</a></h3>
+        <p>Payal Arora · Rest of World</p>
+      </div>
+      <a class="btn alt" href="https://restofworld.org/2026/west-ai-anxiety-optimism-innovation/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=feeds" target="_blank" rel="noopener" aria-label="Read What the West can learn from AI optimists in the rest of the world">Read</a>
+    </li>
+    <li class="row" id="tech-3" style="--i:2">
+      <span class="n">03</span>
+      <div>
+        <h3><a href="https://www.theverge.com/ai-artificial-intelligence/1015715/walmart-ai-shopping-agents" target="_blank" rel="noopener">Walmart is inviting AI agents to shop for you</a></h3>
+        <p>Emma Roth · The Verge</p>
+      </div>
+      <a class="btn alt" href="https://www.theverge.com/ai-artificial-intelligence/1015715/walmart-ai-shopping-agents" target="_blank" rel="noopener" aria-label="Read Walmart is inviting AI agents to shop for you">Read</a>
+    </li>
+    <li class="row" id="tech-4" style="--i:3">
+      <span class="n">04</span>
+      <div>
+        <h3><a href="https://www.wired.com/story/eufy-security-camera-deals-october-2026/" target="_blank" rel="noopener">Eufy Security Wall Light Cam S4 Deal: Save $80 on This Versatile Gadget</a></h3>
+        <p>Simon Hill · Wired</p>
+      </div>
+      <a class="btn alt" href="https://www.wired.com/story/eufy-security-camera-deals-october-2026/" target="_blank" rel="noopener" aria-label="Read Eufy Security Wall Light Cam S4 Deal: Save $80 on This Versatile Gadget">Read</a>
+    </li>
+    </ol>
   </section>
-  <section class="section lit">
-    <span class="stampnum">04</span>
-    <div class="section-head">
-      <span class="section-tag">Sci-Fi / Fantasy</span>
-      <h2 class="section-title">Literary Reviews</h2>
-    </div>
-    <div class="entry" id="lit-1">
-      <div class="entry-byline"><a class="entry-title" href="https://ancillaryreviewofbooks.org/2026/10/21/ossify-and-worship/" target="_blank" rel="noopener">Ossify and Worship: Review of Natasha Pulley’s The Salt King</a> by Hera — Ancillary Review of Books</div>
-
-      <p>Author Under Review:The Salt King. Natasha Pulley. Bloomsbury, August 2026. When I was younger, there was a show, Father Dowling Mysteries, that centered on a Catholic priest and a female detective who solved crimes assigned to them by the local archdiocese. Its standout episode was about the murder of a priest who was looking for … Continue reading Ossify and Worship: Review of Natasha Pulley’s…</p>
-    </div>
-    <div class="entry" id="lit-2">
-      <div class="entry-byline"><a class="entry-title" href="https://strangehorizons.com/wordpress/non-fiction/from-the-library-of-jurgen-leitner-by-premee-mohamed-with-jonathan-sims/" target="_blank" rel="noopener">From the Library of Jurgen Leitner by Premee Mohamed with Jonathan Sims</a> by Luna Gray — Strange Horizons</div>
-
-      <p>The Magnus Archives runs on mediated testimony.</p>
-    </div>
-    <div class="entry" id="lit-3">
-      <div class="entry-byline"><a class="entry-title" href="https://electricliterature.com/two-poems-by-forrest-rapier/" target="_blank" rel="noopener">Nothing Says Quality Time Like Being Kidnapped by Dad</a> by Forrest Rapier — Electric Literature</div>
-
-      <p>My Father, My Aerialist “And he forged on the shield . . . wedding feasts . . . and the young men came dancing . . .” – The Iliad What money he made, he hid inside his jacket pocket And came back home to smoke the cheapest weed he found In Lackawanna—he’d leave to buy […] The post Nothing Says Quality Time Like Being Kidnapped by Dad appeared first on Electric Literature.</p>
-    </div>
-    <div class="entry" id="lit-4">
-      <div class="entry-byline"><a class="entry-title" href="https://www.full-stop.net/2026/10/20/interviews/colmmckenna/shaun-wilson/" target="_blank" rel="noopener">Shaun Wilson</a> by Colm McKenna — Full Stop</div>
-
-      <p>Shaun Wilson’s debut novel Malc’s Boy – which launched Conduit Books earlier this year – follows Shaun, son of publican Malc, circumventing the expectations of his local community while cultivating his artistic sensibilities. Wilson’s novel tracks Shaun from birth to the completion of his novel, the inner workings and development of which are discussed by […]</p>
-    </div>
+  <section id="lit" aria-labelledby="h-lit">
+    <h2 id="h-lit">Books</h2>
+    <ol class="rows">
+    <li class="row" id="lit-1" style="--i:0">
+      <span class="n">01</span>
+      <div>
+        <h3><a href="https://ancillaryreviewofbooks.org/2026/10/21/ossify-and-worship/" target="_blank" rel="noopener">Ossify and Worship: Review of Natasha Pulley’s The Salt King</a></h3>
+        <p>Hera · Ancillary Review of Books</p>
+      </div>
+      <a class="btn alt" href="https://ancillaryreviewofbooks.org/2026/10/21/ossify-and-worship/" target="_blank" rel="noopener" aria-label="Read Ossify and Worship: Review of Natasha Pulley’s The Salt King">Read</a>
+    </li>
+    <li class="row" id="lit-2" style="--i:1">
+      <span class="n">02</span>
+      <div>
+        <h3><a href="https://strangehorizons.com/wordpress/non-fiction/from-the-library-of-jurgen-leitner-by-premee-mohamed-with-jonathan-sims/" target="_blank" rel="noopener">From the Library of Jurgen Leitner by Premee Mohamed with Jonathan Sims</a></h3>
+        <p>Luna Gray · Strange Horizons</p>
+      </div>
+      <a class="btn alt" href="https://strangehorizons.com/wordpress/non-fiction/from-the-library-of-jurgen-leitner-by-premee-mohamed-with-jonathan-sims/" target="_blank" rel="noopener" aria-label="Read From the Library of Jurgen Leitner by Premee Mohamed with Jonathan Sims">Read</a>
+    </li>
+    <li class="row" id="lit-3" style="--i:2">
+      <span class="n">03</span>
+      <div>
+        <h3><a href="https://electricliterature.com/two-poems-by-forrest-rapier/" target="_blank" rel="noopener">Nothing Says Quality Time Like Being Kidnapped by Dad</a></h3>
+        <p>Forrest Rapier · Electric Literature</p>
+      </div>
+      <a class="btn alt" href="https://electricliterature.com/two-poems-by-forrest-rapier/" target="_blank" rel="noopener" aria-label="Read Nothing Says Quality Time Like Being Kidnapped by Dad">Read</a>
+    </li>
+    <li class="row" id="lit-4" style="--i:3">
+      <span class="n">04</span>
+      <div>
+        <h3><a href="https://www.full-stop.net/2026/10/20/interviews/colmmckenna/shaun-wilson/" target="_blank" rel="noopener">Shaun Wilson</a></h3>
+        <p>Colm McKenna · Full Stop</p>
+      </div>
+      <a class="btn alt" href="https://www.full-stop.net/2026/10/20/interviews/colmmckenna/shaun-wilson/" target="_blank" rel="noopener" aria-label="Read Shaun Wilson">Read</a>
+    </li>
+    </ol>
   </section>
-  <section class="section music">
-    <span class="stampnum">05</span>
-    <div class="section-head">
-      <span class="section-tag">Music</span>
-      <h2 class="section-title">Music Criticism</h2>
-    </div>
-    <div class="entry" id="music-1">
-      <div class="entry-byline"><a class="entry-title" href="https://thenativemag.com/orch-is-centering-heritage-and-spirit/" target="_blank" rel="noopener">Orch Is Centering Heritage And Spirit</a> by Frederick Adjavon — The NATIVE</div>
-
-      <p>From his stagecraft to his sound, Orch has crafted a brand that is amplified by those who truly see themselves in the art. The post Orch Is Centering Heritage And Spirit appeared first on The NATIVE.</p>
-    </div>
-    <div class="entry" id="music-2">
-      <div class="entry-byline"><a class="entry-title" href="https://www.theaureview.com/games/toy-story-retro-roundup-toy-story-3-complete-edition-review/" target="_blank" rel="noopener">Toy Story: Retro Roundup! + Toy Story 3: Complete Edition is a fun exploration of the franchise</a> by Matthew Arcari — The AU Review</div>
-
-      <p>Some of my earliest memories with film were of Toy Story and Toy Story 2. So naturally, I grew up alongside those games as they were released on various platforms. I played most of them when they came out (yes, I’m that old) and actually still have most of these original copies in my collection...</p>
-    </div>
-    <div class="entry" id="music-3">
-      <div class="entry-byline"><a class="entry-title" href="https://consequence.net/2026/10/clayface-review-dc-comics-mike-flanagan/" target="_blank" rel="noopener">Clayface Is DC Comics’ Scariest Horror Movie Ever: Review</a> by Liz Shannon Miller — Consequence</div>
-
-      <p>The squirm-inducing take on a mid-tier Batman villain was written by modern horror favorite Mike Flanagan. Clayface Is DC Comics’ Scariest Horror Movie Ever: Review Liz Shannon Miller</p>
-    </div>
-    <div class="entry" id="music-4">
-      <div class="entry-byline"><a class="entry-title" href="https://stereogum.com/2515266/kid-cudi-is-writing-producing-and-starring-in-his-own-jean-michel-basquiat-biopic/news/" target="_blank" rel="noopener">Kid Cudi Is Writing, Producing, And Starring In His Own Jean-Michel Basquiat Biopic</a> by Danielle Chelosky — Stereogum</div>
-
-      <p>The post Kid Cudi Is Writing, Producing, And Starring In His Own Jean-Michel Basquiat Biopic appeared first on Stereogum.</p>
-    </div>
+  <section id="music" aria-labelledby="h-music">
+    <h2 id="h-music">Music Criticism</h2>
+    <ol class="rows">
+    <li class="row" id="music-1" style="--i:0">
+      <span class="n">01</span>
+      <div>
+        <h3><a href="https://thenativemag.com/orch-is-centering-heritage-and-spirit/" target="_blank" rel="noopener">Orch Is Centering Heritage And Spirit</a></h3>
+        <p>Frederick Adjavon · The NATIVE</p>
+      </div>
+      <a class="btn alt" href="https://thenativemag.com/orch-is-centering-heritage-and-spirit/" target="_blank" rel="noopener" aria-label="Read Orch Is Centering Heritage And Spirit">Read</a>
+    </li>
+    <li class="row" id="music-2" style="--i:1">
+      <span class="n">02</span>
+      <div>
+        <h3><a href="https://www.theaureview.com/games/toy-story-retro-roundup-toy-story-3-complete-edition-review/" target="_blank" rel="noopener">Toy Story: Retro Roundup! + Toy Story 3: Complete Edition is a fun exploration of the franchise</a></h3>
+        <p>Matthew Arcari · The AU Review</p>
+      </div>
+      <a class="btn alt" href="https://www.theaureview.com/games/toy-story-retro-roundup-toy-story-3-complete-edition-review/" target="_blank" rel="noopener" aria-label="Read Toy Story: Retro Roundup! + Toy Story 3: Complete Edition is a fun exploration of the franchise">Read</a>
+    </li>
+    <li class="row" id="music-3" style="--i:2">
+      <span class="n">03</span>
+      <div>
+        <h3><a href="https://consequence.net/2026/10/clayface-review-dc-comics-mike-flanagan/" target="_blank" rel="noopener">Clayface Is DC Comics’ Scariest Horror Movie Ever: Review</a></h3>
+        <p>Liz Shannon Miller · Consequence</p>
+      </div>
+      <a class="btn alt" href="https://consequence.net/2026/10/clayface-review-dc-comics-mike-flanagan/" target="_blank" rel="noopener" aria-label="Read Clayface Is DC Comics’ Scariest Horror Movie Ever: Review">Read</a>
+    </li>
+    <li class="row" id="music-4" style="--i:3">
+      <span class="n">04</span>
+      <div>
+        <h3><a href="https://stereogum.com/2515266/kid-cudi-is-writing-producing-and-starring-in-his-own-jean-michel-basquiat-biopic/news/" target="_blank" rel="noopener">Kid Cudi Is Writing, Producing, And Starring In His Own Jean-Michel Basquiat Biopic</a></h3>
+        <p>Danielle Chelosky · Stereogum</p>
+      </div>
+      <a class="btn alt" href="https://stereogum.com/2515266/kid-cudi-is-writing-producing-and-starring-in-his-own-jean-michel-basquiat-biopic/news/" target="_blank" rel="noopener" aria-label="Read Kid Cudi Is Writing, Producing, And Starring In His Own Jean-Michel Basquiat Biopic">Read</a>
+    </li>
+    </ol>
   </section>
-  <section class="section design">
-    <span class="stampnum">06</span>
-    <div class="section-head">
-      <span class="section-tag">Design</span>
-      <h2 class="section-title">Design</h2>
-    </div>
-    <div class="entry" id="design-1">
-      <div class="entry-byline"><a class="entry-title" href="https://www.azuremagazine.com/article/winnipeg-firm-5468796-architecture-shapes-more-than-buildings-it-builds-community/" target="_blank" rel="noopener">Winnipeg Firm 5468796 Architecture Shapes More Than Buildings, It Builds Community</a> by Sydney Shilling — Azure</div>
-
-      <p>The firm&#39;s deeply collaborative studio culture shapes a design approach grounded in shared responsibility, civic engagement and a belief in architecture’s public value. The post Winnipeg Firm 5468796 Architecture Shapes More Than Buildings, It Builds Community appeared first on Azure Magazine.</p>
-    </div>
-    <div class="entry" id="design-2">
-      <div class="entry-byline"><a class="entry-title" href="https://architectureau.com/articles/lacebark-by-smart-design-studio/" target="_blank" rel="noopener">Lacebark by Smart Design Studio</a> by Philip Oldfield — ArchitectureAU Discussion</div>
-
-      <p>Set in a rising neighbourhood of north-west Sydney, a new apartment tower trades generic glass-box urbanism for an expressive form carefully attuned to sun and shade.</p>
-    </div>
-    <div class="entry" id="design-3">
-      <div class="entry-byline"><a class="entry-title" href="https://design-milk.com/2027-infiniti-qx80-design/" target="_blank" rel="noopener">Infiniti Carries Kyoto’s Bamboo Forests Into the Design of the 2027 QX80</a> by Hayley Arsenault — Design Milk</div>
-
-      <p>From a grille patterned after bamboo to hand-stitched seats, Japanese nature and hospitality shape Infiniti&#39;s full-size flagship SUV</p>
-    </div>
-    <div class="entry" id="design-4">
-      <div class="entry-byline"><a class="entry-title" href="https://www.archdaily.com/1187146/poliedro-i-house-volume-architecture-lisbon-studio" target="_blank" rel="noopener">Poliedro I House / Volume Architecture Lisbon Studio</a> by Susanna Moreira — ArchDaily</div>
-
-      <p>Casa Poliedro I sits within a dense urban fabric, characterized by narrow, small plots.​</p>
-    </div>
+  <section id="design" aria-labelledby="h-design">
+    <h2 id="h-design">Design</h2>
+    <ol class="rows">
+    <li class="row" id="design-1" style="--i:0">
+      <span class="n">01</span>
+      <div>
+        <h3><a href="https://www.azuremagazine.com/article/winnipeg-firm-5468796-architecture-shapes-more-than-buildings-it-builds-community/" target="_blank" rel="noopener">Winnipeg Firm 5468796 Architecture Shapes More Than Buildings, It Builds Community</a></h3>
+        <p>Sydney Shilling · Azure</p>
+      </div>
+      <a class="btn alt" href="https://www.azuremagazine.com/article/winnipeg-firm-5468796-architecture-shapes-more-than-buildings-it-builds-community/" target="_blank" rel="noopener" aria-label="Read Winnipeg Firm 5468796 Architecture Shapes More Than Buildings, It Builds Community">Read</a>
+    </li>
+    <li class="row" id="design-2" style="--i:1">
+      <span class="n">02</span>
+      <div>
+        <h3><a href="https://architectureau.com/articles/lacebark-by-smart-design-studio/" target="_blank" rel="noopener">Lacebark by Smart Design Studio</a></h3>
+        <p>Philip Oldfield · ArchitectureAU Discussion</p>
+      </div>
+      <a class="btn alt" href="https://architectureau.com/articles/lacebark-by-smart-design-studio/" target="_blank" rel="noopener" aria-label="Read Lacebark by Smart Design Studio">Read</a>
+    </li>
+    <li class="row" id="design-3" style="--i:2">
+      <span class="n">03</span>
+      <div>
+        <h3><a href="https://design-milk.com/2027-infiniti-qx80-design/" target="_blank" rel="noopener">Infiniti Carries Kyoto’s Bamboo Forests Into the Design of the 2027 QX80</a></h3>
+        <p>Hayley Arsenault · Design Milk</p>
+      </div>
+      <a class="btn alt" href="https://design-milk.com/2027-infiniti-qx80-design/" target="_blank" rel="noopener" aria-label="Read Infiniti Carries Kyoto’s Bamboo Forests Into the Design of the 2027 QX80">Read</a>
+    </li>
+    <li class="row" id="design-4" style="--i:3">
+      <span class="n">04</span>
+      <div>
+        <h3><a href="https://www.archdaily.com/1187146/poliedro-i-house-volume-architecture-lisbon-studio" target="_blank" rel="noopener">Poliedro I House / Volume Architecture Lisbon Studio</a></h3>
+        <p>Susanna Moreira · ArchDaily</p>
+      </div>
+      <a class="btn alt" href="https://www.archdaily.com/1187146/poliedro-i-house-volume-architecture-lisbon-studio" target="_blank" rel="noopener" aria-label="Read Poliedro I House / Volume Architecture Lisbon Studio">Read</a>
+    </li>
+    </ol>
   </section>
-  <section class="section fashion">
-    <span class="stampnum">07</span>
-    <div class="section-head">
-      <span class="section-tag">Men&#39;s Fashion</span>
-      <h2 class="section-title">Men&#39;s Fashion</h2>
-    </div>
-    <div class="entry" id="fashion-1">
-      <div class="entry-byline"><a class="entry-title" href="https://www.dazeddigital.com/art-photography/article/71205/1/inside-a-night-with-dazed-club-and-audemars-piguet-at-the-southbank-centre?utm_source=Link&amp;utm_medium=Link&amp;utm_campaign=RSSFeed&amp;utm_term=inside-a-night-with-dazed-club-and-audemars-piguet-at-the-southbank-centre" target="_blank" rel="noopener">Inside a night with Dazed Club and Audemars Piguet at the Southbank Centre</a> by Dazed Digitalhttps://www.dazeddigital.com/rssfeed@dazedmedia.com — Dazed Fashion</div>
-
-      <p>Dazed and Audemars Piguet Contemporary invited Dazed Clubbers for an evening celebrating Renée Levi’s latest commission at the Hayward Gallery</p>
-    </div>
-    <div class="entry" id="fashion-2">
-      <div class="entry-byline"><a class="entry-title" href="https://www.anothermag.com/art-photography/17584/alice-diop-miu-miu-geste-de-consolation-art-basel-paris?utm_source=Link&amp;utm_medium=Link&amp;utm_campaign=RSSFeed&amp;utm_term=alice-diop-on-her-very-risky-endeavour-for-miu-miu" target="_blank" rel="noopener">Alice Diop on Her “Very Risky Endeavour” for Miu Miu</a> by Alexander Furyhttps://www.anothermag.com/rssfeed@dazedmedia.com — AnOther</div>
-
-      <p>For Art Basel Paris, Diop ventures beyond cinema with a deeply personal exhibition presented by Miu Miu, exploring Black womanhood, creativity and the risks of laying herself bare</p>
-    </div>
-    <div class="entry" id="fashion-3">
-      <div class="entry-byline"><a class="entry-title" href="https://i-d.co/article/talia-byre-topshop/" target="_blank" rel="noopener">Talia Byre Goes Back to Topshop</a> by alexkessler — i-D</div>
-
-      <p>From teenage Topshop hauls to designing her own collection, the British designer talks school uniforms, vintage brogues, and dressing girls on the bus. For Talia Byre, Topshop was where it all began. Growing up in Warrington, the British designer would spend hours rummaging through the rails, discovering fashion one ballet pump at a time. “It […]</p>
-    </div>
-    <div class="entry" id="fashion-4">
-      <div class="entry-byline"><a class="entry-title" href="https://www.drapersonline.com/news/in-pictures-john-lewis-launches-collaboration-with-rixo" target="_blank" rel="noopener">In pictures: John Lewis launches collaboration with Rixo</a> by Katie Ross — Drapers</div>
-
-      <p>Drapers In pictures: John Lewis launches collaboration with Rixo John Lewis is launching its &quot;biggest fashion collaboration&quot; with Rixo on 22 October, available online and in 30 John Lewis stores. The post In pictures: John Lewis launches collaboration with Rixo appeared first on Drapers.</p>
-    </div>
+  <section id="fashion" aria-labelledby="h-fashion">
+    <h2 id="h-fashion">Men&#39;s Fashion</h2>
+    <ol class="rows">
+    <li class="row" id="fashion-1" style="--i:0">
+      <span class="n">01</span>
+      <div>
+        <h3><a href="https://www.dazeddigital.com/art-photography/article/71205/1/inside-a-night-with-dazed-club-and-audemars-piguet-at-the-southbank-centre?utm_source=Link&amp;utm_medium=Link&amp;utm_campaign=RSSFeed&amp;utm_term=inside-a-night-with-dazed-club-and-audemars-piguet-at-the-southbank-centre" target="_blank" rel="noopener">Inside a night with Dazed Club and Audemars Piguet at the Southbank Centre</a></h3>
+        <p>Dazed Digitalhttps://www.dazeddigital.com/rssfeed@dazedmedia.com · Dazed Fashion</p>
+      </div>
+      <a class="btn alt" href="https://www.dazeddigital.com/art-photography/article/71205/1/inside-a-night-with-dazed-club-and-audemars-piguet-at-the-southbank-centre?utm_source=Link&amp;utm_medium=Link&amp;utm_campaign=RSSFeed&amp;utm_term=inside-a-night-with-dazed-club-and-audemars-piguet-at-the-southbank-centre" target="_blank" rel="noopener" aria-label="Read Inside a night with Dazed Club and Audemars Piguet at the Southbank Centre">Read</a>
+    </li>
+    <li class="row" id="fashion-2" style="--i:1">
+      <span class="n">02</span>
+      <div>
+        <h3><a href="https://www.anothermag.com/art-photography/17584/alice-diop-miu-miu-geste-de-consolation-art-basel-paris?utm_source=Link&amp;utm_medium=Link&amp;utm_campaign=RSSFeed&amp;utm_term=alice-diop-on-her-very-risky-endeavour-for-miu-miu" target="_blank" rel="noopener">Alice Diop on Her “Very Risky Endeavour” for Miu Miu</a></h3>
+        <p>Alexander Furyhttps://www.anothermag.com/rssfeed@dazedmedia.com · AnOther</p>
+      </div>
+      <a class="btn alt" href="https://www.anothermag.com/art-photography/17584/alice-diop-miu-miu-geste-de-consolation-art-basel-paris?utm_source=Link&amp;utm_medium=Link&amp;utm_campaign=RSSFeed&amp;utm_term=alice-diop-on-her-very-risky-endeavour-for-miu-miu" target="_blank" rel="noopener" aria-label="Read Alice Diop on Her “Very Risky Endeavour” for Miu Miu">Read</a>
+    </li>
+    <li class="row" id="fashion-3" style="--i:2">
+      <span class="n">03</span>
+      <div>
+        <h3><a href="https://i-d.co/article/talia-byre-topshop/" target="_blank" rel="noopener">Talia Byre Goes Back to Topshop</a></h3>
+        <p>alexkessler · i-D</p>
+      </div>
+      <a class="btn alt" href="https://i-d.co/article/talia-byre-topshop/" target="_blank" rel="noopener" aria-label="Read Talia Byre Goes Back to Topshop">Read</a>
+    </li>
+    <li class="row" id="fashion-4" style="--i:3">
+      <span class="n">04</span>
+      <div>
+        <h3><a href="https://www.drapersonline.com/news/in-pictures-john-lewis-launches-collaboration-with-rixo" target="_blank" rel="noopener">In pictures: John Lewis launches collaboration with Rixo</a></h3>
+        <p>Katie Ross · Drapers</p>
+      </div>
+      <a class="btn alt" href="https://www.drapersonline.com/news/in-pictures-john-lewis-launches-collaboration-with-rixo" target="_blank" rel="noopener" aria-label="Read In pictures: John Lewis launches collaboration with Rixo">Read</a>
+    </li>
+    </ol>
   </section>
   <footer>
-    <span>Algorithm</span>
-    <span>Issue No. 47 — 21 Oct 2026</span>
+    <div class="fine">
+      <div><p>Troller, Issue 47, week of 21 October 2026. Every link was read in full before it was picked.</p>
+        <p><a href="../archive/index.html">Every issue</a></p></div>
+      <p><a href="#top">Back to top</a></p>
+    </div>
+    <p class="big" aria-hidden="true">happy reading</p>
   </footer>
 </div>
-</div>
+<script>
+(function(){
+  var sw = document.getElementById('sw-calm');
+  if (!sw) return;
+  function load(){ try { return JSON.parse(localStorage.getItem('troller-ui') || '{}') || {}; } catch (e) { return {}; } }
+  function paint(){ var on = document.documentElement.hasAttribute('data-calm'); sw.setAttribute('aria-pressed', on ? 'true' : 'false'); }
+  sw.addEventListener('click', function(){
+    var ui = load(); ui.calm = !document.documentElement.hasAttribute('data-calm');
+    if (ui.calm) document.documentElement.setAttribute('data-calm', ''); else document.documentElement.removeAttribute('data-calm');
+    try { localStorage.setItem('troller-ui', JSON.stringify(ui)); } catch (e) {}
+    paint();
+  });
+  paint();
+})();</script>
 
 </body>
 </html>

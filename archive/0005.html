@@ -2,311 +2,330 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="color-scheme" content="dark">
-<meta name="theme-color" content="#0A0A0A">
-<title>Algorithm — Issue No. 5 — 13 Sep 2026</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#F1EEE9">
+<title>Troller — Issue 5</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Source+Serif+4:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>try{var u=JSON.parse(localStorage.getItem('troller-ui')||'{}');if(u.calm)document.documentElement.setAttribute('data-calm','');}catch(e){}</script>
 <style>
-  html, body{ margin:0; padding:0; height:100%; background-color:#0A0A0A; }
-  *{box-sizing:border-box;}
-  body{
-    min-height:100dvh;
-    color:#FAFAF7;
-    font-family:'Source Serif 4', Georgia, serif;
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-  }
-  .page{ background-color:#0A0A0A; min-height:100dvh; }
-  a{ color:inherit; }
-  .wrap{max-width:720px; margin:0 auto; padding:44px 24px 90px; position:relative;}
-  .masthead{
-    display:flex; justify-content:space-between; align-items:flex-end;
-    border-bottom:4px solid #FAFAF7;
-    padding-bottom:14px; margin-bottom:24px;
-  }
-  .mast-title{
-    font-family:'Archivo Black', sans-serif;
-    font-size:clamp(26px,6vw,34px);
-    letter-spacing:-0.01em;
-    text-transform:uppercase;
-    color:#FAFAF7;
-    text-decoration:none;
-  }
-  .stamp{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:11px; letter-spacing:0.1em; text-transform:uppercase;
-    color:#0A0A0A; background:#FF1F3D;
-    padding:5px 10px; border-radius:2px;
-    transform:rotate(-3deg); display:inline-block; font-weight:600;
-    white-space:nowrap;
-  }
-  .tabs{display:flex; gap:22px; margin:-8px 0 26px; font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.1em; text-transform:uppercase;}
-  .tab{color:#A6A29A; text-decoration:none; padding-bottom:6px; border-bottom:2px solid transparent;}
-  .tab:hover{color:#FAFAF7;}
-  .tab.is-active{color:#FAFAF7; border-bottom-color:#FF1F3D;}
-  .nav{display:flex; justify-content:space-between; align-items:center; gap:16px; margin-bottom:40px; flex-wrap:wrap;}
-  .nav-link{font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:#FAFAF7; text-decoration:none; border:1px solid rgba(250,250,247,0.35); padding:9px 14px; border-radius:2px; white-space:nowrap;}
-  .nav-link:hover{border-color:#FF1F3D; color:#FF1F3D;}
-  .search-wrap{position:relative; flex:1; min-width:220px;}
-  .search-input{width:100%; background:#151513; border:1px solid rgba(250,250,247,0.3); color:#FAFAF7; font-family:'IBM Plex Mono', monospace; font-size:13px; padding:10px 12px; border-radius:2px; outline:none;}
-  .search-input::placeholder{color:#6B6860;}
-  .search-input:focus{border-color:#FF1F3D;}
-  .search-results{position:absolute; top:calc(100% + 6px); left:0; right:0; background:#111110; border:1px solid rgba(250,250,247,0.25); border-radius:4px; max-height:380px; overflow-y:auto; z-index:20; display:none;}
-  .search-results.active{display:block;}
-  .search-result{display:block; padding:10px 12px; border-bottom:1px solid rgba(250,250,247,0.12); text-decoration:none;}
-  .search-result:last-child{border-bottom:none;}
-  .search-result:hover{background:rgba(255,31,61,0.08);}
-  .sr-tag{font-family:'IBM Plex Mono', monospace; font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:#A6A29A;}
-  .sr-title{display:block; font-style:italic; color:#FAFAF7; margin:2px 0; font-size:14px;}
-  .sr-meta{font-family:'IBM Plex Mono', monospace; font-size:10.5px; color:#A6A29A;}
-  .search-empty{padding:14px 12px; font-family:'IBM Plex Mono', monospace; font-size:12.5px; color:#A6A29A;}
-  h1.hero{
-    font-family:'Anton', sans-serif;
-    font-weight:400;
-    font-size:clamp(42px,10vw,72px);
-    line-height:0.94;
-    text-transform:uppercase;
-    margin:0 0 22px;
-    color:#FAFAF7;
-  }
-  h1.hero .pop{color:#FF1F3D;}
-  .intro{font-size:17px; color:#EDEAE2; max-width:56ch; margin-bottom:10px;}
-  .intro-byline{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:11px; letter-spacing:0.08em; text-transform:uppercase;
-    color:#A6A29A;
-    margin-top:16px; margin-bottom:54px; display:block;
-    border-left:2px solid #FF1F3D; padding-left:10px;
-  }
-  .section{position:relative; margin-bottom:50px; padding-left:56px;}
-  .section:last-of-type{margin-bottom:0;}
-  .stampnum{
-    position:absolute; left:0; top:0;
-    width:42px; height:42px;
-    border:2px solid #FAFAF7;
-    border-radius:50%;
-    display:flex; align-items:center; justify-content:center;
-    font-family:'Archivo Black', sans-serif;
-    font-size:15px; color:#FAFAF7;
-    transform:rotate(-6deg);
-  }
-  .art .stampnum{border-color:#C9A24B; color:#C9A24B;}
-  .film .stampnum{border-color:#FF5B4A; color:#FF5B4A;}
-  .tech .stampnum{border-color:#3FE0D0; color:#3FE0D0;}
-  .lit .stampnum{border-color:#B39DFF; color:#B39DFF;}
-  .music .stampnum{border-color:#FF5FA8; color:#FF5FA8;}
-  .design .stampnum{border-color:#FFD23F; color:#FFD23F;}
-  .fashion .stampnum{border-color:#FAFAF7; color:#FAFAF7;}
-  .section-head{display:flex; align-items:center; gap:12px; margin-bottom:18px; flex-wrap:wrap;}
-  .section-tag{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:12px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase;
-    color:#0A0A0A;
-    padding:6px 11px; border-radius:2px;
-  }
-  .art .section-tag{background:#C9A24B;}
-  .film .section-tag{background:#FF5B4A;}
-  .tech .section-tag{background:#3FE0D0;}
-  .lit .section-tag{background:#B39DFF;}
-  .music .section-tag{background:#FF5FA8;}
-  .design .section-tag{background:#FFD23F;}
-  .fashion .section-tag{background:#FAFAF7;}
-  .section-title{
-    font-family:'Archivo Black', sans-serif;
-    font-size:24px; text-transform:uppercase; letter-spacing:0.01em;
-    color:#FAFAF7;
-  }
-  .entry{margin-bottom:24px; padding-bottom:24px; border-bottom:1px solid rgba(250,250,247,0.16); scroll-margin-top:24px;}
-  .entry:last-child{border-bottom:none; margin-bottom:0; padding-bottom:0;}
-  .entry-byline{font-family:'IBM Plex Mono', monospace; font-size:12px; color:#A6A29A; margin-bottom:8px;}
-  .entry-title{font-weight:500; font-style:italic; color:#FAFAF7; text-decoration:underline; text-decoration-color:rgba(250,250,247,0.35); text-underline-offset:3px;}
-  .entry-title:hover{text-decoration-color:#FF1F3D;}
-  .entry p{margin:0 0 10px; font-size:16px; color:#EDEAE2;}
-  .entry .why{font-size:14.5px; color:#A6A29A; font-style:italic;}
-  .entry .why::before{content:"— ";}
-  .issue-list{list-style:none; margin:0; padding:0;}
-  .issue-card{display:block; text-decoration:none; padding:22px 0; border-bottom:1px solid rgba(250,250,247,0.16);}
-  .issue-card:first-child{padding-top:0;}
-  .issue-card:hover .issue-headline{ text-decoration-color:#FF1F3D; }
-  .issue-meta{font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:#A6A29A; margin-bottom:8px;}
-  .issue-meta .num{color:#FF1F3D;}
-  .issue-headline{font-family:'Archivo Black', sans-serif; font-size:22px; text-transform:uppercase; letter-spacing:0.01em; color:#FAFAF7; text-decoration:underline; text-decoration-color:rgba(250,250,247,0.35); text-underline-offset:4px; display:inline-block; margin-bottom:8px;}
-  .issue-desc{font-size:15px; color:#A6A29A; max-width:60ch; margin:0;}
-  footer{
-    margin-top:64px; padding-top:20px; border-top:1px solid rgba(250,250,247,0.16);
-    display:flex; justify-content:space-between; gap:12px;
-    font-family:'IBM Plex Mono', monospace; font-size:10.5px;
-    letter-spacing:0.06em; color:#A6A29A; text-transform:uppercase;
-  }
-  @media (max-width:520px){
-    .wrap{padding:30px 16px 70px;}
-    .section{padding-left:48px;}
-    .stampnum{width:36px; height:36px; font-size:13px;}
-    .section-title{font-size:20px;}
-    .nav{flex-direction:column; align-items:stretch;}
-  }
+:root {
+  --bg: #F1EEE9;
+  --surface: #FFFFFF;
+  --ink: #3C3C3C;
+  --muted: #6B665F;
+  --line: #D7D1C7;
+  --sand: #CDC0B0;
+  --yellow: #FFE500;
+  --yellow-ink: #1E1E1E;
+  --btn: #3C3C3C;
+  --btn-ink: #FFFFFF;
+  --sleeve-s: 26%;
+  --sleeve-l: 78%;
+  --font: "Switzer", "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
+  color-scheme: light;
+}
+html { scroll-behavior: smooth; }
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font); font-size: 17px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+
+/* calm mode: no motion */
+:root[data-calm] *, :root[data-calm] *::before, :root[data-calm] *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+:root[data-calm] mark { background-size: 100% 100% !important; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; scroll-behavior: auto !important; } mark { background-size: 100% 100% !important; } }
+
+/* top bar */
+.bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding: 22px 0; }
+.mark { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.15rem; letter-spacing: -0.02em; text-decoration: none; }
+.mark i { width: 14px; height: 14px; background: var(--yellow); display: inline-block; }
+.nav { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; font-size: 0.95rem; }
+.nav a { text-decoration: none; }
+.nav a:hover, .nav a[aria-current] { text-decoration: underline; text-underline-offset: 4px; }
+.nav a[aria-current] { text-decoration-thickness: 2px; text-decoration-color: var(--ink); }
+.sw { display: inline-flex; align-items: center; gap: 8px; padding: 0; border: 0; background: none; color: var(--ink); font: 500 0.88rem var(--font); cursor: pointer; }
+.sw .box { width: 34px; height: 18px; border: 1.5px solid var(--ink); position: relative; flex: none; }
+.sw .box::after { content: ""; position: absolute; top: 2px; left: 2px; width: 11px; height: 11px; background: var(--ink); transition: transform 0.18s ease; }
+.sw[aria-pressed="true"] .box { background: var(--yellow); border-color: var(--yellow-ink); }
+.sw[aria-pressed="true"] .box::after { transform: translateX(16px); background: var(--yellow-ink); }
+
+/* hero */
+.hero { padding: 72px 0 56px; border-top: 1px solid var(--line); }
+.eyebrow { margin: 0 0 22px; color: var(--muted); font-size: 0.95rem; }
+h1 { margin: 0 0 28px; font-weight: 500; font-size: clamp(3.6rem, 13vw, 9rem); line-height: 0.95; letter-spacing: -0.045em; }
+mark {
+  background-image: linear-gradient(var(--yellow), var(--yellow)); background-repeat: no-repeat; background-size: 100% 100%;
+  background-color: transparent; color: var(--yellow-ink); padding: 0 0.12em;
+  animation: sweep 0.9s 0.45s cubic-bezier(.2,.7,.2,1) both;
+}
+@keyframes sweep { from { background-size: 0% 100%; } to { background-size: 100% 100%; } }
+@keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+.hero > * { animation: rise 0.75s cubic-bezier(.2,.7,.2,1) both; animation-delay: calc(var(--i, 0) * 90ms); }
+.hero > :nth-child(1) { --i: 0; } .hero > :nth-child(2) { --i: 1; } .hero > :nth-child(3) { --i: 2; } .hero > :nth-child(4) { --i: 3; } .hero > :nth-child(5) { --i: 4; }
+.hero p.sub { max-width: 52ch; color: var(--muted); font-size: 1.1rem; margin: 0 0 32px; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn {
+  display: inline-block; padding: 14px 24px; border: 1.5px solid var(--btn);
+  background: var(--btn); color: var(--btn-ink);
+  font: 600 0.95rem var(--font); text-decoration: none; cursor: pointer; border-radius: 0;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.btn:hover { background: transparent; color: var(--ink); }
+.btn.alt { background: var(--surface); color: var(--ink); border-color: var(--ink); }
+.btn.alt:hover { background: var(--ink); color: var(--bg); }
+.btn:disabled { opacity: 0.5; cursor: default; }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 56px; border-top: 1px solid var(--ink); }
+.stat { padding: 18px 0 0; }
+.stat b { display: block; font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 500; letter-spacing: -0.03em; line-height: 1.05; }
+.stat span { color: var(--muted); font-size: 0.92rem; }
+
+/* sections */
+section { padding: 64px 0; border-top: 1px solid var(--line); }
+h2 { margin: 0 0 32px; font-weight: 500; font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1.02; letter-spacing: -0.035em; }
+h2 small { display: block; margin-top: 10px; font-size: 0.95rem; letter-spacing: 0; color: var(--muted); font-weight: 400; }
+
+/* rows: issue entries, archive issues, music sources */
+.rows { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--ink); }
+.row { display: grid; grid-template-columns: 56px 1fr auto; gap: 8px 20px; align-items: center; padding: 22px 0; border-bottom: 1px solid var(--line); animation: rise 0.6s cubic-bezier(.2,.7,.2,1) both; animation-delay: calc(var(--i, 0) * 50ms); scroll-margin-top: 24px; }
+.row .n { color: var(--muted); font-size: 0.95rem; }
+.row h3 { margin: 0; font-weight: 500; font-size: 1.5rem; line-height: 1.2; letter-spacing: -0.02em; }
+.row h3 a { text-decoration: none; }
+.row h3 a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.row p { margin: 4px 0 0; color: var(--muted); font-size: 0.95rem; }
+.row p.note { color: var(--ink); max-width: 64ch; }
+.row .btn { padding: 9px 18px; font-size: 0.88rem; }
+
+/* search */
+.search-wrap { position: relative; margin: 0 0 28px; }
+.search { width: 100%; min-width: 0; padding: 12px 14px; border: 1.5px solid var(--line); border-radius: 0; background: var(--surface); color: var(--ink); font: 400 0.95rem var(--font); }
+.search:focus { border-color: var(--ink); outline: none; }
+.search-results { position: absolute; top: calc(100% + 6px); left: 0; right: 0; background: var(--surface); border: 1.5px solid var(--ink); max-height: 420px; overflow-y: auto; z-index: 20; display: none; }
+.search-results.active { display: block; }
+.search-result { display: block; padding: 12px 14px; border-bottom: 1px solid var(--line); text-decoration: none; }
+.search-result:last-child { border-bottom: none; }
+.search-result:hover { background: var(--bg); }
+.sr-tag { font-size: 0.8rem; color: var(--muted); }
+.sr-title { display: block; font-weight: 500; margin: 2px 0; }
+.sr-meta { font-size: 0.85rem; color: var(--muted); }
+.search-empty { padding: 14px; color: var(--muted); font-size: 0.95rem; }
+
+/* footer */
+footer { padding: 56px 0 40px; border-top: 1px solid var(--line); }
+.fine { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 24px; color: var(--muted); font-size: 0.9rem; }
+.fine p { margin: 0 0 8px; max-width: 58ch; }
+.fine a { text-underline-offset: 3px; }
+.big { margin: 40px 0 0; font-weight: 500; font-size: clamp(3rem, 15vw, 11rem); line-height: 0.9; letter-spacing: -0.05em; color: var(--sand); user-select: none; }
+
+@media (max-width: 640px) {
+  .wrap { padding: 0 16px; }
+  .hero { padding: 48px 0 40px; }
+  section { padding: 48px 0; }
+  .row { grid-template-columns: 36px 1fr; }
+  .row .btn { grid-column: 2; justify-self: start; }
+  .row h3 { font-size: 1.25rem; }
+}
 </style>
 </head>
 <body data-root="../">
-<div class="page">
 <div class="wrap">
-  <div class="masthead">
-    <a class="mast-title" href="../index.html">Algorithm</a>
-    <span class="stamp">Issue No. 5</span>
+  <header class="bar">
+    <a class="mark" href="../index.html"><i aria-hidden="true"></i>Troller</a>
+    <nav class="nav" aria-label="Site">
+      <a href="../index.html">News Troll</a>
+      <a href="../music/index.html">Song Troll</a>
+      <a href="../archive/index.html" aria-current="page">Archive</a>
+      <button class="sw" id="sw-calm" type="button" aria-pressed="false"><span class="box" aria-hidden="true"></span>Reduce animation</button>
+    </nav>
+  </header>
+  <div class="hero" id="top">
+    <p class="eyebrow">News Troll · week of 13 September 2026</p>
+    <h1>Issue <mark>5.</mark></h1>
+    <p class="sub">This issue keeps running into the same argument from different directions: that claims of intelligence, classicism, or authenticity dissolve under scrutiny, and what&#39;s left is craft, dependency, and the people who actually do the work. From a South African tech columnist picking apart AGI marketing to a menswear tastemaker who dresses without checking a mirror, the throughline is a distrust of anyone selling certainty. Elsewhere, an AI reads cities through rival theories, a novelist lets a machine narrate late capitalism, and a critic defends the humble concert program note against its own extinction.</p>
+    <div class="hero-actions">
+      <a class="btn" href="#art">Start reading</a>
+      <a class="btn alt" href="../music/index.html">Song Troll</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>14</b><span>links</span></div>
+      <div class="stat"><b>14</b><span>publications</span></div>
+      <div class="stat"><b>7</b><span>sections</span></div>
+    </div>
   </div>
-  <nav class="tabs" aria-label="Sections">
-    <a class="tab is-active" href="../index.html" aria-current="page">Criticism</a>
-    <a class="tab" href="../music/index.html">New Music</a>
-  </nav>
-  <div class="nav">
-    <a class="nav-link" href="../index.html">&larr; Latest Issue</a>
-    <a class="nav-link" href="../archive/index.html">Full Archive</a>
-  </div>
-  <h1 class="hero">Nobody Believes The <span class="pop">Hype</span></h1>
-  <p class="intro">This issue keeps running into the same argument from different directions: that claims of intelligence, classicism, or authenticity dissolve under scrutiny, and what&#39;s left is craft, dependency, and the people who actually do the work. From a South African tech columnist picking apart AGI marketing to a menswear tastemaker who dresses without checking a mirror, the throughline is a distrust of anyone selling certainty. Elsewhere, an AI reads cities through rival theories, a novelist lets a machine narrate late capitalism, and a critic defends the humble concert program note against its own extinction.</p>
-  <span class="intro-byline">Issue No. 5 — On Hype and Its Discontents</span>
-  <section class="section art">
-    <span class="stampnum">01</span>
-    <div class="section-head">
-      <span class="section-tag">Art</span>
-      <h2 class="section-title">Fine Art</h2>
-    </div>
-    <div class="entry" id="art-1">
-      <div class="entry-byline"><a class="entry-title" href="https://hyperallergic.com/pope-l-invites-us-to-think-through-the-american-dream/" target="_blank" rel="noopener">Pope.L Invites Us to Think Through the American Dream</a> by Channelle Chevelle Russell — Hyperallergic</div>
 
-      <p>Reviewing a Drawing Center exhibition of Pope.L&#39;s fragmented, headless figures, Russell argues the work exposes racial contradictions foundational to the American Dream. She reads his drawing practice as a mode of thought rather than a medium, one that demands new frameworks for understanding how Blackness intersects with national identity.</p>
-      <p class="why">A sharp reading of how an artist uses formal fragmentation to interrogate national mythology.</p>
-    </div>
-    <div class="entry" id="art-2">
-      <div class="entry-byline"><a class="entry-title" href="https://burnaway.org/daily/holding-together-at-madison-county-arts-council-marshall/" target="_blank" rel="noopener">Holding Together: Cloth, Material &amp; Making at Madison County Arts Council, Marshall</a> by Merin McDivitt — Burnaway</div>
-
-      <p>McDivitt reviews an exhibition assembled in the aftermath of Tropical Storm Helene, arguing that curator Amber Jensen&#39;s intuition-led, cross-medium approach to fiber and material art turns storm recovery into a study of resilience rather than a simple craft showcase. The show&#39;s diverse media, McDivitt argues, share a conceptual core around materiality and handwork.</p>
-      <p class="why">A grounded account of how a regional craft show became a document of communal recovery.</p>
-    </div>
+  <section id="art" aria-labelledby="h-art">
+    <h2 id="h-art">Fine Art</h2>
+    <ol class="rows">
+    <li class="row" id="art-1" style="--i:0">
+      <span class="n">01</span>
+      <div>
+        <h3><a href="https://hyperallergic.com/pope-l-invites-us-to-think-through-the-american-dream/" target="_blank" rel="noopener">Pope.L Invites Us to Think Through the American Dream</a></h3>
+        <p>Channelle Chevelle Russell · Hyperallergic</p>
+      </div>
+      <a class="btn alt" href="https://hyperallergic.com/pope-l-invites-us-to-think-through-the-american-dream/" target="_blank" rel="noopener" aria-label="Read Pope.L Invites Us to Think Through the American Dream">Read</a>
+    </li>
+    <li class="row" id="art-2" style="--i:1">
+      <span class="n">02</span>
+      <div>
+        <h3><a href="https://burnaway.org/daily/holding-together-at-madison-county-arts-council-marshall/" target="_blank" rel="noopener">Holding Together: Cloth, Material &amp; Making at Madison County Arts Council, Marshall</a></h3>
+        <p>Merin McDivitt · Burnaway</p>
+      </div>
+      <a class="btn alt" href="https://burnaway.org/daily/holding-together-at-madison-county-arts-council-marshall/" target="_blank" rel="noopener" aria-label="Read Holding Together: Cloth, Material &amp; Making at Madison County Arts Council, Marshall">Read</a>
+    </li>
+    </ol>
   </section>
-  <section class="section film">
-    <span class="stampnum">02</span>
-    <div class="section-head">
-      <span class="section-tag">Film</span>
-      <h2 class="section-title">Film Criticism</h2>
-    </div>
-    <div class="entry" id="film-1">
-      <div class="entry-byline"><a class="entry-title" href="https://learningandcreativity.com/silhouette/understanding-uttam-kumar/" target="_blank" rel="noopener">Brando, Bogart, Paul Muni and Beyond — Understanding Uttam Kumar</a> by Partha Pratim Ghosh — Silhouette Magazine</div>
-
-      <p>Ghosh argues that Bengali star Uttam Kumar&#39;s transformation from Arun Chatterjee into a screen icon came from disciplined, systematic craft rather than raw talent. He traces a self-corrective mastery of camera acting comparable to Brando&#39;s naturalism, built through observation rather than instinct.</p>
-      <p class="why">A craft-focused reappraisal of a non-Western star system rarely analyzed on these terms in English.</p>
-    </div>
-    <div class="entry" id="film-2">
-      <div class="entry-byline"><a class="entry-title" href="https://egyptianstreets.com/2026/09/12/the-horror-of-being-a-woman-expressed-in-egyptian-art/" target="_blank" rel="noopener">The Horror of Being a Woman Expressed in Egyptian Art</a> by ES Buzz — Egyptian Streets</div>
-
-      <p>Surveying recent Egyptian films and a novel, the essay reframes female &#39;monstrosity&#39; as a response to systemic oppression rather than inherent evil. It argues critics should ask who made a woman monstrous rather than treating vengeful female characters as simply villainous.</p>
-      <p class="why">Turns genre horror tropes into a lens on patriarchal violence across several new Egyptian works at once.</p>
-    </div>
+  <section id="film" aria-labelledby="h-film">
+    <h2 id="h-film">Film</h2>
+    <ol class="rows">
+    <li class="row" id="film-1" style="--i:0">
+      <span class="n">01</span>
+      <div>
+        <h3><a href="https://learningandcreativity.com/silhouette/understanding-uttam-kumar/" target="_blank" rel="noopener">Brando, Bogart, Paul Muni and Beyond — Understanding Uttam Kumar</a></h3>
+        <p>Partha Pratim Ghosh · Silhouette Magazine</p>
+      </div>
+      <a class="btn alt" href="https://learningandcreativity.com/silhouette/understanding-uttam-kumar/" target="_blank" rel="noopener" aria-label="Read Brando, Bogart, Paul Muni and Beyond — Understanding Uttam Kumar">Read</a>
+    </li>
+    <li class="row" id="film-2" style="--i:1">
+      <span class="n">02</span>
+      <div>
+        <h3><a href="https://egyptianstreets.com/2026/09/12/the-horror-of-being-a-woman-expressed-in-egyptian-art/" target="_blank" rel="noopener">The Horror of Being a Woman Expressed in Egyptian Art</a></h3>
+        <p>ES Buzz · Egyptian Streets</p>
+      </div>
+      <a class="btn alt" href="https://egyptianstreets.com/2026/09/12/the-horror-of-being-a-woman-expressed-in-egyptian-art/" target="_blank" rel="noopener" aria-label="Read The Horror of Being a Woman Expressed in Egyptian Art">Read</a>
+    </li>
+    </ol>
   </section>
-  <section class="section tech">
-    <span class="stampnum">03</span>
-    <div class="section-head">
-      <span class="section-tag">Tech &amp; AI</span>
-      <h2 class="section-title">Tech &amp; AI</h2>
-    </div>
-    <div class="entry" id="tech-1">
-      <div class="entry-byline"><a class="entry-title" href="https://it-online.co.za/2026/09/10/money-for-nothing/" target="_blank" rel="noopener">Money for nothing …</a> by Barry Buck — IT-Online</div>
-
-      <p>Buck dissects the AGI claims surrounding OpenAI&#39;s GPT-6 Astra release, arguing genuine intelligence requires agency and the capacity to refuse work, whereas systems like Astra are merely general-purpose labour. He contends the industry&#39;s silence on AI rights and compensation betrays its own doubts about the AGI label it is selling.</p>
-      <p class="why">A rare skeptical, definitional take on AGI hype from outside the usual Silicon Valley commentary circuit.</p>
-    </div>
-    <div class="entry" id="tech-2">
-      <div class="entry-byline"><a class="entry-title" href="https://www.themandarin.com.au/319510-australia-risks-becoming-landlord-to-foreign-ai-companies-says-walsh/" target="_blank" rel="noopener">Australia risks becoming landlord to foreign AI companies, says Walsh</a> by Peter Gearin — The Mandarin</div>
-
-      <p>Reporting on AI researcher Toby Walsh, Gearin lays out the argument that Australia&#39;s national AI strategy has fixated on hosting data-centre infrastructure while neglecting the sovereign models, data, and skilled people needed to actually capture AI&#39;s economic value. Without a shift in priorities, Walsh warns, the country risks providing premises for other nations&#39; AI industries.</p>
-      <p class="why">A pointed critique of infrastructure-first AI policy that applies well beyond Australia.</p>
-    </div>
+  <section id="tech" aria-labelledby="h-tech">
+    <h2 id="h-tech">Tech &amp; AI</h2>
+    <ol class="rows">
+    <li class="row" id="tech-1" style="--i:0">
+      <span class="n">01</span>
+      <div>
+        <h3><a href="https://it-online.co.za/2026/09/10/money-for-nothing/" target="_blank" rel="noopener">Money for nothing …</a></h3>
+        <p>Barry Buck · IT-Online</p>
+      </div>
+      <a class="btn alt" href="https://it-online.co.za/2026/09/10/money-for-nothing/" target="_blank" rel="noopener" aria-label="Read Money for nothing …">Read</a>
+    </li>
+    <li class="row" id="tech-2" style="--i:1">
+      <span class="n">02</span>
+      <div>
+        <h3><a href="https://www.themandarin.com.au/319510-australia-risks-becoming-landlord-to-foreign-ai-companies-says-walsh/" target="_blank" rel="noopener">Australia risks becoming landlord to foreign AI companies, says Walsh</a></h3>
+        <p>Peter Gearin · The Mandarin</p>
+      </div>
+      <a class="btn alt" href="https://www.themandarin.com.au/319510-australia-risks-becoming-landlord-to-foreign-ai-companies-says-walsh/" target="_blank" rel="noopener" aria-label="Read Australia risks becoming landlord to foreign AI companies, says Walsh">Read</a>
+    </li>
+    </ol>
   </section>
-  <section class="section lit">
-    <span class="stampnum">04</span>
-    <div class="section-head">
-      <span class="section-tag">Sci-Fi / Fantasy</span>
-      <h2 class="section-title">Literary Reviews</h2>
-    </div>
-    <div class="entry" id="lit-1">
-      <div class="entry-byline"><a class="entry-title" href="https://www.nzreviewofbooks.com/kluge-by-pip-adam/" target="_blank" rel="noopener">kluge by Pip Adam</a> by Maya Jackson-Liew — Aotearoa New Zealand Review of Books</div>
-
-      <p>Reviewing Pip Adam&#39;s novel, narrated in part by an AI, Jackson-Liew argues the book reveals how &#39;unchecked power justifies itself&#39; in a digital, late-stage-capitalist world. She praises Adam&#39;s use of comedy and embodied sensation to defend the enduring value of feeling against corporate and technological dehumanization.</p>
-      <p class="why">A sharp regional take on AI-narrated fiction that avoids the genre&#39;s usual dystopian shortcuts.</p>
-    </div>
-    <div class="entry" id="lit-2">
-      <div class="entry-byline"><a class="entry-title" href="https://reviewcanada.ca/magazine/2026/09/not-the-same-as-reading-it-dipping-in-and-out-of-tristram-shandy/" target="_blank" rel="noopener">Not the Same as Reading It: Dipping In and Out of Tristram Shandy</a> by Gary Barwin — Literary Review of Canada</div>
-
-      <p>Barwin reflects on nearly five decades of reading Sterne&#39;s novel only in fragments, arguing that its unfinished, digressive structure invites exactly this kind of partial, non-linear engagement. Rather than shame at never finishing it, he argues that maintaining multiple entry points honors the novel&#39;s own refusal of completion.</p>
-      <p class="why">A playful defense of incomplete reading that doubles as sharp formal criticism of one of literature&#39;s strangest novels.</p>
-    </div>
+  <section id="lit" aria-labelledby="h-lit">
+    <h2 id="h-lit">Books</h2>
+    <ol class="rows">
+    <li class="row" id="lit-1" style="--i:0">
+      <span class="n">01</span>
+      <div>
+        <h3><a href="https://www.nzreviewofbooks.com/kluge-by-pip-adam/" target="_blank" rel="noopener">kluge by Pip Adam</a></h3>
+        <p>Maya Jackson-Liew · Aotearoa New Zealand Review of Books</p>
+      </div>
+      <a class="btn alt" href="https://www.nzreviewofbooks.com/kluge-by-pip-adam/" target="_blank" rel="noopener" aria-label="Read kluge by Pip Adam">Read</a>
+    </li>
+    <li class="row" id="lit-2" style="--i:1">
+      <span class="n">02</span>
+      <div>
+        <h3><a href="https://reviewcanada.ca/magazine/2026/09/not-the-same-as-reading-it-dipping-in-and-out-of-tristram-shandy/" target="_blank" rel="noopener">Not the Same as Reading It: Dipping In and Out of Tristram Shandy</a></h3>
+        <p>Gary Barwin · Literary Review of Canada</p>
+      </div>
+      <a class="btn alt" href="https://reviewcanada.ca/magazine/2026/09/not-the-same-as-reading-it-dipping-in-and-out-of-tristram-shandy/" target="_blank" rel="noopener" aria-label="Read Not the Same as Reading It: Dipping In and Out of Tristram Shandy">Read</a>
+    </li>
+    </ol>
   </section>
-  <section class="section music">
-    <span class="stampnum">05</span>
-    <div class="section-head">
-      <span class="section-tag">Music</span>
-      <h2 class="section-title">Music Criticism</h2>
-    </div>
-    <div class="entry" id="music-1">
-      <div class="entry-byline"><a class="entry-title" href="https://van-magazine.com/mag/defense-of-program-notes/" target="_blank" rel="noopener">In Defense of the Program Note</a> by Benjamin Poore — VAN Magazine</div>
-
-      <p>Poore argues that despite their decline, written concert programs remain &#39;essential guiding lights for listening,&#39; tracing the practice back to Berlioz&#39;s account of attentive 1851 London audiences. He makes the case that thoughtful contextual writing shapes how audiences actually hear a piece of music, not just what they know about it.</p>
-      <p class="why">A defense of a disappearing critical form that doubles as an argument for how audiences should listen.</p>
-    </div>
-    <div class="entry" id="music-2">
-      <div class="entry-byline"><a class="entry-title" href="https://www.theaureview.com/music/nterpol-this-mirror-weighs-a-ton-album-review/" target="_blank" rel="noopener">Interpol – This Mirror Weighs a Ton Album Review</a> by John Goodridge — The AU Review</div>
-
-      <p>Goodridge argues the band&#39;s latest record balances its signature moody introspection with unexpectedly upbeat undercurrents, contending the album&#39;s contradictions between darkness and self-reflection reward repeated listening rather than resolving into a single mood.</p>
-      <p class="why">A measured assessment of how a long-running band still finds tension worth exploring two decades in.</p>
-    </div>
+  <section id="music" aria-labelledby="h-music">
+    <h2 id="h-music">Music Criticism</h2>
+    <ol class="rows">
+    <li class="row" id="music-1" style="--i:0">
+      <span class="n">01</span>
+      <div>
+        <h3><a href="https://van-magazine.com/mag/defense-of-program-notes/" target="_blank" rel="noopener">In Defense of the Program Note</a></h3>
+        <p>Benjamin Poore · VAN Magazine</p>
+      </div>
+      <a class="btn alt" href="https://van-magazine.com/mag/defense-of-program-notes/" target="_blank" rel="noopener" aria-label="Read In Defense of the Program Note">Read</a>
+    </li>
+    <li class="row" id="music-2" style="--i:1">
+      <span class="n">02</span>
+      <div>
+        <h3><a href="https://www.theaureview.com/music/nterpol-this-mirror-weighs-a-ton-album-review/" target="_blank" rel="noopener">Interpol – This Mirror Weighs a Ton Album Review</a></h3>
+        <p>John Goodridge · The AU Review</p>
+      </div>
+      <a class="btn alt" href="https://www.theaureview.com/music/nterpol-this-mirror-weighs-a-ton-album-review/" target="_blank" rel="noopener" aria-label="Read Interpol – This Mirror Weighs a Ton Album Review">Read</a>
+    </li>
+    </ol>
   </section>
-  <section class="section design">
-    <span class="stampnum">06</span>
-    <div class="section-head">
-      <span class="section-tag">Design</span>
-      <h2 class="section-title">Design</h2>
-    </div>
-    <div class="entry" id="design-1">
-      <div class="entry-byline"><a class="entry-title" href="https://www.e-flux.com/architecture/simulation/6783063/seeing-the-city-like-a-theory" target="_blank" rel="noopener">Seeing the City like a Theory</a> by Darío Negueruela del Castillo — e-flux Architecture</div>
-
-      <p>The essay operationalizes vision-language AI models to read cities through rival urban theories — Lefebvre, Simmel, Harvey and others — processing imagery from Rome, Madrid, and Montréal through theory-specific analytical modules. It argues theoretical frameworks don&#39;t filter pre-existing data but actively constitute what counts as urban knowledge in the first place.</p>
-      <p class="why">A genuinely novel use of AI as a probe for exposing the hidden assumptions inside urban design theory.</p>
-    </div>
-    <div class="entry" id="design-2">
-      <div class="entry-byline"><a class="entry-title" href="https://eyemagazine.com/blog/post/kitching-in-kyoto" target="_blank" rel="noopener">Kitching in Kyoto</a> by Eye editors — Eye Magazine</div>
-
-      <p>The piece surveys Alan Kitching&#39;s first major exhibition in Japan, covering more than 80 works from his 70-year letterpress career. It argues his vibrant, scale-bending typographic compositions have shaped design education as much as his commissioned work has shaped commercial graphic design.</p>
-      <p class="why">A concise career survey of a foundational letterpress designer getting overdue international recognition.</p>
-    </div>
+  <section id="design" aria-labelledby="h-design">
+    <h2 id="h-design">Design</h2>
+    <ol class="rows">
+    <li class="row" id="design-1" style="--i:0">
+      <span class="n">01</span>
+      <div>
+        <h3><a href="https://www.e-flux.com/architecture/simulation/6783063/seeing-the-city-like-a-theory" target="_blank" rel="noopener">Seeing the City like a Theory</a></h3>
+        <p>Darío Negueruela del Castillo · e-flux Architecture</p>
+      </div>
+      <a class="btn alt" href="https://www.e-flux.com/architecture/simulation/6783063/seeing-the-city-like-a-theory" target="_blank" rel="noopener" aria-label="Read Seeing the City like a Theory">Read</a>
+    </li>
+    <li class="row" id="design-2" style="--i:1">
+      <span class="n">02</span>
+      <div>
+        <h3><a href="https://eyemagazine.com/blog/post/kitching-in-kyoto" target="_blank" rel="noopener">Kitching in Kyoto</a></h3>
+        <p>Eye editors · Eye Magazine</p>
+      </div>
+      <a class="btn alt" href="https://eyemagazine.com/blog/post/kitching-in-kyoto" target="_blank" rel="noopener" aria-label="Read Kitching in Kyoto">Read</a>
+    </li>
+    </ol>
   </section>
-  <section class="section fashion">
-    <span class="stampnum">07</span>
-    <div class="section-head">
-      <span class="section-tag">Men&#39;s Fashion</span>
-      <h2 class="section-title">Men&#39;s Fashion</h2>
-    </div>
-    <div class="entry" id="fashion-1">
-      <div class="entry-byline"><a class="entry-title" href="https://www.blackbirdspyplane.com/p/sweetu-patel-chcm-interview" target="_blank" rel="noopener">Get dressed without a mirror</a> by Jonah Spyplane — Blackbird Spyplane</div>
-
-      <p>In a rare interview with C&#39;H&#39;C&#39;M&#39; founder Sweetu Patel, the piece argues real style comes from intuitive taste rather than mirror-checked self-scrutiny. Patel contends that &#39;classic&#39; menswear is a myth, since all style is cyclical and emotional, built from personal recontextualization rather than fixed rules.</p>
-      <p class="why">A rare, unfiltered interview with one of menswear retail&#39;s most private tastemakers.</p>
-    </div>
-    <div class="entry" id="fashion-2">
-      <div class="entry-byline"><a class="entry-title" href="http://vestoj.com/beggars-and-choosers/" target="_blank" rel="noopener">Beggars And Choosers</a> by Johannes Lenhard — Vestoj</div>
-
-      <p>Lenhard examines how homeless men in Los Angeles use five garments — a T-shirt, boxers, a coat, a bag, shoes — to maintain dignity and approximate normalcy. He argues that dress here signals dependency and mutual care rather than the violent masculinity usually projected onto homelessness.</p>
-      <p class="why">An unusual, humane look at how clothing operates at the furthest edge of the menswear world.</p>
-    </div>
+  <section id="fashion" aria-labelledby="h-fashion">
+    <h2 id="h-fashion">Men&#39;s Fashion</h2>
+    <ol class="rows">
+    <li class="row" id="fashion-1" style="--i:0">
+      <span class="n">01</span>
+      <div>
+        <h3><a href="https://www.blackbirdspyplane.com/p/sweetu-patel-chcm-interview" target="_blank" rel="noopener">Get dressed without a mirror</a></h3>
+        <p>Jonah Spyplane · Blackbird Spyplane</p>
+      </div>
+      <a class="btn alt" href="https://www.blackbirdspyplane.com/p/sweetu-patel-chcm-interview" target="_blank" rel="noopener" aria-label="Read Get dressed without a mirror">Read</a>
+    </li>
+    <li class="row" id="fashion-2" style="--i:1">
+      <span class="n">02</span>
+      <div>
+        <h3><a href="http://vestoj.com/beggars-and-choosers/" target="_blank" rel="noopener">Beggars And Choosers</a></h3>
+        <p>Johannes Lenhard · Vestoj</p>
+      </div>
+      <a class="btn alt" href="http://vestoj.com/beggars-and-choosers/" target="_blank" rel="noopener" aria-label="Read Beggars And Choosers">Read</a>
+    </li>
+    </ol>
   </section>
   <footer>
-    <span>Algorithm</span>
-    <span>Issue No. 5 — 13 Sep 2026</span>
+    <div class="fine">
+      <div><p>Troller, Issue 5, week of 13 September 2026. Every link was read in full before it was picked.</p>
+        <p><a href="../archive/index.html">Every issue</a></p></div>
+      <p><a href="#top">Back to top</a></p>
+    </div>
+    <p class="big" aria-hidden="true">happy reading</p>
   </footer>
 </div>
-</div>
+<script>
+(function(){
+  var sw = document.getElementById('sw-calm');
+  if (!sw) return;
+  function load(){ try { return JSON.parse(localStorage.getItem('troller-ui') || '{}') || {}; } catch (e) { return {}; } }
+  function paint(){ var on = document.documentElement.hasAttribute('data-calm'); sw.setAttribute('aria-pressed', on ? 'true' : 'false'); }
+  sw.addEventListener('click', function(){
+    var ui = load(); ui.calm = !document.documentElement.hasAttribute('data-calm');
+    if (ui.calm) document.documentElement.setAttribute('data-calm', ''); else document.documentElement.removeAttribute('data-calm');
+    try { localStorage.setItem('troller-ui', JSON.stringify(ui)); } catch (e) {}
+    paint();
+  });
+  paint();
+})();</script>
 
 </body>
 </html>

@@ -2,352 +2,418 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="color-scheme" content="dark">
-<meta name="theme-color" content="#0A0A0A">
-<title>Algorithm — Issue No. 15 — 23 Sep 2026</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#F1EEE9">
+<title>Troller — Issue 15</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Source+Serif+4:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>try{var u=JSON.parse(localStorage.getItem('troller-ui')||'{}');if(u.calm)document.documentElement.setAttribute('data-calm','');}catch(e){}</script>
 <style>
-  html, body{ margin:0; padding:0; height:100%; background-color:#0A0A0A; }
-  *{box-sizing:border-box;}
-  body{
-    min-height:100dvh;
-    color:#FAFAF7;
-    font-family:'Source Serif 4', Georgia, serif;
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-  }
-  .page{ background-color:#0A0A0A; min-height:100dvh; }
-  a{ color:inherit; }
-  .wrap{max-width:720px; margin:0 auto; padding:44px 24px 90px; position:relative;}
-  .masthead{
-    display:flex; justify-content:space-between; align-items:flex-end;
-    border-bottom:4px solid #FAFAF7;
-    padding-bottom:14px; margin-bottom:24px;
-  }
-  .mast-title{
-    font-family:'Archivo Black', sans-serif;
-    font-size:clamp(26px,6vw,34px);
-    letter-spacing:-0.01em;
-    text-transform:uppercase;
-    color:#FAFAF7;
-    text-decoration:none;
-  }
-  .stamp{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:11px; letter-spacing:0.1em; text-transform:uppercase;
-    color:#0A0A0A; background:#FF1F3D;
-    padding:5px 10px; border-radius:2px;
-    transform:rotate(-3deg); display:inline-block; font-weight:600;
-    white-space:nowrap;
-  }
-  .tabs{display:flex; gap:22px; margin:-8px 0 26px; font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.1em; text-transform:uppercase;}
-  .tab{color:#A6A29A; text-decoration:none; padding-bottom:6px; border-bottom:2px solid transparent;}
-  .tab:hover{color:#FAFAF7;}
-  .tab.is-active{color:#FAFAF7; border-bottom-color:#FF1F3D;}
-  .nav{display:flex; justify-content:space-between; align-items:center; gap:16px; margin-bottom:40px; flex-wrap:wrap;}
-  .nav-link{font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:#FAFAF7; text-decoration:none; border:1px solid rgba(250,250,247,0.35); padding:9px 14px; border-radius:2px; white-space:nowrap;}
-  .nav-link:hover{border-color:#FF1F3D; color:#FF1F3D;}
-  .search-wrap{position:relative; flex:1; min-width:220px;}
-  .search-input{width:100%; background:#151513; border:1px solid rgba(250,250,247,0.3); color:#FAFAF7; font-family:'IBM Plex Mono', monospace; font-size:13px; padding:10px 12px; border-radius:2px; outline:none;}
-  .search-input::placeholder{color:#6B6860;}
-  .search-input:focus{border-color:#FF1F3D;}
-  .search-results{position:absolute; top:calc(100% + 6px); left:0; right:0; background:#111110; border:1px solid rgba(250,250,247,0.25); border-radius:4px; max-height:380px; overflow-y:auto; z-index:20; display:none;}
-  .search-results.active{display:block;}
-  .search-result{display:block; padding:10px 12px; border-bottom:1px solid rgba(250,250,247,0.12); text-decoration:none;}
-  .search-result:last-child{border-bottom:none;}
-  .search-result:hover{background:rgba(255,31,61,0.08);}
-  .sr-tag{font-family:'IBM Plex Mono', monospace; font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:#A6A29A;}
-  .sr-title{display:block; font-style:italic; color:#FAFAF7; margin:2px 0; font-size:14px;}
-  .sr-meta{font-family:'IBM Plex Mono', monospace; font-size:10.5px; color:#A6A29A;}
-  .search-empty{padding:14px 12px; font-family:'IBM Plex Mono', monospace; font-size:12.5px; color:#A6A29A;}
-  h1.hero{
-    font-family:'Anton', sans-serif;
-    font-weight:400;
-    font-size:clamp(42px,10vw,72px);
-    line-height:0.94;
-    text-transform:uppercase;
-    margin:0 0 22px;
-    color:#FAFAF7;
-  }
-  h1.hero .pop{color:#FF1F3D;}
-  .intro{font-size:17px; color:#EDEAE2; max-width:56ch; margin-bottom:10px;}
-  .intro-byline{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:11px; letter-spacing:0.08em; text-transform:uppercase;
-    color:#A6A29A;
-    margin-top:16px; margin-bottom:54px; display:block;
-    border-left:2px solid #FF1F3D; padding-left:10px;
-  }
-  .section{position:relative; margin-bottom:50px; padding-left:56px;}
-  .section:last-of-type{margin-bottom:0;}
-  .stampnum{
-    position:absolute; left:0; top:0;
-    width:42px; height:42px;
-    border:2px solid #FAFAF7;
-    border-radius:50%;
-    display:flex; align-items:center; justify-content:center;
-    font-family:'Archivo Black', sans-serif;
-    font-size:15px; color:#FAFAF7;
-    transform:rotate(-6deg);
-  }
-  .art .stampnum{border-color:#C9A24B; color:#C9A24B;}
-  .film .stampnum{border-color:#FF5B4A; color:#FF5B4A;}
-  .tech .stampnum{border-color:#3FE0D0; color:#3FE0D0;}
-  .lit .stampnum{border-color:#B39DFF; color:#B39DFF;}
-  .music .stampnum{border-color:#FF5FA8; color:#FF5FA8;}
-  .design .stampnum{border-color:#FFD23F; color:#FFD23F;}
-  .fashion .stampnum{border-color:#FAFAF7; color:#FAFAF7;}
-  .section-head{display:flex; align-items:center; gap:12px; margin-bottom:18px; flex-wrap:wrap;}
-  .section-tag{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:12px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase;
-    color:#0A0A0A;
-    padding:6px 11px; border-radius:2px;
-  }
-  .art .section-tag{background:#C9A24B;}
-  .film .section-tag{background:#FF5B4A;}
-  .tech .section-tag{background:#3FE0D0;}
-  .lit .section-tag{background:#B39DFF;}
-  .music .section-tag{background:#FF5FA8;}
-  .design .section-tag{background:#FFD23F;}
-  .fashion .section-tag{background:#FAFAF7;}
-  .section-title{
-    font-family:'Archivo Black', sans-serif;
-    font-size:24px; text-transform:uppercase; letter-spacing:0.01em;
-    color:#FAFAF7;
-  }
-  .entry{margin-bottom:24px; padding-bottom:24px; border-bottom:1px solid rgba(250,250,247,0.16); scroll-margin-top:24px;}
-  .entry:last-child{border-bottom:none; margin-bottom:0; padding-bottom:0;}
-  .entry-byline{font-family:'IBM Plex Mono', monospace; font-size:12px; color:#A6A29A; margin-bottom:8px;}
-  .entry-title{font-weight:500; font-style:italic; color:#FAFAF7; text-decoration:underline; text-decoration-color:rgba(250,250,247,0.35); text-underline-offset:3px;}
-  .entry-title:hover{text-decoration-color:#FF1F3D;}
-  .entry p{margin:0 0 10px; font-size:16px; color:#EDEAE2;}
-  .entry .why{font-size:14.5px; color:#A6A29A; font-style:italic;}
-  .entry .why::before{content:"— ";}
-  .issue-list{list-style:none; margin:0; padding:0;}
-  .issue-card{display:block; text-decoration:none; padding:22px 0; border-bottom:1px solid rgba(250,250,247,0.16);}
-  .issue-card:first-child{padding-top:0;}
-  .issue-card:hover .issue-headline{ text-decoration-color:#FF1F3D; }
-  .issue-meta{font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:#A6A29A; margin-bottom:8px;}
-  .issue-meta .num{color:#FF1F3D;}
-  .issue-headline{font-family:'Archivo Black', sans-serif; font-size:22px; text-transform:uppercase; letter-spacing:0.01em; color:#FAFAF7; text-decoration:underline; text-decoration-color:rgba(250,250,247,0.35); text-underline-offset:4px; display:inline-block; margin-bottom:8px;}
-  .issue-desc{font-size:15px; color:#A6A29A; max-width:60ch; margin:0;}
-  footer{
-    margin-top:64px; padding-top:20px; border-top:1px solid rgba(250,250,247,0.16);
-    display:flex; justify-content:space-between; gap:12px;
-    font-family:'IBM Plex Mono', monospace; font-size:10.5px;
-    letter-spacing:0.06em; color:#A6A29A; text-transform:uppercase;
-  }
-  @media (max-width:520px){
-    .wrap{padding:30px 16px 70px;}
-    .section{padding-left:48px;}
-    .stampnum{width:36px; height:36px; font-size:13px;}
-    .section-title{font-size:20px;}
-    .nav{flex-direction:column; align-items:stretch;}
-  }
+:root {
+  --bg: #F1EEE9;
+  --surface: #FFFFFF;
+  --ink: #3C3C3C;
+  --muted: #6B665F;
+  --line: #D7D1C7;
+  --sand: #CDC0B0;
+  --yellow: #FFE500;
+  --yellow-ink: #1E1E1E;
+  --btn: #3C3C3C;
+  --btn-ink: #FFFFFF;
+  --sleeve-s: 26%;
+  --sleeve-l: 78%;
+  --font: "Switzer", "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
+  color-scheme: light;
+}
+html { scroll-behavior: smooth; }
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font); font-size: 17px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+
+/* calm mode: no motion */
+:root[data-calm] *, :root[data-calm] *::before, :root[data-calm] *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+:root[data-calm] mark { background-size: 100% 100% !important; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; scroll-behavior: auto !important; } mark { background-size: 100% 100% !important; } }
+
+/* top bar */
+.bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding: 22px 0; }
+.mark { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.15rem; letter-spacing: -0.02em; text-decoration: none; }
+.mark i { width: 14px; height: 14px; background: var(--yellow); display: inline-block; }
+.nav { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; font-size: 0.95rem; }
+.nav a { text-decoration: none; }
+.nav a:hover, .nav a[aria-current] { text-decoration: underline; text-underline-offset: 4px; }
+.nav a[aria-current] { text-decoration-thickness: 2px; text-decoration-color: var(--ink); }
+.sw { display: inline-flex; align-items: center; gap: 8px; padding: 0; border: 0; background: none; color: var(--ink); font: 500 0.88rem var(--font); cursor: pointer; }
+.sw .box { width: 34px; height: 18px; border: 1.5px solid var(--ink); position: relative; flex: none; }
+.sw .box::after { content: ""; position: absolute; top: 2px; left: 2px; width: 11px; height: 11px; background: var(--ink); transition: transform 0.18s ease; }
+.sw[aria-pressed="true"] .box { background: var(--yellow); border-color: var(--yellow-ink); }
+.sw[aria-pressed="true"] .box::after { transform: translateX(16px); background: var(--yellow-ink); }
+
+/* hero */
+.hero { padding: 72px 0 56px; border-top: 1px solid var(--line); }
+.eyebrow { margin: 0 0 22px; color: var(--muted); font-size: 0.95rem; }
+h1 { margin: 0 0 28px; font-weight: 500; font-size: clamp(3.6rem, 13vw, 9rem); line-height: 0.95; letter-spacing: -0.045em; }
+mark {
+  background-image: linear-gradient(var(--yellow), var(--yellow)); background-repeat: no-repeat; background-size: 100% 100%;
+  background-color: transparent; color: var(--yellow-ink); padding: 0 0.12em;
+  animation: sweep 0.9s 0.45s cubic-bezier(.2,.7,.2,1) both;
+}
+@keyframes sweep { from { background-size: 0% 100%; } to { background-size: 100% 100%; } }
+@keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+.hero > * { animation: rise 0.75s cubic-bezier(.2,.7,.2,1) both; animation-delay: calc(var(--i, 0) * 90ms); }
+.hero > :nth-child(1) { --i: 0; } .hero > :nth-child(2) { --i: 1; } .hero > :nth-child(3) { --i: 2; } .hero > :nth-child(4) { --i: 3; } .hero > :nth-child(5) { --i: 4; }
+.hero p.sub { max-width: 52ch; color: var(--muted); font-size: 1.1rem; margin: 0 0 32px; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn {
+  display: inline-block; padding: 14px 24px; border: 1.5px solid var(--btn);
+  background: var(--btn); color: var(--btn-ink);
+  font: 600 0.95rem var(--font); text-decoration: none; cursor: pointer; border-radius: 0;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.btn:hover { background: transparent; color: var(--ink); }
+.btn.alt { background: var(--surface); color: var(--ink); border-color: var(--ink); }
+.btn.alt:hover { background: var(--ink); color: var(--bg); }
+.btn:disabled { opacity: 0.5; cursor: default; }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 56px; border-top: 1px solid var(--ink); }
+.stat { padding: 18px 0 0; }
+.stat b { display: block; font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 500; letter-spacing: -0.03em; line-height: 1.05; }
+.stat span { color: var(--muted); font-size: 0.92rem; }
+
+/* sections */
+section { padding: 64px 0; border-top: 1px solid var(--line); }
+h2 { margin: 0 0 32px; font-weight: 500; font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1.02; letter-spacing: -0.035em; }
+h2 small { display: block; margin-top: 10px; font-size: 0.95rem; letter-spacing: 0; color: var(--muted); font-weight: 400; }
+
+/* rows: issue entries, archive issues, music sources */
+.rows { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--ink); }
+.row { display: grid; grid-template-columns: 56px 1fr auto; gap: 8px 20px; align-items: center; padding: 22px 0; border-bottom: 1px solid var(--line); animation: rise 0.6s cubic-bezier(.2,.7,.2,1) both; animation-delay: calc(var(--i, 0) * 50ms); scroll-margin-top: 24px; }
+.row .n { color: var(--muted); font-size: 0.95rem; }
+.row h3 { margin: 0; font-weight: 500; font-size: 1.5rem; line-height: 1.2; letter-spacing: -0.02em; }
+.row h3 a { text-decoration: none; }
+.row h3 a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.row p { margin: 4px 0 0; color: var(--muted); font-size: 0.95rem; }
+.row p.note { color: var(--ink); max-width: 64ch; }
+.row .btn { padding: 9px 18px; font-size: 0.88rem; }
+
+/* search */
+.search-wrap { position: relative; margin: 0 0 28px; }
+.search { width: 100%; min-width: 0; padding: 12px 14px; border: 1.5px solid var(--line); border-radius: 0; background: var(--surface); color: var(--ink); font: 400 0.95rem var(--font); }
+.search:focus { border-color: var(--ink); outline: none; }
+.search-results { position: absolute; top: calc(100% + 6px); left: 0; right: 0; background: var(--surface); border: 1.5px solid var(--ink); max-height: 420px; overflow-y: auto; z-index: 20; display: none; }
+.search-results.active { display: block; }
+.search-result { display: block; padding: 12px 14px; border-bottom: 1px solid var(--line); text-decoration: none; }
+.search-result:last-child { border-bottom: none; }
+.search-result:hover { background: var(--bg); }
+.sr-tag { font-size: 0.8rem; color: var(--muted); }
+.sr-title { display: block; font-weight: 500; margin: 2px 0; }
+.sr-meta { font-size: 0.85rem; color: var(--muted); }
+.search-empty { padding: 14px; color: var(--muted); font-size: 0.95rem; }
+
+/* footer */
+footer { padding: 56px 0 40px; border-top: 1px solid var(--line); }
+.fine { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 24px; color: var(--muted); font-size: 0.9rem; }
+.fine p { margin: 0 0 8px; max-width: 58ch; }
+.fine a { text-underline-offset: 3px; }
+.big { margin: 40px 0 0; font-weight: 500; font-size: clamp(3rem, 15vw, 11rem); line-height: 0.9; letter-spacing: -0.05em; color: var(--sand); user-select: none; }
+
+@media (max-width: 640px) {
+  .wrap { padding: 0 16px; }
+  .hero { padding: 48px 0 40px; }
+  section { padding: 48px 0; }
+  .row { grid-template-columns: 36px 1fr; }
+  .row .btn { grid-column: 2; justify-self: start; }
+  .row h3 { font-size: 1.25rem; }
+}
 </style>
 </head>
 <body data-root="../">
-<div class="page">
 <div class="wrap">
-  <div class="masthead">
-    <a class="mast-title" href="../index.html">Algorithm</a>
-    <span class="stamp">Issue No. 15</span>
+  <header class="bar">
+    <a class="mark" href="../index.html"><i aria-hidden="true"></i>Troller</a>
+    <nav class="nav" aria-label="Site">
+      <a href="../index.html">News Troll</a>
+      <a href="../music/index.html">Song Troll</a>
+      <a href="../archive/index.html" aria-current="page">Archive</a>
+      <button class="sw" id="sw-calm" type="button" aria-pressed="false"><span class="box" aria-hidden="true"></span>Reduce animation</button>
+    </nav>
+  </header>
+  <div class="hero" id="top">
+    <p class="eyebrow">News Troll · week of 23 September 2026</p>
+    <h1>Issue <mark>15.</mark></h1>
+    <p class="sub">A selection of recent writing from across the culture press.</p>
+    <div class="hero-actions">
+      <a class="btn" href="#art">Start reading</a>
+      <a class="btn alt" href="../music/index.html">Song Troll</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>25</b><span>links</span></div>
+      <div class="stat"><b>25</b><span>publications</span></div>
+      <div class="stat"><b>7</b><span>sections</span></div>
+    </div>
   </div>
-  <nav class="tabs" aria-label="Sections">
-    <a class="tab is-active" href="../index.html" aria-current="page">Criticism</a>
-    <a class="tab" href="../music/index.html">New Music</a>
-  </nav>
-  <div class="nav">
-    <a class="nav-link" href="../index.html">&larr; Latest Issue</a>
-    <a class="nav-link" href="../archive/index.html">Full Archive</a>
-  </div>
-  <h1 class="hero">The <span class="pop">Feed</span></h1>
-  <p class="intro">A selection of recent writing from across the culture press.</p>
-  <span class="intro-byline">2026-09-23 — selected links</span>
-  <section class="section art">
-    <span class="stampnum">01</span>
-    <div class="section-head">
-      <span class="section-tag">Art</span>
-      <h2 class="section-title">Fine Art</h2>
-    </div>
-    <div class="entry" id="art-1">
-      <div class="entry-byline"><a class="entry-title" href="https://hyperallergic.com/derrick-adams-randy-polumbo-wills-glasspiegel-more-artists-project-newly-commissioned-works-onto-historic-hangars-in-brooklyn/" target="_blank" rel="noopener">Derrick Adams, Randy Polumbo, Wills Glasspiegel &amp; More Artists Project Newly-Commissioned Works Onto Historic Hangars in Brooklyn</a> by Jamaica Bay-Rockaway Parks Conservancy — Hyperallergic</div>
 
-      <p>Jamaica Bay-Rockaway Parks Conservancy gathers 21 artists for the second biennial Floyd Bennett Field! Public Arts Festival on October 3</p>
-    </div>
-    <div class="entry" id="art-2">
-      <div class="entry-byline"><a class="entry-title" href="https://kunstkritikk.com/storm-over-greenlands-national-gallery/" target="_blank" rel="noopener">Storm Over Greenland’s National Gallery</a> by Pernille Albrethsen — Kunstkritikk</div>
-
-      <p>“They have approved a building without considering what it is actually supposed to contain,” says Nivi Christensen on the forthcoming museum in Nuuk. The post Storm Over Greenland’s National Gallery appeared first on Kunstkritikk.</p>
-    </div>
-    <div class="entry" id="art-3">
-      <div class="entry-byline"><a class="entry-title" href="https://twocoatsofpaint.com/2026/09/joseph-fucigna-no-designated-endpoint.html?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=joseph-fucigna-no-designated-endpoint" target="_blank" rel="noopener">Joseph Fucigna: No designated endpoint</a> by twocoatsstaff — Two Coats of Paint</div>
-
-      <p>Contributed by Richard Klein / The ellipsis in the title of Joseph Fucigna’s current show “In Process …” at G-Town Arts signifies a story unfolding. Known for abstract, biomorphic sculpture made with everyday plastic materials, he has given up sculpture for painting. He had, to be sure, ventured into painting earlier with pieces like Indian Yellow_Green Gold_Black Wash Drip, importing onto canvas…</p>
-    </div>
-    <div class="entry" id="art-4">
-      <div class="entry-byline"><a class="entry-title" href="https://www.trebuchet-magazine.com/exhibiting-the-inside-edge-of-art-care-and-cultural-exchange/" target="_blank" rel="noopener">Exhibiting the Inside Edge of Art Care and Cultural Exchange</a> by Trebuchet Magazine — Trebuchet</div>
-
-      <p>A profile of INKU Sphere and Pending Response with Chen Yang and Haige Wu</p>
-    </div>
+  <section id="art" aria-labelledby="h-art">
+    <h2 id="h-art">Fine Art</h2>
+    <ol class="rows">
+    <li class="row" id="art-1" style="--i:0">
+      <span class="n">01</span>
+      <div>
+        <h3><a href="https://hyperallergic.com/derrick-adams-randy-polumbo-wills-glasspiegel-more-artists-project-newly-commissioned-works-onto-historic-hangars-in-brooklyn/" target="_blank" rel="noopener">Derrick Adams, Randy Polumbo, Wills Glasspiegel &amp; More Artists Project Newly-Commissioned Works Onto Historic Hangars in Brooklyn</a></h3>
+        <p>Jamaica Bay-Rockaway Parks Conservancy · Hyperallergic</p>
+      </div>
+      <a class="btn alt" href="https://hyperallergic.com/derrick-adams-randy-polumbo-wills-glasspiegel-more-artists-project-newly-commissioned-works-onto-historic-hangars-in-brooklyn/" target="_blank" rel="noopener" aria-label="Read Derrick Adams, Randy Polumbo, Wills Glasspiegel &amp; More Artists Project Newly-Commissioned Works Onto Historic Hangars in Brooklyn">Read</a>
+    </li>
+    <li class="row" id="art-2" style="--i:1">
+      <span class="n">02</span>
+      <div>
+        <h3><a href="https://kunstkritikk.com/storm-over-greenlands-national-gallery/" target="_blank" rel="noopener">Storm Over Greenland’s National Gallery</a></h3>
+        <p>Pernille Albrethsen · Kunstkritikk</p>
+      </div>
+      <a class="btn alt" href="https://kunstkritikk.com/storm-over-greenlands-national-gallery/" target="_blank" rel="noopener" aria-label="Read Storm Over Greenland’s National Gallery">Read</a>
+    </li>
+    <li class="row" id="art-3" style="--i:2">
+      <span class="n">03</span>
+      <div>
+        <h3><a href="https://twocoatsofpaint.com/2026/09/joseph-fucigna-no-designated-endpoint.html?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=joseph-fucigna-no-designated-endpoint" target="_blank" rel="noopener">Joseph Fucigna: No designated endpoint</a></h3>
+        <p>twocoatsstaff · Two Coats of Paint</p>
+      </div>
+      <a class="btn alt" href="https://twocoatsofpaint.com/2026/09/joseph-fucigna-no-designated-endpoint.html?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=joseph-fucigna-no-designated-endpoint" target="_blank" rel="noopener" aria-label="Read Joseph Fucigna: No designated endpoint">Read</a>
+    </li>
+    <li class="row" id="art-4" style="--i:3">
+      <span class="n">04</span>
+      <div>
+        <h3><a href="https://www.trebuchet-magazine.com/exhibiting-the-inside-edge-of-art-care-and-cultural-exchange/" target="_blank" rel="noopener">Exhibiting the Inside Edge of Art Care and Cultural Exchange</a></h3>
+        <p>Trebuchet Magazine · Trebuchet</p>
+      </div>
+      <a class="btn alt" href="https://www.trebuchet-magazine.com/exhibiting-the-inside-edge-of-art-care-and-cultural-exchange/" target="_blank" rel="noopener" aria-label="Read Exhibiting the Inside Edge of Art Care and Cultural Exchange">Read</a>
+    </li>
+    </ol>
   </section>
-  <section class="section film">
-    <span class="stampnum">02</span>
-    <div class="section-head">
-      <span class="section-tag">Film</span>
-      <h2 class="section-title">Film Criticism</h2>
-    </div>
-    <div class="entry" id="film-1">
-      <div class="entry-byline"><a class="entry-title" href="https://vaguevisages.com/2026/09/23/your-fault-london-soundtrack-amazon-movie-film-songs-music/" target="_blank" rel="noopener">Soundtracks of Cinema: ‘Your Fault: London’</a> by Q.V. Hough — Vague Visages</div>
-
-      <p>&#39;Your Fault: London&#39; Soundtrack: A Vague Visages guide for every song in Charlotte Fassler and Dani Girdwood&#39;s 2026 Amazon movie. The post Soundtracks of Cinema: ‘Your Fault: London’ appeared first on Vague Visages (Vawg-Vee-Sawj).</p>
-    </div>
-    <div class="entry" id="film-2">
-      <div class="entry-byline"><a class="entry-title" href="https://talkhouse.com/terri-lyne-carrington-and-moor-mother-want-jazz-liberation/" target="_blank" rel="noopener">Terri Lyne Carrington and Moor Mother Want Jazz Liberation</a> by Terri Lyne Carrington — Talkhouse</div>
-
-      <p>The collaborators talk rethinking modern jazz, and the making of Trip the Night Fantastic.</p>
-    </div>
-    <div class="entry" id="film-3">
-      <div class="entry-byline"><a class="entry-title" href="https://povmagazine.com/london-review-a-road-movie-with-inner-journeys/" target="_blank" rel="noopener">London Review: A Road Movie with Inner Journeys</a> by Marc Glassman — POV Magazine</div>
-
-      <p>Sebastian Brameshuber creates a unique spin on the road movie in London as travellers have conversations in a car on a soundstage as they approach their &quot;destination.&quot; The post London Review: A Road Movie with Inner Journeys appeared first on POV Magazine.</p>
-    </div>
-    <div class="entry" id="film-4">
-      <div class="entry-byline"><a class="entry-title" href="https://philosophyinfilm.com/2026/09/22/films-about-free-will-and-determinism/" target="_blank" rel="noopener">10 Films About Free Will and Determinism</a> by Matthew Jones — Philosophy in Film</div>
-
-      <p>From A Clockwork Orange and The Matrix to Arrival and The Laplace’s Demon, these ten films test whether choice can survive conditioning, prophecy, and causation. The post 10 Films About Free Will and Determinism appeared first on Philosophy in Film.</p>
-    </div>
+  <section id="film" aria-labelledby="h-film">
+    <h2 id="h-film">Film</h2>
+    <ol class="rows">
+    <li class="row" id="film-1" style="--i:0">
+      <span class="n">01</span>
+      <div>
+        <h3><a href="https://vaguevisages.com/2026/09/23/your-fault-london-soundtrack-amazon-movie-film-songs-music/" target="_blank" rel="noopener">Soundtracks of Cinema: ‘Your Fault: London’</a></h3>
+        <p>Q.V. Hough · Vague Visages</p>
+      </div>
+      <a class="btn alt" href="https://vaguevisages.com/2026/09/23/your-fault-london-soundtrack-amazon-movie-film-songs-music/" target="_blank" rel="noopener" aria-label="Read Soundtracks of Cinema: ‘Your Fault: London’">Read</a>
+    </li>
+    <li class="row" id="film-2" style="--i:1">
+      <span class="n">02</span>
+      <div>
+        <h3><a href="https://talkhouse.com/terri-lyne-carrington-and-moor-mother-want-jazz-liberation/" target="_blank" rel="noopener">Terri Lyne Carrington and Moor Mother Want Jazz Liberation</a></h3>
+        <p>Terri Lyne Carrington · Talkhouse</p>
+      </div>
+      <a class="btn alt" href="https://talkhouse.com/terri-lyne-carrington-and-moor-mother-want-jazz-liberation/" target="_blank" rel="noopener" aria-label="Read Terri Lyne Carrington and Moor Mother Want Jazz Liberation">Read</a>
+    </li>
+    <li class="row" id="film-3" style="--i:2">
+      <span class="n">03</span>
+      <div>
+        <h3><a href="https://povmagazine.com/london-review-a-road-movie-with-inner-journeys/" target="_blank" rel="noopener">London Review: A Road Movie with Inner Journeys</a></h3>
+        <p>Marc Glassman · POV Magazine</p>
+      </div>
+      <a class="btn alt" href="https://povmagazine.com/london-review-a-road-movie-with-inner-journeys/" target="_blank" rel="noopener" aria-label="Read London Review: A Road Movie with Inner Journeys">Read</a>
+    </li>
+    <li class="row" id="film-4" style="--i:3">
+      <span class="n">04</span>
+      <div>
+        <h3><a href="https://philosophyinfilm.com/2026/09/22/films-about-free-will-and-determinism/" target="_blank" rel="noopener">10 Films About Free Will and Determinism</a></h3>
+        <p>Matthew Jones · Philosophy in Film</p>
+      </div>
+      <a class="btn alt" href="https://philosophyinfilm.com/2026/09/22/films-about-free-will-and-determinism/" target="_blank" rel="noopener" aria-label="Read 10 Films About Free Will and Determinism">Read</a>
+    </li>
+    </ol>
   </section>
-  <section class="section tech">
-    <span class="stampnum">03</span>
-    <div class="section-head">
-      <span class="section-tag">Tech &amp; AI</span>
-      <h2 class="section-title">Tech &amp; AI</h2>
-    </div>
-    <div class="entry" id="tech-1">
-      <div class="entry-byline"><a class="entry-title" href="https://www.noemamag.com/let-the-people-decide-the-pace-of-frontier-ai" target="_blank" rel="noopener">Let The People Set The Pace Of Frontier AI</a> by Hélène Landemore — Noema</div>
-
-      <p>The post Let The People Set The Pace Of Frontier AI appeared first on NOEMA.</p>
-    </div>
-    <div class="entry" id="tech-2">
-      <div class="entry-byline"><a class="entry-title" href="https://it-online.co.za/2026/09/23/infrastructure-enables-the-growth-of-ai-data-centres/" target="_blank" rel="noopener">Infrastructure enables the growth of AI data centres</a> by Kathy Gibson — IT-Online</div>
-
-      <p>Kathy Gibson reports from Vertiv Week in Zagreb – Artificial intelligence (AI) and high-performance computing (HPC) workloads are driving massive growth in data centre builds. Gautham Gnganajothi, senior vice-president and global head of best practice analytics at Frost and Sullivan, says we are seeing developments in colocation, hyperscaler and enterprise data centres. “The data centre […] The…</p>
-    </div>
-    <div class="entry" id="tech-3">
-      <div class="entry-byline"><a class="entry-title" href="https://aeon.co/videos/at-an-old-west-theme-park-tourists-play-in-a-past-that-never-existed" target="_blank" rel="noopener">How the West was fun</a> by Aeon Video — Aeon</div>
-
-      <p>Be it movie mythos or nostalgia for a ‘simpler’ time, there’s an undeniable allure in stepping into the American West - by Aeon Video Watch on Aeon</p>
-    </div>
-    <div class="entry" id="tech-4">
-      <div class="entry-byline"><a class="entry-title" href="https://simonwillison.net/2026/Sep/23/bof-agentic-engineering/" target="_blank" rel="noopener">SF October 14th: A Birds of a Feather Session on Agentic Engineering</a> — Simon Willison</div>
-
-      <p>SF October 14th: A Birds of a Feather Session on Agentic Engineering I&#39;m hosting an evening event with Jesse Vincent in San Francisco on Wednesday 14th October for people who are building weird and interesting things with and on top of coding agents. Think of it as an agentic show-and-tell: ​Compare notes with other builders and experimenters on things you’re trying, what you&#39;re learning, and…</p>
-    </div>
+  <section id="tech" aria-labelledby="h-tech">
+    <h2 id="h-tech">Tech &amp; AI</h2>
+    <ol class="rows">
+    <li class="row" id="tech-1" style="--i:0">
+      <span class="n">01</span>
+      <div>
+        <h3><a href="https://www.noemamag.com/let-the-people-decide-the-pace-of-frontier-ai" target="_blank" rel="noopener">Let The People Set The Pace Of Frontier AI</a></h3>
+        <p>Hélène Landemore · Noema</p>
+      </div>
+      <a class="btn alt" href="https://www.noemamag.com/let-the-people-decide-the-pace-of-frontier-ai" target="_blank" rel="noopener" aria-label="Read Let The People Set The Pace Of Frontier AI">Read</a>
+    </li>
+    <li class="row" id="tech-2" style="--i:1">
+      <span class="n">02</span>
+      <div>
+        <h3><a href="https://it-online.co.za/2026/09/23/infrastructure-enables-the-growth-of-ai-data-centres/" target="_blank" rel="noopener">Infrastructure enables the growth of AI data centres</a></h3>
+        <p>Kathy Gibson · IT-Online</p>
+      </div>
+      <a class="btn alt" href="https://it-online.co.za/2026/09/23/infrastructure-enables-the-growth-of-ai-data-centres/" target="_blank" rel="noopener" aria-label="Read Infrastructure enables the growth of AI data centres">Read</a>
+    </li>
+    <li class="row" id="tech-3" style="--i:2">
+      <span class="n">03</span>
+      <div>
+        <h3><a href="https://aeon.co/videos/at-an-old-west-theme-park-tourists-play-in-a-past-that-never-existed" target="_blank" rel="noopener">How the West was fun</a></h3>
+        <p>Aeon Video · Aeon</p>
+      </div>
+      <a class="btn alt" href="https://aeon.co/videos/at-an-old-west-theme-park-tourists-play-in-a-past-that-never-existed" target="_blank" rel="noopener" aria-label="Read How the West was fun">Read</a>
+    </li>
+    <li class="row" id="tech-4" style="--i:3">
+      <span class="n">04</span>
+      <div>
+        <h3><a href="https://simonwillison.net/2026/Sep/23/bof-agentic-engineering/" target="_blank" rel="noopener">SF October 14th: A Birds of a Feather Session on Agentic Engineering</a></h3>
+        <p>Simon Willison</p>
+      </div>
+      <a class="btn alt" href="https://simonwillison.net/2026/Sep/23/bof-agentic-engineering/" target="_blank" rel="noopener" aria-label="Read SF October 14th: A Birds of a Feather Session on Agentic Engineering">Read</a>
+    </li>
+    </ol>
   </section>
-  <section class="section lit">
-    <span class="stampnum">04</span>
-    <div class="section-head">
-      <span class="section-tag">Sci-Fi / Fantasy</span>
-      <h2 class="section-title">Literary Reviews</h2>
-    </div>
-    <div class="entry" id="lit-1">
-      <div class="entry-byline"><a class="entry-title" href="https://wordswithoutborders.org/read/article/2026-09/introducing-wwbs-finance-and-operations-manager-alicia-lim/" target="_blank" rel="noopener">Introducing WWB’s Finance and Operations Manager, Alicia Lim</a> by Nina Perrotta — Words Without Borders</div>
-
-      <p>What drew you to Words Without Borders (and literature in translation more generally)? I was aware of Words Without Borders for years, and then more recently during my time working at Feminist Press, my interest in the magazine grew. There was a lot of overlap between some of my favorite FP authors and translators and The post Introducing WWB’s Finance and Operations Manager, Alicia Lim appeared…</p>
-    </div>
-    <div class="entry" id="lit-2">
-      <div class="entry-byline"><a class="entry-title" href="https://clereviewofbooks.com/from-three/" target="_blank" rel="noopener">From “Three”</a> by Na Zhong — Cleveland Review of Books</div>
-
-      <p>No one could dine with the king without sacrificing a small part of his health, this was to be expected, the price that everyone knew but never talked about. The post From “Three” appeared first on Cleveland Review of Books.</p>
-    </div>
-    <div class="entry" id="lit-3">
-      <div class="entry-byline"><a class="entry-title" href="https://strangehorizons.com/wordpress/non-fiction/khauf/" target="_blank" rel="noopener">Khauf</a> by Amritesh Mukherjee — Strange Horizons</div>
-
-      <p>What is a gaze but a form of possession?</p>
-    </div>
-    <div class="entry" id="lit-4">
-      <div class="entry-byline"><a class="entry-title" href="https://locusmag.com/2026/09/new-book-releases-sep-22-2026/" target="_blank" rel="noopener">New Book Releases: Sep 22, 2026</a> by locusmag — Locus</div>
-
-      <p>Visit our bookshop.org page to purchase this week&#39;s new books and support your local bookstore. And us! Bellefleur, Alexandria: Damned if I Do (Penguin Random House/Berkley Romance 978-0593952528, $20.00, 352pp, formats: paperback, ebook, audiobook, 09/22/2026) Contemporary fantasy romance novel. Effie sold her soul to Lucifer centuries ago, and to proceed with her engagement to demon Belphagor,…</p>
-    </div>
+  <section id="lit" aria-labelledby="h-lit">
+    <h2 id="h-lit">Books</h2>
+    <ol class="rows">
+    <li class="row" id="lit-1" style="--i:0">
+      <span class="n">01</span>
+      <div>
+        <h3><a href="https://wordswithoutborders.org/read/article/2026-09/introducing-wwbs-finance-and-operations-manager-alicia-lim/" target="_blank" rel="noopener">Introducing WWB’s Finance and Operations Manager, Alicia Lim</a></h3>
+        <p>Nina Perrotta · Words Without Borders</p>
+      </div>
+      <a class="btn alt" href="https://wordswithoutborders.org/read/article/2026-09/introducing-wwbs-finance-and-operations-manager-alicia-lim/" target="_blank" rel="noopener" aria-label="Read Introducing WWB’s Finance and Operations Manager, Alicia Lim">Read</a>
+    </li>
+    <li class="row" id="lit-2" style="--i:1">
+      <span class="n">02</span>
+      <div>
+        <h3><a href="https://clereviewofbooks.com/from-three/" target="_blank" rel="noopener">From “Three”</a></h3>
+        <p>Na Zhong · Cleveland Review of Books</p>
+      </div>
+      <a class="btn alt" href="https://clereviewofbooks.com/from-three/" target="_blank" rel="noopener" aria-label="Read From “Three”">Read</a>
+    </li>
+    <li class="row" id="lit-3" style="--i:2">
+      <span class="n">03</span>
+      <div>
+        <h3><a href="https://strangehorizons.com/wordpress/non-fiction/khauf/" target="_blank" rel="noopener">Khauf</a></h3>
+        <p>Amritesh Mukherjee · Strange Horizons</p>
+      </div>
+      <a class="btn alt" href="https://strangehorizons.com/wordpress/non-fiction/khauf/" target="_blank" rel="noopener" aria-label="Read Khauf">Read</a>
+    </li>
+    <li class="row" id="lit-4" style="--i:3">
+      <span class="n">04</span>
+      <div>
+        <h3><a href="https://locusmag.com/2026/09/new-book-releases-sep-22-2026/" target="_blank" rel="noopener">New Book Releases: Sep 22, 2026</a></h3>
+        <p>locusmag · Locus</p>
+      </div>
+      <a class="btn alt" href="https://locusmag.com/2026/09/new-book-releases-sep-22-2026/" target="_blank" rel="noopener" aria-label="Read New Book Releases: Sep 22, 2026">Read</a>
+    </li>
+    </ol>
   </section>
-  <section class="section music">
-    <span class="stampnum">05</span>
-    <div class="section-head">
-      <span class="section-tag">Music</span>
-      <h2 class="section-title">Music Criticism</h2>
-    </div>
-    <div class="entry" id="music-1">
-      <div class="entry-byline"><a class="entry-title" href="https://www.popmatters.com/edie-brickell-interview-2026" target="_blank" rel="noopener">Edie Brickell and Matt Chamberlain Look Back on New Bohemians</a> by Colin — PopMatters</div>
-
-      <p>Many decades after their commercial peak, Edie Brickell and Matt Chamberlain circle around new creative realms while looking back on their ascent.</p>
-    </div>
-    <div class="entry" id="music-2">
-      <div class="entry-byline"><a class="entry-title" href="https://rollingstoneindia.com/vivian-hansen-mr-showbiz-forgotten-crooner-of-calcuttas-park-street-jazz-history/" target="_blank" rel="noopener">Mr Showbiz, the Forgotten Crooner of Calcutta’s Park Street</a> by Arka Chakraborty — Rolling Stone India</div>
-
-      <p>For three decades, Vivian Hansen sang at Calcutta’s most storied venues, from Trincas and Magnolia to Mocambo. Now 86 and retired in South London, he remembers the musicians, crowds, and late nights that defined a vanished era on Park Street. All Photos: Courtesy of Vivian Hansen The post Mr Showbiz, the Forgotten Crooner of Calcutta’s Park Street appeared first on Rolling Stone India.</p>
-    </div>
-    <div class="entry" id="music-3">
-      <div class="entry-byline"><a class="entry-title" href="https://soundsandcolours.com/subjects/travel/how-to-understand-fragrance-notes-when-choosing-a-perfume-in-latin-america-and-the-caribbean-288763/" target="_blank" rel="noopener">How to Understand Fragrance Notes When Choosing a Perfume in Latin America and the Caribbean</a> by Sounds and Colours — Sounds and Colours</div>
-
-      <p>Choosing a perfume in Latin America or the Caribbean means considering more than its scent. Warm temperatures, humidity, local ingredients, and skin chemistry can affect how a fragrance develops, making fragrance notes important for shoppers in Mexico, Brazil, Colombia, Jamaica, Puerto Rico, and the Dominican Republic. Every perfume changes from its opening notes to its... Read Article</p>
-    </div>
-    <div class="entry" id="music-4">
-      <div class="entry-byline"><a class="entry-title" href="https://mena.rollingstone.com/music/a-symphony-with-a-baku-address/" target="_blank" rel="noopener">A Symphony With A Baku Address</a> by Anthony Burr — Rolling Stone MENA</div>
-
-      <p>In the summer of 1953, Dmitry Shostakovich wrote a stream of letters to a pianist in Baku named Elmira Nazirova,… The post A Symphony With A Baku Address appeared first on Rolling Stone MENA.</p>
-    </div>
+  <section id="music" aria-labelledby="h-music">
+    <h2 id="h-music">Music Criticism</h2>
+    <ol class="rows">
+    <li class="row" id="music-1" style="--i:0">
+      <span class="n">01</span>
+      <div>
+        <h3><a href="https://www.popmatters.com/edie-brickell-interview-2026" target="_blank" rel="noopener">Edie Brickell and Matt Chamberlain Look Back on New Bohemians</a></h3>
+        <p>Colin · PopMatters</p>
+      </div>
+      <a class="btn alt" href="https://www.popmatters.com/edie-brickell-interview-2026" target="_blank" rel="noopener" aria-label="Read Edie Brickell and Matt Chamberlain Look Back on New Bohemians">Read</a>
+    </li>
+    <li class="row" id="music-2" style="--i:1">
+      <span class="n">02</span>
+      <div>
+        <h3><a href="https://rollingstoneindia.com/vivian-hansen-mr-showbiz-forgotten-crooner-of-calcuttas-park-street-jazz-history/" target="_blank" rel="noopener">Mr Showbiz, the Forgotten Crooner of Calcutta’s Park Street</a></h3>
+        <p>Arka Chakraborty · Rolling Stone India</p>
+      </div>
+      <a class="btn alt" href="https://rollingstoneindia.com/vivian-hansen-mr-showbiz-forgotten-crooner-of-calcuttas-park-street-jazz-history/" target="_blank" rel="noopener" aria-label="Read Mr Showbiz, the Forgotten Crooner of Calcutta’s Park Street">Read</a>
+    </li>
+    <li class="row" id="music-3" style="--i:2">
+      <span class="n">03</span>
+      <div>
+        <h3><a href="https://soundsandcolours.com/subjects/travel/how-to-understand-fragrance-notes-when-choosing-a-perfume-in-latin-america-and-the-caribbean-288763/" target="_blank" rel="noopener">How to Understand Fragrance Notes When Choosing a Perfume in Latin America and the Caribbean</a></h3>
+        <p>Sounds and Colours · Sounds and Colours</p>
+      </div>
+      <a class="btn alt" href="https://soundsandcolours.com/subjects/travel/how-to-understand-fragrance-notes-when-choosing-a-perfume-in-latin-america-and-the-caribbean-288763/" target="_blank" rel="noopener" aria-label="Read How to Understand Fragrance Notes When Choosing a Perfume in Latin America and the Caribbean">Read</a>
+    </li>
+    <li class="row" id="music-4" style="--i:3">
+      <span class="n">04</span>
+      <div>
+        <h3><a href="https://mena.rollingstone.com/music/a-symphony-with-a-baku-address/" target="_blank" rel="noopener">A Symphony With A Baku Address</a></h3>
+        <p>Anthony Burr · Rolling Stone MENA</p>
+      </div>
+      <a class="btn alt" href="https://mena.rollingstone.com/music/a-symphony-with-a-baku-address/" target="_blank" rel="noopener" aria-label="Read A Symphony With A Baku Address">Read</a>
+    </li>
+    </ol>
   </section>
-  <section class="section design">
-    <span class="stampnum">06</span>
-    <div class="section-head">
-      <span class="section-tag">Design</span>
-      <h2 class="section-title">Design</h2>
-    </div>
-    <div class="entry" id="design-1">
-      <div class="entry-byline"><a class="entry-title" href="https://www.itsnicethat.com/articles/pov-creativity-can-democratise-foodie-culture-publication-230926" target="_blank" rel="noopener">‘Foodie’ culture is exclusionary – these creative cookbooks are offering an alternative</a> by Kieran Yates — It&#39;s Nice That</div>
-
-      <p>For Disabled people and those living with chronic illness, cooking can be a tricky and arduous task, but this is something often ignored in mainstream foodie culture – typically led by trends, fads and style over substance. Here, Kieran Yates spotlights the cookbooks challenging this fact, and argues creatives have the power to change the way we think (and eat).</p>
-    </div>
-    <div class="entry" id="design-2">
-      <div class="entry-byline"><a class="entry-title" href="https://commonedge.org/schools-in-session-whats-on-students-minds/" target="_blank" rel="noopener">School’s in Session: What’s on Students’ Minds?</a> by Martin Pedersen — Common Edge</div>
-
-      <p>A conversation with Patricia Negrón Meléndez, president of the American Institute of Architecture Students.</p>
-    </div>
-    <div class="entry" id="design-3">
-      <div class="entry-byline"><a class="entry-title" href="https://design-milk.com/chloe-fineman-home-interior-design/" target="_blank" rel="noopener">Chloe Fineman Designs Her Life Like a Film Set</a> by Design Milk Staff — Design Milk</div>
-
-      <p>In the latest episode of the &#39;Ideas of Order&#39; podcast, the &#39;SNL&#39; star talks bicoastal design influences, a creative upbringing in Berkeley, and more</p>
-    </div>
-    <div class="entry" id="design-4">
-      <div class="entry-byline"><a class="entry-title" href="https://www.printmag.com/daily-heller/the-daily-heller-typographically-speaking-what-comes-next/" target="_blank" rel="noopener">The Daily Heller: Typographically Speaking, What Comes Next?</a> by Steven Heller — Print Magazine</div>
-
-      <p>Is the world of type burning, simmering or simply transforming? The post The Daily Heller: Typographically Speaking, What Comes Next? appeared first on PRINT Magazine.</p>
-    </div>
+  <section id="design" aria-labelledby="h-design">
+    <h2 id="h-design">Design</h2>
+    <ol class="rows">
+    <li class="row" id="design-1" style="--i:0">
+      <span class="n">01</span>
+      <div>
+        <h3><a href="https://www.itsnicethat.com/articles/pov-creativity-can-democratise-foodie-culture-publication-230926" target="_blank" rel="noopener">‘Foodie’ culture is exclusionary – these creative cookbooks are offering an alternative</a></h3>
+        <p>Kieran Yates · It&#39;s Nice That</p>
+      </div>
+      <a class="btn alt" href="https://www.itsnicethat.com/articles/pov-creativity-can-democratise-foodie-culture-publication-230926" target="_blank" rel="noopener" aria-label="Read ‘Foodie’ culture is exclusionary – these creative cookbooks are offering an alternative">Read</a>
+    </li>
+    <li class="row" id="design-2" style="--i:1">
+      <span class="n">02</span>
+      <div>
+        <h3><a href="https://commonedge.org/schools-in-session-whats-on-students-minds/" target="_blank" rel="noopener">School’s in Session: What’s on Students’ Minds?</a></h3>
+        <p>Martin Pedersen · Common Edge</p>
+      </div>
+      <a class="btn alt" href="https://commonedge.org/schools-in-session-whats-on-students-minds/" target="_blank" rel="noopener" aria-label="Read School’s in Session: What’s on Students’ Minds?">Read</a>
+    </li>
+    <li class="row" id="design-3" style="--i:2">
+      <span class="n">03</span>
+      <div>
+        <h3><a href="https://design-milk.com/chloe-fineman-home-interior-design/" target="_blank" rel="noopener">Chloe Fineman Designs Her Life Like a Film Set</a></h3>
+        <p>Design Milk Staff · Design Milk</p>
+      </div>
+      <a class="btn alt" href="https://design-milk.com/chloe-fineman-home-interior-design/" target="_blank" rel="noopener" aria-label="Read Chloe Fineman Designs Her Life Like a Film Set">Read</a>
+    </li>
+    <li class="row" id="design-4" style="--i:3">
+      <span class="n">04</span>
+      <div>
+        <h3><a href="https://www.printmag.com/daily-heller/the-daily-heller-typographically-speaking-what-comes-next/" target="_blank" rel="noopener">The Daily Heller: Typographically Speaking, What Comes Next?</a></h3>
+        <p>Steven Heller · Print Magazine</p>
+      </div>
+      <a class="btn alt" href="https://www.printmag.com/daily-heller/the-daily-heller-typographically-speaking-what-comes-next/" target="_blank" rel="noopener" aria-label="Read The Daily Heller: Typographically Speaking, What Comes Next?">Read</a>
+    </li>
+    </ol>
   </section>
-  <section class="section fashion">
-    <span class="stampnum">07</span>
-    <div class="section-head">
-      <span class="section-tag">Men&#39;s Fashion</span>
-      <h2 class="section-title">Men&#39;s Fashion</h2>
-    </div>
-    <div class="entry" id="fashion-1">
-      <div class="entry-byline"><a class="entry-title" href="https://www.ivy-style.com/brooks-brothers-at-rockefeller-center.html" target="_blank" rel="noopener">Brooks Brothers at Rockefeller Center</a> by Matthew Longcore — Ivy Style</div>
-
-      <p>By Matthew Longcore Recently my wife and I had the opportunity attend two special events with our friends from Brooks Brothers. The first event, the Fit For Fame Dinner, took place on August 28th at the International Tennis Hall of Fame Induction Celebration in Newport, Rhode Island. The second event, the presentation of the Brooks ... The post Brooks Brothers at Rockefeller Center appeared first…</p>
-    </div>
+  <section id="fashion" aria-labelledby="h-fashion">
+    <h2 id="h-fashion">Men&#39;s Fashion</h2>
+    <ol class="rows">
+    <li class="row" id="fashion-1" style="--i:0">
+      <span class="n">01</span>
+      <div>
+        <h3><a href="https://www.ivy-style.com/brooks-brothers-at-rockefeller-center.html" target="_blank" rel="noopener">Brooks Brothers at Rockefeller Center</a></h3>
+        <p>Matthew Longcore · Ivy Style</p>
+      </div>
+      <a class="btn alt" href="https://www.ivy-style.com/brooks-brothers-at-rockefeller-center.html" target="_blank" rel="noopener" aria-label="Read Brooks Brothers at Rockefeller Center">Read</a>
+    </li>
+    </ol>
   </section>
   <footer>
-    <span>Algorithm</span>
-    <span>Issue No. 15 — 23 Sep 2026</span>
+    <div class="fine">
+      <div><p>Troller, Issue 15, week of 23 September 2026. Every link was read in full before it was picked.</p>
+        <p><a href="../archive/index.html">Every issue</a></p></div>
+      <p><a href="#top">Back to top</a></p>
+    </div>
+    <p class="big" aria-hidden="true">happy reading</p>
   </footer>
 </div>
-</div>
+<script>
+(function(){
+  var sw = document.getElementById('sw-calm');
+  if (!sw) return;
+  function load(){ try { return JSON.parse(localStorage.getItem('troller-ui') || '{}') || {}; } catch (e) { return {}; } }
+  function paint(){ var on = document.documentElement.hasAttribute('data-calm'); sw.setAttribute('aria-pressed', on ? 'true' : 'false'); }
+  sw.addEventListener('click', function(){
+    var ui = load(); ui.calm = !document.documentElement.hasAttribute('data-calm');
+    if (ui.calm) document.documentElement.setAttribute('data-calm', ''); else document.documentElement.removeAttribute('data-calm');
+    try { localStorage.setItem('troller-ui', JSON.stringify(ui)); } catch (e) {}
+    paint();
+  });
+  paint();
+})();</script>
 
 </body>
 </html>

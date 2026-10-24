@@ -2,311 +2,330 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="color-scheme" content="dark">
-<meta name="theme-color" content="#0A0A0A">
-<title>Algorithm — Issue No. 7 — 14 Sep 2026</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#F1EEE9">
+<title>Troller — Issue 7</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Source+Serif+4:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>try{var u=JSON.parse(localStorage.getItem('troller-ui')||'{}');if(u.calm)document.documentElement.setAttribute('data-calm','');}catch(e){}</script>
 <style>
-  html, body{ margin:0; padding:0; height:100%; background-color:#0A0A0A; }
-  *{box-sizing:border-box;}
-  body{
-    min-height:100dvh;
-    color:#FAFAF7;
-    font-family:'Source Serif 4', Georgia, serif;
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-  }
-  .page{ background-color:#0A0A0A; min-height:100dvh; }
-  a{ color:inherit; }
-  .wrap{max-width:720px; margin:0 auto; padding:44px 24px 90px; position:relative;}
-  .masthead{
-    display:flex; justify-content:space-between; align-items:flex-end;
-    border-bottom:4px solid #FAFAF7;
-    padding-bottom:14px; margin-bottom:24px;
-  }
-  .mast-title{
-    font-family:'Archivo Black', sans-serif;
-    font-size:clamp(26px,6vw,34px);
-    letter-spacing:-0.01em;
-    text-transform:uppercase;
-    color:#FAFAF7;
-    text-decoration:none;
-  }
-  .stamp{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:11px; letter-spacing:0.1em; text-transform:uppercase;
-    color:#0A0A0A; background:#FF1F3D;
-    padding:5px 10px; border-radius:2px;
-    transform:rotate(-3deg); display:inline-block; font-weight:600;
-    white-space:nowrap;
-  }
-  .tabs{display:flex; gap:22px; margin:-8px 0 26px; font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.1em; text-transform:uppercase;}
-  .tab{color:#A6A29A; text-decoration:none; padding-bottom:6px; border-bottom:2px solid transparent;}
-  .tab:hover{color:#FAFAF7;}
-  .tab.is-active{color:#FAFAF7; border-bottom-color:#FF1F3D;}
-  .nav{display:flex; justify-content:space-between; align-items:center; gap:16px; margin-bottom:40px; flex-wrap:wrap;}
-  .nav-link{font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:#FAFAF7; text-decoration:none; border:1px solid rgba(250,250,247,0.35); padding:9px 14px; border-radius:2px; white-space:nowrap;}
-  .nav-link:hover{border-color:#FF1F3D; color:#FF1F3D;}
-  .search-wrap{position:relative; flex:1; min-width:220px;}
-  .search-input{width:100%; background:#151513; border:1px solid rgba(250,250,247,0.3); color:#FAFAF7; font-family:'IBM Plex Mono', monospace; font-size:13px; padding:10px 12px; border-radius:2px; outline:none;}
-  .search-input::placeholder{color:#6B6860;}
-  .search-input:focus{border-color:#FF1F3D;}
-  .search-results{position:absolute; top:calc(100% + 6px); left:0; right:0; background:#111110; border:1px solid rgba(250,250,247,0.25); border-radius:4px; max-height:380px; overflow-y:auto; z-index:20; display:none;}
-  .search-results.active{display:block;}
-  .search-result{display:block; padding:10px 12px; border-bottom:1px solid rgba(250,250,247,0.12); text-decoration:none;}
-  .search-result:last-child{border-bottom:none;}
-  .search-result:hover{background:rgba(255,31,61,0.08);}
-  .sr-tag{font-family:'IBM Plex Mono', monospace; font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:#A6A29A;}
-  .sr-title{display:block; font-style:italic; color:#FAFAF7; margin:2px 0; font-size:14px;}
-  .sr-meta{font-family:'IBM Plex Mono', monospace; font-size:10.5px; color:#A6A29A;}
-  .search-empty{padding:14px 12px; font-family:'IBM Plex Mono', monospace; font-size:12.5px; color:#A6A29A;}
-  h1.hero{
-    font-family:'Anton', sans-serif;
-    font-weight:400;
-    font-size:clamp(42px,10vw,72px);
-    line-height:0.94;
-    text-transform:uppercase;
-    margin:0 0 22px;
-    color:#FAFAF7;
-  }
-  h1.hero .pop{color:#FF1F3D;}
-  .intro{font-size:17px; color:#EDEAE2; max-width:56ch; margin-bottom:10px;}
-  .intro-byline{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:11px; letter-spacing:0.08em; text-transform:uppercase;
-    color:#A6A29A;
-    margin-top:16px; margin-bottom:54px; display:block;
-    border-left:2px solid #FF1F3D; padding-left:10px;
-  }
-  .section{position:relative; margin-bottom:50px; padding-left:56px;}
-  .section:last-of-type{margin-bottom:0;}
-  .stampnum{
-    position:absolute; left:0; top:0;
-    width:42px; height:42px;
-    border:2px solid #FAFAF7;
-    border-radius:50%;
-    display:flex; align-items:center; justify-content:center;
-    font-family:'Archivo Black', sans-serif;
-    font-size:15px; color:#FAFAF7;
-    transform:rotate(-6deg);
-  }
-  .art .stampnum{border-color:#C9A24B; color:#C9A24B;}
-  .film .stampnum{border-color:#FF5B4A; color:#FF5B4A;}
-  .tech .stampnum{border-color:#3FE0D0; color:#3FE0D0;}
-  .lit .stampnum{border-color:#B39DFF; color:#B39DFF;}
-  .music .stampnum{border-color:#FF5FA8; color:#FF5FA8;}
-  .design .stampnum{border-color:#FFD23F; color:#FFD23F;}
-  .fashion .stampnum{border-color:#FAFAF7; color:#FAFAF7;}
-  .section-head{display:flex; align-items:center; gap:12px; margin-bottom:18px; flex-wrap:wrap;}
-  .section-tag{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:12px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase;
-    color:#0A0A0A;
-    padding:6px 11px; border-radius:2px;
-  }
-  .art .section-tag{background:#C9A24B;}
-  .film .section-tag{background:#FF5B4A;}
-  .tech .section-tag{background:#3FE0D0;}
-  .lit .section-tag{background:#B39DFF;}
-  .music .section-tag{background:#FF5FA8;}
-  .design .section-tag{background:#FFD23F;}
-  .fashion .section-tag{background:#FAFAF7;}
-  .section-title{
-    font-family:'Archivo Black', sans-serif;
-    font-size:24px; text-transform:uppercase; letter-spacing:0.01em;
-    color:#FAFAF7;
-  }
-  .entry{margin-bottom:24px; padding-bottom:24px; border-bottom:1px solid rgba(250,250,247,0.16); scroll-margin-top:24px;}
-  .entry:last-child{border-bottom:none; margin-bottom:0; padding-bottom:0;}
-  .entry-byline{font-family:'IBM Plex Mono', monospace; font-size:12px; color:#A6A29A; margin-bottom:8px;}
-  .entry-title{font-weight:500; font-style:italic; color:#FAFAF7; text-decoration:underline; text-decoration-color:rgba(250,250,247,0.35); text-underline-offset:3px;}
-  .entry-title:hover{text-decoration-color:#FF1F3D;}
-  .entry p{margin:0 0 10px; font-size:16px; color:#EDEAE2;}
-  .entry .why{font-size:14.5px; color:#A6A29A; font-style:italic;}
-  .entry .why::before{content:"— ";}
-  .issue-list{list-style:none; margin:0; padding:0;}
-  .issue-card{display:block; text-decoration:none; padding:22px 0; border-bottom:1px solid rgba(250,250,247,0.16);}
-  .issue-card:first-child{padding-top:0;}
-  .issue-card:hover .issue-headline{ text-decoration-color:#FF1F3D; }
-  .issue-meta{font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:#A6A29A; margin-bottom:8px;}
-  .issue-meta .num{color:#FF1F3D;}
-  .issue-headline{font-family:'Archivo Black', sans-serif; font-size:22px; text-transform:uppercase; letter-spacing:0.01em; color:#FAFAF7; text-decoration:underline; text-decoration-color:rgba(250,250,247,0.35); text-underline-offset:4px; display:inline-block; margin-bottom:8px;}
-  .issue-desc{font-size:15px; color:#A6A29A; max-width:60ch; margin:0;}
-  footer{
-    margin-top:64px; padding-top:20px; border-top:1px solid rgba(250,250,247,0.16);
-    display:flex; justify-content:space-between; gap:12px;
-    font-family:'IBM Plex Mono', monospace; font-size:10.5px;
-    letter-spacing:0.06em; color:#A6A29A; text-transform:uppercase;
-  }
-  @media (max-width:520px){
-    .wrap{padding:30px 16px 70px;}
-    .section{padding-left:48px;}
-    .stampnum{width:36px; height:36px; font-size:13px;}
-    .section-title{font-size:20px;}
-    .nav{flex-direction:column; align-items:stretch;}
-  }
+:root {
+  --bg: #F1EEE9;
+  --surface: #FFFFFF;
+  --ink: #3C3C3C;
+  --muted: #6B665F;
+  --line: #D7D1C7;
+  --sand: #CDC0B0;
+  --yellow: #FFE500;
+  --yellow-ink: #1E1E1E;
+  --btn: #3C3C3C;
+  --btn-ink: #FFFFFF;
+  --sleeve-s: 26%;
+  --sleeve-l: 78%;
+  --font: "Switzer", "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
+  color-scheme: light;
+}
+html { scroll-behavior: smooth; }
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font); font-size: 17px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+
+/* calm mode: no motion */
+:root[data-calm] *, :root[data-calm] *::before, :root[data-calm] *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+:root[data-calm] mark { background-size: 100% 100% !important; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; scroll-behavior: auto !important; } mark { background-size: 100% 100% !important; } }
+
+/* top bar */
+.bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding: 22px 0; }
+.mark { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.15rem; letter-spacing: -0.02em; text-decoration: none; }
+.mark i { width: 14px; height: 14px; background: var(--yellow); display: inline-block; }
+.nav { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; font-size: 0.95rem; }
+.nav a { text-decoration: none; }
+.nav a:hover, .nav a[aria-current] { text-decoration: underline; text-underline-offset: 4px; }
+.nav a[aria-current] { text-decoration-thickness: 2px; text-decoration-color: var(--ink); }
+.sw { display: inline-flex; align-items: center; gap: 8px; padding: 0; border: 0; background: none; color: var(--ink); font: 500 0.88rem var(--font); cursor: pointer; }
+.sw .box { width: 34px; height: 18px; border: 1.5px solid var(--ink); position: relative; flex: none; }
+.sw .box::after { content: ""; position: absolute; top: 2px; left: 2px; width: 11px; height: 11px; background: var(--ink); transition: transform 0.18s ease; }
+.sw[aria-pressed="true"] .box { background: var(--yellow); border-color: var(--yellow-ink); }
+.sw[aria-pressed="true"] .box::after { transform: translateX(16px); background: var(--yellow-ink); }
+
+/* hero */
+.hero { padding: 72px 0 56px; border-top: 1px solid var(--line); }
+.eyebrow { margin: 0 0 22px; color: var(--muted); font-size: 0.95rem; }
+h1 { margin: 0 0 28px; font-weight: 500; font-size: clamp(3.6rem, 13vw, 9rem); line-height: 0.95; letter-spacing: -0.045em; }
+mark {
+  background-image: linear-gradient(var(--yellow), var(--yellow)); background-repeat: no-repeat; background-size: 100% 100%;
+  background-color: transparent; color: var(--yellow-ink); padding: 0 0.12em;
+  animation: sweep 0.9s 0.45s cubic-bezier(.2,.7,.2,1) both;
+}
+@keyframes sweep { from { background-size: 0% 100%; } to { background-size: 100% 100%; } }
+@keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+.hero > * { animation: rise 0.75s cubic-bezier(.2,.7,.2,1) both; animation-delay: calc(var(--i, 0) * 90ms); }
+.hero > :nth-child(1) { --i: 0; } .hero > :nth-child(2) { --i: 1; } .hero > :nth-child(3) { --i: 2; } .hero > :nth-child(4) { --i: 3; } .hero > :nth-child(5) { --i: 4; }
+.hero p.sub { max-width: 52ch; color: var(--muted); font-size: 1.1rem; margin: 0 0 32px; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn {
+  display: inline-block; padding: 14px 24px; border: 1.5px solid var(--btn);
+  background: var(--btn); color: var(--btn-ink);
+  font: 600 0.95rem var(--font); text-decoration: none; cursor: pointer; border-radius: 0;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.btn:hover { background: transparent; color: var(--ink); }
+.btn.alt { background: var(--surface); color: var(--ink); border-color: var(--ink); }
+.btn.alt:hover { background: var(--ink); color: var(--bg); }
+.btn:disabled { opacity: 0.5; cursor: default; }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 56px; border-top: 1px solid var(--ink); }
+.stat { padding: 18px 0 0; }
+.stat b { display: block; font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 500; letter-spacing: -0.03em; line-height: 1.05; }
+.stat span { color: var(--muted); font-size: 0.92rem; }
+
+/* sections */
+section { padding: 64px 0; border-top: 1px solid var(--line); }
+h2 { margin: 0 0 32px; font-weight: 500; font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1.02; letter-spacing: -0.035em; }
+h2 small { display: block; margin-top: 10px; font-size: 0.95rem; letter-spacing: 0; color: var(--muted); font-weight: 400; }
+
+/* rows: issue entries, archive issues, music sources */
+.rows { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--ink); }
+.row { display: grid; grid-template-columns: 56px 1fr auto; gap: 8px 20px; align-items: center; padding: 22px 0; border-bottom: 1px solid var(--line); animation: rise 0.6s cubic-bezier(.2,.7,.2,1) both; animation-delay: calc(var(--i, 0) * 50ms); scroll-margin-top: 24px; }
+.row .n { color: var(--muted); font-size: 0.95rem; }
+.row h3 { margin: 0; font-weight: 500; font-size: 1.5rem; line-height: 1.2; letter-spacing: -0.02em; }
+.row h3 a { text-decoration: none; }
+.row h3 a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.row p { margin: 4px 0 0; color: var(--muted); font-size: 0.95rem; }
+.row p.note { color: var(--ink); max-width: 64ch; }
+.row .btn { padding: 9px 18px; font-size: 0.88rem; }
+
+/* search */
+.search-wrap { position: relative; margin: 0 0 28px; }
+.search { width: 100%; min-width: 0; padding: 12px 14px; border: 1.5px solid var(--line); border-radius: 0; background: var(--surface); color: var(--ink); font: 400 0.95rem var(--font); }
+.search:focus { border-color: var(--ink); outline: none; }
+.search-results { position: absolute; top: calc(100% + 6px); left: 0; right: 0; background: var(--surface); border: 1.5px solid var(--ink); max-height: 420px; overflow-y: auto; z-index: 20; display: none; }
+.search-results.active { display: block; }
+.search-result { display: block; padding: 12px 14px; border-bottom: 1px solid var(--line); text-decoration: none; }
+.search-result:last-child { border-bottom: none; }
+.search-result:hover { background: var(--bg); }
+.sr-tag { font-size: 0.8rem; color: var(--muted); }
+.sr-title { display: block; font-weight: 500; margin: 2px 0; }
+.sr-meta { font-size: 0.85rem; color: var(--muted); }
+.search-empty { padding: 14px; color: var(--muted); font-size: 0.95rem; }
+
+/* footer */
+footer { padding: 56px 0 40px; border-top: 1px solid var(--line); }
+.fine { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 24px; color: var(--muted); font-size: 0.9rem; }
+.fine p { margin: 0 0 8px; max-width: 58ch; }
+.fine a { text-underline-offset: 3px; }
+.big { margin: 40px 0 0; font-weight: 500; font-size: clamp(3rem, 15vw, 11rem); line-height: 0.9; letter-spacing: -0.05em; color: var(--sand); user-select: none; }
+
+@media (max-width: 640px) {
+  .wrap { padding: 0 16px; }
+  .hero { padding: 48px 0 40px; }
+  section { padding: 48px 0; }
+  .row { grid-template-columns: 36px 1fr; }
+  .row .btn { grid-column: 2; justify-self: start; }
+  .row h3 { font-size: 1.25rem; }
+}
 </style>
 </head>
 <body data-root="../">
-<div class="page">
 <div class="wrap">
-  <div class="masthead">
-    <a class="mast-title" href="../index.html">Algorithm</a>
-    <span class="stamp">Issue No. 7</span>
+  <header class="bar">
+    <a class="mark" href="../index.html"><i aria-hidden="true"></i>Troller</a>
+    <nav class="nav" aria-label="Site">
+      <a href="../index.html">News Troll</a>
+      <a href="../music/index.html">Song Troll</a>
+      <a href="../archive/index.html" aria-current="page">Archive</a>
+      <button class="sw" id="sw-calm" type="button" aria-pressed="false"><span class="box" aria-hidden="true"></span>Reduce animation</button>
+    </nav>
+  </header>
+  <div class="hero" id="top">
+    <p class="eyebrow">News Troll · week of 14 September 2026</p>
+    <h1>Issue <mark>7.</mark></h1>
+    <p class="sub">This issue keeps finding the same argument in different rooms: that whatever refuses to be smoothed into a category — outsider art, a shapeshifting novel, an underappreciated Chicago poet, a closeted-then-defiant matinee idol — outlasts whatever tried to flatten it. Even the pieces about AI turn out to be about the same thing, asking what creativity and cities look like once a machine has been trained to prefer the average.</p>
+    <div class="hero-actions">
+      <a class="btn" href="#art">Start reading</a>
+      <a class="btn alt" href="../music/index.html">Song Troll</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>14</b><span>links</span></div>
+      <div class="stat"><b>14</b><span>publications</span></div>
+      <div class="stat"><b>7</b><span>sections</span></div>
+    </div>
   </div>
-  <nav class="tabs" aria-label="Sections">
-    <a class="tab is-active" href="../index.html" aria-current="page">Criticism</a>
-    <a class="tab" href="../music/index.html">New Music</a>
-  </nav>
-  <div class="nav">
-    <a class="nav-link" href="../index.html">&larr; Latest Issue</a>
-    <a class="nav-link" href="../archive/index.html">Full Archive</a>
-  </div>
-  <h1 class="hero">Long Live the <span class="pop">Weird</span></h1>
-  <p class="intro">This issue keeps finding the same argument in different rooms: that whatever refuses to be smoothed into a category — outsider art, a shapeshifting novel, an underappreciated Chicago poet, a closeted-then-defiant matinee idol — outlasts whatever tried to flatten it. Even the pieces about AI turn out to be about the same thing, asking what creativity and cities look like once a machine has been trained to prefer the average.</p>
-  <span class="intro-byline">Issue No. 7 — dispatches from the margins</span>
-  <section class="section art">
-    <span class="stampnum">01</span>
-    <div class="section-head">
-      <span class="section-tag">Art</span>
-      <h2 class="section-title">Fine Art</h2>
-    </div>
-    <div class="entry" id="art-1">
-      <div class="entry-byline"><a class="entry-title" href="https://www.studiointernational.com/index.php/artificial-introspection-o-review-halle-fur-kunst-steiermark-graz-austria" target="_blank" rel="noopener">A.rtificial I.ntrospection O</a> by Bronac Ferran — Studio International</div>
 
-      <p>Reviewing a Graz exhibition built around Austrian artist Oswald Wiener, Ferran argues the show productively reframes AI debates by pivoting from machine-intelligence metrics toward introspection, observability and self-description. She traces a lineage from Wiener&#39;s cybernetic 1969 novel through Vienna Group artists to contemporary figures like Ken Okiishi and Josh Kline, arguing their work treats algorithmic mediation as a site of resistance rather than mere reproduction.</p>
-      <p class="why">A rare show that uses AI as an occasion for genuine art-historical excavation rather than spectacle.</p>
-    </div>
-    <div class="entry" id="art-2">
-      <div class="entry-byline"><a class="entry-title" href="https://www.trebuchet-magazine.com/art-brut-or-outsider-art/" target="_blank" rel="noopener">Art Brut or Outsider Art?</a> by Trebuchet Magazine — Trebuchet</div>
-
-      <p>Covering the exhibition Art Brut ressourcé at Halle Saint-Pierre, the piece argues that art brut has outgrown its origin story in asylums and prisons, finding renewed vitality in participatory workshops like Belgium&#39;s La &quot;S&quot; Grand Atelier. It contends the show inverts the field&#39;s usual hierarchy by placing disabled and non-tenured creators at the center rather than the margin.</p>
-      <p class="why">Connects the historical persecution of &#39;degenerate art&#39; to a present-day argument for dissolving the line between disabled and non-disabled artistic practice.</p>
-    </div>
+  <section id="art" aria-labelledby="h-art">
+    <h2 id="h-art">Fine Art</h2>
+    <ol class="rows">
+    <li class="row" id="art-1" style="--i:0">
+      <span class="n">01</span>
+      <div>
+        <h3><a href="https://www.studiointernational.com/index.php/artificial-introspection-o-review-halle-fur-kunst-steiermark-graz-austria" target="_blank" rel="noopener">A.rtificial I.ntrospection O</a></h3>
+        <p>Bronac Ferran · Studio International</p>
+      </div>
+      <a class="btn alt" href="https://www.studiointernational.com/index.php/artificial-introspection-o-review-halle-fur-kunst-steiermark-graz-austria" target="_blank" rel="noopener" aria-label="Read A.rtificial I.ntrospection O">Read</a>
+    </li>
+    <li class="row" id="art-2" style="--i:1">
+      <span class="n">02</span>
+      <div>
+        <h3><a href="https://www.trebuchet-magazine.com/art-brut-or-outsider-art/" target="_blank" rel="noopener">Art Brut or Outsider Art?</a></h3>
+        <p>Trebuchet Magazine · Trebuchet</p>
+      </div>
+      <a class="btn alt" href="https://www.trebuchet-magazine.com/art-brut-or-outsider-art/" target="_blank" rel="noopener" aria-label="Read Art Brut or Outsider Art?">Read</a>
+    </li>
+    </ol>
   </section>
-  <section class="section film">
-    <span class="stampnum">02</span>
-    <div class="section-head">
-      <span class="section-tag">Film</span>
-      <h2 class="section-title">Film Criticism</h2>
-    </div>
-    <div class="entry" id="film-1">
-      <div class="entry-byline"><a class="entry-title" href="https://www.anothergaze.com/in-conversation-with-onyeka-igwe/" target="_blank" rel="noopener">The Mess of Making: A Conversation with Onyeka Igwe</a> by Amari Rose Leigh — Another Gaze</div>
-
-      <p>Leigh argues that Igwe&#39;s filmmaking deliberately exposes the usually-hidden research and collaborative labor behind her work, troubling the boundary between past, present and future within a single frame. The piece traces how Igwe inserts her own body into colonial archival footage to subvert its presumed neutrality, and reads her collaborative use of Sylvia Wynter&#39;s theory as a refusal of single, didactic interpretation.</p>
-      <p class="why">A rigorous account of how archival filmmaking can make its own subjectivity impossible to ignore.</p>
-    </div>
-    <div class="entry" id="film-2">
-      <div class="entry-byline"><a class="entry-title" href="https://mubi.com/en/notebook/posts/venice-dispatch-the-garden-of-forking-paths" target="_blank" rel="noopener">Venice Dispatch: The Garden of Forking Paths</a> by Leonardo Goi — MUBI Notebook</div>
-
-      <p>Goi argues that the 83rd Venice Film Festival was defined by documentary outpacing fiction and by politically consequential films the festival&#39;s own leadership seemed reluctant to foreground, criticizing artistic director Alberto Barbera&#39;s decision to schedule the film NAZA late so politics wouldn&#39;t dominate discussion. He praises Mariano Llinás&#39;s Life of Jorge Luis Borges as a manifesto for treating cinema as collaborative play rather than passive consumption.</p>
-      <p class="why">A festival report that turns programming decisions themselves into the subject of criticism.</p>
-    </div>
+  <section id="film" aria-labelledby="h-film">
+    <h2 id="h-film">Film</h2>
+    <ol class="rows">
+    <li class="row" id="film-1" style="--i:0">
+      <span class="n">01</span>
+      <div>
+        <h3><a href="https://www.anothergaze.com/in-conversation-with-onyeka-igwe/" target="_blank" rel="noopener">The Mess of Making: A Conversation with Onyeka Igwe</a></h3>
+        <p>Amari Rose Leigh · Another Gaze</p>
+      </div>
+      <a class="btn alt" href="https://www.anothergaze.com/in-conversation-with-onyeka-igwe/" target="_blank" rel="noopener" aria-label="Read The Mess of Making: A Conversation with Onyeka Igwe">Read</a>
+    </li>
+    <li class="row" id="film-2" style="--i:1">
+      <span class="n">02</span>
+      <div>
+        <h3><a href="https://mubi.com/en/notebook/posts/venice-dispatch-the-garden-of-forking-paths" target="_blank" rel="noopener">Venice Dispatch: The Garden of Forking Paths</a></h3>
+        <p>Leonardo Goi · MUBI Notebook</p>
+      </div>
+      <a class="btn alt" href="https://mubi.com/en/notebook/posts/venice-dispatch-the-garden-of-forking-paths" target="_blank" rel="noopener" aria-label="Read Venice Dispatch: The Garden of Forking Paths">Read</a>
+    </li>
+    </ol>
   </section>
-  <section class="section tech">
-    <span class="stampnum">03</span>
-    <div class="section-head">
-      <span class="section-tag">Tech &amp; AI</span>
-      <h2 class="section-title">Tech &amp; AI</h2>
-    </div>
-    <div class="entry" id="tech-1">
-      <div class="entry-byline"><a class="entry-title" href="https://restofworld.org/2026/global-workers-using-ai-at-work/" target="_blank" rel="noopener">The real AI economy is being built by ordinary people</a> by Rest of World Staff — Rest of World</div>
-
-      <p>Reporting from Lagos, Bengaluru, China, Mumbai, Taiwan and Singapore, the piece documents workers pragmatically integrating AI into their livelihoods outside Silicon Valley&#39;s narratives — a minidrama director cutting production costs tenfold, a café owner automating admin while preserving handmade food, a personal trainer building an app with no coding experience. It argues the deliberate choices these workers make about what to delegate, versus what to keep human, constitute the real, local shape of AI&#39;s economic impact.</p>
-      <p class="why">Replaces AI-race abstractions with six concrete, unglamorous accounts of what adoption actually looks like.</p>
-    </div>
-    <div class="entry" id="tech-2">
-      <div class="entry-byline"><a class="entry-title" href="https://www.technologyreview.com/2026/08/26/1141949/editors-letter-september-2026/" target="_blank" rel="noopener">Raised on AI</a> by Mat Honan — MIT Technology Review</div>
-
-      <p>Honan argues that shielding children from technology is understandable but ultimately impractical, making the case for preparing kids to live in the world as it actually is rather than the one adults wish still existed. Drawing on his own reversal from restricting to cautiously permitting his children&#39;s device use, he argues for guided digital literacy over outright avoidance, while still taking AI-driven harms like cyberbullying seriously.</p>
-      <p class="why">A personal, unresolved account of parenting through AI that avoids both techno-optimism and panic.</p>
-    </div>
+  <section id="tech" aria-labelledby="h-tech">
+    <h2 id="h-tech">Tech &amp; AI</h2>
+    <ol class="rows">
+    <li class="row" id="tech-1" style="--i:0">
+      <span class="n">01</span>
+      <div>
+        <h3><a href="https://restofworld.org/2026/global-workers-using-ai-at-work/" target="_blank" rel="noopener">The real AI economy is being built by ordinary people</a></h3>
+        <p>Rest of World Staff · Rest of World</p>
+      </div>
+      <a class="btn alt" href="https://restofworld.org/2026/global-workers-using-ai-at-work/" target="_blank" rel="noopener" aria-label="Read The real AI economy is being built by ordinary people">Read</a>
+    </li>
+    <li class="row" id="tech-2" style="--i:1">
+      <span class="n">02</span>
+      <div>
+        <h3><a href="https://www.technologyreview.com/2026/08/26/1141949/editors-letter-september-2026/" target="_blank" rel="noopener">Raised on AI</a></h3>
+        <p>Mat Honan · MIT Technology Review</p>
+      </div>
+      <a class="btn alt" href="https://www.technologyreview.com/2026/08/26/1141949/editors-letter-september-2026/" target="_blank" rel="noopener" aria-label="Read Raised on AI">Read</a>
+    </li>
+    </ol>
   </section>
-  <section class="section lit">
-    <span class="stampnum">04</span>
-    <div class="section-head">
-      <span class="section-tag">Sci-Fi / Fantasy</span>
-      <h2 class="section-title">Literary Reviews</h2>
-    </div>
-    <div class="entry" id="lit-1">
-      <div class="entry-byline"><a class="entry-title" href="https://www.ketebooks.co.nz/reviews/review-ordinary-people-like-us-by-kelly-ana-morey" target="_blank" rel="noopener">Review: Ordinary People Like Us, by Kelly Ana Morey</a> by Karen Holdom — Kete Books</div>
-
-      <p>Holdom argues that Morey&#39;s novel, spanning five generations of women across continents and decades, succeeds by blending the supernatural with the everyday through Annie&#39;s inherited sensitivity to spirits. She singles out three spirit characters — &#39;stroppy, judgmental, gossipy, and hilarious&#39; — as the device that keeps the multigenerational, Māori-identity-focused narrative from tipping into sentimentality.</p>
-      <p class="why">A posthumously published novel reviewed as a serious achievement in magical realism, not just a tribute.</p>
-    </div>
-    <div class="entry" id="lit-2">
-      <div class="entry-byline"><a class="entry-title" href="https://europeanreviewofbooks.com/listening-practice/" target="_blank" rel="noopener">Listening practice</a> by Miriam Rasch — European Review of Books</div>
-
-      <p>Rasch proposes listening as an ethics rather than passive reception, arguing it constitutes an open-ended relationship between self and world that technology can deepen rather than only diminish. Drawing on experimental music, deaf percussionist Evelyn Glennie&#39;s account of hearing as touch, and a challenge to extraction-based views of nature, she argues aesthetic attention to sound trains ethical obligation toward what makes it.</p>
-      <p class="why">A genuinely difficult essay on attention that resists easy resolution between discipline and surrender.</p>
-    </div>
+  <section id="lit" aria-labelledby="h-lit">
+    <h2 id="h-lit">Books</h2>
+    <ol class="rows">
+    <li class="row" id="lit-1" style="--i:0">
+      <span class="n">01</span>
+      <div>
+        <h3><a href="https://www.ketebooks.co.nz/reviews/review-ordinary-people-like-us-by-kelly-ana-morey" target="_blank" rel="noopener">Review: Ordinary People Like Us, by Kelly Ana Morey</a></h3>
+        <p>Karen Holdom · Kete Books</p>
+      </div>
+      <a class="btn alt" href="https://www.ketebooks.co.nz/reviews/review-ordinary-people-like-us-by-kelly-ana-morey" target="_blank" rel="noopener" aria-label="Read Review: Ordinary People Like Us, by Kelly Ana Morey">Read</a>
+    </li>
+    <li class="row" id="lit-2" style="--i:1">
+      <span class="n">02</span>
+      <div>
+        <h3><a href="https://europeanreviewofbooks.com/listening-practice/" target="_blank" rel="noopener">Listening practice</a></h3>
+        <p>Miriam Rasch · European Review of Books</p>
+      </div>
+      <a class="btn alt" href="https://europeanreviewofbooks.com/listening-practice/" target="_blank" rel="noopener" aria-label="Read Listening practice">Read</a>
+    </li>
+    </ol>
   </section>
-  <section class="section music">
-    <span class="stampnum">05</span>
-    <div class="section-head">
-      <span class="section-tag">Music</span>
-      <h2 class="section-title">Music Criticism</h2>
-    </div>
-    <div class="entry" id="music-1">
-      <div class="entry-byline"><a class="entry-title" href="https://www.thewire.co.uk/about/contributors/mosi-reeves/one-can-t-help-but-wonder-why-he-hasn-t-received-greater-attention-marvin-tate-reviewed" target="_blank" rel="noopener">&quot;One can&#39;t help but wonder why he hasn&#39;t received greater attention&quot;: Marvin Tate reviewed</a> by Mosi Reeves — The Wire</div>
-
-      <p>Reeves argues that Chicago poet-performer Marvin Tate&#39;s album Controlled Burn, with producer LeRoy Bach&#39;s instrumentals deliberately subordinated to Tate&#39;s halting spoken-word delivery, is a sophisticated, &#39;deeply lived in&#39; statement that deserves recognition well beyond Chicago&#39;s creative circles. He credits Tate&#39;s narrative slipperiness — sudden character shifts and tonal turns, carried by a &#39;crusted, raspy&#39; voice of extreme range — as the source of the record&#39;s defiance of easy categorization.</p>
-      <p class="why">A case for a decades-long practitioner the industry has consistently overlooked, made on the work&#39;s own terms.</p>
-    </div>
-    <div class="entry" id="music-2">
-      <div class="entry-byline"><a class="entry-title" href="https://scenenoise.com/Features/WSLA-Conversations-Karmerr" target="_blank" rel="noopener">WSLA Conversations: Karmerr</a> by SceneNoise — SceneNoise</div>
-
-      <p>The piece profiles South African DJ Karmerr, tracing her route from a childhood shaped by her father&#39;s drumming and ballet into Johannesburg&#39;s club scene, and her belief that a good DJ set depends on trusting instinct over formula. It describes Johannesburg&#39;s electronic music community as an intimate, small ecosystem sustaining its own underground culture, and follows Karmerr&#39;s work with listening-focused, vinyl-driven collectives that let her take more creative risk on the decks.</p>
-      <p class="why">A ground-level account of how one city&#39;s underground electronic scene actually sustains itself.</p>
-    </div>
+  <section id="music" aria-labelledby="h-music">
+    <h2 id="h-music">Music Criticism</h2>
+    <ol class="rows">
+    <li class="row" id="music-1" style="--i:0">
+      <span class="n">01</span>
+      <div>
+        <h3><a href="https://www.thewire.co.uk/about/contributors/mosi-reeves/one-can-t-help-but-wonder-why-he-hasn-t-received-greater-attention-marvin-tate-reviewed" target="_blank" rel="noopener">&quot;One can&#39;t help but wonder why he hasn&#39;t received greater attention&quot;: Marvin Tate reviewed</a></h3>
+        <p>Mosi Reeves · The Wire</p>
+      </div>
+      <a class="btn alt" href="https://www.thewire.co.uk/about/contributors/mosi-reeves/one-can-t-help-but-wonder-why-he-hasn-t-received-greater-attention-marvin-tate-reviewed" target="_blank" rel="noopener" aria-label="Read &quot;One can&#39;t help but wonder why he hasn&#39;t received greater attention&quot;: Marvin Tate reviewed">Read</a>
+    </li>
+    <li class="row" id="music-2" style="--i:1">
+      <span class="n">02</span>
+      <div>
+        <h3><a href="https://scenenoise.com/Features/WSLA-Conversations-Karmerr" target="_blank" rel="noopener">WSLA Conversations: Karmerr</a></h3>
+        <p>SceneNoise · SceneNoise</p>
+      </div>
+      <a class="btn alt" href="https://scenenoise.com/Features/WSLA-Conversations-Karmerr" target="_blank" rel="noopener" aria-label="Read WSLA Conversations: Karmerr">Read</a>
+    </li>
+    </ol>
   </section>
-  <section class="section design">
-    <span class="stampnum">06</span>
-    <div class="section-head">
-      <span class="section-tag">Design</span>
-      <h2 class="section-title">Design</h2>
-    </div>
-    <div class="entry" id="design-1">
-      <div class="entry-byline"><a class="entry-title" href="https://www.e-flux.com/architecture/simulation/6783054/weirded-urban-spaces" target="_blank" rel="noopener">Weirded Urban Spaces</a> by Marco Caracciolo — e-flux Architecture</div>
-
-      <p>Caracciolo argues that contemporary &#39;weird fiction&#39; — Jeff VanderMeer&#39;s Borne and the video game Alan Wake II — reimagines cities as sites of creative possibility rather than catastrophic collapse, offering what he calls &#39;tragic hope&#39; in the face of climate anxiety. He contends that spatial instability in these works, rather than conventional disaster narratives, more accurately captures how the climate itself is now &#39;weirding.&#39;</p>
-      <p class="why">Argues that fiction&#39;s imagination of unstable cities is doing real conceptual work climate discourse needs.</p>
-    </div>
-    <div class="entry" id="design-2">
-      <div class="entry-byline"><a class="entry-title" href="https://www.azuremagazine.com/article/moriyama-teshima-brings-life-sciences-out-of-the-lab-and-into-public-view/" target="_blank" rel="noopener">Moriyama Teshima Brings Life Sciences Out of the Lab and Into Public View</a> by Sydney Shilling — Azure</div>
-
-      <p>Shilling argues that Moriyama Teshima Architects has resolved a real tension in research-building design — making scientific work visible to the public without disrupting the controlled conditions research requires — through two Ontario university projects. At Guelph&#39;s Honey Bee Research Centre and McMaster&#39;s Life Sciences Building, circulation paths and glazing let visitors and students encounter active research as part of everyday campus movement rather than through formal tours.</p>
-      <p class="why">A clear argument for architecture that democratizes scientific knowledge through circulation, not signage.</p>
-    </div>
+  <section id="design" aria-labelledby="h-design">
+    <h2 id="h-design">Design</h2>
+    <ol class="rows">
+    <li class="row" id="design-1" style="--i:0">
+      <span class="n">01</span>
+      <div>
+        <h3><a href="https://www.e-flux.com/architecture/simulation/6783054/weirded-urban-spaces" target="_blank" rel="noopener">Weirded Urban Spaces</a></h3>
+        <p>Marco Caracciolo · e-flux Architecture</p>
+      </div>
+      <a class="btn alt" href="https://www.e-flux.com/architecture/simulation/6783054/weirded-urban-spaces" target="_blank" rel="noopener" aria-label="Read Weirded Urban Spaces">Read</a>
+    </li>
+    <li class="row" id="design-2" style="--i:1">
+      <span class="n">02</span>
+      <div>
+        <h3><a href="https://www.azuremagazine.com/article/moriyama-teshima-brings-life-sciences-out-of-the-lab-and-into-public-view/" target="_blank" rel="noopener">Moriyama Teshima Brings Life Sciences Out of the Lab and Into Public View</a></h3>
+        <p>Sydney Shilling · Azure</p>
+      </div>
+      <a class="btn alt" href="https://www.azuremagazine.com/article/moriyama-teshima-brings-life-sciences-out-of-the-lab-and-into-public-view/" target="_blank" rel="noopener" aria-label="Read Moriyama Teshima Brings Life Sciences Out of the Lab and Into Public View">Read</a>
+    </li>
+    </ol>
   </section>
-  <section class="section fashion">
-    <span class="stampnum">07</span>
-    <div class="section-head">
-      <span class="section-tag">Men&#39;s Fashion</span>
-      <h2 class="section-title">Men&#39;s Fashion</h2>
-    </div>
-    <div class="entry" id="fashion-1">
-      <div class="entry-byline"><a class="entry-title" href="https://www.highsnobiety.com/p/noahs-notes-nypl-merch-common-projects/" target="_blank" rel="noopener">Noah&#39;s Notes: Libraries Deserve Better Merch</a> by Noah Johnson — Highsnobiety</div>
-
-      <p>Johnson argues that prestigious institutions like the New York Public Library shouldn&#39;t settle for derivative, &#39;bottom-feeder&#39; merch that trades on institutional prestige without commissioning real design talent. He likens the NYPL&#39;s hat to shallow city-pride capitalism — the merch equivalent of a &#39;brand-new old-school bagel shop with VC funding&#39; — and reads it as symptomatic of a broader retreat from aesthetic standards.</p>
-      <p class="why">A short, sharp column that treats institutional merch as a real test of design integrity, not an afterthought.</p>
-    </div>
-    <div class="entry" id="fashion-2">
-      <div class="entry-byline"><a class="entry-title" href="https://therake.com/us/stories/who-is-the-rake-billy-the-brave" target="_blank" rel="noopener">Who is The Rake: Billy the Brave</a> by Austin Mutti-Mewse — The Rake</div>
-
-      <p>Mutti-Mewse profiles William Haines, the Hollywood leading man whose refusal to enter a sham marriage to hide his relationship with partner Jimmie Shields ended his film career in 1933. The piece argues Haines&#39;s later career as an influential interior designer, and his androgynous, deliberately confident dressing — padded shoulders, nipped waists, bold checks — made his refusal to compromise itself his most lasting contribution to style.</p>
-      <p class="why">Makes the case that personal integrity, not tailoring alone, is what gave Haines&#39;s style its lasting influence.</p>
-    </div>
+  <section id="fashion" aria-labelledby="h-fashion">
+    <h2 id="h-fashion">Men&#39;s Fashion</h2>
+    <ol class="rows">
+    <li class="row" id="fashion-1" style="--i:0">
+      <span class="n">01</span>
+      <div>
+        <h3><a href="https://www.highsnobiety.com/p/noahs-notes-nypl-merch-common-projects/" target="_blank" rel="noopener">Noah&#39;s Notes: Libraries Deserve Better Merch</a></h3>
+        <p>Noah Johnson · Highsnobiety</p>
+      </div>
+      <a class="btn alt" href="https://www.highsnobiety.com/p/noahs-notes-nypl-merch-common-projects/" target="_blank" rel="noopener" aria-label="Read Noah&#39;s Notes: Libraries Deserve Better Merch">Read</a>
+    </li>
+    <li class="row" id="fashion-2" style="--i:1">
+      <span class="n">02</span>
+      <div>
+        <h3><a href="https://therake.com/us/stories/who-is-the-rake-billy-the-brave" target="_blank" rel="noopener">Who is The Rake: Billy the Brave</a></h3>
+        <p>Austin Mutti-Mewse · The Rake</p>
+      </div>
+      <a class="btn alt" href="https://therake.com/us/stories/who-is-the-rake-billy-the-brave" target="_blank" rel="noopener" aria-label="Read Who is The Rake: Billy the Brave">Read</a>
+    </li>
+    </ol>
   </section>
   <footer>
-    <span>Algorithm</span>
-    <span>Issue No. 7 — 14 Sep 2026</span>
+    <div class="fine">
+      <div><p>Troller, Issue 7, week of 14 September 2026. Every link was read in full before it was picked.</p>
+        <p><a href="../archive/index.html">Every issue</a></p></div>
+      <p><a href="#top">Back to top</a></p>
+    </div>
+    <p class="big" aria-hidden="true">happy reading</p>
   </footer>
 </div>
-</div>
+<script>
+(function(){
+  var sw = document.getElementById('sw-calm');
+  if (!sw) return;
+  function load(){ try { return JSON.parse(localStorage.getItem('troller-ui') || '{}') || {}; } catch (e) { return {}; } }
+  function paint(){ var on = document.documentElement.hasAttribute('data-calm'); sw.setAttribute('aria-pressed', on ? 'true' : 'false'); }
+  sw.addEventListener('click', function(){
+    var ui = load(); ui.calm = !document.documentElement.hasAttribute('data-calm');
+    if (ui.calm) document.documentElement.setAttribute('data-calm', ''); else document.documentElement.removeAttribute('data-calm');
+    try { localStorage.setItem('troller-ui', JSON.stringify(ui)); } catch (e) {}
+    paint();
+  });
+  paint();
+})();</script>
 
 </body>
 </html>

@@ -1,9 +1,9 @@
-# Algorithm
+# Troller
 
-A weekly digest of links to the best criticism and long-form writing: five
+Formerly Algorithm. A weekly digest of links to the best criticism and long-form writing: five
 pieces each across fine art, film, tech & AI, literary reviews, music, design
-and menswear, from around 110 publications on six continents. Plus **New
-Music**: new songs picked from the weekly lists of the sites that cover new
+and menswear, from around 110 publications on six continents. Plus **Song
+Troll**: new songs picked from the weekly lists of the sites that cover new
 music full time.
 
 Live at **https://mikeanderson0101.github.io/algorithm-newsletter/**

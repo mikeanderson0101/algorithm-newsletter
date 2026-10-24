@@ -2,367 +2,442 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="color-scheme" content="dark">
-<meta name="theme-color" content="#0A0A0A">
-<title>Algorithm — Issue No. 33 — 9 Oct 2026</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#F1EEE9">
+<title>Troller — Issue 33</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Source+Serif+4:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>try{var u=JSON.parse(localStorage.getItem('troller-ui')||'{}');if(u.calm)document.documentElement.setAttribute('data-calm','');}catch(e){}</script>
 <style>
-  html, body{ margin:0; padding:0; height:100%; background-color:#0A0A0A; }
-  *{box-sizing:border-box;}
-  body{
-    min-height:100dvh;
-    color:#FAFAF7;
-    font-family:'Source Serif 4', Georgia, serif;
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-  }
-  .page{ background-color:#0A0A0A; min-height:100dvh; }
-  a{ color:inherit; }
-  .wrap{max-width:720px; margin:0 auto; padding:44px 24px 90px; position:relative;}
-  .masthead{
-    display:flex; justify-content:space-between; align-items:flex-end;
-    border-bottom:4px solid #FAFAF7;
-    padding-bottom:14px; margin-bottom:24px;
-  }
-  .mast-title{
-    font-family:'Archivo Black', sans-serif;
-    font-size:clamp(26px,6vw,34px);
-    letter-spacing:-0.01em;
-    text-transform:uppercase;
-    color:#FAFAF7;
-    text-decoration:none;
-  }
-  .stamp{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:11px; letter-spacing:0.1em; text-transform:uppercase;
-    color:#0A0A0A; background:#FF1F3D;
-    padding:5px 10px; border-radius:2px;
-    transform:rotate(-3deg); display:inline-block; font-weight:600;
-    white-space:nowrap;
-  }
-  .tabs{display:flex; gap:22px; margin:-8px 0 26px; font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.1em; text-transform:uppercase;}
-  .tab{color:#A6A29A; text-decoration:none; padding-bottom:6px; border-bottom:2px solid transparent;}
-  .tab:hover{color:#FAFAF7;}
-  .tab.is-active{color:#FAFAF7; border-bottom-color:#FF1F3D;}
-  .nav{display:flex; justify-content:space-between; align-items:center; gap:16px; margin-bottom:40px; flex-wrap:wrap;}
-  .nav-link{font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:#FAFAF7; text-decoration:none; border:1px solid rgba(250,250,247,0.35); padding:9px 14px; border-radius:2px; white-space:nowrap;}
-  .nav-link:hover{border-color:#FF1F3D; color:#FF1F3D;}
-  .search-wrap{position:relative; flex:1; min-width:220px;}
-  .search-input{width:100%; background:#151513; border:1px solid rgba(250,250,247,0.3); color:#FAFAF7; font-family:'IBM Plex Mono', monospace; font-size:13px; padding:10px 12px; border-radius:2px; outline:none;}
-  .search-input::placeholder{color:#6B6860;}
-  .search-input:focus{border-color:#FF1F3D;}
-  .search-results{position:absolute; top:calc(100% + 6px); left:0; right:0; background:#111110; border:1px solid rgba(250,250,247,0.25); border-radius:4px; max-height:380px; overflow-y:auto; z-index:20; display:none;}
-  .search-results.active{display:block;}
-  .search-result{display:block; padding:10px 12px; border-bottom:1px solid rgba(250,250,247,0.12); text-decoration:none;}
-  .search-result:last-child{border-bottom:none;}
-  .search-result:hover{background:rgba(255,31,61,0.08);}
-  .sr-tag{font-family:'IBM Plex Mono', monospace; font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:#A6A29A;}
-  .sr-title{display:block; font-style:italic; color:#FAFAF7; margin:2px 0; font-size:14px;}
-  .sr-meta{font-family:'IBM Plex Mono', monospace; font-size:10.5px; color:#A6A29A;}
-  .search-empty{padding:14px 12px; font-family:'IBM Plex Mono', monospace; font-size:12.5px; color:#A6A29A;}
-  h1.hero{
-    font-family:'Anton', sans-serif;
-    font-weight:400;
-    font-size:clamp(42px,10vw,72px);
-    line-height:0.94;
-    text-transform:uppercase;
-    margin:0 0 22px;
-    color:#FAFAF7;
-  }
-  h1.hero .pop{color:#FF1F3D;}
-  .intro{font-size:17px; color:#EDEAE2; max-width:56ch; margin-bottom:10px;}
-  .intro-byline{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:11px; letter-spacing:0.08em; text-transform:uppercase;
-    color:#A6A29A;
-    margin-top:16px; margin-bottom:54px; display:block;
-    border-left:2px solid #FF1F3D; padding-left:10px;
-  }
-  .section{position:relative; margin-bottom:50px; padding-left:56px;}
-  .section:last-of-type{margin-bottom:0;}
-  .stampnum{
-    position:absolute; left:0; top:0;
-    width:42px; height:42px;
-    border:2px solid #FAFAF7;
-    border-radius:50%;
-    display:flex; align-items:center; justify-content:center;
-    font-family:'Archivo Black', sans-serif;
-    font-size:15px; color:#FAFAF7;
-    transform:rotate(-6deg);
-  }
-  .art .stampnum{border-color:#C9A24B; color:#C9A24B;}
-  .film .stampnum{border-color:#FF5B4A; color:#FF5B4A;}
-  .tech .stampnum{border-color:#3FE0D0; color:#3FE0D0;}
-  .lit .stampnum{border-color:#B39DFF; color:#B39DFF;}
-  .music .stampnum{border-color:#FF5FA8; color:#FF5FA8;}
-  .design .stampnum{border-color:#FFD23F; color:#FFD23F;}
-  .fashion .stampnum{border-color:#FAFAF7; color:#FAFAF7;}
-  .section-head{display:flex; align-items:center; gap:12px; margin-bottom:18px; flex-wrap:wrap;}
-  .section-tag{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:12px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase;
-    color:#0A0A0A;
-    padding:6px 11px; border-radius:2px;
-  }
-  .art .section-tag{background:#C9A24B;}
-  .film .section-tag{background:#FF5B4A;}
-  .tech .section-tag{background:#3FE0D0;}
-  .lit .section-tag{background:#B39DFF;}
-  .music .section-tag{background:#FF5FA8;}
-  .design .section-tag{background:#FFD23F;}
-  .fashion .section-tag{background:#FAFAF7;}
-  .section-title{
-    font-family:'Archivo Black', sans-serif;
-    font-size:24px; text-transform:uppercase; letter-spacing:0.01em;
-    color:#FAFAF7;
-  }
-  .entry{margin-bottom:24px; padding-bottom:24px; border-bottom:1px solid rgba(250,250,247,0.16); scroll-margin-top:24px;}
-  .entry:last-child{border-bottom:none; margin-bottom:0; padding-bottom:0;}
-  .entry-byline{font-family:'IBM Plex Mono', monospace; font-size:12px; color:#A6A29A; margin-bottom:8px;}
-  .entry-title{font-weight:500; font-style:italic; color:#FAFAF7; text-decoration:underline; text-decoration-color:rgba(250,250,247,0.35); text-underline-offset:3px;}
-  .entry-title:hover{text-decoration-color:#FF1F3D;}
-  .entry p{margin:0 0 10px; font-size:16px; color:#EDEAE2;}
-  .entry .why{font-size:14.5px; color:#A6A29A; font-style:italic;}
-  .entry .why::before{content:"— ";}
-  .issue-list{list-style:none; margin:0; padding:0;}
-  .issue-card{display:block; text-decoration:none; padding:22px 0; border-bottom:1px solid rgba(250,250,247,0.16);}
-  .issue-card:first-child{padding-top:0;}
-  .issue-card:hover .issue-headline{ text-decoration-color:#FF1F3D; }
-  .issue-meta{font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:#A6A29A; margin-bottom:8px;}
-  .issue-meta .num{color:#FF1F3D;}
-  .issue-headline{font-family:'Archivo Black', sans-serif; font-size:22px; text-transform:uppercase; letter-spacing:0.01em; color:#FAFAF7; text-decoration:underline; text-decoration-color:rgba(250,250,247,0.35); text-underline-offset:4px; display:inline-block; margin-bottom:8px;}
-  .issue-desc{font-size:15px; color:#A6A29A; max-width:60ch; margin:0;}
-  footer{
-    margin-top:64px; padding-top:20px; border-top:1px solid rgba(250,250,247,0.16);
-    display:flex; justify-content:space-between; gap:12px;
-    font-family:'IBM Plex Mono', monospace; font-size:10.5px;
-    letter-spacing:0.06em; color:#A6A29A; text-transform:uppercase;
-  }
-  @media (max-width:520px){
-    .wrap{padding:30px 16px 70px;}
-    .section{padding-left:48px;}
-    .stampnum{width:36px; height:36px; font-size:13px;}
-    .section-title{font-size:20px;}
-    .nav{flex-direction:column; align-items:stretch;}
-  }
+:root {
+  --bg: #F1EEE9;
+  --surface: #FFFFFF;
+  --ink: #3C3C3C;
+  --muted: #6B665F;
+  --line: #D7D1C7;
+  --sand: #CDC0B0;
+  --yellow: #FFE500;
+  --yellow-ink: #1E1E1E;
+  --btn: #3C3C3C;
+  --btn-ink: #FFFFFF;
+  --sleeve-s: 26%;
+  --sleeve-l: 78%;
+  --font: "Switzer", "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
+  color-scheme: light;
+}
+html { scroll-behavior: smooth; }
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font); font-size: 17px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+
+/* calm mode: no motion */
+:root[data-calm] *, :root[data-calm] *::before, :root[data-calm] *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+:root[data-calm] mark { background-size: 100% 100% !important; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; scroll-behavior: auto !important; } mark { background-size: 100% 100% !important; } }
+
+/* top bar */
+.bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding: 22px 0; }
+.mark { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.15rem; letter-spacing: -0.02em; text-decoration: none; }
+.mark i { width: 14px; height: 14px; background: var(--yellow); display: inline-block; }
+.nav { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; font-size: 0.95rem; }
+.nav a { text-decoration: none; }
+.nav a:hover, .nav a[aria-current] { text-decoration: underline; text-underline-offset: 4px; }
+.nav a[aria-current] { text-decoration-thickness: 2px; text-decoration-color: var(--ink); }
+.sw { display: inline-flex; align-items: center; gap: 8px; padding: 0; border: 0; background: none; color: var(--ink); font: 500 0.88rem var(--font); cursor: pointer; }
+.sw .box { width: 34px; height: 18px; border: 1.5px solid var(--ink); position: relative; flex: none; }
+.sw .box::after { content: ""; position: absolute; top: 2px; left: 2px; width: 11px; height: 11px; background: var(--ink); transition: transform 0.18s ease; }
+.sw[aria-pressed="true"] .box { background: var(--yellow); border-color: var(--yellow-ink); }
+.sw[aria-pressed="true"] .box::after { transform: translateX(16px); background: var(--yellow-ink); }
+
+/* hero */
+.hero { padding: 72px 0 56px; border-top: 1px solid var(--line); }
+.eyebrow { margin: 0 0 22px; color: var(--muted); font-size: 0.95rem; }
+h1 { margin: 0 0 28px; font-weight: 500; font-size: clamp(3.6rem, 13vw, 9rem); line-height: 0.95; letter-spacing: -0.045em; }
+mark {
+  background-image: linear-gradient(var(--yellow), var(--yellow)); background-repeat: no-repeat; background-size: 100% 100%;
+  background-color: transparent; color: var(--yellow-ink); padding: 0 0.12em;
+  animation: sweep 0.9s 0.45s cubic-bezier(.2,.7,.2,1) both;
+}
+@keyframes sweep { from { background-size: 0% 100%; } to { background-size: 100% 100%; } }
+@keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+.hero > * { animation: rise 0.75s cubic-bezier(.2,.7,.2,1) both; animation-delay: calc(var(--i, 0) * 90ms); }
+.hero > :nth-child(1) { --i: 0; } .hero > :nth-child(2) { --i: 1; } .hero > :nth-child(3) { --i: 2; } .hero > :nth-child(4) { --i: 3; } .hero > :nth-child(5) { --i: 4; }
+.hero p.sub { max-width: 52ch; color: var(--muted); font-size: 1.1rem; margin: 0 0 32px; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn {
+  display: inline-block; padding: 14px 24px; border: 1.5px solid var(--btn);
+  background: var(--btn); color: var(--btn-ink);
+  font: 600 0.95rem var(--font); text-decoration: none; cursor: pointer; border-radius: 0;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.btn:hover { background: transparent; color: var(--ink); }
+.btn.alt { background: var(--surface); color: var(--ink); border-color: var(--ink); }
+.btn.alt:hover { background: var(--ink); color: var(--bg); }
+.btn:disabled { opacity: 0.5; cursor: default; }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 56px; border-top: 1px solid var(--ink); }
+.stat { padding: 18px 0 0; }
+.stat b { display: block; font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 500; letter-spacing: -0.03em; line-height: 1.05; }
+.stat span { color: var(--muted); font-size: 0.92rem; }
+
+/* sections */
+section { padding: 64px 0; border-top: 1px solid var(--line); }
+h2 { margin: 0 0 32px; font-weight: 500; font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1.02; letter-spacing: -0.035em; }
+h2 small { display: block; margin-top: 10px; font-size: 0.95rem; letter-spacing: 0; color: var(--muted); font-weight: 400; }
+
+/* rows: issue entries, archive issues, music sources */
+.rows { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--ink); }
+.row { display: grid; grid-template-columns: 56px 1fr auto; gap: 8px 20px; align-items: center; padding: 22px 0; border-bottom: 1px solid var(--line); animation: rise 0.6s cubic-bezier(.2,.7,.2,1) both; animation-delay: calc(var(--i, 0) * 50ms); scroll-margin-top: 24px; }
+.row .n { color: var(--muted); font-size: 0.95rem; }
+.row h3 { margin: 0; font-weight: 500; font-size: 1.5rem; line-height: 1.2; letter-spacing: -0.02em; }
+.row h3 a { text-decoration: none; }
+.row h3 a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.row p { margin: 4px 0 0; color: var(--muted); font-size: 0.95rem; }
+.row p.note { color: var(--ink); max-width: 64ch; }
+.row .btn { padding: 9px 18px; font-size: 0.88rem; }
+
+/* search */
+.search-wrap { position: relative; margin: 0 0 28px; }
+.search { width: 100%; min-width: 0; padding: 12px 14px; border: 1.5px solid var(--line); border-radius: 0; background: var(--surface); color: var(--ink); font: 400 0.95rem var(--font); }
+.search:focus { border-color: var(--ink); outline: none; }
+.search-results { position: absolute; top: calc(100% + 6px); left: 0; right: 0; background: var(--surface); border: 1.5px solid var(--ink); max-height: 420px; overflow-y: auto; z-index: 20; display: none; }
+.search-results.active { display: block; }
+.search-result { display: block; padding: 12px 14px; border-bottom: 1px solid var(--line); text-decoration: none; }
+.search-result:last-child { border-bottom: none; }
+.search-result:hover { background: var(--bg); }
+.sr-tag { font-size: 0.8rem; color: var(--muted); }
+.sr-title { display: block; font-weight: 500; margin: 2px 0; }
+.sr-meta { font-size: 0.85rem; color: var(--muted); }
+.search-empty { padding: 14px; color: var(--muted); font-size: 0.95rem; }
+
+/* footer */
+footer { padding: 56px 0 40px; border-top: 1px solid var(--line); }
+.fine { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 24px; color: var(--muted); font-size: 0.9rem; }
+.fine p { margin: 0 0 8px; max-width: 58ch; }
+.fine a { text-underline-offset: 3px; }
+.big { margin: 40px 0 0; font-weight: 500; font-size: clamp(3rem, 15vw, 11rem); line-height: 0.9; letter-spacing: -0.05em; color: var(--sand); user-select: none; }
+
+@media (max-width: 640px) {
+  .wrap { padding: 0 16px; }
+  .hero { padding: 48px 0 40px; }
+  section { padding: 48px 0; }
+  .row { grid-template-columns: 36px 1fr; }
+  .row .btn { grid-column: 2; justify-self: start; }
+  .row h3 { font-size: 1.25rem; }
+}
 </style>
 </head>
 <body data-root="../">
-<div class="page">
 <div class="wrap">
-  <div class="masthead">
-    <a class="mast-title" href="../index.html">Algorithm</a>
-    <span class="stamp">Issue No. 33</span>
+  <header class="bar">
+    <a class="mark" href="../index.html"><i aria-hidden="true"></i>Troller</a>
+    <nav class="nav" aria-label="Site">
+      <a href="../index.html">News Troll</a>
+      <a href="../music/index.html">Song Troll</a>
+      <a href="../archive/index.html" aria-current="page">Archive</a>
+      <button class="sw" id="sw-calm" type="button" aria-pressed="false"><span class="box" aria-hidden="true"></span>Reduce animation</button>
+    </nav>
+  </header>
+  <div class="hero" id="top">
+    <p class="eyebrow">News Troll · week of 9 October 2026</p>
+    <h1>Issue <mark>33.</mark></h1>
+    <p class="sub">This issue wanders from Indigenous survivance in New York galleries to a Belarusian flutist&#39;s defiance on stage, from punk&#39;s endless authenticity debates to Latvia&#39;s uneasy ballot box. Along the way: a Kubrick retrospective, a banker who finally listened to farmers, and a Saudi novelist on writing the tangible. Twenty minutes each, at least.</p>
+    <div class="hero-actions">
+      <a class="btn" href="#art">Start reading</a>
+      <a class="btn alt" href="../music/index.html">Song Troll</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>28</b><span>links</span></div>
+      <div class="stat"><b>28</b><span>publications</span></div>
+      <div class="stat"><b>7</b><span>sections</span></div>
+    </div>
   </div>
-  <nav class="tabs" aria-label="Sections">
-    <a class="tab is-active" href="../index.html" aria-current="page">Criticism</a>
-    <a class="tab" href="../music/index.html">New Music</a>
-  </nav>
-  <div class="nav">
-    <a class="nav-link" href="../index.html">&larr; Latest Issue</a>
-    <a class="nav-link" href="../archive/index.html">Full Archive</a>
-  </div>
-  <h1 class="hero">Memory, Craft, and <span class="pop">Resistance</span></h1>
-  <p class="intro">This issue wanders from Indigenous survivance in New York galleries to a Belarusian flutist&#39;s defiance on stage, from punk&#39;s endless authenticity debates to Latvia&#39;s uneasy ballot box. Along the way: a Kubrick retrospective, a banker who finally listened to farmers, and a Saudi novelist on writing the tangible. Twenty minutes each, at least.</p>
-  <span class="intro-byline">2026-10-09 — selected links</span>
-  <section class="section art">
-    <span class="stampnum">01</span>
-    <div class="section-head">
-      <span class="section-tag">Art</span>
-      <h2 class="section-title">Fine Art</h2>
-    </div>
-    <div class="entry" id="art-1">
-      <div class="entry-byline"><a class="entry-title" href="https://hyperallergic.com/7-new-york-exhibitions-that-embody-indigenous-survivance/" target="_blank" rel="noopener">7 New York Exhibitions That Embody Indigenous Survivance</a> by Rhea Nayyar — Hyperallergic</div>
 
-      <p>In shows coinciding with Indigenous Peoples&#39; Day, artists including Jeremy Dennis, Shelley Niro, and Sarah Sense chart Native history and futurity.</p>
-    </div>
-    <div class="entry" id="art-2">
-      <div class="entry-byline"><a class="entry-title" href="https://www.artforum.com/features/mira-m-yang-kunsthalle-fribourg-1000words-thomas-patier-1234760740/" target="_blank" rel="noopener">Mira M. Yang’s Hallucinatory Archive</a> by Thomas Patier — Artforum</div>
-
-      <p>In dual shows at Kunsthalle Fribourg and Fondation Pernod Ricard, the artist traces how cultural identities change through the ages</p>
-    </div>
-    <div class="entry" id="art-3">
-      <div class="entry-byline"><a class="entry-title" href="https://kunstkritikk.com/humanity-viewed-from-the-milky-way/" target="_blank" rel="noopener">Humanity Viewed from the Milky Way</a> by Frans Josef Petersson — Kunstkritikk</div>
-
-      <p>Kateryna Lysovenko turns fragility into light and violence into tenderness. The post Humanity Viewed from the Milky Way appeared first on Kunstkritikk.</p>
-    </div>
-    <div class="entry" id="art-4">
-      <div class="entry-byline"><a class="entry-title" href="https://burnaway.org/daily/black-spiritual-ecologies-in-conversation-with-cheyenne-wyzzard-jones/" target="_blank" rel="noopener">Black Spiritual Ecologies: In Conversation with Cheyenne Wyzzard-Jones</a> by Kristina Robinson — Burnaway</div>
-
-      <p>Sherae Rimpsey speaks with Cheyenne Wyzzard-Jones about Toni Cade Bambara&#39;s The Salt Eaters, Blackness and the politics and spirit of place found in Introduction: Black Spiritual Ecologies at the Front, New Orleans.</p>
-    </div>
+  <section id="art" aria-labelledby="h-art">
+    <h2 id="h-art">Fine Art</h2>
+    <ol class="rows">
+    <li class="row" id="art-1" style="--i:0">
+      <span class="n">01</span>
+      <div>
+        <h3><a href="https://hyperallergic.com/7-new-york-exhibitions-that-embody-indigenous-survivance/" target="_blank" rel="noopener">7 New York Exhibitions That Embody Indigenous Survivance</a></h3>
+        <p>Rhea Nayyar · Hyperallergic</p>
+      </div>
+      <a class="btn alt" href="https://hyperallergic.com/7-new-york-exhibitions-that-embody-indigenous-survivance/" target="_blank" rel="noopener" aria-label="Read 7 New York Exhibitions That Embody Indigenous Survivance">Read</a>
+    </li>
+    <li class="row" id="art-2" style="--i:1">
+      <span class="n">02</span>
+      <div>
+        <h3><a href="https://www.artforum.com/features/mira-m-yang-kunsthalle-fribourg-1000words-thomas-patier-1234760740/" target="_blank" rel="noopener">Mira M. Yang’s Hallucinatory Archive</a></h3>
+        <p>Thomas Patier · Artforum</p>
+      </div>
+      <a class="btn alt" href="https://www.artforum.com/features/mira-m-yang-kunsthalle-fribourg-1000words-thomas-patier-1234760740/" target="_blank" rel="noopener" aria-label="Read Mira M. Yang’s Hallucinatory Archive">Read</a>
+    </li>
+    <li class="row" id="art-3" style="--i:2">
+      <span class="n">03</span>
+      <div>
+        <h3><a href="https://kunstkritikk.com/humanity-viewed-from-the-milky-way/" target="_blank" rel="noopener">Humanity Viewed from the Milky Way</a></h3>
+        <p>Frans Josef Petersson · Kunstkritikk</p>
+      </div>
+      <a class="btn alt" href="https://kunstkritikk.com/humanity-viewed-from-the-milky-way/" target="_blank" rel="noopener" aria-label="Read Humanity Viewed from the Milky Way">Read</a>
+    </li>
+    <li class="row" id="art-4" style="--i:3">
+      <span class="n">04</span>
+      <div>
+        <h3><a href="https://burnaway.org/daily/black-spiritual-ecologies-in-conversation-with-cheyenne-wyzzard-jones/" target="_blank" rel="noopener">Black Spiritual Ecologies: In Conversation with Cheyenne Wyzzard-Jones</a></h3>
+        <p>Kristina Robinson · Burnaway</p>
+      </div>
+      <a class="btn alt" href="https://burnaway.org/daily/black-spiritual-ecologies-in-conversation-with-cheyenne-wyzzard-jones/" target="_blank" rel="noopener" aria-label="Read Black Spiritual Ecologies: In Conversation with Cheyenne Wyzzard-Jones">Read</a>
+    </li>
+    </ol>
   </section>
-  <section class="section film">
-    <span class="stampnum">02</span>
-    <div class="section-head">
-      <span class="section-tag">Film</span>
-      <h2 class="section-title">Film Criticism</h2>
-    </div>
-    <div class="entry" id="film-1">
-      <div class="entry-byline"><a class="entry-title" href="https://desistfilm.com/stanley-kubrick-spent-a-career-dissecting-humanity/" target="_blank" rel="noopener">STANLEY KUBRICK SPENT A CAREER DISSECTING HUMANITY: EYES WIDE SHUT</a> by Staff — desistfilm</div>
-
-      <p>By Lexx Che Stanley Kubrick spent his career examining human beings inside systems of control: technology, violence, military institutions, social hierarchy, sexuality, marriage and power. From 2001: A Space Odyssey and A Clockwork Orange to The Shining, Full Metal Jacket and Eyes Wide Shut, the article examines how Kubrick used cinema to expose the unstable relationship between individual agency…</p>
-    </div>
-    <div class="entry" id="film-2">
-      <div class="entry-byline"><a class="entry-title" href="https://lwlies.com/acting-up/michelle-yeoh" target="_blank" rel="noopener">Michelle Yeoh – Pre-Millennium Actress</a> by Alexander Mooney — Little White Lies</div>
-
-      <p>As Ann Hui’s Stunt Woman turns 30, it provides a window into the fearless, physically precise peak of Michelle Yeoh in her Hong Kong action days, along with the perils that might have steered her towards safer projects abroad.</p>
-    </div>
-    <div class="entry" id="film-3">
-      <div class="entry-byline"><a class="entry-title" href="https://crookedmarquee.com/on-bullsht-alex-gibneys-crooks-and-liars/" target="_blank" rel="noopener">On Bullsh*t: Alex Gibney’s Crooks and Liars</a> by Julia Sirmons — Crooked Marquee</div>
-
-      <p>Alex Gibney has built a career making the biggest liars of our time compellingly watchable. Ahead of his four-hour Elon Musk documentary, a look at how he does it. The post On Bullsh*t: Alex Gibney’s Crooks and Liars appeared first on Crooked Marquee.</p>
-    </div>
-    <div class="entry" id="film-4">
-      <div class="entry-byline"><a class="entry-title" href="https://thefilmstage.com/venice-review-my-undesirable-friends-part-ii-exile-is-an-epic-continuation-of-julia-loktevs-fearless-endlessly-compassionate-portrait/" target="_blank" rel="noopener">My Undesirable Friends: Part II — Exile Review: An Epic Continuation of Julia Loktev’s Fearless, Endlessly Compassionate Portrait</a> by Savina Petkova — The Film Stage</div>
-
-      <p>Note: This review was originally published as part of our 2026 Venice coverage. The film opens in theaters on October 9. Day 1,645 of Russia’s full-scale war in Ukraine also brings us the world premiere of Julia Loktev’s My Undesirable Friends: Part II – Exile, the follow-up to My Undesirable Friends: Part I – Last […] The post My Undesirable Friends: Part II — Exile Review: An Epic Continuation…</p>
-    </div>
+  <section id="film" aria-labelledby="h-film">
+    <h2 id="h-film">Film</h2>
+    <ol class="rows">
+    <li class="row" id="film-1" style="--i:0">
+      <span class="n">01</span>
+      <div>
+        <h3><a href="https://desistfilm.com/stanley-kubrick-spent-a-career-dissecting-humanity/" target="_blank" rel="noopener">STANLEY KUBRICK SPENT A CAREER DISSECTING HUMANITY: EYES WIDE SHUT</a></h3>
+        <p>Staff · desistfilm</p>
+      </div>
+      <a class="btn alt" href="https://desistfilm.com/stanley-kubrick-spent-a-career-dissecting-humanity/" target="_blank" rel="noopener" aria-label="Read STANLEY KUBRICK SPENT A CAREER DISSECTING HUMANITY: EYES WIDE SHUT">Read</a>
+    </li>
+    <li class="row" id="film-2" style="--i:1">
+      <span class="n">02</span>
+      <div>
+        <h3><a href="https://lwlies.com/acting-up/michelle-yeoh" target="_blank" rel="noopener">Michelle Yeoh – Pre-Millennium Actress</a></h3>
+        <p>Alexander Mooney · Little White Lies</p>
+      </div>
+      <a class="btn alt" href="https://lwlies.com/acting-up/michelle-yeoh" target="_blank" rel="noopener" aria-label="Read Michelle Yeoh – Pre-Millennium Actress">Read</a>
+    </li>
+    <li class="row" id="film-3" style="--i:2">
+      <span class="n">03</span>
+      <div>
+        <h3><a href="https://crookedmarquee.com/on-bullsht-alex-gibneys-crooks-and-liars/" target="_blank" rel="noopener">On Bullsh*t: Alex Gibney’s Crooks and Liars</a></h3>
+        <p>Julia Sirmons · Crooked Marquee</p>
+      </div>
+      <a class="btn alt" href="https://crookedmarquee.com/on-bullsht-alex-gibneys-crooks-and-liars/" target="_blank" rel="noopener" aria-label="Read On Bullsh*t: Alex Gibney’s Crooks and Liars">Read</a>
+    </li>
+    <li class="row" id="film-4" style="--i:3">
+      <span class="n">04</span>
+      <div>
+        <h3><a href="https://thefilmstage.com/venice-review-my-undesirable-friends-part-ii-exile-is-an-epic-continuation-of-julia-loktevs-fearless-endlessly-compassionate-portrait/" target="_blank" rel="noopener">My Undesirable Friends: Part II — Exile Review: An Epic Continuation of Julia Loktev’s Fearless, Endlessly Compassionate Portrait</a></h3>
+        <p>Savina Petkova · The Film Stage</p>
+      </div>
+      <a class="btn alt" href="https://thefilmstage.com/venice-review-my-undesirable-friends-part-ii-exile-is-an-epic-continuation-of-julia-loktevs-fearless-endlessly-compassionate-portrait/" target="_blank" rel="noopener" aria-label="Read My Undesirable Friends: Part II — Exile Review: An Epic Continuation of Julia Loktev’s Fearless, Endlessly Compassionate Portrait">Read</a>
+    </li>
+    </ol>
   </section>
-  <section class="section tech">
-    <span class="stampnum">03</span>
-    <div class="section-head">
-      <span class="section-tag">Tech &amp; AI</span>
-      <h2 class="section-title">Tech &amp; AI</h2>
-    </div>
-    <div class="entry" id="tech-1">
-      <div class="entry-byline"><a class="entry-title" href="https://pluralistic.net/2026/10/09/impunitism/" target="_blank" rel="noopener">Pluralistic: Thwarted (09 Oct 2026)</a> by Cory Doctorow — Pluralistic</div>
-
-      <p>Today&#39;s links Thwarted: Behold the awesome destructive power of a fully operational billionaire. Hey look at this: Delights to delectate. Object permanence: Anthrax v National Inquirer; Grey goo v Second Life; Predictive policing v actual crime; Spooky cookies; California v algorithmic price-fixing; Tivo self-destructs; Disney exec endorses piracy; TSA v geologists; Handheld printer; Mandatory…</p>
-    </div>
-    <div class="entry" id="tech-2">
-      <div class="entry-byline"><a class="entry-title" href="https://www.404media.co/behind-the-blog-what-would-the-pope-do/" target="_blank" rel="noopener">Behind the Blog: What Would the Pope Do?</a> by Samantha Cole — 404 Media</div>
-
-      <p>This week, we discuss AI and spirituality.</p>
-    </div>
-    <div class="entry" id="tech-3">
-      <div class="entry-byline"><a class="entry-title" href="https://techcabal.com/2026/10/09/watson-matsa-banks-understand-african/" target="_blank" rel="noopener">What a banker discovered when he started listening to farmers</a> by Adonijah Ndege — TechCabal</div>
-
-      <p>Don’t get Watson Matsa started on farmers and banks, as we did. He talks on why banks don’t understand farmers from an insider point of view.</p>
-    </div>
-    <div class="entry" id="tech-4">
-      <div class="entry-byline"><a class="entry-title" href="https://www.technologyreview.com/2026/10/09/1145728/we-are-putting-too-much-faith-in-ai-to-say-no/" target="_blank" rel="noopener">We’re putting too much faith in AI’s ability to say no</a> by Arthur Holland Michel — MIT Technology Review</div>
-
-      <p>Ever since people first seriously contemplated giving machines an intelligence modeled on our own, there has never been any question that they would, like us, be able to say no. The sci-fi canon is full of stories of robotic disobedience. Most of these capers are, of course, cautionary. But recently, the idea that AI shouldn’t…</p>
-    </div>
+  <section id="tech" aria-labelledby="h-tech">
+    <h2 id="h-tech">Tech &amp; AI</h2>
+    <ol class="rows">
+    <li class="row" id="tech-1" style="--i:0">
+      <span class="n">01</span>
+      <div>
+        <h3><a href="https://pluralistic.net/2026/10/09/impunitism/" target="_blank" rel="noopener">Pluralistic: Thwarted (09 Oct 2026)</a></h3>
+        <p>Cory Doctorow · Pluralistic</p>
+      </div>
+      <a class="btn alt" href="https://pluralistic.net/2026/10/09/impunitism/" target="_blank" rel="noopener" aria-label="Read Pluralistic: Thwarted (09 Oct 2026)">Read</a>
+    </li>
+    <li class="row" id="tech-2" style="--i:1">
+      <span class="n">02</span>
+      <div>
+        <h3><a href="https://www.404media.co/behind-the-blog-what-would-the-pope-do/" target="_blank" rel="noopener">Behind the Blog: What Would the Pope Do?</a></h3>
+        <p>Samantha Cole · 404 Media</p>
+      </div>
+      <a class="btn alt" href="https://www.404media.co/behind-the-blog-what-would-the-pope-do/" target="_blank" rel="noopener" aria-label="Read Behind the Blog: What Would the Pope Do?">Read</a>
+    </li>
+    <li class="row" id="tech-3" style="--i:2">
+      <span class="n">03</span>
+      <div>
+        <h3><a href="https://techcabal.com/2026/10/09/watson-matsa-banks-understand-african/" target="_blank" rel="noopener">What a banker discovered when he started listening to farmers</a></h3>
+        <p>Adonijah Ndege · TechCabal</p>
+      </div>
+      <a class="btn alt" href="https://techcabal.com/2026/10/09/watson-matsa-banks-understand-african/" target="_blank" rel="noopener" aria-label="Read What a banker discovered when he started listening to farmers">Read</a>
+    </li>
+    <li class="row" id="tech-4" style="--i:3">
+      <span class="n">04</span>
+      <div>
+        <h3><a href="https://www.technologyreview.com/2026/10/09/1145728/we-are-putting-too-much-faith-in-ai-to-say-no/" target="_blank" rel="noopener">We’re putting too much faith in AI’s ability to say no</a></h3>
+        <p>Arthur Holland Michel · MIT Technology Review</p>
+      </div>
+      <a class="btn alt" href="https://www.technologyreview.com/2026/10/09/1145728/we-are-putting-too-much-faith-in-ai-to-say-no/" target="_blank" rel="noopener" aria-label="Read We’re putting too much faith in AI’s ability to say no">Read</a>
+    </li>
+    </ol>
   </section>
-  <section class="section lit">
-    <span class="stampnum">04</span>
-    <div class="section-head">
-      <span class="section-tag">Sci-Fi / Fantasy</span>
-      <h2 class="section-title">Literary Reviews</h2>
-    </div>
-    <div class="entry" id="lit-1">
-      <div class="entry-byline"><a class="entry-title" href="https://europeanreviewofbooks.com/election-latvian-style/" target="_blank" rel="noopener">Election, Latvian-style</a> by Liene Lūsīte — European Review of Books</div>
-
-      <p>On the morning of 3 October, a friend I hadn’t heard from in a long time called. The question was right there again: who to vote for? I had already cast my vote early. But as she was about to make her way from Amsterdam to The Hague, where her closest Latvian polling station was, […] The post Election, Latvian-style appeared first on The European Review of Books.</p>
-    </div>
-    <div class="entry" id="lit-2">
-      <div class="entry-byline"><a class="entry-title" href="https://clereviewofbooks.com/on-min-jin-lees-american-hagwon/" target="_blank" rel="noopener">A Too-Neat Drama: On Min Jin Lee’s “American Hagwon”</a> by Yvonne Kim — Cleveland Review of Books</div>
-
-      <p>if the parents in that gymnasium ever saw anything in the legend of Hong Gildong, it is not that their children might study their way to success; it is that they, too, might just be uniquely special The post A Too-Neat Drama: On Min Jin Lee’s “American Hagwon” appeared first on Cleveland Review of Books.</p>
-    </div>
-    <div class="entry" id="lit-3">
-      <div class="entry-byline"><a class="entry-title" href="https://arablit.org/2026/10/08/writing-is-rediscovering-the-tangible/" target="_blank" rel="noopener">‘Writing Is Rediscovering the Tangible’</a> by mlynxqualey — ArabLit</div>
-
-      <p>Born in the mid-1980s, Ahmed Alhokail is among the most distinctive Saudi writers of his generation. In this exchange, he talks about placing the ordinary at the center of the story, classical Arabic narratives as a living model, Najdi oral storytelling and the uncanny, and the “global reader.”</p>
-    </div>
-    <div class="entry" id="lit-4">
-      <div class="entry-byline"><a class="entry-title" href="https://wordswithoutborders.org/read/article/2026-10/the-national-book-award-interviews-ping-lu-and-jeremy-tiang-to-the-east-of-the-east/" target="_blank" rel="noopener">The National Book Award Interviews: Ping Lu and Jeremy Tiang</a> by Alex Tan — Words Without Borders</div>
-
-      <p>Can the two of you talk about how this book came into the world—first, the germ in the original language, and then the translation? Ping Lu (PL): The initial spark of inspiration behind To the East of the East was the thought of how many misrecognitions and misreadings exist in the world: between men and The post The National Book Award Interviews: Ping Lu and Jeremy Tiang appeared first on Words…</p>
-    </div>
+  <section id="lit" aria-labelledby="h-lit">
+    <h2 id="h-lit">Books</h2>
+    <ol class="rows">
+    <li class="row" id="lit-1" style="--i:0">
+      <span class="n">01</span>
+      <div>
+        <h3><a href="https://europeanreviewofbooks.com/election-latvian-style/" target="_blank" rel="noopener">Election, Latvian-style</a></h3>
+        <p>Liene Lūsīte · European Review of Books</p>
+      </div>
+      <a class="btn alt" href="https://europeanreviewofbooks.com/election-latvian-style/" target="_blank" rel="noopener" aria-label="Read Election, Latvian-style">Read</a>
+    </li>
+    <li class="row" id="lit-2" style="--i:1">
+      <span class="n">02</span>
+      <div>
+        <h3><a href="https://clereviewofbooks.com/on-min-jin-lees-american-hagwon/" target="_blank" rel="noopener">A Too-Neat Drama: On Min Jin Lee’s “American Hagwon”</a></h3>
+        <p>Yvonne Kim · Cleveland Review of Books</p>
+      </div>
+      <a class="btn alt" href="https://clereviewofbooks.com/on-min-jin-lees-american-hagwon/" target="_blank" rel="noopener" aria-label="Read A Too-Neat Drama: On Min Jin Lee’s “American Hagwon”">Read</a>
+    </li>
+    <li class="row" id="lit-3" style="--i:2">
+      <span class="n">03</span>
+      <div>
+        <h3><a href="https://arablit.org/2026/10/08/writing-is-rediscovering-the-tangible/" target="_blank" rel="noopener">‘Writing Is Rediscovering the Tangible’</a></h3>
+        <p>mlynxqualey · ArabLit</p>
+      </div>
+      <a class="btn alt" href="https://arablit.org/2026/10/08/writing-is-rediscovering-the-tangible/" target="_blank" rel="noopener" aria-label="Read ‘Writing Is Rediscovering the Tangible’">Read</a>
+    </li>
+    <li class="row" id="lit-4" style="--i:3">
+      <span class="n">04</span>
+      <div>
+        <h3><a href="https://wordswithoutborders.org/read/article/2026-10/the-national-book-award-interviews-ping-lu-and-jeremy-tiang-to-the-east-of-the-east/" target="_blank" rel="noopener">The National Book Award Interviews: Ping Lu and Jeremy Tiang</a></h3>
+        <p>Alex Tan · Words Without Borders</p>
+      </div>
+      <a class="btn alt" href="https://wordswithoutborders.org/read/article/2026-10/the-national-book-award-interviews-ping-lu-and-jeremy-tiang-to-the-east-of-the-east/" target="_blank" rel="noopener" aria-label="Read The National Book Award Interviews: Ping Lu and Jeremy Tiang">Read</a>
+    </li>
+    </ol>
   </section>
-  <section class="section music">
-    <span class="stampnum">05</span>
-    <div class="section-head">
-      <span class="section-tag">Music</span>
-      <h2 class="section-title">Music Criticism</h2>
-    </div>
-    <div class="entry" id="music-1">
-      <div class="entry-byline"><a class="entry-title" href="https://www.powmag.net/p/de-la-soul-stakes-is-high" target="_blank" rel="noopener">After Further Review: De La Soul’s Stakes Is High</a> by Oliver Wang — Passion of the Weiss</div>
-
-      <p>Thirty years later, two writers return to the album that served as a crossroads for hip-hop.</p>
-    </div>
-    <div class="entry" id="music-2">
-      <div class="entry-byline"><a class="entry-title" href="https://soundsandcolours.com/articles/brazil/dystopian-summer-an-interview-with-edgar-e-os-fita-313903/" target="_blank" rel="noopener">Dystopian Summer: an interview with Edgar e Os Fita</a> by Andy Cumming — Sounds and Colours</div>
-
-      <p>To prepare for the upcoming election in Brazil, I’ve been reading Rio de Janeiro: Extreme City by Luiz Eduardo Soares, a book that portrays a city far from the picture-postcard version and instead shows Rio to still be in the grip of its violent past. Likewise, this recent encounter between São Paulo rapper, performer, and... Read Article</p>
-    </div>
-    <div class="entry" id="music-3">
-      <div class="entry-byline"><a class="entry-title" href="https://van-magazine.com/mag/maria-kalesnikava-speech-art-in-prison/" target="_blank" rel="noopener">In Art’s Company</a> by Maria Kalesnikava — VAN Magazine</div>
-
-      <p>Maria Kalesnikava, the flutist, conductor, arts manager, and activist, was one of the leading figures of the 2020 pro-democracy movement in Belarus. After her arrest in September 2020, she spent five years under arrest, held as a political prisoner. In December 2025, she was released as part of negotiations between the United States and Belarus, […] The post In Art’s Company appeared first on VAN…</p>
-    </div>
-    <div class="entry" id="music-4">
-      <div class="entry-byline"><a class="entry-title" href="https://www.popmatters.com/punk-culture-authenticity-scene-cops" target="_blank" rel="noopener">“Who’s Punk? What’s the Score?” On Authenticity, Subcultural Capital, and Scene Cops</a> by R.A. Davis — PopMatters</div>
-
-      <p>Punk’s shorthand for deconstruction has always been: Who says? Yet, if we take that move seriously, we have to apply it to our own sacred binaries.</p>
-    </div>
+  <section id="music" aria-labelledby="h-music">
+    <h2 id="h-music">Music Criticism</h2>
+    <ol class="rows">
+    <li class="row" id="music-1" style="--i:0">
+      <span class="n">01</span>
+      <div>
+        <h3><a href="https://www.powmag.net/p/de-la-soul-stakes-is-high" target="_blank" rel="noopener">After Further Review: De La Soul’s Stakes Is High</a></h3>
+        <p>Oliver Wang · Passion of the Weiss</p>
+      </div>
+      <a class="btn alt" href="https://www.powmag.net/p/de-la-soul-stakes-is-high" target="_blank" rel="noopener" aria-label="Read After Further Review: De La Soul’s Stakes Is High">Read</a>
+    </li>
+    <li class="row" id="music-2" style="--i:1">
+      <span class="n">02</span>
+      <div>
+        <h3><a href="https://soundsandcolours.com/articles/brazil/dystopian-summer-an-interview-with-edgar-e-os-fita-313903/" target="_blank" rel="noopener">Dystopian Summer: an interview with Edgar e Os Fita</a></h3>
+        <p>Andy Cumming · Sounds and Colours</p>
+      </div>
+      <a class="btn alt" href="https://soundsandcolours.com/articles/brazil/dystopian-summer-an-interview-with-edgar-e-os-fita-313903/" target="_blank" rel="noopener" aria-label="Read Dystopian Summer: an interview with Edgar e Os Fita">Read</a>
+    </li>
+    <li class="row" id="music-3" style="--i:2">
+      <span class="n">03</span>
+      <div>
+        <h3><a href="https://van-magazine.com/mag/maria-kalesnikava-speech-art-in-prison/" target="_blank" rel="noopener">In Art’s Company</a></h3>
+        <p>Maria Kalesnikava · VAN Magazine</p>
+      </div>
+      <a class="btn alt" href="https://van-magazine.com/mag/maria-kalesnikava-speech-art-in-prison/" target="_blank" rel="noopener" aria-label="Read In Art’s Company">Read</a>
+    </li>
+    <li class="row" id="music-4" style="--i:3">
+      <span class="n">04</span>
+      <div>
+        <h3><a href="https://www.popmatters.com/punk-culture-authenticity-scene-cops" target="_blank" rel="noopener">“Who’s Punk? What’s the Score?” On Authenticity, Subcultural Capital, and Scene Cops</a></h3>
+        <p>R.A. Davis · PopMatters</p>
+      </div>
+      <a class="btn alt" href="https://www.popmatters.com/punk-culture-authenticity-scene-cops" target="_blank" rel="noopener" aria-label="Read “Who’s Punk? What’s the Score?” On Authenticity, Subcultural Capital, and Scene Cops">Read</a>
+    </li>
+    </ol>
   </section>
-  <section class="section design">
-    <span class="stampnum">06</span>
-    <div class="section-head">
-      <span class="section-tag">Design</span>
-      <h2 class="section-title">Design</h2>
-    </div>
-    <div class="entry" id="design-1">
-      <div class="entry-byline"><a class="entry-title" href="https://designobserver.com/bonus-live-from-essence-fest/" target="_blank" rel="noopener">BONUS: Live from Essence Fest – The Accounting</a> by Ellen McGirt — Design Observer</div>
-
-      <p>Instead of hanging at a cookout, a determined group of Black women convened during Essence Fest on July 4 to do something even more American: demand more from their democracy. In this special reporter’s notebook episode, we are presenting an all-star panel as they “spill the tea” about the redistricting fight, the Callais decision, and … Continued The post BONUS: Live from Essence Fest – The…</p>
-    </div>
-    <div class="entry" id="design-2">
-      <div class="entry-byline"><a class="entry-title" href="https://architectureau.com/articles/vale-roger-pegrum-1938-2026/" target="_blank" rel="noopener">Vale Roger Pegrum 1938–2026</a> by Mads Gaardboe — ArchitectureAU Discussion</div>
-
-      <p>Emeritus professor Mads Gaardboe refects on the life and career of Canberran architect Roger Pegrum, who he describes as “a man of quality and grace and ... one of the national capital’s most influential architects.”</p>
-    </div>
-    <div class="entry" id="design-3">
-      <div class="entry-byline"><a class="entry-title" href="https://www.azuremagazine.com/article/ideas-of-order-amy-astley/" target="_blank" rel="noopener">Ideas of Order: Amy Astley on What Makes a Home Memorable</a> by Azure — Azure</div>
-
-      <p>The editorial director and editor-in-chief of Architectural Digest shares the experiences and influences that have defined her media career — and what she’s learned from telling the stories behind spaces. The post Ideas of Order: Amy Astley on What Makes a Home Memorable appeared first on Azure Magazine.</p>
-    </div>
-    <div class="entry" id="design-4">
-      <div class="entry-byline"><a class="entry-title" href="https://www.architectural-review.com/essays/revisit/revisit-nyhuset-in-trondheim-norway-by-brendeland-kristoffersen" target="_blank" rel="noopener">Revisit: Nyhuset in Trondheim, Norway by Brendeland &amp; Kristoffersen</a> by Jyotsni Bhattacharyya — The Architectural Review</div>
-
-      <p>The Architectural Review Revisit: Nyhuset in Trondheim, Norway by Brendeland &amp; Kristoffersen The lessons of Brendeland &amp; Kristoffersen’s quietly radical housing project in Trondheim, shortlisted for AR Emerging in 2005, have fallen on deaf ears The post Revisit: Nyhuset in Trondheim, Norway by Brendeland &amp; Kristoffersen appeared first on The Architectural Review. Jyotsni Bhattacharyya</p>
-    </div>
+  <section id="design" aria-labelledby="h-design">
+    <h2 id="h-design">Design</h2>
+    <ol class="rows">
+    <li class="row" id="design-1" style="--i:0">
+      <span class="n">01</span>
+      <div>
+        <h3><a href="https://designobserver.com/bonus-live-from-essence-fest/" target="_blank" rel="noopener">BONUS: Live from Essence Fest – The Accounting</a></h3>
+        <p>Ellen McGirt · Design Observer</p>
+      </div>
+      <a class="btn alt" href="https://designobserver.com/bonus-live-from-essence-fest/" target="_blank" rel="noopener" aria-label="Read BONUS: Live from Essence Fest – The Accounting">Read</a>
+    </li>
+    <li class="row" id="design-2" style="--i:1">
+      <span class="n">02</span>
+      <div>
+        <h3><a href="https://architectureau.com/articles/vale-roger-pegrum-1938-2026/" target="_blank" rel="noopener">Vale Roger Pegrum 1938–2026</a></h3>
+        <p>Mads Gaardboe · ArchitectureAU Discussion</p>
+      </div>
+      <a class="btn alt" href="https://architectureau.com/articles/vale-roger-pegrum-1938-2026/" target="_blank" rel="noopener" aria-label="Read Vale Roger Pegrum 1938–2026">Read</a>
+    </li>
+    <li class="row" id="design-3" style="--i:2">
+      <span class="n">03</span>
+      <div>
+        <h3><a href="https://www.azuremagazine.com/article/ideas-of-order-amy-astley/" target="_blank" rel="noopener">Ideas of Order: Amy Astley on What Makes a Home Memorable</a></h3>
+        <p>Azure · Azure</p>
+      </div>
+      <a class="btn alt" href="https://www.azuremagazine.com/article/ideas-of-order-amy-astley/" target="_blank" rel="noopener" aria-label="Read Ideas of Order: Amy Astley on What Makes a Home Memorable">Read</a>
+    </li>
+    <li class="row" id="design-4" style="--i:3">
+      <span class="n">04</span>
+      <div>
+        <h3><a href="https://www.architectural-review.com/essays/revisit/revisit-nyhuset-in-trondheim-norway-by-brendeland-kristoffersen" target="_blank" rel="noopener">Revisit: Nyhuset in Trondheim, Norway by Brendeland &amp; Kristoffersen</a></h3>
+        <p>Jyotsni Bhattacharyya · The Architectural Review</p>
+      </div>
+      <a class="btn alt" href="https://www.architectural-review.com/essays/revisit/revisit-nyhuset-in-trondheim-norway-by-brendeland-kristoffersen" target="_blank" rel="noopener" aria-label="Read Revisit: Nyhuset in Trondheim, Norway by Brendeland &amp; Kristoffersen">Read</a>
+    </li>
+    </ol>
   </section>
-  <section class="section fashion">
-    <span class="stampnum">07</span>
-    <div class="section-head">
-      <span class="section-tag">Men&#39;s Fashion</span>
-      <h2 class="section-title">Men&#39;s Fashion</h2>
-    </div>
-    <div class="entry" id="fashion-1">
-      <div class="entry-byline"><a class="entry-title" href="https://i-d.co/article/paris-fashion-week-review-spring-2027/" target="_blank" rel="noopener">Has Paris Fashion Week Lost the Plot?</a> by alexkessler — i-D</div>
-
-      <p>Or have we all lost our sense of self?</p>
-    </div>
-    <div class="entry" id="fashion-2">
-      <div class="entry-byline"><a class="entry-title" href="https://www.anothermag.com/art-photography/17560/cecilia-vicuna-whitechapel-gallery-living-threads-interview-climate-crisis-art?utm_source=Link&amp;utm_medium=Link&amp;utm_campaign=RSSFeed&amp;utm_term=cecilia-vicuna-on-potent-women-eco-feminism-and-re-orientating-culture" target="_blank" rel="noopener">Cecilia Vicuña on Potent Women, Eco-Feminism and Re-orientating Culture</a> by Emily Steerhttps://www.anothermag.com/rssfeed@dazedmedia.com — AnOther</div>
-
-      <p>The Chilean artist’s new exhibition at Whitechapel Gallery, titled Living Threads, untangles six decades of art, activism and radical resistance</p>
-    </div>
-    <div class="entry" id="fashion-3">
-      <div class="entry-byline"><a class="entry-title" href="https://www.dazeddigital.com/fashion/article/71143/1/animal-inspired-footwear-trend-thom-browne-marc-jacobs?utm_source=Link&amp;utm_medium=Link&amp;utm_campaign=RSSFeed&amp;utm_term=feral-footwear-why-are-animal-inspired-shoes-having-such-a-moment" target="_blank" rel="noopener">Feral footwear: Why are animal-inspired shoes having such a moment?</a> by Laura Pitcherhttps://www.dazeddigital.com/rssfeed@dazedmedia.com — Dazed Fashion</div>
-
-      <p>From Thom Browne’s bee and butterfly wing platform pumps to the revival of the Marc Jacobs mouse ballet flats, we unpack the accidentally-Animorphs trend</p>
-    </div>
-    <div class="entry" id="fashion-4">
-      <div class="entry-byline"><a class="entry-title" href="https://www.ivy-style.com/brooks-brothers-westport-event.html" target="_blank" rel="noopener">Brooks Brothers Westport Event</a> by Matthew Longcore — Ivy Style</div>
-
-      <p>Brooks Brothers invites you to join Ivy Style editor and publisher Matthew Longcore for conversation, refreshments, and a special friends and family shopping event. Tuesday, October 13, 2026 5PM-7PM Brooks Brothers 136 Main Street Westport, Connecticut RSVP by October 9 matthew.longcore@yale.edu The post Brooks Brothers Westport Event appeared first on Ivy Style.</p>
-    </div>
+  <section id="fashion" aria-labelledby="h-fashion">
+    <h2 id="h-fashion">Men&#39;s Fashion</h2>
+    <ol class="rows">
+    <li class="row" id="fashion-1" style="--i:0">
+      <span class="n">01</span>
+      <div>
+        <h3><a href="https://i-d.co/article/paris-fashion-week-review-spring-2027/" target="_blank" rel="noopener">Has Paris Fashion Week Lost the Plot?</a></h3>
+        <p>alexkessler · i-D</p>
+      </div>
+      <a class="btn alt" href="https://i-d.co/article/paris-fashion-week-review-spring-2027/" target="_blank" rel="noopener" aria-label="Read Has Paris Fashion Week Lost the Plot?">Read</a>
+    </li>
+    <li class="row" id="fashion-2" style="--i:1">
+      <span class="n">02</span>
+      <div>
+        <h3><a href="https://www.anothermag.com/art-photography/17560/cecilia-vicuna-whitechapel-gallery-living-threads-interview-climate-crisis-art?utm_source=Link&amp;utm_medium=Link&amp;utm_campaign=RSSFeed&amp;utm_term=cecilia-vicuna-on-potent-women-eco-feminism-and-re-orientating-culture" target="_blank" rel="noopener">Cecilia Vicuña on Potent Women, Eco-Feminism and Re-orientating Culture</a></h3>
+        <p>Emily Steerhttps://www.anothermag.com/rssfeed@dazedmedia.com · AnOther</p>
+      </div>
+      <a class="btn alt" href="https://www.anothermag.com/art-photography/17560/cecilia-vicuna-whitechapel-gallery-living-threads-interview-climate-crisis-art?utm_source=Link&amp;utm_medium=Link&amp;utm_campaign=RSSFeed&amp;utm_term=cecilia-vicuna-on-potent-women-eco-feminism-and-re-orientating-culture" target="_blank" rel="noopener" aria-label="Read Cecilia Vicuña on Potent Women, Eco-Feminism and Re-orientating Culture">Read</a>
+    </li>
+    <li class="row" id="fashion-3" style="--i:2">
+      <span class="n">03</span>
+      <div>
+        <h3><a href="https://www.dazeddigital.com/fashion/article/71143/1/animal-inspired-footwear-trend-thom-browne-marc-jacobs?utm_source=Link&amp;utm_medium=Link&amp;utm_campaign=RSSFeed&amp;utm_term=feral-footwear-why-are-animal-inspired-shoes-having-such-a-moment" target="_blank" rel="noopener">Feral footwear: Why are animal-inspired shoes having such a moment?</a></h3>
+        <p>Laura Pitcherhttps://www.dazeddigital.com/rssfeed@dazedmedia.com · Dazed Fashion</p>
+      </div>
+      <a class="btn alt" href="https://www.dazeddigital.com/fashion/article/71143/1/animal-inspired-footwear-trend-thom-browne-marc-jacobs?utm_source=Link&amp;utm_medium=Link&amp;utm_campaign=RSSFeed&amp;utm_term=feral-footwear-why-are-animal-inspired-shoes-having-such-a-moment" target="_blank" rel="noopener" aria-label="Read Feral footwear: Why are animal-inspired shoes having such a moment?">Read</a>
+    </li>
+    <li class="row" id="fashion-4" style="--i:3">
+      <span class="n">04</span>
+      <div>
+        <h3><a href="https://www.ivy-style.com/brooks-brothers-westport-event.html" target="_blank" rel="noopener">Brooks Brothers Westport Event</a></h3>
+        <p>Matthew Longcore · Ivy Style</p>
+      </div>
+      <a class="btn alt" href="https://www.ivy-style.com/brooks-brothers-westport-event.html" target="_blank" rel="noopener" aria-label="Read Brooks Brothers Westport Event">Read</a>
+    </li>
+    </ol>
   </section>
   <footer>
-    <span>Algorithm</span>
-    <span>Issue No. 33 — 9 Oct 2026</span>
+    <div class="fine">
+      <div><p>Troller, Issue 33, week of 9 October 2026. Every link was read in full before it was picked.</p>
+        <p><a href="../archive/index.html">Every issue</a></p></div>
+      <p><a href="#top">Back to top</a></p>
+    </div>
+    <p class="big" aria-hidden="true">happy reading</p>
   </footer>
 </div>
-</div>
+<script>
+(function(){
+  var sw = document.getElementById('sw-calm');
+  if (!sw) return;
+  function load(){ try { return JSON.parse(localStorage.getItem('troller-ui') || '{}') || {}; } catch (e) { return {}; } }
+  function paint(){ var on = document.documentElement.hasAttribute('data-calm'); sw.setAttribute('aria-pressed', on ? 'true' : 'false'); }
+  sw.addEventListener('click', function(){
+    var ui = load(); ui.calm = !document.documentElement.hasAttribute('data-calm');
+    if (ui.calm) document.documentElement.setAttribute('data-calm', ''); else document.documentElement.removeAttribute('data-calm');
+    try { localStorage.setItem('troller-ui', JSON.stringify(ui)); } catch (e) {}
+    paint();
+  });
+  paint();
+})();</script>
 
 </body>
 </html>

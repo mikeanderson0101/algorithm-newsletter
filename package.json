@@ -1,1 +1,14 @@
-{"name":"algorithm-newsletter","private":true,"description":"Algorithm: a weekly digest of links to great criticism, plus New Music.","scripts":{"scout":"node scripts/weekly.js scout","publish":"node scripts/weekly.js publish","build":"node scripts/build.js","validate":"node scripts/validate.js"},"dependencies":{"@anthropic-ai/sdk":"^1.3.0"}}
+{
+  "name": "troller",
+  "private": true,
+  "description": "Troller: a weekly digest of links to great criticism (News Troll), plus new music (Song Troll).",
+  "scripts": {
+    "scout": "node scripts/weekly.js scout",
+    "publish": "node scripts/weekly.js publish",
+    "build": "node scripts/build.js",
+    "validate": "node scripts/validate.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.3.0"
+  }
+}

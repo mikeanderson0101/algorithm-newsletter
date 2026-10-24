@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Algorithm — RSS/Atom feed audit.
+ * Troller — RSS/Atom feed audit.
  *
  * One-off diagnostic. Answers a single question: of the publications in
  * sources.md, how many expose a machine-readable feed?

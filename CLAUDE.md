@@ -1,6 +1,6 @@
-# Algorithm: working agreement for Claude Code
+# Troller: working agreement for Claude Code
 
-Algorithm is a weekly digest of **links** to the best criticism and long-form writing across 7 categories (fine art, film, tech & AI, literary/SFF, music criticism, design, menswear), plus a **New Music** tab of new songs picked from the weekly lists of sites that cover new music. Mike Anderson is the editor. Live at https://mikeanderson0101.github.io/algorithm-newsletter/
+Troller (formerly Algorithm) is a weekly digest of **links** to the best criticism and long-form writing across 7 categories (fine art, film, tech & AI, literary/SFF, music criticism, design, menswear), in a **News Troll** tab, plus a **Song Troll** tab of new songs picked from the weekly lists of sites that cover new music. Mike Anderson is the editor. Live at https://mikeanderson0101.github.io/algorithm-newsletter/
 
 **Nothing is automated.** Mike refreshes it by hand, once or twice a week. There is no schedule, no GitHub Action composing issues, and there must not be one again.
 
@@ -26,6 +26,11 @@ Useful flags: `--date YYYY-MM-DD`, `--per-category 5`, `--songs 20`, `--read-per
 - `scripts/llm.js` prices every response from its `usage` and refuses to start a stage that would cross the cap.
 
 Never move article reading into this Claude Code conversation (WebFetch/WebSearch in the main context). That is exactly the v1 cost failure.
+
+## Design and titles
+- The whole site uses the design of the original "Fresh this week" / Song Troll page: warm paper (#F1EEE9), Hanken Grotesk, one yellow highlight (#FFE500), big tight headings, square buttons. **Light only, no dark mode.** All of it lives in `scripts/build.js`.
+- Tabs: **News Troll** (the issue), **Song Troll** (new music), Archive.
+- Issues are titled plainly: "Issue N", week of the date. **No catchy, publication-style headlines**, ever. The old cover lines in early issue files are ignored by the builder.
 
 ## Architecture
 - The site is a pure function of `issues/*.json` and `music/*.json`. `scripts/build.js` renders every byte of HTML, including the New Music tab (`music/index.html`). Never hand-edit generated HTML.

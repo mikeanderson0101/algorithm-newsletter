@@ -2,366 +2,442 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="color-scheme" content="dark">
-<meta name="theme-color" content="#0A0A0A">
-<title>Algorithm — Issue No. 38 — 14 Oct 2026</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#F1EEE9">
+<title>Troller — Issue 38</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Source+Serif+4:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>try{var u=JSON.parse(localStorage.getItem('troller-ui')||'{}');if(u.calm)document.documentElement.setAttribute('data-calm','');}catch(e){}</script>
 <style>
-  html, body{ margin:0; padding:0; height:100%; background-color:#0A0A0A; }
-  *{box-sizing:border-box;}
-  body{
-    min-height:100dvh;
-    color:#FAFAF7;
-    font-family:'Source Serif 4', Georgia, serif;
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-  }
-  .page{ background-color:#0A0A0A; min-height:100dvh; }
-  a{ color:inherit; }
-  .wrap{max-width:720px; margin:0 auto; padding:44px 24px 90px; position:relative;}
-  .masthead{
-    display:flex; justify-content:space-between; align-items:flex-end;
-    border-bottom:4px solid #FAFAF7;
-    padding-bottom:14px; margin-bottom:24px;
-  }
-  .mast-title{
-    font-family:'Archivo Black', sans-serif;
-    font-size:clamp(26px,6vw,34px);
-    letter-spacing:-0.01em;
-    text-transform:uppercase;
-    color:#FAFAF7;
-    text-decoration:none;
-  }
-  .stamp{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:11px; letter-spacing:0.1em; text-transform:uppercase;
-    color:#0A0A0A; background:#FF1F3D;
-    padding:5px 10px; border-radius:2px;
-    transform:rotate(-3deg); display:inline-block; font-weight:600;
-    white-space:nowrap;
-  }
-  .tabs{display:flex; gap:22px; margin:-8px 0 26px; font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.1em; text-transform:uppercase;}
-  .tab{color:#A6A29A; text-decoration:none; padding-bottom:6px; border-bottom:2px solid transparent;}
-  .tab:hover{color:#FAFAF7;}
-  .tab.is-active{color:#FAFAF7; border-bottom-color:#FF1F3D;}
-  .nav{display:flex; justify-content:space-between; align-items:center; gap:16px; margin-bottom:40px; flex-wrap:wrap;}
-  .nav-link{font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:#FAFAF7; text-decoration:none; border:1px solid rgba(250,250,247,0.35); padding:9px 14px; border-radius:2px; white-space:nowrap;}
-  .nav-link:hover{border-color:#FF1F3D; color:#FF1F3D;}
-  .search-wrap{position:relative; flex:1; min-width:220px;}
-  .search-input{width:100%; background:#151513; border:1px solid rgba(250,250,247,0.3); color:#FAFAF7; font-family:'IBM Plex Mono', monospace; font-size:13px; padding:10px 12px; border-radius:2px; outline:none;}
-  .search-input::placeholder{color:#6B6860;}
-  .search-input:focus{border-color:#FF1F3D;}
-  .search-results{position:absolute; top:calc(100% + 6px); left:0; right:0; background:#111110; border:1px solid rgba(250,250,247,0.25); border-radius:4px; max-height:380px; overflow-y:auto; z-index:20; display:none;}
-  .search-results.active{display:block;}
-  .search-result{display:block; padding:10px 12px; border-bottom:1px solid rgba(250,250,247,0.12); text-decoration:none;}
-  .search-result:last-child{border-bottom:none;}
-  .search-result:hover{background:rgba(255,31,61,0.08);}
-  .sr-tag{font-family:'IBM Plex Mono', monospace; font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:#A6A29A;}
-  .sr-title{display:block; font-style:italic; color:#FAFAF7; margin:2px 0; font-size:14px;}
-  .sr-meta{font-family:'IBM Plex Mono', monospace; font-size:10.5px; color:#A6A29A;}
-  .search-empty{padding:14px 12px; font-family:'IBM Plex Mono', monospace; font-size:12.5px; color:#A6A29A;}
-  h1.hero{
-    font-family:'Anton', sans-serif;
-    font-weight:400;
-    font-size:clamp(42px,10vw,72px);
-    line-height:0.94;
-    text-transform:uppercase;
-    margin:0 0 22px;
-    color:#FAFAF7;
-  }
-  h1.hero .pop{color:#FF1F3D;}
-  .intro{font-size:17px; color:#EDEAE2; max-width:56ch; margin-bottom:10px;}
-  .intro-byline{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:11px; letter-spacing:0.08em; text-transform:uppercase;
-    color:#A6A29A;
-    margin-top:16px; margin-bottom:54px; display:block;
-    border-left:2px solid #FF1F3D; padding-left:10px;
-  }
-  .section{position:relative; margin-bottom:50px; padding-left:56px;}
-  .section:last-of-type{margin-bottom:0;}
-  .stampnum{
-    position:absolute; left:0; top:0;
-    width:42px; height:42px;
-    border:2px solid #FAFAF7;
-    border-radius:50%;
-    display:flex; align-items:center; justify-content:center;
-    font-family:'Archivo Black', sans-serif;
-    font-size:15px; color:#FAFAF7;
-    transform:rotate(-6deg);
-  }
-  .art .stampnum{border-color:#C9A24B; color:#C9A24B;}
-  .film .stampnum{border-color:#FF5B4A; color:#FF5B4A;}
-  .tech .stampnum{border-color:#3FE0D0; color:#3FE0D0;}
-  .lit .stampnum{border-color:#B39DFF; color:#B39DFF;}
-  .music .stampnum{border-color:#FF5FA8; color:#FF5FA8;}
-  .design .stampnum{border-color:#FFD23F; color:#FFD23F;}
-  .fashion .stampnum{border-color:#FAFAF7; color:#FAFAF7;}
-  .section-head{display:flex; align-items:center; gap:12px; margin-bottom:18px; flex-wrap:wrap;}
-  .section-tag{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:12px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase;
-    color:#0A0A0A;
-    padding:6px 11px; border-radius:2px;
-  }
-  .art .section-tag{background:#C9A24B;}
-  .film .section-tag{background:#FF5B4A;}
-  .tech .section-tag{background:#3FE0D0;}
-  .lit .section-tag{background:#B39DFF;}
-  .music .section-tag{background:#FF5FA8;}
-  .design .section-tag{background:#FFD23F;}
-  .fashion .section-tag{background:#FAFAF7;}
-  .section-title{
-    font-family:'Archivo Black', sans-serif;
-    font-size:24px; text-transform:uppercase; letter-spacing:0.01em;
-    color:#FAFAF7;
-  }
-  .entry{margin-bottom:24px; padding-bottom:24px; border-bottom:1px solid rgba(250,250,247,0.16); scroll-margin-top:24px;}
-  .entry:last-child{border-bottom:none; margin-bottom:0; padding-bottom:0;}
-  .entry-byline{font-family:'IBM Plex Mono', monospace; font-size:12px; color:#A6A29A; margin-bottom:8px;}
-  .entry-title{font-weight:500; font-style:italic; color:#FAFAF7; text-decoration:underline; text-decoration-color:rgba(250,250,247,0.35); text-underline-offset:3px;}
-  .entry-title:hover{text-decoration-color:#FF1F3D;}
-  .entry p{margin:0 0 10px; font-size:16px; color:#EDEAE2;}
-  .entry .why{font-size:14.5px; color:#A6A29A; font-style:italic;}
-  .entry .why::before{content:"— ";}
-  .issue-list{list-style:none; margin:0; padding:0;}
-  .issue-card{display:block; text-decoration:none; padding:22px 0; border-bottom:1px solid rgba(250,250,247,0.16);}
-  .issue-card:first-child{padding-top:0;}
-  .issue-card:hover .issue-headline{ text-decoration-color:#FF1F3D; }
-  .issue-meta{font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:#A6A29A; margin-bottom:8px;}
-  .issue-meta .num{color:#FF1F3D;}
-  .issue-headline{font-family:'Archivo Black', sans-serif; font-size:22px; text-transform:uppercase; letter-spacing:0.01em; color:#FAFAF7; text-decoration:underline; text-decoration-color:rgba(250,250,247,0.35); text-underline-offset:4px; display:inline-block; margin-bottom:8px;}
-  .issue-desc{font-size:15px; color:#A6A29A; max-width:60ch; margin:0;}
-  footer{
-    margin-top:64px; padding-top:20px; border-top:1px solid rgba(250,250,247,0.16);
-    display:flex; justify-content:space-between; gap:12px;
-    font-family:'IBM Plex Mono', monospace; font-size:10.5px;
-    letter-spacing:0.06em; color:#A6A29A; text-transform:uppercase;
-  }
-  @media (max-width:520px){
-    .wrap{padding:30px 16px 70px;}
-    .section{padding-left:48px;}
-    .stampnum{width:36px; height:36px; font-size:13px;}
-    .section-title{font-size:20px;}
-    .nav{flex-direction:column; align-items:stretch;}
-  }
+:root {
+  --bg: #F1EEE9;
+  --surface: #FFFFFF;
+  --ink: #3C3C3C;
+  --muted: #6B665F;
+  --line: #D7D1C7;
+  --sand: #CDC0B0;
+  --yellow: #FFE500;
+  --yellow-ink: #1E1E1E;
+  --btn: #3C3C3C;
+  --btn-ink: #FFFFFF;
+  --sleeve-s: 26%;
+  --sleeve-l: 78%;
+  --font: "Switzer", "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
+  color-scheme: light;
+}
+html { scroll-behavior: smooth; }
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font); font-size: 17px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+
+/* calm mode: no motion */
+:root[data-calm] *, :root[data-calm] *::before, :root[data-calm] *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+:root[data-calm] mark { background-size: 100% 100% !important; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; scroll-behavior: auto !important; } mark { background-size: 100% 100% !important; } }
+
+/* top bar */
+.bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding: 22px 0; }
+.mark { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.15rem; letter-spacing: -0.02em; text-decoration: none; }
+.mark i { width: 14px; height: 14px; background: var(--yellow); display: inline-block; }
+.nav { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; font-size: 0.95rem; }
+.nav a { text-decoration: none; }
+.nav a:hover, .nav a[aria-current] { text-decoration: underline; text-underline-offset: 4px; }
+.nav a[aria-current] { text-decoration-thickness: 2px; text-decoration-color: var(--ink); }
+.sw { display: inline-flex; align-items: center; gap: 8px; padding: 0; border: 0; background: none; color: var(--ink); font: 500 0.88rem var(--font); cursor: pointer; }
+.sw .box { width: 34px; height: 18px; border: 1.5px solid var(--ink); position: relative; flex: none; }
+.sw .box::after { content: ""; position: absolute; top: 2px; left: 2px; width: 11px; height: 11px; background: var(--ink); transition: transform 0.18s ease; }
+.sw[aria-pressed="true"] .box { background: var(--yellow); border-color: var(--yellow-ink); }
+.sw[aria-pressed="true"] .box::after { transform: translateX(16px); background: var(--yellow-ink); }
+
+/* hero */
+.hero { padding: 72px 0 56px; border-top: 1px solid var(--line); }
+.eyebrow { margin: 0 0 22px; color: var(--muted); font-size: 0.95rem; }
+h1 { margin: 0 0 28px; font-weight: 500; font-size: clamp(3.6rem, 13vw, 9rem); line-height: 0.95; letter-spacing: -0.045em; }
+mark {
+  background-image: linear-gradient(var(--yellow), var(--yellow)); background-repeat: no-repeat; background-size: 100% 100%;
+  background-color: transparent; color: var(--yellow-ink); padding: 0 0.12em;
+  animation: sweep 0.9s 0.45s cubic-bezier(.2,.7,.2,1) both;
+}
+@keyframes sweep { from { background-size: 0% 100%; } to { background-size: 100% 100%; } }
+@keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+.hero > * { animation: rise 0.75s cubic-bezier(.2,.7,.2,1) both; animation-delay: calc(var(--i, 0) * 90ms); }
+.hero > :nth-child(1) { --i: 0; } .hero > :nth-child(2) { --i: 1; } .hero > :nth-child(3) { --i: 2; } .hero > :nth-child(4) { --i: 3; } .hero > :nth-child(5) { --i: 4; }
+.hero p.sub { max-width: 52ch; color: var(--muted); font-size: 1.1rem; margin: 0 0 32px; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn {
+  display: inline-block; padding: 14px 24px; border: 1.5px solid var(--btn);
+  background: var(--btn); color: var(--btn-ink);
+  font: 600 0.95rem var(--font); text-decoration: none; cursor: pointer; border-radius: 0;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.btn:hover { background: transparent; color: var(--ink); }
+.btn.alt { background: var(--surface); color: var(--ink); border-color: var(--ink); }
+.btn.alt:hover { background: var(--ink); color: var(--bg); }
+.btn:disabled { opacity: 0.5; cursor: default; }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 56px; border-top: 1px solid var(--ink); }
+.stat { padding: 18px 0 0; }
+.stat b { display: block; font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 500; letter-spacing: -0.03em; line-height: 1.05; }
+.stat span { color: var(--muted); font-size: 0.92rem; }
+
+/* sections */
+section { padding: 64px 0; border-top: 1px solid var(--line); }
+h2 { margin: 0 0 32px; font-weight: 500; font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1.02; letter-spacing: -0.035em; }
+h2 small { display: block; margin-top: 10px; font-size: 0.95rem; letter-spacing: 0; color: var(--muted); font-weight: 400; }
+
+/* rows: issue entries, archive issues, music sources */
+.rows { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--ink); }
+.row { display: grid; grid-template-columns: 56px 1fr auto; gap: 8px 20px; align-items: center; padding: 22px 0; border-bottom: 1px solid var(--line); animation: rise 0.6s cubic-bezier(.2,.7,.2,1) both; animation-delay: calc(var(--i, 0) * 50ms); scroll-margin-top: 24px; }
+.row .n { color: var(--muted); font-size: 0.95rem; }
+.row h3 { margin: 0; font-weight: 500; font-size: 1.5rem; line-height: 1.2; letter-spacing: -0.02em; }
+.row h3 a { text-decoration: none; }
+.row h3 a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.row p { margin: 4px 0 0; color: var(--muted); font-size: 0.95rem; }
+.row p.note { color: var(--ink); max-width: 64ch; }
+.row .btn { padding: 9px 18px; font-size: 0.88rem; }
+
+/* search */
+.search-wrap { position: relative; margin: 0 0 28px; }
+.search { width: 100%; min-width: 0; padding: 12px 14px; border: 1.5px solid var(--line); border-radius: 0; background: var(--surface); color: var(--ink); font: 400 0.95rem var(--font); }
+.search:focus { border-color: var(--ink); outline: none; }
+.search-results { position: absolute; top: calc(100% + 6px); left: 0; right: 0; background: var(--surface); border: 1.5px solid var(--ink); max-height: 420px; overflow-y: auto; z-index: 20; display: none; }
+.search-results.active { display: block; }
+.search-result { display: block; padding: 12px 14px; border-bottom: 1px solid var(--line); text-decoration: none; }
+.search-result:last-child { border-bottom: none; }
+.search-result:hover { background: var(--bg); }
+.sr-tag { font-size: 0.8rem; color: var(--muted); }
+.sr-title { display: block; font-weight: 500; margin: 2px 0; }
+.sr-meta { font-size: 0.85rem; color: var(--muted); }
+.search-empty { padding: 14px; color: var(--muted); font-size: 0.95rem; }
+
+/* footer */
+footer { padding: 56px 0 40px; border-top: 1px solid var(--line); }
+.fine { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 24px; color: var(--muted); font-size: 0.9rem; }
+.fine p { margin: 0 0 8px; max-width: 58ch; }
+.fine a { text-underline-offset: 3px; }
+.big { margin: 40px 0 0; font-weight: 500; font-size: clamp(3rem, 15vw, 11rem); line-height: 0.9; letter-spacing: -0.05em; color: var(--sand); user-select: none; }
+
+@media (max-width: 640px) {
+  .wrap { padding: 0 16px; }
+  .hero { padding: 48px 0 40px; }
+  section { padding: 48px 0; }
+  .row { grid-template-columns: 36px 1fr; }
+  .row .btn { grid-column: 2; justify-self: start; }
+  .row h3 { font-size: 1.25rem; }
+}
 </style>
 </head>
 <body data-root="../">
-<div class="page">
 <div class="wrap">
-  <div class="masthead">
-    <a class="mast-title" href="../index.html">Algorithm</a>
-    <span class="stamp">Issue No. 38</span>
+  <header class="bar">
+    <a class="mark" href="../index.html"><i aria-hidden="true"></i>Troller</a>
+    <nav class="nav" aria-label="Site">
+      <a href="../index.html">News Troll</a>
+      <a href="../music/index.html">Song Troll</a>
+      <a href="../archive/index.html" aria-current="page">Archive</a>
+      <button class="sw" id="sw-calm" type="button" aria-pressed="false"><span class="box" aria-hidden="true"></span>Reduce animation</button>
+    </nav>
+  </header>
+  <div class="hero" id="top">
+    <p class="eyebrow">News Troll · week of 14 October 2026</p>
+    <h1>Issue <mark>38.</mark></h1>
+    <p class="sub">A selection of recent writing from across the culture press.</p>
+    <div class="hero-actions">
+      <a class="btn" href="#art">Start reading</a>
+      <a class="btn alt" href="../music/index.html">Song Troll</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>28</b><span>links</span></div>
+      <div class="stat"><b>28</b><span>publications</span></div>
+      <div class="stat"><b>7</b><span>sections</span></div>
+    </div>
   </div>
-  <nav class="tabs" aria-label="Sections">
-    <a class="tab is-active" href="../index.html" aria-current="page">Criticism</a>
-    <a class="tab" href="../music/index.html">New Music</a>
-  </nav>
-  <div class="nav">
-    <a class="nav-link" href="../index.html">&larr; Latest Issue</a>
-    <a class="nav-link" href="../archive/index.html">Full Archive</a>
-  </div>
-  <h1 class="hero">The <span class="pop">Feed</span></h1>
-  <p class="intro">A selection of recent writing from across the culture press.</p>
-  <span class="intro-byline">2026-10-14 — selected links</span>
-  <section class="section art">
-    <span class="stampnum">01</span>
-    <div class="section-head">
-      <span class="section-tag">Art</span>
-      <h2 class="section-title">Fine Art</h2>
-    </div>
-    <div class="entry" id="art-1">
-      <div class="entry-byline"><a class="entry-title" href="https://hyperallergic.com/richard-dadds-strange-and-delicate-worlds/" target="_blank" rel="noopener">Richard Dadd’s Strange and Delicate Worlds</a> by Olivia McEwan — Hyperallergic</div>
 
-      <p>Known primarily for his work of fantastical landscapes and mystical woodland creatures, a new retrospective tells the full story.</p>
-    </div>
-    <div class="entry" id="art-2">
-      <div class="entry-byline"><a class="entry-title" href="https://www.artforum.com/news/artists-freaking-out-discontinued-sculpting-plaster-1234761339/" target="_blank" rel="noopener">Artists “Freaking Out” Over Discontinued Sculpting Plaster</a> by Theo Belci — Artforum</div>
-
-      <p>The mine and processing plant responsible for Hydrocal, a specialty plaster fundamental to the sculpting processes for artworks, architectural restoration projects, dental molds, orthopedic molds, and prosthetic-limb customization, is ceasing operation by the end of November. The New York Times reports that the USG Corporation, a leading manufacturer of gypsum products such as Hydrocal, announced…</p>
-    </div>
-    <div class="entry" id="art-3">
-      <div class="entry-byline"><a class="entry-title" href="https://burnaway.org/daily/open-book-november-december-asheville-virtual/" target="_blank" rel="noopener">Open Book | November/December | Asheville + Virtual</a> by Madeline Benfield — Burnaway</div>
-
-      <p>Burnaway is excited to announce our next pick for Open Book, our first editorial book club. Selected by Carolinas Editor at Large Robert Alan Grand, our next Open Book pick is Biography of X by Catherine Lacey.</p>
-    </div>
-    <div class="entry" id="art-4">
-      <div class="entry-byline"><a class="entry-title" href="https://twocoatsofpaint.com/2026/10/lisa-sanditzs-provocative-omissions.html?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=lisa-sanditzs-provocative-omissions" target="_blank" rel="noopener">Lisa Sanditz’s provocative omissions</a> by twocoatsstaff — Two Coats of Paint</div>
-
-      <p>Contributed by Lawre Stone / Lisa Sanditz paints landscapes that explore collisions between industry and the natural world. She has also addressed manufacturing hubs, industrial farms, and junk-food factories. In her solo show “Missing Mountain” at Alexandre, Sanditz turns to the impact of climate change on the Catskill Mountains, and with good reason. In the summer of 2023, the jet stream…</p>
-    </div>
+  <section id="art" aria-labelledby="h-art">
+    <h2 id="h-art">Fine Art</h2>
+    <ol class="rows">
+    <li class="row" id="art-1" style="--i:0">
+      <span class="n">01</span>
+      <div>
+        <h3><a href="https://hyperallergic.com/richard-dadds-strange-and-delicate-worlds/" target="_blank" rel="noopener">Richard Dadd’s Strange and Delicate Worlds</a></h3>
+        <p>Olivia McEwan · Hyperallergic</p>
+      </div>
+      <a class="btn alt" href="https://hyperallergic.com/richard-dadds-strange-and-delicate-worlds/" target="_blank" rel="noopener" aria-label="Read Richard Dadd’s Strange and Delicate Worlds">Read</a>
+    </li>
+    <li class="row" id="art-2" style="--i:1">
+      <span class="n">02</span>
+      <div>
+        <h3><a href="https://www.artforum.com/news/artists-freaking-out-discontinued-sculpting-plaster-1234761339/" target="_blank" rel="noopener">Artists “Freaking Out” Over Discontinued Sculpting Plaster</a></h3>
+        <p>Theo Belci · Artforum</p>
+      </div>
+      <a class="btn alt" href="https://www.artforum.com/news/artists-freaking-out-discontinued-sculpting-plaster-1234761339/" target="_blank" rel="noopener" aria-label="Read Artists “Freaking Out” Over Discontinued Sculpting Plaster">Read</a>
+    </li>
+    <li class="row" id="art-3" style="--i:2">
+      <span class="n">03</span>
+      <div>
+        <h3><a href="https://burnaway.org/daily/open-book-november-december-asheville-virtual/" target="_blank" rel="noopener">Open Book | November/December | Asheville + Virtual</a></h3>
+        <p>Madeline Benfield · Burnaway</p>
+      </div>
+      <a class="btn alt" href="https://burnaway.org/daily/open-book-november-december-asheville-virtual/" target="_blank" rel="noopener" aria-label="Read Open Book | November/December | Asheville + Virtual">Read</a>
+    </li>
+    <li class="row" id="art-4" style="--i:3">
+      <span class="n">04</span>
+      <div>
+        <h3><a href="https://twocoatsofpaint.com/2026/10/lisa-sanditzs-provocative-omissions.html?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=lisa-sanditzs-provocative-omissions" target="_blank" rel="noopener">Lisa Sanditz’s provocative omissions</a></h3>
+        <p>twocoatsstaff · Two Coats of Paint</p>
+      </div>
+      <a class="btn alt" href="https://twocoatsofpaint.com/2026/10/lisa-sanditzs-provocative-omissions.html?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=lisa-sanditzs-provocative-omissions" target="_blank" rel="noopener" aria-label="Read Lisa Sanditz’s provocative omissions">Read</a>
+    </li>
+    </ol>
   </section>
-  <section class="section film">
-    <span class="stampnum">02</span>
-    <div class="section-head">
-      <span class="section-tag">Film</span>
-      <h2 class="section-title">Film Criticism</h2>
-    </div>
-    <div class="entry" id="film-1">
-      <div class="entry-byline"><a class="entry-title" href="https://lwlies.com/reviews/case-137" target="_blank" rel="noopener">Case 137 review – dodgy cops get a taste of their own medicine</a> by David Jenkins — Little White Lies</div>
-
-      <p>Léa Drucker leads this French policier about an internal affairs officers looking to bring some trigger-happy members of the riot squad to justice.</p>
-    </div>
-    <div class="entry" id="film-2">
-      <div class="entry-byline"><a class="entry-title" href="https://crookedmarquee.com/the-best-movies-to-buy-or-stream-this-week-teenage-sex-and-death-at-camp-miasma-hadestown-little-shop-of-horrors-and-more/" target="_blank" rel="noopener">The Best Movies to Buy or Stream This Week: Teenage Sex and Death at Camp Miasma, Hadestown, Little Shop of Horrors, and More</a> by Jason Bailey — Crooked Marquee</div>
-
-      <p>Our bi-weekly look at the best new titles on Blu-ray, 4K, and your subscription streaming services. The post The Best Movies to Buy or Stream This Week: Teenage Sex and Death at Camp Miasma, Hadestown, Little Shop of Horrors, and More appeared first on Crooked Marquee.</p>
-    </div>
-    <div class="entry" id="film-3">
-      <div class="entry-byline"><a class="entry-title" href="https://desistfilm.com/mostra-20-cine-belo-horizonte-cuba-y-la-noche-de-sergio-fernandez-borras/" target="_blank" rel="noopener">MOSTRA 20° CINE BELO HORIZONTE: ‘CUBA Y LA NOCHE’ DE SERGIO FERNÁNDEZ BORRAS</a> by Staff — desistfilm</div>
-
-      <p>Por Mónica Delgado En un texto anterior comenté sobre la apuesta política de la Mostra de Cinema Internacional de Belo Horizonte, que en su 20° edición dedicó su programación al cine latinoamericano, como viene pasando en los últimos siete años. Sin lugar a dudas, lo que viene realizando la muestra no se inscribe dentro de las usuales ventanas de exhibición del cine de la región, sino que apuesta…</p>
-    </div>
-    <div class="entry" id="film-4">
-      <div class="entry-byline"><a class="entry-title" href="https://thefilmstage.com/a-long-winter-trailer-fred-hechinger-and-ebon-moss-bachrach-brave-the-wilderness-in-andrew-haigh-drama/" target="_blank" rel="noopener">A Long Winter Trailer: Fred Hechinger and Ebon Moss-Bachrach Brave the Wilderness in Andrew Haigh’s Drama</a> by Jordan Raup — The Film Stage</div>
-
-      <p>Andrew Haigh returned this fall with another tender drama, this time adapting a Colm Tóibín story with a cast including Fred Hechinger, Ebon Moss-Bachrach, Caitríona Balfe, Kit Connor and D’Pharaoh Woon-A-Tai. A Long Winter, which recently played at New York Film Festival, will be coming to U.S. theaters on January 22, 2027 with select screenings […] The post A Long Winter Trailer: Fred Hechinger…</p>
-    </div>
+  <section id="film" aria-labelledby="h-film">
+    <h2 id="h-film">Film</h2>
+    <ol class="rows">
+    <li class="row" id="film-1" style="--i:0">
+      <span class="n">01</span>
+      <div>
+        <h3><a href="https://lwlies.com/reviews/case-137" target="_blank" rel="noopener">Case 137 review – dodgy cops get a taste of their own medicine</a></h3>
+        <p>David Jenkins · Little White Lies</p>
+      </div>
+      <a class="btn alt" href="https://lwlies.com/reviews/case-137" target="_blank" rel="noopener" aria-label="Read Case 137 review – dodgy cops get a taste of their own medicine">Read</a>
+    </li>
+    <li class="row" id="film-2" style="--i:1">
+      <span class="n">02</span>
+      <div>
+        <h3><a href="https://crookedmarquee.com/the-best-movies-to-buy-or-stream-this-week-teenage-sex-and-death-at-camp-miasma-hadestown-little-shop-of-horrors-and-more/" target="_blank" rel="noopener">The Best Movies to Buy or Stream This Week: Teenage Sex and Death at Camp Miasma, Hadestown, Little Shop of Horrors, and More</a></h3>
+        <p>Jason Bailey · Crooked Marquee</p>
+      </div>
+      <a class="btn alt" href="https://crookedmarquee.com/the-best-movies-to-buy-or-stream-this-week-teenage-sex-and-death-at-camp-miasma-hadestown-little-shop-of-horrors-and-more/" target="_blank" rel="noopener" aria-label="Read The Best Movies to Buy or Stream This Week: Teenage Sex and Death at Camp Miasma, Hadestown, Little Shop of Horrors, and More">Read</a>
+    </li>
+    <li class="row" id="film-3" style="--i:2">
+      <span class="n">03</span>
+      <div>
+        <h3><a href="https://desistfilm.com/mostra-20-cine-belo-horizonte-cuba-y-la-noche-de-sergio-fernandez-borras/" target="_blank" rel="noopener">MOSTRA 20° CINE BELO HORIZONTE: ‘CUBA Y LA NOCHE’ DE SERGIO FERNÁNDEZ BORRAS</a></h3>
+        <p>Staff · desistfilm</p>
+      </div>
+      <a class="btn alt" href="https://desistfilm.com/mostra-20-cine-belo-horizonte-cuba-y-la-noche-de-sergio-fernandez-borras/" target="_blank" rel="noopener" aria-label="Read MOSTRA 20° CINE BELO HORIZONTE: ‘CUBA Y LA NOCHE’ DE SERGIO FERNÁNDEZ BORRAS">Read</a>
+    </li>
+    <li class="row" id="film-4" style="--i:3">
+      <span class="n">04</span>
+      <div>
+        <h3><a href="https://thefilmstage.com/a-long-winter-trailer-fred-hechinger-and-ebon-moss-bachrach-brave-the-wilderness-in-andrew-haigh-drama/" target="_blank" rel="noopener">A Long Winter Trailer: Fred Hechinger and Ebon Moss-Bachrach Brave the Wilderness in Andrew Haigh’s Drama</a></h3>
+        <p>Jordan Raup · The Film Stage</p>
+      </div>
+      <a class="btn alt" href="https://thefilmstage.com/a-long-winter-trailer-fred-hechinger-and-ebon-moss-bachrach-brave-the-wilderness-in-andrew-haigh-drama/" target="_blank" rel="noopener" aria-label="Read A Long Winter Trailer: Fred Hechinger and Ebon Moss-Bachrach Brave the Wilderness in Andrew Haigh’s Drama">Read</a>
+    </li>
+    </ol>
   </section>
-  <section class="section tech">
-    <span class="stampnum">03</span>
-    <div class="section-head">
-      <span class="section-tag">Tech &amp; AI</span>
-      <h2 class="section-title">Tech &amp; AI</h2>
-    </div>
-    <div class="entry" id="tech-1">
-      <div class="entry-byline"><a class="entry-title" href="https://techcabal.com/2026/10/14/opay-1-28-lending-problem-nigeria/" target="_blank" rel="noopener">OPay’s $1.28 lending problem in Nigeria</a> by Temitayo Jaiyeola — TechCabal</div>
-
-      <p>Every $10 (₦13,329.7) borrowed from OPay generated $2.55 (₦3,399.07) in loan-financing revenue in H1 2026. The figure includes late-payment penalties, not just interest, and offers a glimpse into the revenue lenders need to cover the risk of borrower defaults.</p>
-    </div>
-    <div class="entry" id="tech-2">
-      <div class="entry-byline"><a class="entry-title" href="https://www.404media.co/character-ai-bankruptcy-is-first-ai-bubble-domino-to-fall/" target="_blank" rel="noopener">Character.ai Bankruptcy Is First AI Bubble Domino to Fall</a> by Jason Koebler — 404 Media</div>
-
-      <p>New music genre just dropped. Also: A Tesla locks out cops, and more from around the web.</p>
-    </div>
-    <div class="entry" id="tech-3">
-      <div class="entry-byline"><a class="entry-title" href="https://themarkup.org/privacy/2026/10/14/worlds-largest-health-appointment-platform-dumps-its-web-trackers-after-markup-investigation" target="_blank" rel="noopener">World’s largest health appointment platform dumps its web trackers after Markup investigation</a> by Colin Lecher — The Markup</div>
-
-      <p>Doctoralia said it was removing trackers that communicated with social media companies out of an abundance of caution</p>
-    </div>
-    <div class="entry" id="tech-4">
-      <div class="entry-byline"><a class="entry-title" href="https://www.platformer.news/x-reverse-eternal-september/" target="_blank" rel="noopener">X’s reverse eternal September</a> by Casey Newton — Platformer</div>
-
-      <p>Why the onetime global town square now feels more like a clubhouse</p>
-    </div>
+  <section id="tech" aria-labelledby="h-tech">
+    <h2 id="h-tech">Tech &amp; AI</h2>
+    <ol class="rows">
+    <li class="row" id="tech-1" style="--i:0">
+      <span class="n">01</span>
+      <div>
+        <h3><a href="https://techcabal.com/2026/10/14/opay-1-28-lending-problem-nigeria/" target="_blank" rel="noopener">OPay’s $1.28 lending problem in Nigeria</a></h3>
+        <p>Temitayo Jaiyeola · TechCabal</p>
+      </div>
+      <a class="btn alt" href="https://techcabal.com/2026/10/14/opay-1-28-lending-problem-nigeria/" target="_blank" rel="noopener" aria-label="Read OPay’s $1.28 lending problem in Nigeria">Read</a>
+    </li>
+    <li class="row" id="tech-2" style="--i:1">
+      <span class="n">02</span>
+      <div>
+        <h3><a href="https://www.404media.co/character-ai-bankruptcy-is-first-ai-bubble-domino-to-fall/" target="_blank" rel="noopener">Character.ai Bankruptcy Is First AI Bubble Domino to Fall</a></h3>
+        <p>Jason Koebler · 404 Media</p>
+      </div>
+      <a class="btn alt" href="https://www.404media.co/character-ai-bankruptcy-is-first-ai-bubble-domino-to-fall/" target="_blank" rel="noopener" aria-label="Read Character.ai Bankruptcy Is First AI Bubble Domino to Fall">Read</a>
+    </li>
+    <li class="row" id="tech-3" style="--i:2">
+      <span class="n">03</span>
+      <div>
+        <h3><a href="https://themarkup.org/privacy/2026/10/14/worlds-largest-health-appointment-platform-dumps-its-web-trackers-after-markup-investigation" target="_blank" rel="noopener">World’s largest health appointment platform dumps its web trackers after Markup investigation</a></h3>
+        <p>Colin Lecher · The Markup</p>
+      </div>
+      <a class="btn alt" href="https://themarkup.org/privacy/2026/10/14/worlds-largest-health-appointment-platform-dumps-its-web-trackers-after-markup-investigation" target="_blank" rel="noopener" aria-label="Read World’s largest health appointment platform dumps its web trackers after Markup investigation">Read</a>
+    </li>
+    <li class="row" id="tech-4" style="--i:3">
+      <span class="n">04</span>
+      <div>
+        <h3><a href="https://www.platformer.news/x-reverse-eternal-september/" target="_blank" rel="noopener">X’s reverse eternal September</a></h3>
+        <p>Casey Newton · Platformer</p>
+      </div>
+      <a class="btn alt" href="https://www.platformer.news/x-reverse-eternal-september/" target="_blank" rel="noopener" aria-label="Read X’s reverse eternal September">Read</a>
+    </li>
+    </ol>
   </section>
-  <section class="section lit">
-    <span class="stampnum">04</span>
-    <div class="section-head">
-      <span class="section-tag">Sci-Fi / Fantasy</span>
-      <h2 class="section-title">Literary Reviews</h2>
-    </div>
-    <div class="entry" id="lit-1">
-      <div class="entry-byline"><a class="entry-title" href="https://clereviewofbooks.com/julia-drescher-the-cuts/" target="_blank" rel="noopener">from “The Cuts”</a> by Julia Drescher — Cleveland Review of Books</div>
-
-      <p>ideas are emotional in a physical sense The post from “The Cuts” appeared first on Cleveland Review of Books.</p>
-    </div>
-    <div class="entry" id="lit-2">
-      <div class="entry-byline"><a class="entry-title" href="https://arablit.org/2026/10/14/three-new-poems-by-taqwa-ahmed-al-wawi/" target="_blank" rel="noopener">Three New Poems by Taqwa Ahmed Alwawi</a> by mlynxqualey — ArabLit</div>
-
-      <p>&quot;So we open our mouths, / not to scream, / but to release the silence.&quot;</p>
-    </div>
-    <div class="entry" id="lit-3">
-      <div class="entry-byline"><a class="entry-title" href="https://wordswithoutborders.org/read/article/2026-10/the-national-book-award-interviews-egana-djabbarova-and-lisa-c-hayden-my-dreadful-body/" target="_blank" rel="noopener">The National Book Award Interviews: Egana Djabbarova and Lisa C. Hayden</a> by Alex Tan — Words Without Borders</div>
-
-      <p>Can the two of you talk about how this book came into the world—first, the germ in the original language, and then the translation? Egana Djabbarova (ED): This book was written under very unusual circumstances. During the writing process, from 2022 to 2023, I was living in Taipei, Taiwan, where I was teaching Russian as The post The National Book Award Interviews: Egana Djabbarova and Lisa C.…</p>
-    </div>
-    <div class="entry" id="lit-4">
-      <div class="entry-byline"><a class="entry-title" href="https://www.full-stop.net/2026/10/13/interviews/kyle-williams/larissa-pham-2/" target="_blank" rel="noopener">Larissa Pham</a> by Kyle Francis Williams — Full Stop</div>
-
-      <p>Discipline by Larissa Pham is a mental seascape, almost a Moby-Dick of the mind that operates associatively around the challenges of art—formally, critically, and personally. It follows a young woman on a book tour for her debut novel, a revenge thriller about a young woman murdering her sexually abusive art school professor. Where the novel-within-a-novel […]</p>
-    </div>
+  <section id="lit" aria-labelledby="h-lit">
+    <h2 id="h-lit">Books</h2>
+    <ol class="rows">
+    <li class="row" id="lit-1" style="--i:0">
+      <span class="n">01</span>
+      <div>
+        <h3><a href="https://clereviewofbooks.com/julia-drescher-the-cuts/" target="_blank" rel="noopener">from “The Cuts”</a></h3>
+        <p>Julia Drescher · Cleveland Review of Books</p>
+      </div>
+      <a class="btn alt" href="https://clereviewofbooks.com/julia-drescher-the-cuts/" target="_blank" rel="noopener" aria-label="Read from “The Cuts”">Read</a>
+    </li>
+    <li class="row" id="lit-2" style="--i:1">
+      <span class="n">02</span>
+      <div>
+        <h3><a href="https://arablit.org/2026/10/14/three-new-poems-by-taqwa-ahmed-al-wawi/" target="_blank" rel="noopener">Three New Poems by Taqwa Ahmed Alwawi</a></h3>
+        <p>mlynxqualey · ArabLit</p>
+      </div>
+      <a class="btn alt" href="https://arablit.org/2026/10/14/three-new-poems-by-taqwa-ahmed-al-wawi/" target="_blank" rel="noopener" aria-label="Read Three New Poems by Taqwa Ahmed Alwawi">Read</a>
+    </li>
+    <li class="row" id="lit-3" style="--i:2">
+      <span class="n">03</span>
+      <div>
+        <h3><a href="https://wordswithoutborders.org/read/article/2026-10/the-national-book-award-interviews-egana-djabbarova-and-lisa-c-hayden-my-dreadful-body/" target="_blank" rel="noopener">The National Book Award Interviews: Egana Djabbarova and Lisa C. Hayden</a></h3>
+        <p>Alex Tan · Words Without Borders</p>
+      </div>
+      <a class="btn alt" href="https://wordswithoutborders.org/read/article/2026-10/the-national-book-award-interviews-egana-djabbarova-and-lisa-c-hayden-my-dreadful-body/" target="_blank" rel="noopener" aria-label="Read The National Book Award Interviews: Egana Djabbarova and Lisa C. Hayden">Read</a>
+    </li>
+    <li class="row" id="lit-4" style="--i:3">
+      <span class="n">04</span>
+      <div>
+        <h3><a href="https://www.full-stop.net/2026/10/13/interviews/kyle-williams/larissa-pham-2/" target="_blank" rel="noopener">Larissa Pham</a></h3>
+        <p>Kyle Francis Williams · Full Stop</p>
+      </div>
+      <a class="btn alt" href="https://www.full-stop.net/2026/10/13/interviews/kyle-williams/larissa-pham-2/" target="_blank" rel="noopener" aria-label="Read Larissa Pham">Read</a>
+    </li>
+    </ol>
   </section>
-  <section class="section music">
-    <span class="stampnum">05</span>
-    <div class="section-head">
-      <span class="section-tag">Music</span>
-      <h2 class="section-title">Music Criticism</h2>
-    </div>
-    <div class="entry" id="music-1">
-      <div class="entry-byline"><a class="entry-title" href="https://soundsandcolours.com/articles/brazil/sophia-ardessore-boitata-a-sounds-colours-single-premiere-314066/" target="_blank" rel="noopener">Sophia Ardessore – Boitatá: A Sounds &amp; Colours single premiere</a> by Andy Cumming — Sounds and Colours</div>
-
-      <p>Sophia Ardessore is a singer, songwriter and instrumentalist from São Paulo. Sounds &amp; Colours present a premiere of her brand new single “Boitatá”, a song that previews her second album, O Ventre Que Me Inventou, and starts a new phase in her songwriting career. The track emerged from a creative collaboration between Ardessore and Francisca... Read Article</p>
-    </div>
-    <div class="entry" id="music-2">
-      <div class="entry-byline"><a class="entry-title" href="https://www.popmatters.com/gilbert-osullivan-interview-2026" target="_blank" rel="noopener">Gilbert O’Sullivan Is ‘On the Record’ and Being Irish</a> by Eoghan Lyng — PopMatters</div>
-
-      <p>British soft rock extraordinaire Gilbert O&#39;Sullivan chats about his new album, collaborations, and staying Irish wherever he lays his head.</p>
-    </div>
-    <div class="entry" id="music-3">
-      <div class="entry-byline"><a class="entry-title" href="https://www.powmag.net/p/serengeti-boxer-driver" target="_blank" rel="noopener">The New Album You Need to Hear This Week</a> by Paul Thompson — Passion of the Weiss</div>
-
-      <p>Customer Service is a weekly feature to help you cut through the digital weeds and find the music you want.</p>
-    </div>
-    <div class="entry" id="music-4">
-      <div class="entry-byline"><a class="entry-title" href="https://www.thelineofbestfit.com/news/jonah-yano-announces-new-album-spin-and-shares-two-songs" target="_blank" rel="noopener">Jonah Yano announces new album Spin and shares two songs</a> by Hayden Merrick — The Line of Best Fit</div>
-
-    </div>
+  <section id="music" aria-labelledby="h-music">
+    <h2 id="h-music">Music Criticism</h2>
+    <ol class="rows">
+    <li class="row" id="music-1" style="--i:0">
+      <span class="n">01</span>
+      <div>
+        <h3><a href="https://soundsandcolours.com/articles/brazil/sophia-ardessore-boitata-a-sounds-colours-single-premiere-314066/" target="_blank" rel="noopener">Sophia Ardessore – Boitatá: A Sounds &amp; Colours single premiere</a></h3>
+        <p>Andy Cumming · Sounds and Colours</p>
+      </div>
+      <a class="btn alt" href="https://soundsandcolours.com/articles/brazil/sophia-ardessore-boitata-a-sounds-colours-single-premiere-314066/" target="_blank" rel="noopener" aria-label="Read Sophia Ardessore – Boitatá: A Sounds &amp; Colours single premiere">Read</a>
+    </li>
+    <li class="row" id="music-2" style="--i:1">
+      <span class="n">02</span>
+      <div>
+        <h3><a href="https://www.popmatters.com/gilbert-osullivan-interview-2026" target="_blank" rel="noopener">Gilbert O’Sullivan Is ‘On the Record’ and Being Irish</a></h3>
+        <p>Eoghan Lyng · PopMatters</p>
+      </div>
+      <a class="btn alt" href="https://www.popmatters.com/gilbert-osullivan-interview-2026" target="_blank" rel="noopener" aria-label="Read Gilbert O’Sullivan Is ‘On the Record’ and Being Irish">Read</a>
+    </li>
+    <li class="row" id="music-3" style="--i:2">
+      <span class="n">03</span>
+      <div>
+        <h3><a href="https://www.powmag.net/p/serengeti-boxer-driver" target="_blank" rel="noopener">The New Album You Need to Hear This Week</a></h3>
+        <p>Paul Thompson · Passion of the Weiss</p>
+      </div>
+      <a class="btn alt" href="https://www.powmag.net/p/serengeti-boxer-driver" target="_blank" rel="noopener" aria-label="Read The New Album You Need to Hear This Week">Read</a>
+    </li>
+    <li class="row" id="music-4" style="--i:3">
+      <span class="n">04</span>
+      <div>
+        <h3><a href="https://www.thelineofbestfit.com/news/jonah-yano-announces-new-album-spin-and-shares-two-songs" target="_blank" rel="noopener">Jonah Yano announces new album Spin and shares two songs</a></h3>
+        <p>Hayden Merrick · The Line of Best Fit</p>
+      </div>
+      <a class="btn alt" href="https://www.thelineofbestfit.com/news/jonah-yano-announces-new-album-spin-and-shares-two-songs" target="_blank" rel="noopener" aria-label="Read Jonah Yano announces new album Spin and shares two songs">Read</a>
+    </li>
+    </ol>
   </section>
-  <section class="section design">
-    <span class="stampnum">06</span>
-    <div class="section-head">
-      <span class="section-tag">Design</span>
-      <h2 class="section-title">Design</h2>
-    </div>
-    <div class="entry" id="design-1">
-      <div class="entry-byline"><a class="entry-title" href="https://failedarchitecture.com/open-call-new-fascisms-counter-worlds/" target="_blank" rel="noopener">Open Call: New Fascisms, Counter-Worlds</a> by Failed Architecture — Failed Architecture</div>
-
-      <p>New fascisms do not form a coherent, singular project. Instead, a multiplicity of distinct yet interconnected opportunistic efforts to consolidate wealth and power at the expense of the planet. Historical forms of racial, religious and imperial domination are being reworked through contemporary alliances of state and corporate power, energy dependencies and extractive technologies amid…</p>
-    </div>
-    <div class="entry" id="design-2">
-      <div class="entry-byline"><a class="entry-title" href="https://architectureau.com/articles/lighthouse-garden-by-steven-clegg-design/" target="_blank" rel="noopener">Lighthouse garden by Steven Clegg Design</a> by Andrew Coates — ArchitectureAU Discussion</div>
-
-      <p>Unfenced and cascading, the garden around BVN Architecture&#39;s Lighthouse doesn’t simply frame the house – it unfurls inside and softens the structure.</p>
-    </div>
-    <div class="entry" id="design-3">
-      <div class="entry-byline"><a class="entry-title" href="https://designobserver.com/who-gets-to-decide-where-power-begins-and-ends/" target="_blank" rel="noopener">Who gets to decide where power begins and ends?</a> by Rachel Paese — Design Observer</div>
-
-      <p>Two bonus episodes of Draw the Line that take you behind the scenes as voters and lawmakers clash over voting rights The post Who gets to decide where power begins and ends? appeared first on DesignObserver.</p>
-    </div>
-    <div class="entry" id="design-4">
-      <div class="entry-byline"><a class="entry-title" href="https://www.azuremagazine.com/article/12-standouts-from-ids-vancouver-2026-and-the-design-vancouver-festival/" target="_blank" rel="noopener">12 Standouts from IDS Vancouver 2026 and the Design Vancouver Festival</a> by Elizabeth Pagliacolo — Azure</div>
-
-      <p>From fresh takes on glass block and heirloom-ready furniture to Indigenous futurism, we present our favourite lighting, furniture and concepts. The post 12 Standouts from IDS Vancouver 2026 and the Design Vancouver Festival appeared first on Azure Magazine.</p>
-    </div>
+  <section id="design" aria-labelledby="h-design">
+    <h2 id="h-design">Design</h2>
+    <ol class="rows">
+    <li class="row" id="design-1" style="--i:0">
+      <span class="n">01</span>
+      <div>
+        <h3><a href="https://failedarchitecture.com/open-call-new-fascisms-counter-worlds/" target="_blank" rel="noopener">Open Call: New Fascisms, Counter-Worlds</a></h3>
+        <p>Failed Architecture · Failed Architecture</p>
+      </div>
+      <a class="btn alt" href="https://failedarchitecture.com/open-call-new-fascisms-counter-worlds/" target="_blank" rel="noopener" aria-label="Read Open Call: New Fascisms, Counter-Worlds">Read</a>
+    </li>
+    <li class="row" id="design-2" style="--i:1">
+      <span class="n">02</span>
+      <div>
+        <h3><a href="https://architectureau.com/articles/lighthouse-garden-by-steven-clegg-design/" target="_blank" rel="noopener">Lighthouse garden by Steven Clegg Design</a></h3>
+        <p>Andrew Coates · ArchitectureAU Discussion</p>
+      </div>
+      <a class="btn alt" href="https://architectureau.com/articles/lighthouse-garden-by-steven-clegg-design/" target="_blank" rel="noopener" aria-label="Read Lighthouse garden by Steven Clegg Design">Read</a>
+    </li>
+    <li class="row" id="design-3" style="--i:2">
+      <span class="n">03</span>
+      <div>
+        <h3><a href="https://designobserver.com/who-gets-to-decide-where-power-begins-and-ends/" target="_blank" rel="noopener">Who gets to decide where power begins and ends?</a></h3>
+        <p>Rachel Paese · Design Observer</p>
+      </div>
+      <a class="btn alt" href="https://designobserver.com/who-gets-to-decide-where-power-begins-and-ends/" target="_blank" rel="noopener" aria-label="Read Who gets to decide where power begins and ends?">Read</a>
+    </li>
+    <li class="row" id="design-4" style="--i:3">
+      <span class="n">04</span>
+      <div>
+        <h3><a href="https://www.azuremagazine.com/article/12-standouts-from-ids-vancouver-2026-and-the-design-vancouver-festival/" target="_blank" rel="noopener">12 Standouts from IDS Vancouver 2026 and the Design Vancouver Festival</a></h3>
+        <p>Elizabeth Pagliacolo · Azure</p>
+      </div>
+      <a class="btn alt" href="https://www.azuremagazine.com/article/12-standouts-from-ids-vancouver-2026-and-the-design-vancouver-festival/" target="_blank" rel="noopener" aria-label="Read 12 Standouts from IDS Vancouver 2026 and the Design Vancouver Festival">Read</a>
+    </li>
+    </ol>
   </section>
-  <section class="section fashion">
-    <span class="stampnum">07</span>
-    <div class="section-head">
-      <span class="section-tag">Men&#39;s Fashion</span>
-      <h2 class="section-title">Men&#39;s Fashion</h2>
-    </div>
-    <div class="entry" id="fashion-1">
-      <div class="entry-byline"><a class="entry-title" href="https://www.dazeddigital.com/fashion/article/71170/1/everyone-wants-to-be-irish-ireland-fashion-week-2026-green-pilled?utm_source=Link&amp;utm_medium=Link&amp;utm_campaign=RSSFeed&amp;utm_term=why-does-everyone-want-to-be-irish-ask-ireland-fashion-week" target="_blank" rel="noopener">Why does everyone want to be Irish? Ask Ireland Fashion Week</a> by Laura Pitcherhttps://www.dazeddigital.com/rssfeed@dazedmedia.com — Dazed Fashion</div>
-
-      <p>As the world goes ‘green-pilled’, a new generation of Irish designers are coming home – and proving you don’t have to leave to make it in fashion</p>
-    </div>
-    <div class="entry" id="fashion-2">
-      <div class="entry-byline"><a class="entry-title" href="https://www.anothermag.com/art-photography/17524/cato-artist-raymond-carver-another-thing-i-wanted-to-tell-you?utm_source=Link&amp;utm_medium=Link&amp;utm_campaign=RSSFeed&amp;utm_term=cato-on-returning-to-raymond-carver-s-writing" target="_blank" rel="noopener">Cato on Returning to Raymond Carver’s Writing</a> by Elodie Saint-Louishttps://www.anothermag.com/rssfeed@dazedmedia.com — AnOther</div>
-
-      <p>“I’ve been happiest with the narrative of my paintings when there’s an open-ended moment, as with Carver’s stories,” says the artist, who relates to the author, and his editor, through imagination, intuition and their way of seeing the world</p>
-    </div>
-    <div class="entry" id="fashion-3">
-      <div class="entry-byline"><a class="entry-title" href="https://openthemagazine.com/business/reliance-aavin-amul-cavins-why-tamil-nadu-is-becoming-a-flavoured-milk-battleground" target="_blank" rel="noopener">Reliance, Aavin, Amul, Cavin’s: Why Tamil Nadu Is Becoming a Flavoured Milk Battleground</a> by Shailja Tiwari/api/author/2392033 — Open Magazine</div>
-
-      <p>Reliance Consumer Products Limited (RCPL) has launched Joyland, a flavoured milk priced at Rs 20 in Strawberry and Vanilla, in Tamil Nadu. It marks the FMCG arm’s first entry into ready-to-drink dairy. The company says the brand will roll out across India in phases, with more flavours and dairy beverages to follow. The strategy is familiar. With Campa Cola, Reliance competed on price and reach.…</p>
-    </div>
-    <div class="entry" id="fashion-4">
-      <div class="entry-byline"><a class="entry-title" href="https://i-d.co/article/nailympia-london-2026/" target="_blank" rel="noopener">Welcome to the Nail Olympics</a> by marleywendt — i-D</div>
-
-      <p>At Nailympia, an international nail art competition in London, the nails are long, the trophies wear bows, and practicality is not the point. Photographer Charlie Kwai went down to see what all the fuss is about.</p>
-    </div>
+  <section id="fashion" aria-labelledby="h-fashion">
+    <h2 id="h-fashion">Men&#39;s Fashion</h2>
+    <ol class="rows">
+    <li class="row" id="fashion-1" style="--i:0">
+      <span class="n">01</span>
+      <div>
+        <h3><a href="https://www.dazeddigital.com/fashion/article/71170/1/everyone-wants-to-be-irish-ireland-fashion-week-2026-green-pilled?utm_source=Link&amp;utm_medium=Link&amp;utm_campaign=RSSFeed&amp;utm_term=why-does-everyone-want-to-be-irish-ask-ireland-fashion-week" target="_blank" rel="noopener">Why does everyone want to be Irish? Ask Ireland Fashion Week</a></h3>
+        <p>Laura Pitcherhttps://www.dazeddigital.com/rssfeed@dazedmedia.com · Dazed Fashion</p>
+      </div>
+      <a class="btn alt" href="https://www.dazeddigital.com/fashion/article/71170/1/everyone-wants-to-be-irish-ireland-fashion-week-2026-green-pilled?utm_source=Link&amp;utm_medium=Link&amp;utm_campaign=RSSFeed&amp;utm_term=why-does-everyone-want-to-be-irish-ask-ireland-fashion-week" target="_blank" rel="noopener" aria-label="Read Why does everyone want to be Irish? Ask Ireland Fashion Week">Read</a>
+    </li>
+    <li class="row" id="fashion-2" style="--i:1">
+      <span class="n">02</span>
+      <div>
+        <h3><a href="https://www.anothermag.com/art-photography/17524/cato-artist-raymond-carver-another-thing-i-wanted-to-tell-you?utm_source=Link&amp;utm_medium=Link&amp;utm_campaign=RSSFeed&amp;utm_term=cato-on-returning-to-raymond-carver-s-writing" target="_blank" rel="noopener">Cato on Returning to Raymond Carver’s Writing</a></h3>
+        <p>Elodie Saint-Louishttps://www.anothermag.com/rssfeed@dazedmedia.com · AnOther</p>
+      </div>
+      <a class="btn alt" href="https://www.anothermag.com/art-photography/17524/cato-artist-raymond-carver-another-thing-i-wanted-to-tell-you?utm_source=Link&amp;utm_medium=Link&amp;utm_campaign=RSSFeed&amp;utm_term=cato-on-returning-to-raymond-carver-s-writing" target="_blank" rel="noopener" aria-label="Read Cato on Returning to Raymond Carver’s Writing">Read</a>
+    </li>
+    <li class="row" id="fashion-3" style="--i:2">
+      <span class="n">03</span>
+      <div>
+        <h3><a href="https://openthemagazine.com/business/reliance-aavin-amul-cavins-why-tamil-nadu-is-becoming-a-flavoured-milk-battleground" target="_blank" rel="noopener">Reliance, Aavin, Amul, Cavin’s: Why Tamil Nadu Is Becoming a Flavoured Milk Battleground</a></h3>
+        <p>Shailja Tiwari/api/author/2392033 · Open Magazine</p>
+      </div>
+      <a class="btn alt" href="https://openthemagazine.com/business/reliance-aavin-amul-cavins-why-tamil-nadu-is-becoming-a-flavoured-milk-battleground" target="_blank" rel="noopener" aria-label="Read Reliance, Aavin, Amul, Cavin’s: Why Tamil Nadu Is Becoming a Flavoured Milk Battleground">Read</a>
+    </li>
+    <li class="row" id="fashion-4" style="--i:3">
+      <span class="n">04</span>
+      <div>
+        <h3><a href="https://i-d.co/article/nailympia-london-2026/" target="_blank" rel="noopener">Welcome to the Nail Olympics</a></h3>
+        <p>marleywendt · i-D</p>
+      </div>
+      <a class="btn alt" href="https://i-d.co/article/nailympia-london-2026/" target="_blank" rel="noopener" aria-label="Read Welcome to the Nail Olympics">Read</a>
+    </li>
+    </ol>
   </section>
   <footer>
-    <span>Algorithm</span>
-    <span>Issue No. 38 — 14 Oct 2026</span>
+    <div class="fine">
+      <div><p>Troller, Issue 38, week of 14 October 2026. Every link was read in full before it was picked.</p>
+        <p><a href="../archive/index.html">Every issue</a></p></div>
+      <p><a href="#top">Back to top</a></p>
+    </div>
+    <p class="big" aria-hidden="true">happy reading</p>
   </footer>
 </div>
-</div>
+<script>
+(function(){
+  var sw = document.getElementById('sw-calm');
+  if (!sw) return;
+  function load(){ try { return JSON.parse(localStorage.getItem('troller-ui') || '{}') || {}; } catch (e) { return {}; } }
+  function paint(){ var on = document.documentElement.hasAttribute('data-calm'); sw.setAttribute('aria-pressed', on ? 'true' : 'false'); }
+  sw.addEventListener('click', function(){
+    var ui = load(); ui.calm = !document.documentElement.hasAttribute('data-calm');
+    if (ui.calm) document.documentElement.setAttribute('data-calm', ''); else document.documentElement.removeAttribute('data-calm');
+    try { localStorage.setItem('troller-ui', JSON.stringify(ui)); } catch (e) {}
+    paint();
+  });
+  paint();
+})();</script>
 
 </body>
 </html>

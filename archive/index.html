@@ -2,542 +2,595 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="color-scheme" content="dark">
-<meta name="theme-color" content="#0A0A0A">
-<title>Algorithm — Archive</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#F1EEE9">
+<title>Troller — Archive</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Source+Serif+4:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>try{var u=JSON.parse(localStorage.getItem('troller-ui')||'{}');if(u.calm)document.documentElement.setAttribute('data-calm','');}catch(e){}</script>
 <style>
-  html, body{ margin:0; padding:0; height:100%; background-color:#0A0A0A; }
-  *{box-sizing:border-box;}
-  body{
-    min-height:100dvh;
-    color:#FAFAF7;
-    font-family:'Source Serif 4', Georgia, serif;
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-  }
-  .page{ background-color:#0A0A0A; min-height:100dvh; }
-  a{ color:inherit; }
-  .wrap{max-width:720px; margin:0 auto; padding:44px 24px 90px; position:relative;}
-  .masthead{
-    display:flex; justify-content:space-between; align-items:flex-end;
-    border-bottom:4px solid #FAFAF7;
-    padding-bottom:14px; margin-bottom:24px;
-  }
-  .mast-title{
-    font-family:'Archivo Black', sans-serif;
-    font-size:clamp(26px,6vw,34px);
-    letter-spacing:-0.01em;
-    text-transform:uppercase;
-    color:#FAFAF7;
-    text-decoration:none;
-  }
-  .stamp{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:11px; letter-spacing:0.1em; text-transform:uppercase;
-    color:#0A0A0A; background:#FF1F3D;
-    padding:5px 10px; border-radius:2px;
-    transform:rotate(-3deg); display:inline-block; font-weight:600;
-    white-space:nowrap;
-  }
-  .tabs{display:flex; gap:22px; margin:-8px 0 26px; font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.1em; text-transform:uppercase;}
-  .tab{color:#A6A29A; text-decoration:none; padding-bottom:6px; border-bottom:2px solid transparent;}
-  .tab:hover{color:#FAFAF7;}
-  .tab.is-active{color:#FAFAF7; border-bottom-color:#FF1F3D;}
-  .nav{display:flex; justify-content:space-between; align-items:center; gap:16px; margin-bottom:40px; flex-wrap:wrap;}
-  .nav-link{font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:#FAFAF7; text-decoration:none; border:1px solid rgba(250,250,247,0.35); padding:9px 14px; border-radius:2px; white-space:nowrap;}
-  .nav-link:hover{border-color:#FF1F3D; color:#FF1F3D;}
-  .search-wrap{position:relative; flex:1; min-width:220px;}
-  .search-input{width:100%; background:#151513; border:1px solid rgba(250,250,247,0.3); color:#FAFAF7; font-family:'IBM Plex Mono', monospace; font-size:13px; padding:10px 12px; border-radius:2px; outline:none;}
-  .search-input::placeholder{color:#6B6860;}
-  .search-input:focus{border-color:#FF1F3D;}
-  .search-results{position:absolute; top:calc(100% + 6px); left:0; right:0; background:#111110; border:1px solid rgba(250,250,247,0.25); border-radius:4px; max-height:380px; overflow-y:auto; z-index:20; display:none;}
-  .search-results.active{display:block;}
-  .search-result{display:block; padding:10px 12px; border-bottom:1px solid rgba(250,250,247,0.12); text-decoration:none;}
-  .search-result:last-child{border-bottom:none;}
-  .search-result:hover{background:rgba(255,31,61,0.08);}
-  .sr-tag{font-family:'IBM Plex Mono', monospace; font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:#A6A29A;}
-  .sr-title{display:block; font-style:italic; color:#FAFAF7; margin:2px 0; font-size:14px;}
-  .sr-meta{font-family:'IBM Plex Mono', monospace; font-size:10.5px; color:#A6A29A;}
-  .search-empty{padding:14px 12px; font-family:'IBM Plex Mono', monospace; font-size:12.5px; color:#A6A29A;}
-  h1.hero{
-    font-family:'Anton', sans-serif;
-    font-weight:400;
-    font-size:clamp(42px,10vw,72px);
-    line-height:0.94;
-    text-transform:uppercase;
-    margin:0 0 22px;
-    color:#FAFAF7;
-  }
-  h1.hero .pop{color:#FF1F3D;}
-  .intro{font-size:17px; color:#EDEAE2; max-width:56ch; margin-bottom:10px;}
-  .intro-byline{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:11px; letter-spacing:0.08em; text-transform:uppercase;
-    color:#A6A29A;
-    margin-top:16px; margin-bottom:54px; display:block;
-    border-left:2px solid #FF1F3D; padding-left:10px;
-  }
-  .section{position:relative; margin-bottom:50px; padding-left:56px;}
-  .section:last-of-type{margin-bottom:0;}
-  .stampnum{
-    position:absolute; left:0; top:0;
-    width:42px; height:42px;
-    border:2px solid #FAFAF7;
-    border-radius:50%;
-    display:flex; align-items:center; justify-content:center;
-    font-family:'Archivo Black', sans-serif;
-    font-size:15px; color:#FAFAF7;
-    transform:rotate(-6deg);
-  }
-  .art .stampnum{border-color:#C9A24B; color:#C9A24B;}
-  .film .stampnum{border-color:#FF5B4A; color:#FF5B4A;}
-  .tech .stampnum{border-color:#3FE0D0; color:#3FE0D0;}
-  .lit .stampnum{border-color:#B39DFF; color:#B39DFF;}
-  .music .stampnum{border-color:#FF5FA8; color:#FF5FA8;}
-  .design .stampnum{border-color:#FFD23F; color:#FFD23F;}
-  .fashion .stampnum{border-color:#FAFAF7; color:#FAFAF7;}
-  .section-head{display:flex; align-items:center; gap:12px; margin-bottom:18px; flex-wrap:wrap;}
-  .section-tag{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:12px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase;
-    color:#0A0A0A;
-    padding:6px 11px; border-radius:2px;
-  }
-  .art .section-tag{background:#C9A24B;}
-  .film .section-tag{background:#FF5B4A;}
-  .tech .section-tag{background:#3FE0D0;}
-  .lit .section-tag{background:#B39DFF;}
-  .music .section-tag{background:#FF5FA8;}
-  .design .section-tag{background:#FFD23F;}
-  .fashion .section-tag{background:#FAFAF7;}
-  .section-title{
-    font-family:'Archivo Black', sans-serif;
-    font-size:24px; text-transform:uppercase; letter-spacing:0.01em;
-    color:#FAFAF7;
-  }
-  .entry{margin-bottom:24px; padding-bottom:24px; border-bottom:1px solid rgba(250,250,247,0.16); scroll-margin-top:24px;}
-  .entry:last-child{border-bottom:none; margin-bottom:0; padding-bottom:0;}
-  .entry-byline{font-family:'IBM Plex Mono', monospace; font-size:12px; color:#A6A29A; margin-bottom:8px;}
-  .entry-title{font-weight:500; font-style:italic; color:#FAFAF7; text-decoration:underline; text-decoration-color:rgba(250,250,247,0.35); text-underline-offset:3px;}
-  .entry-title:hover{text-decoration-color:#FF1F3D;}
-  .entry p{margin:0 0 10px; font-size:16px; color:#EDEAE2;}
-  .entry .why{font-size:14.5px; color:#A6A29A; font-style:italic;}
-  .entry .why::before{content:"— ";}
-  .issue-list{list-style:none; margin:0; padding:0;}
-  .issue-card{display:block; text-decoration:none; padding:22px 0; border-bottom:1px solid rgba(250,250,247,0.16);}
-  .issue-card:first-child{padding-top:0;}
-  .issue-card:hover .issue-headline{ text-decoration-color:#FF1F3D; }
-  .issue-meta{font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:#A6A29A; margin-bottom:8px;}
-  .issue-meta .num{color:#FF1F3D;}
-  .issue-headline{font-family:'Archivo Black', sans-serif; font-size:22px; text-transform:uppercase; letter-spacing:0.01em; color:#FAFAF7; text-decoration:underline; text-decoration-color:rgba(250,250,247,0.35); text-underline-offset:4px; display:inline-block; margin-bottom:8px;}
-  .issue-desc{font-size:15px; color:#A6A29A; max-width:60ch; margin:0;}
-  footer{
-    margin-top:64px; padding-top:20px; border-top:1px solid rgba(250,250,247,0.16);
-    display:flex; justify-content:space-between; gap:12px;
-    font-family:'IBM Plex Mono', monospace; font-size:10.5px;
-    letter-spacing:0.06em; color:#A6A29A; text-transform:uppercase;
-  }
-  @media (max-width:520px){
-    .wrap{padding:30px 16px 70px;}
-    .section{padding-left:48px;}
-    .stampnum{width:36px; height:36px; font-size:13px;}
-    .section-title{font-size:20px;}
-    .nav{flex-direction:column; align-items:stretch;}
-  }
+:root {
+  --bg: #F1EEE9;
+  --surface: #FFFFFF;
+  --ink: #3C3C3C;
+  --muted: #6B665F;
+  --line: #D7D1C7;
+  --sand: #CDC0B0;
+  --yellow: #FFE500;
+  --yellow-ink: #1E1E1E;
+  --btn: #3C3C3C;
+  --btn-ink: #FFFFFF;
+  --sleeve-s: 26%;
+  --sleeve-l: 78%;
+  --font: "Switzer", "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
+  color-scheme: light;
+}
+html { scroll-behavior: smooth; }
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font); font-size: 17px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+
+/* calm mode: no motion */
+:root[data-calm] *, :root[data-calm] *::before, :root[data-calm] *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+:root[data-calm] mark { background-size: 100% 100% !important; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; scroll-behavior: auto !important; } mark { background-size: 100% 100% !important; } }
+
+/* top bar */
+.bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding: 22px 0; }
+.mark { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.15rem; letter-spacing: -0.02em; text-decoration: none; }
+.mark i { width: 14px; height: 14px; background: var(--yellow); display: inline-block; }
+.nav { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; font-size: 0.95rem; }
+.nav a { text-decoration: none; }
+.nav a:hover, .nav a[aria-current] { text-decoration: underline; text-underline-offset: 4px; }
+.nav a[aria-current] { text-decoration-thickness: 2px; text-decoration-color: var(--ink); }
+.sw { display: inline-flex; align-items: center; gap: 8px; padding: 0; border: 0; background: none; color: var(--ink); font: 500 0.88rem var(--font); cursor: pointer; }
+.sw .box { width: 34px; height: 18px; border: 1.5px solid var(--ink); position: relative; flex: none; }
+.sw .box::after { content: ""; position: absolute; top: 2px; left: 2px; width: 11px; height: 11px; background: var(--ink); transition: transform 0.18s ease; }
+.sw[aria-pressed="true"] .box { background: var(--yellow); border-color: var(--yellow-ink); }
+.sw[aria-pressed="true"] .box::after { transform: translateX(16px); background: var(--yellow-ink); }
+
+/* hero */
+.hero { padding: 72px 0 56px; border-top: 1px solid var(--line); }
+.eyebrow { margin: 0 0 22px; color: var(--muted); font-size: 0.95rem; }
+h1 { margin: 0 0 28px; font-weight: 500; font-size: clamp(3.6rem, 13vw, 9rem); line-height: 0.95; letter-spacing: -0.045em; }
+mark {
+  background-image: linear-gradient(var(--yellow), var(--yellow)); background-repeat: no-repeat; background-size: 100% 100%;
+  background-color: transparent; color: var(--yellow-ink); padding: 0 0.12em;
+  animation: sweep 0.9s 0.45s cubic-bezier(.2,.7,.2,1) both;
+}
+@keyframes sweep { from { background-size: 0% 100%; } to { background-size: 100% 100%; } }
+@keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+.hero > * { animation: rise 0.75s cubic-bezier(.2,.7,.2,1) both; animation-delay: calc(var(--i, 0) * 90ms); }
+.hero > :nth-child(1) { --i: 0; } .hero > :nth-child(2) { --i: 1; } .hero > :nth-child(3) { --i: 2; } .hero > :nth-child(4) { --i: 3; } .hero > :nth-child(5) { --i: 4; }
+.hero p.sub { max-width: 52ch; color: var(--muted); font-size: 1.1rem; margin: 0 0 32px; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn {
+  display: inline-block; padding: 14px 24px; border: 1.5px solid var(--btn);
+  background: var(--btn); color: var(--btn-ink);
+  font: 600 0.95rem var(--font); text-decoration: none; cursor: pointer; border-radius: 0;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.btn:hover { background: transparent; color: var(--ink); }
+.btn.alt { background: var(--surface); color: var(--ink); border-color: var(--ink); }
+.btn.alt:hover { background: var(--ink); color: var(--bg); }
+.btn:disabled { opacity: 0.5; cursor: default; }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 56px; border-top: 1px solid var(--ink); }
+.stat { padding: 18px 0 0; }
+.stat b { display: block; font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 500; letter-spacing: -0.03em; line-height: 1.05; }
+.stat span { color: var(--muted); font-size: 0.92rem; }
+
+/* sections */
+section { padding: 64px 0; border-top: 1px solid var(--line); }
+h2 { margin: 0 0 32px; font-weight: 500; font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1.02; letter-spacing: -0.035em; }
+h2 small { display: block; margin-top: 10px; font-size: 0.95rem; letter-spacing: 0; color: var(--muted); font-weight: 400; }
+
+/* rows: issue entries, archive issues, music sources */
+.rows { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--ink); }
+.row { display: grid; grid-template-columns: 56px 1fr auto; gap: 8px 20px; align-items: center; padding: 22px 0; border-bottom: 1px solid var(--line); animation: rise 0.6s cubic-bezier(.2,.7,.2,1) both; animation-delay: calc(var(--i, 0) * 50ms); scroll-margin-top: 24px; }
+.row .n { color: var(--muted); font-size: 0.95rem; }
+.row h3 { margin: 0; font-weight: 500; font-size: 1.5rem; line-height: 1.2; letter-spacing: -0.02em; }
+.row h3 a { text-decoration: none; }
+.row h3 a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.row p { margin: 4px 0 0; color: var(--muted); font-size: 0.95rem; }
+.row p.note { color: var(--ink); max-width: 64ch; }
+.row .btn { padding: 9px 18px; font-size: 0.88rem; }
+
+/* search */
+.search-wrap { position: relative; margin: 0 0 28px; }
+.search { width: 100%; min-width: 0; padding: 12px 14px; border: 1.5px solid var(--line); border-radius: 0; background: var(--surface); color: var(--ink); font: 400 0.95rem var(--font); }
+.search:focus { border-color: var(--ink); outline: none; }
+.search-results { position: absolute; top: calc(100% + 6px); left: 0; right: 0; background: var(--surface); border: 1.5px solid var(--ink); max-height: 420px; overflow-y: auto; z-index: 20; display: none; }
+.search-results.active { display: block; }
+.search-result { display: block; padding: 12px 14px; border-bottom: 1px solid var(--line); text-decoration: none; }
+.search-result:last-child { border-bottom: none; }
+.search-result:hover { background: var(--bg); }
+.sr-tag { font-size: 0.8rem; color: var(--muted); }
+.sr-title { display: block; font-weight: 500; margin: 2px 0; }
+.sr-meta { font-size: 0.85rem; color: var(--muted); }
+.search-empty { padding: 14px; color: var(--muted); font-size: 0.95rem; }
+
+/* footer */
+footer { padding: 56px 0 40px; border-top: 1px solid var(--line); }
+.fine { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 24px; color: var(--muted); font-size: 0.9rem; }
+.fine p { margin: 0 0 8px; max-width: 58ch; }
+.fine a { text-underline-offset: 3px; }
+.big { margin: 40px 0 0; font-weight: 500; font-size: clamp(3rem, 15vw, 11rem); line-height: 0.9; letter-spacing: -0.05em; color: var(--sand); user-select: none; }
+
+@media (max-width: 640px) {
+  .wrap { padding: 0 16px; }
+  .hero { padding: 48px 0 40px; }
+  section { padding: 48px 0; }
+  .row { grid-template-columns: 36px 1fr; }
+  .row .btn { grid-column: 2; justify-self: start; }
+  .row h3 { font-size: 1.25rem; }
+}
 </style>
 </head>
 <body data-root="../">
-<div class="page">
 <div class="wrap">
-  <div class="masthead">
-    <a class="mast-title" href="../index.html">Algorithm</a>
-    <span class="stamp">Archive</span>
+  <header class="bar">
+    <a class="mark" href="../index.html"><i aria-hidden="true"></i>Troller</a>
+    <nav class="nav" aria-label="Site">
+      <a href="../index.html">News Troll</a>
+      <a href="../music/index.html">Song Troll</a>
+      <a href="../archive/index.html" aria-current="page">Archive</a>
+      <button class="sw" id="sw-calm" type="button" aria-pressed="false"><span class="box" aria-hidden="true"></span>Reduce animation</button>
+    </nav>
+  </header>
+  <div class="hero" id="top">
+    <p class="eyebrow">Archive</p>
+    <h1>Every <mark>issue.</mark></h1>
+    <p class="sub">Every past issue, newest first. Search finds any link by title, writer or publication.</p>
+    <div class="stats">
+      <div class="stat"><b>50</b><span>issues</span></div>
+      <div class="stat"><b>1206</b><span>links</span></div>
+      <div class="stat"><b>132</b><span>publications</span></div>
+    </div>
   </div>
-  <nav class="tabs" aria-label="Sections">
-    <a class="tab is-active" href="../index.html" aria-current="page">Criticism</a>
-    <a class="tab" href="../music/index.html">New Music</a>
-  </nav>
-  <div class="nav">
+  <section aria-labelledby="h-issues">
     <div class="search-wrap">
-      <input type="text" id="searchInput" class="search-input" placeholder="Search past entries…" autocomplete="off">
+      <input type="search" id="searchInput" class="search" placeholder="Search every issue: title, writer or publication" autocomplete="off" aria-label="Search every issue">
       <div id="searchResults" class="search-results"></div>
     </div>
-    <a class="nav-link" href="../index.html">Latest Issue</a>
-  </div>
-  <h1 class="hero">Every <span class="pop">issue.</span></h1>
-  <p class="intro">Every past edition, newest first. Search above to find a specific piece, or browse the full run below.</p>
-  <span class="intro-byline">50 issues archived</span>
-  <ul class="issue-list">
-    <li>
-      <a class="issue-card" href="0050.html">
-        <div class="issue-meta"><span class="num">Issue No. 50</span> — 24 Oct 2026</div>
-        <span class="issue-headline">The Feed</span>
-        <p class="issue-desc">A selection of recent writing from across the culture press.</p>
-      </a>
+    <h2 id="h-issues">The issues</h2>
+    <ol class="rows">
+    <li class="row" style="--i:0">
+      <span class="n">50</span>
+      <div>
+        <h3><a href="0050.html">Issue 50</a></h3>
+        <p>Week of 24 October 2026 · 26 links from 26 publications</p>
+      </div>
+      <a class="btn alt" href="0050.html" aria-label="Open Issue 50">Open</a>
     </li>
-    <li>
-      <a class="issue-card" href="0049.html">
-        <div class="issue-meta"><span class="num">Issue No. 49</span> — 23 Oct 2026</div>
-        <span class="issue-headline">The Feed</span>
-        <p class="issue-desc">A selection of recent writing from across the culture press.</p>
-      </a>
+    <li class="row" style="--i:1">
+      <span class="n">49</span>
+      <div>
+        <h3><a href="0049.html">Issue 49</a></h3>
+        <p>Week of 23 October 2026 · 28 links from 28 publications</p>
+      </div>
+      <a class="btn alt" href="0049.html" aria-label="Open Issue 49">Open</a>
     </li>
-    <li>
-      <a class="issue-card" href="0048.html">
-        <div class="issue-meta"><span class="num">Issue No. 48</span> — 23 Oct 2026</div>
-        <span class="issue-headline">The Feed</span>
-        <p class="issue-desc">A selection of recent writing from across the culture press.</p>
-      </a>
+    <li class="row" style="--i:2">
+      <span class="n">48</span>
+      <div>
+        <h3><a href="0048.html">Issue 48</a></h3>
+        <p>Week of 23 October 2026 · 28 links from 28 publications</p>
+      </div>
+      <a class="btn alt" href="0048.html" aria-label="Open Issue 48">Open</a>
     </li>
-    <li>
-      <a class="issue-card" href="0047.html">
-        <div class="issue-meta"><span class="num">Issue No. 47</span> — 21 Oct 2026</div>
-        <span class="issue-headline">The Feed</span>
-        <p class="issue-desc">A selection of recent writing from across the culture press.</p>
-      </a>
+    <li class="row" style="--i:3">
+      <span class="n">47</span>
+      <div>
+        <h3><a href="0047.html">Issue 47</a></h3>
+        <p>Week of 21 October 2026 · 28 links from 28 publications</p>
+      </div>
+      <a class="btn alt" href="0047.html" aria-label="Open Issue 47">Open</a>
     </li>
-    <li>
-      <a class="issue-card" href="0046.html">
-        <div class="issue-meta"><span class="num">Issue No. 46</span> — 21 Oct 2026</div>
-        <span class="issue-headline">The Feed</span>
-        <p class="issue-desc">A selection of recent writing from across the culture press.</p>
-      </a>
+    <li class="row" style="--i:4">
+      <span class="n">46</span>
+      <div>
+        <h3><a href="0046.html">Issue 46</a></h3>
+        <p>Week of 21 October 2026 · 27 links from 27 publications</p>
+      </div>
+      <a class="btn alt" href="0046.html" aria-label="Open Issue 46">Open</a>
     </li>
-    <li>
-      <a class="issue-card" href="0045.html">
-        <div class="issue-meta"><span class="num">Issue No. 45</span> — 19 Oct 2026</div>
-        <span class="issue-headline">The Feed</span>
-        <p class="issue-desc">A selection of recent writing from across the culture press.</p>
-      </a>
+    <li class="row" style="--i:5">
+      <span class="n">45</span>
+      <div>
+        <h3><a href="0045.html">Issue 45</a></h3>
+        <p>Week of 19 October 2026 · 25 links from 25 publications</p>
+      </div>
+      <a class="btn alt" href="0045.html" aria-label="Open Issue 45">Open</a>
     </li>
-    <li>
-      <a class="issue-card" href="0044.html">
-        <div class="issue-meta"><span class="num">Issue No. 44</span> — 19 Oct 2026</div>
-        <span class="issue-headline">The Feed</span>
-        <p class="issue-desc">A selection of recent writing from across the culture press.</p>
-      </a>
+    <li class="row" style="--i:6">
+      <span class="n">44</span>
+      <div>
+        <h3><a href="0044.html">Issue 44</a></h3>
+        <p>Week of 19 October 2026 · 27 links from 27 publications</p>
+      </div>
+      <a class="btn alt" href="0044.html" aria-label="Open Issue 44">Open</a>
     </li>
-    <li>
-      <a class="issue-card" href="0043.html">
-        <div class="issue-meta"><span class="num">Issue No. 43</span> — 17 Oct 2026</div>
-        <span class="issue-headline">The Feed</span>
-        <p class="issue-desc">A selection of recent writing from across the culture press.</p>
-      </a>
+    <li class="row" style="--i:7">
+      <span class="n">43</span>
+      <div>
+        <h3><a href="0043.html">Issue 43</a></h3>
+        <p>Week of 17 October 2026 · 26 links from 26 publications</p>
+      </div>
+      <a class="btn alt" href="0043.html" aria-label="Open Issue 43">Open</a>
     </li>
-    <li>
-      <a class="issue-card" href="0042.html">
-        <div class="issue-meta"><span class="num">Issue No. 42</span> — 17 Oct 2026</div>
-        <span class="issue-headline">The Feed</span>
-        <p class="issue-desc">A selection of recent writing from across the culture press.</p>
-      </a>
+    <li class="row" style="--i:8">
+      <span class="n">42</span>
+      <div>
+        <h3><a href="0042.html">Issue 42</a></h3>
+        <p>Week of 17 October 2026 · 27 links from 27 publications</p>
+      </div>
+      <a class="btn alt" href="0042.html" aria-label="Open Issue 42">Open</a>
     </li>
-    <li>
-      <a class="issue-card" href="0041.html">
-        <div class="issue-meta"><span class="num">Issue No. 41</span> — 16 Oct 2026</div>
-        <span class="issue-headline">The Feed</span>
-        <p class="issue-desc">A selection of recent writing from across the culture press.</p>
-      </a>
+    <li class="row" style="--i:9">
+      <span class="n">41</span>
+      <div>
+        <h3><a href="0041.html">Issue 41</a></h3>
+        <p>Week of 16 October 2026 · 26 links from 26 publications</p>
+      </div>
+      <a class="btn alt" href="0041.html" aria-label="Open Issue 41">Open</a>
     </li>
-    <li>
-      <a class="issue-card" href="0040.html">
-        <div class="issue-meta"><span class="num">Issue No. 40</span> — 16 Oct 2026</div>
-        <span class="issue-headline">The Feed</span>
-        <p class="issue-desc">A selection of recent writing from across the culture press.</p>
-      </a>
+    <li class="row" style="--i:10">
+      <span class="n">40</span>
+      <div>
+        <h3><a href="0040.html">Issue 40</a></h3>
+        <p>Week of 16 October 2026 · 28 links from 28 publications</p>
+      </div>
+      <a class="btn alt" href="0040.html" aria-label="Open Issue 40">Open</a>
     </li>
-    <li>
-      <a class="issue-card" href="0039.html">
-        <div class="issue-meta"><span class="num">Issue No. 39</span> — 14 Oct 2026</div>
-        <span class="issue-headline">The Feed</span>
-        <p class="issue-desc">A selection of recent writing from across the culture press.</p>
-      </a>
+    <li class="row" style="--i:11">
+      <span class="n">39</span>
+      <div>
+        <h3><a href="0039.html">Issue 39</a></h3>
+        <p>Week of 14 October 2026 · 28 links from 28 publications</p>
+      </div>
+      <a class="btn alt" href="0039.html" aria-label="Open Issue 39">Open</a>
     </li>
-    <li>
-      <a class="issue-card" href="0038.html">
-        <div class="issue-meta"><span class="num">Issue No. 38</span> — 14 Oct 2026</div>
-        <span class="issue-headline">The Feed</span>
-        <p class="issue-desc">A selection of recent writing from across the culture press.</p>
-      </a>
+    <li class="row" style="--i:12">
+      <span class="n">38</span>
+      <div>
+        <h3><a href="0038.html">Issue 38</a></h3>
+        <p>Week of 14 October 2026 · 28 links from 28 publications</p>
+      </div>
+      <a class="btn alt" href="0038.html" aria-label="Open Issue 38">Open</a>
     </li>
-    <li>
-      <a class="issue-card" href="0037.html">
-        <div class="issue-meta"><span class="num">Issue No. 37</span> — 12 Oct 2026</div>
-        <span class="issue-headline">The Feed</span>
-        <p class="issue-desc">A selection of recent writing from across the culture press.</p>
-      </a>
+    <li class="row" style="--i:12">
+      <span class="n">37</span>
+      <div>
+        <h3><a href="0037.html">Issue 37</a></h3>
+        <p>Week of 12 October 2026 · 28 links from 28 publications</p>
+      </div>
+      <a class="btn alt" href="0037.html" aria-label="Open Issue 37">Open</a>
     </li>
-    <li>
-      <a class="issue-card" href="0036.html">
-        <div class="issue-meta"><span class="num">Issue No. 36</span> — 12 Oct 2026</div>
-        <span class="issue-headline">The Feed</span>
-        <p class="issue-desc">A selection of recent writing from across the culture press.</p>
-      </a>
+    <li class="row" style="--i:12">
+      <span class="n">36</span>
+      <div>
+        <h3><a href="0036.html">Issue 36</a></h3>
+        <p>Week of 12 October 2026 · 28 links from 28 publications</p>
+      </div>
+      <a class="btn alt" href="0036.html" aria-label="Open Issue 36">Open</a>
     </li>
-    <li>
-      <a class="issue-card" href="0035.html">
-        <div class="issue-meta"><span class="num">Issue No. 35</span> — 10 Oct 2026</div>
-        <span class="issue-headline">The Feed</span>
-        <p class="issue-desc">A selection of recent writing from across the culture press.</p>
-      </a>
+    <li class="row" style="--i:12">
+      <span class="n">35</span>
+      <div>
+        <h3><a href="0035.html">Issue 35</a></h3>
+        <p>Week of 10 October 2026 · 26 links from 26 publications</p>
+      </div>
+      <a class="btn alt" href="0035.html" aria-label="Open Issue 35">Open</a>
     </li>
-    <li>
-      <a class="issue-card" href="0034.html">
-        <div class="issue-meta"><span class="num">Issue No. 34</span> — 10 Oct 2026</div>
-        <span class="issue-headline">The Feed</span>
-        <p class="issue-desc">A selection of recent writing from across the culture press.</p>
-      </a>
+    <li class="row" style="--i:12">
+      <span class="n">34</span>
+      <div>
+        <h3><a href="0034.html">Issue 34</a></h3>
+        <p>Week of 10 October 2026 · 28 links from 28 publications</p>
+      </div>
+      <a class="btn alt" href="0034.html" aria-label="Open Issue 34">Open</a>
     </li>
-    <li>
-      <a class="issue-card" href="0033.html">
-        <div class="issue-meta"><span class="num">Issue No. 33</span> — 9 Oct 2026</div>
-        <span class="issue-headline">Memory, Craft, and Resistance</span>
-        <p class="issue-desc">This issue wanders from Indigenous survivance in New York galleries to a Belarusian flutist&#39;s defiance on stage, from punk&#39;s endless authenticity debates to Latvia&#39;s uneasy ballot box. Along the way: a Kubrick retrospective, a banker who finally listened to farmers, and a Saudi novelist on writing the tangible. Twenty minutes each, at least.</p>
-      </a>
+    <li class="row" style="--i:12">
+      <span class="n">33</span>
+      <div>
+        <h3><a href="0033.html">Issue 33</a></h3>
+        <p>Week of 9 October 2026 · 28 links from 28 publications</p>
+      </div>
+      <a class="btn alt" href="0033.html" aria-label="Open Issue 33">Open</a>
     </li>
-    <li>
-      <a class="issue-card" href="0032.html">
-        <div class="issue-meta"><span class="num">Issue No. 32</span> — 9 Oct 2026</div>
-        <span class="issue-headline">The Feed</span>
-        <p class="issue-desc">A selection of recent writing from across the culture press.</p>
-      </a>
+    <li class="row" style="--i:12">
+      <span class="n">32</span>
+      <div>
+        <h3><a href="0032.html">Issue 32</a></h3>
+        <p>Week of 9 October 2026 · 28 links from 28 publications</p>
+      </div>
+      <a class="btn alt" href="0032.html" aria-label="Open Issue 32">Open</a>
     </li>
-    <li>
-      <a class="issue-card" href="0031.html">
-        <div class="issue-meta"><span class="num">Issue No. 31</span> — 7 Oct 2026</div>
-        <span class="issue-headline">The Feed</span>
-        <p class="issue-desc">A selection of recent writing from across the culture press.</p>
-      </a>
+    <li class="row" style="--i:12">
+      <span class="n">31</span>
+      <div>
+        <h3><a href="0031.html">Issue 31</a></h3>
+        <p>Week of 7 October 2026 · 25 links from 25 publications</p>
+      </div>
+      <a class="btn alt" href="0031.html" aria-label="Open Issue 31">Open</a>
     </li>
-    <li>
-      <a class="issue-card" href="0030.html">
-        <div class="issue-meta"><span class="num">Issue No. 30</span> — 7 Oct 2026</div>
-        <span class="issue-headline">The Feed</span>
-        <p class="issue-desc">A selection of recent writing from across the culture press.</p>
-      </a>
+    <li class="row" style="--i:12">
+      <span class="n">30</span>
+      <div>
+        <h3><a href="0030.html">Issue 30</a></h3>
+        <p>Week of 7 October 2026 · 27 links from 27 publications</p>
+      </div>
+      <a class="btn alt" href="0030.html" aria-label="Open Issue 30">Open</a>
     </li>
-    <li>
-      <a class="issue-card" href="0029.html">
-        <div class="issue-meta"><span class="num">Issue No. 29</span> — 5 Oct 2026</div>
-        <span class="issue-headline">Stories Worth Twenty Minutes</span>
-        <p class="issue-desc">This issue gathers criticism and reportage built for lingering, from gallery reviews in Bogotá and Warsaw to essays on AI&#39;s cultural anxieties. Expect deep dives into music history, speculative fiction, and the quiet politics of design and dress. Depth, not haste, is the point.</p>
-      </a>
+    <li class="row" style="--i:12">
+      <span class="n">29</span>
+      <div>
+        <h3><a href="0029.html">Issue 29</a></h3>
+        <p>Week of 5 October 2026 · 27 links from 27 publications</p>
+      </div>
+      <a class="btn alt" href="0029.html" aria-label="Open Issue 29">Open</a>
     </li>
-    <li>
-      <a class="issue-card" href="0028.html">
-        <div class="issue-meta"><span class="num">Issue No. 28</span> — 3 Oct 2026</div>
-        <span class="issue-headline">The Feed</span>
-        <p class="issue-desc">A selection of recent writing from across the culture press.</p>
-      </a>
+    <li class="row" style="--i:12">
+      <span class="n">28</span>
+      <div>
+        <h3><a href="0028.html">Issue 28</a></h3>
+        <p>Week of 3 October 2026 · 26 links from 26 publications</p>
+      </div>
+      <a class="btn alt" href="0028.html" aria-label="Open Issue 28">Open</a>
     </li>
-    <li>
-      <a class="issue-card" href="0027.html">
-        <div class="issue-meta"><span class="num">Issue No. 27</span> — 3 Oct 2026</div>
-        <span class="issue-headline">The Feed</span>
-        <p class="issue-desc">A selection of recent writing from across the culture press.</p>
-      </a>
+    <li class="row" style="--i:12">
+      <span class="n">27</span>
+      <div>
+        <h3><a href="0027.html">Issue 27</a></h3>
+        <p>Week of 3 October 2026 · 28 links from 28 publications</p>
+      </div>
+      <a class="btn alt" href="0027.html" aria-label="Open Issue 27">Open</a>
     </li>
-    <li>
-      <a class="issue-card" href="0026.html">
-        <div class="issue-meta"><span class="num">Issue No. 26</span> — 2 Oct 2026</div>
-        <span class="issue-headline">The Feed</span>
-        <p class="issue-desc">A selection of recent writing from across the culture press.</p>
-      </a>
+    <li class="row" style="--i:12">
+      <span class="n">26</span>
+      <div>
+        <h3><a href="0026.html">Issue 26</a></h3>
+        <p>Week of 2 October 2026 · 28 links from 28 publications</p>
+      </div>
+      <a class="btn alt" href="0026.html" aria-label="Open Issue 26">Open</a>
     </li>
-    <li>
-      <a class="issue-card" href="0025.html">
-        <div class="issue-meta"><span class="num">Issue No. 25</span> — 2 Oct 2026</div>
-        <span class="issue-headline">The Feed</span>
-        <p class="issue-desc">A selection of recent writing from across the culture press.</p>
-      </a>
+    <li class="row" style="--i:12">
+      <span class="n">25</span>
+      <div>
+        <h3><a href="0025.html">Issue 25</a></h3>
+        <p>Week of 2 October 2026 · 28 links from 28 publications</p>
+      </div>
+      <a class="btn alt" href="0025.html" aria-label="Open Issue 25">Open</a>
     </li>
-    <li>
-      <a class="issue-card" href="0024.html">
-        <div class="issue-meta"><span class="num">Issue No. 24</span> — 30 Sep 2026</div>
-        <span class="issue-headline">The Feed</span>
-        <p class="issue-desc">A selection of recent writing from across the culture press.</p>
-      </a>
+    <li class="row" style="--i:12">
+      <span class="n">24</span>
+      <div>
+        <h3><a href="0024.html">Issue 24</a></h3>
+        <p>Week of 30 September 2026 · 28 links from 28 publications</p>
+      </div>
+      <a class="btn alt" href="0024.html" aria-label="Open Issue 24">Open</a>
     </li>
-    <li>
-      <a class="issue-card" href="0023.html">
-        <div class="issue-meta"><span class="num">Issue No. 23</span> — 30 Sep 2026</div>
-        <span class="issue-headline">The Feed</span>
-        <p class="issue-desc">A selection of recent writing from across the culture press.</p>
-      </a>
+    <li class="row" style="--i:12">
+      <span class="n">23</span>
+      <div>
+        <h3><a href="0023.html">Issue 23</a></h3>
+        <p>Week of 30 September 2026 · 28 links from 28 publications</p>
+      </div>
+      <a class="btn alt" href="0023.html" aria-label="Open Issue 23">Open</a>
     </li>
-    <li>
-      <a class="issue-card" href="0022.html">
-        <div class="issue-meta"><span class="num">Issue No. 22</span> — 29 Sep 2026</div>
-        <span class="issue-headline">The Feed</span>
-        <p class="issue-desc">A selection of recent writing from across the culture press.</p>
-      </a>
+    <li class="row" style="--i:12">
+      <span class="n">22</span>
+      <div>
+        <h3><a href="0022.html">Issue 22</a></h3>
+        <p>Week of 29 September 2026 · 28 links from 28 publications</p>
+      </div>
+      <a class="btn alt" href="0022.html" aria-label="Open Issue 22">Open</a>
     </li>
-    <li>
-      <a class="issue-card" href="0021.html">
-        <div class="issue-meta"><span class="num">Issue No. 21</span> — 29 Sep 2026</div>
-        <span class="issue-headline">Deep Cuts, Global Reach</span>
-        <p class="issue-desc">This week&#39;s Algorithm ranges from Nordic sculpture and Kolkata curators to AI chip wars and calypso elegies. We favor the essay over the announcement, the profile over the press release. Twenty minutes, well spent, across seven fields of culture.</p>
-      </a>
+    <li class="row" style="--i:12">
+      <span class="n">21</span>
+      <div>
+        <h3><a href="0021.html">Issue 21</a></h3>
+        <p>Week of 29 September 2026 · 26 links from 26 publications</p>
+      </div>
+      <a class="btn alt" href="0021.html" aria-label="Open Issue 21">Open</a>
     </li>
-    <li>
-      <a class="issue-card" href="0020.html">
-        <div class="issue-meta"><span class="num">Issue No. 20</span> — 26 Sep 2026</div>
-        <span class="issue-headline">The Feed</span>
-        <p class="issue-desc">A selection of recent writing from across the culture press.</p>
-      </a>
+    <li class="row" style="--i:12">
+      <span class="n">20</span>
+      <div>
+        <h3><a href="0020.html">Issue 20</a></h3>
+        <p>Week of 26 September 2026 · 26 links from 26 publications</p>
+      </div>
+      <a class="btn alt" href="0020.html" aria-label="Open Issue 20">Open</a>
     </li>
-    <li>
-      <a class="issue-card" href="0019.html">
-        <div class="issue-meta"><span class="num">Issue No. 19</span> — 26 Sep 2026</div>
-        <span class="issue-headline">Slow Looking, Deep Listening</span>
-        <p class="issue-desc">This week&#39;s Algorithm gathers profiles, criticism, and essays that reward patience: a first woman named National Artist in the Philippines, a Coltrane centennial, and dispatches from Berlin galleries to Bombay biennales. Expect fewer headlines and more arguments, from AI rivalries between the US and China to a reconsideration of Kojin Karatani&#39;s literary theory.</p>
-      </a>
+    <li class="row" style="--i:12">
+      <span class="n">19</span>
+      <div>
+        <h3><a href="0019.html">Issue 19</a></h3>
+        <p>Week of 26 September 2026 · 26 links from 26 publications</p>
+      </div>
+      <a class="btn alt" href="0019.html" aria-label="Open Issue 19">Open</a>
     </li>
-    <li>
-      <a class="issue-card" href="0018.html">
-        <div class="issue-meta"><span class="num">Issue No. 18</span> — 25 Sep 2026</div>
-        <span class="issue-headline">The Feed</span>
-        <p class="issue-desc">A selection of recent writing from across the culture press.</p>
-      </a>
+    <li class="row" style="--i:12">
+      <span class="n">18</span>
+      <div>
+        <h3><a href="0018.html">Issue 18</a></h3>
+        <p>Week of 25 September 2026 · 27 links from 27 publications</p>
+      </div>
+      <a class="btn alt" href="0018.html" aria-label="Open Issue 18">Open</a>
     </li>
-    <li>
-      <a class="issue-card" href="0017.html">
-        <div class="issue-meta"><span class="num">Issue No. 17</span> — 25 Sep 2026</div>
-        <span class="issue-headline">Depth Over Noise, Everywhere</span>
-        <p class="issue-desc">This issue wanders from Bogotá&#39;s museum walls to a Toronto psychiatric ward on screen, from Lagos interviews to Canadian election essays. We favored the long read and the close look over the press release, wherever we could find it.</p>
-      </a>
+    <li class="row" style="--i:12">
+      <span class="n">17</span>
+      <div>
+        <h3><a href="0017.html">Issue 17</a></h3>
+        <p>Week of 25 September 2026 · 27 links from 27 publications</p>
+      </div>
+      <a class="btn alt" href="0017.html" aria-label="Open Issue 17">Open</a>
     </li>
-    <li>
-      <a class="issue-card" href="0016.html">
-        <div class="issue-meta"><span class="num">Issue No. 16</span> — 23 Sep 2026</div>
-        <span class="issue-headline">Depth Over Noise This Week</span>
-        <p class="issue-desc">This issue gathers long-form reporting, criticism, and profiles from across the globe, from Gwangju&#39;s biennale halls to Nuuk&#39;s contested museum plans. Expect deep dives into AI geopolitics, industrial-metal legacies, and the quiet politics of design and dress.</p>
-      </a>
+    <li class="row" style="--i:12">
+      <span class="n">16</span>
+      <div>
+        <h3><a href="0016.html">Issue 16</a></h3>
+        <p>Week of 23 September 2026 · 25 links from 25 publications</p>
+      </div>
+      <a class="btn alt" href="0016.html" aria-label="Open Issue 16">Open</a>
     </li>
-    <li>
-      <a class="issue-card" href="0015.html">
-        <div class="issue-meta"><span class="num">Issue No. 15</span> — 23 Sep 2026</div>
-        <span class="issue-headline">The Feed</span>
-        <p class="issue-desc">A selection of recent writing from across the culture press.</p>
-      </a>
+    <li class="row" style="--i:12">
+      <span class="n">15</span>
+      <div>
+        <h3><a href="0015.html">Issue 15</a></h3>
+        <p>Week of 23 September 2026 · 25 links from 25 publications</p>
+      </div>
+      <a class="btn alt" href="0015.html" aria-label="Open Issue 15">Open</a>
     </li>
-    <li>
-      <a class="issue-card" href="0014.html">
-        <div class="issue-meta"><span class="num">Issue No. 14</span> — 21 Sep 2026</div>
-        <span class="issue-headline">Depth Over Noise This Week</span>
-        <p class="issue-desc">This issue gathers criticism, profiles and reported essays from across art, film, tech, literature, music, design and fashion. We favor pieces that linger — retrospectives, interviews, and cultural investigations over announcements. A wide geographic and disciplinary spread, built for slow reading.</p>
-      </a>
+    <li class="row" style="--i:12">
+      <span class="n">14</span>
+      <div>
+        <h3><a href="0014.html">Issue 14</a></h3>
+        <p>Week of 21 September 2026 · 26 links from 26 publications</p>
+      </div>
+      <a class="btn alt" href="0014.html" aria-label="Open Issue 14">Open</a>
     </li>
-    <li>
-      <a class="issue-card" href="0013.html">
-        <div class="issue-meta"><span class="num">Issue No. 13</span> — 21 Sep 2026</div>
-        <span class="issue-headline">The Feed</span>
-        <p class="issue-desc">A selection of recent writing from across the culture press.</p>
-      </a>
+    <li class="row" style="--i:12">
+      <span class="n">13</span>
+      <div>
+        <h3><a href="0013.html">Issue 13</a></h3>
+        <p>Week of 21 September 2026 · 27 links from 27 publications</p>
+      </div>
+      <a class="btn alt" href="0013.html" aria-label="Open Issue 13">Open</a>
     </li>
-    <li>
-      <a class="issue-card" href="0012.html">
-        <div class="issue-meta"><span class="num">Issue No. 12</span> — 21 Sep 2026</div>
-        <span class="issue-headline">The Feed</span>
-        <p class="issue-desc">A selection of recent writing from across the culture press.</p>
-      </a>
+    <li class="row" style="--i:12">
+      <span class="n">12</span>
+      <div>
+        <h3><a href="0012.html">Issue 12</a></h3>
+        <p>Week of 21 September 2026 · 27 links from 27 publications</p>
+      </div>
+      <a class="btn alt" href="0012.html" aria-label="Open Issue 12">Open</a>
     </li>
-    <li>
-      <a class="issue-card" href="0011.html">
-        <div class="issue-meta"><span class="num">Issue No. 11</span> — 17 Sep 2026</div>
-        <span class="issue-headline">Reckonings, Retrospectives, Resistance</span>
-        <p class="issue-desc">This week&#39;s Algorithm surveys colonial reckonings on screen and in stone, surveillance tech turned against itself, and sound worlds from Lagos to the Hardanger fjords. Elsewhere: architecture that argues for arcs of resistance, and literature grappling with reason, ruin, and return.</p>
-      </a>
+    <li class="row" style="--i:12">
+      <span class="n">11</span>
+      <div>
+        <h3><a href="0011.html">Issue 11</a></h3>
+        <p>Week of 17 September 2026 · 14 links from 14 publications</p>
+      </div>
+      <a class="btn alt" href="0011.html" aria-label="Open Issue 11">Open</a>
     </li>
-    <li>
-      <a class="issue-card" href="0010.html">
-        <div class="issue-meta"><span class="num">Issue No. 10</span> — 16 Sep 2026</div>
-        <span class="issue-headline">Diaspora, Data, and Dissent</span>
-        <p class="issue-desc">This week&#39;s picks trace threads of belonging and belief — from Belarusian exiles and Venice&#39;s Caribbean reckonings to the quiet politics of doom metal and Chandigarh&#39;s unruly utopia. Elsewhere, data brokers get exposed, marble gets faked, and fashion looks homeward for inspiration.</p>
-      </a>
+    <li class="row" style="--i:12">
+      <span class="n">10</span>
+      <div>
+        <h3><a href="0010.html">Issue 10</a></h3>
+        <p>Week of 16 September 2026 · 14 links from 14 publications</p>
+      </div>
+      <a class="btn alt" href="0010.html" aria-label="Open Issue 10">Open</a>
     </li>
-    <li>
-      <a class="issue-card" href="0009.html">
-        <div class="issue-meta"><span class="num">Issue No. 9</span> — 14 Sep 2026</div>
-        <span class="issue-headline">Retrospectives, Resistance, and Reinvention</span>
-        <p class="issue-desc">This week&#39;s picks trace how culture wrestles with its own history — from Sweden&#39;s cultural policy fights to Talk Talk&#39;s final shows, Mark Fisher&#39;s afterlife, and AI&#39;s uncertain future. A reminder that looking backward and forward often happens in the same breath.</p>
-      </a>
+    <li class="row" style="--i:12">
+      <span class="n">9</span>
+      <div>
+        <h3><a href="0009.html">Issue 9</a></h3>
+        <p>Week of 14 September 2026 · 14 links from 14 publications</p>
+      </div>
+      <a class="btn alt" href="0009.html" aria-label="Open Issue 9">Open</a>
     </li>
-    <li>
-      <a class="issue-card" href="0008.html">
-        <div class="issue-meta"><span class="num">Issue No. 8</span> — 14 Sep 2026</div>
-        <span class="issue-headline">Ghosts, Beaches, and Beige Pop</span>
-        <p class="issue-desc">This week&#39;s picks wander from Tate retrospectives and Venice premieres to AI anxieties and vanishing linguistic diversity in pop music. Also: libraries under siege, opera&#39;s data brokers, and the fight for public shoreline in Puerto Rico.</p>
-      </a>
+    <li class="row" style="--i:12">
+      <span class="n">8</span>
+      <div>
+        <h3><a href="0008.html">Issue 8</a></h3>
+        <p>Week of 14 September 2026 · 13 links from 13 publications</p>
+      </div>
+      <a class="btn alt" href="0008.html" aria-label="Open Issue 8">Open</a>
     </li>
-    <li>
-      <a class="issue-card" href="0007.html">
-        <div class="issue-meta"><span class="num">Issue No. 7</span> — 14 Sep 2026</div>
-        <span class="issue-headline">Long Live the Weird</span>
-        <p class="issue-desc">This issue keeps finding the same argument in different rooms: that whatever refuses to be smoothed into a category — outsider art, a shapeshifting novel, an underappreciated Chicago poet, a closeted-then-defiant matinee idol — outlasts whatever tried to flatten it. Even the pieces about AI turn out to be about the same thing, asking what creativity and cities look like once a machine has been trained to prefer the average.</p>
-      </a>
+    <li class="row" style="--i:12">
+      <span class="n">7</span>
+      <div>
+        <h3><a href="0007.html">Issue 7</a></h3>
+        <p>Week of 14 September 2026 · 14 links from 14 publications</p>
+      </div>
+      <a class="btn alt" href="0007.html" aria-label="Open Issue 7">Open</a>
     </li>
-    <li>
-      <a class="issue-card" href="0006.html">
-        <div class="issue-meta"><span class="num">Issue No. 6</span> — 14 Sep 2026</div>
-        <span class="issue-headline">Teaching The Machine Your Judgment</span>
-        <p class="issue-desc">This issue keeps circling back to a single unglamorous question: who does the work of thinking, and who gets credit for it. A sociologist trains the AI that could replace him, a critic finds a biennale insisting on solidarity as method, and a novelist&#39;s quietest characters fail not from hubris but from the slow accumulation of insufficiency. Elsewhere: silk mills, predictive policing, and a hymn-singing krautrock quartet.</p>
-      </a>
+    <li class="row" style="--i:12">
+      <span class="n">6</span>
+      <div>
+        <h3><a href="0006.html">Issue 6</a></h3>
+        <p>Week of 14 September 2026 · 14 links from 14 publications</p>
+      </div>
+      <a class="btn alt" href="0006.html" aria-label="Open Issue 6">Open</a>
     </li>
-    <li>
-      <a class="issue-card" href="0005.html">
-        <div class="issue-meta"><span class="num">Issue No. 5</span> — 13 Sep 2026</div>
-        <span class="issue-headline">Nobody Believes The Hype</span>
-        <p class="issue-desc">This issue keeps running into the same argument from different directions: that claims of intelligence, classicism, or authenticity dissolve under scrutiny, and what&#39;s left is craft, dependency, and the people who actually do the work. From a South African tech columnist picking apart AGI marketing to a menswear tastemaker who dresses without checking a mirror, the throughline is a distrust of anyone selling certainty. Elsewhere, an AI reads cities through rival theories, a novelist lets a machine narrate late capitalism, and a critic defends the humble concert program note against its own extinction.</p>
-      </a>
+    <li class="row" style="--i:12">
+      <span class="n">5</span>
+      <div>
+        <h3><a href="0005.html">Issue 5</a></h3>
+        <p>Week of 13 September 2026 · 14 links from 14 publications</p>
+      </div>
+      <a class="btn alt" href="0005.html" aria-label="Open Issue 5">Open</a>
     </li>
-    <li>
-      <a class="issue-card" href="0004.html">
-        <div class="issue-meta"><span class="num">Issue No. 4</span> — 2 Sep 2026</div>
-        <span class="issue-headline">The Machine Wants Your Imagination</span>
-        <p class="issue-desc">Three of today&#39;s picks circle the same question from different rooms: what happens to a craft once a machine can approximate it, and who ends up owning the approximation. The rest are about materials — airdropped leaflets, glass beads, a rectangle of cotton, a zoom lens used fifty times in one film — and what they record about the people who handled them.</p>
-      </a>
+    <li class="row" style="--i:12">
+      <span class="n">4</span>
+      <div>
+        <h3><a href="0004.html">Issue 4</a></h3>
+        <p>Week of 2 September 2026 · 14 links from 14 publications</p>
+      </div>
+      <a class="btn alt" href="0004.html" aria-label="Open Issue 4">Open</a>
     </li>
-    <li>
-      <a class="issue-card" href="0003.html">
-        <div class="issue-meta"><span class="num">Issue No. 3</span> — 30 Aug 2026</div>
-        <span class="issue-headline">The Machine Eats the Archive</span>
-        <p class="issue-desc">Today&#39;s issue circles the question of what gets kept and who is allowed to decide — books guillotined and scanned into training data, graves bulldozed before the killing starts, a national building code rewritten to admit knowledge it spent two centuries ignoring. The counter-argument runs through the criticism too: an organist asking for two and a half hours of your attention, two singers rebuilding a lost record from memory, a painter finally letting the body hold together.</p>
-      </a>
+    <li class="row" style="--i:12">
+      <span class="n">3</span>
+      <div>
+        <h3><a href="0003.html">Issue 3</a></h3>
+        <p>Week of 30 August 2026 · 14 links from 13 publications</p>
+      </div>
+      <a class="btn alt" href="0003.html" aria-label="Open Issue 3">Open</a>
     </li>
-    <li>
-      <a class="issue-card" href="0001.html">
-        <div class="issue-meta"><span class="num">Issue No. 1</span> — 29 Aug 2026</div>
-        <span class="issue-headline">The Future Files Its Receipts</span>
-        <p class="issue-desc">Today&#39;s issue is full of people auditing promises — memorials built to survive the terrorists who might attack them, techno-utopias that turn out to have an underclass baked in, nostalgia that hides what it was nostalgic for. The counterweight, running quietly underneath, is craft: a record label founded on instinct, a debut Afropop album that rewired a genre, a room designed for the people usually asked to adapt to it.</p>
-      </a>
+    <li class="row" style="--i:12">
+      <span class="n">1</span>
+      <div>
+        <h3><a href="0001.html">Issue 1</a></h3>
+        <p>Week of 29 August 2026 · 14 links from 14 publications</p>
+      </div>
+      <a class="btn alt" href="0001.html" aria-label="Open Issue 1">Open</a>
     </li>
-    <li>
-      <a class="issue-card" href="0002.html">
-        <div class="issue-meta"><span class="num">Issue No. 2</span> — 28 Aug 2026</div>
-        <span class="issue-headline">The Great Creative Offload</span>
-        <p class="issue-desc">Fourteen pieces, seven fields, first time out. What surfaced without being looked for is how many critics are arguing about the same thing from different rooms — authorship, and who or what is actually doing the work. The rest is Persian manhole covers, Algerian reed flutes, and a confession about badly hemmed jeans.</p>
-      </a>
+    <li class="row" style="--i:12">
+      <span class="n">2</span>
+      <div>
+        <h3><a href="0002.html">Issue 2</a></h3>
+        <p>Week of 28 August 2026 · 14 links from 14 publications</p>
+      </div>
+      <a class="btn alt" href="0002.html" aria-label="Open Issue 2">Open</a>
     </li>
-  </ul>
+    </ol>
+  </section>
   <footer>
-    <span>Algorithm</span>
-    <span>Archive</span>
+    <div class="fine">
+      <div><p>Troller archive: 50 issues.</p></div>
+      <p><a href="#top">Back to top</a></p>
+    </div>
+    <p class="big" aria-hidden="true">happy reading</p>
   </footer>
 </div>
-</div>
+<script>
+(function(){
+  var sw = document.getElementById('sw-calm');
+  if (!sw) return;
+  function load(){ try { return JSON.parse(localStorage.getItem('troller-ui') || '{}') || {}; } catch (e) { return {}; } }
+  function paint(){ var on = document.documentElement.hasAttribute('data-calm'); sw.setAttribute('aria-pressed', on ? 'true' : 'false'); }
+  sw.addEventListener('click', function(){
+    var ui = load(); ui.calm = !document.documentElement.hasAttribute('data-calm');
+    if (ui.calm) document.documentElement.setAttribute('data-calm', ''); else document.documentElement.removeAttribute('data-calm');
+    try { localStorage.setItem('troller-ui', JSON.stringify(ui)); } catch (e) {}
+    paint();
+  });
+  paint();
+})();</script>
 <script>
 (function(){
   var root = document.body.getAttribute('data-root') || '';
   var input = document.getElementById('searchInput');
   var results = document.getElementById('searchResults');
-  if(!input) return;
+  if (!input) return;
   var indexData = null;
   function loadIndex(){
-    if(indexData) return Promise.resolve(indexData);
+    if (indexData) return Promise.resolve(indexData);
     return fetch(root + 'assets/search-index.json')
       .then(function(r){ return r.json(); })
       .then(function(d){ indexData = d; return d; })
@@ -549,33 +602,32 @@
     });
   }
   function render(matches, q){
-    if(!q){ results.classList.remove('active'); results.innerHTML=''; return; }
-    if(matches.length===0){
-      results.innerHTML = '<div class="search-empty">No entries match &ldquo;'+escapeHtml(q)+'&rdquo;.</div>';
+    if (!q) { results.classList.remove('active'); results.innerHTML = ''; return; }
+    if (!matches.length) {
+      results.innerHTML = '<div class="search-empty">Nothing matches “' + escapeHtml(q) + '”.</div>';
       results.classList.add('active');
       return;
     }
-    results.innerHTML = matches.slice(0,20).map(function(m){
-      return '<a class="search-result" href="'+root+m.page+'#'+m.anchor+'">'+
-        '<span class="sr-tag">'+escapeHtml(m.category)+' — '+escapeHtml(m.date)+'</span>'+
-        '<span class="sr-title">'+escapeHtml(m.title)+'</span>'+
-        '<span class="sr-meta">'+escapeHtml(m.author)+' &middot; '+escapeHtml(m.source)+'</span>'+
+    results.innerHTML = matches.slice(0, 20).map(function(m){
+      return '<a class="search-result" href="' + root + m.page + '#' + m.anchor + '">' +
+        '<span class="sr-tag">' + escapeHtml(m.category) + ' · Issue ' + escapeHtml(m.issue) + ' · ' + escapeHtml(m.date) + '</span>' +
+        '<span class="sr-title">' + escapeHtml(m.title) + '</span>' +
+        '<span class="sr-meta">' + escapeHtml([m.author, m.source].filter(Boolean).join(' · ')) + '</span>' +
       '</a>';
     }).join('');
     results.classList.add('active');
   }
   input.addEventListener('input', function(){
     var q = input.value.trim().toLowerCase();
-    if(!q){ render([], ''); return; }
+    if (!q) { render([], ''); return; }
     loadIndex().then(function(data){
       render(data.filter(function(e){
-        return (e.title+' '+e.author+' '+e.source+' '+e.category+' '+e.summary)
-          .toLowerCase().indexOf(q) !== -1;
+        return (e.title + ' ' + e.author + ' ' + e.source + ' ' + e.category).toLowerCase().indexOf(q) !== -1;
       }), q);
     });
   });
   document.addEventListener('click', function(e){
-    if(!e.target.closest('.search-wrap')){ results.classList.remove('active'); }
+    if (!e.target.closest('.search-wrap')) results.classList.remove('active');
   });
 })();</script>
 </body>
