@@ -1,0 +1,160 @@
+{
+  "issue": 51,
+  "date": "2026-10-24",
+  "headline": "Issue 51",
+  "intro": "13 pieces of criticism from 13 publications, each read in full before it was picked. Plus 20 new songs in Song Troll.",
+  "byline": "Issue No. 51 — week of 2026-10-24",
+  "pipeline": "weekly",
+  "categories": [
+    {
+      "key": "art",
+      "entries": [
+        {
+          "title": "Rosemary Mayer and Ree Morton: Wild flowers worth knowing",
+          "author": "Sharon Butler",
+          "source": "Two Coats of Paint",
+          "summary": "",
+          "why": "",
+          "url": "https://twocoatsofpaint.com/2026/10/rosemary-mayer-and-ree-morton-wild-flowers-worth-knowing.html?utm_source=rss&utm_medium=rss&utm_campaign=rosemary-mayer-and-ree-morton-wild-flowers-worth-knowing",
+          "verified": true
+        },
+        {
+          "title": "Libby Rothfeld’s “The World Is Not Enough”",
+          "author": "Travis Diehl",
+          "source": "e-flux Criticism",
+          "summary": "",
+          "why": "",
+          "url": "https://www.e-flux.com/criticism/6782486/libby-rothfeld-s-the-world-is-not-enough",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "film",
+      "entries": [
+        {
+          "title": "Classic Corner: Rocky",
+          "author": "Sean Burns",
+          "source": "Crooked Marquee",
+          "summary": "",
+          "why": "",
+          "url": "https://crookedmarquee.com/classic-corner-rocky/",
+          "verified": true
+        },
+        {
+          "title": "Gu You on The First Taste of Loneliness and Returning to a “More Honest Way” of Filmmaking",
+          "author": "Daniel Eagan",
+          "source": "The Film Stage",
+          "summary": "",
+          "why": "",
+          "url": "https://thefilmstage.com/gu-you-on-the-first-taste-of-loneliness-and-returning-to-a-more-honest-way-of-filmmaking/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "tech",
+      "entries": [
+        {
+          "title": "AI Is Changing Everything About Hacking. No One Knows What Happens Next",
+          "author": "Jason Koebler",
+          "source": "404 Media",
+          "summary": "",
+          "why": "",
+          "url": "https://www.404media.co/php2shell-black-october-ai-is-changing-everything-about-hacking-no-one-knows-what-happens-next/",
+          "verified": true
+        },
+        {
+          "title": "Pluralistic: The death of history's most successful publisher (20 Oct 2026)",
+          "author": "Cory Doctorow",
+          "source": "Pluralistic",
+          "summary": "",
+          "why": "",
+          "url": "https://pluralistic.net/2026/10/20/main-character-syndrome/",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "lit",
+      "entries": [
+        {
+          "title": "The Sixth Faction by Veronica Roth",
+          "author": "Mikaela Saverona",
+          "source": "Strange Horizons",
+          "summary": "",
+          "why": "",
+          "url": "https://strangehorizons.com/wordpress/non-fiction/the-sixth-faction-by-veronica-roth/",
+          "verified": true
+        },
+        {
+          "title": "Alis al-Bustani’s ‘Sa’iba’ and the Arab Nahda",
+          "author": "I. Rida Mahmood",
+          "source": "ArabLit",
+          "summary": "",
+          "why": "",
+          "url": "https://arablit.org/2026/10/19/alis-al-bustanis-saiba-and-the-arab-nahda/",
+          "verified": true
+        },
+        {
+          "title": "HUNA Is an Arab Prison Memoir That Refuses to Cater to the Western Gaze",
+          "author": "Bareerah Ghani",
+          "source": "Electric Literature",
+          "summary": "",
+          "why": "",
+          "url": "https://electricliterature.com/huna-is-an-arab-prison-memoir-that-refuses-to-cater-to-the-western-gaze/",
+          "verified": true
+        },
+        {
+          "title": "En mal d’archive: The Please and Pain of Archive Fever",
+          "author": "Liz Cettina",
+          "source": "Cleveland Review of Books",
+          "summary": "",
+          "why": "",
+          "url": "https://clereviewofbooks.com/please-and-pain-of-archive-fever/",
+          "verified": true
+        },
+        {
+          "title": "Between the tragic and the playful",
+          "author": "Simon Garnett",
+          "source": "Eurozine",
+          "summary": "",
+          "why": "",
+          "url": "https://www.eurozine.com/between-the-tragic-and-the-playful/?utm_source=rss&utm_medium=rss&utm_campaign=between-the-tragic-and-the-playful",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "music",
+      "entries": [
+        {
+          "title": "Water Damage, “Repair”",
+          "author": "Stuart Berman",
+          "source": "Bandcamp Daily",
+          "summary": "",
+          "why": "",
+          "url": "https://daily.bandcamp.com/album-of-the-day/water-damage-repair-review",
+          "verified": true
+        },
+        {
+          "title": "Man Vs. Machine: Aphex Twin’s Drukqs at 25",
+          "author": "Truman Greene",
+          "source": "Passion of the Weiss",
+          "summary": "",
+          "why": "",
+          "url": "https://www.powmag.net/p/man-vs-machine-aphex-twin-drukqs",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "key": "design",
+      "entries": []
+    },
+    {
+      "key": "fashion",
+      "entries": []
+    }
+  ]
+}

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#F1EEE9">
+<title>Troller — Issue 51</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>try{var u=JSON.parse(localStorage.getItem('troller-ui')||'{}');if(u.calm)document.documentElement.setAttribute('data-calm','');}catch(e){}</script>
+<style>
+:root {
+  --bg: #F1EEE9;
+  --surface: #FFFFFF;
+  --ink: #3C3C3C;
+  --muted: #6B665F;
+  --line: #D7D1C7;
+  --sand: #CDC0B0;
+  --yellow: #FFE500;
+  --yellow-ink: #1E1E1E;
+  --btn: #3C3C3C;
+  --btn-ink: #FFFFFF;
+  --sleeve-s: 26%;
+  --sleeve-l: 78%;
+  --font: "Switzer", "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
+  color-scheme: light;
+}
+html { scroll-behavior: smooth; }
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font); font-size: 17px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+
+/* calm mode: no motion */
+:root[data-calm] *, :root[data-calm] *::before, :root[data-calm] *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+:root[data-calm] mark { background-size: 100% 100% !important; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; scroll-behavior: auto !important; } mark { background-size: 100% 100% !important; } }
+
+/* top bar */
+.bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding: 22px 0; }
+.mark { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.15rem; letter-spacing: -0.02em; text-decoration: none; }
+.mark i { width: 14px; height: 14px; background: var(--yellow); display: inline-block; }
+.nav { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; font-size: 0.95rem; }
+.nav a { text-decoration: none; }
+.nav a:hover, .nav a[aria-current] { text-decoration: underline; text-underline-offset: 4px; }
+.nav a[aria-current] { text-decoration-thickness: 2px; text-decoration-color: var(--ink); }
+.sw { display: inline-flex; align-items: center; gap: 8px; padding: 0; border: 0; background: none; color: var(--ink); font: 500 0.88rem var(--font); cursor: pointer; }
+.sw .box { width: 34px; height: 18px; border: 1.5px solid var(--ink); position: relative; flex: none; }
+.sw .box::after { content: ""; position: absolute; top: 2px; left: 2px; width: 11px; height: 11px; background: var(--ink); transition: transform 0.18s ease; }
+.sw[aria-pressed="true"] .box { background: var(--yellow); border-color: var(--yellow-ink); }
+.sw[aria-pressed="true"] .box::after { transform: translateX(16px); background: var(--yellow-ink); }
+
+/* hero */
+.hero { padding: 72px 0 56px; border-top: 1px solid var(--line); }
+.eyebrow { margin: 0 0 22px; color: var(--muted); font-size: 0.95rem; }
+h1 { margin: 0 0 28px; font-weight: 500; font-size: clamp(3.6rem, 13vw, 9rem); line-height: 0.95; letter-spacing: -0.045em; }
+mark {
+  background-image: linear-gradient(var(--yellow), var(--yellow)); background-repeat: no-repeat; background-size: 100% 100%;
+  background-color: transparent; color: var(--yellow-ink); padding: 0 0.12em;
+  animation: sweep 0.9s 0.45s cubic-bezier(.2,.7,.2,1) both;
+}
+@keyframes sweep { from { background-size: 0% 100%; } to { background-size: 100% 100%; } }
+@keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+.hero > * { animation: rise 0.75s cubic-bezier(.2,.7,.2,1) both; animation-delay: calc(var(--i, 0) * 90ms); }
+.hero > :nth-child(1) { --i: 0; } .hero > :nth-child(2) { --i: 1; } .hero > :nth-child(3) { --i: 2; } .hero > :nth-child(4) { --i: 3; } .hero > :nth-child(5) { --i: 4; }
+.hero p.sub { max-width: 52ch; color: var(--muted); font-size: 1.1rem; margin: 0 0 32px; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn {
+  display: inline-block; padding: 14px 24px; border: 1.5px solid var(--btn);
+  background: var(--btn); color: var(--btn-ink);
+  font: 600 0.95rem var(--font); text-decoration: none; cursor: pointer; border-radius: 0;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.btn:hover { background: transparent; color: var(--ink); }
+.btn.alt { background: var(--surface); color: var(--ink); border-color: var(--ink); }
+.btn.alt:hover { background: var(--ink); color: var(--bg); }
+.btn:disabled { opacity: 0.5; cursor: default; }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 56px; border-top: 1px solid var(--ink); }
+.stat { padding: 18px 0 0; }
+.stat b { display: block; font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 500; letter-spacing: -0.03em; line-height: 1.05; }
+.stat span { color: var(--muted); font-size: 0.92rem; }
+
+/* sections */
+section { padding: 64px 0; border-top: 1px solid var(--line); }
+h2 { margin: 0 0 32px; font-weight: 500; font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1.02; letter-spacing: -0.035em; }
+h2 small { display: block; margin-top: 10px; font-size: 0.95rem; letter-spacing: 0; color: var(--muted); font-weight: 400; }
+
+/* rows: issue entries, archive issues, music sources */
+.rows { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--ink); }
+.row { display: grid; grid-template-columns: 56px 1fr auto; gap: 8px 20px; align-items: center; padding: 22px 0; border-bottom: 1px solid var(--line); animation: rise 0.6s cubic-bezier(.2,.7,.2,1) both; animation-delay: calc(var(--i, 0) * 50ms); scroll-margin-top: 24px; }
+.row .n { color: var(--muted); font-size: 0.95rem; }
+.row h3 { margin: 0; font-weight: 500; font-size: 1.5rem; line-height: 1.2; letter-spacing: -0.02em; }
+.row h3 a { text-decoration: none; }
+.row h3 a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.row p { margin: 4px 0 0; color: var(--muted); font-size: 0.95rem; }
+.row p.note { color: var(--ink); max-width: 64ch; }
+.row .btn { padding: 9px 18px; font-size: 0.88rem; }
+
+/* search */
+.search-wrap { position: relative; margin: 0 0 28px; }
+.search { width: 100%; min-width: 0; padding: 12px 14px; border: 1.5px solid var(--line); border-radius: 0; background: var(--surface); color: var(--ink); font: 400 0.95rem var(--font); }
+.search:focus { border-color: var(--ink); outline: none; }
+.search-results { position: absolute; top: calc(100% + 6px); left: 0; right: 0; background: var(--surface); border: 1.5px solid var(--ink); max-height: 420px; overflow-y: auto; z-index: 20; display: none; }
+.search-results.active { display: block; }
+.search-result { display: block; padding: 12px 14px; border-bottom: 1px solid var(--line); text-decoration: none; }
+.search-result:last-child { border-bottom: none; }
+.search-result:hover { background: var(--bg); }
+.sr-tag { font-size: 0.8rem; color: var(--muted); }
+.sr-title { display: block; font-weight: 500; margin: 2px 0; }
+.sr-meta { font-size: 0.85rem; color: var(--muted); }
+.search-empty { padding: 14px; color: var(--muted); font-size: 0.95rem; }
+
+/* footer */
+footer { padding: 56px 0 40px; border-top: 1px solid var(--line); }
+.fine { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 24px; color: var(--muted); font-size: 0.9rem; }
+.fine p { margin: 0 0 8px; max-width: 58ch; }
+.fine a { text-underline-offset: 3px; }
+.big { margin: 40px 0 0; font-weight: 500; font-size: clamp(3rem, 15vw, 11rem); line-height: 0.9; letter-spacing: -0.05em; color: var(--sand); user-select: none; }
+
+@media (max-width: 640px) {
+  .wrap { padding: 0 16px; }
+  .hero { padding: 48px 0 40px; }
+  section { padding: 48px 0; }
+  .row { grid-template-columns: 36px 1fr; }
+  .row .btn { grid-column: 2; justify-self: start; }
+  .row h3 { font-size: 1.25rem; }
+}
+</style>
+</head>
+<body data-root="../">
+<div class="wrap">
+  <header class="bar">
+    <a class="mark" href="../index.html"><i aria-hidden="true"></i>Troller</a>
+    <nav class="nav" aria-label="Site">
+      <a href="../index.html">News Troll</a>
+      <a href="../music/index.html">Song Troll</a>
+      <a href="../archive/index.html" aria-current="page">Archive</a>
+      <button class="sw" id="sw-calm" type="button" aria-pressed="false"><span class="box" aria-hidden="true"></span>Reduce animation</button>
+    </nav>
+  </header>
+  <div class="hero" id="top">
+    <p class="eyebrow">News Troll · week of 24 October 2026</p>
+    <h1>Issue <mark>51.</mark></h1>
+    <p class="sub">13 pieces of criticism from 13 publications, each read in full before it was picked. Plus 20 new songs in Song Troll.</p>
+    <div class="hero-actions">
+      <a class="btn" href="#art">Start reading</a>
+      <a class="btn alt" href="../music/index.html">Song Troll</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>13</b><span>links</span></div>
+      <div class="stat"><b>13</b><span>publications</span></div>
+      <div class="stat"><b>5</b><span>sections</span></div>
+    </div>
+  </div>
+
+  <section id="art" aria-labelledby="h-art">
+    <h2 id="h-art">Fine Art</h2>
+    <ol class="rows">
+    <li class="row" id="art-1" style="--i:0">
+      <span class="n">01</span>
+      <div>
+        <h3><a href="https://twocoatsofpaint.com/2026/10/rosemary-mayer-and-ree-morton-wild-flowers-worth-knowing.html?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=rosemary-mayer-and-ree-morton-wild-flowers-worth-knowing" target="_blank" rel="noopener">Rosemary Mayer and Ree Morton: Wild flowers worth knowing</a></h3>
+        <p>Sharon Butler · Two Coats of Paint</p>
+      </div>
+      <a class="btn alt" href="https://twocoatsofpaint.com/2026/10/rosemary-mayer-and-ree-morton-wild-flowers-worth-knowing.html?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=rosemary-mayer-and-ree-morton-wild-flowers-worth-knowing" target="_blank" rel="noopener" aria-label="Read Rosemary Mayer and Ree Morton: Wild flowers worth knowing">Read</a>
+    </li>
+    <li class="row" id="art-2" style="--i:1">
+      <span class="n">02</span>
+      <div>
+        <h3><a href="https://www.e-flux.com/criticism/6782486/libby-rothfeld-s-the-world-is-not-enough" target="_blank" rel="noopener">Libby Rothfeld’s “The World Is Not Enough”</a></h3>
+        <p>Travis Diehl · e-flux Criticism</p>
+      </div>
+      <a class="btn alt" href="https://www.e-flux.com/criticism/6782486/libby-rothfeld-s-the-world-is-not-enough" target="_blank" rel="noopener" aria-label="Read Libby Rothfeld’s “The World Is Not Enough”">Read</a>
+    </li>
+    </ol>
+  </section>
+  <section id="film" aria-labelledby="h-film">
+    <h2 id="h-film">Film</h2>
+    <ol class="rows">
+    <li class="row" id="film-1" style="--i:0">
+      <span class="n">01</span>
+      <div>
+        <h3><a href="https://crookedmarquee.com/classic-corner-rocky/" target="_blank" rel="noopener">Classic Corner: Rocky</a></h3>
+        <p>Sean Burns · Crooked Marquee</p>
+      </div>
+      <a class="btn alt" href="https://crookedmarquee.com/classic-corner-rocky/" target="_blank" rel="noopener" aria-label="Read Classic Corner: Rocky">Read</a>
+    </li>
+    <li class="row" id="film-2" style="--i:1">
+      <span class="n">02</span>
+      <div>
+        <h3><a href="https://thefilmstage.com/gu-you-on-the-first-taste-of-loneliness-and-returning-to-a-more-honest-way-of-filmmaking/" target="_blank" rel="noopener">Gu You on The First Taste of Loneliness and Returning to a “More Honest Way” of Filmmaking</a></h3>
+        <p>Daniel Eagan · The Film Stage</p>
+      </div>
+      <a class="btn alt" href="https://thefilmstage.com/gu-you-on-the-first-taste-of-loneliness-and-returning-to-a-more-honest-way-of-filmmaking/" target="_blank" rel="noopener" aria-label="Read Gu You on The First Taste of Loneliness and Returning to a “More Honest Way” of Filmmaking">Read</a>
+    </li>
+    </ol>
+  </section>
+  <section id="tech" aria-labelledby="h-tech">
+    <h2 id="h-tech">Tech &amp; AI</h2>
+    <ol class="rows">
+    <li class="row" id="tech-1" style="--i:0">
+      <span class="n">01</span>
+      <div>
+        <h3><a href="https://www.404media.co/php2shell-black-october-ai-is-changing-everything-about-hacking-no-one-knows-what-happens-next/" target="_blank" rel="noopener">AI Is Changing Everything About Hacking. No One Knows What Happens Next</a></h3>
+        <p>Jason Koebler · 404 Media</p>
+      </div>
+      <a class="btn alt" href="https://www.404media.co/php2shell-black-october-ai-is-changing-everything-about-hacking-no-one-knows-what-happens-next/" target="_blank" rel="noopener" aria-label="Read AI Is Changing Everything About Hacking. No One Knows What Happens Next">Read</a>
+    </li>
+    <li class="row" id="tech-2" style="--i:1">
+      <span class="n">02</span>
+      <div>
+        <h3><a href="https://pluralistic.net/2026/10/20/main-character-syndrome/" target="_blank" rel="noopener">Pluralistic: The death of history&#39;s most successful publisher (20 Oct 2026)</a></h3>
+        <p>Cory Doctorow · Pluralistic</p>
+      </div>
+      <a class="btn alt" href="https://pluralistic.net/2026/10/20/main-character-syndrome/" target="_blank" rel="noopener" aria-label="Read Pluralistic: The death of history&#39;s most successful publisher (20 Oct 2026)">Read</a>
+    </li>
+    </ol>
+  </section>
+  <section id="lit" aria-labelledby="h-lit">
+    <h2 id="h-lit">Books</h2>
+    <ol class="rows">
+    <li class="row" id="lit-1" style="--i:0">
+      <span class="n">01</span>
+      <div>
+        <h3><a href="https://strangehorizons.com/wordpress/non-fiction/the-sixth-faction-by-veronica-roth/" target="_blank" rel="noopener">The Sixth Faction by Veronica Roth</a></h3>
+        <p>Mikaela Saverona · Strange Horizons</p>
+      </div>
+      <a class="btn alt" href="https://strangehorizons.com/wordpress/non-fiction/the-sixth-faction-by-veronica-roth/" target="_blank" rel="noopener" aria-label="Read The Sixth Faction by Veronica Roth">Read</a>
+    </li>
+    <li class="row" id="lit-2" style="--i:1">
+      <span class="n">02</span>
+      <div>
+        <h3><a href="https://arablit.org/2026/10/19/alis-al-bustanis-saiba-and-the-arab-nahda/" target="_blank" rel="noopener">Alis al-Bustani’s ‘Sa’iba’ and the Arab Nahda</a></h3>
+        <p>I. Rida Mahmood · ArabLit</p>
+      </div>
+      <a class="btn alt" href="https://arablit.org/2026/10/19/alis-al-bustanis-saiba-and-the-arab-nahda/" target="_blank" rel="noopener" aria-label="Read Alis al-Bustani’s ‘Sa’iba’ and the Arab Nahda">Read</a>
+    </li>
+    <li class="row" id="lit-3" style="--i:2">
+      <span class="n">03</span>
+      <div>
+        <h3><a href="https://electricliterature.com/huna-is-an-arab-prison-memoir-that-refuses-to-cater-to-the-western-gaze/" target="_blank" rel="noopener">HUNA Is an Arab Prison Memoir That Refuses to Cater to the Western Gaze</a></h3>
+        <p>Bareerah Ghani · Electric Literature</p>
+      </div>
+      <a class="btn alt" href="https://electricliterature.com/huna-is-an-arab-prison-memoir-that-refuses-to-cater-to-the-western-gaze/" target="_blank" rel="noopener" aria-label="Read HUNA Is an Arab Prison Memoir That Refuses to Cater to the Western Gaze">Read</a>
+    </li>
+    <li class="row" id="lit-4" style="--i:3">
+      <span class="n">04</span>
+      <div>
+        <h3><a href="https://clereviewofbooks.com/please-and-pain-of-archive-fever/" target="_blank" rel="noopener">En mal d’archive: The Please and Pain of Archive Fever</a></h3>
+        <p>Liz Cettina · Cleveland Review of Books</p>
+      </div>
+      <a class="btn alt" href="https://clereviewofbooks.com/please-and-pain-of-archive-fever/" target="_blank" rel="noopener" aria-label="Read En mal d’archive: The Please and Pain of Archive Fever">Read</a>
+    </li>
+    <li class="row" id="lit-5" style="--i:4">
+      <span class="n">05</span>
+      <div>
+        <h3><a href="https://www.eurozine.com/between-the-tragic-and-the-playful/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=between-the-tragic-and-the-playful" target="_blank" rel="noopener">Between the tragic and the playful</a></h3>
+        <p>Simon Garnett · Eurozine</p>
+      </div>
+      <a class="btn alt" href="https://www.eurozine.com/between-the-tragic-and-the-playful/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=between-the-tragic-and-the-playful" target="_blank" rel="noopener" aria-label="Read Between the tragic and the playful">Read</a>
+    </li>
+    </ol>
+  </section>
+  <section id="music" aria-labelledby="h-music">
+    <h2 id="h-music">Music Criticism</h2>
+    <ol class="rows">
+    <li class="row" id="music-1" style="--i:0">
+      <span class="n">01</span>
+      <div>
+        <h3><a href="https://daily.bandcamp.com/album-of-the-day/water-damage-repair-review" target="_blank" rel="noopener">Water Damage, “Repair”</a></h3>
+        <p>Stuart Berman · Bandcamp Daily</p>
+      </div>
+      <a class="btn alt" href="https://daily.bandcamp.com/album-of-the-day/water-damage-repair-review" target="_blank" rel="noopener" aria-label="Read Water Damage, “Repair”">Read</a>
+    </li>
+    <li class="row" id="music-2" style="--i:1">
+      <span class="n">02</span>
+      <div>
+        <h3><a href="https://www.powmag.net/p/man-vs-machine-aphex-twin-drukqs" target="_blank" rel="noopener">Man Vs. Machine: Aphex Twin’s Drukqs at 25</a></h3>
+        <p>Truman Greene · Passion of the Weiss</p>
+      </div>
+      <a class="btn alt" href="https://www.powmag.net/p/man-vs-machine-aphex-twin-drukqs" target="_blank" rel="noopener" aria-label="Read Man Vs. Machine: Aphex Twin’s Drukqs at 25">Read</a>
+    </li>
+    </ol>
+  </section>
+  <footer>
+    <div class="fine">
+      <div><p>Troller, Issue 51, week of 24 October 2026. Every link was read in full before it was picked.</p>
+        <p><a href="../archive/index.html">Every issue</a></p></div>
+      <p><a href="#top">Back to top</a></p>
+    </div>
+    <p class="big" aria-hidden="true">happy reading</p>
+  </footer>
+</div>
+<script>
+(function(){
+  var sw = document.getElementById('sw-calm');
+  if (!sw) return;
+  function load(){ try { return JSON.parse(localStorage.getItem('troller-ui') || '{}') || {}; } catch (e) { return {}; } }
+  function paint(){ var on = document.documentElement.hasAttribute('data-calm'); sw.setAttribute('aria-pressed', on ? 'true' : 'false'); }
+  sw.addEventListener('click', function(){
+    var ui = load(); ui.calm = !document.documentElement.hasAttribute('data-calm');
+    if (ui.calm) document.documentElement.setAttribute('data-calm', ''); else document.documentElement.removeAttribute('data-calm');
+    try { localStorage.setItem('troller-ui', JSON.stringify(ui)); } catch (e) {}
+    paint();
+  });
+  paint();
+})();</script>
+
+</body>
+</html>

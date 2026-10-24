@@ -181,6 +181,20 @@ const TRIAGE_SCHEMA = {
   additionalProperties: false,
 };
 
+// How to read a category brief. The first live run (24 Oct 2026) read them
+// like a contract: a strong essay on war and poetry was rejected under Books
+// for not being science fiction, and serious author interviews were turned
+// away for "not being criticism". The bar on quality stays exactly where it
+// is; this only stops good writing being lost on a technicality.
+const BRIEF_RULES =
+  'How to read the category brief: "leaning" names a preference, never a requirement, so strong ' +
+  'writing in the wider field belongs (any serious literary criticism or essay fits Books, not ' +
+  'only science fiction). A substantial interview or profile with real ideas counts as long-form ' +
+  'writing. The subject test is about what the piece is mostly about, read generously: an essay ' +
+  'on the history or philosophy of technology fits Tech, a design essay about a building fits ' +
+  'Design. Pieces mostly about a different field (a film essay under Music, sport under Fashion) ' +
+  'are off-subject.';
+
 const READ_SYSTEM =
   'You screen one article for Troller, a weekly digest of links to the best criticism and ' +
   'long-form cultural writing. You are given the full text. Judge only what is on the page. ' +
@@ -188,6 +202,7 @@ const READ_SYSTEM =
   "or a serious interview, AND it is on the category's subject, AND it is in English. keep is false " +
   'for news items, announcements, listicles, buying guides, shopping, sponsored or gambling content, ' +
   'job ads, press releases, event listings, podcast or video show notes, and anything off-subject. ' +
+  BRIEF_RULES + ' ' +
   'depth: 1 = nothing to it, 2 = thin, 3 = solid, 4 = strong, 5 = exceptional. ' +
   'reason: at most 15 words on why.';
 
@@ -208,8 +223,9 @@ const CHECK_SYSTEM =
   'long-form cultural writing, for a demanding reader. You are given one article in full. ' +
   'score from 1 to 10 for how much that reader would want this link: 9-10 a must-read, 7-8 strong, ' +
   '5-6 competent but ordinary, 4 or below should not run. keep is false if it is not substantive ' +
-  "criticism or long-form writing on the category's subject. reason: at most 15 words naming its " +
-  'main strength or flaw.';
+  "criticism or long-form writing on the category's subject. " + BRIEF_RULES + ' Judge the writing ' +
+  'itself; do not mark a piece down for its format (an interview) or for sitting outside a ' +
+  '"leaning". reason: at most 15 words naming its main strength or flaw.';
 
 const CHECK_SCHEMA = {
   type: 'object',
@@ -646,10 +662,12 @@ function shortlistMarkdown(date, articles, music, ledger) {
 function options() {
   return {
     perCategory: num('per-category', 5),
-    readPerCategory: num('read-per-category', 12),
-    checkPerCategory: num('check-per-category', 6),
+    // Widened after the first live run, which read 73 articles for $0.145
+    // and found only 9 worth running: the budget was going unused.
+    readPerCategory: num('read-per-category', 20),
+    checkPerCategory: num('check-per-category', 8),
     minScore: num('min-score', 6),
-    windowDays: num('window-days', 10),
+    windowDays: num('window-days', 14),
     minWords: num('min-words', 600),
     maxWords: num('max-words', 3000),
     songs: num('songs', 20),

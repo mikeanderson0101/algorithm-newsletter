@@ -1,0 +1,257 @@
+{
+  "batch": 3,
+  "date": "2026-10-24",
+  "items": [
+    {
+      "id": "chillin-fresh-start",
+      "site": "Stereogum",
+      "src": {
+        "label": "The 5 Best Songs Of The Week, Oct 16",
+        "url": "https://stereogum.com/2514816/the-5-best-songs-of-the-week-648/lists/the-5-best-songs-of-the-week/"
+      },
+      "artist": "Chillin'",
+      "title": "Fresh Start",
+      "note": "An 85-second grungy pop-punk track with riffs, tangled guitar work, and hooky vocals; the writer compares its emo-as-power-pop sound to Oso Oso.",
+      "yt": "giKMIBJKSq8",
+      "batch": 3
+    },
+    {
+      "id": "slayyyter-i-think-he-s-got-a-girl",
+      "site": "Stereogum",
+      "src": {
+        "label": "The 5 Best Songs Of The Week, Oct 16",
+        "url": "https://stereogum.com/2514816/the-5-best-songs-of-the-week-648/lists/the-5-best-songs-of-the-week/"
+      },
+      "artist": "Slayyyter",
+      "title": "i think he's got a girl",
+      "note": "Follows her album WOR$T GIRL IN AMERICA with slanted, hazy, rock-infused pop that the writer calls infectious and cinematic.",
+      "yt": "fPA28AfG-JY",
+      "batch": 3
+    },
+    {
+      "id": "worldpeace-dmt-ringtone",
+      "site": "Stereogum",
+      "src": {
+        "label": "The 5 Best Songs Of The Week, Oct 23",
+        "url": "https://stereogum.com/2515345/the-5-best-songs-of-the-week-649/lists/the-5-best-songs-of-the-week/"
+      },
+      "artist": "Worldpeace DMT",
+      "title": "Ringtone",
+      "note": "A catchy, charming 2000s-style love song about ringtones, blending elegant and chintzy sounds around a hook about God, love, and world peace.",
+      "yt": "GtENrn_qhYA",
+      "batch": 3
+    },
+    {
+      "id": "sadie-little-things",
+      "site": "Stereogum",
+      "src": {
+        "label": "The 5 Best Songs Of The Week, Oct 23",
+        "url": "https://stereogum.com/2515345/the-5-best-songs-of-the-week-649/lists/the-5-best-songs-of-the-week/"
+      },
+      "artist": "sadie",
+      "title": "Little Things",
+      "note": "A bright single that reminds listeners of the world outside their heads, with galloping drums, synth bloops, and a feeling that everyday things are magic.",
+      "yt": "PsepUacYtqk",
+      "batch": 3
+    },
+    {
+      "id": "hannah-frances-circadian-heart",
+      "site": "Stereogum",
+      "src": {
+        "label": "The 5 Best Songs Of The Week, Oct 23",
+        "url": "https://stereogum.com/2515345/the-5-best-songs-of-the-week-649/lists/the-5-best-songs-of-the-week/"
+      },
+      "artist": "Hannah Frances",
+      "title": "Circadian Heart",
+      "note": "Hannah Frances says it's about choosing unavailable people and trying to get them to choose her back; it moves between folk sprawls and jazzy ascensions.",
+      "yt": "b7rcoeVoBwA",
+      "batch": 3
+    },
+    {
+      "id": "bassvictim-white-flag",
+      "site": "Stereogum",
+      "src": {
+        "label": "The 5 Best Songs Of The Week, Oct 23",
+        "url": "https://stereogum.com/2515345/the-5-best-songs-of-the-week-649/lists/the-5-best-songs-of-the-week/"
+      },
+      "artist": "Bassvictim",
+      "title": "White Flag",
+      "note": "A hammer-skitter lo-fi electroclash track that contrasts with Dido's song of the same name, embracing surrender as a warlike tantrum.",
+      "yt": "M_G7-eYnqmc",
+      "batch": 3
+    },
+    {
+      "id": "cloud-nothings-death-keeps-me-alive",
+      "site": "Stereogum",
+      "src": {
+        "label": "The 5 Best Songs Of The Week, Oct 23",
+        "url": "https://stereogum.com/2515345/the-5-best-songs-of-the-week-649/lists/the-5-best-songs-of-the-week/"
+      },
+      "artist": "Cloud Nothings",
+      "title": "Death Keeps Me Alive",
+      "note": "The lead single from a metal-inspired album, taking the tumult of \"Wasted Days\" and giving it a metallic edge, showing renewed ferociousness.",
+      "yt": "N6kcmzMowik",
+      "batch": 3
+    },
+    {
+      "id": "fontaines-d-c-with-rosal-a-where-is-gone",
+      "site": "WBRU",
+      "src": {
+        "label": "Today's Top Indie: October 20, 2026, Oct 20",
+        "url": "https://wbru.substack.com/p/todays-top-indie-october-20-2026"
+      },
+      "artist": "Fontaines D.C. with ROSALÍA",
+      "title": "Where Is Gone?",
+      "note": "Big topic in the music meeting; Tumelo called it intense, mature, and heavy-hitting. Fontaines' new album DOPAMINE CHAMBER came out that Friday.",
+      "batch": 3
+    },
+    {
+      "id": "horse-vision-goblin-s-head",
+      "site": "The Line of Best Fit",
+      "src": {
+        "label": "New Music Discovery",
+        "url": "https://www.thelineofbestfit.com/news/new-music-discovery-playlist-horse-vision-meg-shanian-threshold-leah-cleaver-hank-slate"
+      },
+      "artist": "Horse Vision",
+      "title": "Goblin's Head",
+      "note": "Listed as the first track in the New Music Discovery playlist for 23 October 2026.",
+      "batch": 3
+    },
+    {
+      "id": "doss-howdypartner",
+      "site": "The Line of Best Fit",
+      "src": {
+        "label": "New Music Discovery",
+        "url": "https://www.thelineofbestfit.com/news/new-music-discovery-playlist-horse-vision-meg-shanian-threshold-leah-cleaver-hank-slate"
+      },
+      "artist": "Doss",
+      "title": "HOWDYPARTNER",
+      "note": "Featured on the weekly playlist of brand new music from under-the-radar artists.",
+      "batch": 3
+    },
+    {
+      "id": "blackhaine-northside-needs-me",
+      "site": "The Line of Best Fit",
+      "src": {
+        "label": "New Music Discovery",
+        "url": "https://www.thelineofbestfit.com/news/new-music-discovery-playlist-horse-vision-meg-shanian-threshold-leah-cleaver-hank-slate"
+      },
+      "artist": "Blackhaine",
+      "title": "Northside Needs Me",
+      "note": "Featured on the weekly playlist of brand new music from under-the-radar artists.",
+      "batch": 3
+    },
+    {
+      "id": "bayou-princess-he-keeps-talking",
+      "site": "Various Small Flames",
+      "src": {
+        "label": "Weekly Listening: October 2026 #3, Oct 21",
+        "url": "https://varioussmallflames.co.uk/2026/10/21/weekly-listening-october-2026-3/"
+      },
+      "artist": "Bayou Princess",
+      "title": "He Keeps Talking",
+      "note": "Latest single from the album Dance Tunes for the End of the World; barrels toward apocalypse while embracing entropy, sounding sincere rather than ironic.",
+      "batch": 3
+    },
+    {
+      "id": "cameron-keiber-haunted-castles",
+      "site": "Various Small Flames",
+      "src": {
+        "label": "Weekly Listening: October 2026 #3, Oct 21",
+        "url": "https://varioussmallflames.co.uk/2026/10/21/weekly-listening-october-2026-3/"
+      },
+      "artist": "Cameron Keiber",
+      "title": "Haunted Castles",
+      "note": "Opening single from The Tide, starting reflective before building into something urgent and cathartic, with real drums and bigger guitars.",
+      "batch": 3
+    },
+    {
+      "id": "eliza-edens-old-home-video",
+      "site": "Various Small Flames",
+      "src": {
+        "label": "Weekly Listening: October 2026 #3, Oct 21",
+        "url": "https://varioussmallflames.co.uk/2026/10/21/weekly-listening-october-2026-3/"
+      },
+      "artist": "Eliza Edens",
+      "title": "Old Home Video",
+      "note": "Written while their mother had dementia; mixes grief in anticipation of loss with fondness and sorrow, described as the most unguarded track on Death Drive.",
+      "yt": "7UGgKuLieOo",
+      "batch": 3
+    },
+    {
+      "id": "kin-hana-sh-metsu-kod",
+      "site": "Various Small Flames",
+      "src": {
+        "label": "Weekly Listening: October 2026 #3, Oct 21",
+        "url": "https://varioussmallflames.co.uk/2026/10/21/weekly-listening-october-2026-3/"
+      },
+      "artist": "Kin Hana",
+      "title": "Shōmetsu / Kodō",
+      "note": "Over eight-minute single moving from a mournful piano piece into cataclysmic doom metal, featuring several guest musicians.",
+      "batch": 3
+    },
+    {
+      "id": "karen-y-los-remedios-mayahuel",
+      "site": "Various Small Flames",
+      "src": {
+        "label": "Weekly Listening: October 2026 #2, Oct 14",
+        "url": "https://varioussmallflames.co.uk/2026/10/14/weekly-listening-october-2026-2/"
+      },
+      "artist": "Karen y los Remedios",
+      "title": "Mayahuel",
+      "note": "Hypnotic, low-tempo cumbia rebajada drawing on Mexica mythology, with a video directed by Barajas herself.",
+      "yt": "RSfmGv9Ov5s",
+      "batch": 3
+    },
+    {
+      "id": "party-dozen-full-powers",
+      "site": "Various Small Flames",
+      "src": {
+        "label": "Weekly Listening: October 2026 #2, Oct 14",
+        "url": "https://varioussmallflames.co.uk/2026/10/14/weekly-listening-october-2026-2/"
+      },
+      "artist": "Party Dozen",
+      "title": "Full Powers",
+      "note": "Single from the album 21 Bum Salute, swinging between swaggering confidence and something volatile, with a video made with help from John-Henry Pajak and Jos Eastwood.",
+      "yt": "3iYKwry2wJo",
+      "batch": 3
+    },
+    {
+      "id": "erang-i-will-not-apologize-for-what-i-am",
+      "site": "Bandcamp Daily",
+      "src": {
+        "label": "Essential Releases, October 23, 2026, Oct 23",
+        "url": "https://daily.bandcamp.com/essential-releases/essential-releases-october-23-2026"
+      },
+      "artist": "Erang",
+      "title": "I Will Not Apologize For What I Am",
+      "note": "Album opener built on a plaintive melody played on somber keys, described as genuinely heartbreaking.",
+      "batch": 3
+    },
+    {
+      "id": "mc-yallah-tobuza-buzibwa",
+      "site": "Bandcamp Daily",
+      "src": {
+        "label": "Essential Releases, October 23, 2026, Oct 23",
+        "url": "https://daily.bandcamp.com/essential-releases/essential-releases-october-23-2026"
+      },
+      "artist": "MC Yallah",
+      "title": "Tobuza Buzibwa",
+      "note": "Kampala MC spitting verses with militant defiance over the track.",
+      "bc": "https://hakunakulala.bandcamp.com/album/yallah-beibe",
+      "batch": 3
+    },
+    {
+      "id": "dro-carey-commodore",
+      "site": "Bandcamp Daily",
+      "src": {
+        "label": "Essential Releases, October 23, 2026, Oct 23",
+        "url": "https://daily.bandcamp.com/essential-releases/essential-releases-october-23-2026"
+      },
+      "artist": "Dro Carey",
+      "title": "Commodore",
+      "note": "Sydney artist's contribution to the mutant gqom collision of Los Angeles, Durban, and Sydney sounds.",
+      "batch": 3
+    }
+  ]
+}

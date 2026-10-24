@@ -274,12 +274,18 @@ function main() {
   // Per-issue record of which publication covered which category, in
   // publication order. The rotation rule reads the tail of this.
   const history = [];
+  // Weekly issues rotate against weekly issues only, matching weekly.js: the
+  // RSS issues before them ran twice a day with 28 links each, and counting
+  // them flags almost every outlet in the first weekly issue.
+  const recentFor = (issue) =>
+    (issue.pipeline === 'weekly' ? history.filter((h) => h.pipeline === 'weekly') : history)
+      .slice(-(ROLLING_WINDOW - 1));
 
   for (const f of files) {
     const issue = JSON.parse(fs.readFileSync(path.join(ISSUES_DIR, f), 'utf8'));
 
     if (!targetIsDraft && (!targetLabel || f === targetLabel)) {
-      validateIssue(issue, f, priorUrls, priorTitles, history.slice(-(ROLLING_WINDOW - 1)));
+      validateIssue(issue, f, priorUrls, priorTitles, recentFor(issue));
     }
 
     const byCategory = {};
@@ -292,12 +298,12 @@ function main() {
         if (e.title) priorTitles.set(String(e.title).trim().toLowerCase(), f);
       }
     }
-    history.push({ file: f, byCategory });
+    history.push({ file: f, byCategory, pipeline: issue.pipeline || null });
   }
 
   if (targetIsDraft) {
     const issue = JSON.parse(fs.readFileSync(targetPath, 'utf8'));
-    validateIssue(issue, targetLabel, priorUrls, priorTitles, history.slice(-(ROLLING_WINDOW - 1)));
+    validateIssue(issue, targetLabel, priorUrls, priorTitles, recentFor(issue));
   }
 
   for (const w of warnings) console.warn(`  warning  ${w}`);
