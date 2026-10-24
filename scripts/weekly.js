@@ -2,8 +2,9 @@
 /**
  * Troller — make an issue, by hand, once or twice a week.
  *
- *   node scripts/weekly.js scout    [--date YYYY-MM-DD]   builds the shortlist
- *   node scripts/weekly.js publish  [--date YYYY-MM-DD]   writes the issue + music batch, validates, builds
+ *   node scripts/weekly.js scout    [--date YYYY-MM-DD]   News Troll: builds the shortlist
+ *   node scripts/weekly.js publish  [--date YYYY-MM-DD]   News Troll: writes the issue, validates, builds
+ *   node scripts/weekly.js songs    [--taste '<json>']    Song Troll: its own refresh, writes a batch, builds
  *
  * Nothing here is scheduled. The history of why, in one paragraph: the
  * agentic version read everything inside one long model loop and cost $9.53
@@ -19,7 +20,7 @@
  *   5. read the top ~6 per category again, score 1-10                  Sonnet, Batch API (half price)
  *   6. pick the top 5 per category, one outlet per category            code
  *
- * NEW MUSIC
+ * SONG TROLL (the `songs` command, refreshed on its own, never by scout)
  *   1. find this week's list posts (Stereogum 5 Best, Bandcamp Essential
  *      Releases, Various Small Flames, Best Fit, WBRU)                 code, $0
  *   2. pull every song out of each post                                Haiku, one call per post
@@ -675,7 +676,7 @@ function shortlistMarkdown(date, articles, music, ledger) {
     }
     out.push('');
   }
-  out.push(`## Song Troll (${music.filter((s) => s.pick).length} picked)`, '');
+  if (music.length) out.push(`## Song Troll (${music.filter((s) => s.pick).length} picked)`, '');
   for (const s of music) {
     out.push(`- [${s.pick ? 'x' : ' '}] ${s.artist} – ${s.title} (${s.site}, ${s.cid}). ${s.note}`);
   }
@@ -711,9 +712,10 @@ async function scout(date, work) {
   const ledger = new AI.Ledger({ cap: opts.cap, file: path.join(work, 'cost.json') });
   console.log(`Scouting the issue for ${date}. Work folder: ${path.relative(ROOT, work)}\n`);
 
-  const articles = has('music-only') ? {} : await scoutArticles(work, ledger, opts);
-  console.log('');
-  const music = has('articles-only') ? [] : await scoutMusic(work, ledger, opts);
+  // News Troll only. Song Troll refreshes on its own schedule, by hand, with
+  // `node scripts/weekly.js songs` or the button on its page (Mike, 24 Oct 2026).
+  const articles = await scoutArticles(work, ledger, opts);
+  const music = [];
 
   writeJson(path.join(work, 'shortlist.json'), { date, articles, music });
   fs.writeFileSync(path.join(work, 'shortlist.md'), shortlistMarkdown(date, articles, music, ledger));
@@ -723,7 +725,6 @@ async function scout(date, work) {
     const list = articles[cat] || [];
     console.log(`  ${cat.padEnd(8)} ${list.filter((e) => e.pick).length} of ${list.length} read`);
   }
-  console.log(`  songs    ${music.filter((s) => s.pick).length}`);
   console.log(`\nSpent $${ledger.spent.toFixed(3)} (cap $${ledger.cap.toFixed(2)}).`);
   console.log(`Review: ${path.relative(ROOT, path.join(work, 'shortlist.md'))}`);
   console.log(`Then:   node scripts/weekly.js publish --date ${date}`);
@@ -744,15 +745,13 @@ async function publish(date, work) {
     })),
   }));
   const entries = categories.flatMap((c) => c.entries);
-  const songs = (shortlist.music || []).filter((s) => s.pick);
 
   // No cover line. Issues are titled plainly by number and week (Mike's call,
   // 24 Oct 2026); the automated versions wrote tabloid headlines.
   const outlets = new Set(entries.map((e) => e.source.toLowerCase())).size;
   const issueNo = loadNumbered(ISSUES_DIR).length + 1;
   const intro =
-    `${entries.length} pieces of criticism from ${outlets} publications, each read in full before it was picked. ` +
-    (songs.length ? `Plus ${songs.length} new songs in Song Troll.` : '');
+    `${entries.length} pieces of criticism from ${outlets} publications, each read in full before it was picked.`;
 
   const issue = {
     issue: issueNo,
@@ -767,21 +766,6 @@ async function publish(date, work) {
   writeJson(issueFile, issue);
   console.log(`Wrote ${path.relative(ROOT, issueFile)}: ${entries.length} links.`);
 
-  if (songs.length) {
-    const batchNo = loadNumbered(MUSIC_DIR).length + 1;
-    const batch = {
-      batch: batchNo,
-      date,
-      items: songs.map((s) => ({
-        id: `${slug(s.artist)}-${slug(s.title)}`, site: s.site, src: s.src, artist: s.artist, title: s.title,
-        note: s.note, ...(s.yt ? { yt: s.yt } : {}), ...(s.bc ? { bc: s.bc } : {}), batch: batchNo,
-      })),
-    };
-    const musicFile = path.join(MUSIC_DIR, `${String(batchNo).padStart(4, '0')}.json`);
-    writeJson(musicFile, batch);
-    console.log(`Wrote ${path.relative(ROOT, musicFile)}: ${songs.length} songs.`);
-  }
-
   for (const script of [['validate.js', path.relative(ROOT, issueFile)], ['build.js']]) {
     const r = spawnSync(process.execPath, [path.join(__dirname, script[0]), ...script.slice(1)], { cwd: ROOT, stdio: 'inherit' });
     if (r.status !== 0) throw new Error(`${script[0]} failed. Nothing has been committed.`);
@@ -789,16 +773,87 @@ async function publish(date, work) {
   console.log(`\nIssue No. ${issueNo} is built locally. Total spent on it: $${ledger.spent.toFixed(3)}. Nothing has been committed or pushed.`);
 }
 
+/**
+ * Folds thumbs from the Song Troll page ("Copy my thumbs") into
+ * music/taste.json, so the next batch leans toward them. Accepts the JSON
+ * the button copies: { "liked": [...], "disliked": [...] }.
+ */
+function mergeTaste(raw) {
+  if (!raw || !String(raw).trim()) return;
+  let incoming;
+  try {
+    incoming = JSON.parse(raw);
+  } catch {
+    throw new Error('The thumbs pasted in are not valid JSON. Use the "Copy my thumbs" button on Song Troll.');
+  }
+  const taste = readJson(TASTE_FILE, { exclude: [], liked: [], disliked: [] });
+  const union = (a, b) => [...new Set([...(a || []), ...(b || [])].map((s) => String(s).trim()).filter(Boolean))];
+  taste.liked = union(taste.liked, incoming.liked);
+  taste.disliked = union(taste.disliked, incoming.disliked);
+  // A song can only be one or the other; the newest thumb wins.
+  const nowLiked = new Set(incoming.liked || []);
+  const nowDisliked = new Set(incoming.disliked || []);
+  taste.liked = taste.liked.filter((s) => !nowDisliked.has(s));
+  taste.disliked = taste.disliked.filter((s) => !nowLiked.has(s));
+  writeJson(TASTE_FILE, taste);
+  console.log(`Thumbs merged: ${taste.liked.length} liked, ${taste.disliked.length} disliked in music/taste.json.`);
+}
+
+/**
+ * Song Troll refresh, separate from News Troll. Finds this fortnight's list
+ * posts, pulls the songs, picks a batch with your thumbs, writes the next
+ * music/NNNN.json and rebuilds the site. About $0.05. Run by hand, or from
+ * the "Refresh Song Troll" button, which opens the manual-only GitHub
+ * workflow (.github/workflows/song-troll.yml).
+ */
+async function songs(date) {
+  const opts = options();
+  mergeTaste(arg('taste') || process.env.TROLLER_TASTE || '');
+
+  // A fresh folder per refresh: the stages cache, and a second refresh on the
+  // same day should look again rather than reuse the first.
+  const stamp = new Date().toISOString().slice(0, 16).replace(/[:T]/g, '-');
+  const work = arg('work') ? path.resolve(ROOT, arg('work')) : path.join(ROOT, '.work', `songs-${stamp}`);
+  fs.mkdirSync(work, { recursive: true });
+  const ledger = new AI.Ledger({ cap: opts.cap, file: path.join(work, 'cost.json') });
+  console.log(`Refreshing Song Troll. Work folder: ${path.relative(ROOT, work)}\n`);
+
+  const picked = (await scoutMusic(work, ledger, opts)).filter((s) => s.pick);
+  if (!picked.length) {
+    console.log('\nNo new songs this time; nothing written.');
+    return;
+  }
+
+  const batchNo = loadNumbered(MUSIC_DIR).length + 1;
+  const batch = {
+    batch: batchNo,
+    date,
+    items: picked.map((s) => ({
+      id: `${slug(s.artist)}-${slug(s.title)}`, site: s.site, src: s.src, artist: s.artist, title: s.title,
+      note: s.note, ...(s.yt ? { yt: s.yt } : {}), ...(s.bc ? { bc: s.bc } : {}), batch: batchNo,
+    })),
+  };
+  const musicFile = path.join(MUSIC_DIR, `${String(batchNo).padStart(4, '0')}.json`);
+  writeJson(musicFile, batch);
+  console.log(`\nWrote ${path.relative(ROOT, musicFile)}: batch ${batchNo}, ${picked.length} songs.`);
+
+  const r = spawnSync(process.execPath, [path.join(__dirname, 'build.js')], { cwd: ROOT, stdio: 'inherit' });
+  if (r.status !== 0) throw new Error('build.js failed.');
+  console.log(`Spent $${ledger.spent.toFixed(3)}.`);
+}
+
 async function main() {
   const cmd = process.argv[2];
   const date = arg('date') || new Date().toISOString().slice(0, 10);
   if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) throw new Error(`Invalid --date: ${date}`);
+  if (cmd === 'songs') return songs(date);
+
   const work = arg('work') ? path.resolve(ROOT, arg('work')) : path.join(ROOT, '.work', date);
   fs.mkdirSync(work, { recursive: true });
 
   if (cmd === 'scout') return scout(date, work);
   if (cmd === 'publish') return publish(date, work);
-  console.log('Usage: node scripts/weekly.js scout|publish [--date YYYY-MM-DD]');
+  console.log('Usage: node scripts/weekly.js scout|publish|songs [--date YYYY-MM-DD]');
   process.exit(1);
 }
 

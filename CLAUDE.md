@@ -4,6 +4,8 @@ Troller (formerly Algorithm) is a weekly digest of **links** to the best critici
 
 **Nothing is automated.** Mike refreshes it by hand, once or twice a week. There is no schedule, no GitHub Action composing issues, and there must not be one again.
 
+**News Troll and Song Troll refresh separately.** `scout`/`publish` make the News Troll issue and never touch songs. Song Troll refreshes on its own with `node scripts/weekly.js songs` (about $0.01–0.05), or from the "Refresh Song Troll" button on its page, which opens `.github/workflows/song-troll.yml`: a **manual-only** (`workflow_dispatch`) run that uses the `ANTHROPIC_API_KEY` repo secret and pushes the new batch. Never add a `schedule:` to it.
+
 ## The history, because it explains every rule
 - v1 (Aug 2026): one long agentic loop read every article. Quality was great; cost $9.53 an issue, because each article stayed in context and was re-read on every later turn (26.4M cached tokens).
 - v2 (Sept–Oct 2026): RSS feeds plus one model call over headlines. Cheap, and the quality collapsed: nothing was read, 100 of 116 feeds are whole-site feeds, and issues shipped casino SEO, exchange-rate news, job ads, iPhone deals and Spanish-language pieces, twice a day, with `verified: true` set by code.
@@ -16,7 +18,7 @@ Troller (formerly Algorithm) is a weekly digest of **links** to the best critici
 4. `node scripts/weekly.js publish`. Writes `issues/NNNN.json` and `music/NNNN.json`, validates, builds.
 5. Summarise for Mike, and **only commit and push after he says yes.** Never force-push.
 
-Useful flags: `--date YYYY-MM-DD`, `--per-category 5`, `--songs 20`, `--read-per-category 12`, `--check-per-category 6`, `--cap 1`, `--no-batch` (full price, no wait), `--articles-only`, `--music-only`. A rerun reuses every finished stage in `.work/<date>/`, so it never pays twice; delete a stage's JSON there to redo it.
+Useful flags: `--date YYYY-MM-DD`, `--per-category 5`, `--songs 20`, `--read-per-category 12`, `--check-per-category 6`, `--cap 1`, `--no-batch` (full price, no wait), `--categories design,fashion` with `--work <folder>` (rerun only thin sections), and for `songs`: `--songs 20`, `--taste '<json from Copy my thumbs>'`. A rerun reuses every finished stage in `.work/<date>/`, so it never pays twice; delete a stage's JSON there to redo it.
 
 ## How the cost stays under $1
 - Feeds, date window, dedupe, rotation, junk titles, English and word count are all code: $0.
@@ -36,7 +38,7 @@ Never move article reading into this Claude Code conversation (WebFetch/WebSearc
 - The site is a pure function of `issues/*.json` and `music/*.json`. `scripts/build.js` renders every byte of HTML, including the New Music tab (`music/index.html`). Never hand-edit generated HTML.
 - `scripts/validate.js` enforces the rules. `assets/feeds.json` is the feed map (from `sources.md`); `assets/music-sources.json` lists the music list sources.
 - `music/taste.json`: `exclude` (artists Mike already knows), `liked`/`disliked`. The New Music page's "Copy my thumbs" button produces the liked/disliked JSON to paste in.
-- GitHub Pages deploys from `main`, root folder. The only workflow left is the manual, model-free `audit-feeds.yml`.
+- GitHub Pages deploys from `main`, root folder. Workflows: `audit-feeds.yml` (manual, model-free) and `song-troll.yml` (manual, the Song Troll button). Both are `workflow_dispatch` only.
 
 ## Editorial rules
 0. **New writing about new things.** Only pieces mainly about new work (roughly the last three months: releases, shows, buildings, books, comics, collections, labels, typefaces). Old subjects only when pegged to something new. Both judges test this (`NEW_RULE` in `weekly.js`), and code drops anything with `about_new: false`.

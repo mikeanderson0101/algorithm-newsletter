@@ -1,0 +1,85 @@
+name: Refresh Song Troll
+
+# Manual only. This is the "Refresh Song Troll" button on the Song Troll
+# page: it opens this workflow, and Mike presses "Run workflow".
+#
+# There is deliberately no schedule. Troller is refreshed by hand; the
+# scheduled workflow that used to compose issues cost over $100 and was
+# removed on 24 Oct 2026. Do not add a `schedule:` trigger here.
+#
+# One refresh finds the fortnight's new-song lists, picks a batch with the
+# thumbs pasted in below, and publishes it. About $0.05 in model calls, hard
+# capped at $1 by scripts/llm.js. News Troll is not touched.
+
+on:
+  workflow_dispatch:
+    inputs:
+      songs:
+        description: "How many songs in this batch"
+        required: false
+        default: "20"
+        type: string
+      taste:
+        description: "Optional: paste what the Copy my thumbs button copied"
+        required: false
+        default: ""
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: song-troll
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+
+      - name: Install
+        run: npm ci --no-audit --no-fund
+
+      - name: Pick a new batch
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          TROLLER_TASTE: ${{ inputs.taste }}
+        run: node scripts/weekly.js songs --songs "${{ inputs.songs }}"
+
+      - name: Publish
+        run: |
+          set -euo pipefail
+          if git diff --quiet && [ -z "$(git ls-files --others --exclude-standard)" ]; then
+            echo "No new songs this time; nothing to publish."
+            exit 0
+          fi
+          git config user.name  "troller-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          # Park the only two files this run creates or changes. Everything
+          # else on the site is rebuilt from JSON, so after moving to the
+          # latest main (Mike may have pushed an issue meanwhile) a rebuild
+          # is always correct and no merge conflict is possible.
+          NEW=$(ls music/[0-9][0-9][0-9][0-9].json | tail -1)
+          cp "$NEW" "$RUNNER_TEMP/batch.json"
+          cp music/taste.json "$RUNNER_TEMP/taste.json"
+
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git reset --hard origin/main
+            cp "$RUNNER_TEMP/batch.json" "$NEW"
+            cp "$RUNNER_TEMP/taste.json" music/taste.json
+            node scripts/build.js
+            git add -A
+            git commit -m "Song Troll batch $(basename "$NEW" .json | sed 's/^0*//')"
+            if git push origin HEAD:main; then exit 0; fi
+            echo "Push rejected (attempt ${attempt}/3); main moved. Rebuilding on top of it."
+            sleep $((attempt * 5))
+          done
+          echo "::error::Could not push after 3 attempts."
+          exit 1

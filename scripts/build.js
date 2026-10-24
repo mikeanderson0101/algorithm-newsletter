@@ -30,6 +30,11 @@ const MUSIC_DIR = path.join(ROOT, 'music');
 
 const SITE = 'Troller';
 
+// The Song Troll refresh is a manual-only GitHub workflow; the button on the
+// Song Troll page opens it. Only the repo owner can press Run.
+const REPO = 'mikeanderson0101/algorithm-newsletter';
+const REFRESH_URL = `https://github.com/${REPO}/actions/workflows/song-troll.yml`;
+
 /** Category order is fixed by the design. */
 const CATEGORY_ORDER = [
   { key: 'art',     title: 'Fine Art' },
@@ -627,11 +632,17 @@ const MUSIC_SCRIPT = String.raw`
   function listText(arr){ return arr.map(function(i){ return i.artist + ' – ' + i.title; }).join('\n'); }
   $('copylist').addEventListener('click', function(){ copy(listText(visible()), this, 'Copied'); });
   $('copyall').addEventListener('click', function(){ copy(listText(ITEMS.slice().sort(function(a, b){ return b.batch - a.batch; })), this, 'Copied all ' + ITEMS.length); });
-  $('copytaste').addEventListener('click', function(){
+  function thumbsJson(){
     var liked = [], disliked = [];
     Object.keys(taste).forEach(function(k){ (taste[k].v === 1 ? liked : disliked).push(taste[k].artist + ' – ' + taste[k].title); });
-    copy(JSON.stringify({ liked: liked, disliked: disliked }, null, 2), this, 'Copied. Paste it into music/taste.json or to Claude');
-  });
+    // One line: it is pasted into a single-line field on GitHub.
+    return JSON.stringify({ liked: liked, disliked: disliked });
+  }
+  $('copytaste').addEventListener('click', function(){ copy(thumbsJson(), this, 'Copied'); });
+  // The refresh button is a plain link to the manual GitHub workflow, so it
+  // opens even if copying fails; the click also puts the thumbs on the
+  // clipboard for the workflow's "taste" box.
+  $('refresh-btn').addEventListener('click', function(){ copy(thumbsJson(), this, 'Thumbs copied. Opening GitHub…'); });
   sync(); render();
 })();`;
 
@@ -660,6 +671,7 @@ function renderMusicPage(batches, sources) {
     <div class="hero-actions">
       <a class="btn" href="#songs">Browse the songs</a>
       <button class="btn alt" id="copyall" type="button">Copy the full list</button>
+      <a class="btn alt" href="#refresh">Refresh Song Troll</a>
     </div>
     <div class="stats">
       <div class="stat"><b>${items.length}</b><span>songs</span></div>
@@ -686,6 +698,16 @@ function renderMusicPage(batches, sources) {
     <div id="list"></div>
   </section>
 
+  <section id="refresh" aria-labelledby="h-refresh">
+    <h2 id="h-refresh">Refresh Song Troll<small>Song Troll refreshes on its own, whenever you want, separately from News Troll. About five cents a batch.</small></h2>
+    <ol class="rows">
+      <li class="row"><span class="n">01</span><div><h3>Press the button</h3><p>It copies your thumbs and opens the refresh on GitHub, in a new tab.</p></div></li>
+      <li class="row"><span class="n">02</span><div><h3>Paste and run</h3><p>Click <b>Run workflow</b>. Paste into the thumbs box so the batch leans your way, or leave it empty. Then click the green <b>Run workflow</b> button.</p></div></li>
+      <li class="row"><span class="n">03</span><div><h3>Come back in a few minutes</h3><p>The new batch appears here at the top, tagged New.</p></div></li>
+    </ol>
+    <p class="hero-actions" style="margin-top:28px"><a class="btn" id="refresh-btn" href="${REFRESH_URL}" target="_blank" rel="noopener">Refresh Song Troll</a></p>
+  </section>
+
   <section id="sources" aria-labelledby="h-sources">
     <h2 id="h-sources">Where the picks come from</h2>
     <ol class="rows">
@@ -703,7 +725,7 @@ ${sourceRows}
     scripts: [MUSIC_SCRIPT],
     farewell: 'happy listening',
     fine: `<p>Sources: ${sites.map(esc).join(', ')}. Every song links to the post it was picked from.</p>
-        <p>Thumbs are saved in this browser only. “Copy my thumbs” hands them back so the next batch leans your way.</p>`,
+        <p>Thumbs are saved in this browser only. “Refresh Song Troll” copies them for the next batch, so it leans your way.</p>`,
   });
 }
 

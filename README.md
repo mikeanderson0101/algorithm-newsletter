@@ -10,20 +10,27 @@ Live at **https://mikeanderson0101.github.io/algorithm-newsletter/**
 
 ## How it works
 
-Nothing runs on a schedule. Once or twice a week, by hand:
+Nothing runs on a schedule. The two tabs refresh separately, by hand.
+
+**News Troll**, once or twice a week:
 
 ```bash
 node scripts/weekly.js scout      # builds a shortlist, about $0.40, capped at $1
-node scripts/weekly.js publish    # writes the issue and music batch, validates, builds
+node scripts/weekly.js publish    # writes the issue, validates, builds
 ```
 
 Then review, commit and push. GitHub Pages serves `main`.
+
+**Song Troll**, whenever you like: press **Refresh Song Troll** on its page.
+That opens a manual-only GitHub workflow (`song-troll.yml`); paste your
+thumbs, press Run, and the new batch is published a few minutes later.
+Locally, the same thing is `node scripts/weekly.js songs`.
 
 `scout` fetches the feeds and filters them in code (dates, repeats, rotation,
 junk titles, language, length). Claude Haiku 5.5 reads every shortlisted
 article in full and gives a verdict; Claude Sonnet 5.5 re-reads the strongest
 through the Batch API and scores them; the top five per category are picked.
-No summaries are written. For New Music, Haiku pulls the songs out of each
+No summaries are written. For Song Troll, Haiku pulls the songs out of each
 site's weekly list post and Sonnet picks the batch using `music/taste.json`.
 
 Each model request carries one article and nothing else, which is why this
