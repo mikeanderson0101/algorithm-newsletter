@@ -8,6 +8,7 @@
  *   archive/NNNN.html          (one permanent page per issue)
  *   archive/index.html         (browsable list, newest first)
  *   assets/search-index.json   (search data across all issues)
+ *   music/index.html           (the New Music tab, from every music/NNNN.json batch)
  *
  * The design lives HERE, not in the model's output. The daily job only writes
  * an issue JSON; this script owns all HTML. That keeps the look stable.
@@ -20,6 +21,7 @@ const ROOT = path.resolve(__dirname, '..');
 const ISSUES_DIR = path.join(ROOT, 'issues');
 const ARCHIVE_DIR = path.join(ROOT, 'archive');
 const ASSETS_DIR = path.join(ROOT, 'assets');
+const MUSIC_DIR = path.join(ROOT, 'music');
 
 /** Category order and colour keys are fixed by the design. */
 const CATEGORY_ORDER = [
@@ -88,6 +90,10 @@ const STYLES = `
     transform:rotate(-3deg); display:inline-block; font-weight:600;
     white-space:nowrap;
   }
+  .tabs{display:flex; gap:22px; margin:-8px 0 26px; font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.1em; text-transform:uppercase;}
+  .tab{color:#A6A29A; text-decoration:none; padding-bottom:6px; border-bottom:2px solid transparent;}
+  .tab:hover{color:#FAFAF7;}
+  .tab.is-active{color:#FAFAF7; border-bottom-color:#FF1F3D;}
   .nav{display:flex; justify-content:space-between; align-items:center; gap:16px; margin-bottom:40px; flex-wrap:wrap;}
   .nav-link{font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:#FAFAF7; text-decoration:none; border:1px solid rgba(250,250,247,0.35); padding:9px 14px; border-radius:2px; white-space:nowrap;}
   .nav-link:hover{border-color:#FF1F3D; color:#FF1F3D;}
@@ -240,7 +246,7 @@ const SEARCH_SCRIPT = `
   });
 })();`;
 
-function head(title) {
+function head(title, extraStyles = '') {
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -252,9 +258,19 @@ function head(title) {
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Source+Serif+4:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<style>${STYLES}
+<style>${STYLES}${extraStyles}
 </style>
 </head>`;
+}
+
+/** The two sections of the site. Shown on every page so New Music is one tap away. */
+function tabs(root, active) {
+  const tab = (href, label, key) =>
+    `<a class="tab${active === key ? ' is-active' : ''}" href="${root}${href}"${active === key ? ' aria-current="page"' : ''}>${label}</a>`;
+  return `  <nav class="tabs" aria-label="Sections">
+    ${tab('index.html', 'Criticism', 'issues')}
+    ${tab('music/index.html', 'New Music', 'music')}
+  </nav>`;
 }
 
 /** An entry links out only when a verified URL exists — otherwise plain text. */
@@ -325,6 +341,7 @@ ${entries}
     <a class="mast-title" href="${root}index.html">Algorithm</a>
     <span class="stamp">Issue No. ${esc(issue.issue)}</span>
   </div>
+${tabs(root, 'issues')}
 ${nav}
   <h1 class="hero">${renderHeadline(issue.headline)}</h1>
   <p class="intro">${esc(issue.intro)}</p>
@@ -359,6 +376,7 @@ function renderArchiveIndex(issues) {
     <a class="mast-title" href="../index.html">Algorithm</a>
     <span class="stamp">Archive</span>
   </div>
+${tabs('../', 'issues')}
   <div class="nav">
     <div class="search-wrap">
       <input type="text" id="searchInput" class="search-input" placeholder="Search past entries…" autocomplete="off">
@@ -382,6 +400,225 @@ ${cards}
 </body>
 </html>
 `;
+}
+
+// ---------------------------------------------------------------------------
+// New Music
+//
+// Folded in from the standalone "Fresh this week" page. Songs come from the
+// weekly lists at the sites that cover new music full time; every song links
+// to the post it was picked from. Thumbs are kept in the reader's browser and
+// "Copy my thumbs" hands them back for music/taste.json, which steers the
+// next batch.
+// ---------------------------------------------------------------------------
+
+const MUSIC_STYLES = `
+  .mfilters{display:grid; gap:10px; margin-bottom:8px;}
+  .mrow{display:flex; flex-wrap:wrap; align-items:center; gap:8px;}
+  .mlabel{width:64px; flex:none; font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:#A6A29A;}
+  .chip{font-family:'IBM Plex Mono', monospace; font-size:12px; color:#FAFAF7; background:#151513; border:1px solid rgba(250,250,247,0.3); padding:6px 11px; border-radius:2px; cursor:pointer;}
+  .chip:hover{border-color:#FF5FA8;}
+  .chip[aria-pressed="true"]{background:#FF5FA8; border-color:#FF5FA8; color:#0A0A0A;}
+  .mbar{display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:10px; margin:22px 0 6px; padding:12px 0; border-top:2px solid #FAFAF7;}
+  .mcount{font-family:'IBM Plex Mono', monospace; font-size:12px; color:#A6A29A; margin:0;}
+  .mbtns{display:flex; gap:8px; flex-wrap:wrap;}
+  .mbtn{font-family:'IBM Plex Mono', monospace; font-size:11.5px; letter-spacing:0.06em; text-transform:uppercase; color:#FAFAF7; background:none; border:1px solid rgba(250,250,247,0.35); padding:8px 12px; border-radius:2px; cursor:pointer; text-decoration:none; display:inline-block;}
+  .mbtn:hover{border-color:#FF5FA8; color:#FF5FA8;}
+  .song{display:grid; grid-template-columns:1fr auto; gap:6px 16px; padding:22px 0; border-bottom:1px solid rgba(250,250,247,0.16);}
+  .song-title{font-family:'Archivo Black', sans-serif; font-size:21px; text-transform:uppercase; line-height:1.1; margin:0; color:#FAFAF7;}
+  .song-artist{font-style:italic; color:#EDEAE2; margin:4px 0 8px; font-size:16px;}
+  .song-note{margin:0 0 8px; font-size:15.5px; color:#EDEAE2; max-width:60ch;}
+  .song-src{font-family:'IBM Plex Mono', monospace; font-size:11px; color:#A6A29A; margin:0 0 12px;}
+  .song-src a{color:#A6A29A; text-underline-offset:3px;}
+  .song-src .new{color:#0A0A0A; background:#FF5FA8; padding:1px 6px; border-radius:2px; margin-left:6px;}
+  .song .links{grid-column:1 / -1; display:flex; flex-wrap:wrap; gap:8px;}
+  .react{display:flex; gap:6px; align-self:start;}
+  .react button{width:38px; height:38px; display:grid; place-items:center; background:#151513; color:#FAFAF7; border:1px solid rgba(250,250,247,0.3); border-radius:2px; cursor:pointer; font-size:16px;}
+  .react button:hover{border-color:#FF5FA8;}
+  .react .up[aria-pressed="true"]{background:#FF5FA8; border-color:#FF5FA8; color:#0A0A0A;}
+  .react .down[aria-pressed="true"]{background:#FAFAF7; border-color:#FAFAF7; color:#0A0A0A;}
+  .song.is-disliked .song-title, .song.is-disliked .song-artist, .song.is-disliked .song-note{opacity:0.45;}
+  .mempty{font-family:'IBM Plex Mono', monospace; font-size:13px; color:#A6A29A; padding:32px 0;}
+  .sources{list-style:none; margin:0; padding:0;}
+  .sources li{padding:14px 0; border-bottom:1px solid rgba(250,250,247,0.16);}
+  .sources b{font-family:'Archivo Black', sans-serif; text-transform:uppercase; font-weight:400; font-size:16px;}
+  .sources span{display:block; color:#A6A29A; font-size:14.5px;}
+  h2.mhead{font-family:'Archivo Black', sans-serif; font-size:24px; text-transform:uppercase; margin:56px 0 14px; color:#FAFAF7;}
+  @media (max-width:520px){ .mlabel{width:100%;} .song-title{font-size:18px;} }`;
+
+const MUSIC_SCRIPT = `
+(function(){
+  var ITEMS = JSON.parse(document.getElementById('music-data').textContent);
+  var K_TASTE = 'algorithm-music-taste', K_VIEW = 'algorithm-music-view';
+  function load(k, f){ try { var v = JSON.parse(localStorage.getItem(k) || 'null'); return v == null ? f : v; } catch (e) { return f; } }
+  function save(k, v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
+  var taste = load(K_TASTE, {});
+  var state = Object.assign({ batch: 'all', site: 'all', rating: 'all', q: '' }, load(K_VIEW, {}), { q: '' });
+  var BATCHES = Array.from(new Set(ITEMS.map(function(i){ return i.batch; }))).sort(function(a,b){ return b-a; });
+  var SITES = Array.from(new Set(ITEMS.map(function(i){ return i.site; })));
+  if (state.batch !== 'all' && BATCHES.indexOf(Number(state.batch)) === -1) state.batch = 'all';
+  if (state.site !== 'all' && SITES.indexOf(state.site) === -1) state.site = 'all';
+  var $ = function(id){ return document.getElementById(id); };
+
+  function copy(text, btn, done){
+    var finish = function(){ var l = btn.textContent; btn.textContent = done; setTimeout(function(){ btn.textContent = l; }, 2000); };
+    var fallback = function(){ var t = document.createElement('textarea'); t.value = text; t.style.position = 'fixed'; t.style.opacity = '0'; document.body.appendChild(t); t.select(); try { document.execCommand('copy'); } catch (e) {} document.body.removeChild(t); finish(); };
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(finish, fallback); else fallback();
+  }
+  function matches(i){
+    if (state.batch !== 'all' && i.batch !== Number(state.batch)) return false;
+    if (state.site !== 'all' && i.site !== state.site) return false;
+    if (state.rating === 'liked' && !(taste[i.id] && taste[i.id].v === 1)) return false;
+    if (state.q && [i.artist, i.title, i.note, i.site].join(' ').toLowerCase().indexOf(state.q.toLowerCase()) === -1) return false;
+    return true;
+  }
+  function visible(){ return ITEMS.filter(matches).sort(function(a,b){ return b.batch - a.batch; }); }
+
+  function chip(parent, value, label, key){
+    var b = document.createElement('button'); b.type = 'button'; b.className = 'chip'; b.textContent = label; b.dataset.value = String(value);
+    b.addEventListener('click', function(){ state[key] = String(value); save(K_VIEW, { batch: state.batch, site: state.site, rating: state.rating }); sync(); render(); });
+    parent.appendChild(b);
+  }
+  function sync(){
+    [['f-batch','batch'],['f-site','site'],['f-rating','rating']].forEach(function(p){
+      Array.prototype.forEach.call($(p[0]).children, function(b){ b.setAttribute('aria-pressed', b.dataset.value === String(state[p[1]]) ? 'true' : 'false'); });
+    });
+  }
+
+  function link(parent, href, text){ var a = document.createElement('a'); a.className = 'mbtn'; a.href = href; a.target = '_blank'; a.rel = 'noopener'; a.textContent = text; parent.appendChild(a); }
+  function card(item){
+    var q = encodeURIComponent(item.search || (item.title + ' ' + item.artist));
+    var row = document.createElement('article'); row.className = 'song';
+    var main = document.createElement('div');
+    var t = document.createElement('h3'); t.className = 'song-title'; t.textContent = item.title;
+    var a = document.createElement('p'); a.className = 'song-artist'; a.textContent = item.artist;
+    main.appendChild(t); main.appendChild(a);
+    if (item.note) { var n = document.createElement('p'); n.className = 'song-note'; n.textContent = item.note; main.appendChild(n); }
+    var s = document.createElement('p'); s.className = 'song-src';
+    s.appendChild(document.createTextNode(item.site + ' \\u00b7 '));
+    var sa = document.createElement('a'); sa.href = item.src.url; sa.target = '_blank'; sa.rel = 'noopener'; sa.textContent = item.src.label; s.appendChild(sa);
+    if (item.batch === BATCHES[0]) { var nw = document.createElement('span'); nw.className = 'new'; nw.textContent = 'New'; s.appendChild(nw); }
+    main.appendChild(s);
+
+    var react = document.createElement('div'); react.className = 'react';
+    var up = document.createElement('button'); up.type = 'button'; up.className = 'up'; up.textContent = '\\u25B2'; up.setAttribute('aria-label', 'Like ' + item.title + ' by ' + item.artist);
+    var down = document.createElement('button'); down.type = 'button'; down.className = 'down'; down.textContent = '\\u25BC'; down.setAttribute('aria-label', 'Dislike ' + item.title + ' by ' + item.artist);
+    react.appendChild(up); react.appendChild(down);
+    function paint(){ var v = taste[item.id] ? taste[item.id].v : 0; up.setAttribute('aria-pressed', v === 1 ? 'true' : 'false'); down.setAttribute('aria-pressed', v === -1 ? 'true' : 'false'); row.classList.toggle('is-disliked', v === -1); }
+    function choose(v){ if (taste[item.id] && taste[item.id].v === v) delete taste[item.id]; else taste[item.id] = { v: v, artist: item.artist, title: item.title, site: item.site }; save(K_TASTE, taste); if (state.rating === 'liked') render(); else { paint(); count(); } }
+    up.addEventListener('click', function(){ choose(1); }); down.addEventListener('click', function(){ choose(-1); });
+    paint();
+
+    var links = document.createElement('div'); links.className = 'links';
+    link(links, item.yt ? 'https://www.youtube.com/watch?v=' + item.yt : 'https://www.youtube.com/results?search_query=' + q, 'YouTube');
+    link(links, 'https://open.spotify.com/search/' + q, 'Spotify');
+    link(links, item.bc || ('https://bandcamp.com/search?q=' + q + '&item_type=t'), 'Bandcamp');
+    var cb = document.createElement('button'); cb.type = 'button'; cb.className = 'mbtn'; cb.textContent = 'Copy name';
+    cb.addEventListener('click', function(){ copy(item.search || (item.title + ' ' + item.artist), cb, 'Copied'); });
+    links.appendChild(cb);
+
+    row.appendChild(main); row.appendChild(react); row.appendChild(links);
+    return row;
+  }
+  function count(){
+    var vis = visible();
+    var likes = Object.keys(taste).filter(function(k){ return taste[k].v === 1; }).length;
+    var dislikes = Object.keys(taste).filter(function(k){ return taste[k].v === -1; }).length;
+    var s = vis.length + (vis.length === 1 ? ' song' : ' songs') + (vis.length !== ITEMS.length ? ' of ' + ITEMS.length : '');
+    if (likes + dislikes) s += ' \\u00b7 ' + likes + ' liked, ' + dislikes + ' disliked';
+    $('count').textContent = s;
+  }
+  function render(){
+    var vis = visible(), list = $('list');
+    list.textContent = '';
+    if (!vis.length) { var e = document.createElement('p'); e.className = 'mempty'; e.textContent = state.rating === 'liked' ? 'Nothing liked yet. Tap \\u25B2 on a song and it shows up here.' : 'No songs match.'; list.appendChild(e); }
+    vis.forEach(function(i){ list.appendChild(card(i)); });
+    count();
+  }
+
+  chip($('f-batch'), 'all', 'All', 'batch');
+  BATCHES.forEach(function(n){ chip($('f-batch'), n, 'Batch ' + n, 'batch'); });
+  chip($('f-site'), 'all', 'All', 'site');
+  SITES.forEach(function(s){ chip($('f-site'), s, s, 'site'); });
+  chip($('f-rating'), 'all', 'All', 'rating');
+  chip($('f-rating'), 'liked', 'Liked', 'rating');
+  $('q').addEventListener('input', function(){ state.q = this.value.trim(); render(); });
+  $('copylist').addEventListener('click', function(){ copy(visible().map(function(i){ return i.artist + ' \\u2013 ' + i.title; }).join('\\n'), this, 'Copied'); });
+  $('copytaste').addEventListener('click', function(){
+    var liked = [], disliked = [];
+    Object.keys(taste).forEach(function(k){ (taste[k].v === 1 ? liked : disliked).push(taste[k].artist + ' \\u2013 ' + taste[k].title); });
+    copy(JSON.stringify({ liked: liked, disliked: disliked }, null, 2), this, 'Copied. Paste it into music/taste.json or to Claude');
+  });
+  sync(); render();
+})();`;
+
+function renderMusicPage(batches, sources) {
+  const items = batches.flatMap((b) => b.items.map((i) => ({ ...i, batch: b.batch })));
+  const latest = batches.length ? batches[batches.length - 1] : null;
+  const usedSites = [...new Set(items.map((i) => i.site))];
+  // JSON inside a <script> tag: escaping "<" keeps a stray "</script>" in a
+  // song note from ending the block early.
+  const data = JSON.stringify(items).replace(/</g, '\\u003c');
+  const sourceList = usedSites
+    .map((s) => `    <li><b>${esc(s)}</b><span>${esc((sources[s] && sources[s].blurb) || '')}</span></li>`)
+    .join('\n');
+
+  return `${head('Algorithm — New Music', MUSIC_STYLES)}
+<body data-root="../">
+<div class="page">
+<div class="wrap">
+  <div class="masthead">
+    <a class="mast-title" href="../index.html">Algorithm</a>
+    <span class="stamp">New Music</span>
+  </div>
+${tabs('../', 'music')}
+  <h1 class="hero">Song <span class="pop">Troll.</span></h1>
+  <p class="intro">Every week a handful of music sites name the new songs they can’t stop playing. These are picked from their lists, and every song links back to the post it came from.</p>
+  <span class="intro-byline">${items.length} songs · ${batches.length} batch${batches.length === 1 ? '' : 'es'}${latest ? ` · updated ${formatDate(latest.date)}` : ''}</span>
+  <div class="mfilters">
+    <div class="mrow"><span class="mlabel">Batch</span><div class="mrow" id="f-batch" role="group" aria-label="Batch"></div></div>
+    <div class="mrow"><span class="mlabel">Source</span><div class="mrow" id="f-site" role="group" aria-label="Source"></div></div>
+    <div class="mrow"><span class="mlabel">Show</span><div class="mrow" id="f-rating" role="group" aria-label="Show"></div></div>
+    <input id="q" class="search-input" type="search" placeholder="Search artist, song or sound…" aria-label="Search songs">
+  </div>
+  <div class="mbar">
+    <p id="count" class="mcount" role="status" aria-live="polite"></p>
+    <div class="mbtns">
+      <button id="copylist" class="mbtn" type="button">Copy list</button>
+      <button id="copytaste" class="mbtn" type="button">Copy my thumbs</button>
+    </div>
+  </div>
+  <div id="list"></div>
+  <h2 class="mhead">Where the picks come from</h2>
+  <ul class="sources">
+${sourceList}
+  </ul>
+  <footer>
+    <span>Algorithm — New Music</span>
+    <span>${latest ? `Batch ${latest.batch} — ${formatDate(latest.date)}` : ''}</span>
+  </footer>
+</div>
+</div>
+<script type="application/json" id="music-data">${data}</script>
+<script>${MUSIC_SCRIPT}</script>
+</body>
+</html>
+`;
+}
+
+function loadMusic() {
+  if (!fs.existsSync(MUSIC_DIR)) return [];
+  return fs.readdirSync(MUSIC_DIR)
+    .filter((f) => /^\d{4}\.json$/.test(f))
+    .sort()
+    .map((f) => {
+      try {
+        return JSON.parse(fs.readFileSync(path.join(MUSIC_DIR, f), 'utf8'));
+      } catch (err) {
+        console.error(`Invalid JSON in music/${f}: ${err.message}`);
+        process.exit(1);
+      }
+    });
 }
 
 function buildSearchIndex(issues) {
@@ -463,11 +700,22 @@ function main() {
     JSON.stringify(buildSearchIndex(issues), null, 2) + '\n',
   );
 
+  const batches = loadMusic();
+  let sources = {};
+  try {
+    sources = JSON.parse(fs.readFileSync(path.join(ASSETS_DIR, 'music-sources.json'), 'utf8'));
+  } catch {
+    /* blurbs are optional */
+  }
+  fs.mkdirSync(MUSIC_DIR, { recursive: true });
+  fs.writeFileSync(path.join(MUSIC_DIR, 'index.html'), renderMusicPage(batches, sources));
+
   // GitHub Pages otherwise runs the site through Jekyll, which ignores some files.
   fs.writeFileSync(path.join(ROOT, '.nojekyll'), '');
 
   const entryCount = buildSearchIndex(issues).length;
   console.log(`Built ${issues.length} issue(s), ${entryCount} entries indexed.`);
+  console.log(`Built New Music: ${batches.reduce((n, b) => n + b.items.length, 0)} songs in ${batches.length} batch(es).`);
   console.log(`Latest: Issue No. ${issues[0].issue} (${issues[0].date})`);
 }
 

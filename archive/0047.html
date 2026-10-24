@@ -43,6 +43,10 @@
     transform:rotate(-3deg); display:inline-block; font-weight:600;
     white-space:nowrap;
   }
+  .tabs{display:flex; gap:22px; margin:-8px 0 26px; font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.1em; text-transform:uppercase;}
+  .tab{color:#A6A29A; text-decoration:none; padding-bottom:6px; border-bottom:2px solid transparent;}
+  .tab:hover{color:#FAFAF7;}
+  .tab.is-active{color:#FAFAF7; border-bottom-color:#FF1F3D;}
   .nav{display:flex; justify-content:space-between; align-items:center; gap:16px; margin-bottom:40px; flex-wrap:wrap;}
   .nav-link{font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:#FAFAF7; text-decoration:none; border:1px solid rgba(250,250,247,0.35); padding:9px 14px; border-radius:2px; white-space:nowrap;}
   .nav-link:hover{border-color:#FF1F3D; color:#FF1F3D;}
@@ -153,6 +157,10 @@
     <a class="mast-title" href="../index.html">Algorithm</a>
     <span class="stamp">Issue No. 47</span>
   </div>
+  <nav class="tabs" aria-label="Sections">
+    <a class="tab is-active" href="../index.html" aria-current="page">Criticism</a>
+    <a class="tab" href="../music/index.html">New Music</a>
+  </nav>
   <div class="nav">
     <a class="nav-link" href="../index.html">&larr; Latest Issue</a>
     <a class="nav-link" href="../archive/index.html">Full Archive</a>

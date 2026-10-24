@@ -1,0 +1,45 @@
+# Algorithm: working agreement for Claude Code
+
+Algorithm is a weekly digest of **links** to the best criticism and long-form writing across 7 categories (fine art, film, tech & AI, literary/SFF, music criticism, design, menswear), plus a **New Music** tab of new songs picked from the weekly lists of sites that cover new music. Mike Anderson is the editor. Live at https://mikeanderson0101.github.io/algorithm-newsletter/
+
+**Nothing is automated.** Mike refreshes it by hand, once or twice a week. There is no schedule, no GitHub Action composing issues, and there must not be one again.
+
+## The history, because it explains every rule
+- v1 (Aug 2026): one long agentic loop read every article. Quality was great; cost $9.53 an issue, because each article stayed in context and was re-read on every later turn (26.4M cached tokens).
+- v2 (Sept–Oct 2026): RSS feeds plus one model call over headlines. Cheap, and the quality collapsed: nothing was read, 100 of 116 feeds are whole-site feeds, and issues shipped casino SEO, exchange-rate news, job ads, iPhone deals and Spanish-language pieces, twice a day, with `verified: true` set by code.
+- v3 (now): `scripts/weekly.js`. Every finalist is read in full, but each read is its own small request, so nothing accumulates. About $0.40 per refresh with a hard $1 cap.
+
+## Making an issue
+1. `git pull`. Make sure `ANTHROPIC_API_KEY` is set (Mike sets it himself; never ask for or type a key).
+2. `node scripts/weekly.js scout`. Takes a few minutes, mostly waiting on the Sonnet batch. Prints the spend.
+3. Show Mike `.work/<date>/shortlist.md`. Ticked entries are the default picks (5 per category, 20 songs). To swap a pick, flip `"pick"` in `.work/<date>/shortlist.json`.
+4. `node scripts/weekly.js publish`. Writes `issues/NNNN.json` and `music/NNNN.json`, validates, builds.
+5. Summarise for Mike, and **only commit and push after he says yes.** Never force-push.
+
+Useful flags: `--date YYYY-MM-DD`, `--per-category 5`, `--songs 20`, `--read-per-category 12`, `--check-per-category 6`, `--cap 1`, `--no-batch` (full price, no wait), `--articles-only`, `--music-only`. A rerun reuses every finished stage in `.work/<date>/`, so it never pays twice; delete a stage's JSON there to redo it.
+
+## How the cost stays under $1
+- Feeds, date window, dedupe, rotation, junk titles, English and word count are all code: $0.
+- Haiku 5.5 shortlists from titles, then reads each shortlisted article (cut to its body, max 3,000 words) and returns a verdict. No summaries are written.
+- Sonnet 5.5 re-reads only the top ~6 per category, through the Batch API (half price), and scores 1–10.
+- New Music: Haiku pulls songs out of ~9 list posts; Sonnet picks the batch from `music/taste.json`.
+- `scripts/llm.js` prices every response from its `usage` and refuses to start a stage that would cross the cap.
+
+Never move article reading into this Claude Code conversation (WebFetch/WebSearch in the main context). That is exactly the v1 cost failure.
+
+## Architecture
+- The site is a pure function of `issues/*.json` and `music/*.json`. `scripts/build.js` renders every byte of HTML, including the New Music tab (`music/index.html`). Never hand-edit generated HTML.
+- `scripts/validate.js` enforces the rules. `assets/feeds.json` is the feed map (from `sources.md`); `assets/music-sources.json` lists the music list sources.
+- `music/taste.json`: `exclude` (artists Mike already knows), `liked`/`disliked`. The New Music page's "Copy my thumbs" button produces the liked/disliked JSON to paste in.
+- GitHub Pages deploys from `main`, root folder. The only workflow left is the manual, model-free `audit-feeds.yml`.
+
+## Editorial rules
+1. English only, published in English by the outlet. Never translate.
+2. Links only. Every published entry was fetched and read in full by the pipeline; `verified: true` means that.
+3. Every URL comes from a feed or fetch. Never construct one.
+4. No repeats (checked against every issue). Rotation: an outlet holds a category in at most 2 of any 4 weekly issues; max 2 entries per outlet per issue; never two in one category from one outlet.
+5. Better a short category than padding. Fashion and design are structurally thin; say so rather than lower the bar.
+6. Tech & AI attracts SEO spam. The reader prompt rejects it; keep it that way.
+7. The Pulse is retired. Ignore old `pulse` keys.
+
+`docs/archive/` holds the old build notes and source-list research; read them before changing sources.

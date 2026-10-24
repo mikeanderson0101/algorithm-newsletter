@@ -1,110 +1,68 @@
 # Algorithm
 
-A daily culture newsletter. Fourteen pieces of long-form criticism a day — two
-each across fine art, film, tech & AI, literary reviews, music, design and
-menswear — drawn from around 110 publications on six continents.
+A weekly digest of links to the best criticism and long-form writing: five
+pieces each across fine art, film, tech & AI, literary reviews, music, design
+and menswear, from around 110 publications on six continents. Plus **New
+Music**: new songs picked from the weekly lists of the sites that cover new
+music full time.
 
 Live at **https://mikeanderson0101.github.io/algorithm-newsletter/**
 
 ## How it works
 
-Every morning at 11:17 UTC a GitHub Action researches the day's issue and opens
-a pull request. Nothing goes live until you merge it.
+Nothing runs on a schedule. Once or twice a week, by hand:
 
-```
-.github/workflows/daily-issue.yml   the schedule and the prompt
-sources.md                          the curated source list
-issues/YYYY-MM-DD.json              one file per issue — the only thing Claude writes
-scripts/validate.js                 fails the build on repeats, fabrication, thin curation
-scripts/build.js                    renders ALL the HTML — the design lives here
-scripts/pr-body.js                  renders the PR summary
-index.html, archive/, assets/       generated output; never edit by hand
+```bash
+node scripts/weekly.js scout      # builds a shortlist, about $0.40, capped at $1
+node scripts/weekly.js publish    # writes the issue and music batch, validates, builds
 ```
 
-The split matters. Claude writes **only** a JSON file of the day's picks. Every
-piece of HTML is rendered deterministically by `build.js`, so the design cannot
-drift, the archive and search index can never fall out of sync, and the whole
-site can be rebuilt from `issues/*.json` at any time.
+Then review, commit and push. GitHub Pages serves `main`.
 
-## What the validator enforces
+`scout` fetches the feeds and filters them in code (dates, repeats, rotation,
+junk titles, language, length). Claude Haiku 5.5 reads every shortlisted
+article in full and gives a verdict; Claude Sonnet 5.5 re-reads the strongest
+through the Batch API and scores them; the top five per category are picked.
+No summaries are written. For New Music, Haiku pulls the songs out of each
+site's weekly list post and Sonnet picks the batch using `music/taste.json`.
 
-These checks came out of real failures in the first hand-made draft, which
-shipped two articles duplicated from a sample template and one summary written
-from a headline without reading the article. The build fails on:
+Each model request carries one article and nothing else, which is why this
+costs cents rather than the $9.53 an issue the original agentic version did.
 
-- an entry not marked `verified: true` — set only after fetching and reading the article
-- any article already present in `assets/search-index.json`
-- a malformed or placeholder URL (guards against URLs invented from naming patterns)
-- a category with anything other than exactly 2 entries, or a missing category
-- more than 2 entries from the same publication in one issue
-
-Warnings (which don't fail the build) cover headline length, summary length, and
-both picks in a category sharing a source.
+```
+scripts/weekly.js         the pipeline (scout / publish)
+scripts/llm.js            model calls and the cost ledger with its hard cap
+scripts/page-text.js      article body extraction, English and paywall checks
+scripts/feed-lib.js       feed parsing and candidate filtering (tested)
+scripts/validate.js       fails on repeats, unread entries, rotation breaks
+scripts/build.js          renders ALL the HTML, including the New Music tab
+assets/feeds.json         the article feeds
+assets/music-sources.json the music list sources
+issues/NNNN.json          one file per issue
+music/NNNN.json           one file per New Music batch; music/taste.json steers picks
+```
 
 ## Setup
 
-**1. Add your API key.** Settings → Secrets and variables → Actions → New
-repository secret, named `ANTHROPIC_API_KEY`. Get one at
-[platform.claude.com](https://platform.claude.com).
+Needs Node 18+ and an Anthropic API key in `ANTHROPIC_API_KEY`.
 
-To use a Claude subscription instead of API billing, run `claude setup-token`
-locally, store the result as `CLAUDE_CODE_OAUTH_TOKEN`, and swap that line in
-the workflow for `claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}`.
-
-**2. Turn on Pages.** Settings → Pages → Source: *Deploy from a branch* →
-Branch `main`, folder `/ (root)` → Save.
-
-**3. Run it once.** Actions → Daily Issue → *Run workflow*. That produces the
-first issue as a PR. Merge it and the site goes live.
-
-## Day to day
-
-A PR appears each morning titled `Issue No. N — YYYY-MM-DD`. The body lists every
-pick with its link and publication, flags any entry that has no verified link,
-and notes any publication used twice. Skim it, then merge to publish.
-
-To reject a pick, edit `issues/YYYY-MM-DD.json` on the branch and delete or
-replace the entry — CI re-runs validation and rebuilds the HTML automatically.
-
-To skip a day, just close the PR.
-
-## Switching to auto-publish
-
-Once you trust it, replace the last step of the workflow with a direct commit to
-`main`:
-
-```yaml
-      - name: Publish
-        run: |
-          git config user.name  "algorithm-bot"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A
-          git commit -m "Issue No. ${{ steps.meta.outputs.issue }} — ${{ steps.meta.outputs.date }}"
-          git push
+```bash
+npm install
 ```
-
-Validation still runs first, so a bad issue fails rather than publishing.
 
 ## Rebuilding by hand
 
 ```bash
 node scripts/validate.js      # check every issue
 node scripts/build.js         # regenerate the whole site
+node scripts/test-feed-lib.js # offline tests for feed parsing and filtering
 ```
-
-Both need only Node — no dependencies, no install step.
 
 ## Known limitations
 
-**The Pulse section has no reliable source.** Live social platform trends aren't
-reachable from the research tools, so that section is the weakest part of the
-format and is written conservatively. It's worth reconsidering or wiring to a
-real feed.
+**Design and menswear skew Western.** Dedicated criticism outlets in those
+fields barely exist outside the UK, US and Europe.
 
-**Design and menswear skew Western.** Three research passes confirmed that
-dedicated criticism outlets in those fields barely exist outside the UK, US and
-Europe. That's the media landscape, not a gap in the source list.
-
-**Some strong publications block automated access** — Pitchfork, Die Workwear,
-Business of Fashion, Cinema Scope. They're marked `UNVERIFIED` in `sources.md`
-and won't be cited unless checked manually.
+**Some strong publications block automated access**: Pitchfork, Die Workwear,
+Business of Fashion, Cinema Scope. They are marked `UNVERIFIED` in
+`sources.md`.

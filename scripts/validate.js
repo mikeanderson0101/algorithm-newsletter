@@ -20,8 +20,9 @@ const ISSUES_DIR = path.join(ROOT, 'issues');
 const REQUIRED_CATEGORIES = ['art', 'film', 'tech', 'lit', 'music', 'design', 'fashion'];
 // Maximum entries per category, not an exact count — a thin category is a
 // warning. Raised from 2 to 4 on 19 Sept 2026 when the newsletter moved to
-// a wider, less discerning feed of links.
-const ENTRIES_PER_CATEGORY = 4;
+// feeds, and to 5 on 24 Oct 2026 when it became weekly: one issue a week has
+// to carry a week's reading.
+const ENTRIES_PER_CATEGORY = 5;
 
 /**
  * Rotation: a publication may hold a given category in at most
@@ -111,17 +112,10 @@ function validateIssue(issue, filename, priorUrls, priorTitles, recentHistory) {
 
       if (!e.title || !String(e.title).trim()) err(`${at}: missing "title".`);
       if (!e.source || !String(e.source).trim()) err(`${at}: missing "source".`);
-      // Publisher-controlled: plenty of feeds ship an empty <description>.
-      // That is their RSS hygiene, not a defect in this issue, and build.js
-      // omits the element when blank. Failing here discards a paid-for run
-      // over someone else's markup — the 19 Sept 2026 failure exactly.
-      if (!e.summary || !String(e.summary).trim()) {
-        warn(`${at}: no "summary" (the feed supplied none).`);
-      }
-      // "why" is optional. Under the feed-based pipeline nothing is read
-      // before publication, so a claim about why a piece is worth reading
-      // would be invented. An empty "why" is the honest state, not a defect;
-      // build.js omits the element entirely when it is blank.
+      // "summary" and "why" are optional. Since 24 Oct 2026 an issue is
+      // links only, by choice: every pick is read in full to decide whether
+      // it runs, but nothing is written about it for publication. build.js
+      // omits both elements when blank. Issues before that carry them.
       if (e.why !== undefined && typeof e.why !== 'string') {
         err(`${at}: "why" must be a string when present.`);
       }
@@ -143,7 +137,7 @@ function validateIssue(issue, filename, priorUrls, priorTitles, recentHistory) {
       }
 
       const sentences = countSentences(e.summary || '');
-      if (sentences < 2 || sentences > 3) {
+      if (e.summary && String(e.summary).trim() && (sentences < 2 || sentences > 3)) {
         warn(`${at}: summary is ${sentences} sentences; the format calls for 2.`);
       }
       if (countSentences(e.why || '') > 2) {

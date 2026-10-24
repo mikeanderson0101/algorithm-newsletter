@@ -1,0 +1,14 @@
+{
+  "_about": "Read by scripts/weekly.js. exclude: artists you already know, never picked. liked/disliked: \"Artist – Title\". Paste the New Music page's \"Copy my thumbs\" output into liked/disliked.",
+  "exclude": [
+    "Big Thief",
+    "Sparks",
+    "Pip Blom",
+    "The Knife",
+    "Blonde Redhead",
+    "Worriers",
+    "Wet Leg"
+  ],
+  "liked": [],
+  "disliked": []
+}

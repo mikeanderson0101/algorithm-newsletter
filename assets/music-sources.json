@@ -1,0 +1,33 @@
+{
+  "Stereogum": {
+    "feed": "https://stereogum.com/category/lists/the-5-best-songs-of-the-week/feed",
+    "match": "5 Best Songs",
+    "blurb": "The five best new songs of the week, chosen by staff.",
+    "maxPosts": 2
+  },
+  "Bandcamp Daily": {
+    "feed": "https://daily.bandcamp.com/feed",
+    "match": "^Essential Releases",
+    "blurb": "Essential Releases: what the editors are listening to right now.",
+    "maxPosts": 2
+  },
+  "The Line of Best Fit": {
+    "index": "https://www.thelineofbestfit.com/news",
+    "linkMatch": "new-music-discovery",
+    "label": "New Music Discovery",
+    "blurb": "New Music Discovery: a weekly playlist of under-the-radar artists.",
+    "maxPosts": 1
+  },
+  "Various Small Flames": {
+    "feed": "https://varioussmallflames.co.uk/feed/",
+    "match": "^Weekly Listening",
+    "blurb": "Weekly Listening: new indie, folk and experimental songs.",
+    "maxPosts": 2
+  },
+  "WBRU": {
+    "feed": "https://wbru.substack.com/feed",
+    "match": "^Today.s Top Indie",
+    "blurb": "Today's Top Indie: a weekly playlist from the radio station.",
+    "maxPosts": 2
+  }
+}
