@@ -2,7 +2,7 @@
   "issue": 51,
   "date": "2026-10-24",
   "headline": "Issue 51",
-  "intro": "13 pieces of criticism from 13 publications, each read in full before it was picked. Plus 20 new songs in Song Troll.",
+  "intro": "23 pieces of criticism from 22 publications, each read in full before it was picked. Plus 20 new songs in Song Troll.",
   "byline": "Issue No. 51 — week of 2026-10-24",
   "pipeline": "weekly",
   "categories": [
@@ -10,12 +10,12 @@
       "key": "art",
       "entries": [
         {
-          "title": "Rosemary Mayer and Ree Morton: Wild flowers worth knowing",
-          "author": "Sharon Butler",
-          "source": "Two Coats of Paint",
+          "title": "How Cringe Took Over Culture",
+          "author": "Emily Watlington",
+          "source": "Art in America",
           "summary": "",
           "why": "",
-          "url": "https://twocoatsofpaint.com/2026/10/rosemary-mayer-and-ree-morton-wild-flowers-worth-knowing.html?utm_source=rss&utm_medium=rss&utm_campaign=rosemary-mayer-and-ree-morton-wild-flowers-worth-knowing",
+          "url": "https://www.artnews.com/art-in-america/features/cringe-took-over-culture-nathan-fielder-jordan-staffer-marianne-simnett-1234802717/",
           "verified": true
         },
         {
@@ -26,6 +26,33 @@
           "why": "",
           "url": "https://www.e-flux.com/criticism/6782486/libby-rothfeld-s-the-world-is-not-enough",
           "verified": true
+        },
+        {
+          "title": "Rosemary Mayer and Ree Morton: Wild flowers worth knowing",
+          "author": "Sharon Butler",
+          "source": "Two Coats of Paint",
+          "summary": "",
+          "why": "",
+          "url": "https://twocoatsofpaint.com/2026/10/rosemary-mayer-and-ree-morton-wild-flowers-worth-knowing.html?utm_source=rss&utm_medium=rss&utm_campaign=rosemary-mayer-and-ree-morton-wild-flowers-worth-knowing",
+          "verified": true
+        },
+        {
+          "title": "Why has a crumbling bottle plant been rebuilt in Paris? The stunning show suggesting the future is Ghana-shaped",
+          "author": "Eddy Frankel",
+          "source": "The Guardian",
+          "summary": "",
+          "why": "",
+          "url": "https://www.theguardian.com/artanddesign/2026/oct/21/ibrahim-mahama-ghana-colonialism-fondation-cartier-paris",
+          "verified": true
+        },
+        {
+          "title": "In Search of the Future, Artists Give New Life to Dead AI Models",
+          "author": "Tessa Solomon",
+          "source": "ARTnews",
+          "summary": "",
+          "why": "",
+          "url": "https://www.artnews.com/art-news/reviews/1234801925-1234801925/",
+          "verified": true
         }
       ]
     },
@@ -33,21 +60,30 @@
       "key": "film",
       "entries": [
         {
-          "title": "Classic Corner: Rocky",
-          "author": "Sean Burns",
-          "source": "Crooked Marquee",
-          "summary": "",
-          "why": "",
-          "url": "https://crookedmarquee.com/classic-corner-rocky/",
-          "verified": true
-        },
-        {
-          "title": "Gu You on The First Taste of Loneliness and Returning to a “More Honest Way” of Filmmaking",
-          "author": "Daniel Eagan",
+          "title": "Making Marie Antoinette Review: A Celebration of Creative Collaboration",
+          "author": "Jake Kring-Schreifels",
           "source": "The Film Stage",
           "summary": "",
           "why": "",
-          "url": "https://thefilmstage.com/gu-you-on-the-first-taste-of-loneliness-and-returning-to-a-more-honest-way-of-filmmaking/",
+          "url": "https://thefilmstage.com/nyff-review-making-marie-antoinette-is-a-celebration-of-creative-collaboration/",
+          "verified": true
+        },
+        {
+          "title": "Fatherland review – Sandra Hüller is arguably our greatest working actor",
+          "author": "David Jenkins",
+          "source": "Little White Lies",
+          "summary": "",
+          "why": "",
+          "url": "https://www.lwlies.com/reviews/fatherland",
+          "verified": true
+        },
+        {
+          "title": "The Devils: In the Details",
+          "author": "Craig J. Clark",
+          "source": "Crooked Marquee",
+          "summary": "",
+          "why": "",
+          "url": "https://crookedmarquee.com/the-devils-in-the-details/",
           "verified": true
         }
       ]
@@ -79,30 +115,21 @@
       "key": "lit",
       "entries": [
         {
+          "title": "The Prison of Waking, The Torment of Sleep: Hagai Palevsky on HE ROLLED ME UP LIKE A GRILLED SQUID by Yoshiharu Tsuge",
+          "author": "Hagai Palevsky",
+          "source": "Solrad",
+          "summary": "",
+          "why": "",
+          "url": "https://solrad.co/the-prison-of-waking-the-torment-of-sleep-hagai-palevsky-on-he-rolled-me-up-like-a-grilled-squid-by-yoshiharu-tsuge",
+          "verified": true
+        },
+        {
           "title": "The Sixth Faction by Veronica Roth",
           "author": "Mikaela Saverona",
           "source": "Strange Horizons",
           "summary": "",
           "why": "",
           "url": "https://strangehorizons.com/wordpress/non-fiction/the-sixth-faction-by-veronica-roth/",
-          "verified": true
-        },
-        {
-          "title": "Alis al-Bustani’s ‘Sa’iba’ and the Arab Nahda",
-          "author": "I. Rida Mahmood",
-          "source": "ArabLit",
-          "summary": "",
-          "why": "",
-          "url": "https://arablit.org/2026/10/19/alis-al-bustanis-saiba-and-the-arab-nahda/",
-          "verified": true
-        },
-        {
-          "title": "HUNA Is an Arab Prison Memoir That Refuses to Cater to the Western Gaze",
-          "author": "Bareerah Ghani",
-          "source": "Electric Literature",
-          "summary": "",
-          "why": "",
-          "url": "https://electricliterature.com/huna-is-an-arab-prison-memoir-that-refuses-to-cater-to-the-western-gaze/",
           "verified": true
         },
         {
@@ -115,12 +142,21 @@
           "verified": true
         },
         {
-          "title": "Between the tragic and the playful",
-          "author": "Simon Garnett",
-          "source": "Eurozine",
+          "title": "HUNA Is an Arab Prison Memoir That Refuses to Cater to the Western Gaze",
+          "author": "Bareerah Ghani",
+          "source": "Electric Literature",
           "summary": "",
           "why": "",
-          "url": "https://www.eurozine.com/between-the-tragic-and-the-playful/?utm_source=rss&utm_medium=rss&utm_campaign=between-the-tragic-and-the-playful",
+          "url": "https://electricliterature.com/huna-is-an-arab-prison-memoir-that-refuses-to-cater-to-the-western-gaze/",
+          "verified": true
+        },
+        {
+          "title": "Alis al-Bustani’s ‘Sa’iba’ and the Arab Nahda",
+          "author": "I. Rida Mahmood",
+          "source": "ArabLit",
+          "summary": "",
+          "why": "",
+          "url": "https://arablit.org/2026/10/19/alis-al-bustanis-saiba-and-the-arab-nahda/",
           "verified": true
         }
       ]
@@ -128,6 +164,15 @@
     {
       "key": "music",
       "entries": [
+        {
+          "title": "Jazz dreams",
+          "author": "Hattie Lindert",
+          "source": "Pitchfork",
+          "summary": "",
+          "why": "",
+          "url": "https://pitchfork.com/reviews/albums/fine-jazz-dreams/",
+          "verified": true
+        },
         {
           "title": "Water Damage, “Repair”",
           "author": "Stuart Berman",
@@ -138,19 +183,65 @@
           "verified": true
         },
         {
-          "title": "Man Vs. Machine: Aphex Twin’s Drukqs at 25",
-          "author": "Truman Greene",
-          "source": "Passion of the Weiss",
+          "title": "“A temporary syncing of the timelines”: Faust reviewed",
+          "author": null,
+          "source": "The Wire",
           "summary": "",
           "why": "",
-          "url": "https://www.powmag.net/p/man-vs-machine-aphex-twin-drukqs",
+          "url": "https://www.thewire.co.uk/in-writing/essays/a-temporary-syncing-of-the-timelines-faust-reviewed",
+          "verified": true
+        },
+        {
+          "title": "Album Review: Deafheaven – At Work In The Fields Of The Bomb EP",
+          "author": "John Amen",
+          "source": "Beats Per Minute",
+          "summary": "",
+          "why": "",
+          "url": "https://beatsperminute.com/album-review-deafheaven-at-work-in-the-fields-of-the-bomb-ep/",
+          "verified": true
+        },
+        {
+          "title": "James Brandon Lewis Brilliantly Interprets Antonín Dvořák",
+          "author": "Will Layman",
+          "source": "PopMatters",
+          "summary": "",
+          "why": "",
+          "url": "https://www.popmatters.com/james-brandon-lewis",
           "verified": true
         }
       ]
     },
     {
       "key": "design",
-      "entries": []
+      "entries": [
+        {
+          "title": "The CO2-absorbing building made of old sinks, windscreens and toilets: Ghent’s £17m design museum is a green marvel",
+          "author": "Oliver Wainwright",
+          "source": "The Guardian",
+          "summary": "",
+          "why": "",
+          "url": "https://www.theguardian.com/artanddesign/2026/oct/20/ghent-design-museum-co2-absorbing-recycling",
+          "verified": true
+        },
+        {
+          "title": "Diller Scofidio + Renfro Reimagines the Humble Metal Shed as an Arts Hub at Rice University",
+          "author": null,
+          "source": "Architectural Record",
+          "summary": "",
+          "why": "",
+          "url": "https://www.architecturalrecord.com/articles/18479-diller-scofidio-renfro-reimagines-the-humble-metal-shed-as-an-arts-hub-at-rice-university",
+          "verified": true
+        },
+        {
+          "title": "Pentagram looks to Grand Central Oyster Bar’s iconic lettering for its gorgeously gaudy Storefront Gala 2026 identity",
+          "author": "Emily Gosling",
+          "source": "BP&O",
+          "summary": "",
+          "why": "",
+          "url": "https://bpando.org/2026/10/22/pentagram-new-york-storefront-gala-2026-event-identity-design/",
+          "verified": true
+        }
+      ]
     },
     {
       "key": "fashion",

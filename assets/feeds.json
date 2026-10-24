@@ -1,26 +1,42 @@
 {
+  "e-flux Criticism": {
+    "feed": "https://www.e-flux.com/feed.xml",
+    "categories": [
+      "art"
+    ],
+    "confidence": "verified-2026-10-24",
+    "tier": "essay"
+  },
+  "The Guardian (art reviews)": {
+    "feed": "https://www.theguardian.com/artanddesign+tone/reviews/rss",
+    "categories": [
+      "art"
+    ],
+    "confidence": "verified-2026-10-24",
+    "tier": "essay"
+  },
   "Hyperallergic": {
     "feed": "https://hyperallergic.com/rss/",
     "categories": [
       "art"
     ],
-    "confidence": "stated",
+    "confidence": "verified-2026-10-24",
     "tier": "essay"
   },
-  "e-flux Criticism": {
-    "feed": "https://e-flux.com/feed.xml",
+  "Art in America": {
+    "feed": "https://www.artnews.com/c/art-in-america/feed/",
     "categories": [
       "art"
     ],
-    "confidence": "stated",
+    "confidence": "verified-2026-10-24",
     "tier": "essay"
   },
-  "Artforum": {
-    "feed": "https://www.artforum.com/feed/rss/",
+  "ARTnews (reviews)": {
+    "feed": "https://www.artnews.com/c/art-news/reviews/feed/",
     "categories": [
       "art"
     ],
-    "confidence": "observed",
+    "confidence": "verified-2026-10-24",
     "tier": "essay"
   },
   "Momus": {
@@ -28,119 +44,7 @@
     "categories": [
       "art"
     ],
-    "confidence": "stated",
-    "tier": "essay"
-  },
-  "Artishock": {
-    "feed": "https://artishockrevista.com/feed/",
-    "categories": [
-      "art"
-    ],
-    "confidence": "stated",
-    "tier": "essay"
-  },
-  "Burnaway": {
-    "feed": "https://burnaway.org/feed/",
-    "categories": [
-      "art"
-    ],
-    "confidence": "stated",
-    "tier": "essay"
-  },
-  "Flash Art International": {
-    "feed": "https://flash---art.com/feed/podcast",
-    "categories": [
-      "art"
-    ],
-    "confidence": "stated",
-    "tier": "essay"
-  },
-  "Mousse": {
-    "feed": "https://moussemagazine.it/feed/",
-    "categories": [
-      "art"
-    ],
-    "confidence": "stated",
-    "tier": "essay"
-  },
-  "Kunstkritikk": {
-    "feed": "https://kunstkritikk.com/feed/",
-    "categories": [
-      "art"
-    ],
-    "confidence": "stated",
-    "tier": "essay"
-  },
-  "Trebuchet": {
-    "feed": "https://www.trebuchet-magazine.com/feed/",
-    "categories": [
-      "art"
-    ],
-    "confidence": "stated",
-    "tier": "essay"
-  },
-  "Berlin Art Link": {
-    "feed": "https://www.berlinartlink.com/feed/",
-    "categories": [
-      "art"
-    ],
-    "confidence": "stated",
-    "tier": "essay"
-  },
-  "ArtAsiaPacific": {
-    "feed": "https://www.artasiapacific.com/rss/",
-    "categories": [
-      "art"
-    ],
-    "confidence": "stated",
-    "tier": "essay"
-  },
-  "TAKE on Art": {
-    "feed": "https://takeonartmagazine.com/feed/",
-    "categories": [
-      "art"
-    ],
-    "confidence": "stated",
-    "tier": "essay"
-  },
-  "ARTnews": {
-    "feed": "https://www.artnews.com/feed/rss/",
-    "categories": [
-      "art"
-    ],
-    "confidence": "stated",
-    "tier": "news"
-  },
-  "The Art Newspaper": {
-    "feed": "https://www.theartnewspaper.com/rss.xml",
-    "categories": [
-      "art"
-    ],
-    "confidence": "stated",
-    "tier": "news"
-  },
-  "Colossal": {
-    "feed": "https://www.thisiscolossal.com/feed/",
-    "categories": [
-      "art"
-    ],
-    "confidence": "stated",
-    "tier": "news"
-  },
-  "Juxtapoz": {
-    "feed": "https://www.juxtapoz.com/news/?format=feed&amp;type=rss",
-    "categories": [
-      "art"
-    ],
-    "confidence": "stated",
-    "tier": "news"
-  },
-  "Elephant": {
-    "feed": "https://elephant.art/feed/",
-    "categories": [
-      "art"
-    ],
-    "confidence": "stated",
+    "confidence": "verified-2026-10-24",
     "tier": "essay"
   },
   "Two Coats of Paint": {
@@ -148,55 +52,127 @@
     "categories": [
       "art"
     ],
-    "confidence": "stated",
+    "confidence": "verified-2026-10-24",
     "tier": "essay"
   },
-  "Art & Object": {
-    "feed": "https://artandobject.com/rss.xml",
+  "Burnaway": {
+    "feed": "https://burnaway.org/feed/",
     "categories": [
       "art"
     ],
-    "confidence": "stated",
+    "confidence": "verified-2026-10-24",
     "tier": "essay"
   },
-  "Film Comment": {
-    "feed": "https://filmcomment.com/feed/",
+  "Elephant": {
+    "feed": "https://elephant.art/feed/",
+    "categories": [
+      "art"
+    ],
+    "confidence": "verified-2026-10-24",
+    "tier": "essay"
+  },
+  "Mousse": {
+    "feed": "https://www.moussemagazine.it/feed/",
+    "categories": [
+      "art"
+    ],
+    "confidence": "verified-2026-10-24",
+    "tier": "essay"
+  },
+  "Kunstkritikk": {
+    "feed": "https://kunstkritikk.com/feed/",
+    "categories": [
+      "art"
+    ],
+    "confidence": "verified-2026-10-24",
+    "tier": "essay"
+  },
+  "Berlin Art Link": {
+    "feed": "https://www.berlinartlink.com/feed/",
+    "categories": [
+      "art"
+    ],
+    "confidence": "verified-2026-10-24",
+    "tier": "essay"
+  },
+  "ArtAsiaPacific": {
+    "feed": "https://artasiapacific.com/rss/",
+    "categories": [
+      "art"
+    ],
+    "confidence": "verified-2026-10-24",
+    "tier": "essay"
+  },
+  "TAKE on Art": {
+    "feed": "https://www.takeonartmagazine.com/feed/",
+    "categories": [
+      "art"
+    ],
+    "confidence": "verified-2026-10-24",
+    "tier": "essay"
+  },
+  "Trebuchet": {
+    "feed": "https://www.trebuchet-magazine.com/feed/",
+    "categories": [
+      "art"
+    ],
+    "confidence": "verified-2026-10-24",
+    "tier": "essay"
+  },
+  "Artforum": {
+    "feed": "https://www.artforum.com/feed/rss/",
+    "categories": [
+      "art"
+    ],
+    "confidence": "verified-2026-10-24",
+    "tier": "news"
+  },
+  "The Art Newspaper": {
+    "feed": "https://www.theartnewspaper.com/rss.xml",
+    "categories": [
+      "art"
+    ],
+    "confidence": "verified-2026-10-24",
+    "tier": "news"
+  },
+  "The Guardian (film reviews)": {
+    "feed": "https://www.theguardian.com/film+tone/reviews/rss",
     "categories": [
       "film"
     ],
-    "confidence": "stated",
+    "confidence": "verified-2026-10-24",
     "tier": "essay"
   },
-  "Film Quarterly": {
-    "feed": "https://filmquarterly.org/feed/",
+  "Slant Magazine": {
+    "feed": "https://www.slantmagazine.com/category/film/feed/",
     "categories": [
       "film"
     ],
-    "confidence": "observed",
+    "confidence": "verified-2026-10-24",
     "tier": "essay"
   },
-  "Philosophy in Film": {
-    "feed": "https://philosophyinfilm.com/feed/",
+  "IndieWire (criticism)": {
+    "feed": "https://www.indiewire.com/c/criticism/feed/",
     "categories": [
       "film"
     ],
-    "confidence": "stated",
+    "confidence": "verified-2026-10-24",
     "tier": "essay"
   },
-  "POV Magazine": {
-    "feed": "https://povmagazine.com/feed/",
+  "The Film Stage": {
+    "feed": "https://thefilmstage.com/category/reviews/feed/",
     "categories": [
       "film"
     ],
-    "confidence": "stated",
+    "confidence": "verified-2026-10-24",
     "tier": "essay"
   },
-  "desistfilm": {
-    "feed": "https://desistfilm.com/feed/",
+  "RogerEbert.com": {
+    "feed": "https://www.rogerebert.com/feed",
     "categories": [
       "film"
     ],
-    "confidence": "stated",
+    "confidence": "verified-2026-10-24",
     "tier": "essay"
   },
   "Little White Lies": {
@@ -204,7 +180,39 @@
     "categories": [
       "film"
     ],
-    "confidence": "stated",
+    "confidence": "verified-2026-10-24",
+    "tier": "essay"
+  },
+  "Film Comment": {
+    "feed": "https://www.filmcomment.com/feed/",
+    "categories": [
+      "film"
+    ],
+    "confidence": "verified-2026-10-24",
+    "tier": "essay"
+  },
+  "POV Magazine": {
+    "feed": "https://povmagazine.com/feed/",
+    "categories": [
+      "film"
+    ],
+    "confidence": "verified-2026-10-24",
+    "tier": "essay"
+  },
+  "Vague Visages": {
+    "feed": "https://vaguevisages.com/feed/",
+    "categories": [
+      "film"
+    ],
+    "confidence": "verified-2026-10-24",
+    "tier": "essay"
+  },
+  "Film Quarterly": {
+    "feed": "https://filmquarterly.org/feed/",
+    "categories": [
+      "film"
+    ],
+    "confidence": "verified-2026-10-24",
     "tier": "essay"
   },
   "East European Film Bulletin": {
@@ -212,95 +220,23 @@
     "categories": [
       "film"
     ],
-    "confidence": "stated",
+    "confidence": "verified-2026-10-24",
     "tier": "essay"
-  },
-  "Silhouette": {
-    "feed": "https://silhouette.co.in/feed/",
-    "categories": [
-      "film"
-    ],
-    "confidence": "stated",
-    "tier": "essay"
-  },
-  "Egyptian Streets": {
-    "feed": "https://egyptianstreets.com/feed/",
-    "categories": [
-      "film"
-    ],
-    "confidence": "stated",
-    "tier": "essay"
-  },
-  "Rough Cut": {
-    "feed": "https://roughcutfilm.com/feed/",
-    "categories": [
-      "film"
-    ],
-    "confidence": "stated",
-    "tier": "news"
-  },
-  "Vague Visages": {
-    "feed": "https://vaguevisages.com/feed/",
-    "categories": [
-      "film"
-    ],
-    "confidence": "stated",
-    "tier": "essay"
-  },
-  "Filmmaker Magazine": {
-    "feed": "https://filmmakermagazine.com/feed/",
-    "categories": [
-      "film"
-    ],
-    "confidence": "stated",
-    "tier": "essay"
-  },
-  "The Film Stage": {
-    "feed": "https://thefilmstage.com/feed/",
-    "categories": [
-      "film"
-    ],
-    "confidence": "stated",
-    "tier": "news"
   },
   "Crooked Marquee": {
     "feed": "https://crookedmarquee.com/feed/",
     "categories": [
       "film"
     ],
-    "confidence": "stated",
+    "confidence": "verified-2026-10-24",
     "tier": "essay"
   },
-  "Talkhouse": {
-    "feed": "https://talkhouse.com/feed",
+  "Silhouette": {
+    "feed": "https://www.silhouette.co.in/feed/",
     "categories": [
       "film"
     ],
-    "confidence": "stated",
-    "tier": "news"
-  },
-  "Seventh Row": {
-    "feed": "https://seventh-row.com/feed/",
-    "categories": [
-      "film"
-    ],
-    "confidence": "stated",
-    "tier": "essay"
-  },
-  "Screen Anarchy": {
-    "feed": "http://feeds.screenanarchy.com/sa-everything",
-    "categories": [
-      "film"
-    ],
-    "confidence": "stated",
-    "tier": "news"
-  },
-  "Noema": {
-    "feed": "https://www.noemamag.com/feed/",
-    "categories": [
-      "tech"
-    ],
-    "confidence": "stated",
+    "confidence": "verified-2026-10-24",
     "tier": "essay"
   },
   "404 Media": {
@@ -308,7 +244,31 @@
     "categories": [
       "tech"
     ],
-    "confidence": "stated",
+    "confidence": "verified-2026-10-24",
+    "tier": "essay"
+  },
+  "The Atlantic (technology)": {
+    "feed": "https://www.theatlantic.com/feed/channel/technology/",
+    "categories": [
+      "tech"
+    ],
+    "confidence": "verified-2026-10-24",
+    "tier": "essay"
+  },
+  "Wired (Backchannel)": {
+    "feed": "https://www.wired.com/feed/category/backchannel/latest/rss",
+    "categories": [
+      "tech"
+    ],
+    "confidence": "verified-2026-10-24",
+    "tier": "essay"
+  },
+  "Pluralistic": {
+    "feed": "https://pluralistic.net/feed/",
+    "categories": [
+      "tech"
+    ],
+    "confidence": "verified-2026-10-24",
     "tier": "essay"
   },
   "Rest of World": {
@@ -316,63 +276,23 @@
     "categories": [
       "tech"
     ],
-    "confidence": "stated",
+    "confidence": "verified-2026-10-24",
     "tier": "essay"
   },
-  "TechCabal": {
-    "feed": "https://techcabal.com/feed/",
+  "Noema": {
+    "feed": "https://www.noemamag.com/feed/",
     "categories": [
       "tech"
     ],
-    "confidence": "observed",
+    "confidence": "verified-2026-10-24",
     "tier": "essay"
-  },
-  "Simon Willison": {
-    "feed": "https://simonwillison.net/atom/everything/",
-    "categories": [
-      "tech"
-    ],
-    "confidence": "stated",
-    "tier": "news"
   },
   "Platformer": {
     "feed": "https://www.platformer.news/rss/",
     "categories": [
       "tech"
     ],
-    "confidence": "stated",
-    "tier": "essay"
-  },
-  "MIT Technology Review": {
-    "feed": "https://technologyreview.com/feed/",
-    "categories": [
-      "tech"
-    ],
-    "confidence": "stated",
-    "tier": "news"
-  },
-  "The Verge": {
-    "feed": "https://www.theverge.com/rss/index.xml",
-    "categories": [
-      "tech"
-    ],
-    "confidence": "stated",
-    "tier": "news"
-  },
-  "Wired": {
-    "feed": "https://www.wired.com/feed/rss",
-    "categories": [
-      "tech"
-    ],
-    "confidence": "stated",
-    "tier": "news"
-  },
-  "Pluralistic": {
-    "feed": "https://pluralistic.net/feed/",
-    "categories": [
-      "tech"
-    ],
-    "confidence": "stated",
+    "confidence": "verified-2026-10-24",
     "tier": "essay"
   },
   "The Markup": {
@@ -380,31 +300,63 @@
     "categories": [
       "tech"
     ],
-    "confidence": "stated",
+    "confidence": "verified-2026-10-24",
     "tier": "essay"
   },
-  "Aeon": {
-    "feed": "https://aeon.co/feed.rss",
+  "MIT Technology Review": {
+    "feed": "https://www.technologyreview.com/feed/",
     "categories": [
       "tech"
     ],
-    "confidence": "stated",
-    "tier": "essay"
+    "confidence": "verified-2026-10-24",
+    "tier": "news"
   },
-  "Locus": {
-    "feed": "https://locusmag.com/feed/",
+  "IEEE Spectrum": {
+    "feed": "https://spectrum.ieee.org/feeds/feed.rss",
+    "categories": [
+      "tech"
+    ],
+    "confidence": "verified-2026-10-24",
+    "tier": "news"
+  },
+  "Ars Technica (features)": {
+    "feed": "https://feeds.arstechnica.com/arstechnica/features",
+    "categories": [
+      "tech"
+    ],
+    "confidence": "verified-2026-10-24",
+    "tier": "news"
+  },
+  "Simon Willison": {
+    "feed": "https://simonwillison.net/atom/everything/",
+    "categories": [
+      "tech"
+    ],
+    "confidence": "verified-2026-10-24",
+    "tier": "news"
+  },
+  "The Verge": {
+    "feed": "https://www.theverge.com/rss/index.xml",
+    "categories": [
+      "tech"
+    ],
+    "confidence": "verified-2026-10-24",
+    "tier": "news"
+  },
+  "Reactor": {
+    "feed": "https://reactormag.com/feed/",
     "categories": [
       "lit"
     ],
-    "confidence": "stated",
-    "tier": "news"
+    "confidence": "verified-2026-10-24",
+    "tier": "essay"
   },
   "Strange Horizons": {
     "feed": "https://strangehorizons.com/feed/",
     "categories": [
       "lit"
     ],
-    "confidence": "stated",
+    "confidence": "verified-2026-10-24",
     "tier": "essay"
   },
   "Ancillary Review of Books": {
@@ -412,47 +364,7 @@
     "categories": [
       "lit"
     ],
-    "confidence": "stated",
-    "tier": "essay"
-  },
-  "Literary Review of Canada": {
-    "feed": "https://reviewcanada.ca/feed/",
-    "categories": [
-      "lit"
-    ],
-    "confidence": "stated",
-    "tier": "essay"
-  },
-  "Latin American Literature Today": {
-    "feed": "https://latinamericanliteraturetoday.org/feed/",
-    "categories": [
-      "lit"
-    ],
-    "confidence": "stated",
-    "tier": "essay"
-  },
-  "PREE": {
-    "feed": "https://preelit.com/feed/",
-    "categories": [
-      "lit"
-    ],
-    "confidence": "stated",
-    "tier": "essay"
-  },
-  "sx salon": {
-    "feed": "https://smallaxe.net/rss.xml",
-    "categories": [
-      "lit"
-    ],
-    "confidence": "stated",
-    "tier": "essay"
-  },
-  "Dublin Review of Books": {
-    "feed": "https://drb.ie/feed/",
-    "categories": [
-      "lit"
-    ],
-    "confidence": "stated",
+    "confidence": "verified-2026-10-24",
     "tier": "essay"
   },
   "Vector/BSFA": {
@@ -460,63 +372,79 @@
     "categories": [
       "lit"
     ],
-    "confidence": "stated",
+    "confidence": "verified-2026-10-24",
     "tier": "essay"
   },
-  "Eurozine": {
-    "feed": "https://eurozine.com/feed/",
+  "The Comics Journal": {
+    "feed": "https://www.tcj.com/feed/",
     "categories": [
       "lit"
     ],
-    "confidence": "stated",
+    "confidence": "verified-2026-10-24",
     "tier": "essay"
   },
-  "European Review of Books": {
-    "feed": "https://europeanreviewofbooks.com/feed/",
+  "Solrad": {
+    "feed": "https://solrad.co/feed",
     "categories": [
       "lit"
     ],
-    "confidence": "stated",
+    "confidence": "verified-2026-10-24",
     "tier": "essay"
   },
-  "B O D Y": {
-    "feed": "https://www.bodyliterature.com/feed/",
+  "The Beat (reviews)": {
+    "feed": "https://www.comicsbeat.com/category/reviews/feed/",
     "categories": [
       "lit"
     ],
-    "confidence": "stated",
+    "confidence": "verified-2026-10-24",
     "tier": "essay"
   },
-  "Literalab": {
-    "feed": "https://literalab.com/feed/",
+  "Shelfdust": {
+    "feed": "https://www.shelfdust.com/feed",
     "categories": [
       "lit"
     ],
-    "confidence": "stated",
+    "confidence": "verified-2026-10-24",
     "tier": "essay"
   },
-  "ArabLit": {
-    "feed": "https://arablit.org/feed/",
+  "Women Write About Comics": {
+    "feed": "https://womenwriteaboutcomics.com/feed/",
     "categories": [
       "lit"
     ],
-    "confidence": "stated",
+    "confidence": "verified-2026-10-24",
     "tier": "essay"
   },
-  "Aotearoa NZ Review of Books": {
-    "feed": "https://wordpress.com/blog/feed/",
+  "The Guardian (book reviews)": {
+    "feed": "https://www.theguardian.com/books+tone/reviews/rss",
     "categories": [
       "lit"
     ],
-    "confidence": "stated",
+    "confidence": "verified-2026-10-24",
     "tier": "essay"
   },
-  "The Millions": {
-    "feed": "https://themillions.com/feed/",
+  "The Guardian (comics)": {
+    "feed": "https://www.theguardian.com/books/comics/rss",
     "categories": [
       "lit"
     ],
-    "confidence": "stated",
+    "confidence": "verified-2026-10-24",
+    "tier": "essay"
+  },
+  "Fantasy Book Critic": {
+    "feed": "https://fantasybookcritic.blogspot.com/feeds/posts/default",
+    "categories": [
+      "lit"
+    ],
+    "confidence": "verified-2026-10-24",
+    "tier": "essay"
+  },
+  "The Fantasy Hive": {
+    "feed": "https://fantasy-hive.co.uk/feed/",
+    "categories": [
+      "lit"
+    ],
+    "confidence": "verified-2026-10-24",
     "tier": "essay"
   },
   "Electric Literature": {
@@ -524,39 +452,7 @@
     "categories": [
       "lit"
     ],
-    "confidence": "stated",
-    "tier": "essay"
-  },
-  "Full Stop": {
-    "feed": "https://full-stop.net/feed/",
-    "categories": [
-      "lit"
-    ],
-    "confidence": "stated",
-    "tier": "essay"
-  },
-  "Words Without Borders": {
-    "feed": "https://wordswithoutborders.org/feed/",
-    "categories": [
-      "lit"
-    ],
-    "confidence": "stated",
-    "tier": "essay"
-  },
-  "Reactor": {
-    "feed": "https://reactormag.com/feed/",
-    "categories": [
-      "lit"
-    ],
-    "confidence": "stated",
-    "tier": "essay"
-  },
-  "Clarkesworld": {
-    "feed": "https://clarkesworldmagazine.com/feed/",
-    "categories": [
-      "lit"
-    ],
-    "confidence": "stated",
+    "confidence": "verified-2026-10-24",
     "tier": "essay"
   },
   "Cleveland Review of Books": {
@@ -564,7 +460,95 @@
     "categories": [
       "lit"
     ],
-    "confidence": "stated",
+    "confidence": "verified-2026-10-24",
+    "tier": "essay"
+  },
+  "ArabLit": {
+    "feed": "https://arablit.org/feed/",
+    "categories": [
+      "lit"
+    ],
+    "confidence": "verified-2026-10-24",
+    "tier": "essay"
+  },
+  "Full Stop": {
+    "feed": "https://www.full-stop.net/feed/",
+    "categories": [
+      "lit"
+    ],
+    "confidence": "verified-2026-10-24",
+    "tier": "essay"
+  },
+  "Locus": {
+    "feed": "https://locusmag.com/feed/",
+    "categories": [
+      "lit"
+    ],
+    "confidence": "verified-2026-10-24",
+    "tier": "news"
+  },
+  "Broken Frontier": {
+    "feed": "https://www.brokenfrontier.com/feed/",
+    "categories": [
+      "lit"
+    ],
+    "confidence": "verified-2026-10-24",
+    "tier": "news"
+  },
+  "AIPT": {
+    "feed": "https://aiptcomics.com/feed/",
+    "categories": [
+      "lit"
+    ],
+    "confidence": "verified-2026-10-24",
+    "tier": "news"
+  },
+  "Pitchfork (album reviews)": {
+    "feed": "https://pitchfork.com/feed/feed-album-reviews/rss",
+    "categories": [
+      "music"
+    ],
+    "confidence": "verified-2026-10-24",
+    "tier": "essay"
+  },
+  "The Guardian (album reviews)": {
+    "feed": "https://www.theguardian.com/music+tone/albumreviews/rss",
+    "categories": [
+      "music"
+    ],
+    "confidence": "verified-2026-10-24",
+    "tier": "essay"
+  },
+  "Bandcamp Daily": {
+    "feed": "https://daily.bandcamp.com/feed",
+    "categories": [
+      "music"
+    ],
+    "confidence": "verified-2026-10-24",
+    "tier": "essay"
+  },
+  "Beats Per Minute": {
+    "feed": "https://beatsperminute.com/feed/",
+    "categories": [
+      "music"
+    ],
+    "confidence": "verified-2026-10-24",
+    "tier": "essay"
+  },
+  "Stereogum (Album of the Week)": {
+    "feed": "https://stereogum.com/category/reviews/album-of-the-week/feed",
+    "categories": [
+      "music"
+    ],
+    "confidence": "verified-2026-10-24",
+    "tier": "essay"
+  },
+  "The Wire": {
+    "feed": "https://www.thewire.co.uk/rss",
+    "categories": [
+      "music"
+    ],
+    "confidence": "verified-2026-10-24",
     "tier": "essay"
   },
   "Aquarium Drunkard": {
@@ -572,15 +556,23 @@
     "categories": [
       "music"
     ],
-    "confidence": "stated",
+    "confidence": "verified-2026-10-24",
     "tier": "essay"
   },
-  "Bandcamp Daily": {
-    "feed": "https://daily.bandcamp.com/feed/",
+  "PopMatters": {
+    "feed": "https://www.popmatters.com/feed/",
     "categories": [
       "music"
     ],
-    "confidence": "stated",
+    "confidence": "verified-2026-10-24",
+    "tier": "essay"
+  },
+  "Passion of the Weiss": {
+    "feed": "https://www.powmag.net/feed",
+    "categories": [
+      "music"
+    ],
+    "confidence": "verified-2026-10-24",
     "tier": "essay"
   },
   "Sounds and Colours": {
@@ -588,15 +580,7 @@
     "categories": [
       "music"
     ],
-    "confidence": "stated",
-    "tier": "essay"
-  },
-  "VAN Magazine": {
-    "feed": "https://van-magazine.com/feed/",
-    "categories": [
-      "music"
-    ],
-    "confidence": "stated",
+    "confidence": "verified-2026-10-24",
     "tier": "essay"
   },
   "The NATIVE": {
@@ -604,87 +588,79 @@
     "categories": [
       "music"
     ],
-    "confidence": "stated",
+    "confidence": "verified-2026-10-24",
     "tier": "essay"
   },
-  "Unorthodox Reviews": {
-    "feed": "https://unorthodoxreviews.com/feed",
+  "VAN Magazine": {
+    "feed": "https://van-magazine.com/feed/",
     "categories": [
       "music"
     ],
-    "confidence": "stated",
-    "tier": "news"
-  },
-  "Rolling Stone MENA": {
-    "feed": "https://mena.rollingstone.com/feed/",
-    "categories": [
-      "music"
-    ],
-    "confidence": "stated",
-    "tier": "news"
-  },
-  "The AU Review": {
-    "feed": "https://www.theaureview.com/feed/",
-    "categories": [
-      "music"
-    ],
-    "confidence": "stated",
-    "tier": "news"
-  },
-  "Passion of the Weiss": {
-    "feed": "https://www.powmag.net/feed",
-    "categories": [
-      "music"
-    ],
-    "confidence": "stated",
+    "confidence": "verified-2026-10-24",
     "tier": "essay"
   },
-  "Stereogum": {
-    "feed": "https://stereogum.com/feed",
+  "The Quietus": {
+    "feed": "https://thequietus.com/feed",
     "categories": [
       "music"
     ],
-    "confidence": "stated",
+    "confidence": "verified-2026-10-24",
     "tier": "news"
   },
-  "PopMatters": {
-    "feed": "https://popmatters.com/feed/",
+  "Treble": {
+    "feed": "https://www.treblezine.com/feed/",
     "categories": [
       "music"
     ],
-    "confidence": "stated",
-    "tier": "essay"
-  },
-  "The Line of Best Fit": {
-    "feed": "https://thelineofbestfit.com/feed/",
-    "categories": [
-      "music"
-    ],
-    "confidence": "stated",
+    "confidence": "verified-2026-10-24",
     "tier": "news"
   },
-  "Consequence": {
-    "feed": "https://consequence.net/feed/",
-    "categories": [
-      "music"
-    ],
-    "confidence": "stated",
-    "tier": "news"
-  },
-  "Metropolis": {
-    "feed": "https://metropolismag.com/feed/",
+  "Architectural Record": {
+    "feed": "https://www.architecturalrecord.com/rss/articles",
     "categories": [
       "design"
     ],
-    "confidence": "stated",
+    "confidence": "verified-2026-10-24",
     "tier": "essay"
   },
-  "Azure": {
-    "feed": "https://azuremagazine.com/feed/",
+  "Fast Company (Design)": {
+    "feed": "https://www.fastcompany.com/co-design/rss",
     "categories": [
       "design"
     ],
-    "confidence": "stated",
+    "confidence": "verified-2026-10-24",
+    "tier": "essay"
+  },
+  "Curbed": {
+    "feed": "https://www.curbed.com/rss/index.xml",
+    "categories": [
+      "design"
+    ],
+    "confidence": "verified-2026-10-24",
+    "tier": "essay"
+  },
+  "Creative Review": {
+    "feed": "https://www.creativereview.co.uk/feed/",
+    "categories": [
+      "design"
+    ],
+    "confidence": "verified-2026-10-24",
+    "tier": "essay"
+  },
+  "The Guardian (architecture)": {
+    "feed": "https://www.theguardian.com/artanddesign/architecture/rss",
+    "categories": [
+      "design"
+    ],
+    "confidence": "verified-2026-10-24",
+    "tier": "essay"
+  },
+  "The Guardian (design)": {
+    "feed": "https://www.theguardian.com/artanddesign/design/rss",
+    "categories": [
+      "design"
+    ],
+    "confidence": "verified-2026-10-24",
     "tier": "essay"
   },
   "The Architectural Review": {
@@ -692,7 +668,47 @@
     "categories": [
       "design"
     ],
-    "confidence": "stated",
+    "confidence": "verified-2026-10-24",
+    "tier": "essay"
+  },
+  "Azure": {
+    "feed": "https://www.azuremagazine.com/feed/",
+    "categories": [
+      "design"
+    ],
+    "confidence": "verified-2026-10-24",
+    "tier": "essay"
+  },
+  "Common Edge": {
+    "feed": "https://commonedge.org/feed/",
+    "categories": [
+      "design"
+    ],
+    "confidence": "verified-2026-10-24",
+    "tier": "essay"
+  },
+  "Design Observer": {
+    "feed": "https://designobserver.com/feed/",
+    "categories": [
+      "design"
+    ],
+    "confidence": "verified-2026-10-24",
+    "tier": "essay"
+  },
+  "I Love Typography": {
+    "feed": "https://ilovetypography.com/feed/",
+    "categories": [
+      "design"
+    ],
+    "confidence": "verified-2026-10-24",
+    "tier": "essay"
+  },
+  "Typographica": {
+    "feed": "https://typographica.org/feed/",
+    "categories": [
+      "design"
+    ],
+    "confidence": "verified-2026-10-24",
     "tier": "essay"
   },
   "ArchitectureAU Discussion": {
@@ -700,215 +716,95 @@
     "categories": [
       "design"
     ],
-    "confidence": "stated",
+    "confidence": "verified-2026-10-24",
     "tier": "essay"
   },
-  "thinkMATTER": {
-    "feed": "https://thinkmatter.in/feed/",
+  "Dezeen (architecture)": {
+    "feed": "https://www.dezeen.com/architecture/feed/",
     "categories": [
       "design"
     ],
-    "confidence": "stated",
+    "confidence": "verified-2026-10-24",
     "tier": "news"
   },
-  "ArchDaily": {
-    "feed": "https://www.archdaily.com/feed",
+  "Dezeen (design)": {
+    "feed": "https://www.dezeen.com/design/feed/",
     "categories": [
       "design"
     ],
-    "confidence": "stated",
+    "confidence": "verified-2026-10-24",
     "tier": "news"
   },
-  "Archinect": {
-    "feed": "https://archinect.com/feed/home",
+  "Dezeen (interiors)": {
+    "feed": "https://www.dezeen.com/interiors/feed/",
     "categories": [
       "design"
     ],
-    "confidence": "stated",
+    "confidence": "verified-2026-10-24",
     "tier": "news"
-  },
-  "Design Milk": {
-    "feed": "https://design-milk.com/feed/",
-    "categories": [
-      "design"
-    ],
-    "confidence": "stated",
-    "tier": "news"
-  },
-  "Yanko Design": {
-    "feed": "https://www.yankodesign.com/feed/",
-    "categories": [
-      "design"
-    ],
-    "confidence": "stated",
-    "tier": "news"
-  },
-  "Design Observer": {
-    "feed": "https://designobserver.com/feed/",
-    "categories": [
-      "design"
-    ],
-    "confidence": "stated",
-    "tier": "essay"
   },
   "It's Nice That": {
-    "feed": "http://feeds2.feedburner.com/itsnicethat/SlXC",
+    "feed": "https://feeds2.feedburner.com/itsnicethat/SlXC",
     "categories": [
       "design"
     ],
-    "confidence": "stated",
+    "confidence": "verified-2026-10-24",
     "tier": "news"
   },
-  "Common Edge": {
-    "feed": "https://commonedge.org/feed/",
+  "Core77": {
+    "feed": "https://feeds.feedburner.com/core77/blog",
     "categories": [
       "design"
     ],
-    "confidence": "stated",
-    "tier": "essay"
+    "confidence": "verified-2026-10-24",
+    "tier": "news"
   },
-  "Failed Architecture": {
-    "feed": "https://failedarchitecture.com/feed/",
+  "Wallpaper*": {
+    "feed": "https://www.wallpaper.com/feeds/all",
     "categories": [
       "design"
     ],
-    "confidence": "stated",
-    "tier": "essay"
-  },
-  "Vestoj": {
-    "feed": "https://vestoj.com/feed/",
-    "categories": [
-      "fashion"
-    ],
-    "confidence": "stated",
-    "tier": "essay"
-  },
-  "System Magazine": {
-    "feed": "https://system-magazine.com/feeds/atom",
-    "categories": [
-      "fashion"
-    ],
-    "confidence": "stated",
-    "tier": "essay"
-  },
-  "AnOther": {
-    "feed": "https://www.anothermag.com/Feed",
-    "categories": [
-      "fashion"
-    ],
-    "confidence": "stated",
-    "tier": "essay"
-  },
-  "Dazed Fashion": {
-    "feed": "https://www.dazeddigital.com/rss",
-    "categories": [
-      "fashion"
-    ],
-    "confidence": "stated",
-    "tier": "essay"
-  },
-  "i-D": {
-    "feed": "https://i-d.co/feed/",
-    "categories": [
-      "fashion"
-    ],
-    "confidence": "stated",
-    "tier": "essay"
-  },
-  "Menswear Musings": {
-    "feed": "https://www.menswearmusings.com/feed/",
-    "categories": [
-      "fashion"
-    ],
-    "confidence": "stated",
-    "tier": "essay"
-  },
-  "From Squalor to Baller": {
-    "feed": "https://fromsqualortoballer.com/feed/",
-    "categories": [
-      "fashion"
-    ],
-    "confidence": "stated",
-    "tier": "essay"
-  },
-  "Well Dressed Dad": {
-    "feed": "https://welldresseddad.com/feed/",
-    "categories": [
-      "fashion"
-    ],
-    "confidence": "stated",
-    "tier": "essay"
-  },
-  "Drapers": {
-    "feed": "https://www.drapersonline.com/feed",
-    "categories": [
-      "fashion"
-    ],
-    "confidence": "stated",
+    "confidence": "verified-2026-10-24",
     "tier": "news"
   },
-  "Highsnobiety": {
-    "feed": "https://highsnobiety.com/feed/",
+  "Surface": {
+    "feed": "https://www.surfacemag.com/feed/",
     "categories": [
-      "fashion"
+      "design"
     ],
-    "confidence": "stated",
+    "confidence": "verified-2026-10-24",
     "tier": "news"
   },
-  "Open Magazine": {
-    "feed": "https://openthemagazine.com/feed/",
+  "Designboom": {
+    "feed": "https://www.designboom.com/feed/",
     "categories": [
-      "fashion"
+      "design"
     ],
-    "confidence": "stated",
-    "tier": "essay"
-  },
-  "Esquire India": {
-    "feed": "https://esquireindia.co.in/feed/",
-    "categories": [
-      "fashion"
-    ],
-    "confidence": "stated",
+    "confidence": "verified-2026-10-24",
     "tier": "news"
   },
-  "A Continuous Lean": {
-    "feed": "https://www.acontinuouslean.com/feed/",
+  "Blackbird Spyplane": {
+    "feed": "https://www.blackbirdspyplane.com/feed",
     "categories": [
       "fashion"
     ],
-    "confidence": "stated",
+    "confidence": "verified-2026-10-24",
     "tier": "essay"
   },
-  "He Spoke Style": {
-    "feed": "https://hespokestyle.com/feed/",
+  "Heddels": {
+    "feed": "https://www.heddels.com/feed/",
     "categories": [
       "fashion"
     ],
-    "confidence": "stated",
+    "confidence": "verified-2026-10-24",
     "tier": "essay"
   },
-  "Hypebeast": {
-    "feed": "https://hypebeast.com/feed",
+  "Permanent Style": {
+    "feed": "https://www.permanentstyle.com/feed",
     "categories": [
       "fashion"
     ],
-    "confidence": "stated",
-    "tier": "news"
-  },
-  "Die Workwear": {
-    "feed": "https://dieworkwear.com/feed/",
-    "categories": [
-      "fashion"
-    ],
-    "confidence": "stated",
-    "tier": "essay"
-  },
-  "Put This On": {
-    "feed": "https://putthison.com/feed/",
-    "categories": [
-      "fashion"
-    ],
-    "confidence": "stated",
+    "confidence": "verified-2026-10-24",
     "tier": "essay"
   },
   "Ivy Style": {
@@ -916,15 +812,175 @@
     "categories": [
       "fashion"
     ],
-    "confidence": "stated",
-    "tier": "news"
+    "confidence": "verified-2026-10-24",
+    "tier": "essay"
   },
-  "Fashion Journal": {
-    "feed": "https://fashionjournal.com.au/feed/",
+  "Die Workwear": {
+    "feed": "https://dieworkwear.com/feed/",
     "categories": [
       "fashion"
     ],
-    "confidence": "stated",
+    "confidence": "verified-2026-10-24",
     "tier": "essay"
+  },
+  "A Continuous Lean": {
+    "feed": "https://www.acontinuouslean.com/feed/",
+    "categories": [
+      "fashion"
+    ],
+    "confidence": "verified-2026-10-24",
+    "tier": "essay"
+  },
+  "Throwing Fits": {
+    "feed": "https://throwingfits.substack.com/feed",
+    "categories": [
+      "fashion"
+    ],
+    "confidence": "verified-2026-10-24",
+    "tier": "essay"
+  },
+  "The Guardian (menswear)": {
+    "feed": "https://www.theguardian.com/fashion/mens-fashion/rss",
+    "categories": [
+      "fashion"
+    ],
+    "confidence": "verified-2026-10-24",
+    "tier": "essay"
+  },
+  "The Guardian (fashion)": {
+    "feed": "https://www.theguardian.com/fashion/rss",
+    "categories": [
+      "fashion"
+    ],
+    "confidence": "verified-2026-10-24",
+    "tier": "essay"
+  },
+  "Vestoj": {
+    "feed": "https://vestoj.com/feed/",
+    "categories": [
+      "fashion"
+    ],
+    "confidence": "verified-2026-10-24",
+    "tier": "essay"
+  },
+  "System Magazine": {
+    "feed": "https://system-magazine.com/feeds/atom",
+    "categories": [
+      "fashion"
+    ],
+    "confidence": "verified-2026-10-24",
+    "tier": "essay"
+  },
+  "GQ": {
+    "feed": "https://www.gq.com/feed/rss",
+    "categories": [
+      "fashion"
+    ],
+    "confidence": "verified-2026-10-24",
+    "tier": "news"
+  },
+  "Esquire": {
+    "feed": "https://www.esquire.com/rss/style.xml",
+    "categories": [
+      "fashion"
+    ],
+    "confidence": "verified-2026-10-24",
+    "tier": "news"
+  },
+  "Vogue": {
+    "feed": "https://www.vogue.com/feed/fashion/rss",
+    "categories": [
+      "fashion"
+    ],
+    "confidence": "verified-2026-10-24",
+    "tier": "news"
+  },
+  "WWD (menswear)": {
+    "feed": "https://wwd.com/menswear-news/feed/",
+    "categories": [
+      "fashion"
+    ],
+    "confidence": "verified-2026-10-24",
+    "tier": "news"
+  },
+  "Fashionista": {
+    "feed": "https://fashionista.com/.rss/full/",
+    "categories": [
+      "fashion"
+    ],
+    "confidence": "verified-2026-10-24",
+    "tier": "news"
+  },
+  "Highsnobiety": {
+    "feed": "https://www.highsnobiety.com/feed/",
+    "categories": [
+      "fashion"
+    ],
+    "confidence": "verified-2026-10-24",
+    "tier": "news"
+  },
+  "Hypebeast": {
+    "feed": "https://hypebeast.com/fashion/feed",
+    "categories": [
+      "fashion"
+    ],
+    "confidence": "verified-2026-10-24",
+    "tier": "news"
+  },
+  "Put This On": {
+    "feed": "https://putthison.com/feed/",
+    "categories": [
+      "fashion"
+    ],
+    "confidence": "verified-2026-10-24",
+    "tier": "news"
+  },
+  "Dazed Fashion": {
+    "feed": "https://www.dazeddigital.com/rss",
+    "categories": [
+      "fashion"
+    ],
+    "confidence": "verified-2026-10-24",
+    "tier": "news"
+  },
+  "BP&O": {
+    "feed": "https://bpando.org/feed/",
+    "categories": [
+      "design"
+    ],
+    "confidence": "verified-2026-10-24",
+    "tier": "essay"
+  },
+  "Architizer": {
+    "feed": "https://architizer.com/blog/feed/",
+    "categories": [
+      "design"
+    ],
+    "confidence": "verified-2026-10-24",
+    "tier": "essay"
+  },
+  "The Spaces": {
+    "feed": "https://thespaces.com/feed/",
+    "categories": [
+      "design"
+    ],
+    "confidence": "verified-2026-10-24",
+    "tier": "news"
+  },
+  "Sight Unseen": {
+    "feed": "https://www.sightunseen.com/feed/",
+    "categories": [
+      "design"
+    ],
+    "confidence": "verified-2026-10-24",
+    "tier": "news"
+  },
+  "Interview Magazine": {
+    "feed": "https://www.interviewmagazine.com/feed",
+    "categories": [
+      "fashion"
+    ],
+    "confidence": "verified-2026-10-24",
+    "tier": "news"
   }
 }

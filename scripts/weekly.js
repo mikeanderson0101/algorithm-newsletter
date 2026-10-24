@@ -51,17 +51,21 @@ const TASTE_FILE = path.join(MUSIC_DIR, 'taste.json');
 
 const CATEGORIES = ['art', 'film', 'tech', 'lit', 'music', 'design', 'fashion'];
 
-// Carried over from compose-from-feeds.js, where losing them for twenty
-// issues let womenswear, shopping posts and chart news drift in.
+// What each section is for. Rewritten 24 Oct 2026 with Mike: new writing
+// about new things; design as a wide net; menswear with an American lean;
+// books leaning SFF with comics and graphic novels.
 const BRIEFS = {
-  art: 'fine art, leaning contemporary: criticism, exhibition reviews and essays. Not market, auction or gallery news.',
-  film: 'film criticism and essays. Not consumer reviews, box office, casting, festival line-ups or general news.',
-  tech: 'technology and AI writing with an argument: essays, criticism, serious reporting. Not product launches, buying guides, funding rounds or trade news.',
-  lit: 'book reviews and literary criticism, leaning science fiction and fantasy. Not publishing-industry news, bestseller lists or listicles.',
-  music: 'album and artist criticism, analysis and essays. Not chart news, tour dates, gig reports or release announcements.',
-  design: 'graphic, interior, industrial and architectural design: criticism and ideas. Not project listings, product showcases or competitions.',
-  fashion: 'fashion criticism and analysis, leaning menswear: clothing as culture, history and craft. Never shopping guides, brand campaigns, collection round-ups, watch or gear reviews, or celebrity styling.',
+  art: 'contemporary art criticism: reviews of exhibitions and new work on view now, and essays on what artists are making now. Not market, auction, prize, museum-funding or gallery news.',
+  film: 'film criticism of new releases (in cinemas, streaming or on the festival circuit this season) and essays on current film. Not box office, casting, trailers or festival line-ups.',
+  tech: 'technology and AI writing with an argument about what is happening now: essays, criticism, serious reporting. Not product launches, buying guides, funding rounds or trade news.',
+  lit: 'reviews and criticism of new books, leaning hard toward science fiction and fantasy, plus smart writing about new comics, manga and graphic novels; strong criticism of other new fiction and nonfiction also fits. Not publishing news, award lists, cover reveals, bestseller lists or listicles.',
+  music: 'reviews and criticism of new albums, songs and artists. Not chart news, tour dates, gig reports or release announcements.',
+  design: 'design criticism and ideas across the whole field: architecture, interiors, industrial and product design, graphic design and branding, typography and type design. New buildings, new products, new identities, new typefaces. Not sponsored content, shopping roundups, competition notices or firm news.',
+  fashion: 'menswear criticism and analysis with a strong American lean: new collections, new brands and labels, how men dress now, clothing as culture and craft. Not shopping guides, gift guides, brand-partner content, celebrity outfit posts, or watch, fragrance and gear reviews.',
 };
+
+/** "The Guardian (menswear)" -> "The Guardian": one outlet, however many feeds. */
+const outlet = (name) => String(name || '').replace(/\s*\([^)]*\)\s*$/, '').trim();
 
 const UA =
   'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 ' +
@@ -195,6 +199,18 @@ const BRIEF_RULES =
   'Design. Pieces mostly about a different field (a film essay under Music, sport under Fashion) ' +
   'are off-subject.';
 
+// New writing about new things (Mike, 24 Oct 2026). The first issue drew
+// an appreciation of Rocky and a 25th-anniversary essay on Aphex Twin's
+// Drukqs: good writing, wrong brief.
+const NEW_RULE =
+  'Troller covers new work. about_new is true only if the piece is mainly about something new: ' +
+  'a release, exhibition, building, book, comic, collection, label, product, typeface or ' +
+  'development from roughly the last three months, or just ahead. Writing that revisits older ' +
+  'work (an anniversary, a classic film, an old album, a career retrospective, history) counts ' +
+  'only when it is pegged to something new, such as a new reissue, restoration, edition or ' +
+  'exhibition. For technology, current developments count as new. A trend piece about how people ' +
+  'dress, live, build or design right now is new too.';
+
 const READ_SYSTEM =
   'You screen one article for Troller, a weekly digest of links to the best criticism and ' +
   'long-form cultural writing. You are given the full text. Judge only what is on the page. ' +
@@ -202,7 +218,7 @@ const READ_SYSTEM =
   "or a serious interview, AND it is on the category's subject, AND it is in English. keep is false " +
   'for news items, announcements, listicles, buying guides, shopping, sponsored or gambling content, ' +
   'job ads, press releases, event listings, podcast or video show notes, and anything off-subject. ' +
-  BRIEF_RULES + ' ' +
+  BRIEF_RULES + ' ' + NEW_RULE + ' ' +
   'depth: 1 = nothing to it, 2 = thin, 3 = solid, 4 = strong, 5 = exceptional. ' +
   'reason: at most 15 words on why.';
 
@@ -210,11 +226,12 @@ const READ_SCHEMA = {
   type: 'object',
   properties: {
     keep: { type: 'boolean' },
+    about_new: { type: 'boolean' },
     kind: { type: 'string', enum: ['criticism', 'essay', 'review', 'feature', 'interview', 'news', 'listicle', 'shopping', 'promotional', 'other'] },
     depth: { type: 'integer' },
     reason: { type: 'string' },
   },
-  required: ['keep', 'kind', 'depth', 'reason'],
+  required: ['keep', 'about_new', 'kind', 'depth', 'reason'],
   additionalProperties: false,
 };
 
@@ -223,7 +240,8 @@ const CHECK_SYSTEM =
   'long-form cultural writing, for a demanding reader. You are given one article in full. ' +
   'score from 1 to 10 for how much that reader would want this link: 9-10 a must-read, 7-8 strong, ' +
   '5-6 competent but ordinary, 4 or below should not run. keep is false if it is not substantive ' +
-  "criticism or long-form writing on the category's subject. " + BRIEF_RULES + ' Judge the writing ' +
+  "criticism or long-form writing on the category's subject, and false if it is not mainly about " +
+  'new work. ' + NEW_RULE.replace('about_new is true', 'A piece is new') + ' ' + BRIEF_RULES + ' Judge the writing ' +
   'itself; do not mark a piece down for its format (an interview) or for sitting outside a ' +
   '"leaning". reason: at most 15 words naming its main strength or flaw.';
 
@@ -273,9 +291,16 @@ async function scoutArticles(work, ledger, opts) {
       const r = await httpGet(meta.feed);
       return { source, meta, items: r.ok ? L.parseFeed(r.body) : [] };
     });
+    // --categories design,fashion reruns just those sections (into their own
+    // --work folder), so a thin section can be redone without paying again
+    // for the rest of the issue.
+    const only = arg('categories') ? arg('categories').split(',') : null;
     for (const f of fetched) {
       for (const cat of f.meta.categories || []) {
-        bySource.push({ source: f.source, category: cat, items: f.items, tier: f.meta.tier || 'essay' });
+        if (only && !only.includes(cat)) continue;
+        // Outlet, not feed: rotation and the one-per-category rule are about
+        // publications, and published issues record the outlet name.
+        bySource.push({ source: outlet(f.source), category: cat, items: f.items, tier: f.meta.tier || 'essay' });
       }
     }
     console.log(`  ${fetched.filter((f) => f.items.length).length} of ${entries.length} feeds returned items.`);
@@ -372,7 +397,12 @@ async function scoutArticles(work, ledger, opts) {
         const v = await AI.askJson(ledger, 'articles: read', {
           model: AI.MODELS.reader, system: READ_SYSTEM, prompt: articlePrompt(j.c, j.text), schema: READ_SCHEMA, maxTokens: 1500,
         });
-        out[j.id] = { keep: !!v.keep, kind: v.kind, depth: clampInt(v.depth, 1, 5), reason: words(v.reason, 20) };
+        // Old subjects are dropped here in code, not left to the model's keep.
+        const isNew = v.about_new !== false;
+        out[j.id] = {
+          keep: !!v.keep && isNew, about_new: isNew, kind: v.kind, depth: clampInt(v.depth, 1, 5),
+          reason: words(isNew ? v.reason : `Not new work. ${v.reason}`, 22),
+        };
       } catch (err) {
         errors.push(err.message);
         out[j.id] = { keep: false, kind: 'other', depth: 1, reason: `could not be read: ${err.message}` };
@@ -453,7 +483,7 @@ async function scoutArticles(work, ledger, opts) {
     for (const e of ranked[cat]) {
       if (n >= opts.perCategory) break;
       if (!e.check || !e.check.keep || e.check.score < opts.minScore) continue;
-      const s = e.source.toLowerCase();
+      const s = outlet(e.source).toLowerCase();
       if (used.has(s) || (perOutlet[s] || 0) >= 2) continue;
       e.pick = true;
       used.add(s);
@@ -708,7 +738,7 @@ async function publish(date, work) {
   const categories = CATEGORIES.map((key) => ({
     key,
     entries: (shortlist.articles[key] || []).filter((e) => e.pick).map((e) => ({
-      title: e.title, author: e.author || null, source: e.source, summary: '', why: '', url: e.url,
+      title: e.title, author: e.author || null, source: outlet(e.source), summary: '', why: '', url: e.url,
       // Honest now: every picked entry was fetched and read in full, twice.
       verified: true,
     })),
@@ -763,7 +793,7 @@ async function main() {
   const cmd = process.argv[2];
   const date = arg('date') || new Date().toISOString().slice(0, 10);
   if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) throw new Error(`Invalid --date: ${date}`);
-  const work = path.join(ROOT, '.work', date);
+  const work = arg('work') ? path.resolve(ROOT, arg('work')) : path.join(ROOT, '.work', date);
   fs.mkdirSync(work, { recursive: true });
 
   if (cmd === 'scout') return scout(date, work);

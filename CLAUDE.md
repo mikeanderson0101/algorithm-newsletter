@@ -39,11 +39,15 @@ Never move article reading into this Claude Code conversation (WebFetch/WebSearc
 - GitHub Pages deploys from `main`, root folder. The only workflow left is the manual, model-free `audit-feeds.yml`.
 
 ## Editorial rules
+0. **New writing about new things.** Only pieces mainly about new work (roughly the last three months: releases, shows, buildings, books, comics, collections, labels, typefaces). Old subjects only when pegged to something new. Both judges test this (`NEW_RULE` in `weekly.js`), and code drops anything with `about_new: false`.
+   - Design is a wide net: architecture, interiors, industrial/product, graphic design and branding, typography.
+   - Men's Fashion leans American and draws on many US sources.
+   - Books lean hard toward SFF, plus smart writing on comics, manga and graphic novels.
 1. English only, published in English by the outlet. Never translate.
 2. Links only. Every published entry was fetched and read in full by the pipeline; `verified: true` means that.
 3. Every URL comes from a feed or fetch. Never construct one.
 4. No repeats (checked against every issue). Rotation: an outlet holds a category in at most 2 of any 4 weekly issues; max 2 entries per outlet per issue; never two in one category from one outlet.
-5. Better a short category than padding. Fashion and design are structurally thin; say so rather than lower the bar.
+5. Better a short category than padding. If a section comes up thin, fix its sources (section feeds over whole-site feeds; see `sources.md`), never the bar.
 6. Tech & AI attracts SEO spam. The reader prompt rejects it; keep it that way.
 7. The Pulse is retired. Ignore old `pulse` keys.
 
