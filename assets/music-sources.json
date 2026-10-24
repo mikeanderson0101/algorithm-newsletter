@@ -1,33 +1,156 @@
 {
   "Stereogum": {
-    "feed": "https://stereogum.com/category/lists/the-5-best-songs-of-the-week/feed",
+    "type": "wp-feed",
+    "url": "https://stereogum.com/category/lists/the-5-best-songs-of-the-week/feed",
     "match": "5 Best Songs",
-    "blurb": "The five best new songs of the week, chosen by staff.",
-    "maxPosts": 2
+    "maxPages": 6,
+    "blurb": "The five best new songs of the week, chosen by staff."
   },
   "Bandcamp Daily": {
-    "feed": "https://daily.bandcamp.com/feed",
-    "match": "^Essential Releases",
-    "blurb": "Essential Releases: what the editors are listening to right now.",
-    "maxPosts": 2
+    "type": "html-list",
+    "url": "https://daily.bandcamp.com/essential-releases?page={n}",
+    "linkMatch": "/essential-releases/essential-releases-",
+    "label": "Essential Releases",
+    "maxPages": 12,
+    "blurb": "Essential Releases: what the editors are listening to right now."
   },
-  "The Line of Best Fit": {
-    "index": "https://www.thelineofbestfit.com/news",
-    "linkMatch": "new-music-discovery",
-    "label": "New Music Discovery",
-    "blurb": "New Music Discovery: a weekly playlist of under-the-radar artists.",
-    "maxPosts": 1
+  "The Guardian": {
+    "type": "html-list",
+    "url": "https://www.theguardian.com/music/series/add-to-playlist?page={n}",
+    "linkMatch": "/music/\\d{4}/[a-z]{3}/\\d{1,2}/add-to-playlist",
+    "label": "Add to playlist",
+    "maxPages": 8,
+    "blurb": "Add to playlist: the week's best new tracks."
   },
   "Various Small Flames": {
-    "feed": "https://varioussmallflames.co.uk/feed/",
+    "type": "wp-feed",
+    "url": "https://varioussmallflames.co.uk/category/weekly-listening/feed/",
     "match": "^Weekly Listening",
-    "blurb": "Weekly Listening: new indie, folk and experimental songs.",
-    "maxPosts": 2
+    "maxPages": 22,
+    "blurb": "Weekly Listening: new indie, folk and experimental songs."
+  },
+  "Atwood Magazine": {
+    "type": "wp-feed",
+    "url": "https://atwoodmagazine.com/category/weekly-roundup/feed/",
+    "match": "Weekly Roundup",
+    "maxPages": 14,
+    "blurb": "Weekly Roundup: the staff's favourite new songs of the week."
   },
   "WBRU": {
-    "feed": "https://wbru.substack.com/feed",
+    "type": "substack",
+    "url": "https://wbru.substack.com",
     "match": "^Today.s Top Indie",
-    "blurb": "Today's Top Indie: a weekly playlist from the radio station.",
-    "maxPosts": 2
+    "blurb": "Today's Top Indie: a weekly playlist from the radio station."
+  },
+  "The Line of Best Fit": {
+    "type": "index",
+    "url": "https://www.thelineofbestfit.com/news",
+    "linkMatch": "new-music-discovery",
+    "label": "New Music Discovery",
+    "maxPosts": 1,
+    "blurb": "New Music Discovery: a weekly playlist of under-the-radar artists."
+  },
+  "Pitchfork": {
+    "type": "wp-feed",
+    "url": "https://pitchfork.com/feed/feed-track-reviews/rss",
+    "maxPages": 1,
+    "blurb": "Track reviews: one new song at a time.",
+    "label": "Track review"
+  },
+  "Gorilla vs. Bear": {
+    "type": "wp-feed",
+    "url": "https://www.gorillavsbear.net/feed/",
+    "match": "^listen to",
+    "maxPages": 1,
+    "blurb": "One new song at a time, from a long-running music blog.",
+    "label": "Song of the day"
+  },
+  "The FADER": {
+    "type": "wp-feed",
+    "url": "https://www.thefader.com/feed",
+    "match": "songs you need",
+    "maxPages": 1,
+    "blurb": "The songs you need in your life this week.",
+    "label": "Songs you need this week"
+  },
+  "DIY": {
+    "type": "wp-feed",
+    "url": "https://diymag.com/feed",
+    "match": "Neu Bulletin",
+    "maxPages": 1,
+    "blurb": "The Neu Bulletin: new artists to know.",
+    "label": "The Neu Bulletin"
+  },
+  "Bandcamp Daily: Best new ambient": {
+    "type": "html-list",
+    "site": "Bandcamp Daily",
+    "url": "https://daily.bandcamp.com/best-ambient?page={n}",
+    "linkMatch": "/best-ambient/",
+    "label": "Best new ambient",
+    "maxPages": 4,
+    "blurb": "Monthly genre columns: the best new releases in each scene."
+  },
+  "Bandcamp Daily: Best new electronic": {
+    "type": "html-list",
+    "site": "Bandcamp Daily",
+    "url": "https://daily.bandcamp.com/best-electronic?page={n}",
+    "linkMatch": "/best-electronic/",
+    "label": "Best new electronic",
+    "maxPages": 4,
+    "blurb": "Monthly genre columns: the best new releases in each scene."
+  },
+  "Bandcamp Daily: Hi-Bias (experimental)": {
+    "type": "html-list",
+    "site": "Bandcamp Daily",
+    "url": "https://daily.bandcamp.com/best-experimental?page={n}",
+    "linkMatch": "/best-experimental/",
+    "label": "Hi-Bias (experimental)",
+    "maxPages": 4,
+    "blurb": "Monthly genre columns: the best new releases in each scene."
+  },
+  "Bandcamp Daily: Best contemporary classical": {
+    "type": "html-list",
+    "site": "Bandcamp Daily",
+    "url": "https://daily.bandcamp.com/best-contemporary-classical?page={n}",
+    "linkMatch": "/best-contemporary-classical/",
+    "label": "Best contemporary classical",
+    "maxPages": 4,
+    "blurb": "Monthly genre columns: the best new releases in each scene."
+  },
+  "Bandcamp Daily: Best hip-hop": {
+    "type": "html-list",
+    "site": "Bandcamp Daily",
+    "url": "https://daily.bandcamp.com/best-hip-hop?page={n}",
+    "linkMatch": "/best-hip-hop/",
+    "label": "Best hip-hop",
+    "maxPages": 4,
+    "blurb": "Monthly genre columns: the best new releases in each scene."
+  },
+  "Bandcamp Daily: Best jazz": {
+    "type": "html-list",
+    "site": "Bandcamp Daily",
+    "url": "https://daily.bandcamp.com/best-jazz?page={n}",
+    "linkMatch": "/best-jazz/",
+    "label": "Best jazz",
+    "maxPages": 4,
+    "blurb": "Monthly genre columns: the best new releases in each scene."
+  },
+  "Bandcamp Daily: Best metal": {
+    "type": "html-list",
+    "site": "Bandcamp Daily",
+    "url": "https://daily.bandcamp.com/best-metal?page={n}",
+    "linkMatch": "/best-metal/",
+    "label": "Best metal",
+    "maxPages": 4,
+    "blurb": "Monthly genre columns: the best new releases in each scene."
+  },
+  "Bandcamp Daily: Best punk": {
+    "type": "html-list",
+    "site": "Bandcamp Daily",
+    "url": "https://daily.bandcamp.com/best-punk?page={n}",
+    "linkMatch": "/best-punk/",
+    "label": "Best punk",
+    "maxPages": 4,
+    "blurb": "Monthly genre columns: the best new releases in each scene."
   }
 }

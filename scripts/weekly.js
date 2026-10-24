@@ -502,8 +502,9 @@ async function scoutArticles(work, ledger, opts) {
 const EXTRACT_SYSTEM =
   'You pull songs out of one music site\'s weekly list or roundup post for a new-music page. ' +
   'List each new song the post recommends. Only songs, not whole albums unless the post names a ' +
-  'focus track. note: at most 22 words, in your own words, on what the post says about the song; ' +
-  'never invent details. youtube: the id from a (youtube:ID) marker next to that song, else "". ' +
+  'focus track. Skip songs the post presents as old: reissues, archival releases, or anything ' +
+  'released before 2023. note: at most 22 words, in your own words, on what the post says about the ' +
+  'song; never invent details. youtube: the id from a (youtube:ID) marker next to that song, else "". ' +
   'bandcamp: the URL from a (bandcamp:URL) marker next to that song, else "".';
 
 const EXTRACT_SCHEMA = {
@@ -531,7 +532,9 @@ const EXTRACT_SCHEMA = {
 
 const PICK_SYSTEM =
   'You choose the next batch of songs for a personal new-music page. Lean toward what the listener ' +
-  'liked and away from what they disliked, and spread the picks across sources. Return candidate ids only.';
+  'liked and away from what they disliked, and spread the picks across sources. Candidates come from ' +
+  'an archive of music sites\' weekly lists back to 2025, strongest first: songs on several sites\' ' +
+  'lists lead, then the newest. Favour those, but mix in a few distinctive finds. Return candidate ids only.';
 
 const PICK_SCHEMA = {
   type: 'object',
@@ -549,25 +552,132 @@ function shortDate(iso) {
   return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', timeZone: 'UTC' });
 }
 
-async function findListPosts(name, src, windowDays) {
-  const cutoff = Date.now() - windowDays * 86400000;
-  if (src.feed) {
-    const r = await httpGet(src.feed);
-    if (!r.ok) return [];
-    const re = new RegExp(src.match, 'i');
-    return L.parseFeed(r.body)
-      .filter((it) => re.test(it.title) && (!it.published || Date.parse(it.published) >= cutoff))
-      .slice(0, src.maxPosts || 2)
-      .map((it) => ({ site: name, title: it.title, url: it.link, published: it.published }));
+const MONTHS3 = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'];
+
+/**
+ * A post's date from its address, for archives that list links without dates.
+ *   ".../essential-releases-february-20-2026"  (Bandcamp Daily)
+ *   "/music/2026/oct/23/add-to-playlist-..."     (the Guardian)
+ */
+function dateFromUrl(url) {
+  let m = url.match(/-([a-z]+)-(\d{1,2})-(\d{4})\/?$/i);
+  if (m && !Number.isNaN(Date.parse(`${m[1]} ${m[2]}, ${m[3]} UTC`))) return new Date(`${m[1]} ${m[2]}, ${m[3]} UTC`).toISOString();
+  m = url.match(/\/(\d{4})\/([a-z]{3})\/(\d{1,2})\//i);
+  if (m && MONTHS3.includes(m[2].toLowerCase())) return new Date(Date.UTC(+m[1], MONTHS3.indexOf(m[2].toLowerCase()), +m[3])).toISOString();
+  // ".../best-new-ambient-september-2026" (Bandcamp's monthly genre columns)
+  m = url.match(/-([a-z]+)-(\d{4})\/?$/i);
+  if (m && MONTHS3.includes(m[1].slice(0, 3).toLowerCase())) return new Date(Date.UTC(+m[2], MONTHS3.indexOf(m[1].slice(0, 3).toLowerCase()), 1)).toISOString();
+  return null;
+}
+
+/**
+ * Bandcamp's older Essential Releases addresses drop the year
+ * (".../essential-releases-jul-17"). The archive runs newest first, so the
+ * year is the year of the last dated post, or one less once the month
+ * jumps forward (December after January).
+ */
+function inferDate(url, prevIso) {
+  const m = url.match(/-([a-z]+)-(\d{1,2})\/?$/i);
+  if (!m || !prevIso || !MONTHS3.includes(m[1].slice(0, 3).toLowerCase())) return null;
+  const month = MONTHS3.indexOf(m[1].slice(0, 3).toLowerCase());
+  const prev = new Date(prevIso);
+  const year = month > prev.getUTCMonth() ? prev.getUTCFullYear() - 1 : prev.getUTCFullYear();
+  return new Date(Date.UTC(year, month, +m[2])).toISOString();
+}
+
+/**
+ * Every weekly list post a source has published since `since`, newest first.
+ * Free: feeds, archive pages and Substack's archive data, no model calls.
+ * Four kinds of source, set in assets/music-sources.json:
+ *   wp-feed   a WordPress feed, paged with ?paged=N (Stereogum, Various Small Flames)
+ *   html-list an archive page with ?page=N whose links carry the date (Bandcamp Daily)
+ *   substack  Substack's archive data, paged by offset (WBRU)
+ *   index     one page linking only the latest post (The Line of Best Fit: no archive)
+ */
+async function discoverPosts(name, src, since) {
+  const sinceMs = Date.parse(since);
+  const re = src.match ? new RegExp(src.match, 'i') : null;
+  const out = [];
+  // One site can have several sources (Bandcamp Daily's genre columns): the
+  // source's `site` names the site, and its `label` names the column.
+  const keep = (p) => p.url && (!p.published || Date.parse(p.published) >= sinceMs) &&
+    out.push({ site: src.site || name, label: src.label || null, ...p });
+
+  if (src.type === 'wp-feed') {
+    for (let page = 1; page <= (src.maxPages || 30); page++) {
+      const r = await httpGet(`${src.url}${src.url.includes('?') ? '&' : '?'}paged=${page}`);
+      const items = r.ok ? L.parseFeed(r.body) : [];
+      if (!items.length) break;
+      for (const it of items) if (!re || re.test(it.title)) keep({ title: it.title, url: it.link, published: it.published });
+      const oldest = items.map((i) => i.published).filter(Boolean).sort()[0];
+      if (oldest && Date.parse(oldest) < sinceMs) break;
+    }
+  } else if (src.type === 'html-list') {
+    const seen = new Set();
+    let lastDate = null;
+    for (let page = 1; page <= (src.maxPages || 10); page++) {
+      const r = await httpGet(src.url.replace('{n}', page));
+      if (!r.ok) break;
+      const links = [...new Set([...r.body.matchAll(new RegExp(`href=["']([^"'#]*${src.linkMatch}[^"'#]*)["']`, 'gi'))]
+        .map((m) => new URL(m[1], src.url).toString()))].filter((u) => !seen.has(u));
+      // Past the end, some archives (the Guardian's) loop back to page 1.
+      if (!links.length) break;
+      let older = false;
+      for (const url of links) {
+        seen.add(url);
+        const published = dateFromUrl(url) || inferDate(url, lastDate);
+        if (published) lastDate = published;
+        if (published && Date.parse(published) < sinceMs) { older = true; continue; }
+        keep({ title: src.label, url, published });
+      }
+      if (older) break;
+    }
+  } else if (src.type === 'substack') {
+    for (let offset = 0; offset < 1000; offset += 50) {
+      const r = await httpGet(`${src.url}/api/v1/archive?sort=new&offset=${offset}&limit=50`);
+      let posts = [];
+      try { posts = r.ok ? JSON.parse(r.body) : []; } catch { posts = []; }
+      if (!Array.isArray(posts) || !posts.length) break;
+      for (const p of posts) if (!re || re.test(p.title || '')) keep({ title: p.title, url: p.canonical_url, published: p.post_date });
+      if (Date.parse(posts[posts.length - 1].post_date) < sinceMs) break;
+    }
+  } else if (src.type === 'index') {
+    const r = await httpGet(src.url);
+    if (r.ok) {
+      const links = [...new Set([...r.body.matchAll(new RegExp(`href=["']((?:https?://[^"']*)?/[^"']*${src.linkMatch}[^"']*)["']`, 'gi'))]
+        .map((m) => new URL(m[1], src.url).toString()))];
+      for (const url of links.slice(0, src.maxPosts || 1)) keep({ title: src.label, url, published: new Date().toISOString() });
+    }
   }
-  if (src.index) {
-    const r = await httpGet(src.index);
-    if (!r.ok) return [];
-    const re = new RegExp(`href=["']((?:https?://[^"']*)?/[^"']*${src.linkMatch}[^"']*)["']`, 'gi');
-    const links = [...new Set([...r.body.matchAll(re)].map((m) => new URL(m[1], src.index).toString()))];
-    return links.slice(0, src.maxPosts || 1).map((url) => ({ site: name, title: src.label, url, published: null }));
-  }
-  return [];
+  return out;
+}
+
+/**
+ * The song pool: every song ever pulled from a list post, keyed by post, so
+ * no post is read (and paid for) twice. Committed with the site, so the
+ * GitHub button and a local run share it. Each refresh adds the newest
+ * posts it has not read yet, which is how Song Troll digs back to 2025.
+ */
+const POOL_FILE = path.join(MUSIC_DIR, 'pool.json');
+
+/**
+ * The link text under each song: "The 5 Best Songs Of The Week, Aug 7",
+ * "Essential Releases, Jul 17", "Track review, Oct 22". A source's own label
+ * wins over the post title (Pitchfork's titles are just the song), and a
+ * title that already carries its date ("Today's Top Indie: September 15,
+ * 2026") is not dated twice.
+ */
+function postLabel(p, sources) {
+  const base = String(p.label || (sources[p.site] && sources[p.site].label) || p.title || '').replace(/,\s*\d{4}-\d{2}-\d{2}$/, '').trim();
+  return /\b20\d{2}\b/.test(base)
+    ? L.truncate(base, 44)
+    : [L.truncate(base, 40), shortDate(p.published)].filter(Boolean).join(', ');
+}
+function loadPool() {
+  return readJson(POOL_FILE, { about: 'Songs pulled from music list posts, by post URL. Written by scripts/weekly.js songs.', posts: {} });
+}
+function savePool(pool) {
+  fs.writeFileSync(POOL_FILE, JSON.stringify(pool, null, 1) + '\n');
 }
 
 async function scoutMusic(work, ledger, opts) {
@@ -579,62 +689,119 @@ async function scoutMusic(work, ledger, opts) {
     ...(taste.exclude || []).map(artistKey),
     ...(taste.disliked || []).map((s) => artistKey(String(s).split(' – ')[0])),
   ]);
+  const pool = loadPool();
 
   const posts = await stage(work, 'music-1-posts', async () => {
-    console.log('Finding this week\'s music list posts...');
-    const found = (await Promise.all(Object.entries(sources).map(([n, s]) => findListPosts(n, s, opts.musicWindowDays)))).flat();
+    console.log(`Finding music list posts back to ${opts.since}...`);
+    const found = (await Promise.all(Object.entries(sources).map(([n, s]) => discoverPosts(n, s, opts.since)))).flat();
+    const unread = found
+      .filter((p) => !pool.posts[p.url])
+      .sort((a, b) => (b.published || '').localeCompare(a.published || ''));
+    const bySite = {};
+    for (const p of found) bySite[p.site] = (bySite[p.site] || 0) + 1;
+    console.log(`  ${found.length} list posts since ${opts.since} (${Object.entries(bySite).map(([s, n]) => `${s} ${n}`).join(', ')}); ` +
+      `${found.length - unread.length} already in the pool, ${unread.length} unread.`);
+    const take = unread.slice(0, opts.posts);
     const out = [];
-    await mapLimit(found, 6, async (p) => {
+    // Gentle by default on big runs: Bandcamp throttled a 6-at-a-time backfill.
+    await mapLimit(take, num('fetch-concurrency', take.length > 40 ? 2 : 6), async (p) => {
       const r = await httpGet(p.url);
       if (!r.ok) return;
       const text = T.capWords(T.extractText(r.body, { media: true }), 4000);
       if (T.wordCount(text) >= 80) out.push({ ...p, text });
     });
-    console.log(`  ${out.length} list posts: ${out.map((p) => p.site).join(', ') || 'none'}.`);
+    console.log(out.length > 12
+      ? `  Reading ${out.length} unread posts, ${(out[out.length - 1].published || '').slice(0, 10)} to ${(out[0].published || '').slice(0, 10)}.`
+      : `  Reading ${out.length} unread: ${out.map((p) => `${p.site} ${(p.published || '').slice(0, 10)}`).join(', ') || 'none, the archive is up to date'}.`);
     return out;
   });
 
-  const songs = await stage(work, 'music-2-songs', async () => {
+  await stage(work, 'music-2-songs', async () => {
+    // Many posts (the one-time backfill) go through the Batch API at half
+    // price; a normal refresh has a handful and is quicker one by one.
+    const batch = posts.length > 8 && !has('no-batch');
     const chars = posts.reduce((n, p) => n + p.text.length + 1200, 0);
-    ledger.room('Music extraction', AI.project(AI.MODELS.reader, chars, posts.length * 2500));
-    console.log(`Pulling songs out of ${posts.length} posts (Haiku)...`);
-    const all = [];
+    ledger.room('Music extraction', AI.project(AI.MODELS.reader, chars, posts.length * 2500, { batch }));
+    console.log(`Pulling songs out of ${posts.length} posts (Haiku${batch ? ', Batch API' : ''})...`);
     const errors = [];
-    await mapLimit(posts, 4, async (p) => {
-      try {
-        const r = await AI.askJson(ledger, 'music: extract', {
-          model: AI.MODELS.reader, system: EXTRACT_SYSTEM, maxTokens: 6000, schema: EXTRACT_SCHEMA,
-          prompt: `Site: ${p.site}\nPost: ${p.title}\nURL: ${p.url}\n\n<post>\n${p.text}\n</post>`,
-        });
-        for (const s of r.songs || []) {
-          if (!s.artist || !s.title) continue;
-          all.push({
-            artist: s.artist.trim(), title: s.title.trim(), note: words(s.note, 26),
-            yt: /^[\w-]{6,}$/.test(s.youtube || '') ? s.youtube : null,
-            bc: /^https?:\/\/[a-z0-9-]+\.bandcamp\.com\//i.test(s.bandcamp || '') ? s.bandcamp : null,
-            site: p.site,
-            src: { label: [L.truncate(p.title, 40), shortDate(p.published)].filter(Boolean).join(', '), url: p.url },
-          });
+    let added = 0;
+    const promptFor = (p) => `Site: ${p.site}\nPost: ${p.title}\nURL: ${p.url}\n\n<post>\n${p.text}\n</post>`;
+    const file = (p, r) => {
+      const songs = (r.songs || []).filter((s) => s.artist && s.title).map((s) => ({
+        artist: s.artist.trim(), title: s.title.trim(), note: words(s.note, 26),
+        yt: /^[\w-]{6,}$/.test(s.youtube || '') ? s.youtube : null,
+        bc: /^https?:\/\/[a-z0-9-]+\.bandcamp\.com\//i.test(s.bandcamp || '') ? s.bandcamp : null,
+      }));
+      pool.posts[p.url] = {
+        site: p.site, title: p.title, ...(p.label ? { label: p.label } : {}), published: p.published,
+        read: new Date().toISOString().slice(0, 10), songs,
+      };
+      added += songs.length;
+    };
+    if (batch) {
+      const idFile = path.join(work, 'music-2-batch-id.txt');
+      const ids = new Map(posts.map((p, i) => [`p${i}`, p]));
+      const r = await AI.batchJson(ledger, 'music: extract', AI.MODELS.reader,
+        [...ids].map(([id, p]) => ({ id, system: EXTRACT_SYSTEM, prompt: promptFor(p), schema: EXTRACT_SCHEMA })),
+        { maxTokens: 6000, effort: 'low', existingId: fs.existsSync(idFile) ? fs.readFileSync(idFile, 'utf8').trim() : null,
+          onCreated: (id) => fs.writeFileSync(idFile, id) });
+      if (r.pendingId) throw new Error(`The batch is still running (${r.pendingId}). Run songs again with --work ${path.relative(ROOT, work)} to collect it.`);
+      for (const [id, res] of Object.entries(r.results)) file(ids.get(id), res);
+      for (const id of r.failed) errors.push(`${ids.get(id).site} ${ids.get(id).url}`);
+    } else {
+      await mapLimit(posts, 4, async (p) => {
+        try {
+          file(p, await AI.askJson(ledger, 'music: extract', {
+            model: AI.MODELS.reader, system: EXTRACT_SYSTEM, maxTokens: 6000, schema: EXTRACT_SCHEMA, prompt: promptFor(p),
+          }));
+        } catch (err) {
+          errors.push(err.message);
+          console.log(`  could not read ${p.site}: ${err.message}`);
         }
-      } catch (err) {
-        errors.push(err.message);
-        console.log(`  could not read ${p.site}: ${err.message}`);
-      }
-    });
+      });
+    }
     if (posts.length && errors.length > posts.length / 3) throw new Error(`${errors.length} of ${posts.length} music posts failed: ${errors[0]}`);
-    return all;
+    savePool(pool);
+    console.log(`  ${added} songs added to the pool (${Object.keys(pool.posts).length} posts read so far).`);
+    return { added };
   });
 
-  // Free filters: no repeats, nothing excluded or disliked, one song per artist.
+  // Candidates come from the whole archive. The quality signal is agreement:
+  // a song several sites put on their lists ranks first, then the newest.
+  // Free filters: no artist already on the page, nothing excluded or
+  // disliked, one song per artist.
+  const all = Object.entries(pool.posts)
+    .sort((a, b) => (b[1].published || '').localeCompare(a[1].published || ''))
+    .flatMap(([url, p]) => p.songs.map((s) => ({
+      ...s, site: p.site, published: p.published,
+      src: { label: postLabel(p, sources), url },
+    })));
+  const songKey = (s) => `${artistKey(s.artist)}|${String(s.title).toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim()}`;
+  const sitesFor = new Map();
+  for (const s of all) {
+    const k = songKey(s);
+    if (!sitesFor.has(k)) sitesFor.set(k, new Set());
+    sitesFor.get(k).add(s.site);
+  }
   const seen = new Set();
   const fresh = [];
-  for (const s of songs) {
+  for (const s of all) {
     const k = artistKey(s.artist);
     if (!k || seen.has(k) || shownArtists.has(k) || blocked.has(k)) continue;
+    // --years 2026, or 2025,2026: a refresh limited to those years' lists.
+    if (opts.years && !opts.years.has((s.published || '').slice(0, 4))) continue;
     seen.add(k);
-    fresh.push({ ...s, cid: `m${fresh.length}` });
+    const lists = [...sitesFor.get(songKey(s))];
+    fresh.push({ ...s, lists });
   }
-  console.log(`  ${songs.length} songs found, ${fresh.length} new to you.`);
+  fresh.sort((a, b) => b.lists.length - a.lists.length || (b.published || '').localeCompare(a.published || ''));
+  fresh.forEach((s, i) => { s.cid = `m${i}`; });
+  console.log(`  ${all.length} songs in the archive, ${fresh.length} new to you` +
+    `${opts.years ? ` from ${[...opts.years].join(', ')}` : ''}, ` +
+    `${fresh.filter((s) => s.lists.length > 1).length} on more than one site's list.`);
+  if (opts.archiveOnly) return [];
+  // Keep the picking prompt small: the strongest unshown candidates only.
+  fresh.splice(opts.candidates);
 
   const picked = await stage(work, 'music-3-picks', async () => {
     if (fresh.length <= opts.songs) return fresh.map((s) => s.cid);
@@ -643,7 +810,7 @@ async function scoutMusic(work, ledger, opts) {
       `Liked before: ${(taste.liked || []).join('; ') || 'none yet'}.`,
       `Disliked before: ${(taste.disliked || []).join('; ') || 'none yet'}.`,
       '',
-      ...fresh.map((s) => `[${s.cid}] ${s.artist} – ${s.title} (${s.site}): ${s.note}`),
+      ...fresh.map((s) => `[${s.cid}] ${s.artist} – ${s.title} (${s.lists.length > 1 ? `on ${s.lists.length} lists: ${s.lists.join(', ')}` : s.site}, ${(s.published || '').slice(0, 7)}): ${s.note}`),
     ].join('\n');
     ledger.room('Music picks', AI.project(AI.MODELS.judge, prompt.length + 800, 3000));
     console.log(`Picking ${opts.songs} songs (Sonnet)...`);
@@ -701,8 +868,19 @@ function options() {
     windowDays: num('window-days', 14),
     minWords: num('min-words', 600),
     maxWords: num('max-words', 3000),
-    songs: num('songs', 20),
-    musicWindowDays: num('music-window-days', 16),
+    // Ten a batch by default: enough to explore, few enough to listen to.
+    songs: num('songs', 10),
+    // Song Troll's archive reaches back to 2023 (Mike, 24 Oct 2026). Each
+    // refresh reads this many unread list posts, newest first, into it.
+    since: arg('since', '2023-01-01'),
+    // Which years a refresh draws from: "all" (default), "2026", "2025,2026".
+    years: (() => {
+      const v = String(arg('years', 'all')).trim().toLowerCase();
+      if (!v || v === 'all') return null;
+      return new Set(v.split(/[,\s]+/).filter((y) => /^\d{4}$/.test(y)));
+    })(),
+    posts: num('posts', 20),
+    candidates: num('candidates', 150),
     cap: num('cap', 1),
   };
 }
@@ -800,14 +978,24 @@ function mergeTaste(raw) {
 }
 
 /**
- * Song Troll refresh, separate from News Troll. Finds this fortnight's list
- * posts, pulls the songs, picks a batch with your thumbs, writes the next
- * music/NNNN.json and rebuilds the site. About $0.05. Run by hand, or from
- * the "Refresh Song Troll" button, which opens the manual-only GitHub
- * workflow (.github/workflows/song-troll.yml).
+ * Song Troll refresh, separate from News Troll. Reads any list posts
+ * published since the last refresh into the archive (music/pool.json, never
+ * shown on the site), picks a batch of 10 from the whole archive with your
+ * thumbs, writes the next music/NNNN.json and rebuilds. A few cents. Run by
+ * hand, or from the "Refresh Song Troll" button, which opens the manual-only
+ * GitHub workflow (.github/workflows/song-troll.yml).
+ *
+ *   songs --backfill   one time: read every list post back to --since
+ *                      (2025-01-01) into the archive, at Batch API prices,
+ *                      and pick nothing. Under $1 for ~400 posts.
  */
 async function songs(date) {
   const opts = options();
+  if (has('backfill')) {
+    opts.posts = Infinity;
+    opts.archiveOnly = true;
+    opts.cap = num('cap', 5);
+  }
   mergeTaste(arg('taste') || process.env.TROLLER_TASTE || '');
 
   // A fresh folder per refresh: the stages cache, and a second refresh on the
@@ -819,6 +1007,10 @@ async function songs(date) {
   console.log(`Refreshing Song Troll. Work folder: ${path.relative(ROOT, work)}\n`);
 
   const picked = (await scoutMusic(work, ledger, opts)).filter((s) => s.pick);
+  if (opts.archiveOnly) {
+    console.log(`\nArchive built. Spent $${ledger.spent.toFixed(3)}. No batch written; refreshes now pick from it.`);
+    return;
+  }
   if (!picked.length) {
     console.log('\nNo new songs this time; nothing written.');
     return;
@@ -831,6 +1023,8 @@ async function songs(date) {
     items: picked.map((s) => ({
       id: `${slug(s.artist)}-${slug(s.title)}`, site: s.site, src: s.src, artist: s.artist, title: s.title,
       note: s.note, ...(s.yt ? { yt: s.yt } : {}), ...(s.bc ? { bc: s.bc } : {}), batch: batchNo,
+      // The year of the list it was picked from; the page's Year filter uses it.
+      ...(s.published ? { year: Number(s.published.slice(0, 4)) } : {}),
     })),
   };
   const musicFile = path.join(MUSIC_DIR, `${String(batchNo).padStart(4, '0')}.json`);
@@ -864,4 +1058,4 @@ if (require.main === module) {
   });
 }
 
-module.exports = { BRIEFS, CATEGORIES, triagePrompt, shortlistMarkdown, artistKey };
+module.exports = { BRIEFS, CATEGORIES, triagePrompt, shortlistMarkdown, artistKey, postLabel, dateFromUrl };

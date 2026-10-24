@@ -504,11 +504,13 @@ const MUSIC_SCRIPT = String.raw`
   function save(k, v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
   // Thumbs given on the old "Fresh this week" page carry over by song id.
   var taste = load(K_TASTE, null) || load('fwt-app-taste', {});
-  var state = { batch: 'all', site: 'all', rating: 'all', q: '' };
+  var state = { batch: 'all', year: 'all', site: 'all', rating: 'all', q: '' };
   var saved = load(K_VIEW, {});
-  ['batch', 'site', 'rating'].forEach(function(k){ if (typeof saved[k] === 'string') state[k] = saved[k]; });
+  ['batch', 'year', 'site', 'rating'].forEach(function(k){ if (typeof saved[k] === 'string') state[k] = saved[k]; });
   var BATCHES = Array.from(new Set(ITEMS.map(function(i){ return i.batch; }))).sort(function(a, b){ return b - a; });
   var SITES = Array.from(new Set(ITEMS.map(function(i){ return i.site; })));
+  var YEARS = Array.from(new Set(ITEMS.map(function(i){ return i.year; }).filter(Boolean))).sort(function(a, b){ return b - a; });
+  if (state.year !== 'all' && YEARS.indexOf(Number(state.year)) === -1) state.year = 'all';
   if (state.batch !== 'all' && BATCHES.indexOf(Number(state.batch)) === -1) state.batch = 'all';
   if (state.site !== 'all' && SITES.indexOf(state.site) === -1) state.site = 'all';
   var $ = function(id){ return document.getElementById(id); };
@@ -525,6 +527,7 @@ const MUSIC_SCRIPT = String.raw`
   }
   function matches(i){
     if (state.batch !== 'all' && i.batch !== Number(state.batch)) return false;
+    if (state.year !== 'all' && i.year !== Number(state.year)) return false;
     if (state.site !== 'all' && i.site !== state.site) return false;
     if (state.rating === 'liked' && !(taste[i.id] && taste[i.id].v === 1)) return false;
     if (state.q && [i.artist, i.title, i.note, i.site].join(' ').toLowerCase().indexOf(state.q.toLowerCase()) === -1) return false;
@@ -539,11 +542,11 @@ const MUSIC_SCRIPT = String.raw`
 
   function chip(parent, value, label, key){
     var b = document.createElement('button'); b.type = 'button'; b.className = 'chip'; b.textContent = label; b.dataset.value = String(value);
-    b.addEventListener('click', function(){ state[key] = String(value); save(K_VIEW, { batch: state.batch, site: state.site, rating: state.rating }); sync(); render(); });
+    b.addEventListener('click', function(){ state[key] = String(value); save(K_VIEW, { batch: state.batch, year: state.year, site: state.site, rating: state.rating }); sync(); render(); });
     parent.appendChild(b);
   }
   function sync(){
-    [['f-batch', 'batch'], ['f-site', 'site'], ['f-rating', 'rating']].forEach(function(p){
+    [['f-batch', 'batch'], ['f-year', 'year'], ['f-site', 'site'], ['f-rating', 'rating']].forEach(function(p){
       Array.prototype.forEach.call($(p[0]).children, function(b){ b.setAttribute('aria-pressed', b.dataset.value === String(state[p[1]]) ? 'true' : 'false'); });
     });
   }
@@ -607,6 +610,9 @@ const MUSIC_SCRIPT = String.raw`
     var s = vis.length + (vis.length === 1 ? ' song' : ' songs') + (vis.length !== ITEMS.length ? ' of ' + ITEMS.length : '');
     if (likes + dislikes) s += ' · ' + likes + ' liked, ' + dislikes + ' disliked';
     $('count').textContent = s;
+    $('thumbs-status').textContent = (likes + dislikes)
+      ? 'This browser holds ' + likes + (likes === 1 ? ' like' : ' likes') + ' and ' + dislikes + (dislikes === 1 ? ' dislike' : ' dislikes') + '. Refresh copies them for you to paste.'
+      : 'No thumbs yet in this browser. Thumbs up or down any song and the next refresh can lean your way.';
     $('copylist').textContent = 'Copy list (' + vis.length + ')';
     $('copylist').disabled = vis.length === 0;
   }
@@ -624,6 +630,8 @@ const MUSIC_SCRIPT = String.raw`
 
   chip($('f-batch'), 'all', 'All', 'batch');
   BATCHES.forEach(function(n){ chip($('f-batch'), n, 'Batch ' + n, 'batch'); });
+  chip($('f-year'), 'all', 'All', 'year');
+  YEARS.forEach(function(y){ chip($('f-year'), y, String(y), 'year'); });
   chip($('f-site'), 'all', 'All', 'site');
   SITES.forEach(function(s){ chip($('f-site'), s, s, 'site'); });
   chip($('f-rating'), 'all', 'All', 'rating');
@@ -642,12 +650,20 @@ const MUSIC_SCRIPT = String.raw`
   // The refresh button is a plain link to the manual GitHub workflow, so it
   // opens even if copying fails; the click also puts the thumbs on the
   // clipboard for the workflow's "taste" box.
-  $('refresh-btn').addEventListener('click', function(){ copy(thumbsJson(), this, 'Thumbs copied. Opening GitHub…'); });
+  $('refresh-btn').addEventListener('click', function(){
+    var t = JSON.parse(thumbsJson());
+    var msg = (t.liked.length + t.disliked.length)
+      ? 'Copied ' + t.liked.length + ' likes and ' + t.disliked.length + ' dislikes. Paste them into the taste box.'
+      : 'No thumbs yet. Opening GitHub…';
+    copy(thumbsJson(), this, msg);
+  });
   sync(); render();
 })();`;
 
 function renderMusicPage(batches, sources) {
-  const items = batches.flatMap((b) => b.items.map((i) => ({ ...i, batch: b.batch })));
+  // Each song's year is the year of the list it came from; the first batches,
+  // brought over from Fresh this week, fall back to the batch's own year.
+  const items = batches.flatMap((b) => b.items.map((i) => ({ ...i, batch: b.batch, year: i.year || Number(String(b.date).slice(0, 4)) })));
   const latest = batches.length ? batches[batches.length - 1] : null;
   const sites = [...new Set(items.map((i) => i.site))];
   // JSON inside a <script> tag: escaping "<" keeps a stray "</script>" in a
@@ -684,6 +700,7 @@ function renderMusicPage(batches, sources) {
     <h2 id="h-songs">The songs</h2>
     <div class="filters">
       <div class="frow"><span class="flabel" id="l-batch">Batch</span><div class="frow" id="f-batch" role="group" aria-labelledby="l-batch"></div></div>
+      <div class="frow"><span class="flabel" id="l-year">Year</span><div class="frow" id="f-year" role="group" aria-labelledby="l-year"></div></div>
       <div class="frow"><span class="flabel" id="l-src">Source</span><div class="frow" id="f-site" role="group" aria-labelledby="l-src"></div></div>
       <div class="frow"><span class="flabel" id="l-show">Show</span><div class="frow" id="f-rating" role="group" aria-labelledby="l-show"></div>
         <input id="q" class="search" type="search" placeholder="Search artist, song or sound" aria-label="Search songs"></div>
@@ -699,13 +716,14 @@ function renderMusicPage(batches, sources) {
   </section>
 
   <section id="refresh" aria-labelledby="h-refresh">
-    <h2 id="h-refresh">Refresh Song Troll<small>Song Troll refreshes on its own, whenever you want, separately from News Troll. About five cents a batch.</small></h2>
+    <h2 id="h-refresh">Refresh Song Troll<small>Song Troll refreshes on its own, whenever you want, separately from News Troll. Each refresh adds 10 songs, picked from an archive of music sites’ weekly lists back to 2025. A few cents a batch.</small></h2>
     <ol class="rows">
       <li class="row"><span class="n">01</span><div><h3>Press the button</h3><p>It copies your thumbs and opens the refresh on GitHub, in a new tab.</p></div></li>
-      <li class="row"><span class="n">02</span><div><h3>Paste and run</h3><p>Click <b>Run workflow</b>. Paste into the thumbs box so the batch leans your way, or leave it empty. Then click the green <b>Run workflow</b> button.</p></div></li>
+      <li class="row"><span class="n">02</span><div><h3>Paste and run</h3><p>Click <b>Run workflow</b>. Choose which years to pick from (all, or a single year like 2026). Paste into the taste box so the batch leans your way; your thumbs are kept from then on. Then click the green <b>Run workflow</b> button.</p></div></li>
       <li class="row"><span class="n">03</span><div><h3>Come back in a few minutes</h3><p>The new batch appears here at the top, tagged New.</p></div></li>
     </ol>
-    <p class="hero-actions" style="margin-top:28px"><a class="btn" id="refresh-btn" href="${REFRESH_URL}" target="_blank" rel="noopener">Refresh Song Troll</a></p>
+    <p id="thumbs-status" class="count" style="margin-top:24px"></p>
+    <p class="hero-actions" style="margin-top:12px"><a class="btn" id="refresh-btn" href="${REFRESH_URL}" target="_blank" rel="noopener">Refresh Song Troll</a></p>
   </section>
 
   <section id="sources" aria-labelledby="h-sources">
